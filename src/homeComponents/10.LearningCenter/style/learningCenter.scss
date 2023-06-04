@@ -1,0 +1,254 @@
+.learning-center {
+    
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    font-family: "ProductSans-Light";
+    gap: 5vh;
+
+
+    &__main {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        font-family: "ProductSans-Light";
+        gap: 5vh;
+
+        &__header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1vh;
+
+
+        p:nth-child(1) {
+            font-size: 2.125rem;
+            line-height: 2.5rem;
+            color: #142b6f;
+            letter-spacing: 0.6px;
+
+        }
+        p:nth-child(2) {
+            letter-spacing: 0.7px;
+            text-align: center;
+            font-weight: 100 !important;
+            font-size: 1.125rem;
+            line-height: 32px;
+            position: relative;
+            color: #142b6f;
+            z-index: 34;
+            font-family: "ProductSans-Thin" !important;
+            
+        }
+
+        }
+
+        &__cards{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            &__card{
+                width: 23.9vw;
+                height: 37.2vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 3vh;
+                position: relative;
+                overflow: hidden;
+
+                &__texts{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: auto;
+                    gap: 1vh;
+                    width: 90%;
+                    z-index: 2;
+                    margin-bottom: 3vh;
+
+                    p:nth-child(1){
+                        font-size: 1rem;
+                       
+                        color: #142b6f;
+                    }
+                   
+                    p:nth-child(2){
+                        font-size: 1.375rem;
+                       
+                        color: #142b6f;
+                    }
+                  
+                }
+
+
+
+            
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        cursor: pointer;
+                        transition: 800ms;
+                        opacity: 0.5;
+                       
+
+                        &:hover{
+                            transform: scale(1.1);
+                            opacity: 0.9;
+                        }
+                    
+                    }
+                
+
+               
+            }
+        }
+
+
+
+    }
+}
+
+
+@media screen and (max-width: 1080px) {
+
+    .learning-center {
+     font-family: "ProductSans-Light";
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+        gap: 4vh;
+    
+        .learning-center__main__header{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+
+
+        p:nth-child(1) {
+            font-size: 2.125rem;
+            line-height: 26px;
+            color: #142b6f;
+
+        }
+        p:nth-child(2) {
+            text-align: center;
+            font-weight: 100 !important;
+            font-size: 1.125rem;
+            line-height: 26px;
+            position: relative;
+            color: #142b6f;
+            z-index: 34;
+            font-family: "ProductSans-Thin" !important;
+            width: 90%;
+        }
+
+        }
+
+    
+        &__main {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            font-family: "ProductSans-Light";
+            gap: 5vh;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: hidden;
+    
+          
+            &__cards{
+                display: flex;
+                width: 200vw;
+                justify-content: space-between;
+                
+    
+                &__card{
+                    scroll-snap-align: start;
+                    border-radius: 10px;
+                    width: 32%;
+                    height: 40.2vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 3vh;
+                    position: relative;
+                    overflow: hidden;
+    
+                    &__texts{
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        height: auto;
+                        gap: 1vh;
+                        width: 90%;
+                        z-index: 2;
+                        margin-bottom: 3vh;
+    
+                        p:nth-child(1){
+                            font-size: 1rem;
+                           
+                            color: #142b6f;
+                        }
+                       
+                        p:nth-child(2){
+                            font-size: 1.375rem;
+                           
+                            color: #142b6f;
+                        }
+                      
+                    }
+    
+    
+    
+                
+                        img{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            cursor: pointer;
+                            transition: 800ms;
+                            opacity: 0.5;
+                           
+    
+                            &:hover{
+                                transform: scale(1.1);
+                                opacity: 0.9;
+                            }
+                        
+                        }
+                    
+    
+                   
+                }
+            }
+    
+    
+    
+        }
+    }
+
+
+    
+}

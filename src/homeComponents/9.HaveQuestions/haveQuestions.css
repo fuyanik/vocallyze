@@ -1,0 +1,170 @@
+.have-questions{
+    margin-top: 55px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+ 
+ 
+}
+
+.have-questions-main-accordion span{
+    cursor: pointer;
+   
+    position: relative;
+}
+
+.have-questions-main-accordion span::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(249, 208, 24);
+    height: 2.5px;
+    width: 0;
+    left: 0;
+    bottom: -3px;
+    transition: 0.4s;
+}
+
+.have-questions-main-accordion span:hover::after{
+    width: 100%;
+}
+
+
+
+.have-questions-main {
+   
+
+    width: 92%;
+    height: 100%;
+    background-color: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+   
+
+    
+.have-questions-main-accordion{
+  
+  
+
+    width: 515px;
+    max-width: 888px;
+    height: 300px;
+    margin-right: 70px;
+    margin-bottom: 70px
+}
+
+
+
+.accordion-icon{
+   
+    font-size: 27px;
+    color: rgba(0, 0, 0, 0.481);
+}
+    
+
+
+.have-questions-main-img{
+     border: 1px solid blue;
+    margin-bottom: 50px;
+    background-size: cover;
+    background-position-y: bottom;
+    width: 492px;
+    height: 304px;
+    opacity: 0;
+}
+
+.have-questions-main-img-fadein{
+  
+    margin-bottom: 50px;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5ffcb5ab91eb492f96d336f9/1611518265706-OXIRPW4GP8ZFVRNR9U5I/true-agency-JwP90y9wgr4-unsplash.jpg");
+    background-size: cover;
+    background-position-y: bottom;
+    width: 492px;
+    height: 304px;
+    transition: transform 650ms ease;
+    opacity: 0;
+    transform: translateX(25px);
+    animation: fadeq-in 650ms forwards;
+}
+
+
+
+
+@media screen and (max-width: 1080px) {
+    .have-questions{
+        margin-top: 7vh;
+      
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .have-questions-main {
+
+        width: 92%;
+   
+        background-color: #FBFBFB;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    
+    }
+       
+    
+        
+    .have-questions-main-accordion{
+       
+        height: auto;
+        width:90%;       
+        margin-right: 0px;
+        margin-bottom: 0px
+    }
+    
+    
+    
+    .accordion-icon{
+       
+        font-size: 27px;
+        color: rgba(0, 0, 0, 0.481);
+    }
+        
+    
+    
+    .have-questions-main-img{
+   
+        background-image: url("https://images.squarespace-cdn.com/content/v1/5ffcb5ab91eb492f96d336f9/1611518265706-OXIRPW4GP8ZFVRNR9U5I/true-agency-JwP90y9wgr4-unsplash.jpg");
+        background-size: cover;
+        background-position-y: bottom;
+        width: 492px;
+        height: 304px;
+        opacity: 0;
+    }
+    
+    .have-questions-main-img-fadein{
+        
+        background-image: url("https://images.squarespace-cdn.com/content/v1/5ffcb5ab91eb492f96d336f9/1611518265706-OXIRPW4GP8ZFVRNR9U5I/true-agency-JwP90y9wgr4-unsplash.jpg");
+        background-size: cover;
+        background-position-y: bottom;
+        width: 302px;
+        height: 200px;
+        transition: transform 650ms ease;
+        opacity: 0;
+        transform: translateX(25px);
+        animation: fadeq-in 650ms forwards;
+
+        position: relative;
+       margin-top: 25px;
+        left: -29px;
+    }
+    
+}
+
+

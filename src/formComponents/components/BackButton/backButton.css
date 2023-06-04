@@ -1,0 +1,101 @@
+.back-button {
+ 
+    top: 91.9%;
+   
+    background-color: #f8f8f8;
+    height: 40px;
+    width: 40px;
+    border-radius: 38px;
+    text-decoration: none;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
+    cursor: pointer;
+    border: none;
+    
+}
+
+.back-button-pay-web{
+   top: 0px;
+   padding-left: 27px;
+     align-self: flex-start;
+     margin: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 38px;
+  width: 90px;
+  height: 30px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 6px -2px rgb(0 0 0 / 50%);
+  font-family: "ProductSans-Light";
+  color: var(--navyBlue);
+  border: none;
+  outline: none;
+}
+
+.back-button-pay-web:hover {
+    box-shadow: 0 3.4px 8px -2px rgb(0 0 0 / 60%);
+  }
+
+.back-icon {
+    font-size: 24px;
+}
+
+
+@media screen and (max-width: 1290px) {
+    
+
+
+}
+
+
+
+@media screen and (max-width: 1080px) {
+   
+   .back-button {
+        top: 88.4% !important;
+        left: 4.2%   !important ;
+        width: 45px  !important;
+        height: 45px !important;
+        background-color: #f8f8f8;
+
+
+        border-radius: 50%;
+        text-decoration: none;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+        cursor: pointer;
+        border: 1px solid rgba(128, 128, 128, 0.114);
+
+    }
+
+   .back-button-pay-plans {
+        top: 89% !important;
+        left: 7.2%   !important ;
+        width: 42px  !important;
+        height: 42px !important;
+        background-color: #f8f8f8;
+        color: black;
+        border-radius: 50%;
+        text-decoration: none;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+        cursor: pointer;
+        border: 1px solid rgba(128, 128, 128, 0.114);
+    }
+   
+
+}

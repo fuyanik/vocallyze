@@ -1,0 +1,380 @@
+.react-swipeable-view-container {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.6, 1) 0s !important;
+}
+
+.css-10vrukk-MuiButtonBase-root-MuiButton-root{
+  font-size: 18px !important;
+
+}
+.css-sccr1d-MuiButtonBase-root-MuiButton-root{
+  font-size: 18px !important;
+
+}
+
+.css-1tw7cq0-MuiPaper-root-MuiMobileStepper-root{
+  height: 40px !important;
+}
+
+.css-26w9jf-MuiMobileStepper-dot{
+  background-color: #142b6f !important;
+  
+}
+
+
+
+.women-slider-circle{
+  display: none;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: rgba(235, 201, 47, 0.954);
+  position: absolute;
+  top: 38vh;
+  left: -20vw;
+  z-index: -1;
+  filter: blur(80px);
+  animation: leftToRight 1400ms ease forwards;
+  opacity: 0;
+
+}
+
+@keyframes leftToRight {
+
+  0% {
+    opacity: 0;
+    transform: translateX(-20vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(15vw);
+  
+   }
+}
+
+
+.birads-full .women-slider{
+  background-color: rgba(242, 241, 245, 0.56);
+  align-self: center !important;
+  padding-top: 4vh;
+}
+
+
+.women-slider {
+  align-self: center;
+  padding-top: 6vh;
+  width: 80%;
+  align-self: center !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  gap: 2vh;
+  z-index: 2;
+  height: 83vh;
+ 
+}
+
+.women-slider__top-texts {
+  position: relative;
+  gap: 1.2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 6vw;
+}
+
+.women-slider__top-text {
+  font-size: 2.125rem;
+  line-height: 2.5rem;
+  font-family: "ProductSans-Light";
+  position: relative;
+  color: #142b6f;
+  z-index: 34;
+
+}
+
+.women-slider__top-text2 {
+  text-align: center !;
+  font-weight: 100 !important;
+  font-size: 1.125rem;
+  line-height: 32px;
+  font-family: "ProductSans-Thin";
+
+  position: relative;
+  color: #142b6f;
+
+
+  z-index: 34;
+}
+
+
+.slick-mainq {
+  position: relative;
+  top: 0vh;
+  left: 20.5vw;
+  display: flex;
+  padding: 5vh;
+  gap: 3vh;
+
+}
+
+.slick-mainq__card__one {
+  padding-left: 0vh;
+  width: 305px;
+  height: 450px;
+
+}
+
+.slick-mainq__card {
+
+
+  padding-left: 0vh;
+  width: 242px;
+  height: 351px;
+}
+
+
+.slick-texts {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-family: "ProductSans-Light";
+  color: #142b6f;
+  gap: 3vh;
+  top: 26vh;
+  left: 6vw;
+
+
+  font-weight: normal;
+  animation: textAnim 800ms ease forwards;
+  z-index: 44;
+  opacity: 0;
+
+}
+
+@keyframes textAnim {
+
+  0% {
+    opacity: 0;
+
+    transform: translateY(35px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0px);
+  }
+}
+
+.slick-texts p:nth-child(1) {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+    z-index: 34;
+}
+
+.slick-texts p:nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: 100 !important;
+
+  z-index: 34;
+}
+
+.slick-texts p:nth-child(3) {
+  position: relative;
+  bottom: 15px;
+  font-weight: 100 !important;
+  font-size: 0.8rem;
+  z-index: 34;
+}
+
+
+
+.slick-footer {
+
+  width: 17vw;
+  bottom: 24vh;
+  position: relative;
+  left: 59vw !important;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1080px) {
+  .birads-full .women-slider{
+    background-color: rgba(242, 241, 245, 0.56);
+    transform: scale(1);
+    padding-top: 8vh;
+  }
+
+  
+  .css-1384nzf-MuiMobileStepper-dots {
+    display: none !important;
+  }
+
+
+  .women-slider {
+    margin-top: 0vh;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    gap: 2vh;
+    z-index: 2;
+    height: auto;
+
+  }
+
+  .women-slider__top-texts {
+    position: relative;
+    left: 4vw;
+    gap: 1.2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0vw;
+  }
+
+  .women-slider__top-text {
+    font-size: 2.125rem;
+    line-height: 2rem;
+    font-family: "ProductSans-Light";
+    position: relative;
+    color: #142b6f;
+    z-index: 34;
+  }
+
+  .women-slider__top-text2 {
+    text-align: start !important;
+    
+    font-weight: 100 !important;
+    font-size: 1rem;
+    line-height: 21px;
+    letter-spacing: 0.4px;
+    font-family: "ProductSans-Thin";
+    width: 90%;
+    
+    position: relative;
+    color: #142b6f;
+  
+  
+    z-index: 34;
+  }
+
+  .slick-mainq {
+    position: relative;
+    top: 0vh;
+    left: 0vw;
+    display: flex;
+    padding: 1.4vh;
+    gap: 3vh;
+
+  }
+
+
+.slick-mainq__card__one {
+  padding-left: 0vh;
+  width: 375px;
+  height: auto;
+
+}
+
+.slick-mainq__card {
+  padding-left: 0vh;
+  width: 298px;
+  height: auto;
+}
+
+
+  .slick-footer {
+    
+    width: 39vw;
+    padding: 0 auto;   
+    bottom: 0vh;
+    position: relative;
+ 
+    left: 58vw !important;
+    bottom: 8vh;
+    transition: 900ms;
+    float: right;
+    
+  
+  }
+
+
+
+
+    .slick-texts {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      left: 4vw;
+      width: 70vw !important;
+      flex-direction: column;
+      position: relative;
+      font-family: "ProductSans-Light";
+      color: #142b6f;
+      gap: 0vh;
+      top: -6vh;
+      font-weight: bold;
+      animation: textAnim 800ms ease forwards;
+      z-index: 44;
+      opacity: 0;
+  
+    }
+
+  .slick-texts p:nth-child(1) {
+    font-size: 1.125rem;
+    line-height: 26px;
+    z-index: 34;
+  }
+
+  .slick-texts p:nth-child(2) {
+    margin-top: 2vh;
+
+    font-size: 1rem;
+    font-weight: 100 !important;
+    z-index: 34;
+
+    
+  }
+  .slick-texts p:nth-child(3) {
+    position: relative;
+    bottom: 0px;
+    font-weight: 100 !important;
+    font-size: 0.8rem;
+    z-index: 34;
+  }
+  
+  
+
+
+.css-1tw7cq0-MuiPaper-root-MuiMobileStepper-root{
+  height: 32px !important;
+}
+.css-10vrukk-MuiButtonBase-root-MuiButton-root{
+  font-size: 16px !important;
+
+}
+.css-sccr1d-MuiButtonBase-root-MuiButton-root{
+  font-size: 16px !important;
+
+}
+
+
+
+
+}
+
+
+
+  

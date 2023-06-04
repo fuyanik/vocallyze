@@ -1,0 +1,97 @@
+.card6-main{
+    bottom: 4%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 46%;
+    color: var(--blue) !important;
+}
+
+.card6-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card6-texts p{
+    font-size: 21px;
+    font-family: "ProductSans-Light";
+    line-height: 27px;
+}
+
+.card6-texts-child{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.card6-texts-child p:nth-child(2) {
+    font-size: 15px !important;
+    font-family: "ProductSans-Light";
+}
+
+.card6-texts-child span{
+    font-size: 21px !important;
+    font-family: "ProductSans-Light";
+    font-weight: bold;
+}
+
+.card6 input{
+    position: relative;
+    bottom: -15px !important;
+}
+
+
+@media screen and (max-width: 1080px){
+    .card6-main{
+        bottom: 10%;
+        width: 89%;
+    }
+
+    
+.card6-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card6-texts p{
+    font-size: var(--form-md);
+    font-family: "ProductSans-Light";
+    line-height: 23px;
+}
+
+.card6-texts-child{
+    display: flex;
+    flex-direction: column;
+
+   
+}
+
+.card6-texts-child p:nth-child(1) {
+    font-size: var(--form-lg)!important;
+    font-family: "ProductSans-Light";
+}
+
+
+.card6-texts-child p:nth-child(2) {
+    color: var(--blue-trans);
+    margin-top: 1.4vh;
+    font-size: 15px !important;
+    font-family: "ProductSans-Light";
+}
+
+.card6-texts-child span{
+    font-size:  var(--form-lg) !important;
+    font-family: "ProductSans-Light";
+    font-weight: bold;
+}
+
+.card6 input{
+    position: relative;
+    bottom: -15px !important;
+}
+
+    
+}

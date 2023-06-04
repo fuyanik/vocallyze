@@ -1,0 +1,357 @@
+
+
+.Navbar {
+    z-index: 50;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 10.8vh;
+    border-top: 5px solid rgb(249, 208, 24);
+    transition: 500ms;
+    top: 0;
+    padding-inline: 0%;
+    justify-content: space-between;
+ 
+    padding-right: 5%;
+    padding-left: 3.2%;
+}
+
+.nav-items-and-button {
+    position: relative;
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item-and-button-right {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.vitamu-logo {
+    display: flex;
+    position: relative;
+    object-fit: cover;
+    width: 190px;
+    z-index: 3;
+    bottom: 0.8vh;
+
+}
+
+.vitamu-logo-2 {
+    display: none;
+}
+
+
+.nav-items {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 45px;
+    font-family: "ProductSans-Light"
+}
+
+.nav-item {
+    font-family: "ProductSans-Light";
+    cursor: pointer;
+    position: relative;
+    color: #142b6f;
+    display: flex;
+    font-size: 17.3333px;
+    letter-spacing: 0.5px;
+    
+}
+
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -3px;
+}
+
+.nav-item:hover {
+    font-weight: bold;
+    
+  
+}
+
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+
+
+
+.button {
+    width: 197px;
+    height: 42.8px;
+    display: flex;
+    border-radius: 25px;
+    background-color: #142b6f;
+    color: white;
+    font-family: "ProductSans-Light";
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.navbar-secondary-button {
+    width: 197px;
+    height: 42.8px;
+    display: flex;
+    border-radius: 25px;
+    border: 1px solid #142b6f;
+    color: #142b6f;
+    background-color: white;
+    font-family: "ProductSans-Light";
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button:hover {
+    background-color: rgb(255, 208, 0);
+    color: #142b6f;
+}
+
+.buttonText {
+    font-size: 15px;
+    font-weight: 500;
+ 
+}
+
+.line {
+    font-size: 20px;
+}
+
+.arrow {
+    font-size: 18px;
+}
+
+
+.navbar-dropdown {
+    transition: 500ms;
+    animation: drowdown-animate 600ms ease-in-out forwards;
+    opacity: 0;
+    align-self: center;
+    left: 80px;
+    top: 77px;
+    position: absolute;
+    background-color: white;
+    width: 87.88%;
+    height: 254px;
+    z-index: 55555;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    border-bottom: 5px solid #142b6f;
+}
+
+@keyframes drowdown-animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.navbar-logo {
+    display: none;
+}
+
+.navbar-dropdown-content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+    position: relative;
+    left: 12.2%;
+    gap: 1vh;
+}
+
+
+.dropdown-left {
+    display: flex;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 370px;
+    position: relative;
+    top: 0px;
+    border-radius: 10px;
+}
+
+.dropdown-right {
+
+    left: 0px;
+    position: relative;
+    display: flex;
+    gap: 40px;
+    top: -5px;
+    width: 44vw;
+}
+
+.dropdown-line1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+
+}
+
+
+.line1-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+
+.dropdown-line1 h2 {
+    font-size: 18px;
+    color: #142b6f;
+    font-family: "ProductSans-Light";
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+
+}
+
+.dropdown-line1 h2::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(249, 208, 24);
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -1.5px;
+    left: 0px;
+    transition: 0.4s;
+}
+
+.dropdown-line1 h2:hover::after {
+    width: 100%;
+}
+
+
+
+.dropdown-line1 p {
+    font-size: 16px;
+    color: #00000083;
+    font-family: "ProductSans-Thin";
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    max-width: 20vw
+}
+
+
+
+.dropdown-line2 h2 {
+    font-size: 18px;
+    color: #000000;
+    font-family: "ProductSans-Light";
+    font-weight: 600;
+
+}
+
+.dropdown-line2 p {
+    font-size: 16px;
+    color: #000000;
+    font-family: "ProductSans-Light";
+    font-weight: 400;
+    max-width: 430px;
+}
+
+.mobile-dropdown-menu {
+    display: none;
+}
+
+
+
+
+/* MOBİLE SCREEN */
+
+@media screen and (max-width: 1080px) {
+    .Navbar {
+        z-index: 50;
+        padding-inline: 4%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        height: 63px;
+        z-index: 99999999999;
+        background-color: white !important;
+        width: 100%;
+        
+
+    }
+
+    .nav-items-and-button {
+        display: none;
+    }
+
+    .nav-item-and-button-right {
+        display: none;
+    }
+
+    .button {
+        display: none;
+
+    }
+
+    .navbar-logo {
+        display: block;
+    }
+
+    .vitamu-logo {
+
+        width: 85.96px;
+        bottom: 0.3vh;
+        right: 1vw;
+        z-index: 3;
+        display: flex;
+        align-self: flex-end;
+
+    }
+
+    .mobile-dropdown-menu {
+
+        display: flex;
+
+        font-size: 16.33px;
+        color: #142b6f;
+        font-family: "ProductSans-Light";
+
+
+
+    }
+
+    .vitamu-logo-2 {
+        display: none;
+    }
+
+
+
+
+}

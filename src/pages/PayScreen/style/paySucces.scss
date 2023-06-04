@@ -1,0 +1,73 @@
+.pay-succes{
+    height: 100vh;
+    width: 100vw;
+    background-color: #142B6F;
+    font-family: "ProductSans-Light";
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5vh;
+    gap: 14vh;
+
+    &__text{
+        color: white !important;
+        font-size: 13px;
+    }
+
+    &__text2{
+        color: white !important;
+        font-weight: bold;
+        font-size: 42px;
+    }
+
+    &__text3{
+        color: white !important;
+        font-size: 18px;
+    }
+
+
+    &__bottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #fff;
+        border-radius: 60px 60px 0px 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        gap: 2px;
+        
+        &__animation{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            bottom: 8vh;
+        }
+
+        &__text{
+            position: relative;
+            bottom: 18vh;
+            font-size: 20px;
+            color: #142B6F;
+            text-align: center;
+        }
+        &__text2{
+            position: relative;
+            bottom: 17vh;
+            font-size: 13px;
+            color: #142b6f7a;
+            text-align: center;
+            width: 60%;
+        }
+
+
+
+    }
+}

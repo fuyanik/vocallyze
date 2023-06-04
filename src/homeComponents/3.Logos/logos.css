@@ -1,0 +1,78 @@
+.logos {
+   margin-top: -2vh;
+   display: flex;
+   width: 80%;
+   justify-content: center;
+   gap: 5px;
+   height: 10vh;
+   align-items: center;
+ 
+  
+}
+
+
+.logo1 {
+background-image: url("https://i.ibb.co/S7H9Bsj/newyork-removebg-preview.png");
+height: 40px;
+width: 210px;
+background-size: cover;
+background-position: center;
+cursor: pointer;
+
+}
+.logo2 {
+    background-image: url("https://i.ibb.co/ZG4fMBz/cnbc-removebg-preview.png");
+    height: 40px;
+    width: 210px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+}
+.logo3 {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5ffcb5ab91eb492f96d336f9/1610654337133-JYLFMZJQ9UY80ZY87KWQ/Screenshot+2021-01-14+at+22.55.20.png?format=300w");
+    height: 40px;
+    width: 210px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.logo4 {
+
+    background-image: url("https://i.ibb.co/SKHygPL/pbs-removebg-preview.png");
+    height: 40px;
+    width: 210px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+   
+}
+
+.solid {
+    color: rgba(165, 42, 42, 0.089);
+    margin-top: 38px;
+    width: 58.9%;
+    height: 0.1px;
+    margin-left: 295px;
+}
+
+#logos-divider{
+
+
+        color: rgba(218, 20, 20, 0.096);
+       
+        height: 6px;
+        padding-top: 18px;
+        margin-left: 310px;
+    
+}
+
+
+@media screen and (max-width: 1080px) { 
+
+    .logos{
+        display: none;
+    }
+    
+        
+    }

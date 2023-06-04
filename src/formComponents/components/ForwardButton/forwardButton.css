@@ -1,0 +1,84 @@
+.forward-button {
+    top: 92%;
+    border: 2px solid rgba(20, 43, 111, 1);
+    background-color: rgba(20, 43, 111, 1);
+    color: #F2EBEB;
+    width: 84px;
+    height: 40px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms;
+    cursor: pointer;
+    
+    
+}
+
+.forward-icon {
+    margin-top: 3px;
+    font-size: 25px;
+    margin-right: 0px;
+    color: white;
+}
+.button-text{
+    font-size: 16px;
+    font-family: "ProductSans-Light";
+}
+
+@media screen and (max-width: 1080px) {
+    
+    .forward-button{
+       
+        top: 88.5%  !important;
+        left: 20% !important;
+        background-color: rgb(20, 43, 111);
+        color: rgb(242, 235, 235);
+        width: 75% !important;
+        height: 40px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 400ms;
+    }
+
+    .forward-button-pay-plans{
+       
+        top: 89%  !important;
+        left: 24% !important;
+        background-color: rgb(20, 43, 111);
+        border: 1px solid white;
+        color: rgb(242, 235, 235);
+        width: 70% !important;
+        height: 40px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-family: "ProductSans-Light" !important;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        letter-spacing: 0.3px;
+        animation: bottom-to-top 1s ease-in-out;
+       
+    }
+
+  
+    
+
+
+
+
+
+
+}
+
+

@@ -1,0 +1,135 @@
+
+
+.dropdown {
+ 
+  z-index: 10000;
+  width: 460px;
+  position: relative;
+ 
+}
+.dropdown,
+.dropdown * {
+  z-index: 10;
+  
+}
+
+.dropdown .dropdown-btn {
+  background-color: rgba(255, 255, 255, 0.638);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #142B6F;
+  border-radius: 2px;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: "ProductSans-Light";
+  color: #142b6fdd;
+  letter-spacing: 0px;
+  border-radius: 25px;
+  
+  
+}
+
+.dropdown-content {
+  font-size: 16px;
+  color: #142B6F;
+  font-family: "ProductSans-Light";
+  overflow-y: scroll;
+  max-height: 220px;
+  position: absolute;
+  /* top: 110%; */
+  border-radius: 10px;
+  left: 0;
+  width: 100%;
+  background-color: #F1F3F7;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+  z-index: 999999999999;
+}
+
+
+.dropdown-content .item {
+ 
+  padding: 14px;
+  cursor: pointer;
+}
+.dropdown-content .item:hover {
+  background: #2e9ed222;
+}
+
+.down-button {
+  font-size: 24px;
+}
+
+
+@media screen and (max-width: 1080px) {
+ 
+
+.dropdown {
+
+
+  z-index: 10000;
+  width: 90%;
+ 
+  
+ 
+}
+.dropdown,
+.dropdown * {
+  z-index: 10;
+  
+}
+
+.dropdown .dropdown-btn {
+  background-color: rgba(193, 185, 185, 0.122);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.577);
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "ProductSans-Light";
+  color: #142B6F;
+  width: 87vw;
+  
+  
+  
+  
+}
+.dropdown-content {
+  color: #142B6F;
+  font-family: "ProductSans-Light";
+  overflow-y: scroll;
+  height: 25vh;
+  position: absolute;
+  /* top: 110%; */
+  border-radius: 10px;
+  left: 0;
+  width: 87vw;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+  
+}
+
+
+.dropdown-content .item {
+  z-index: 99900009;
+  padding: 10px;
+  cursor: pointer;
+}
+.dropdown-content .item:hover {
+  background: #2e9ed222;
+}
+
+.down-button {
+  font-size: 24px;
+}
+
+
+
+  
+}
+

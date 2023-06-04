@@ -1,0 +1,23 @@
+.insurance-accept-text{
+    
+        font-size: 21px;
+        font-family: "ProductSans-Light";
+        color: #222222;
+        line-height: 27px;
+        width: 50%;
+        position: relative;
+        bottom: 6%;
+    
+}
+
+@media screen and (max-width: 1080px) {
+    .insurance-accept-text{
+        font-size: 18px;
+        line-height: 24px;
+        width: 90%;
+        position: relative;
+        bottom: 17%;
+    }
+
+        
+}

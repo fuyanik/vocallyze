@@ -1,0 +1,191 @@
+.footer{
+    margin-top: 55px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+  
+.human-error .footer {
+    width: 100vw;
+    margin-top: 50px;
+    position: relative;
+    right: 28%;
+ 
+}
+
+
+.footer-main {
+    padding-top: 2vh;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  
+}
+
+
+
+.footer-main-left{
+    height: 490px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    font-family: "ProductSans-Thin";
+}
+
+
+.footer-main-left__vitamu-logo{
+    width: 135px;
+}
+
+.footer-main-left__social-logos{
+    height: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+   
+}
+
+.footer-main-left__social-logos__logo{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.footer-main-left__text{
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.footer-main-left__payment-logo{
+    width: 370px;
+}
+
+
+
+.footer-main-left__text{
+    color: rgba(0, 0, 0, 0.43);
+    letter-spacing: 0.2px;
+}
+
+
+
+
+
+
+
+
+.footer-main-left-image{
+    position: relative;
+    height: 460px;
+    width: 450px;
+
+}
+
+.footer-main-right{
+    position: relative;
+
+    max-width: 470px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+
+
+.footer-main-right ul{
+    list-style: none;
+    display: inline-flex;
+    flex-direction: column;
+   
+}
+
+.footer-main-right ul:nth-child(2){
+
+    margin-left: 120px;
+}
+
+
+.footer-main-right ul:nth-child(3){
+    top: 45px;
+    position: relative;
+   
+   
+}
+
+
+.footer-main-right ul:nth-child(4){
+    top: 5px;
+    position: relative;
+  
+    margin-left: 134px;
+    margin-bottom: 180px;
+}
+
+   
+
+
+.footer-main-rgiht-header {
+    font-size: 18px;
+    font-family: "ProductSans-Light";
+    color: #0A2470 !important;
+    font-weight: 700;
+    }
+
+
+.footer-main-right li {
+cursor: pointer;
+padding: 6px;
+letter-spacing: 0.5px;
+font-size: 16px;
+font-family: "ProductSans-Light";
+display: inline-flex;
+display: inline-block;
+width: fit-content;
+position: relative;
+color: black;
+
+}
+
+.footer-main-right p {
+    cursor: pointer;
+    padding: 9px;
+    font-size: 17px;
+    font-family: "ProductSans-Light";
+    display: inline-flex;
+    display: inline-block;
+    width: fit-content;
+    position: relative;
+    color: black;
+    letter-spacing: 0.5px;
+    font-weight: 6  00;
+    right: 4px;
+    }
+    
+
+.footer-main-right li::after{
+    content: "";
+    position: absolute;
+    background-color: #ffd000;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 5.5px;
+    left: 8px;
+    transition: 0.4s;
+}
+
+.footer-main-right li:hover::after{
+width: 90%;
+}
+
+
+

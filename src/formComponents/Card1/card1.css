@@ -1,0 +1,136 @@
+
+.fade-in {
+ animation: FadeIn 0.4s;
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+    }
+}
+
+.card1-main{
+    letter-spacing: 0.6px;
+    font-family: var(--font-light);
+    letter-spacing: 0.5px;
+    bottom: 5%;
+    position: relative;
+    width: 700px;
+
+    left: 0%;
+}
+
+.card1-main-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card1-main-texts p {
+    line-height: 28px;
+    color: var(--blue);
+    font-size: 21px;
+}
+
+.card1 span{
+     letter-spacing: 0.5px;
+     font-weight: bold;
+}
+
+.card1-main-texts-text{
+    font-size: 15px;
+    color: var(--blue-trans);
+    line-height: 28px;
+}
+
+.card1 .nameİnput{
+    padding: 19px 1px !important;
+}
+.nameİnput {
+    border-radius: 5px;
+    padding: 19px 2px;
+    background-color: #F1F3F7;
+    font-weight: 100;
+    margin-top: 14px;
+    display: flex;
+    font-family: "ProductSans-Light";
+    color: rgb(20, 43, 111);
+    font-size: 18px;
+    text-decoration: none;
+    height: 32px;
+    width: 700px;
+    border: none;
+    border-bottom: solid 3px rgb(254, 254, 254);
+}
+
+.nameİnput::placeholder {
+    font-family: "ProductSans-Thin";
+    letter-spacing: 0.6px;
+
+    color: #142b6f8f !important; 
+    font-weight: 200;
+    position: relative;
+    bottom: 0px;
+  }
+
+.nameİnput:focus {
+    outline: none;
+}
+
+.nameİnput:focus {
+    text-decoration: none;
+    border: none;
+    border-bottom: solid 1px rgba(9, 9, 25, 0.726);
+}
+
+
+@media screen and (max-width: 1080px) {
+    .card1-main {
+        bottom: 10%;
+        position: relative;
+        width: 92%;
+    }
+
+    .nameİnput{
+        padding: 17.7px 5px;
+        width: 90vw !important;
+        font-size: var(--form-lg);
+        background-color: transparent;
+    }
+
+    .card1 span{
+        letter-spacing: 0.5px;
+        font-weight: bold;
+        font-size: var(--form-lg);
+   }
+   
+    
+  .card1-main-texts p {
+      line-height: 23px;
+      font-size: var(--form-md);
+  }
+
+    .card1 .nameİnput {
+        margin-top: 15px;
+        display: flex;
+        color: rgb(20, 43, 111);
+        font-size: var(--form-md);
+        text-decoration: none;
+        height: 42px;
+        width: 350px;
+        border: none;
+        border-bottom: solid 1.5px rgba(184, 182, 185, 0.329);
+        
+    }
+    .nameİnput::placeholder{
+        bottom: 0px;
+    }
+
+  
+}
+
+
