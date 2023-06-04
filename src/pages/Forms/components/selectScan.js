@@ -22,16 +22,14 @@ const MenuProps = {
 };
 
 const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder"
+  "MRI",
+  "CT",
+  "Ultrasound",
+  "X-ray",
+  "Pregnancy",
+  "Full Body MRI",
+  
+ 
 ];
 
 function getStyles(name, personName, theme) {
