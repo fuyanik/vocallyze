@@ -322,7 +322,7 @@ const Radiologists = ({isBiradsPage = false, isTeamPage = false} ) => {
 
     //test log
 return (
-  <div className="main self-center">
+  <div className="main self-center lg:relative lg:bottom-10">
     
     <div className="text3 self-start ml-3"> OUR RADIOLOGY TEAM</div>
     <div className="text0">Two of us will recheck your <div className="w-fit inline "><p className="w-fit inline">mammogram</p></div> to make sure you are breast cancer-free. </div>

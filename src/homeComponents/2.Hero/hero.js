@@ -4,7 +4,7 @@ import PrimaryButton from "../microComponents/primaryButton/primaryButton";
 import gV from "../../gV"
 import { useState } from "react";
 import BiRadsDropdown from "../BiRadsDropdown/biRadsDropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SelectBodyParts from "../../pages/Forms/components/selectBodyParts";
 import ScanType from "../../pages/Forms/components/selectScan";
 import IconsMobile from "../Icons/Icons_mobile";
@@ -13,6 +13,9 @@ import IconsMobile from "../Icons/Icons_mobile";
 
 
 const Hero = () => {
+
+
+  const navigate = useNavigate();
 
 
 
@@ -48,42 +51,101 @@ const Hero = () => {
    ]
 
 
-  
-
-
-
-
 
   return (
     <>
-      <div className="w-screen h-[106vh] relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+      <div className="w-screen h-auto py-3 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
       
       <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-full absolute -z-20 opacity-20"  alt="vitamu"/>
         
        
        
-        <div className="flex  mt-20 flex-col gap-8 items-center text-center">
+        <div className="flex lg:mt-32  mt-20 flex-col gap-8 items-center text-center">
          
-         <p className=" text-[36px] text-center leading-[42px] font-bold ">Get your online mammogram second opinion </p>
-         <p>Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
+         <p className=" lg:text-[76px] lg:w-[40vw] lg:leading-[76px]  leading-[42px]  text-[36px] text-center  font-bold ">Get your online mammogram second opinion </p>
+         <p className="lg:text-[20px]" >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
    
+      {  
+
+      gV.mq.matches ? 
         <div className="flex flex-col gap-3">
           <SelectBodyParts/>
           <ScanType/>
          <div className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[320px] h-[48px]  rounded-3xl">Get Started</div>
         </div>
+        :
 
-      <div className="flex flex-col gap-2 items-center text-center">
-          {icons.map((company,idx) => (
-            <div key={idx} className="flex w-[full]  gap-2  items-center">
-            <img
-              className="w-5"
-              src={company.img}
-            />
-            <p className="text-center text-[16px]">{company.text}</p>
+        <div className=" flex w-[65vw] cursor-pointer  h-[56px] ">
+          
+          
+          <div className=" flex items-center px-5 w-[44%] h-full border-t-2 border-l-2 border-b-2 border-[#142b6f] rounded-tl-3xl rounded-bl-3xl bg-white "> 
+            <div className="flex w-full  items-center justify-between "> 
+             
+             <div className="flex gap-2 items-center justify-center">
+               <img width="20" src="https://img.icons8.com/ios-filled/50/ff4949/search--v1.png" alt="search--v1"/>
+               <p> Choose body part </p>
+             </div>
+             
+              <img className="rotate-180" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+              
+           </div>    
           </div>
-          ))}
-      </div>
+         
+          <div className=" flex items-center px-5 w-[34%] h-full border-2 border-[#142b6f] bg-white  "> 
+          <div className="flex w-full  items-center justify-between "> 
+             
+             <div className="flex gap-2 items-center justify-center">
+               <img width="20" src="https://img.icons8.com/ios-filled/50/ff4949/search--v1.png" alt="search--v1"/>
+               <p> Scan Type </p>
+             </div>
+             
+              <img className="rotate-180" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+              
+           </div>  
+          </div>
+        
+        
+          <div onClick={()=>{ navigate("/form") }} className=" flex items-center justify-center gap-3 w-[22%] h-full border-t-2 border-r-2 border-b-2 border-[#142b6f] bg-[#ff4949d2] text-white rounded-tr-3xl rounded-br-3xl  "> 
+            <p>Get Started</p>
+            <p>➔</p>
+           </div>
+          
+         </div>
+
+} 
+
+ 
+  {
+    gV.mq.matches ? 
+     <div className="flex flex-col gap-2 items-center text-center">
+    {icons.map((company,idx) => (
+      <div key={idx} className="flex w-[full]  gap-2  items-center">
+      <img
+        className="w-5"
+        src={company.img}
+      />
+      <p className="text-center text-[16px]">{company.text}</p>
+    </div>
+    ))}
+
+    </div>  : 
+
+
+
+<div className=" flex mt-10 gap-20 self-center ">
+        
+{icons.map((company,idx) => (
+  <div key={idx} className="flex  w-auto  gap-4  items-center">
+  <img
+    className="w-7"
+    src={company.img}
+  />
+  <p className="text-center">{company.text}</p>
+</div>
+))}
+</div>
+  }
+     
 
         
         

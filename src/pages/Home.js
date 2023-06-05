@@ -98,9 +98,7 @@ const Home = () => {
       
        <Hero/>
      
-      {gV.mq.matches ? null :  <Logos/>}
       <Radiologists/>
-      { gV.mq.matches ? <IconsMobile/> :  <Icons/>}
       <SliderStepper/>
       <Testom/>
       <AllOneService/>

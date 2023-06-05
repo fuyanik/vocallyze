@@ -161,7 +161,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
    
     setScrollNumber(window.pageYOffset);
 
-    scrollNumber  < 3 ? setIsWhite(false) : setIsWhite(true);
+    //scrollNumber  < 3 ? setIsWhite(false) : setIsWhite(true);
    
     });
 
