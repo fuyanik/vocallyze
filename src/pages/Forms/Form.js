@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../../homeComponents/1.Navbar/navbar'
 import SelectBodyParts from './components/selectBodyParts'
 import SelectScan from './components/selectScan'
+import "./style/form.css"
 
 import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
 

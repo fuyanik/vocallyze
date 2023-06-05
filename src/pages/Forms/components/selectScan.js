@@ -14,7 +14,7 @@ const ITEM_PADDING_TOP = 8;
 const MenuProps = {
   PaperProps: {
     style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      maxHeight: ITEM_HEIGHT * 3.5 + ITEM_PADDING_TOP,
       width: 270,
       marginTop: 10,
     }
@@ -43,7 +43,7 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function ScanType() {
+export default function SelectBodyParts() {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
@@ -59,12 +59,9 @@ export default function ScanType() {
 
   return (
     <div>
-      <FormControl sx={{ width: 320, border:"1px solid #142b6f", borderRadius:"10px" }}>
-        <InputLabel
-          sx={{ backgroundColor: "white", paddingRight: 1, color: "#142b6f",fontSize: 16 }}
-          id="demo-multiple-chip-label"
-        >
-          Scan Type
+      <FormControl sx={{ width: 320, backgroundColor:"white", height:50, border:"2px solid #142b6f", borderRadius:"30px" }}>
+        <InputLabel sx={{ paddingBottom:20}} >
+           <p className="font-product bg-white text-[#142b6f] relative  bottom-1 font-bold">Scan Type</p>
         </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"

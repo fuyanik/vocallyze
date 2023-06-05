@@ -267,7 +267,7 @@ return (
      <div className="nav-items-and-button">
       <Link style={{ textDecoration: "none", display: "flex" }} to="/">
         {" "}
-        <img className="vitamu-logo z-0" src="https://vitamu.imgix.net/mitrua.png?auto=undefined%2Ccompress" alt="vitamu" />{" "}
+        <img className="vitamu-logo z-0" src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress" alt="vitamu" />{" "}
       </Link>
 
       <ul className="nav-items">
@@ -306,7 +306,7 @@ return (
       {" "}
       <img
         className="navbar-logo vitamu-logo"
-        src="https://vitamu.imgix.net/mitrua.png?auto=undefined%2Ccompress"
+        src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress"
         alt="vitamu"
       />{" "}
     </Link>

@@ -14,7 +14,7 @@ const ITEM_PADDING_TOP = 8;
 const MenuProps = {
   PaperProps: {
     style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      maxHeight: ITEM_HEIGHT * 3.5 + ITEM_PADDING_TOP,
       width: 270,
       marginTop: 10,
     }
@@ -93,12 +93,9 @@ export default function SelectBodyParts() {
 
   return (
     <div>
-      <FormControl sx={{ width: 320, border:"1px solid #142b6f", borderRadius:"10px" }}>
-        <InputLabel
-          sx={{ backgroundColor: "white", paddingRight: 1, color: "#142b6f",fontSize: 16 }}
-          id="demo-multiple-chip-label"
-        >
-          Body Part(s)
+      <FormControl sx={{ width: 320, height:50, backgroundColor:"white", border:"2px solid #142b6f", borderRadius:"30px" }}>
+        <InputLabel sx={{ paddingBottom:20}} >
+           <p className="font-product bg-white text-[#142b6f] relative  bottom-1 font-bold">Body Part-s</p>
         </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
