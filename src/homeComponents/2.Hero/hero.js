@@ -78,12 +78,12 @@ const Hero = () => {
         <div className=" flex w-[65vw] cursor-pointer  h-[56px] ">
           
           
-          <div className=" flex items-center px-5 w-[44%] h-full border-t-2 border-l-2 border-b-2 border-[#142b6f] rounded-tl-3xl rounded-bl-3xl bg-white "> 
+          <div className=" flex items-center px-5 w-[44%] h-full  border-[#142b6f] rounded-tl-[44px] rounded-bl-[44px] bg-white "> 
             <div className="flex w-full  items-center justify-between "> 
              
              <div className="flex gap-2 items-center justify-center">
                <img width="20" src="https://img.icons8.com/ios-filled/50/ff4949/search--v1.png" alt="search--v1"/>
-               <p> Choose body part </p>
+               <p> Choose Body Part </p>
              </div>
              
               <img className="rotate-180" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
@@ -91,7 +91,7 @@ const Hero = () => {
            </div>    
           </div>
          
-          <div className=" flex items-center px-5 w-[34%] h-full border-2 border-[#142b6f] bg-white  "> 
+          <div className=" flex items-center px-5 w-[36%] h-full  bg-white  "> 
           <div className="flex w-full  items-center justify-between "> 
              
              <div className="flex gap-2 items-center justify-center">
@@ -99,13 +99,13 @@ const Hero = () => {
                <p> Scan Type </p>
              </div>
              
-              <img className="rotate-180" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+              <img  className="rotate-180 relative right-6" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
               
            </div>  
           </div>
         
         
-          <div onClick={()=>{ navigate("/form") }} className=" flex items-center justify-center gap-3 w-[22%] h-full border-t-2 border-r-2 border-b-2 border-[#142b6f] bg-[#ff4949d2] text-white rounded-tr-3xl rounded-br-3xl  "> 
+          <div onClick={()=>{ navigate("/form") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-[#ff4949f4] text-white rounded-[44px] relative right-6  "> 
             <p>Get Started</p>
             <p>➔</p>
            </div>

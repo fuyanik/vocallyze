@@ -59,7 +59,7 @@ export default function SelectBodyParts() {
 
   return (
     <div>
-      <FormControl sx={{ width: 320, backgroundColor:"white", height:50, border:"2px solid #142b6f", borderRadius:"30px" }}>
+      <FormControl sx={{ width: 320, backgroundColor:"white", height:50, border:"none", borderRadius:"30px" }}>
         <InputLabel sx={{ paddingBottom:20}} >
            <p className="font-product bg-white text-[#142b6f] relative  bottom-1 font-bold">Scan Type</p>
         </InputLabel>
