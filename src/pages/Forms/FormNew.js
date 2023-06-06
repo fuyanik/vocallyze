@@ -182,13 +182,15 @@ export default function FormNew() {
     const [phone, setPhone] = useState("")
 
     const [left, setLeft] = useState(0)
-    const [isImage, setIsImage] = useState(false)
+
+    const [isDropdown, setDropdown] = useState(false)
+    const [dropdownText, setDropdownText] = useState("Choose your answer.")
 
   return (
     <>
       <Navbar mobileMenuText={"Menu"} />
 
-      <div className="w-screen h-auto flex flex-col items-center gap-3 font-product ">
+      <div className="w-screen h-auto  flex flex-col items-center gap-3 font-product ">
         <img
           src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg"
           className="w-screen h-full absolute -z-20 opacity-20"
@@ -197,7 +199,7 @@ export default function FormNew() {
 
         <div className="mt-12"></div>
 
-        <Stack sx={{ width: "106%" }} spacing={5}>
+        <Stack sx={{ width: "100%" }} spacing={5}>
           <Stepper
             alternativeLabel
             activeStep={activeStep}
@@ -300,6 +302,7 @@ export default function FormNew() {
           </section>
         )}
 
+
         {activeStep == 1 && (
           
           <section className="w-[92vw]  flex flex-col h-auto pt-0 px-2">
@@ -329,7 +332,7 @@ export default function FormNew() {
           
 
             {/* Do You Have Medical Images */}
-           <div className="flex flex-col gap-3">
+           <div className="flex flex-col gap-3 ">
            
             <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[55%] w-[96%]">
               How do you want to share your medical images?
@@ -340,16 +343,23 @@ export default function FormNew() {
       
               <div
                 onClick={() => {
-                  setIsImage(true);
+                  setDropdown(!isDropdown);
                   setLeft("left-[1%]");
                 }}
                 className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
-                <p> Choose your answer.</p>
+                <p> {dropdownText}</p>
                 <p >{"v"}</p>
               </div>
 
-              <div className="absolute w-full"></div>
+             { isDropdown && 
+                <div className="absolute z-40 flex flex-col justify-around  text-[#142b6f] w-full h-[20vh] bg-white top-[8vh] animate-fadeIn rounded-3xl shadow-xl">
+                    <p onClick={()=>{setDropdownText("I can upload the images now or later."); setDropdown(false)}} className="border-b px-5 py-1 ">I can upload the images now or later.</p>
+                    <p onClick={()=>{setDropdownText("I prefer to ship the CD or USB stick."); setDropdown(false)}} className="border-b px-5 py-1 ">I prefer to ship the CD or USB stick.</p>
+                    <p onClick={()=>{setDropdownText("I will share an access code."); setDropdown(false)}} className="border-b px-5 py-1 ">I will share an access code. </p>
+                    <p onClick={()=>{setDropdownText("I authorize you to acquire my images."); setDropdown(false)}} className="px-5 py-1 ">I authorize you to acquire my images.</p>
+                
+                </div>}
 
 
           
