@@ -12,6 +12,7 @@ import StepConnector, {
   stepConnectorClasses
 } from "@mui/material/StepConnector";
 import React, { useState } from "react";
+import Navbar from "../../../homeComponents/1.Navbar/navbar";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -182,80 +183,95 @@ export default function StepperLight() {
     const [phone, setPhone] = useState("")
 
   return (
-   <div className="w-screen h-screen flex flex-col items-center gap-5 ">
-          <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-[100vh] absolute -z-20 opacity-40 rotate-180"  alt="vitamu"/>
+   <>
 
-   
-     <div></div>
-     <Stack sx={{ width: "100%" }} spacing={4}>
-       <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
-         {steps.map((label) => (
-           <Step key={label}>
-             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-           </Step>
-         ))}
-       </Stepper>
-     </Stack>
+    <Navbar
+      mobileMenuText={'Menu'}
+      mobileMenuTo ={"/mobileNavMenu"}
+      />
 
-     <section className="w-[92vw] h-[67vh]  bg-white p-5 rounded-xl bg-opacity-30 backdrop-filter backdrop-blur-lg">
- 
+    <div className="w-screen h-auto flex flex-col items-center gap-5 font-product ">
+       <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-full absolute -z-20 opacity-20"  alt="vitamu"/>
+           
+    
+    
+      <div className="mt-12"></div>
+      <Stack sx={{ width: "100%" }} spacing={4}>
+        <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </Stack>
+    
+      <section className="w-[92vw] flex flex-col h-auto pt-0 px-2">
+    
+    
+            <header className='gap-2  flex flex-col pb-2 border-dashed border-b border-[#1a0707] '>
+               <p className='text-[26px] font-bold text-[#142b6f]'>Your peace of mind starts here.</p>
+               <p className='text-sm text-[#142b6f]'>Search for MRI, CT, Ultrasound and pregnancy scans near you and book online in minutes.</p>
+             </header>
 
-           <header className='gap-2  flex flex-col pb-2 border-dashed border-b border-[#1a0707] '>
-              <p className='text-[26px] font-bold text-[#142b6f]'>Your peace of mind starts.</p>
-              <p className='text-sm text-[#142b6f]'>Search for MRI, CT, Ultrasound and pregnancy scans near you and book online in minutes.</p>
-            </header>
 
-           <div className="flex flex-col gap-3 mt-4">
-              <p className="text-lg text-[#142b6f] font-bold mt-4">
-                {" "}
-                What is your name?
-              </p>
-              <textarea
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                type="text"
-                className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${name != "" ? " border-none" : "border-none  " }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
-                placeholder=""
-              />
-             </div>
+               {/* Name */}
+              <div className="flex flex-col gap-3 mt-4">
+               <p className="text-lg text-[#142b6f] font-bold mt-4">
+                 {" "}
+                 What is your name?
+               </p>
+               <textarea
+                 value={name}
+                 onChange={(e) => {
+                   setName(e.target.value);
+                 }}
+                 type="text"
+                 className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${name != "" ? " border-none" : "border-none  " }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+                 placeholder=""
+               />
+              </div>
 
-             <div className="flex flex-col gap-3">
-              <p className="text-lg text-[#142b6f] font-bold mt-4">
-                {" "}
-                Mail Adres?
-              </p>
-              <textarea
-                value={mail}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                type="text"
-                className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${name != "" ? " border-none" : "border-none  " }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
-                placeholder=""
-              />
-             </div>
+              {/* Mail */}
+              <div className="flex flex-col gap-3">
+               <p className="text-lg text-[#142b6f] font-bold mt-4">
+                 {" "}
+                 Mail Adress
+               </p>
+               <textarea
+                 value={mail}
+                 onChange={(e) => {
+                   setName(e.target.value);
+                 }}
+                 type="text"
+                 className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${name != "" ? " border-none" : "border-none  " }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+                 placeholder=""
+               />
+              </div>
+    
+              {/* Phone */}
+              <div className="flex flex-col gap-3">
+               <p className="text-lg text-[#142b6f] font-bold mt-4">
+                 {" "}
+                Phone Number
+               </p>
+               <textarea
+                 value={phone}
+                 onChange={(e) => {
+                   setName(e.target.value);
+                 }}
+                 type="text"
+                 className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${name != "" ? " border-none" : "border-none  " }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+                 placeholder=""
+               />
+              </div>
 
-             <div className="flex flex-col gap-3">
-              <p className="text-lg text-[#142b6f] font-bold mt-4">
-                {" "}
-               Phone Number?
-              </p>
-              <textarea
-                value={phone}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                type="text"
-                className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${name != "" ? " border-none" : "border-none  " }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
-                placeholder=""
-              />
-             </div>
+      <div onClick={()=>{setActiveStep(activeStep + 1 )}} className="bg-[#ff4949] w-[85vw] mt-10  flex items-center justify-center  py-3 rounded-3xl text-white">Next</div>
 
-    </section> 
-
-     <div onClick={()=>{setActiveStep(activeStep + 1 )}} className="bg-[#ff4949] w-[92vw]  flex items-center justify-center  py-3 rounded-3xl text-white">Next</div>
-   </div>
+    
+     </section> 
+    
+    </div>
+   </>
   );
 }

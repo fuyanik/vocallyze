@@ -61,7 +61,7 @@ export default function SelectBodyParts() {
     <div>
       <FormControl sx={{ width: 320, backgroundColor:"white", height:50, border:"none", borderRadius:"30px" }}>
         <InputLabel sx={{ paddingBottom:20}} >
-           <p className="font-product bg-white text-[#142b6f] relative  bottom-1 font-bold">Scan Type</p>
+           <p className="font-product  text-[#142b6f] relative  bottom-1 font-bold">Scan Type</p>
         </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
