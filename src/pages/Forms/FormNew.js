@@ -216,7 +216,7 @@ export default function FormNew() {
 
         {activeStep == 0 && (
           
-          <section className="w-[92vw]  flex flex-col h-auto pt-0 px-2">
+          <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
           
           <div className="flex flex-col gap-2">
               <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
@@ -226,7 +226,7 @@ export default function FormNew() {
             
                 <p className="text-[18px] font-bold text-[#142b6f]">
                   {" "}
-                  Step {activeStep} of 5
+                  Step {activeStep + 1} of 5
                 </p>
             
                 
@@ -305,7 +305,7 @@ export default function FormNew() {
 
         {activeStep == 1 && (
           
-          <section className="w-[92vw]  flex flex-col h-auto pt-0 px-2">
+          <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
           
             <header className="flex flex-col gap-2">
               
@@ -316,7 +316,7 @@ export default function FormNew() {
             
                 <p className="text-[18px] font-bold text-[#142b6f]">
                   {" "}
-                  Step {activeStep} of 5
+                  Step {activeStep + 1} of 5
                 </p>
             
                 
@@ -344,7 +344,7 @@ export default function FormNew() {
               <div
                 onClick={() => {
                   setDropdown(!isDropdown);
-                  setLeft("left-[1%]");
+                 
                 }}
                 className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >

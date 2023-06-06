@@ -1,25 +1,6 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import Chip from "@mui/material/Chip";
+import { useState } from "react";
 
-const ITEM_HEIGHT = 58;
-const ITEM_PADDING_TOP = 8;
-
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 3.5 + ITEM_PADDING_TOP,
-      width: 270,
-      marginTop: 10,
-    }
-  }
-};
 
 const names = [
  "Brain/Head",
@@ -66,70 +47,47 @@ const names = [
 
 ];
 
-function getStyles(name, personName, theme) {
-  return {
-   
 
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium
-  };
-}
 
 export default function SelectBodyParts() {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
 
-  const handleChange = (event) => {
-    const {
-      target: { value }
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
+  const [isDropdown, setDropdown] = useState(false)
+  const [dropdownText, setDropdownText] = useState("Choose your answer.")
 
   return (
-    <div>
-      <FormControl sx={{ width: 320, height:50, backgroundColor:"white", border: "none", borderRadius:"30px" }}>
-        <InputLabel sx={{ paddingBottom:20}} >
-           <p className="font-product  text-[#142b6f] relative  bottom-1 font-bold">Body Part-s</p>
-        </InputLabel>
-        <Select
-          labelId="demo-multiple-chip-label"
-          id="demo-multiple-chip"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-          renderValue={(selected) => (
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 0.5
-              }}
-            >
-              {selected.map((value) => (
-                <Chip key={value} label={value} />
-              ))}
-            </Box>
-          )}
-          MenuProps={MenuProps}
-        >
-          {names.map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, personName, theme)}
-            >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+<div>
+
+    {/* Do You Have Medical Images */}
+    <div className="flex flex-col gap-3 ">
+           
+         
+     
+           <div className="  lg:w-[16vw] w-[77vw] h-[7.4vh] gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
+           
+     
+             <div
+               onClick={() => {
+                 setDropdown(!isDropdown);
+               }}
+               className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+             >
+               <p className="font-bold"> Body Part(s)</p>
+               <p >{"v"}</p>
+             </div>
+
+            { isDropdown && 
+               <div className="absolute z-90 flex flex-col justify-around  text-[#142b6f] w-full h-[20vh] bg-white top-[8vh] animate-fadeIn rounded-3xl shadow-xl">
+                   <p onClick={()=>{setDropdownText("I can upload the images now or later."); setDropdown(false)}} className="border-b px-5 py-1 ">I can upload the images now or later.</p>
+                   <p onClick={()=>{setDropdownText("I prefer to ship the CD or USB stick."); setDropdown(false)}} className="border-b px-5 py-1 ">I prefer to ship the CD or USB stick.</p>
+                   <p onClick={()=>{setDropdownText("I will share an access code."); setDropdown(false)}} className="border-b px-5 py-1 ">I will share an access code. </p>
+                   <p onClick={()=>{setDropdownText("I authorize you to acquire my images."); setDropdown(false)}} className="px-5 py-1 ">I authorize you to acquire my images.</p>
+               
+               </div>}
+
+
+         
+           </div>
+          </div>
+</div>
   );
 }
