@@ -269,7 +269,7 @@ export default function FormNew() {
               <textarea
                 value={mail}
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setMail(e.target.value);
                 }}
                 type="text"
                 className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
@@ -288,7 +288,7 @@ export default function FormNew() {
               <textarea
                 value={phone}
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setPhone(e.target.value);
                 }}
                 type="text"
                 className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
