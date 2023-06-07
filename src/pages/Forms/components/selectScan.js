@@ -3,47 +3,12 @@ import { useState } from "react";
 
 
 const names = [
- "Brain/Head",
- "Lumbar Spine",
- "Knee - Right",
-  "Knee - Left",
-  "Shoulder - Right",
-  "Shoulder - Left",
-  "Cervical Spine",
-  "Thoracic Spine",
-  "Lumbar Spine",
-  "Hip - Right",
-  "Hip - Left",
-  "Elbow - Right",
-  "Elbow - Left",
-  "Wrist - Right",
-  "Wrist - Left",
-  "Ankle - Right",
-  "Ankle - Left",
-  "Foot - Right",
-  "Foot - Left",
-  "Hand - Right",
-  "Hand - Left",
-  "Chest",
-  "Abdomen",
-  "Pelvis",
-  "Neck",
-  "Shoulder",
-  "Arm",
-  "Forearm",
-  "Wrist",
-  "Hand",
-  "Thigh",
-  "Knee",
-  "Lower Leg",
-  "Ankle",
-  "Foot",
-  "Spine",
- 
-  "Lumbar Spine",
-  "Sacrum",
-  "Coccyx",
-  "Hip",
+ "Mammogram",
+  "MRI",
+  "CT Scan",
+  "Ultrasound",
+  "X-Ray",
+
 
 ];
 
@@ -52,39 +17,63 @@ const names = [
 export default function SelectScan() {
 
   const [isDropdown, setDropdown] = useState(false)
-  const [dropdownText, setDropdownText] = useState("Choose your answer.")
+
+   const[bodyParts, setBodyParts] = useState([])
+  
+
+
 
   return (
-
-    <div className="flex flex-col gap-3 z-0">
+   
+    <div className="flex flex-col gap-3 ">
            
          
      
-           <div className="  lg:w-[16vw] w-[77vw] h-[7.4vh] gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
+           <div className="  lg:w-[16vw] w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
            
      
              <div
                onClick={() => {
                  setDropdown(!isDropdown);
                }}
-               className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+               className="h-auto py-3 w-[120%] relative text-[#142b6f] flex-wrap  gap-2 bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
-               <p className="font-bold"> Scan Type</p>
-               <p >{"v"}</p>
-             </div>
+                {/* Default Place Holder */}
+                { bodyParts.length == 0 && <p className="font-bold">Scan Type</p>}
 
+                {/* All User Selected Body Parts */}
+                {bodyParts.map((bodyPart, idx) => (
+                 <div className="flex gap-1 items-center justify-between bg-[#142b6f] text-white px-3 py-[6px] rounded-2xl animate-fadeIn ">
+                   <p className="text-[12px] tracking-wider "> {bodyPart} </p>
+                   <p onClick={()=>{ setBodyParts(prevBodyParts => prevBodyParts.filter(part => part !== bodyPart)); setDropdown(false)}} className="text-[11px] font-bold relative left-1">X</p>
+                 </div>
+                ))}
+
+              
+              
+               <p className={`absolute right-4 text-[13px] ${isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} >{"▼"}</p>
+             </div>
+             
+            {/* Dropdown White Area */}
             { isDropdown && 
-               <div className="absolute z-90 flex flex-col justify-around  text-[#142b6f] w-full h-[20vh] bg-white top-[8vh] animate-fadeIn rounded-3xl shadow-xl">
-                   <p onClick={()=>{setDropdownText("I can upload the images now or later."); setDropdown(false)}} className="border-b px-5 py-1 ">I can upload the images now or later.</p>
-                   <p onClick={()=>{setDropdownText("I prefer to ship the CD or USB stick."); setDropdown(false)}} className="border-b px-5 py-1 ">I prefer to ship the CD or USB stick.</p>
-                   <p onClick={()=>{setDropdownText("I will share an access code."); setDropdown(false)}} className="border-b px-5 py-1 ">I will share an access code. </p>
-                   <p onClick={()=>{setDropdownText("I authorize you to acquire my images."); setDropdown(false)}} className="px-5 py-1 ">I authorize you to acquire my images.</p>
+            
+               <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-[#142b6f] w-full h-[30vh] overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
+               {names.map((name, idx) => (
+                  <p 
+                  className={` ${bodyParts.includes(name) && "border-l-[3px] border-[#142b6f]" } py-[3px] px-3  `}
+                  onClick={()=>{setDropdown(false); !bodyParts.includes(name) && setBodyParts(prevBodyParts => [...prevBodyParts, name]);  }  }>
+                    
+                    {name}
+                 
+                  </p>
+               ))}
                
                </div>}
 
 
          
            </div>
+         
           </div>
 
   );

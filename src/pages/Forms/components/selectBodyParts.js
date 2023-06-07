@@ -40,10 +40,7 @@ const names = [
   "Foot",
   "Spine",
  
-  "Lumbar Spine",
-  "Sacrum",
-  "Coccyx",
-  "Hip",
+ 
 
 ];
 
