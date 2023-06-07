@@ -60,21 +60,24 @@ const Hero = () => {
         
        
        
-        <div className="flex lg:mt-32  mt-20 flex-col gap-8 items-center text-center">
+        <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-center text-center">
          
          <p className=" lg:text-[76px] lg:w-[40vw] lg:leading-[76px]  leading-[42px]  text-[36px] text-center  font-bold ">Get your online mammogram second opinion </p>
          <p className="lg:text-[20px]" >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
    
       {  
 
+      /*  Mobile */
       gV.mq.matches ? 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col items-center gap-3">
           <SelectBodyParts/>
           <ScanType/>
          <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[320px] h-[48px]   rounded-3xl">Get Started</div>
         </div>
-        :
-
+      
+      
+      :
+      /* Desktop */
         <div className=" flex w-[65vw] cursor-pointer  h-[56px] ">
           
           

@@ -55,10 +55,8 @@ export default function SelectScan() {
   const [dropdownText, setDropdownText] = useState("Choose your answer.")
 
   return (
-<div>
 
-    {/* Do You Have Medical Images */}
-    <div className="flex flex-col gap-3 ">
+    <div className="flex flex-col gap-3 z-0">
            
          
      
@@ -88,6 +86,6 @@ export default function SelectScan() {
          
            </div>
           </div>
-</div>
+
   );
 }
