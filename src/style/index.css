@@ -12,7 +12,17 @@
  
 }
 
-
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+  display : none !important;
+  }
+  
+  
+  
+  .css-w66kx-MuiChip-root{
+    background-color: #142b6f !important;
+    color: #fff !important;
+  }
+  
 
 .button-2 {
   cursor: pointer;
