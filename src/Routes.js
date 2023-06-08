@@ -8,9 +8,7 @@ import {
 
   
 import Home from './pages/Home';
-import Form from './pages/Forms/Form.js';
 import PayScreen from './pages/PayScreen/payScreen';
-import StepperLight from './pages/Forms/components/stepperLight';
 import FormNew from './pages/Forms/FormNew';
   
 
@@ -22,7 +20,6 @@ export default function App() {
    <Router>
         <Routes> 
             <Route path="/" element={<Home/>}/>  
-            <Route path="/form" element={<Form/>}/>  
             <Route path="/pay-screen" element={<PayScreen/>} />
             <Route path="/form-new" element={<FormNew/>} />
 

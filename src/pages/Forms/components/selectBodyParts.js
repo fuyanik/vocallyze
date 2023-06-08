@@ -91,7 +91,7 @@ export default function SelectBodyParts() {
                <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-[#142b6f] w-full h-[30vh] overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
                {names.map((name, idx) => (
                   <p 
-                  className={` border-l-[3px] border-[#142b6f]  py-[3px] px-3  `}
+                  className={` ${bodyParts.includes(name) && "border-l-[3px] border-[#142b6f]" } py-[3px] px-3  `}
                   onClick={()=>{setDropdown(false); !bodyParts.includes(name) && setBodyParts(prevBodyParts => [...prevBodyParts, name]);  }  }>
                     
                     {name}

@@ -19,7 +19,9 @@ const Hero = () => {
 
 
 
+  const [isHover, setIsHover] = useState(false);
   
+  const hero_bg = window.innerWidth > 1080 ? "https://vitamu.imgix.net/banner.png?auto=undefined%2Ccompress": "https://vitamu.imgix.net/bg_mob.png?auto=undefined%2Ccompress";
 
 
 

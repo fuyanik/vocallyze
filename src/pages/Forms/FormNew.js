@@ -87,30 +87,6 @@ QontoStepIcon.propTypes = {
   completed: PropTypes.bool
 };
 
-const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-  [`&.${stepConnectorClasses.alternativeLabel}`]: {
-    top: 22
-  },
-  [`&.${stepConnectorClasses.active}`]: {
-    [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
-    }
-  },
-  [`&.${stepConnectorClasses.completed}`]: {
-    [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
-    }
-  },
-  [`& .${stepConnectorClasses.line}`]: {
-    height: 3,
-    border: 0,
-    backgroundColor:
-      theme.palette.mode === "dark" ? theme.palette.grey[100] : "#eaeaf0",
-    borderRadius: 1
-  }
-}));
 
 const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   backgroundColor:
@@ -174,7 +150,7 @@ ColorlibStepIcon.propTypes = {
 const steps = ["", "", "", "", "",] ;
 
 
-// test
+
 
 
 
@@ -187,103 +163,105 @@ export default function FormNew() {
     const [phone, setPhone] = useState("")
     const [question, setQuestion] = useState("")
 
-    const [left, setLeft] = useState(0)
+   
 
     const [isDropdown, setDropdown] = useState(false)
     const [dropdownText, setDropdownText] = useState("Choose your answer.")
 
-    const ContactDetail = () => {
-      return (
-        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
-              
-        <div className="flex flex-col gap-2">
-            <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-              <p className="text-[22px] font-bold text-[#142b6f]">
-                Contact Details
-              </p>
-          
-              <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
-                {" "}
-                Step {activeStep + 1} of 5
-              </p>
-          
-              
-            </header>
-    
-            <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
-            {" "}
-            We respect your privacy. Your contact details will not be shared
-            with anyone.
-          </p>
-        </div>
-    
-        
-    
-          {/* Name */}
-          <div className="flex flex-col gap-1 mt-3">
-            <p className="text-lg text-[#142b6f] font-bold mt-4">
-              {" "}
-              What is your name?
-            </p>
-            <textarea
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-              type="text"
-              className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-                name != "" ? " border-none" : "border-none"
-              }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
-              placeholder="Type your name here."
-            />
-          </div>
-    
-          {/* Mail */}
-          <div className="flex flex-col gap-1">
-            <p className="text-lg text-[#142b6f] font-bold mt-4">
-              {" "}
-              Mail Address
-            </p>
-            <textarea
-              value={mail}
-              onChange={(e) => {
-                setMail(e.target.value);
-              }}
-              type="text"
-              className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-                name != "" ? " border-none" : "border-none  "
-              }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
-              placeholder="Type your name email here."
-            />
-          </div>
-    
-          {/* Phone */}
-          <div className="flex flex-col gap-1">
-            <p className="text-lg text-[#142b6f] font-bold mt-4">
-              {" "}
-              Phone Number
-            </p>
-            <textarea
-              value={phone}
-              onChange={(e) => {
-                setPhone(e.target.value);
-              }}
-              type="text"
-              className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-                name != "" ? " border-none" : "border-none  "
-              }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
-              placeholder="Type your phone number here."
-            />
-          </div>
-    
-         
-        </section>
-      );
-    };
 
-    const MedicalImages = () => {
-      return (
-        <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
+    {/* Start Step Contents */}
+    
+    {/* Contact Detail */}
+    const ContactDetail =  
+           <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+              
+    <div className="flex flex-col gap-2">
+        <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
+          <p className="text-[22px] font-bold text-[#142b6f]">
+            Contact Details
+          </p>
+      
+          <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+            {" "}
+            Step {activeStep + 1} of 5
+          </p>
+      
+          
+        </header>
+
+        <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
+        {" "}
+        We respect your privacy. Your contact details will not be shared
+        with anyone.
+      </p>
+    </div>
+
+    
+
+      {/* Name */}
+      <div className="flex flex-col gap-1 mt-3">
+        <p className="text-lg text-[#142b6f] font-bold mt-4">
+          {" "}
+          What is your name?
+        </p>
+        <textarea
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          type="text"
+          className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
+            name != "" ? " border-none" : "border-none"
+          }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+          placeholder="Type your name here."
+        />
+      </div>
+
+      {/* Mail */}
+      <div className="flex flex-col gap-1">
+        <p className="text-lg text-[#142b6f] font-bold mt-4">
+          {" "}
+          Mail Address
+        </p>
+        <textarea
+          value={mail}
+          onChange={(e) => {
+            setMail(e.target.value);
+          }}
+          type="text"
+          className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
+            name != "" ? " border-none" : "border-none  "
+          }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+          placeholder="Type your name email here."
+        />
+      </div>
+
+      {/* Phone */}
+      <div className="flex flex-col gap-1">
+        <p className="text-lg text-[#142b6f] font-bold mt-4">
+          {" "}
+          Phone Number
+        </p>
+        <textarea
+          value={phone}
+          onChange={(e) => {
+            setPhone(e.target.value);
+          }}
+          type="text"
+          className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
+            name != "" ? " border-none" : "border-none  "
+          }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+          placeholder="Type your phone number here."
+        />
+      </div>
+
+     
+           </section>
+      
+    
+    {/* Medical Images */}
+    const MedicalImages =
+          <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
           
             <header className="flex flex-col gap-2">
               
@@ -410,12 +388,10 @@ export default function FormNew() {
             
           </section>
         
-      )
-    };
-
-    const HistorySymptoms = () => {
-      return(
-        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-[#142b6f]">
+    
+   {/* History Symptoms */}
+    const HistorySymptoms = 
+         <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-[#142b6f]">
           
         <div className="flex flex-col gap-2">
             
@@ -460,10 +436,8 @@ export default function FormNew() {
       
 
          
-        </section>
-      )
-    };
-
+         </section>
+    
 
 
     
@@ -498,29 +472,36 @@ export default function FormNew() {
         </Stack>
 
 
-        {activeStep == 0 && ( <ContactDetail/>  )}
+        {activeStep == 0 && ContactDetail }
         {activeStep == 1 && (  <div> radiologists </div>  )}
-        {activeStep == 2 && (  <HistorySymptoms/>)  }
-        {activeStep == 3 && ( <MedicalImages/>   )}
+        {activeStep == 2 &&  HistorySymptoms  }
+        {activeStep == 3 &&  MedicalImages  }
+
         {activeStep == 4 && (  <div> insurance </div>  )}
 
         
        
      
-       {/* Next Button */}
-       <div className="absolute w-[85vw] justify-between  bottom-5 mt-10  flex items-center ">
-        { activeStep !=0 && <div   onClick={() => {
-                 setActiveStep(activeStep - 1);
-               }} className="w-12 h-12 animate-fadeIn rounded-full bg-[#ff4949a5] flex items-center justify-center rotate-90 text-white"> V</div>}
+        {/* Bottom Buttons */}
        
-        <div
+       <div className="absolute w-[85vw] justify-between  bottom-5 mt-10  flex items-center ">
+        
+        
+        {/* Back Button */}
+        { activeStep !=0 && <button  onClick={() => {
+                 setActiveStep(activeStep - 1);
+                }} className="w-12 h-12 absolute z-20   animate-leftToRight rounded-full bg-[#ff4949be] flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
+       
+       {true && <div> </div> }
+       {/* Next Button */}
+        <button
                onClick={() => {
                  setActiveStep(activeStep + 1);
                }}
-               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" }  relative duration-300 self-end right-0 float-right  flex items-center justify-center  py-3 rounded-3xl text-white`}
+               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" }  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-3 rounded-3xl text-white`}
              >
                Next
-        </div>
+        </button>
        </div>
 
        
