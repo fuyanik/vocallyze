@@ -232,7 +232,7 @@ export default function FormNew() {
               }}
               type="text"
               className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-                name != "" ? " border-none" : "border-none  "
+                name != "" ? " border-none" : "border-none"
               }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
               placeholder="Type your name here."
             />

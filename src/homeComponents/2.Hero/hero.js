@@ -19,9 +19,7 @@ const Hero = () => {
 
 
 
-  const [isHover, setIsHover] = useState(false);
   
-  const hero_bg = window.innerWidth > 1080 ? "https://vitamu.imgix.net/banner.png?auto=undefined%2Ccompress": "https://vitamu.imgix.net/bg_mob.png?auto=undefined%2Ccompress";
 
 
 
@@ -119,6 +117,8 @@ const Hero = () => {
 
  
   {
+
+    /* Hero Bottom Icons */
     gV.mq.matches ? 
      <div className="flex flex-col gap-2 items-center text-center">
     {icons.map((company,idx) => (
