@@ -353,7 +353,7 @@ export default function FormNew() {
           <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m</p>
             
-            <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg shadow-3xl">
+            <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
               <p className="mt-2">Vitamu, Inc.</p>
               <p>169 Madison Ave #2305 New York, NY 10016</p>
               <p>+1 646 820 1932</p>
@@ -366,7 +366,7 @@ export default function FormNew() {
           <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">Email adresi yazma. Email adresi yazma Email adresi yazma Email adresi yazma</p>
             
-            <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg shadow-3xl">
+            <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
               <p className="">access@mitrua.com</p>
               
             </div>
