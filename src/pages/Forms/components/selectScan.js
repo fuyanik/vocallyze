@@ -39,7 +39,7 @@ export default function SelectScan() {
                className="h-auto py-3 w-[120%] relative text-[#142b6f] flex-wrap  gap-2 bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
                 {/* Default Place Holder */}
-                { bodyParts.length == 0 && <p className="font-bold">Scan Type</p>}
+                { bodyParts.length == 0 && <p className="font-bold">Scan Type(s)</p>}
 
                 {/* All User Selected Body Parts */}
                 {bodyParts.map((bodyPart, idx) => (

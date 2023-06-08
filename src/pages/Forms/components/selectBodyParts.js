@@ -3,9 +3,9 @@ import { useState } from "react";
 
 
 const names = [
- "Brain/Head",
- "Lumbar Spine",
- "Knee - Right",
+  "Brain/Head",
+  "Lumbar Spine",
+  "Knee - Right",
   "Knee - Left",
   "Shoulder - Right",
   "Shoulder - Left",
@@ -49,9 +49,7 @@ const names = [
 export default function SelectBodyParts() {
 
   const [isDropdown, setDropdown] = useState(false)
-  const [dropdownText, setDropdownText] = useState("Body Part(s)")
-
-   const[bodyParts, setBodyParts] = useState([])
+  const[bodyParts, setBodyParts] = useState([])
   
 
 

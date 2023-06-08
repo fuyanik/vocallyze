@@ -72,7 +72,7 @@ const Hero = () => {
         <div className="flex flex-col items-center gap-3">
           <SelectBodyParts/>
           <ScanType/>
-         <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[320px] h-[48px]   rounded-3xl">Get Started</div>
+         <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
         </div>
       
       
