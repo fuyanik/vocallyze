@@ -103,8 +103,8 @@ app.post("/users", async (req, res) => {
 
 //Vitamu 
 
-const stripe = require("stripe")(keys.stripeSecretKey);
-//const stripe = require("stripe")("sk_test_51LOrQYKGr3XuaAt4d9fT0XXB8CrL4GKbBHG3t8alb1Yo1aIULBvpbUm8UwDZNWNx5YRSatAzkHJH3Jlx25qlPtow00dTA8p2Ij");
+//const stripe = require("stripe")(keys.stripeSecretKey);
+const stripe = require("stripe")("sk_test_51LOrQYKGr3XuaAt4d9fT0XXB8CrL4GKbBHG3t8alb1Yo1aIULBvpbUm8UwDZNWNx5YRSatAzkHJH3Jlx25qlPtow00dTA8p2Ij");
 
 
 

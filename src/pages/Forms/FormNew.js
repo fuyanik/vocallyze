@@ -15,6 +15,7 @@ import React, { useState } from "react";
 import Navbar from "../../homeComponents/1.Navbar/navbar";
 import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
 import Card9 from "../../formComponents/Card9/card9";
+import SwiperPage from "../Swiper/swiper";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -149,10 +150,15 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node
 };
 
-const steps = ["", "", "", "", "",] ;
+const steps = ["", "", "", "", "",];
 
-
-
+const medicalSendType = [
+  "I can upload the images now or later.",
+  "I prefer to ship the CD or USB stick.",
+  "I will share an access code.",
+  "I authorize you to acquire my images."
+  
+];
 
 
 
@@ -172,10 +178,14 @@ export default function FormNew() {
 
 
     {/* Start Step Contents */}
+
+     const contactInputStyle = "w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-[#ff4949] focus:ring-1 focus:ring-[#ff4949] "
+     
+     
     
     {/* Contact Detail */}
     const ContactDetail =  
-           <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+    <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
               
     <div className="flex flex-col gap-2">
         <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
@@ -202,21 +212,22 @@ export default function FormNew() {
 
       {/* Name */}
       <div className="flex flex-col gap-1 mt-2">
+        
         <p className="text-lg text-[#142b6f] font-bold mt-4">
           {" "}
           What is your name?
         </p>
-        <textarea
+       
+        <input
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
           type="text"
-          className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-            name != "" ? " border-none" : "border-none"
-          }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+          className={contactInputStyle}
           placeholder="Type your name here."
         />
+
       </div>
 
       {/* Mail */}
@@ -225,15 +236,13 @@ export default function FormNew() {
           {" "}
           Mail Address
         </p>
-        <textarea
+        <input
           value={mail}
           onChange={(e) => {
             setMail(e.target.value);
           }}
           type="text"
-          className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-            name != "" ? " border-none" : "border-none  "
-          }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+          className={contactInputStyle}
           placeholder="Type your name email here."
         />
       </div>
@@ -244,21 +253,19 @@ export default function FormNew() {
           {" "}
           Phone Number
         </p>
-        <textarea
+        <input
           value={phone}
           onChange={(e) => {
             setPhone(e.target.value);
           }}
-          type="text"
-          className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-            name != "" ? " border-none" : "border-none  "
-          }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+          type="phone"
+          className={contactInputStyle}
           placeholder="Type your phone number here."
         />
       </div>
 
      
-           </section>
+    </section>
 
 
     {/* Radiologist */}
@@ -299,153 +306,146 @@ export default function FormNew() {
 
 
     {/* Medical Images */}
-    const MedicalImages =
-          <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
-          
-            <header className="flex flex-col gap-2">
-              
-              <div className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-                <p className="text-[22px] font-bold text-[#142b6f]">
-                  Medical Images
-                </p>
-            
-                <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
-                  {" "}
-                  Step {activeStep + 1} of 5
-                </p>
-            
-                
-              </div>
+    const MedicalImages = (
+      <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
+      
+        <header className="flex flex-col gap-2">
+          <div className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
+            <p className="text-[22px] font-bold text-[#142b6f]">
+              Medical Images
+            </p>
 
-              <p className="text-[16px] hidden leading-[22px] mt-2  text-[#142b6f90]">
+            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
               {" "}
-              We respect your privacy. Your contact details will not be shared
-              with anyone.
-              </p>
-            </header>
+              Step {activeStep + 1} of 5
+            </p>
+          </div>
 
-          
+          <p className="text-[16px] hidden leading-[22px] mt-2  text-[#142b6f90]">
+            {" "}
+            We respect your privacy. Your contact details will not be shared
+            with anyone.
+          </p>
+        </header>
 
-            {/* Do You Have Medical Images */}
-           <div className="flex flex-col gap-5 ">
-            
+        {/* Do You Have Medical Images */}
+        <div className="flex flex-col gap-5 ">
+          {/* Medical Images Question with Dropdown */}
+          <div className="flex flex-col gap-2">
+            <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[55%] w-[96%]">
+              How do you want to share your medical images?
+            </p>
 
-            {/* Medical Images Question with Dropdown */}
-            <div className="flex flex-col gap-2">
-              <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[55%] w-[96%]">
-                How do you want to share your medical images?
-              </p>
-            
-            
-              <div className="  lg:w-[16vw] w-[80vw] h-[7vh] lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
-              
-            
-                <div
-                  onClick={() => {
-                    setDropdown(!isDropdown);
-                   
-                  }}
-                  className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
-                >
-                  <p> {dropdownText}</p>
-                  <p >{"v"}</p>
+
+            {/* Dropdown Select Area */}
+            <div className="  lg:w-[16vw] w-[84vw] h-[7vh] lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
+              <div
+                onClick={() => {
+                  setDropdown(!isDropdown);
+                }}
+                className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+              >
+                <p> {dropdownText}</p>
+                <p className={`absolute right-4 text-[13px] ${isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} >{"▼"}</p>
+              </div>
+
+              {/* Dropdown White Area */}
+              {isDropdown && (
+                <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-[#142b6f] w-full h-auto overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
+                  {medicalSendType.map((name, idx) => (
+                    <p
+                      className={` py-[3px] px-3   w-full text-left `}
+                      onClick={() => {
+                        setDropdown(false);
+                        setDropdownText(name);
+                      }}
+                    >
+                      {name}
+                    </p>
+                  ))}
                 </div>
+              )}
+
              
-               { isDropdown && 
-                  <div className="absolute z-40 flex flex-col justify-around  text-[#142b6f] w-full h-[20vh] bg-white top-[8vh] animate-fadeIn rounded-3xl shadow-xl">
-                      <p onClick={()=>{setDropdownText("I can upload the images now or later."); setDropdown(false)}} className="border-b px-5 py-1 ">I can upload the images now or later.</p>
-                      <p onClick={()=>{setDropdownText("I prefer to ship the CD or USB stick."); setDropdown(false)}} className="border-b px-5 py-1 ">I prefer to ship the CD or USB stick.</p>
-                      <p onClick={()=>{setDropdownText("I will share an access code."); setDropdown(false)}} className="border-b px-5 py-1 ">I will share an access code. </p>
-                      <p onClick={()=>{setDropdownText("I authorize you to acquire my images."); setDropdown(false)}} className="px-5 py-1 ">I authorize you to acquire my images.</p>
-                  
-                  </div>}
+            </div>
+          </div>
+
+        
+        
+          {/* All Medical Images Options Start Here */}
+
+          {/* Image Upload */}
+          {dropdownText == "I can upload the images now or later." && (
+            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+              <p className=" text-[#142b6fb7]  border-t-2  border-[#142b6fbe]">
+              </p>
             
+              <div className="relative bottom-1">
+                <Card9
+                  totalRecheck={1}
+                  displayText={"none"}
+                  buttonText={"Upload Image"}
+                  itemsScrollType={""}
+                  userMailAddress={"furkanuyanik3199@gmail.com"}
+                />
+              </div>
+             
+            </div>
+          )}
+
+          {/* Shipping */}
+          {dropdownText == "I prefer to ship the CD or USB stick." && (
+            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+              <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">
+                Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle
+                olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m
+              </p>
+
+              <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
+                <p className="mt-2">Vitamu, Inc.</p>
+                <p>169 Madison Ave #2305 New York, NY 10016</p>
+                <p>+1 646 820 1932</p>
               </div>
             </div>
+          )}
 
-
-
-          {/* All Medical Images Options Start Here */}
-         
-          {/* Image Upload */}
-          { dropdownText == "I can upload the images now or later." && 
-            
+          {/* Share Acces Code */}
+          {dropdownText == "I will share an access code." && (
             <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-            
-             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6fbe] pt-2">You can upload photo with one folder.</p>
+              <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">
+                Email adresi yazma. Email adresi yazma Email adresi yazma Email
+                adresi yazma
+              </p>
 
-             <Card9
-              totalRecheck={1}
-              displayText={"none"}
-              buttonText={"Upload Image"}
-              itemsScrollType={""}
-              userMailAddress={"furkanuyanik3199@gmail.com"}
-             />
-         
-           </div>}
-
-         
-            {/* Shipping */}
-            { dropdownText == "I prefer to ship the CD or USB stick." && 
-            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-            <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m</p>
-            
-            <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
-              <p className="mt-2">Vitamu, Inc.</p>
-              <p>169 Madison Ave #2305 New York, NY 10016</p>
-              <p>+1 646 820 1932</p>
+              <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
+                <p className="">access@mitrua.com</p>
+              </div>
             </div>
-          
-            </div> }
+          )}
 
-            {/* Share Acces Code */}
-            { dropdownText == "I will share an access code." && 
+          {/* Authorize */}
+          {dropdownText == "I authorize you to acquire my images." && (
             <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-            <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">Email adresi yazma. Email adresi yazma Email adresi yazma Email adresi yazma</p>
-            
-            <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
-              <p className="">access@mitrua.com</p>
-              
-            </div>
-          
-            </div>}
-            
-            {/* Authorize */}
-            { dropdownText == "I authorize you to acquire my images." && 
-            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-            <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">No problem, we will acquire your medical files on your behalf. Please type the name of the medical center where you got your screening.</p>
-            
-            <textarea
+              <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">
+                No problem, we will acquire your medical files on your behalf.
+                Please type the name of the medical center where you got your
+                screening.
+              </p>
+
+              <input
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
                 type="text"
-                className={`w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center  ${
-                  name != "" ? " border-none" : "border-none  "
-                }  duration-500 rounded-3xl border-2  border-[#142b6f] outline-none`}
+                className={contactInputStyle}
                 placeholder="Type the name of your medical center"
               />
-            
-          
-           
-           
-           
-           
-            </div>}
-
-          
-          
-          
-           </div>
-
-
-         
-
-           
-
-            
-          </section>
+            </div>
+          )}
+        </div>
+      </section>
+    );
         
     
    {/* History Symptoms */}
@@ -479,7 +479,7 @@ export default function FormNew() {
               setQuestion(e.target.value);
             }}
             type="text"
-            className="w-[96%] lg:w-[65%] mt-1 lg:h-[24vh] h-[41vh] py-4  rounded-3xl  px-4 outline-none"
+            className="w-[96%] lg:w-[65%] mt-1 lg:h-[24vh] h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-[#ff4949] focus:ring-1 focus:ring-[#ff4949] "
             placeholder="Type your question here."
           />
         
@@ -533,6 +533,35 @@ export default function FormNew() {
         </div>
         
         </section>
+
+
+    {/* Payment */}
+
+    const Payment = 
+
+    <section className="flex flex-col">
+
+       <header className="flex w-[92vw] self-center  flex-col gap-2">
+          <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a070700] ">
+            <p className="text-[22px] font-bold text-[#142b6f]">
+              Payment
+            </p>
+
+            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+              {" "}
+              Step {activeStep + 1} of 5
+            </p>
+          </header>
+
+          <p className="text-[16px] hidden leading-[22px] mt-2  text-[#142b6f90]">
+            {" "}
+            We respect your privacy. Your contact details will not be shared
+            with anyone.
+          </p>
+         </header>
+
+      <SwiperPage/> 
+    </section>
     
 
 
@@ -541,7 +570,7 @@ export default function FormNew() {
   return (
     <>
       <Navbar mobileMenuText={"Menu"} />
-
+       
       <div className="w-screen h-auto  flex flex-col items-center gap-3 font-product ">
       
         <img
@@ -573,6 +602,7 @@ export default function FormNew() {
         {activeStep == 2 &&  HistorySymptoms  }
         {activeStep == 3 &&  MedicalImages  }
         {activeStep == 4 &&  Insurance  }
+        {activeStep == 5 &&  Payment }
 
      
        {/* Bottom Buttons */}
@@ -592,7 +622,7 @@ export default function FormNew() {
           <button onClick={() => {
                  setActiveStep(activeStep + 1);
                }}
-               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" }  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-3 rounded-3xl text-white`} >
+               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-3 rounded-3xl text-white`} >
                 Next
           </button>
     

@@ -57,23 +57,6 @@ const DropdownMenu = ({listİtem,top,right}) => {
              
               setGlobalState("isPayScreen", false); 
 
-              if(e.target.textContent === "My insurance is not listed." || e.target.textContent === "I do not have an active insurance plan.") {
-                gV.insuranceCompany = "none";
-                setGlobalState("myButtonType",   "Go without insurance ➔");
-                gV.p= 11; setGlobalState("formDestinyInsurance" , 2);   
-              }
-              else{
-
-                gV.p = 10; 
-                setGlobalState("formDestinyInsurance" , 1);
-                setGlobalState("myButtonType",  <MdOutlineArrowForward className="forward-icon" />);
-                gV.insuranceCompany = e.target.textContent;
-              
-
-              }
-
-             
-         
 
                setIsSelected(e.target.textContent);
                setIsActive(!isActive); }}

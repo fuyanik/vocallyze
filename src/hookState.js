@@ -16,12 +16,10 @@ const { setGlobalState, useGlobalState } = createGlobalState({
   myButtonWidth: "100px",
   myButtonleft: "48%",
   myBackButtonleft: "44.4%",
-
      
   
   //It helps the user to extract different pages in the form based on their responses.
   formDestiny: 0,
-  formDestinyInsurance: 0,
 
 
 
