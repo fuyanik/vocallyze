@@ -13,6 +13,8 @@ import StepConnector, {
 } from "@mui/material/StepConnector";
 import React, { useState } from "react";
 import Navbar from "../../homeComponents/1.Navbar/navbar";
+import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
+import Card9 from "../../formComponents/Card9/card9";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -199,7 +201,7 @@ export default function FormNew() {
     
 
       {/* Name */}
-      <div className="flex flex-col gap-1 mt-3">
+      <div className="flex flex-col gap-1 mt-2">
         <p className="text-lg text-[#142b6f] font-bold mt-4">
           {" "}
           What is your name?
@@ -257,8 +259,45 @@ export default function FormNew() {
 
      
            </section>
-      
+
+
+    {/* Radiologist */}
+    const Radiologist = 
+        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+        
+         <div className="flex flex-col gap-2">
+          <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
+            <p className="text-[22px] font-bold text-[#142b6f]">
+              Radiologist
+            </p>
+
+            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+              {" "}
+              Step {activeStep + 1} of 5
+            </p>
+          </header>
+
+          <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
+            {" "}
+            We respect your privacy. Your contact details will not be shared
+            with anyone.
+          </p>
+         </div>
+
+        {/* Radiologist Main */}
+        <div className="flex flex-col gap-1 mt-3">
+         
+         <p className="text-lg text-[#142b6f] font-bold mt-1">
+            {" "}
+            Our Radiologist
+          </p>
+         
+        </div>
+       
+        </section>
     
+
+
     {/* Medical Images */}
     const MedicalImages =
           <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
@@ -290,12 +329,14 @@ export default function FormNew() {
             {/* Do You Have Medical Images */}
            <div className="flex flex-col gap-5 ">
             
+
+            {/* Medical Images Question with Dropdown */}
             <div className="flex flex-col gap-2">
               <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[55%] w-[96%]">
                 How do you want to share your medical images?
               </p>
             
-              {/* Medical Images Question */}
+            
               <div className="  lg:w-[16vw] w-[80vw] h-[7vh] lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
               
             
@@ -309,7 +350,7 @@ export default function FormNew() {
                   <p> {dropdownText}</p>
                   <p >{"v"}</p>
                 </div>
-            
+             
                { isDropdown && 
                   <div className="absolute z-40 flex flex-col justify-around  text-[#142b6f] w-full h-[20vh] bg-white top-[8vh] animate-fadeIn rounded-3xl shadow-xl">
                       <p onClick={()=>{setDropdownText("I can upload the images now or later."); setDropdown(false)}} className="border-b px-5 py-1 ">I can upload the images now or later.</p>
@@ -319,16 +360,34 @@ export default function FormNew() {
                   
                   </div>}
             
-                  
-            
-            
-            
               </div>
             </div>
 
-          { dropdownText == "I prefer to ship the CD or USB stick." && 
-          
-          <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+
+
+          {/* All Medical Images Options Start Here */}
+         
+          {/* Image Upload */}
+          { dropdownText == "I can upload the images now or later." && 
+            
+            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+            
+             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6fbe] pt-2">You can upload photo with one folder.</p>
+
+             <Card9
+              totalRecheck={1}
+              displayText={"none"}
+              buttonText={"Upload Image"}
+              itemsScrollType={""}
+              userMailAddress={"furkanuyanik3199@gmail.com"}
+             />
+         
+           </div>}
+
+         
+            {/* Shipping */}
+            { dropdownText == "I prefer to ship the CD or USB stick." && 
+            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m</p>
             
             <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
@@ -337,11 +396,11 @@ export default function FormNew() {
               <p>+1 646 820 1932</p>
             </div>
           
-           </div>}
+            </div> }
 
-           { dropdownText == "I will share an access code." && 
-          
-          <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+            {/* Share Acces Code */}
+            { dropdownText == "I will share an access code." && 
+            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">Email adresi yazma. Email adresi yazma Email adresi yazma Email adresi yazma</p>
             
             <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
@@ -349,11 +408,11 @@ export default function FormNew() {
               
             </div>
           
-           </div>}
-
-           { dropdownText == "I authorize you to acquire my images." && 
-          
-          <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+            </div>}
+            
+            {/* Authorize */}
+            { dropdownText == "I authorize you to acquire my images." && 
+            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
             <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">No problem, we will acquire your medical files on your behalf. Please type the name of the medical center where you got your screening.</p>
             
             <textarea
@@ -369,12 +428,12 @@ export default function FormNew() {
               />
             
           
-           </div>}
+           
+           
+           
+           
+            </div>}
 
-
-            
-          
-          
           
           
           
@@ -437,6 +496,43 @@ export default function FormNew() {
 
          
          </section>
+
+
+    {/* Insurance */}
+    const Insurance = 
+        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+        
+         <header className="flex flex-col gap-2">
+          <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
+            <p className="text-[22px] font-bold text-[#142b6f]">
+              Insurances
+            </p>
+
+            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+              {" "}
+              Step {activeStep + 1} of 5
+            </p>
+          </header>
+
+          <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
+            {" "}
+            We respect your privacy. Your contact details will not be shared
+            with anyone.
+          </p>
+         </header>
+
+        {/* Name */}
+        <div className="flex flex-col gap-1 mt-3">
+          <p className="text-lg text-[#142b6f] font-bold mt-4">
+            {" "}
+            What is your insurance?
+          </p>
+
+          <CardHaveInsurance/>
+         
+        </div>
+        
+        </section>
     
 
 
@@ -472,36 +568,34 @@ export default function FormNew() {
         </Stack>
 
 
-        {activeStep == 0 && ContactDetail }
-        {activeStep == 1 && (  <div> radiologists </div>  )}
+        {activeStep == 0 &&  ContactDetail }
+        {activeStep == 1 &&  Radiologist }
         {activeStep == 2 &&  HistorySymptoms  }
         {activeStep == 3 &&  MedicalImages  }
+        {activeStep == 4 &&  Insurance  }
 
-        {activeStep == 4 && (  <div> insurance </div>  )}
-
-        
-       
      
-        {/* Bottom Buttons */}
-       
-       <div className="absolute w-[85vw] justify-between  bottom-5 mt-10  flex items-center ">
+       {/* Bottom Buttons */}
+       <div className="absolute w-[85vw] justify-between  bottom-3 mt-10  flex items-center ">
         
-        
-        {/* Back Button */}
-        { activeStep !=0 && <button  onClick={() => {
+
+         {/* Back Button */}
+         { activeStep !=0 && <button  onClick={() => {
                  setActiveStep(activeStep - 1);
                 }} className="w-12 h-12 absolute z-20   animate-leftToRight rounded-full bg-[#ff4949be] flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
        
-       {true && <div> </div> }
-       {/* Next Button */}
-        <button
-               onClick={() => {
+
+        {true && <div> </div> }
+        {/* Next Button */}
+      
+
+          <button onClick={() => {
                  setActiveStep(activeStep + 1);
                }}
-               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" }  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-3 rounded-3xl text-white`}
-             >
-               Next
-        </button>
+               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" }  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-3 rounded-3xl text-white`} >
+                Next
+          </button>
+    
        </div>
 
        

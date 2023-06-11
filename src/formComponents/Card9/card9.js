@@ -28,7 +28,7 @@ const [storageRef, setstorageRef] = useState(null)
 const [isShowİllüst, setIsShowİllüst] = useState(true);
 
 const auth = getAuth();
-const user = auth.currentUser;
+const user = true;
    
 const userRef = user ?  doc(db, "VitamuUsersREAL", `${user.email}`) : null;
 
