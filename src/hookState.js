@@ -49,6 +49,8 @@ const { setGlobalState, useGlobalState } = createGlobalState({
   userAge: 31,
 
   userName: "",
+
+  isDropdownSet: false,
 });
 
 

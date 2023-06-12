@@ -67,14 +67,14 @@ export default function SelectBodyParts() {
                onClick={() => {
                  setDropdown(!isDropdown);
                }}
-               className="h-auto py-3 w-[120%] relative text-[#142b6f] flex-wrap  gap-2 bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+               className="h-auto py-3 w-[120%] relative text-pri flex-wrap  gap-2 bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
                 {/* Default Place Holder */}
                 { bodyParts.length == 0 && <p className="font-bold">Body Part(s)</p>}
 
                 {/* All User Selected Body Parts */}
                 {bodyParts.map((bodyPart, idx) => (
-                 <div className="flex gap-1 items-center justify-between bg-[#142b6f] text-white px-3 py-[6px] rounded-2xl animate-fadeIn ">
+                 <div className="flex gap-1 items-center justify-between bg-pri text-white px-3 py-[6px] rounded-2xl animate-fadeIn ">
                    <p className="text-[12px] tracking-wider "> {bodyPart} </p>
                    <p onClick={()=>{ setBodyParts(prevBodyParts => prevBodyParts.filter(part => part !== bodyPart)); setDropdown(false)}} className="text-[11px] font-bold relative left-1">X</p>
                  </div>
@@ -88,10 +88,10 @@ export default function SelectBodyParts() {
             {/* Dropdown White Area */}
             { isDropdown && 
             
-               <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-[#142b6f] w-full h-[30vh] overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
+               <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-[30vh] overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
                {names.map((name, idx) => (
                   <p 
-                  className={` ${bodyParts.includes(name) && "border-l-[3px] border-[#142b6f]" } py-[3px] px-3   w-full text-left `}
+                  className={` ${bodyParts.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3   w-full text-left `}
                   onClick={()=>{setDropdown(false); !bodyParts.includes(name) && setBodyParts(prevBodyParts => [...prevBodyParts, name]);  }  }>
                     
                     {name}

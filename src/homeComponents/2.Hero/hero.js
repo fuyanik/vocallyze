@@ -54,22 +54,38 @@ const Hero = () => {
 
   return (
     <>
-      <div className="w-screen h-auto py-3 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+      <div className="w-screen h-auto py-0 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
       
       <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-full absolute -z-20 opacity-20"  alt="vitamu"/>
         
        
        
-        <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-center text-center">
+        <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-center text-center py-3">
          
-         <p className=" lg:text-[76px] lg:w-[40vw] lg:leading-[76px]  leading-[42px]  text-[36px] text-center  font-bold ">Get your online mammogram second opinion </p>
-         <p className="lg:text-[20px]" >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
+        <div className="hero__main__header  border-red-200 font-product text-center gap-4 font-bold">
+           
+            <p className="hero__main__header__title " style={{ fontWeight: "lighter" }}>
+              {" "}
+              Get your online
+            </p>
+            
+            <div  className="hero__main__header__fade-in relative">
+              <p>mammogram</p>
+              <p>ultrasound</p>
+              <p>MRI</p>
+            </div>
+
+            <p className="mt-8" >second opinion.</p>
+          
+          </div>
+
+         <p className="lg:text-[20px] mt-[-8vh]" >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
    
       {  
 
       /*  Mobile */
       gV.mq.matches ? 
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 ">
           <SelectBodyParts/>
           <ScanType/>
          <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>

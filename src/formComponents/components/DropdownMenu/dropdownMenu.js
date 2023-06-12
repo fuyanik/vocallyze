@@ -16,8 +16,8 @@ const DropdownMenu = ({listİtem,top,right}) => {
 
     
     //make scrool page end
-    window.scrollTo(0,document.body.scrollHeight);
-    setGlobalState("isFormValidate", true);
+ 
+   
 
    
    
@@ -56,6 +56,7 @@ const DropdownMenu = ({listİtem,top,right}) => {
              onClick={(e) => {
              
               setGlobalState("isPayScreen", false); 
+              setGlobalState("isDropdownSet", true);
 
 
                setIsSelected(e.target.textContent);

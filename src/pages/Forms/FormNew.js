@@ -16,6 +16,7 @@ import Navbar from "../../homeComponents/1.Navbar/navbar";
 import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
 import Card9 from "../../formComponents/Card9/card9";
 import SwiperPage from "../Swiper/swiper";
+import { useGlobalState } from "../../hookState";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -171,6 +172,8 @@ export default function FormNew() {
     const [phone, setPhone] = useState("")
     const [question, setQuestion] = useState("")
 
+    const [isDropdownSet] = useGlobalState("isDropdownSet")
+
    
 
     const [isDropdown, setDropdown] = useState(false)
@@ -179,7 +182,7 @@ export default function FormNew() {
 
     {/* Start Step Contents */}
 
-     const contactInputStyle = "w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-[#ff4949] focus:ring-1 focus:ring-[#ff4949] "
+     const contactInputStyle = "w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
      
      
     
@@ -187,13 +190,13 @@ export default function FormNew() {
     const ContactDetail =  
     <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
               
-    <div className="flex flex-col gap-2">
+      <header className="flex flex-col gap-2">
         <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-          <p className="text-[22px] font-bold text-[#142b6f]">
+          <p className="text-[22px] font-bold text-pri">
             Contact Details
           </p>
       
-          <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+          <p className="text-[16px] mt-1 font-bold text-pri">
             {" "}
             Step {activeStep + 1} of 5
           </p>
@@ -201,19 +204,19 @@ export default function FormNew() {
           
         </header>
 
-        <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
+        <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
         {" "}
         We respect your privacy. Your contact details will not be shared
         with anyone.
       </p>
-    </div>
+      </header>
 
     
 
       {/* Name */}
       <div className="flex flex-col gap-1 mt-2">
         
-        <p className="text-lg text-[#142b6f] font-bold mt-4">
+        <p className="text-lg text-pri font-bold mt-4">
           {" "}
           What is your name?
         </p>
@@ -232,7 +235,7 @@ export default function FormNew() {
 
       {/* Mail */}
       <div className="flex flex-col gap-1">
-        <p className="text-lg text-[#142b6f] font-bold mt-4">
+        <p className="text-lg text-pri font-bold mt-4">
           {" "}
           Mail Address
         </p>
@@ -249,7 +252,7 @@ export default function FormNew() {
 
       {/* Phone */}
       <div className="flex flex-col gap-1">
-        <p className="text-lg text-[#142b6f] font-bold mt-4">
+        <p className="text-lg text-pri font-bold mt-4">
           {" "}
           Phone Number
         </p>
@@ -274,33 +277,74 @@ export default function FormNew() {
         
          <div className="flex flex-col gap-2">
           <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-            <p className="text-[22px] font-bold text-[#142b6f]">
-              Radiologist
+            <p className="text-[22px] font-bold text-pri">
+              Radiologists
             </p>
 
-            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+            <p className="text-[16px] mt-1 font-bold text-pri">
               {" "}
               Step {activeStep + 1} of 5
             </p>
           </header>
 
-          <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
-            {" "}
-            We respect your privacy. Your contact details will not be shared
-            with anyone.
-          </p>
+     
          </div>
 
-        {/* Radiologist Main */}
-        <div className="flex flex-col gap-1 mt-3">
-         
-         <p className="text-lg text-[#142b6f] font-bold mt-1">
-            {" "}
-            Our Radiologist
-          </p>
-         
-        </div>
        
+       {/* Doctors Cards */}
+       <div className="flex flex-col gap-4 mt-3">
+
+
+         {/* Doctor Card 1 */}
+         <div className="w-full h-34 bg-white rounded-xl py-4 px-3 gap-8  flex items-center shadow-2xl "> 
+          
+           <div className="flex flex-col ">
+           
+            <p className="font-bold">Elizabeth H. Asch</p>
+            <p>Harvard Medical School'09 <i className="text-[#142b6fdb]">15 Years of Experience</i></p>
+           
+            <div className="flex items-center gap-2">
+             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
+             <p className="text-priTrans">Breast Screening </p>
+            </div>
+           
+            <div className="flex items-center gap-2">
+             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
+             <p className="text-priTrans">Diagnostic Radiology</p>
+            </div>
+         
+           </div>
+         
+          <img className="w-20 h-20 rounded-xl" src="https://vitamu.imgix.net/radiologyRe/Elizabeth%20H.%20Asch-Mobile.png"/>
+         
+         </div>
+        
+         {/* Doctor Card 2 */}
+         <div className="w-full h-34 bg-white rounded-xl py-4 px-3 gap-8  flex items-center shadow-2xl "> 
+          
+           <div className="flex flex-col ">
+           
+            <p className="font-bold">Elizabeth H. Asch</p>
+            <p>Harvard Medical School'09 <i className="text-[#142b6fdb]">15 Years of Experience</i></p>
+           
+            <div className="flex items-center gap-2">
+             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
+             <p className="text-priTrans">Breast Screening </p>
+            </div>
+           
+            <div className="flex items-center gap-2">
+             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
+             <p className="text-priTrans">Diagnostic Radiology</p>
+            </div>
+         
+           </div>
+         
+          <img className="w-20 h-20 rounded-xl" src="https://vitamu.imgix.net/radiologyRe/Pamela%20J.%20DiPiro-Mobile.png"/>
+         
+         </div>
+         
+        
+       </div>
         </section>
     
 
@@ -311,17 +355,17 @@ export default function FormNew() {
       
         <header className="flex flex-col gap-2">
           <div className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-            <p className="text-[22px] font-bold text-[#142b6f]">
+            <p className="text-[22px] font-bold text-pri">
               Medical Images
             </p>
 
-            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+            <p className="text-[16px] mt-1 font-bold text-pri">
               {" "}
               Step {activeStep + 1} of 5
             </p>
           </div>
 
-          <p className="text-[16px] hidden leading-[22px] mt-2  text-[#142b6f90]">
+          <p className="text-[16px] hidden leading-[22px] mt-2  text-priTrans">
             {" "}
             We respect your privacy. Your contact details will not be shared
             with anyone.
@@ -332,7 +376,7 @@ export default function FormNew() {
         <div className="flex flex-col gap-5 ">
           {/* Medical Images Question with Dropdown */}
           <div className="flex flex-col gap-2">
-            <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[55%] w-[96%]">
+            <p className="text-[17px] text-pri font-bold mt-4 lg:w-[55%] w-[96%]">
               How do you want to share your medical images?
             </p>
 
@@ -343,7 +387,7 @@ export default function FormNew() {
                 onClick={() => {
                   setDropdown(!isDropdown);
                 }}
-                className="h-[96%] w-[120%] text-[#142b6f] justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+                className="h-[96%] w-[120%] text-pri justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
                 <p> {dropdownText}</p>
                 <p className={`absolute right-4 text-[13px] ${isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} >{"▼"}</p>
@@ -351,7 +395,7 @@ export default function FormNew() {
 
               {/* Dropdown White Area */}
               {isDropdown && (
-                <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-[#142b6f] w-full h-auto overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
+                <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
                   {medicalSendType.map((name, idx) => (
                     <p
                       className={` py-[3px] px-3   w-full text-left `}
@@ -376,7 +420,7 @@ export default function FormNew() {
 
           {/* Image Upload */}
           {dropdownText == "I can upload the images now or later." && (
-            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
+            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
               <p className=" text-[#142b6fb7]  border-t-2  border-[#142b6fbe]">
               </p>
             
@@ -393,15 +437,15 @@ export default function FormNew() {
             </div>
           )}
 
-          {/* Shipping */}
+          {/* Shipping CD or USB */}
           {dropdownText == "I prefer to ship the CD or USB stick." && (
-            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-              <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">
+            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
+              <p className=" text-[#142b6fb7] border-t-2  border-pri pt-2">
                 Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle
                 olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m
               </p>
 
-              <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
+              <div className="flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
                 <p className="mt-2">Vitamu, Inc.</p>
                 <p>169 Madison Ave #2305 New York, NY 10016</p>
                 <p>+1 646 820 1932</p>
@@ -411,22 +455,22 @@ export default function FormNew() {
 
           {/* Share Acces Code */}
           {dropdownText == "I will share an access code." && (
-            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-              <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">
+            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
+              <p className=" text-[#142b6fb7] border-t-2  border-pri pt-2">
                 Email adresi yazma. Email adresi yazma Email adresi yazma Email
                 adresi yazma
               </p>
 
-              <div className="flex flex-col bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
-                <p className="">access@mitrua.com</p>
+              <div className="flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg ">
+                <p className="">acceasdss@mitrua.com</p>
               </div>
             </div>
           )}
 
           {/* Authorize */}
           {dropdownText == "I authorize you to acquire my images." && (
-            <div className="flex flex-col gap-3 text-[#142b6f] animate-fadeIn ">
-              <p className=" text-[#142b6fb7] border-t-2  border-[#142b6f] pt-2">
+            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
+              <p className=" text-[#142b6fb7] border-t-2  border-pri pt-2">
                 No problem, we will acquire your medical files on your behalf.
                 Please type the name of the medical center where you got your
                 screening.
@@ -450,16 +494,16 @@ export default function FormNew() {
     
    {/* History Symptoms */}
     const HistorySymptoms = 
-         <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-[#142b6f]">
+         <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-pri">
           
         <div className="flex flex-col gap-2">
             
             <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-              <p className="text-[22px] font-bold text-[#142b6f]">
+              <p className="text-[22px] font-bold text-pri">
               History and Symptoms
               </p>
           
-              <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+              <p className="text-[16px] mt-1 font-bold text-pri">
                 {" "}
                 Step {activeStep + 1} of 5
               </p>
@@ -467,7 +511,7 @@ export default function FormNew() {
               
             </header>
 
-            <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
+            <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
              {" "}
              We respect your privacy. Your contact details will not be shared
             with anyone.
@@ -479,7 +523,7 @@ export default function FormNew() {
               setQuestion(e.target.value);
             }}
             type="text"
-            className="w-[96%] lg:w-[65%] mt-1 lg:h-[24vh] h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-[#ff4949] focus:ring-1 focus:ring-[#ff4949] "
+            className="w-[96%] lg:w-[65%] mt-1 lg:h-[24vh] shadow-2xl h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
             placeholder="Type your question here."
           />
         
@@ -500,30 +544,26 @@ export default function FormNew() {
 
     {/* Insurance */}
     const Insurance = 
-        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 ">
         
          <header className="flex flex-col gap-2">
           <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-            <p className="text-[22px] font-bold text-[#142b6f]">
+            <p className="text-[22px] font-bold text-pri">
               Insurances
             </p>
 
-            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+            <p className="text-[16px] mt-1 font-bold text-pri">
               {" "}
               Step {activeStep + 1} of 5
             </p>
           </header>
 
-          <p className="text-[16px] leading-[22px] mt-2  text-[#142b6f90]">
-            {" "}
-            We respect your privacy. Your contact details will not be shared
-            with anyone.
-          </p>
+        
          </header>
 
         {/* Name */}
-        <div className="flex flex-col gap-1 mt-3">
-          <p className="text-lg text-[#142b6f] font-bold mt-4">
+        <div className="flex flex-col gap-1 mt-0">
+          <p className="text-lg text-pri font-bold mt-4">
             {" "}
             What is your insurance?
           </p>
@@ -531,38 +571,40 @@ export default function FormNew() {
           <CardHaveInsurance/>
          
         </div>
+
+       <div className="relative right-[15px]">
+       { isDropdownSet &&  <SwiperPage/>}
+       </div>
         
         </section>
 
 
     {/* Payment */}
-
     const Payment = 
+        <section className="flex flex-col h-[72vh]">
 
-    <section className="flex flex-col">
-
-       <header className="flex w-[92vw] self-center  flex-col gap-2">
+       < header className="hidden w-[92vw] self-center  flex-col gap-2">
           <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a070700] ">
-            <p className="text-[22px] font-bold text-[#142b6f]">
+            <p className="text-[22px] font-bold text-pri">
               Payment
             </p>
 
-            <p className="text-[16px] mt-1 font-bold text-[#142b6f]">
+            <p className="text-[16px] mt-1 font-bold text-pri">
               {" "}
               Step {activeStep + 1} of 5
             </p>
           </header>
 
-          <p className="text-[16px] hidden leading-[22px] mt-2  text-[#142b6f90]">
+          <p className="text-[16px] hidden leading-[22px] mt-2  text-priTrans">
             {" "}
             We respect your privacy. Your contact details will not be shared
             with anyone.
           </p>
          </header>
 
-      <SwiperPage/> 
-    </section>
-    
+      { false && <SwiperPage/> }
+        </section>
+     
 
 
     
@@ -571,11 +613,11 @@ export default function FormNew() {
     <>
       <Navbar mobileMenuText={"Menu"} />
        
-      <div className="w-screen h-auto  flex flex-col items-center gap-3 font-product ">
+      <div className="w-screen h-screen background-gradient flex flex-col items-center gap-3 font-product ">
       
         <img
           src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg"
-          className="w-screen h-full absolute -z-20 opacity-20"
+          className="w-screen hidden h-full absolute -z-20 opacity-20"
           alt="vitamu"
         />
 
@@ -606,13 +648,13 @@ export default function FormNew() {
 
      
        {/* Bottom Buttons */}
-       <div className="absolute w-[85vw] justify-between  bottom-3 mt-10  flex items-center ">
+       <div className= {`absolute ${activeStep == 8 && "hidden"} w-[85vw] justify-between  bottom-3 mt-10  flex items-center font-product `} >
         
 
          {/* Back Button */}
          { activeStep !=0 && <button  onClick={() => {
                  setActiveStep(activeStep - 1);
-                }} className="w-12 h-12 absolute z-20   animate-leftToRight rounded-full bg-[#ff4949be] flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
+                }} className="w-11 h-11 absolute z-20   animate-leftToRight rounded-full bg-sec flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
        
 
         {true && <div> </div> }
@@ -622,7 +664,7 @@ export default function FormNew() {
           <button onClick={() => {
                  setActiveStep(activeStep + 1);
                }}
-               className={`bg-[#ff4949] ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-3 rounded-3xl text-white`} >
+               className={`bg-sec ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`} >
                 Next
           </button>
     

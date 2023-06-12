@@ -1,47 +1,26 @@
 
 .Swiper-Page{
-  height: 100%; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  
+  height: 20%; /* Use vh as a fallback for browsers that do not support Custom Properties */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2%;
-  height: 70vh !important; /* Use vh as a fallback for browsers that do not support Custom Properties */
-
+  height: 38vh;
+   margin-top: 2.3vh;
   width: 100vw;
   overflow: hidden;
   transition: 800ms;
   border: none;
+  display: absolute;
+ 
 }
 
-.Swiper-Page-blur{
-  background-color: #e5e8f0;
-  height: 100%; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 4%;
-  height: 100vh !important; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  height: var(--doc-height) !important;
 
-  width: 100vw;
-  overflow: hidden;
-  transition: 800ms;
-  border: none;
 
-  transition: 2000ms;
-  filter: brightness(60%) blur(3px);
-  -webkit-filter: brightness(60%) blur(3px);
-  -moz-filter: brightness(60%) blur(3px);
-  -o-filter: brightness(60%) blur(3px);
-  -ms-filter: brightness(60%) blur(3px);
-
-}
 
 
 .swiper {
   width: 260%;
-
- 
   position: relative;
   right: 80vw;
   height: 100vh !important; /* Use vh as a fallback for browsers that do not support Custom Properties */
@@ -55,16 +34,13 @@
   background-size: cover;
   width: 87vw !important;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  
+
   
   
   
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.background-gradient{
+  background: rgb(237,237,237);
+  background: linear-gradient(101deg, rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%);
 }

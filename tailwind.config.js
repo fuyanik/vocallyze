@@ -6,10 +6,17 @@ module.exports = {
   theme: {
     extend: {
 
+      colors: {
+        pri: '#142b6f',
+        priTrans: '#142b6f90',
+       
+        sec: '#ff4949',
+      },
+
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out forwards',
         fadeOut: 'fadeOut 0.5s ease-in-out',
-        leftToRight: 'leftToRighto 0.5s ease-in-out forwards',
+        leftToRight: 'leftToRighto 0.5s ease forwards',
       },
 
       keyframes: {

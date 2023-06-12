@@ -14,7 +14,7 @@
 }
 
 .dropdown .dropdown-btn {
-  background-color: rgba(255, 255, 255, 0.638);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -28,8 +28,6 @@
   color: #142b6fdd;
   letter-spacing: 0px;
   border-radius: 25px;
-  
-  
 }
 
 .dropdown-content {
@@ -43,7 +41,7 @@
   border-radius: 10px;
   left: 0;
   width: 100%;
-  background-color: #F1F3F7;
+  background-color: #fff;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
   z-index: 999999999999;
 }
@@ -95,11 +93,9 @@
   font-family: "ProductSans-Light";
   color: #142B6F;
   width: 87vw;
-  
-  
-  
-  
 }
+
+
 .dropdown-content {
   color: #142B6F;
   font-family: "ProductSans-Light";
@@ -111,6 +107,8 @@
   left: 0;
   width: 87vw;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+  background-color: white;
+  
   
 }
 
