@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+
+/*The style operations defined below are normally supposed to be in a different
+ folders called variables,colors,assets(for svg). Codepen does not allow this,
+ so I defined it at the beginning.*/
+
+
+/* Paddings
+   ========================================================================== */
+//xsmall: 32px
+//small: 38px
+//large: 98px
+
+$g-main-padding: 1rem !default;
+$g-pads: (
+
+xsmall: (
+   $g-main-padding * 2,
+ ),
+small: (
+   $g-main-padding * 2.3,
+ ),
+
+large: (
+  $g-main-padding * 6.125,
+),
+ 
+   ); 
+
+/* Gaps
+   ========================================================================== */
+// xsmall:  12px
+// small:   18px
+// medium:  24px
+// large:   36px
+// xxlarge: 72px
+
+$g-main-gap: 0.75rem !default;
+$g-gaps: (   
+
+xsmall: (
+  $g-main-gap 
+),   
+small: (
+  $g-main-gap * 1.5
+),
+medium: (
+   $g-main-gap * 2
+),
+large: (
+   $g-main-gap * 3
+),
+xxlarge: (
+   $g-main-gap * 3,
+),
+   );
+
+p{margin: 0;}
+
+
+
+
+/* Colors
+   ========================================================================== */
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$g-body-background-color: $color-white;
+$g-text-color: #656C7C;
+
+
+//Free and Pro Payment Methods Background Color
+$payment-methods-bg-color: $color-white;
+
+//Enterprise Payment Methods Background Color
+$enterprise-payment-methods-bg-color: #142b6f;
+
+
+//All Buttons Text Color
+$g-button-text-color: white;
+
+// Free and Pro Methods Buttons
+$g-btn-bg-color: #142b6f;
+$g-btn-hover-bg-color:white;
+$g-btn-hover-color: #142b6f;
+
+//Enterprise Method Button
+$g-btn-entr-bg-color: $color-white;
+$g-btn-entr-hover-bg-color:#1768ff00;
+$g-btn-entr-hover-color: $color-white;
+$g-btn-entr-border: 2px solid $color-white;
+
+//Free Method Border
+$g-btn-border: 1px solid #E6E6E6;
+
+//Pro Method Box Shadow
+$g-pro-box-shadow: 0px 14px 30px rgba(204, 204, 204, 0.32);
+
+//Transparent Color
+$transparent-color: #B1B8C9;
+
+$color-yellow: #FDB72E;
+
+
+/* Typography
+   ========================================================================== */
+
+$g-font-family: "ProductSans-Light";
+$g-font-size: 1rem;
+$g-line-height: 1.5; 
+
+$-font:  1rem/1.5 "ProductSans-Light";
+
+$g-font-size-h1:  $g-font-size * 1.5;
+$g-font-size-h2: $g-font-size * 2;
+
+/* Mixin & Extends
+   ========================================================================== */
+@mixin btn($bg-color,$hover-bg-color,$hover-color,$border: none, ) {
+    @extend %border-box;
+    @include flex-center;
+    align-self: center;
+    transition: 200ms;
+    width: 90%;
+    height: 48px;
+    border-radius: 27px;
+    margin-top: auto;
+    background: $bg-color;
+  
+
+  &:hover {
+    border: $border;
+    background-color: $hover-bg-color;
+    color: $hover-color;
+    
+  }
+}
+
+@mixin flex-center ($jc: center,) {
+    display: flex;
+    align-items: center;
+    justify-content: $jc;
+  }
+
+%flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+%border-box{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+
+/*Micro Classes 
+   ========================================================================== */
+
+.border--free{border: $g-btn-border};
+
+.bs--pro{box-shadow: $g-pro-box-shadow};
+
+.bg-white{background-color: $payment-methods-bg-color};
+
+.bg--blue{background: $enterprise-payment-methods-bg-color};
+
+.color--black{color: $color-black};
+
+.color--white{color: $color-white !important};
+
+.color--transp{color: $transparent-color};
+
+.color--pink{color: $g-button-text-color};
+
+.ml--24{ 
+   letter-spacing: 0.2px;
+   
+   margin-left: 24px};
+
+.mr--24{ margin-right: 24px};
+
+.text-xl{
+    font-weight: 600;
+    font-size: $g-font-size-h2;
+    line-height: 39px;
+    letter-spacing: 1px;
+}
+
+
+/* Main Css
+   ========================================================================== */
+
+
+
+  
+.price-screen{
+   transition: 300ms;
+   color: $g-text-color;
+   font: $-font;
+   background-color: $g-body-background-color;
+    padding-bottom: 7vh;
+    @extend %flex-column;
+    @include flex-center;
+    gap: 20px
+
+   
+}
+
+.price-screen-blur{
+   transition: 300ms;
+   color: $g-text-color;
+   font: $-font;
+   background-color: $g-body-background-color;
+    padding-bottom: 7vh;
+    @extend %flex-column;
+    @include flex-center;
+    gap: 20px;
+   background-color: #e5e6ea90;
+   transition: 2000ms;
+   filter: brightness(60%) blur(3px);
+   -webkit-filter: brightness(60%) blur(3px);
+   -moz-filter: brightness(60%) blur(3px);
+   -o-filter: brightness(60%) blur(3px);
+   -ms-filter: brightness(60%) blur(3px);
+   font-family: "ProductSans-Light";
+}
+
+.price-screen__header{
+    margin-top: -7vh;
+    @extend %flex-column;
+    @include flex-center;
+    gap: map-get($g-gaps, "xsmall");
+}
+
+/* For Each Payment Method Cards
+   ========================================================================== */
+.pay-cards{
+    
+    @include flex-center;
+    gap: map-get($g-gaps, "medium");;
+}
+
+.pay-card{
+    width: 24.5vw;
+    height: 77vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  
+    border-radius: 27px;
+    padding-top: map-get($g-pads, "small");
+    padding-bottom: map-get($g-pads, "xsmall");
+    gap: map-get($g-gaps, "medium");;
+    @extend %flex-column;
+
+    &__header{
+        @include flex-center($jc: none);
+        gap: map-get($g-gaps, "small");;
+        margin-left: 29px;
+
+        &__title{
+            font-size: $g-font-size-h1;
+            letter-spacing: 1px;
+        }
+        &__explanation{
+            letter-spacing: 1px;
+            @include flex-center;
+            width: 119px;
+            height: 39px;
+            margin-left: auto;
+            background: $color-yellow;
+            border-radius: 40px;
+        }
+        
+    }
+
+    &__value-area{
+        @include flex-center($jc: none);
+        gap: map-get($g-gaps, "xsmall");
+       
+    }
+
+    &__hero{ 
+        @extend %flex-column;
+        gap: map-get($g-gaps, "small");;
+        margin-left: 27.83px;
+
+       &__features{
+           @include flex-center($jc: none);
+           gap: map-get($g-gaps, "small");
+    }
+  } 
+    &__button-normal{
+         cursor: pointer;
+         @include btn (
+         $bg-color: $g-btn-bg-color,
+         $hover-bg-color: $g-btn-hover-bg-color,
+         $hover-color: $g-btn-hover-color);
+       
+       &:hover{
+           border: 1px solid #142b6f;
+       }
+      }
+
+    &__button-enterprise{
+       color: #142b6f;
+       cursor: pointer;
+        @include btn(
+                      $bg-color: $g-btn-entr-bg-color,
+                      $hover-bg-color: $g-btn-entr-hover-bg-color,
+                      $hover-color: $g-btn-entr-hover-color,
+                      $border: $g-btn-entr-border,
+                     
+                      );
+    }
+
+}

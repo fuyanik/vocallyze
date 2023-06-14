@@ -35,7 +35,6 @@
 }
 .hero__main__header {
   position: relative;
-  font-size: 80px;
   margin-bottom: 5vh;
   text-align: start;
   font-weight: normal;
@@ -47,71 +46,36 @@
   -webkit-animation: leftToRightTitle 900ms ease 0s forwards;
           animation: leftToRightTitle 900ms ease 0s forwards;
 }
-@-webkit-keyframes leftToRightTitle {
-  0% {
-    opacity: 0;
-    left: -25%;
-  }
-  100% {
-    opacity: 1;
-    left: -3vw;
-  }
-}
-@keyframes leftToRightTitle {
-  0% {
-    opacity: 0;
-    left: -25%;
-  }
-  100% {
-    opacity: 1;
-    left: -3vw;
-  }
-}
 .hero__main__header__fade-in {
   position: relative;
-  left: 5vw;
-  bottom: 4vh;
-  -webkit-animation: RightToLeftTitle 900ms ease 0s forwards;
-          animation: RightToLeftTitle 900ms ease 0s forwards;
-}
-@-webkit-keyframes RightToLeftTitle {
-  0% {
-    opacity: 0;
-    left: 25%;
-  }
-  100% {
-    opacity: 1;
-    left: -3vw;
-  }
-}
-@keyframes RightToLeftTitle {
-  0% {
-    opacity: 0;
-    left: 25%;
-  }
-  100% {
-    opacity: 1;
-    left: -3vw;
-  }
+  color: #142b6f;
+  font-weight: bold;
+  left: 0vw;
+  text-align: center;
 }
 .hero__main__header__fade-in p {
   font-weight: lighter !important;
+  font-weight: bold !important;
   animation: fadeEffect 0s linear infinite 0s;
   -ms-animation: fadeEffect 0s linear infinite 0s;
   -webkit-animation: fadeEffect 7.5s linear infinite 0s;
   opacity: 0;
   position: absolute;
+  width: auto !important;
 }
 .hero__main__header__fade-in p:nth-child(2) {
   animation-delay: 2.5s;
   -ms-animation-delay: 2.5s;
   -webkit-animation-delay: 2.5s;
+  width: auto !important;
+  font-weight: bold !important;
 }
 .hero__main__header__fade-in p:nth-child(3) {
   animation-delay: 5s;
   -ms-animation-delay: 5s;
   -webkit-animation-delay: 5s;
-  width: 60vw !important;
+  width: auto !important;
+  font-weight: bold !important;
 }
 .hero__main__footer {
   margin-top: 3vh;
@@ -122,7 +86,6 @@
   gap: 2vh;
 }
 .hero__main__footer p {
-  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.3px;
   text-align: start;
@@ -133,9 +96,9 @@
   0% {
     opacity: 0;
   }
-  5% {
+  3% {
     opacity: 0;
-    -webkit-transform: translatey(0px);
+    -webkit-transform: translatey(20px);
   }
   10% {
     opacity: 1;
@@ -145,9 +108,9 @@
     opacity: 1;
     -webkit-transform: translatey(0px);
   }
-  30% {
+  37% {
     opacity: 0;
-    -webkit-transform: translatey(0px);
+    -webkit-transform: translatey(-20px);
   }
   80% {
     opacity: 0;
@@ -161,9 +124,9 @@
   0% {
     opacity: 0;
   }
-  5% {
+  3% {
     opacity: 0;
-    -webkit-transform: translatey(0px);
+    -webkit-transform: translatey(20px);
   }
   10% {
     opacity: 1;
@@ -173,9 +136,9 @@
     opacity: 1;
     -webkit-transform: translatey(0px);
   }
-  30% {
+  37% {
     opacity: 0;
-    -webkit-transform: translatey(0px);
+    -webkit-transform: translatey(-20px);
   }
   80% {
     opacity: 0;
@@ -223,7 +186,6 @@
     width: 95%;
     color: #142b6f !important;
     position: relative;
-    font-size: 42px;
     margin-bottom: 6vh;
     text-align: center;
     font-weight: 100;
@@ -237,10 +199,10 @@
   }
   .hero__main__header__fade-in {
     position: relative;
-    left: 0vw;
     color: #142b6f;
-    bottom: 2vh;
     font-weight: bold;
+    left: 0vw;
+    text-align: center;
   }
   .hero__main__header__fade-in p {
     font-weight: lighter !important;
@@ -250,20 +212,20 @@
     -webkit-animation: fadeEffect 7.5s linear infinite 0s;
     opacity: 0;
     position: absolute;
-    width: 86vw !important;
+    width: auto !important;
   }
   .hero__main__header__fade-in p:nth-child(2) {
     animation-delay: 2.5s;
     -ms-animation-delay: 2.5s;
     -webkit-animation-delay: 2.5s;
-    width: 86vw !important;
+    width: auto !important;
     font-weight: bold !important;
   }
   .hero__main__header__fade-in p:nth-child(3) {
     animation-delay: 5s;
     -ms-animation-delay: 5s;
     -webkit-animation-delay: 5s;
-    width: 86vw !important;
+    width: auto !important;
     font-weight: bold !important;
   }
   .hero__main__footer {
@@ -274,7 +236,6 @@
     gap: 2vh;
   }
   .hero__main__footer p {
-    font-size: 18px;
     font-weight: 500;
     color: #142b6f;
     text-align: start;
@@ -327,7 +288,7 @@
     }
     5% {
       opacity: 0;
-      -webkit-transform: translatey(0px);
+      -webkit-transform: translatey(15px);
     }
     10% {
       opacity: 1;
@@ -337,9 +298,9 @@
       opacity: 1;
       -webkit-transform: translatey(0px);
     }
-    30% {
+    40% {
       opacity: 0;
-      -webkit-transform: translatey(0px);
+      -webkit-transform: translatey(-20px);
     }
     80% {
       opacity: 0;
@@ -354,7 +315,7 @@
     }
     5% {
       opacity: 0;
-      -webkit-transform: translatey(0px);
+      -webkit-transform: translatey(15px);
     }
     10% {
       opacity: 1;
@@ -364,9 +325,9 @@
       opacity: 1;
       -webkit-transform: translatey(0px);
     }
-    30% {
+    40% {
       opacity: 0;
-      -webkit-transform: translatey(0px);
+      -webkit-transform: translatey(-20px);
     }
     80% {
       opacity: 0;

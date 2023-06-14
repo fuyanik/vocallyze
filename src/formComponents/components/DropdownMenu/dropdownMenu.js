@@ -23,7 +23,7 @@ const DropdownMenu = ({listİtem,top,right}) => {
    
    
     setIsActive(!isActive);
-    gV.mq.matches && setGlobalState("isPayScreen", true);
+  
   
   }
     
@@ -55,7 +55,6 @@ const DropdownMenu = ({listİtem,top,right}) => {
              className="item"
              onClick={(e) => {
              
-              setGlobalState("isPayScreen", false); 
               setGlobalState("isDropdownSet", true);
 
 

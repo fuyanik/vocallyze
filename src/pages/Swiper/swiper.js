@@ -1,5 +1,5 @@
 import "./style/swiper.css";
-import "./style/mobileSwipper.css";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
@@ -12,6 +12,7 @@ import ForwardButton from "../../formComponents/components/ForwardButton/forward
 import BackButton from "../../formComponents/components/BackButton/backButton";
 import Popup from "../Popup/popup";
 import PayScreen from "../PayScreen/payScreen";
+import { useGlobalState } from "../../hookState";
 
 
 const SwiperPage = ({
@@ -35,22 +36,17 @@ const SwiperPage = ({
  
   const [forwardClass, setForwardClass] = useState(null);
   const [backClass, setBackClass] = useState(null);
+
+  const [activeStep] = useGlobalState("activeStep");
+
+
   
   //Plans default values
   //...
-  const planOneValue = 119;
-  const planTwoValue = 199;
-  const planThreeValue = 799; 
+  const planOneValue = 199;
+  const planTwoValue = 399;
+  const planThreeValue = 1599; 
 
-useEffect(() => {
-  window.scrollTo(0, 0);
-
-  setForwardClass("forward-button-pay-plans")
-
-  setBackClass("back-button-pay-plans")
-
-
-}, [forwardClass, backClass,gV.i]);
 
    
    //All amount variables and *Swipper Page* variables are set here
@@ -524,29 +520,6 @@ useEffect(() => {
   
   }
 
- 
-   //Forward and Back buttons for pay plans page
-   //...
-   const ForwardBackButtons =   ( onClick ) => {
-     return (
-       <>
-        
-        <BackButton
-           backButtonClick={backButtonClick}
-           className={backClass}
-
-        />
-         <ForwardButton
-           className={forwardClass}
-           buttonText={"Choose Plan"}
-           forwardButtonClick={onClick}
-         />
-     
-    
-       </>
-     );
-   };
-
    //Close popup page
    //...
    function onDismiss() {
@@ -565,7 +538,7 @@ useEffect(() => {
       />
 
 
-      <div onClick={()=>{ isPopupOpen &&  setIsPopupOpen(false)}}  className={`${isPopupOpen ? "Swiper-Page-blur" : "Swiper-Page" }  font-product`}>
+      <div onClick={()=>{ isPopupOpen &&  setIsPopupOpen(false)}}  className={`${isPopupOpen ? "Swiper-Page-blur" : "Swiper-Page animate-fadeIn " }  font-product`}>
     
         <Swiper
           initialSlide={1}
@@ -594,7 +567,7 @@ useEffect(() => {
           {/*  Basic */}
          { !isOutside &&  
          
-         <SwiperSlide  className="flex flex-col gap-2 border bg-white text-pri  px-3 pt-3">
+         <SwiperSlide  className="flex flex-col gap-2 border bg-slate-100 text-pri  px-3 pt-3">
             
          <header className="flex items-center justify-between">
           <div className="flex gap-5 items-center justify-center">
@@ -671,10 +644,10 @@ useEffect(() => {
          <div class="flex items-center gap-2">
            <p class="text-3xl">
              {" "}
-             ${VariableCalculator(planTwoValue) | 0}{" "}
+             ${VariableCalculator(planOneValue) | 0}{" "}
            </p>
          { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
-             / <s>${planTwoValue}</s>
+             / <s>${planOneValue}</s>
            </p>}
            <p style={{color:"#676767"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
          </div>
@@ -924,7 +897,7 @@ useEffect(() => {
 
 
            {/* Lifelong */}
-           <SwiperSlide  className="flex  flex-col gap-2 bg-white text-pri px-5 pt-5">
+           <SwiperSlide  className="flex  flex-col gap-2 bg-sec text-white px-5 pt-5">
             <header className="flex items-center justify-between">
              <div className="flex gap-5 items-center justify-center">
              <svg
@@ -949,7 +922,7 @@ useEffect(() => {
             <div class="flex items-center gap-2">
               <p class="text-3xl">
                 {" "}
-                ${VariableCalculator(planTwoValue) | 0}{" "}
+                ${VariableCalculator(planThreeValue) | 0}{" "}
               </p>
             { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
                 / <s>${planTwoValue}</s>

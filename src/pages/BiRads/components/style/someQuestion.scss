@@ -1,0 +1,186 @@
+
+.some-question{
+      display: none;
+    // border-block: 1px solid rgba(128, 128, 128, 0.183);
+    padding: 4vh 0vw;
+   
+     width: 110%;
+    height: auto;
+    gap: 14px;
+    margin-top: 10vh;
+
+    &__left{
+      padding:20px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+     
+      &__line{
+        position: relative;
+       
+        width: 100%;
+        color: black;
+        height: 1px;
+        background-color:gray;
+        
+
+      }
+    }
+
+    &__right{
+        width: 50%;
+       
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        &__images{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 3vh;
+           
+
+
+            &__image{
+                width: 56px;
+                height: 54px;
+                object-fit: cover;
+                
+            }
+            
+        }
+
+        &__text{
+            font-family: "ProductSans-Light";
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+
+    }
+}
+
+
+.accordionn-some-question span{
+position: relative;
+cursor: pointer;
+width: fit-content;
+}
+
+.accordionn-some-question span::after{
+  content: "";
+  position: absolute;
+  background-color: rgb(249, 208, 24);
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -0.5px;
+  left: 0px;
+  transition: 0.4s;
+ 
+}
+
+.accordionn-some-question span:hover::after{
+  width: 100%;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1080px) {
+   
+      
+.some-question{
+    padding: 0vh 0vh;
+    display: flex;
+    flex-direction: column;
+    width: 93vw;
+    height: auto;
+    gap: 14px;
+    margin-top: 4vh;
+
+    &__left{
+      padding:4vh 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+     
+      &__line{
+        position: relative;
+        top: 2vh;
+        width: 100%;
+        color: black;
+        height: 1px;
+        background-color: rgba(128, 128, 128, 0.312);
+
+      }
+    }
+
+    &__right{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        &__images{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+           
+
+
+            &__image{
+                width: 103px;
+                height: 100px;
+              ;
+                object-fit: cover;
+                
+            }
+            
+        }
+
+        &__text{
+            width: 100%;
+            font-family: "ProductSans-Light";
+            
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+
+    }
+}
+
+    
+}
+
+
+
+
+
+[data-aos="new-animation"] {
+    opacity: 0;
+    transition-property: opacity;
+  
+    &.aos-animate {
+      opacity: 1;
+    }
+  
+    @media screen and (min-width: 1080px) {
+
+        
+      transform: translateX(100px);
+  
+      &.aos-animate {
+        transform: translateX(0);
+      }
+    }
+  }
+

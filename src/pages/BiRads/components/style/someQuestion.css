@@ -1,0 +1,135 @@
+.some-question {
+  display: none;
+  padding: 4vh 0vw;
+  width: 110%;
+  height: auto;
+  gap: 14px;
+  margin-top: 10vh;
+}
+.some-question__left {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.some-question__left__line {
+  position: relative;
+  width: 100%;
+  color: black;
+  height: 1px;
+  background-color: gray;
+}
+.some-question__right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.some-question__right__images {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 3vh;
+}
+.some-question__right__images__image {
+  width: 56px;
+  height: 54px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.some-question__right__text {
+  font-family: "ProductSans-Light";
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.accordionn-some-question span {
+  position: relative;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.accordionn-some-question span::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(249, 208, 24);
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -0.5px;
+  left: 0px;
+  transition: 0.4s;
+}
+
+.accordionn-some-question span:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1080px) {
+  .some-question {
+    padding: 0vh 0vh;
+    display: flex;
+    flex-direction: column;
+    width: 93vw;
+    height: auto;
+    gap: 14px;
+    margin-top: 4vh;
+  }
+  .some-question__left {
+    padding: 4vh 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .some-question__left__line {
+    position: relative;
+    top: 2vh;
+    width: 100%;
+    color: black;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.312);
+  }
+  .some-question__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .some-question__right__images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .some-question__right__images__image {
+    width: 103px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .some-question__right__text {
+    width: 100%;
+    font-family: "ProductSans-Light";
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+[data-aos=new-animation] {
+  opacity: 0;
+  transition-property: opacity;
+}
+[data-aos=new-animation].aos-animate {
+  opacity: 1;
+}
+@media screen and (min-width: 1080px) {
+  [data-aos=new-animation] {
+    transform: translateX(100px);
+  }
+  [data-aos=new-animation].aos-animate {
+    transform: translateX(0);
+  }
+}/*# sourceMappingURL=someQuestion.css.map */

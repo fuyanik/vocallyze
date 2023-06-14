@@ -166,8 +166,9 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https://vitamu.com/pay-succes"
+        // return_url: "https://vitamu.com/pay-succes"
         //return_url: "http://localhost:3000/pay-succes"
+        return_url: "https://mitrua.vercel.app/pay-succes"
 
       },  
     });

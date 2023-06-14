@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/*The style operations defined below are normally supposed to be in a different
+ folders called variables,colors,assets(for svg). Codepen does not allow this,
+ so I defined it at the beginning.*/
+/* Paddings
+   ========================================================================== */
+/* Gaps
+   ========================================================================== */
+p {
+  margin: 0;
+}
+
+/* Colors
+   ========================================================================== */
+/* Typography
+   ========================================================================== */
+/* Mixin & Extends
+   ========================================================================== */
+.pay-card__hero, .pay-card, .price-screen__header, .price-screen-blur, .price-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-card__button-enterprise, .pay-card__button-normal {
+  box-sizing: border-box;
+}
+
+/*Micro Classes 
+   ========================================================================== */
+.border--free {
+  border: 1px solid #E6E6E6;
+}
+
+.bs--pro {
+  box-shadow: 0px 14px 30px rgba(204, 204, 204, 0.32);
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+.bg--blue {
+  background: #142b6f;
+}
+
+.color--black {
+  color: #000000;
+}
+
+.color--white {
+  color: #FFFFFF !important;
+}
+
+.color--transp {
+  color: #B1B8C9;
+}
+
+.color--pink {
+  color: white;
+}
+
+.ml--24 {
+  letter-spacing: 0.2px;
+  margin-left: 24px;
+}
+
+.mr--24 {
+  margin-right: 24px;
+}
+
+.text-xl {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 39px;
+  letter-spacing: 1px;
+}
+
+/* Main Css
+   ========================================================================== */
+.price-screen {
+  transition: 300ms;
+  color: #656C7C;
+  font: 1rem/1.5 "ProductSans-Light";
+  background-color: #FFFFFF;
+  padding-bottom: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.price-screen-blur {
+  transition: 300ms;
+  color: #656C7C;
+  font: 1rem/1.5 "ProductSans-Light";
+  background-color: #FFFFFF;
+  padding-bottom: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(229, 230, 234, 0.5647058824);
+  transition: 2000ms;
+  filter: brightness(60%) blur(3px);
+  -webkit-filter: brightness(60%) blur(3px);
+  -moz-filter: brightness(60%) blur(3px);
+  -o-filter: brightness(60%) blur(3px);
+  -ms-filter: brightness(60%) blur(3px);
+  font-family: "ProductSans-Light";
+}
+
+.price-screen__header {
+  margin-top: -7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* For Each Payment Method Cards
+   ========================================================================== */
+.pay-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.pay-card {
+  width: 24.5vw;
+  height: 77vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  border-radius: 27px;
+  padding-top: 2.3rem;
+  padding-bottom: 2rem;
+  gap: 1.5rem;
+}
+.pay-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  gap: 1.125rem;
+  margin-left: 29px;
+}
+.pay-card__header__title {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.pay-card__header__explanation {
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 119px;
+  height: 39px;
+  margin-left: auto;
+  background: #FDB72E;
+  border-radius: 40px;
+}
+.pay-card__value-area {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  gap: 0.75rem;
+}
+.pay-card__hero {
+  gap: 1.125rem;
+  margin-left: 27.83px;
+}
+.pay-card__hero__features {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  gap: 1.125rem;
+}
+.pay-card__button-normal {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  transition: 200ms;
+  width: 90%;
+  height: 48px;
+  border-radius: 27px;
+  margin-top: auto;
+  background: #142b6f;
+}
+.pay-card__button-normal:hover {
+  border: none;
+  background-color: white;
+  color: #142b6f;
+}
+.pay-card__button-normal:hover {
+  border: 1px solid #142b6f;
+}
+.pay-card__button-enterprise {
+  color: #142b6f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  transition: 200ms;
+  width: 90%;
+  height: 48px;
+  border-radius: 27px;
+  margin-top: auto;
+  background: #FFFFFF;
+}
+.pay-card__button-enterprise:hover {
+  border: 2px solid #FFFFFF;
+  background-color: rgba(23, 104, 255, 0);
+  color: #FFFFFF;
+}/*# sourceMappingURL=payPlans.css.map */

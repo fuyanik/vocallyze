@@ -66,6 +66,7 @@ const Home = () => {
   gV.isShowBiRads123 = true;
   gV.navigation = "home";
   setGlobalState("isFormValidate", false);
+  setGlobalState("activeStep", 0);
   gV.a = 0;
   gV.b = 0;
 

@@ -1,0 +1,116 @@
+$background-color: #F9F9F9;
+$button-color: #FFD000;
+$button-color-fade: #ffd00067;
+
+
+.userPanel-mobile{
+    padding-top: 17%;
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 6vh;
+    width: 100vw;
+    overflow-x: hidden;
+    gap: 1vh;
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 2.5vh;
+
+        &__title{
+            position: relative;
+            left: 4vw;
+            font-family: "ProductSans-Light";
+            font-weight: bold;
+            font-size: 2.6rem;
+            color: #142b6f;
+
+        }
+
+        &__line{
+            width: 86%;
+            height: 1px;
+            background-color: #142b6f5c;
+            align-self: center;
+
+        }
+    }
+    
+
+    h1{ 
+      margin-right: 3vw;
+        letter-spacing: 1px;
+        color: white;
+        background-color: #142b6f;
+        font-family: "ProductSans-Light";
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin-left: 0vw;
+        padding-left: 4vw;
+        padding-block: 2vh;
+        animation: textAnimation 400ms ease-in-out forwards;
+        opacity: 0;
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 40px;
+        
+    }
+
+    @keyframes textAnimation{
+        0%{
+            opacity: 0;
+            transform: translateX(-300px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+      
+    }
+
+
+    
+
+    .userPanel-mobile-header{
+        
+        width: 95%;
+        height: 17%;
+        padding: 18px;
+        gap: 15px;
+     
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: $background-color;
+        border-bottom-right-radius: 60px;
+        border-top-right-radius: 60px;
+
+        p{
+            width: 103%;
+            font-family: "ProductSans-Light";
+            font-size: 15.5px;
+            font-weight: 500;
+        }
+       
+    }
+
+  
+  
+ 
+
+      .accordion-details2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        
+        font-family: "ProductSans-Light";
+       
+        position: relative;
+        left: 8.5%;
+        bottom: 8px;
+      }
+}

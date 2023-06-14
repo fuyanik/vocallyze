@@ -1,0 +1,148 @@
+.stepper-box{
+  
+    background-color: #FFFFFF;
+    padding-top: 0vh;
+    position: relative;
+    left: 24.7%;
+    max-width: 60%;
+    font-family: "ProductSans-Light";
+    z-index: 10;
+    bottom: 0vh;
+    padding-left: 2.9vw;
+    
+    
+}
+
+/* completed tick icon*/
+.Mui-completed {
+    color: #142b6f !important;
+}
+
+/*  number icon*/
+.Mui-active {
+  color: #142b6f8f !important;
+
+}
+
+.Mui-disabled {
+  color: rgba(20, 43, 111, 0.568)  !important
+}
+
+
+
+
+.stepper-box .MuiStepConnector-line {
+    display: block;
+    border-color: #bdbdbd !important;
+    border-left-style: solid;
+    border-left-width: 1px;
+    min-height: 16px !important;
+    position: relative;
+    bottom: 3.5px;
+}
+
+ .stepper-upload-image{
+     display: flex;
+     justify-content: space-around;
+     padding-left: 4.7px;
+    font-size: 16.2px;
+    cursor: pointer;
+    padding-top: 3px;
+    color: #FFFFFF;
+    font-family: "ProductSans-Light";
+    background-color: #142b6f;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    height: 36.8px;
+    position: relative;
+    top: 7%;
+    left: 0%;
+    width: 24%;
+  }
+
+  .stepper-upload-image:hover{
+    background-color: rgb(249, 208, 24);
+    color: #142b6f;}
+
+
+
+  .stepper-upload-image-second{
+    width: 21%;
+    margin-top: 2vh;
+    font-size: 16.2px;
+    cursor: pointer;
+    padding-top: 3px;
+    color: #FFFFFF;
+    font-family: "ProductSans-Light";
+    color: #142b6f;
+    border: 1px solid #142b6f;
+    border-radius: 35px;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    font-weight: 500;
+    height:  38px;
+    position: relative;
+    top: 7%;
+    left: 0%;
+  }
+
+  .step-label-margin{
+    margin-left: 0px;
+  }
+  @media screen and (max-width: 1280px) {
+   
+    .step-label-margin{
+        margin-left: 4.5vw !important;
+        width: 92%!important;
+      
+      }
+   
+    .stepper-box{
+       padding-bottom: 4vh;
+       bottom: 0vh;
+        left: 1.3%;
+        max-width: 78%;
+        position: relative;
+        padding-top: 0vh;
+
+        
+       
+      
+      
+    }
+
+    .stepper-upload-image{
+      display: flex;
+      gap: 15%;
+      font-size: 16.2px;
+      cursor: pointer;
+      padding-top:0px;
+      color: #FFFFFF;
+      font-family: "ProductSans-Light";
+      background-color: #142b6f;
+      border-radius: 35px;
+      display: flex;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
+      font-weight: 500;
+      height: 43.8px;
+      position: relative;
+      top: 7%;
+      left: 0%;
+      width: 50vw
+ 
+    }
+
+    .stepper-upload-image-second{
+        width: 27%;
+        top: 10%;
+        left: 3%;
+    }
+  
+    
+  }
+  

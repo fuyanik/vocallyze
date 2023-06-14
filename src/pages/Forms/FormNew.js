@@ -16,7 +16,10 @@ import Navbar from "../../homeComponents/1.Navbar/navbar";
 import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
 import Card9 from "../../formComponents/Card9/card9";
 import SwiperPage from "../Swiper/swiper";
-import { useGlobalState } from "../../hookState";
+import { setGlobalState, useGlobalState } from "../../hookState";
+import PayScreen from "../PayScreen/payScreen";
+import Popup from "../Popup/popup";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -166,18 +169,24 @@ const medicalSendType = [
 
 export default function FormNew() {
 
-    const [activeStep, setActiveStep] = useState(0);
+  const auth = getAuth();
+  const user = auth.currentUser;
+
+  
     const [name, setName] = useState("")
     const [mail, setMail] = useState("")
     const [phone, setPhone] = useState("")
     const [question, setQuestion] = useState("")
 
     const [isDropdownSet] = useGlobalState("isDropdownSet")
+    const [activeStep] = useGlobalState("activeStep")
 
-   
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false)
 
     const [isDropdown, setDropdown] = useState(false)
     const [dropdownText, setDropdownText] = useState("Choose your answer.")
+    
 
 
     {/* Start Step Contents */}
@@ -572,16 +581,16 @@ export default function FormNew() {
          
         </div>
 
-       <div className="relative right-[15px]">
+       <div className="relative right-[23px]">
        { isDropdownSet &&  <SwiperPage/>}
        </div>
         
         </section>
 
 
-    {/* Payment */}
+     {/* Payment */}
     const Payment = 
-        <section className="flex flex-col h-[72vh]">
+        <section className=" hidden flex-col h-[72vh]">
 
        < header className="hidden w-[92vw] self-center  flex-col gap-2">
           <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a070700] ">
@@ -606,18 +615,65 @@ export default function FormNew() {
         </section>
      
 
+        //Close popup page
+   //...
+   function onDismiss() {
+    setIsPopupOpen(false);
+  }
+
+   //Sing up user
+  //...
+  const handleSignup = async  () => {
+
+    try {
+
+        await createUserWithEmailAndPassword(auth, mail, "313131").then((userCredential) => {
+          // Signed in 
+          console.log("SIGN UP SUCCESS")
+
+
+        });
+        updateProfile(auth.currentUser, { displayName: name });
+      
+       
+    } catch (error) {
+     
+      if (error.code === 'auth/email-already-in-use') {
+        setGlobalState("isFormPopUp", true);
+        console.log("SIGN UP ERROR")
+        return;
+        
+      }
+      if (error.code === 'auth/invalid-email') {
+        
+        console.log("SIGN UP ERROR")
+        return;
+        
+      }
+
+
+    }
+  };
 
     
 
   return (
     <>
       <Navbar mobileMenuText={"Menu"} />
+
+      <Popup
+      open={isPopupOpen}
+      onDismiss={onDismiss}
+      contents={<PayScreen/>}
+      close={false}
+      />
+
        
-      <div className="w-screen h-screen background-gradient flex flex-col items-center gap-3 font-product ">
+      <div className="w-screen h- flex flex-col items-center gap-3 font-product ">
       
         <img
           src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg"
-          className="w-screen hidden h-full absolute -z-20 opacity-20"
+          className="w-screen  h-full absolute -z-20 opacity-20"
           alt="vitamu"
         />
 
@@ -630,8 +686,8 @@ export default function FormNew() {
             activeStep={activeStep}
             connector={<QontoConnector />}
           >
-            {steps.map((label) => (
-              <Step key={label}>
+            {steps.map((label,idx) => (
+              <Step key={idx}>
                 <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
               </Step>
             ))}
@@ -644,16 +700,16 @@ export default function FormNew() {
         {activeStep == 2 &&  HistorySymptoms  }
         {activeStep == 3 &&  MedicalImages  }
         {activeStep == 4 &&  Insurance  }
-        {activeStep == 5 &&  Payment }
+       
 
      
        {/* Bottom Buttons */}
-       <div className= {`absolute ${activeStep == 8 && "hidden"} w-[85vw] justify-between  bottom-3 mt-10  flex items-center font-product `} >
+       <div className= {`absolute ${isPopupOpen && "hidden"} w-[85vw] justify-between  bottom-3 mt-10  flex items-center font-product animate-fadeIn`} >
         
 
          {/* Back Button */}
          { activeStep !=0 && <button  onClick={() => {
-                 setActiveStep(activeStep - 1);
+                   setGlobalState("activeStep", activeStep - 1);
                 }} className="w-11 h-11 absolute z-20   animate-leftToRight rounded-full bg-sec flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
        
 
@@ -662,7 +718,21 @@ export default function FormNew() {
       
 
           <button onClick={() => {
-                 setActiveStep(activeStep + 1);
+
+                /* Sıgn Up Step*/
+
+                activeStep == 1 &&  handleSignup()
+
+                  
+               
+                 /* Payment Step States */
+                 activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
+                 activeStep == 4 && setIsPopupOpen(true)
+
+                 /* User and Info Logs */
+                 console.log("activeStep", activeStep, "name", name, "mail", mail, "phone", phone, )
+                 user && console.log("user", user.email)
+
                }}
                className={`bg-sec ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`} >
                 Next
