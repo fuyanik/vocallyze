@@ -1,5 +1,8 @@
+import { getValue } from "@testing-library/user-event/dist/utils";
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gV from "../../../gV";
+import { setGlobalState } from "../../../hookState";
 
 
 const names = [
@@ -17,19 +20,21 @@ const names = [
 export default function SelectScan() {
 
   const [isDropdown, setDropdown] = useState(false)
+  const [scanType, setScanType] = useState([])
 
-   const[bodyParts, setBodyParts] = useState([])
+
+
+
   
-
 
 
   return (
    
-    <div className="flex flex-col gap-3 ">
+ 
            
          
      
-           <div className="  lg:w-[16vw] w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
+    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  " relative flex items-center px-5 w-[36%] h-full  bg-white" } z-0`}>
            
      
              <div
@@ -38,30 +43,33 @@ export default function SelectScan() {
                }}
                className="h-auto py-3 w-[120%] relative text-pri flex-wrap  gap-2 bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
-                {/* Default Place Holder */}
-                { bodyParts.length == 0 && <p className="font-bold">Scan Type(s)</p>}
+                 {/* Default Place Holder */}
+                 <div className="flex gap-2 h-8 items-center justify-center">
+                 <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/ff4949/search--v1.png" alt="search--v1"/>
+                  { scanType.length == 0 && <p className="font-bold lg:font-normal">Scan Type(s)</p>}
+                </div>
 
                 {/* All User Selected Body Parts */}
-                {bodyParts.map((bodyPart, idx) => (
+                {scanType.map((bodyPart, idx) => (
                  <div className="flex gap-1 items-center justify-between bg-pri text-white px-3 py-[6px] rounded-2xl animate-fadeIn ">
                    <p className="text-[12px] tracking-wider "> {bodyPart} </p>
-                   <p onClick={()=>{ setBodyParts(prevBodyParts => prevBodyParts.filter(part => part !== bodyPart)); setDropdown(false)}} className="text-[11px] font-bold relative left-1">X</p>
+                   <p onClick={()=>{ setScanType(prevBodyParts => prevBodyParts.filter(part => part !== bodyPart) );  setDropdown(false)}} className="text-[11px] font-bold relative left-1">X</p>
                  </div>
                 ))}
 
               
               
-               <p className={`absolute right-4 text-[13px] ${isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} >{"▼"}</p>
+               <img  className={`absolute   right-6 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
              </div>
              
             {/* Dropdown White Area */}
             { isDropdown && 
             
-               <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-14 animate-fadeIn rounded-2xl shadow-xl">
+               <div className="absolute z-40  flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl ">
                {names.map((name, idx) => (
                   <p 
-                  className={` ${bodyParts.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3  w-full text-left  `}
-                  onClick={()=>{setDropdown(false); !bodyParts.includes(name) && setBodyParts(prevBodyParts => [...prevBodyParts, name]);  }  }>
+                  className={` ${scanType.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3  w-full text-left  `}
+                  onClick={()=>{setDropdown(false); !scanType.includes(name) && setScanType(prevBodyParts => [...prevBodyParts, name]); gV.scanType.push(name)  }  }>
                     
                     {name}
                  
@@ -74,7 +82,7 @@ export default function SelectScan() {
          
            </div>
          
-          </div>
+          
 
   );
 }

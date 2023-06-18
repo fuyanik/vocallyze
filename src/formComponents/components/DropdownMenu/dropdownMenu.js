@@ -16,11 +16,6 @@ const DropdownMenu = ({listİtem,top,right}) => {
 
     
     //make scrool page end
- 
-   
-
-   
-   
    
     setIsActive(!isActive);
   
@@ -59,6 +54,7 @@ const DropdownMenu = ({listİtem,top,right}) => {
 
 
                setIsSelected(e.target.textContent);
+               gV.insuranceCompany = e.target.textContent;
                setIsActive(!isActive); }}
                
                >

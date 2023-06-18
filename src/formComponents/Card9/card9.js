@@ -28,9 +28,9 @@ const [storageRef, setstorageRef] = useState(null)
 const [isShowİllüst, setIsShowİllüst] = useState(true);
 
 const auth = getAuth();
-const user = true;
+const user = auth.currentUser;
    
-const userRef = user ?  doc(db, "VitamuUsersREAL", `${user.email}`) : null;
+const userRef = user ?  doc(db, "Mitrua", `${user.email}`) : null;
 
 
 
@@ -41,21 +41,8 @@ const getImagesName = async () => {
 
  await getDoc(userRef).then((docSnap) => {
     if (docSnap.exists()) {
-      
-       if(totalRecheck === 1){
+       
         imagesData = docSnap.data().FirstRecheck.zipNames;
-       }
-
-        if(totalRecheck === 2){
-        imagesData = docSnap.data().SecondRecheck.zipNames;
-        }
-
-        //Life Long Option
-        //..
-        if(totalRecheck === 0){
-        imagesData = docSnap.data().LifeLong.zipNames;
-        }
-
 
    
     }
@@ -122,42 +109,18 @@ const handleImageChange = (e) => {
 
     //Set Doc firestore database
     //..
-    if(totalRecheck === 1 ){
+   
       setDoc(
-        doc(db, "VitamuUsersREAL", `${user.email}`),
+        doc(db, "Mitrua", `${user.email}`),
         {
           FirstRecheck: { imagesName: arrayUnion(item.name) },
         },
         { merge: true }
       );
 
-    }
 
-    if(totalRecheck === 2 ){
-        
-        setDoc(
-          doc(db, "VitamuUsersREAL", `${user.email}`),
-          {
-            SecondRecheck: { imagesName: arrayUnion(item.name) },
-          },
-          { merge: true }
-        );
-  
-    }
 
-    //Life Long Option
-    //..
-    if(totalRecheck === 0 ){
-        
-        setDoc(
-          doc(db, "VitamuUsersREAL", `${user.email}`),
-          {
-            LifeLong: { imagesName: arrayUnion(item.name) },
-          },
-          { merge: true }
-        );
-  
-    }
+ 
   
 
     //FOTİLERİ STORAGE YÜKLEME
@@ -188,7 +151,7 @@ const handleImageChange = (e) => {
           if(totalRecheck === 1 ){
 
             setDoc(
-              doc(db, "VitamuUsersREAL", `${user.email}`),
+              doc(db, "Mitrua", `${user.email}`),
               {
                 FirstRecheck: {
                   
@@ -204,7 +167,7 @@ const handleImageChange = (e) => {
           if(totalRecheck === 2 ){
               
               setDoc(
-                doc(db, "VitamuUsersREAL", `${user.email}`),
+                doc(db, "Mitrua", `${user.email}`),
                 {
                   SecondRecheck: {
                     
@@ -221,7 +184,7 @@ const handleImageChange = (e) => {
           if(totalRecheck === 0 ){
               
               setDoc(
-                doc(db, "VitamuUsersREAL", `${user.email}`),
+                doc(db, "Mitrua", `${user.email}`),
                 {
                   
                   LifeLong: {
@@ -265,7 +228,7 @@ const handleImageChange = (e) => {
       );
 
       setDoc(
-        doc(db, "VitamuUsersREAL", `${user.email}`),
+        doc(db, "Mitrua", `${user.email}`),
         {
           FirstRecheck: { zipNames: arrayUnion(`first_recheck_medical${Date.now()}.zip`) },
         },
@@ -291,7 +254,7 @@ const handleImageChange = (e) => {
               //update doc push content url to firebase database array
   
               setDoc(
-                doc(db, "VitamuUsersREAL", `${user.email}`),
+                doc(db, "Mitrua", `${user.email}`),
                 {
                   FirstRecheck: { zipUrls: arrayUnion(url) },
                 },
@@ -316,7 +279,7 @@ const handleImageChange = (e) => {
       );
 
       setDoc(
-        doc(db, "VitamuUsersREAL", `${user.email}`),
+        doc(db, "Mitrua", `${user.email}`),
         {
           SecondRecheck: { zipNames: arrayUnion(`first_recheck_medical${Date.now()}.zip`) },
         },
@@ -340,7 +303,7 @@ const handleImageChange = (e) => {
               //update doc push content url to firebase database array
   
               setDoc(
-                doc(db, "VitamuUsersREAL", `${user.email}`),
+                doc(db, "Mitrua", `${user.email}`),
                 {
                   SecondRecheck: { zipUrls: arrayUnion(url) },
                 },
@@ -366,7 +329,7 @@ const handleImageChange = (e) => {
       );
 
       setDoc(
-        doc(db, "VitamuUsersREAL", `${user.email}`),
+        doc(db, "Mitrua", `${user.email}`),
         {
           LifeLong: { zipNames: arrayUnion(`${imagingName} - Medical Images${Date.now()}.zip`) },
         },
@@ -390,7 +353,7 @@ const handleImageChange = (e) => {
               //update doc push content url to firebase database array
   
               setDoc(
-                doc(db, "VitamuUsersREAL", `${user.email}`),
+                doc(db, "Mitrua", `${user.email}`),
                 {
                   LifeLong: { zipUrls: arrayUnion(url) },
                 },
@@ -486,7 +449,7 @@ return (
                 ))}
 
                 {imagesName.map((item, idx) => (
-                  <div style={{backgroundColor:"#0b090910"}} className="card9-main-texts-image-name" key={idx}>
+                  <div style={{backgroundColor:"#0b090910"}} className="lg:w-[20vw] w-[88vw] flex items-center justify-center mt-1 text-lg py-2 rounded-full text-pri " key={idx}>
                     {" "}
                    <p style={{fontSize:"13px"}}> {item}</p>
                    

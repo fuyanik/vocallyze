@@ -6,31 +6,31 @@ import React from 'react';
 
 const { setGlobalState, useGlobalState } = createGlobalState({
 
- /* Form Step */
- activeStep: 0,
+  /* Mitrua */
+   
+  /* Select Dropdown */ 
+  isDropdownSet: false,
+  /* Form Step */
+  activeStep: 0,
+  
+  scanType: [],
+  bodyParts: [],
+
+
+
+
 
  isError: false,
-
- formInformation: {
-   firstName: "",
-   mail: "",
-   phone: 0,
-   question: "",
-   imagesSendType: "",
-   medicalCenter: "",
-   insurance: "",
- },
-
-
- /* Select Dropdown */ 
- isDropdownSet: false,
-
-
 
  isPayScreen: false,
  isFormValidate: false,
  userPanelNavIndex: 0,
  isFormPopUp: false,
+
+
+
+ 
+
 
   
 });

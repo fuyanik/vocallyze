@@ -20,6 +20,9 @@ import { setGlobalState, useGlobalState } from "../../hookState";
 import PayScreen from "../PayScreen/payScreen";
 import Popup from "../Popup/popup";
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import gV from "../../gV";
+import { arrayUnion, doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -172,18 +175,19 @@ export default function FormNew() {
   const auth = getAuth();
   const user = auth.currentUser;
 
+  const [isDropdownSet] = useGlobalState("isDropdownSet")
+  const [activeStep] = useGlobalState("activeStep")
+  const [bodyParts] = useGlobalState("bodyParts")
+  const [scanType] = useGlobalState("scanType")
+
   
     const [name, setName] = useState("")
     const [mail, setMail] = useState("")
     const [phone, setPhone] = useState("")
     const [question, setQuestion] = useState("")
 
-    const [isDropdownSet] = useGlobalState("isDropdownSet")
-    const [activeStep] = useGlobalState("activeStep")
-
 
     const [isPopupOpen, setIsPopupOpen] = useState(false)
-
     const [isDropdown, setDropdown] = useState(false)
     const [dropdownText, setDropdownText] = useState("Choose your answer.")
     
@@ -234,6 +238,7 @@ export default function FormNew() {
           value={name}
           onChange={(e) => {
             setName(e.target.value);
+            gV.MailAddres = e.target.value;
           }}
           type="text"
           className={contactInputStyle}
@@ -399,7 +404,8 @@ export default function FormNew() {
                 className="h-[96%] w-[120%] text-pri justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
                 <p> {dropdownText}</p>
-                <p className={`absolute right-4 text-[13px] ${isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} >{"▼"}</p>
+                <img  className={`absolute   right-6 lg:right-1 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+
               </div>
 
               {/* Dropdown White Area */}
@@ -439,7 +445,6 @@ export default function FormNew() {
                   displayText={"none"}
                   buttonText={"Upload Image"}
                   itemsScrollType={""}
-                  userMailAddress={"furkanuyanik3199@gmail.com"}
                 />
               </div>
              
@@ -722,14 +727,38 @@ export default function FormNew() {
                 /* Sıgn Up Step*/
 
                 activeStep == 1 &&  handleSignup()
-
-                  
                
                  /* Payment Step States */
                  activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
                  activeStep == 4 && setIsPopupOpen(true)
 
+                 if (activeStep == 4) {
+                  setDoc(
+                    doc(db, "Mitrua", `${user.email}`),
+                    {
+                        Rechecks: arrayUnion({
+                          activeStep: 3,
+                          createDay: new Date().getDate(),
+                          createMonth: new Date().getMonth(),
+                          createYear: new Date().getFullYear(),
+                          bodyParts: gV.bodyParts,
+                          scanType: gV.scanType,
+                          name: name,
+                          mail: mail,
+                          phone: phone,
+                          question: question,
+                          medicalSendType: dropdownText,
+                          insurance: gV.insuranceCompany,
+                        }),
+                    },
+                    { merge: true }
+                  );
+                 }
+
+
                  /* User and Info Logs */
+                 console.log("BodyParts", gV.bodyParts )
+                 console.log("ScanType", gV.scanType )
                  console.log("activeStep", activeStep, "name", name, "mail", mail, "phone", phone, )
                  user && console.log("user", user.email)
 

@@ -93,6 +93,9 @@ const gV =
 
     geoData: {},
 
+    bodyParts: [],
+    scanType: [],
+
     
 }
 

@@ -52,7 +52,7 @@ const fetchData = async (totalValue) => {
     body: JSON.stringify({
        items: [{ 
         amount:  totalValue,
-        user_mail: "furkanuyanik37@gmail.com",
+        user_mail: user.email,
         name: "asdsd",
         id: "vitamu", 
       

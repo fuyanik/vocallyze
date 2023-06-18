@@ -112,7 +112,7 @@ const UserPanelMobile = () => {
 
 
   const getInfo = async  () => {
-    const docRef = doc(db, "VitamuUsersREAL", `${user.email}`);
+    const docRef = doc(db, "Mitrua", `${user.email}`);
 
     //Paying users
     await  getDoc(docRef).then((doc) => {
@@ -238,7 +238,7 @@ const UserPanelMobile = () => {
   };
   //update email when user clicks update email button
   const ChangeEmail = async () => {
-    const cityRef = doc(db, "VitamuUsersREAL", `${user.email}`);
+    const cityRef = doc(db, "Mitrua", `${user.email}`);
 
     setDoc(cityRef, { MailAddress: changedEmail }, { merge: true });
 
@@ -275,7 +275,7 @@ const UserPanelMobile = () => {
   //update password when user clicks update password button
   const updateUserPassword = async () => {
     await setDoc(
-      doc(db, "VitamuUsersREAL", `${user.email}`),
+      doc(db, "Mitrua", `${user.email}`),
       {
         FirstRecheck: { Password: changedPassword },
       },
@@ -313,7 +313,7 @@ const UserPanelMobile = () => {
 
   const updatePhoneNumber = async () => {
     await setDoc(
-      doc(db, "VitamuUsersREAL", `${user.email}`),
+      doc(db, "Mitrua", `${user.email}`),
       {
         FirstRecheck: { phoneNumber: changedPhone },
       },
@@ -345,7 +345,7 @@ const UserPanelMobile = () => {
 
   const SelfExamEnrollButton = async () => {
     await setDoc(
-      doc(db, "VitamuUsersREAL", `${user.email}`),
+      doc(db, "Mitrua", `${user.email}`),
       {
         FirstRecheck: {
           remindMe: true,
@@ -484,7 +484,7 @@ const UserPanelMobile = () => {
                       else{
 
                         setDoc(
-                          doc(db, "VitamuUsersREAL", `${user.email}`),
+                          doc(db, "Mitrua", `${user.email}`),
                           {
                             LifeLong: {
                               rechecks: arrayUnion({

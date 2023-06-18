@@ -98,14 +98,17 @@ const Home = () => {
       
       
       <Hero/>
-     
-      <Radiologists/>
-      <SliderStepper/>
-      <Testom/>
-      <AllOneService/>
-      { /*  <TechnologyHome/> */}
-      <LearningCenter/>
-      {mq.matches ? <MobileFooter/> : <Footer/>}
+    
+    
+     <div className='hidden'>
+       <Radiologists/>
+       <SliderStepper/>
+       <Testom/>
+       <AllOneService/>
+       { /*  <TechnologyHome/> */}
+       <LearningCenter/>
+       {mq.matches ? <MobileFooter/> : <Footer/>}
+     </div>
       
 
       

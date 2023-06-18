@@ -19,11 +19,6 @@ const Hero = () => {
 
 
 
-  
-
-
-
-
   const icons = [
    
     {
@@ -52,7 +47,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="w-screen h-auto py-3 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+      <div className="w-screen  pt-3 pb-28 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
       
       <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-full absolute -z-20 opacity-20"  alt="vitamu"/>
         
@@ -92,34 +87,12 @@ const Hero = () => {
         <div className=" flex w-[65vw] cursor-pointer  h-[56px] ">
           
           
-          <div className=" flex items-center px-5 w-[44%] h-full  border-[#142b6f] rounded-tl-[44px] rounded-bl-[44px] bg-white "> 
-            <div className="flex w-full  items-center justify-between "> 
-             
-             <div className="flex gap-2 items-center justify-center">
-               <img width="20" src="https://img.icons8.com/ios-filled/50/ff4949/search--v1.png" alt="search--v1"/>
-               <p> Choose Body Part </p>
-             </div>
-             
-              <img className="rotate-180" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
-              
-           </div>    
-          </div>
-         
-          <div className=" flex items-center px-5 w-[36%] h-full  bg-white  "> 
-          <div className="flex w-full  items-center justify-between "> 
-             
-             <div className="flex gap-2 items-center justify-center">
-               <img width="20" src="https://img.icons8.com/ios-filled/50/ff4949/search--v1.png" alt="search--v1"/>
-               <p> Scan Type </p>
-             </div>
-             
-              <img  className="rotate-180 relative right-6" width="20" height="20" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
-              
-           </div>  
-          </div>
+          <SelectBodyParts/>
+          <ScanType/>
+          
         
         
-          <div onClick={()=>{ navigate("/form") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-[#ff4949f4] text-white rounded-[44px] relative right-6  "> 
+          <div onClick={()=>{ navigate("/form-new") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-[#ff4949f4] text-white rounded-[44px] relative right-6 z-10  "> 
             <p>Get Started</p>
             <p>➔</p>
            </div>

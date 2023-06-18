@@ -76,24 +76,32 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 
-export default function CustomizedAccordions({userActiveStep,userCreateDay,userCreateMonth,userCreateYear,payType, totalRecheck}) {
+export default function CustomizedAccordions({userActiveStep ,payType, totalRecheck}) {
 
   
 
   const auth = getAuth();
   const user = auth.currentUser;
 
+  const [userCreateDay, setUserCreateDay] = React.useState(0);
+  const [userCreateMonth, setUserCreateMonth] = React.useState(0);
+  const [userCreateYear, setUserCreateYear] = React.useState(0);
+
+  
 
  
  const getUserInfo = async () => {
    //Control PAİD users
    //.....
-   const docRef = doc(db, "VitamuUsersREAL", `${user.email}`);
+   const docRef = doc(db, "Mitrua", `${user.email}`);
    const docSnap = await getDoc(docRef);
 
    if (docSnap.exists()) {
-     //Get active step
-     //...
+      console.log("Document data:", docSnap.data());
+
+      setUserCreateDay(docSnap.data().Rechecks[0].createDay);
+      setUserCreateMonth(docSnap.data().Rechecks[0].createMonth);
+      setUserCreateYear(docSnap.data().Rechecks[0].createYear);
      
 
    } else {
