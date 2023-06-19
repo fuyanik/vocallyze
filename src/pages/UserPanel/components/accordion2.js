@@ -323,22 +323,24 @@ export default function CustomizedAccordions({totalRecheck}) {
         </AccordionSummary>
 
         <AccordionDetails>
-          <div className="accordion-upload-image">
-            <Card9
-              totalRecheck={totalRecheck}
-              itemsScrollType={""}
-              top={"2vh"}
-              displayText={"none"}
-              buttonText={"Upload Image"}
-              userMailAddress={user.email}
-            />
-          </div>
-
-          <div className="accordion-details2">
-            <div onClick={pullImages}>Download All</div>
-
-            <div onClick={deleteImages}>Delete</div>
-          </div>
+         <div className="flex flex-col lg:gap-6 gap-8">
+           <div className="accordion-upload-image">
+             <Card9
+               totalRecheck={totalRecheck}
+               itemsScrollType={""}
+               top={"2vh"}
+               displayText={"none"}
+               buttonText={"Upload Image"}
+               userMailAddress={user.email}
+             />
+           </div>
+          
+           <div className="accordion-details2">
+             <div onClick={pullImages}>Download All</div>
+          
+             <div onClick={deleteImages}>Delete</div>
+           </div>
+         </div>
         </AccordionDetails>
       </Accordion>
 

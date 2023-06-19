@@ -385,10 +385,10 @@ return (
          (
             
 
-            <div className="  border-red-600"> 
+            <div className="  "> 
               
 
-             <div className="flex relative items-center  border-blue-700" >
+             <div className="flex relative items-center  border-blue-700 text-pri" >
              
                 <div htmlFor="file" className="  flex self-center absolute items-center gap-3  bg-white w-fit pl-3 pr-4 py-2 rounded-3xl shadow-2xl">
                    
@@ -412,78 +412,80 @@ return (
               
               
 
-                {arrays.map((item, idx) => (
-                  <div className="card9-main-texts-image-name" key={idx}>
-                    {" "}
-                   <p style={{fontSize:"13px"}}> {item.name} ({progress[idx].progress}%)</p>
+           <div className="flex mt-4  flex-col w-auto max-h-[30vh] lg:h-auto overflow-scroll">
+                 {arrays.map((item, idx) => (
+                   <div className="lg:w-[20vw] w-[88vw] bg-slate-100 flex items-center justify-center mt-1 text-lg py-2 rounded-full text-pri " key={idx}>
+                     {" "}
+                    <p style={{fontSize:"13px"}}> {item.name} ({progress[idx].progress}%)</p>
+                    
+                    <svg style={{cursor: "pointer"}} onClick={  ()=>{
+            
+                       /*delete images function */
+                        setArray(arrays.filter((item, index) => index !== idx));
+            
+                        //delete images from storage
+                         const storageRef = ref(storage, `/${user ? user.email : gV.MailAddres }/${item.name}`);
+                          deleteObject(storageRef);
+            
+                        //delete images Url from firestore database
+                        updateDoc(userRef, {
+                         imagesName: arrayRemove(item.name),
+                         });
                    
-                   <svg style={{cursor: "pointer"}} onClick={  ()=>{
-
-                      /*delete images function */
-                       setArray(arrays.filter((item, index) => index !== idx));
-
-                       //delete images from storage
-                        const storageRef = ref(storage, `/${user ? user.email : gV.MailAddres }/${item.name}`);
-                         deleteObject(storageRef);
-
-                       //delete images Url from firestore database
-                       updateDoc(userRef, {
-                        imagesName: arrayRemove(item.name),
-                        });
+            
+                       toast.success('Delete image successfully.', {
+                         position: "bottom-right",
+                         autoClose: 700,
+                         hideProgressBar: false,
+                         closeOnClick: true,
+                         pauseOnHover: true,
+                         draggable: true,
+                         progress: undefined,
+                         }).catch(error => {
+                           console.log(error);
+                         });
+                    }} className="svg-images" stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
                   
-
-                      toast.success('Delete image successfully.', {
-                        position: "bottom-right",
-                        autoClose: 700,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        }).catch(error => {
-                          console.log(error);
-                        });
-                   }} className="svg-images" stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-                 
-                  </div>
-                ))}
-
-                {imagesName.map((item, idx) => (
-                  <div style={{backgroundColor:"#0b090910"}} className="lg:w-[20vw] w-[88vw] flex items-center justify-center mt-1 text-lg py-2 rounded-full text-pri " key={idx}>
-                    {" "}
-                   <p style={{fontSize:"13px"}}> {item}</p>
-                   
-                   <svg style={{cursor: "pointer"}} onClick={ ()=>{
-
-                      /*delete images function */
-                       setImagesName(imagesName.filter((item, index) => index !== idx));
-
-                       //delete images from storage
-                        const storageRef = ref(storage, `/${user ? user.email : gV.MailAddres }/${item}`);
-                         deleteObject(storageRef);
-
-                         //delete images URL from firestore database iamgesUrl array which select user item
-                          updateDoc(userRef, {
-                          imagesName: arrayRemove(item),
-                          });
-                      
-              
-
-                      toast.success('Delete image successfully.', {
-                        position: "bottom-right",
-                        autoClose: 700,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        }).catch(error => {
-                          console.log(error);
-                        });
-                   }} className="svg-images" stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-                 
-                  </div>
-                ))}
+                   </div>
+                 ))}
+            
+                 {imagesName.map((item, idx) => (
+                   <div style={{backgroundColor:"#0b090910"}} className="lg:w-[20vw] w-[88vw] flex items-center justify-center mt-1 text-lg py-2 rounded-full text-pri " key={idx}>
+                     {" "}
+                    <p style={{fontSize:"13px"}}> {item}</p>
+                    
+                    <svg style={{cursor: "pointer"}} onClick={ ()=>{
+            
+                       /*delete images function */
+                        setImagesName(imagesName.filter((item, index) => index !== idx));
+            
+                        //delete images from storage
+                         const storageRef = ref(storage, `/${user ? user.email : gV.MailAddres }/${item}`);
+                          deleteObject(storageRef);
+            
+                          //delete images URL from firestore database iamgesUrl array which select user item
+                           updateDoc(userRef, {
+                           imagesName: arrayRemove(item),
+                           });
+                       
+               
+            
+                       toast.success('Delete image successfully.', {
+                         position: "bottom-right",
+                         autoClose: 700,
+                         hideProgressBar: false,
+                         closeOnClick: true,
+                         pauseOnHover: true,
+                         draggable: true,
+                         progress: undefined,
+                         }).catch(error => {
+                           console.log(error);
+                         });
+                    }} className="svg-images" stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+                  
+                   </div>
+                 ))}
+           </div>
 
            </div>
 

@@ -177,14 +177,14 @@ export default function FormNew() {
 
   const [isDropdownSet] = useGlobalState("isDropdownSet")
   const [activeStep] = useGlobalState("activeStep")
-  const [bodyParts] = useGlobalState("bodyParts")
-  const [scanType] = useGlobalState("scanType")
+ 
 
   
     const [name, setName] = useState("")
     const [mail, setMail] = useState("")
     const [phone, setPhone] = useState("")
     const [question, setQuestion] = useState("")
+    const [medicalCenter, setMedicalCenter] = useState("")
 
 
     const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -195,13 +195,13 @@ export default function FormNew() {
 
     {/* Start Step Contents */}
 
-     const contactInputStyle = "w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
+     const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
      
      
     
     {/* Contact Detail */}
     const ContactDetail =  
-    <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+    <section className="w-[92vw] lg:w-[46vw]  animate-fadeIn flex flex-col h-auto pt-0 px-2">
               
       <header className="flex flex-col gap-2">
         <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
@@ -287,7 +287,7 @@ export default function FormNew() {
 
     {/* Radiologist */}
     const Radiologist = 
-        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
+        <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
         
          <div className="flex flex-col gap-2">
           <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
@@ -361,11 +361,60 @@ export default function FormNew() {
        </div>
         </section>
     
+    
+   {/* History Symptoms */}
+    const HistorySymptoms = 
+         <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-pri">
+          
+        <div className="flex flex-col gap-2">
+            
+            <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
+              <p className="text-[22px] font-bold text-pri">
+              History and Symptoms
+              </p>
+          
+              <p className="text-[16px] mt-1 font-bold text-pri">
+                {" "}
+                Step {activeStep + 1} of 5
+              </p>
+          
+              
+            </header>
+
+            <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
+             {" "}
+             We respect your privacy. Your contact details will not be shared
+            with anyone.
+            </p>
+
+          <textarea
+            value={question}
+            onChange={(e) => {
+              setQuestion(e.target.value);
+            }}
+            type="text"
+            className="w-[96%] lg:w-[85%] mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
+            placeholder="Type your question here."
+          />
+        
+       
+       
+       
+       
+       
+        </div>
+
+        
+
+      
+
+         
+         </section>
 
 
     {/* Medical Images */}
     const MedicalImages = (
-      <section className="w-[92vw] animate-fadeIn  flex flex-col h-auto pt-0 px-2">
+      <section className="w-[92vw] lg:w-[46vw] animate-fadeIn   flex flex-col h-auto pt-0 px-2">
       
         <header className="flex flex-col gap-2">
           <div className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
@@ -396,7 +445,7 @@ export default function FormNew() {
 
 
             {/* Dropdown Select Area */}
-            <div className="  lg:w-[16vw] w-[84vw] h-[7vh] lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
+            <div className="  lg:w-[22vw] w-[84vw] h-[7vh] lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
               <div
                 onClick={() => {
                   setDropdown(!isDropdown);
@@ -404,7 +453,7 @@ export default function FormNew() {
                 className="h-[96%] w-[120%] text-pri justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
                 <p> {dropdownText}</p>
-                <img  className={`absolute   right-6 lg:right-1 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+                <img  className={`absolute   right-6 lg:right-5 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
 
               </div>
 
@@ -491,9 +540,9 @@ export default function FormNew() {
               </p>
 
               <input
-                value={name}
+                value={medicalCenter}
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setMedicalCenter(e.target.value);
                 }}
                 type="text"
                 className={contactInputStyle}
@@ -504,61 +553,11 @@ export default function FormNew() {
         </div>
       </section>
     );
-        
-    
-   {/* History Symptoms */}
-    const HistorySymptoms = 
-         <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-pri">
-          
-        <div className="flex flex-col gap-2">
-            
-            <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-              <p className="text-[22px] font-bold text-pri">
-              History and Symptoms
-              </p>
-          
-              <p className="text-[16px] mt-1 font-bold text-pri">
-                {" "}
-                Step {activeStep + 1} of 5
-              </p>
-          
-              
-            </header>
-
-            <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
-             {" "}
-             We respect your privacy. Your contact details will not be shared
-            with anyone.
-            </p>
-
-          <textarea
-            value={question}
-            onChange={(e) => {
-              setQuestion(e.target.value);
-            }}
-            type="text"
-            className="w-[96%] lg:w-[65%] mt-1 lg:h-[24vh] shadow-2xl h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
-            placeholder="Type your question here."
-          />
-        
-       
-       
-       
-       
-       
-        </div>
-
-        
-
-      
-
-         
-         </section>
 
 
     {/* Insurance */}
     const Insurance = 
-        <section className="w-[92vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 ">
+        <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 ">
         
          <header className="flex flex-col gap-2">
           <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
@@ -593,34 +592,9 @@ export default function FormNew() {
         </section>
 
 
-     {/* Payment */}
-    const Payment = 
-        <section className=" hidden flex-col h-[72vh]">
-
-       < header className="hidden w-[92vw] self-center  flex-col gap-2">
-          <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a070700] ">
-            <p className="text-[22px] font-bold text-pri">
-              Payment
-            </p>
-
-            <p className="text-[16px] mt-1 font-bold text-pri">
-              {" "}
-              Step {activeStep + 1} of 5
-            </p>
-          </header>
-
-          <p className="text-[16px] hidden leading-[22px] mt-2  text-priTrans">
-            {" "}
-            We respect your privacy. Your contact details will not be shared
-            with anyone.
-          </p>
-         </header>
-
-      { false && <SwiperPage/> }
-        </section>
      
 
-        //Close popup page
+    //Close popup page
    //...
    function onDismiss() {
     setIsPopupOpen(false);
@@ -674,7 +648,7 @@ export default function FormNew() {
       />
 
        
-      <div className="w-screen h- flex flex-col items-center gap-3 font-product ">
+      <div className="w-screen  flex flex-col items-center gap-3 lg:gap-16 font-product ">
       
         <img
           src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg"
@@ -682,10 +656,10 @@ export default function FormNew() {
           alt="vitamu"
         />
 
-        <div className="mt-12"></div>
+        <div className="mt-12 "></div>
           
           {/*  Stepper */}
-        <Stack sx={{ width: "100%" }} spacing={5}>
+        <Stack sx={ gV.mq.matches ? { width: "100%" }  : { width: "55%" } } spacing={5}>
           <Stepper
             alternativeLabel
             activeStep={activeStep}
@@ -709,7 +683,7 @@ export default function FormNew() {
 
      
        {/* Bottom Buttons */}
-       <div className= {`absolute ${isPopupOpen && "hidden"} w-[85vw] justify-between  bottom-3 mt-10  flex items-center font-product animate-fadeIn`} >
+       <div className= {`absolute ${isPopupOpen && "hidden"} w-[85vw] lg:w-[45vw] justify-between  bottom-3 mt-10  flex items-center font-product animate-fadeIn`} >
         
 
          {/* Back Button */}
@@ -719,6 +693,7 @@ export default function FormNew() {
        
 
         {true && <div> </div> }
+
         {/* Next Button */}
       
 
@@ -748,6 +723,7 @@ export default function FormNew() {
                           phone: phone,
                           question: question,
                           medicalSendType: dropdownText,
+                          medicalCenter: medicalCenter,
                           insurance: gV.insuranceCompany,
                         }),
                     },
