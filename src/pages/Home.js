@@ -97,7 +97,7 @@ const Home = () => {
       />
       
       
-      <Hero/>
+       <Hero/>
     
     
     

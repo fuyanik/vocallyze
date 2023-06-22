@@ -9,7 +9,6 @@ module.exports = {
       colors: {
         pri: '#142b6f',
         priTrans: '#142b6f90',
-       
         sec: '#ff4949',
       },
 
@@ -40,6 +39,10 @@ module.exports = {
       
       fontFamily: {
          product: ['ProductSans-Light'],
+      },
+
+      boxShadow: {
+        '3xl': '0px 14px 30px rgba(204, 204, 204, 0.32)',
       },
 
      

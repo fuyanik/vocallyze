@@ -25,7 +25,8 @@ import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import PayPlans from "../PayPlans/payPlans";
 import DropdownMenu from "../../formComponents/components/DropdownMenu/dropdownMenu";
-import AvailableRadiologists from "./components/availableRadiologists";
+import AvailableRadiologists from "./components/AvailableRadiologists";
+import Insurance from "./components/Insurance";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -429,7 +430,7 @@ export default function FormNew() {
   const auth = getAuth();
   const user = auth.currentUser;
 
-  const [isDropdownSet] = useGlobalState("isDropdownSet")
+ 
   const [activeStep] = useGlobalState("activeStep")
   const [mainPayAmount] = useGlobalState("mainPayAmount")
  
@@ -450,7 +451,7 @@ export default function FormNew() {
 
     {/* Start Step Contents */}
 
-     const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-sec  bg-slate-100 "
+     const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-priTrans  bg-slate-100 "
 
      
      
@@ -573,7 +574,7 @@ export default function FormNew() {
               setQuestion(e.target.value);
             }}
             type="text"
-            className="w-[96%] lg:w-[85%] bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
+            className="w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-priTrans "
             placeholder="Type your question here."
           />
         
@@ -735,44 +736,6 @@ export default function FormNew() {
     );
 
 
-    {/* Insurance */}
-    const Insurance = 
-        <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 ">
-        
-         <header className="flex flex-col gap-2">
-          <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-            <p className="text-[22px] font-bold text-pri">
-              Insurances
-            </p>
-
-            <p className="text-[16px] mt-1 font-bold text-pri">
-              {" "}
-              Step {activeStep + 1} of 5
-            </p>
-          </header>
-
-        
-         </header>
-
-        {/* What is Insurance */}
-        <div className="flex flex-col gap-1 mt-0">
-          <p className="text-lg text-pri font-bold mt-4">
-            {" "}
-            What is your insurance?
-          </p>
-
-          
-          <DropdownMenu
-                   right={gV.mq.matches ? "110px" : "0px"}  />
-         
-        </div>
-
-       <div className="relative right-[23px] lg:mt-4">
-       { isDropdownSet && (gV.mq.matches ?  <SwiperPage/> : <PayPlans/>) }
-       </div>
-        
-        </section>
-
 
      
 
@@ -856,7 +819,7 @@ export default function FormNew() {
         {activeStep == 1 &&  <AvailableRadiologists/> }
         {activeStep == 2 &&  HistorySymptoms  }
         {activeStep == 3 &&  MedicalImages  }
-        {activeStep == 4 &&  Insurance  }
+        {activeStep == 4 &&  <Insurance/>   }  
        
 
      

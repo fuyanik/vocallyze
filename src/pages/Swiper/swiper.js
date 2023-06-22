@@ -53,7 +53,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
     if(gV.insuranceCompany === "United Healthcare" ) {
 
-      gV.discountPercent = 40
+      gV.discountPercent = 30
 
       //Insurance discount
       //...
@@ -69,7 +69,7 @@ const SwiperPage = ({  isOutside = false, }) => {
      }
 
    if(gV.insuranceCompany === "Oscar") {
-     gV.discountPercent = 55;
+     gV.discountPercent = 45;
 
      //Insurance discount
      //...
@@ -82,7 +82,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Aetna" ) {
 
-     gV.discountPercent = 45
+     gV.discountPercent = 35
 
      //Insurance discount
      //...
@@ -95,7 +95,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany ===  "Molina Healthcare" ) {
        
-       gV.discountPercent = 50
+       gV.discountPercent = 40
 
        //Insurance discount
        //...
@@ -108,7 +108,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Humana" ) {
        
-     gV.discountPercent = 55;
+     gV.discountPercent = 45;
 
      //Insurance discount
      //...
@@ -122,7 +122,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Cigna" ) {
     
-     gV.discountPercent = 45;
+     gV.discountPercent = 35;
 
      //Insurance discount
      //...
@@ -148,7 +148,7 @@ const SwiperPage = ({  isOutside = false, }) => {
    
    if(gV.insuranceCompany ===  "Anthem") {
     
-     gV.discountPercent = 60;
+     gV.discountPercent = 35;
 
      //Insurance discount
      //...
@@ -160,7 +160,7 @@ const SwiperPage = ({  isOutside = false, }) => {
    }
 
    if(gV.insuranceCompany === "Blue California" ) {
-      gV.discountPercent = 55;
+      gV.discountPercent = 45;
 
          //Insurance discount
          //...
@@ -173,7 +173,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Blue Shield" ) {
     
-     gV.discountPercent = 50;
+     gV.discountPercent = 40;
 
      //Insurance discount
      //...
@@ -186,7 +186,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Care Plus" ) {
     
-     gV.discountPercent = 45;
+     gV.discountPercent = 35;
 
      //Insurance discount
      //...
@@ -199,7 +199,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Freedom Health" ) {
     
-     gV.discountPercent = 40;
+     gV.discountPercent = 30;
 
      //Insurance discount
      //...
@@ -223,7 +223,7 @@ const SwiperPage = ({  isOutside = false, }) => {
    }
 
    if(gV.insuranceCompany === "United American" ) {
-     gV.discountPercent = 55;
+     gV.discountPercent = 35;
 
      //Insurance discount
      //...
@@ -235,7 +235,7 @@ const SwiperPage = ({  isOutside = false, }) => {
    }
 
    if(gV.insuranceCompany === "Caresource" ) {
-     gV.discountPercent = 45;
+     gV.discountPercent = 35;
 
      //Insurance discount
      //...
@@ -653,7 +653,7 @@ const SwiperPage = ({  isOutside = false, }) => {
 
 
            {/* Lifelong */}
-           <SwiperSlide  className="flex  flex-col gap-2 bg-sec text-white px-5 pt-5">
+           <SwiperSlide  className="flex  flex-col gap-2 bg-pri text-white px-5 pt-5">
             <header className="flex items-center justify-between">
              <div className="flex gap-5 items-center justify-center">
              <svg
@@ -681,7 +681,7 @@ const SwiperPage = ({  isOutside = false, }) => {
                 ${VariableCalculator(planThreeValue) | 0}{" "}
               </p>
             { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
-                / <s>${planTwoValue}</s>
+                / <s>${planThreeValue}</s>
               </p>}
               <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
             </div>
@@ -698,10 +698,10 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#142b6f"
+                    fill="#fff"
                   />
                 </svg>
-                <p class="color--black">5 radiology second opinions per year</p>
+                <p class="">5 radiology second opinions per year</p>
               </div>
 
               <div class="flex items-center gap-3">
@@ -714,10 +714,10 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#142b6f"
+                    fill="#fff"
                   />
                 </svg>
-                <p class="color--black">Detailed report for each second opinion</p>
+                <p class="">Detailed report for each second opinion</p>
               </div>
 
               <div class="flex items-center gap-3">
@@ -732,10 +732,10 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#142b6f"
+                    fill="#fff"
                   />
                 </svg>
-                <p class="color--black">Marked images with personalized radiologist notes</p>
+                <p class="">Marked images with personalized radiologist notes</p>
               </div>
 
               <div class="flex items-center gap-3">
@@ -748,10 +748,10 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#142b6f"
+                    fill="#fff"
                   />
                 </svg>
-                <p class="color--black">Ask a radiologist (Unlimited questions)</p>
+                <p class="">Ask a radiologist (Unlimited questions)</p>
               </div>
            
             </div>
