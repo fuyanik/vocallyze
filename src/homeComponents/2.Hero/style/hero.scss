@@ -64,16 +64,14 @@
                 font-weight: bold;
                 left: 0vw; 
                 text-align: center;
-               
-                
                 
 
                 p {
                     font-weight: lighter !important;
                     font-weight: bold !important;
-                    animation: fadeEffect 0s linear infinite 0s;
-                    -ms-animation: fadeEffect 0s linear infinite 0s;
-                    -webkit-animation: fadeEffect 7.5s linear infinite 0s;
+                    animation: fadeEffect 7.5s linear infinite 0s;
+                    -ms-animation: fadeEffect 7.5s  linear infinite 0s;
+                    -webkit-animation: fadeEffect 7.5s  linear infinite 0s;
                     opacity: 0;
                     position: absolute;
                     width: auto!important;
@@ -93,9 +91,10 @@
                     -webkit-animation-delay: 5s;
                     width: auto !important;
                     font-weight: bold !important;
-                   
-                    
                 }
+
+          
+              
 
 
             }

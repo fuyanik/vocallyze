@@ -34,8 +34,7 @@ const CardHaveInsurance = () => {
 
     return (
       <div className="card-have-insurance">
-         <div className="">
-           <div className="">
+       
           
                  
                   <DropdownMenu
@@ -43,8 +42,7 @@ const CardHaveInsurance = () => {
                    right={gV.mq.matches ? "110px" : "0px"}  />
               
                    
-           </div>
-         </div>
+         
       </div>
     );
 }

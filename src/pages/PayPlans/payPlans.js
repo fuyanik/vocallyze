@@ -8,12 +8,13 @@ import Popup from '../Popup/popup';
 
 import { useState,useEffect } from 'react';
 import PayScreen from '../PayScreen/payScreen';
+import { useGlobalState } from '../../hookState';
 
 
 
 const PayPlans = ({
   isOutside = false,
-  backButtonClick = () =>{
+  backButtonClick = () => {
   if( gV.payType === "userPanel"){
     window.location.href = "/user-panel"
   } 
@@ -30,12 +31,14 @@ const PayPlans = ({
  
   const [forwardClass, setForwardClass] = useState(null);
   const [backClass, setBackClass] = useState(null);
+
+  const insuranceCompany = useGlobalState("insuranceCompany");
   
   //Plans default values
   //...
-  const planOneValue = 119;
-  const planTwoValue = 199;
-  const planThreeValue = 799; 
+  const planOneValue = 299;
+  const planTwoValue = 499;
+  const planThreeValue = 1599; 
 
 useEffect(() => {
   window.scrollTo(0, 0);
@@ -245,7 +248,7 @@ useEffect(() => {
      return mainPay - discount;
    }
 
-   if(gV.insuranceCompany === "none"){
+   if(gV.insuranceCompany === "I do not have an active insurance plan." || gV.insuranceCompany === "My insurance is not listed." || gV.insuranceCompany === "none"  ){
    
      gV.discountPercent = 0;
 
@@ -259,14 +262,12 @@ useEffect(() => {
    }
 
 
-
-
    }
 
 
    //All amount variables and *Global* variables are set here
    //...
-   const AmountCalculator = (mainPay) => {
+     const AmountCalculator = (mainPay) => {
 
      if(gV.insuranceCompany === "United Healthcare" ) {
 
@@ -513,9 +514,9 @@ useEffect(() => {
      }
   
   
-  }
+     }
 
- 
+  
 
    //Close popup page
    //...
@@ -539,49 +540,47 @@ useEffect(() => {
   <div onClick={()=>{ isPopupOpen &&  setIsPopupOpen(false)}} className={`${isPopupOpen ? "price-screen-blur z-50" : "price-screen z-50" }`} >
   
 
-  <BackButton backButtonClick={backButtonClick} className={`back-button-pay-web ${isOutside && "opacity-0"} `} />
-             
-        <div  class="price-screen__header">
-                 <p class="text-xl color--black">Simple, transparent pricing.</p>
-                 <p>No contracts. No suprise fees.</p>
-        </div>
+
         
             
 
        <div class="pay-cards">
          
          {/*  Basic */}
-        { !isOutside && <div className="pay-card bg-white border--free ">
-            <div class="pay-card__header">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M23.75 30H6.25C4.59301 29.998 3.00445 29.3389 1.83277 28.1672C0.661102 26.9956 0.00198482 25.407 0 23.75L0 6.25C0.00198482 4.59301 0.661102 3.00445 1.83277 1.83277C3.00445 0.661102 4.59301 0.00198482 6.25 0L23.75 0C25.407 0.00198482 26.9956 0.661102 28.1672 1.83277C29.3389 3.00445 29.998 4.59301 30 6.25V23.75C29.998 25.407 29.3389 26.9956 28.1672 28.1672C26.9956 29.3389 25.407 29.998 23.75 30V30ZM6.25 2.5C5.25544 2.5 4.30161 2.89509 3.59835 3.59835C2.89509 4.30161 2.5 5.25544 2.5 6.25V23.75C2.5 24.7446 2.89509 25.6984 3.59835 26.4017C4.30161 27.1049 5.25544 27.5 6.25 27.5H23.75C24.7446 27.5 25.6984 27.1049 26.4017 26.4017C27.1049 25.6984 27.5 24.7446 27.5 23.75V6.25C27.5 5.25544 27.1049 4.30161 26.4017 3.59835C25.6984 2.89509 24.7446 2.5 23.75 2.5H6.25ZM13.75 15C13.75 15.2472 13.8233 15.4889 13.9607 15.6945C14.098 15.9 14.2932 16.0602 14.5216 16.1548C14.7501 16.2495 15.0014 16.2742 15.2439 16.226C15.4863 16.1778 15.7091 16.0587 15.8839 15.8839C16.0587 15.7091 16.1778 15.4863 16.226 15.2439C16.2742 15.0014 16.2495 14.7501 16.1548 14.5216C16.0602 14.2932 15.9 14.098 15.6945 13.9607C15.4889 13.8233 15.2472 13.75 15 13.75C14.6685 13.75 14.3505 13.8817 14.1161 14.1161C13.8817 14.3505 13.75 14.6685 13.75 15ZM7.5 8.75C7.5 8.99723 7.57331 9.2389 7.71066 9.44446C7.84801 9.65002 8.04324 9.81024 8.27165 9.90485C8.50005 9.99946 8.75139 10.0242 8.99386 9.97598C9.23634 9.92775 9.45907 9.8087 9.63388 9.63388C9.8087 9.45907 9.92775 9.23634 9.97598 8.99386C10.0242 8.75139 9.99946 8.50005 9.90485 8.27165C9.81024 8.04324 9.65002 7.84801 9.44446 7.71066C9.2389 7.57331 8.99723 7.5 8.75 7.5C8.41848 7.5 8.10054 7.6317 7.86612 7.86612C7.6317 8.10054 7.5 8.41848 7.5 8.75ZM20 8.75C20 8.99723 20.0733 9.2389 20.2107 9.44446C20.348 9.65002 20.5432 9.81024 20.7716 9.90485C21.0001 9.99946 21.2514 10.0242 21.4939 9.97598C21.7363 9.92775 21.9591 9.8087 22.1339 9.63388C22.3087 9.45907 22.4278 9.23634 22.476 8.99386C22.5242 8.75139 22.4995 8.50005 22.4048 8.27165C22.3102 8.04324 22.15 7.84801 21.9445 7.71066C21.7389 7.57331 21.4972 7.5 21.25 7.5C20.9185 7.5 20.6005 7.6317 20.3661 7.86612C20.1317 8.10054 20 8.41848 20 8.75ZM7.5 21.25C7.5 21.4972 7.57331 21.7389 7.71066 21.9445C7.84801 22.15 8.04324 22.3102 8.27165 22.4048C8.50005 22.4995 8.75139 22.5242 8.99386 22.476C9.23634 22.4278 9.45907 22.3087 9.63388 22.1339C9.8087 21.9591 9.92775 21.7363 9.97598 21.4939C10.0242 21.2514 9.99946 21.0001 9.90485 20.7716C9.81024 20.5432 9.65002 20.348 9.44446 20.2107C9.2389 20.0733 8.99723 20 8.75 20C8.41848 20 8.10054 20.1317 7.86612 20.3661C7.6317 20.6005 7.5 20.9185 7.5 21.25ZM20 21.25C20 21.4972 20.0733 21.7389 20.2107 21.9445C20.348 22.15 20.5432 22.3102 20.7716 22.4048C21.0001 22.4995 21.2514 22.5242 21.4939 22.476C21.7363 22.4278 21.9591 22.3087 22.1339 22.1339C22.3087 21.9591 22.4278 21.7363 22.476 21.4939C22.5242 21.2514 22.4995 21.0001 22.4048 20.7716C22.3102 20.5432 22.15 20.348 21.9445 20.2107C21.7389 20.0733 21.4972 20 21.25 20C20.9185 20 20.6005 20.1317 20.3661 20.3661C20.1317 20.6005 20 20.9185 20 21.25Z"
-                  fill="#1769FF"
-                />
-              </svg>
-              <p class="pay-card__header__title color--black">Basic</p>
-            </div>
-
-            <p class="ml--24">
-            Are you a result oriented person? Choose basic.
-            </p>
-
-            <div class="pay-card__value-area ml--24">
-              <p class="text-xl color--black">
-                {" "}
-                ${VariableCalculator(planOneValue) | 0}{" "}
-              </p>
-              {gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
-                / <s>${planOneValue} </s> 
-              </p>}
-              <p style={{color:"#676767"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
-            </div>
+        { !isOutside && 
+        
+        <div className="pay-card bg-white border--free ">
+          
+           <div className='flex flex-col'>
+             <div class="pay-card__header">
+               <svg
+                 width="30"
+                 height="30"
+                 viewBox="0 0 30 30"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+               >
+                 <path
+                   d="M23.75 30H6.25C4.59301 29.998 3.00445 29.3389 1.83277 28.1672C0.661102 26.9956 0.00198482 25.407 0 23.75L0 6.25C0.00198482 4.59301 0.661102 3.00445 1.83277 1.83277C3.00445 0.661102 4.59301 0.00198482 6.25 0L23.75 0C25.407 0.00198482 26.9956 0.661102 28.1672 1.83277C29.3389 3.00445 29.998 4.59301 30 6.25V23.75C29.998 25.407 29.3389 26.9956 28.1672 28.1672C26.9956 29.3389 25.407 29.998 23.75 30V30ZM6.25 2.5C5.25544 2.5 4.30161 2.89509 3.59835 3.59835C2.89509 4.30161 2.5 5.25544 2.5 6.25V23.75C2.5 24.7446 2.89509 25.6984 3.59835 26.4017C4.30161 27.1049 5.25544 27.5 6.25 27.5H23.75C24.7446 27.5 25.6984 27.1049 26.4017 26.4017C27.1049 25.6984 27.5 24.7446 27.5 23.75V6.25C27.5 5.25544 27.1049 4.30161 26.4017 3.59835C25.6984 2.89509 24.7446 2.5 23.75 2.5H6.25ZM13.75 15C13.75 15.2472 13.8233 15.4889 13.9607 15.6945C14.098 15.9 14.2932 16.0602 14.5216 16.1548C14.7501 16.2495 15.0014 16.2742 15.2439 16.226C15.4863 16.1778 15.7091 16.0587 15.8839 15.8839C16.0587 15.7091 16.1778 15.4863 16.226 15.2439C16.2742 15.0014 16.2495 14.7501 16.1548 14.5216C16.0602 14.2932 15.9 14.098 15.6945 13.9607C15.4889 13.8233 15.2472 13.75 15 13.75C14.6685 13.75 14.3505 13.8817 14.1161 14.1161C13.8817 14.3505 13.75 14.6685 13.75 15ZM7.5 8.75C7.5 8.99723 7.57331 9.2389 7.71066 9.44446C7.84801 9.65002 8.04324 9.81024 8.27165 9.90485C8.50005 9.99946 8.75139 10.0242 8.99386 9.97598C9.23634 9.92775 9.45907 9.8087 9.63388 9.63388C9.8087 9.45907 9.92775 9.23634 9.97598 8.99386C10.0242 8.75139 9.99946 8.50005 9.90485 8.27165C9.81024 8.04324 9.65002 7.84801 9.44446 7.71066C9.2389 7.57331 8.99723 7.5 8.75 7.5C8.41848 7.5 8.10054 7.6317 7.86612 7.86612C7.6317 8.10054 7.5 8.41848 7.5 8.75ZM20 8.75C20 8.99723 20.0733 9.2389 20.2107 9.44446C20.348 9.65002 20.5432 9.81024 20.7716 9.90485C21.0001 9.99946 21.2514 10.0242 21.4939 9.97598C21.7363 9.92775 21.9591 9.8087 22.1339 9.63388C22.3087 9.45907 22.4278 9.23634 22.476 8.99386C22.5242 8.75139 22.4995 8.50005 22.4048 8.27165C22.3102 8.04324 22.15 7.84801 21.9445 7.71066C21.7389 7.57331 21.4972 7.5 21.25 7.5C20.9185 7.5 20.6005 7.6317 20.3661 7.86612C20.1317 8.10054 20 8.41848 20 8.75ZM7.5 21.25C7.5 21.4972 7.57331 21.7389 7.71066 21.9445C7.84801 22.15 8.04324 22.3102 8.27165 22.4048C8.50005 22.4995 8.75139 22.5242 8.99386 22.476C9.23634 22.4278 9.45907 22.3087 9.63388 22.1339C9.8087 21.9591 9.92775 21.7363 9.97598 21.4939C10.0242 21.2514 9.99946 21.0001 9.90485 20.7716C9.81024 20.5432 9.65002 20.348 9.44446 20.2107C9.2389 20.0733 8.99723 20 8.75 20C8.41848 20 8.10054 20.1317 7.86612 20.3661C7.6317 20.6005 7.5 20.9185 7.5 21.25ZM20 21.25C20 21.4972 20.0733 21.7389 20.2107 21.9445C20.348 22.15 20.5432 22.3102 20.7716 22.4048C21.0001 22.4995 21.2514 22.5242 21.4939 22.476C21.7363 22.4278 21.9591 22.3087 22.1339 22.1339C22.3087 21.9591 22.4278 21.7363 22.476 21.4939C22.5242 21.2514 22.4995 21.0001 22.4048 20.7716C22.3102 20.5432 22.15 20.348 21.9445 20.2107C21.7389 20.0733 21.4972 20 21.25 20C20.9185 20 20.6005 20.1317 20.3661 20.3661C20.1317 20.6005 20 20.9185 20 21.25Z"
+                   fill="#1769FF"
+                 />
+               </svg>
+               <p class="pay-card__header__title color--black">One-Time</p>
+            
+             </div>
+            
+             <div class="pay-card__value-area ml--24">
+               <p class="text-xl color--black">
+                 {" "}
+                 ${VariableCalculator(planOneValue) | 0}{" "}
+               </p>
+               {gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
+                 / <s>${planOneValue} </s> 
+               </p>}
+               <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
+             </div>
+            
+           </div>
 
             <div class="pay-card__hero">
               <div class="pay-card__hero__features">
@@ -650,43 +649,8 @@ useEffect(() => {
                 <p class="color--black">Breast self-exam reminder</p>
               </div>
 
-              <div class="pay-card__hero__features">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.3 0.710001C12.91 0.320001 12.28 0.320001 11.89 0.710001L6.99997 5.59L2.10997 0.700001C1.71997 0.310001 1.08997 0.310001 0.699971 0.700001C0.309971 1.09 0.309971 1.72 0.699971 2.11L5.58997 7L0.699971 11.89C0.309971 12.28 0.309971 12.91 0.699971 13.3C1.08997 13.69 1.71997 13.69 2.10997 13.3L6.99997 8.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L8.40997 7L13.3 2.11C13.68 1.73 13.68 1.09 13.3 0.710001Z"
-                    fill="#B1B8C9"
-                  />
-                </svg>
-                <p class="color--transp">Radiologist phone consultation</p>
-              </div>
-
-              <div class="pay-card__hero__features">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.3 0.710001C12.91 0.320001 12.28 0.320001 11.89 0.710001L6.99997 5.59L2.10997 0.700001C1.71997 0.310001 1.08997 0.310001 0.699971 0.700001C0.309971 1.09 0.309971 1.72 0.699971 2.11L5.58997 7L0.699971 11.89C0.309971 12.28 0.309971 12.91 0.699971 13.3C1.08997 13.69 1.71997 13.69 2.10997 13.3L6.99997 8.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L8.40997 7L13.3 2.11C13.68 1.73 13.68 1.09 13.3 0.710001Z"
-                    fill="#B1B8C9"
-                  />
-                </svg>
-                <p class="color--transp">Lifelong free</p>
-              </div>
             </div>
-           
-           <div onClick={()=>{ 
-             AmountCalculator(planOneValue)
-              gV.payPlan = "one"
-              setIsPopupOpen(true)}} class="pay-card__button-normal color--pink" > Choose Basic</div>
+        
           
 
           
@@ -696,6 +660,7 @@ useEffect(() => {
 
            {/* Smart */}
           <div  className="pay-card bg-white bs--pro">
+            
             <div class="pay-card__header">
               <svg
                 width="30"
@@ -760,15 +725,13 @@ useEffect(() => {
                 />
               </svg>
 
-              <p class="pay-card__header__title color--black">Smart</p>
-              <div class="pay-card__header__explanation color--white ">
+              <p class="pay-card__header__title color--black">1 - Year Membership</p>
+              <div class="pay-card__header__explanation mr-3 color--white ">
                 Best Value
               </div>
             </div>
 
-            <p class="ml--24">
-            Want to discuss your recheck result with a radiologist? Smart is for you.
-            </p>
+          
 
             <div class="pay-card__value-area ml--24">
               <p class="text-xl color--black">
@@ -778,7 +741,8 @@ useEffect(() => {
              { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
                 / <s>${planTwoValue}</s>
               </p>}
-              <p style={{color:"#676767"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
+              <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
+
             </div>
 
             <div class="pay-card__hero">
@@ -848,53 +812,13 @@ useEffect(() => {
                 <p class="color--black">Breast self-exam reminder</p>
               </div>
 
-              <div class="pay-card__hero__features">
-              <svg
-                  width="18"
-                  height="13"
-                  viewBox="0 0 18 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#142b6f"
-                  />
-                </svg>
-                <p class="color--black">Radiologist phone consultation</p>
-              </div>
-
-              <div class="pay-card__hero__features">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.3 0.710001C12.91 0.320001 12.28 0.320001 11.89 0.710001L6.99997 5.59L2.10997 0.700001C1.71997 0.310001 1.08997 0.310001 0.699971 0.700001C0.309971 1.09 0.309971 1.72 0.699971 2.11L5.58997 7L0.699971 11.89C0.309971 12.28 0.309971 12.91 0.699971 13.3C1.08997 13.69 1.71997 13.69 2.10997 13.3L6.99997 8.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L8.40997 7L13.3 2.11C13.68 1.73 13.68 1.09 13.3 0.710001Z"
-                    fill="#B1B8C9"
-                  />
-                </svg>
-                <p class="color--transp">Lifelong free</p>
-              </div>
+             
             </div>
 
            
         
 
-            <div
-              onClick={() => {
-                gV.payPlan = "two";
-                setIsPopupOpen(true)
-                AmountCalculator(planTwoValue)
-              }}
-              class="pay-card__button-normal color--pink"
-            >
-              {" "}
-          Choose Smart
-            </div>
+           
 
           </div>
 
@@ -914,19 +838,16 @@ useEffect(() => {
                   fill="white"
                 />
               </svg>
-              <p class="pay-card__header__title">Lifelong</p>
+              <p class="pay-card__header__title">5 - Year Membership</p>
             </div>
-
-            <p class="ml--24">
-            Need peace of mind for the rest of your life? Go with lifelong.
-            </p>
 
             <div class="pay-card__value-area ml--24">
               <p class="text-xl"> ${VariableCalculator(planThreeValue) | 0} </p>
              { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
                 / <s>${planThreeValue}</s>
               </p>}
-              <p style={{color:"#efefef"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
+              <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
+
             </div>
 
             <div class="pay-card__hero">
@@ -995,50 +916,13 @@ useEffect(() => {
               </div>
           
           
-              <div class="pay-card__hero__features">
-                <svg
-                  width="18"
-                  height="13"
-                  viewBox="0 0 18 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6 10.17L2.53 6.7C2.14 6.31 1.51 6.31 1.12 6.7C0.729999 7.09 0.729999 7.72 1.12 8.11L5.3 12.29C5.69 12.68 6.32 12.68 6.71 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6 10.17Z"
-                    fill="white"
-                  />
-                </svg>
-                <p>Radiologist phone consultation</p>
-              </div>
-          
-          
-              <div class="pay-card__hero__features">
-                <svg
-                  width="18"
-                  height="13"
-                  viewBox="0 0 18 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6 10.17L2.53 6.7C2.14 6.31 1.51 6.31 1.12 6.7C0.729999 7.09 0.729999 7.72 1.12 8.11L5.3 12.29C5.69 12.68 6.32 12.68 6.71 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6 10.17Z"
-                    fill="white"
-                  />
-                </svg>
-                <p>Lifelong free</p>
-              </div>
+           
           
           
           
             </div>
 
-            <div onClick={()=>{
-              gV.payPlan = "Three"
-              
-               setIsPopupOpen(true)
-              AmountCalculator(planThreeValue)}} className="pay-card__button-enterprise color--pink">Choose Lifelong</div>
-        
-          
+         
 
            
           </div>

@@ -6,8 +6,28 @@ import gV from "../../../gV.js";
 import {setGlobalState} from "../../../hookState";
 import { MdOutlineArrowForward } from "react-icons/md";
 
-const DropdownMenu = ({listİtem,top,right}) => {
+const DropdownMenu = ({top,right}) => {
   
+
+  const listİtem = [ 
+    "I do not have an active insurance plan.",
+    "My insurance is not listed.",
+    "United Healthcare",
+    "Oscar",
+    "Aetna",
+    "Molina Healthcare",
+    "Humana",
+    "Cigna",
+    "Magellan",
+    "Anthem",
+    "Blue California",
+    "Blue Shield",
+    "Care Plus",
+    "Freedom Health",
+    "WellCare",
+    "United American",
+    "Caresource",
+    ]
   
   const [isActive, setIsActive] = useState(false);
   const [selected, setIsSelected] = useState("Choose one");
@@ -24,7 +44,7 @@ const DropdownMenu = ({listİtem,top,right}) => {
     
     return (
 
-        <div className="dropdown" style={{
+        <div className="dropdown bg-slate-100 rounded-full" style={{
            top: top,
            marginRight: right,
         }}>
@@ -39,7 +59,7 @@ const DropdownMenu = ({listİtem,top,right}) => {
         </div>
         
         <div
-          className="dropdown-content"
+          className="dropdown-content duration-500"
           style={{ display: isActive ? "block" : "none" }}
         >
 
@@ -47,14 +67,15 @@ const DropdownMenu = ({listİtem,top,right}) => {
 
              <div
              key={idx}
-             className="item"
+             className="item duration-500"
              onClick={(e) => {
              
               setGlobalState("isDropdownSet", true);
 
-
                setIsSelected(e.target.textContent);
                gV.insuranceCompany = e.target.textContent;
+             
+               setGlobalState("insuranceCompany", e.target.textContent);
                setIsActive(!isActive); }}
                
                >

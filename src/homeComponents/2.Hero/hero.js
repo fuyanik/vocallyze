@@ -59,9 +59,9 @@ const Hero = () => {
            <p>Get your online</p>
          
            <div  className="hero__main__header__fade-in flex justify-center relative">
-              <p>mammograms.</p>
-              <p>ultrasounds.</p>
-              <p>breast MRIs.</p>
+              <p>ultrasound</p>
+              <p>MRI</p>
+              <p>mammogram</p>
             </div>
          
            <p className="mt-10 lg:mt-[72px]">second opinion </p>

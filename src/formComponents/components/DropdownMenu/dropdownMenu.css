@@ -3,7 +3,7 @@
 .dropdown {
  
   z-index: 10000;
-  width: 460px;
+  width: 360px;
   position: relative;
  
 }
@@ -14,16 +14,16 @@
 }
 
 .dropdown .dropdown-btn {
-  background-color: rgb(255, 255, 255);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  border-bottom: 1px solid #142B6F;
+  padding: 8px;
+  padding-left: 15px;
+ 
   border-radius: 2px;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "ProductSans-Light";
   color: #142b6fdd;
   letter-spacing: 0px;

@@ -5,6 +5,7 @@ import { db } from "../../firebase";
 import { Timestamp} from 'firebase/firestore';
 import { doc, setDoc,   } from "firebase/firestore"; 
 import { getAuth } from "firebase/auth";
+import { setGlobalState, useGlobalState } from "../../hookState";
 
 
 import {
@@ -37,51 +38,10 @@ export default function CheckoutForm() {
   const auth = getAuth();
   const user =  auth.currentUser;
 
+  const  mainPayAmount = useGlobalState("mainPayAmount");
   
 
   
-  const firstRecheckObj = {
-    
-      Name: gV.userName,
-      UserAge : gV.age,
-      WhichOfTheFollowingAppliesToYou: gV.appliestTo,
-      ShowAppliesText: gV.showAppliesText,
-      BiRads: gV.biRads,
-      DoYouHaveAnyOfThese: gV.doYouHave,
-      MailAddress: gV.MailAddres,
-      Password: gV.password,
-      IsHaveDigitalCopy: gV.isHaveDigitalCopy,
-      PreferTo: gV.preferTo,
-      MedicalCenterName: gV.medicalCenterName,
-      createdAt: Timestamp.now().toDate(),
-      insuranceCompany:gV.insuranceCompany,
-      phoneNumber:gV.phoneNumber,
-      p: gV.p,
-      zipUrls: gV.zipUrls,
-      imagesName: gV.imagesName,
-
-
-      currentDate: { 
-        day: Timestamp.now().toDate().getUTCDate(),
-        month: Timestamp.now().toDate().getMonth(),
-        year: Timestamp.now().toDate().getFullYear(),
-      },
-      
-
-      activeStep: gV.activeStep,
-      imagesUrl: gV.imagesUrl,
-      isHaveImages: gV.isHaveImages,
-
-      isPay:false,
-    payAmount: gV.payAmount,
-    payType: gV.payType,
-    payTotal: gV.payTotal,
-    PayPlan: gV.payPlan,
-
-    geoData: gV.geoData,
-      
-
-  }
 
   useEffect(() => {
 
@@ -120,33 +80,7 @@ export default function CheckoutForm() {
 
     e.preventDefault();
 
-    //user when user pay first time
-    if(gV.payType == "firstRecheck"){
-      //update object item firestore database map object
-      await setDoc(doc(db, "VitamuUsersREAL", `${user.email}`), {
-        FirstRecheck: firstRecheckObj,
-        TotalRechecks: 1,
-      },
-      {merge: true}
-     );
-    }
-
-    //user when user pay second time
-    if(gV.payType == "secondRecheck"){
-
-      await setDoc(doc(db, "VitamuUsersREAL", `${user.email}`), {
-         SecondRecheck: firstRecheckObj,
-         TotalRechecks: 2,
-      }, {merge: true});
-
-    }
-
-    //user panelden gelince yukarıdaki fonksiyonlar tekrar çalışıp boş bir obje oluşturuyor
-    //...bu yüzden bu fonksiyonu çalıştırıyorum
-    if(gV.payType == "userPanel"){
-      console.log("say user panel")
-
-    }
+  
 
     
    
@@ -189,23 +123,6 @@ export default function CheckoutForm() {
   };
 
 
-const MainValue = () => {
-
-  if(gV.payPlan == "one") {
-    return 119.00
-  }
-
-  if(gV.payPlan == "two") {
-    return 199.00
-  }
-
-  if(gV.payPlan == "three") {
-    return 799.00
-  }
-
-
-
-}
 
 const TaxValue = () =>{
   var taxValue = (gV.payTotal / 100) * 8.875;
@@ -249,7 +166,8 @@ const paymentElementOptions = {
       id="payment-element" /> 
 
       <div className="price-exp">
-        <div> <p>Recheck Fee </p> <p>${MainValue()}</p></div>
+        <div> <p>Recheck Fee </p> <p>{ mainPayAmount }</p></div>
+        
        {gV.insuranceCompany == "none" ? null : <div style={{ width:"100%",borderBottom :"1px solid rgba(93, 90, 90, 0.216"}} > <p>Active Insurance - {gV.insuranceCompany} </p> <p>-${ (gV.discountAmount | 0) }</p></div>}
         <div > {(isShowTax || gV.insuranceCompany == "none") ? <div style={{ width:"100%",borderBottom :"1px solid rgba(93, 90, 90, 0.216"}}> <p>Tax </p> <p>${ (TaxValue().toFixed(2))   }</p> </div> : <div className="price-exp-tax-more" onClick={()=>{setIsShowTax(true)}}  > <p >More...</p></div>  } </div>
         <div> <p>Total </p> <p>${ (gV.payTotal + TaxValue()).toFixed(2) }</p></div>

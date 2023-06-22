@@ -12,19 +12,10 @@ import ForwardButton from "../../formComponents/components/ForwardButton/forward
 import BackButton from "../../formComponents/components/BackButton/backButton";
 import Popup from "../Popup/popup";
 import PayScreen from "../PayScreen/payScreen";
-import { useGlobalState } from "../../hookState";
+import { setGlobalState, useGlobalState } from "../../hookState";
 
 
-const SwiperPage = ({
-  isOutside = false,
-  backButtonClick = () =>{
-    
-  if( gV.payType === "userPanel"){
-    window.location.href = "/user-panel"
-  } 
-
-}}) => {
-
+const SwiperPage = ({  isOutside = false, }) => {
 
 
   window.scrollTo(0, 0);
@@ -33,18 +24,23 @@ const SwiperPage = ({
   let navigate = useNavigate();
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
- 
-  const [forwardClass, setForwardClass] = useState(null);
-  const [backClass, setBackClass] = useState(null);
+
+
+  const insuranceCompany = useGlobalState("insuranceCompany");
 
   const [activeStep] = useGlobalState("activeStep");
+
+
+  const [activeIndex, setActiveIndex] = useState(1);
+
+
 
 
   
   //Plans default values
   //...
-  const planOneValue = 199;
-  const planTwoValue = 399;
+  const planOneValue = 299;
+  const planTwoValue = 499;
   const planThreeValue = 1599; 
 
 
@@ -250,7 +246,7 @@ const SwiperPage = ({
      return mainPay - discount;
    }
 
-   if(gV.insuranceCompany === "none"){
+   if(gV.insuranceCompany === "I do not have an active insurance plan." || gV.insuranceCompany === "My insurance is not listed." || gV.insuranceCompany === "none"  ){
    
      gV.discountPercent = 0;
 
@@ -267,264 +263,22 @@ const SwiperPage = ({
 
 
    }
-
-
-   //All amount variables and *Global* variables are set here
-   //...
-   const AmountCalculator = (mainPay) => {
-
-     if(gV.insuranceCompany === "United Healthcare" ) {
-
-        gV.discountPercent = 40
-
-        //Insurance discount
-        //...
-        gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-        
-       
-
-        
-        //Total amount user see pay plans page
-        //...
-        gV.payTotal = mainPay - gV.discountAmount
-        
-        
-        return gV.payTotal;
-       }
-
-     if(gV.insuranceCompany === "Oscar") {
-
-       gV.discountPercent = 55
-
-       //Insurance discount
-       //...
-       gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-       
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount
-       
-       
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Aetna" ) {
-
-       gV.discountPercent = 45
-
-       //Insurance discount
-       //...
-       gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-       
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount
-       
-       
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany ===  "Molina Healthcare" ) {
-         
-         gV.discountPercent = 50
-
-         //Insurance discount
-         //...
-         gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-         
-         //Total amount user see pay plans page
-         //...
-         gV.payTotal = mainPay - gV.discountAmount
-         
-         
-         return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Humana" ) {
-         
-       gV.discountPercent = 55;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-      
-     }
-
-     if(gV.insuranceCompany === "Cigna" ) {
-      
-       gV.discountPercent = 45;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-     
-     if(gV.insuranceCompany ===  "Magellan" ) {
-      
-       gV.discountPercent = 30;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-     
-     if(gV.insuranceCompany ===  "Anthem") {
-      
-       gV.discountPercent = 60;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Blue California" ) {
-        gV.discountPercent = 55;
-
-           //Insurance discount
-           //...
-           gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-           //Total amount user see pay plans page
-           //...
-           gV.payTotal = mainPay - gV.discountAmount;
-
-           return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Blue Shield" ) {
-      
-       gV.discountPercent = 50;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Care Plus" ) {
-      
-       gV.discountPercent = 45;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Freedom Health" ) {
-      
-       gV.discountPercent = 40;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "WellCare" ) {
-       gV.discountPercent = 35;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "United American" ) {
-       gV.discountPercent = 55;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "Caresource" ) {
-       gV.discountPercent = 45;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-
-     if(gV.insuranceCompany === "none"){
-     
-       gV.discountPercent = 0;
-
-       //Insurance discount
-       //...
-       gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount;
-
-       return gV.payTotal;
-     }
-  
-  
-  }
+ 
 
    //Close popup page
    //...
    function onDismiss() {
     setIsPopupOpen(false);
   }
+
+  const handleSlideChange = (swiper) => {
+    const activeIndex = swiper.activeIndex;
+    console.log('Mevcut slayt:', activeIndex);
+    setActiveIndex(activeIndex);
+    activeIndex === 0 && setGlobalState("mainPayAmount", planOneValue)
+    activeIndex === 1 && setGlobalState("mainPayAmount", planTwoValue)
+    activeIndex === 2 && setGlobalState("mainPayAmount", planThreeValue)
+  };
 
 
   return (
@@ -541,12 +295,14 @@ const SwiperPage = ({
       <div onClick={()=>{ isPopupOpen &&  setIsPopupOpen(false)}}  className={`${isPopupOpen ? "Swiper-Page-blur" : "Swiper-Page animate-fadeIn " }  font-product`}>
     
         <Swiper
+          
           initialSlide={1}
           spaceBetween={0}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={3}
+          onSlideChange={handleSlideChange}
           coverflowEffect={{
             scale: 0.95,
             rotate: 20,
@@ -649,7 +405,7 @@ const SwiperPage = ({
          { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
              / <s>${planOneValue}</s>
            </p>}
-           <p style={{color:"#676767"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
+           <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
          </div>
 
      
@@ -814,7 +570,7 @@ const SwiperPage = ({
             { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
                 / <s>${planTwoValue}</s>
               </p>}
-              <p style={{color:"#676767"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
+              <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
             </div>
 
         
@@ -927,7 +683,7 @@ const SwiperPage = ({
             { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
                 / <s>${planTwoValue}</s>
               </p>}
-              <p style={{color:"#676767"}}> {gV.insuranceCompany !== "none" && gV.insuranceCompany}</p>
+              <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
             </div>
 
         
@@ -1007,6 +763,7 @@ const SwiperPage = ({
       
         </Swiper>
       </div>
+
       
     </>
   );

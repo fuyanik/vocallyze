@@ -56,8 +56,8 @@
 .hero__main__header__fade-in p {
   font-weight: lighter !important;
   font-weight: bold !important;
-  animation: fadeEffect 0s linear infinite 0s;
-  -ms-animation: fadeEffect 0s linear infinite 0s;
+  animation: fadeEffect 7.5s linear infinite 0s;
+  -ms-animation: fadeEffect 7.5s linear infinite 0s;
   -webkit-animation: fadeEffect 7.5s linear infinite 0s;
   opacity: 0;
   position: absolute;

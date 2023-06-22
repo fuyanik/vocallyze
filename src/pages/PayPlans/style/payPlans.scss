@@ -200,7 +200,7 @@ $g-font-size-h2: $g-font-size * 2;
    transition: 300ms;
    color: $g-text-color;
    font: $-font;
-   background-color: $g-body-background-color;
+ 
     padding-bottom: 7vh;
     @extend %flex-column;
     @include flex-center;
@@ -239,23 +239,31 @@ $g-font-size-h2: $g-font-size * 2;
    ========================================================================== */
 .pay-cards{
     
-    @include flex-center;
-    gap: map-get($g-gaps, "medium");;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: map-get($g-gaps, "medium");
+   
+    
+    right: 0;
 }
 
 .pay-card{
-    width: 24.5vw;
-    height: 77vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  
+    height: 16.5vh;
+    width: 42vw; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    right: 0;
+    display: relative;
     border-radius: 27px;
-    padding-top: map-get($g-pads, "small");
-    padding-bottom: map-get($g-pads, "xsmall");
-    gap: map-get($g-gaps, "medium");;
-    @extend %flex-column;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    gap: 12px;
+    display: flex;
+    align-items: center;
 
     &__header{
         @include flex-center($jc: none);
-        gap: map-get($g-gaps, "small");;
+        gap: 11px;
         margin-left: 29px;
 
         &__title{
@@ -282,7 +290,7 @@ $g-font-size-h2: $g-font-size * 2;
 
     &__hero{ 
         @extend %flex-column;
-        gap: map-get($g-gaps, "small");;
+        gap: 2px;
         margin-left: 27.83px;
 
        &__features{

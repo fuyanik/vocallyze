@@ -23,6 +23,9 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase
 import gV from "../../gV";
 import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import PayPlans from "../PayPlans/payPlans";
+import DropdownMenu from "../../formComponents/components/DropdownMenu/dropdownMenu";
+import AvailableRadiologists from "./components/availableRadiologists";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -172,11 +175,263 @@ const medicalSendType = [
 
 export default function FormNew() {
 
+    //All amount variables and *Global* variables are set here
+   //...
+   const AmountCalculator = (mainPay) => {
+
+    if(gV.insuranceCompany === "United Healthcare" ) {
+
+       gV.discountPercent = 40
+
+       //Insurance discount
+       //...
+       gV.discountAmount = (mainPay * (gV.discountPercent / 100))
+       
+      
+
+       
+       //Total amount user see pay plans page
+       //...
+       gV.payTotal = mainPay - gV.discountAmount
+       
+       
+       return gV.payTotal;
+      }
+
+    if(gV.insuranceCompany === "Oscar") {
+
+      gV.discountPercent = 55
+
+      //Insurance discount
+      //...
+      gV.discountAmount = (mainPay * (gV.discountPercent / 100))
+      
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount
+      
+      
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Aetna" ) {
+
+      gV.discountPercent = 45
+
+      //Insurance discount
+      //...
+      gV.discountAmount = (mainPay * (gV.discountPercent / 100))
+      
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount
+      
+      
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany ===  "Molina Healthcare" ) {
+        
+        gV.discountPercent = 50
+
+        //Insurance discount
+        //...
+        gV.discountAmount = (mainPay * (gV.discountPercent / 100))
+        
+        //Total amount user see pay plans page
+        //...
+        gV.payTotal = mainPay - gV.discountAmount
+        
+        
+        return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Humana" ) {
+        
+      gV.discountPercent = 55;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+     
+    }
+
+    if(gV.insuranceCompany === "Cigna" ) {
+     
+      gV.discountPercent = 45;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+    
+    if(gV.insuranceCompany ===  "Magellan" ) {
+     
+      gV.discountPercent = 30;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+    
+    if(gV.insuranceCompany ===  "Anthem") {
+     
+      gV.discountPercent = 60;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Blue California" ) {
+       gV.discountPercent = 55;
+
+          //Insurance discount
+          //...
+          gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+          //Total amount user see pay plans page
+          //...
+          gV.payTotal = mainPay - gV.discountAmount;
+
+          return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Blue Shield" ) {
+     
+      gV.discountPercent = 50;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Care Plus" ) {
+     
+      gV.discountPercent = 45;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Freedom Health" ) {
+     
+      gV.discountPercent = 40;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "WellCare" ) {
+      gV.discountPercent = 35;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "United American" ) {
+      gV.discountPercent = 55;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "Caresource" ) {
+      gV.discountPercent = 45;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if(gV.insuranceCompany === "I do not have an active insurance plan." || gV.insuranceCompany === "My insurance is not listed." || gV.insuranceCompany === "none"   ){
+    
+      gV.discountPercent = 0;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+ 
+ 
+ }
+
   const auth = getAuth();
   const user = auth.currentUser;
 
   const [isDropdownSet] = useGlobalState("isDropdownSet")
   const [activeStep] = useGlobalState("activeStep")
+  const [mainPayAmount] = useGlobalState("mainPayAmount")
  
 
   
@@ -195,7 +450,8 @@ export default function FormNew() {
 
     {/* Start Step Contents */}
 
-     const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
+     const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-sec  bg-slate-100 "
+
      
      
     
@@ -283,83 +539,7 @@ export default function FormNew() {
 
      
     </section>
-
-
-    {/* Radiologist */}
-    const Radiologist = 
-        <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2">
-        
-         <div className="flex flex-col gap-2">
-          <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-            <p className="text-[22px] font-bold text-pri">
-              Radiologists
-            </p>
-
-            <p className="text-[16px] mt-1 font-bold text-pri">
-              {" "}
-              Step {activeStep + 1} of 5
-            </p>
-          </header>
-
-     
-         </div>
-
        
-       {/* Doctors Cards */}
-       <div className="flex flex-col gap-4 mt-3">
-
-
-         {/* Doctor Card 1 */}
-         <div className="w-full h-34 bg-white rounded-xl py-4 px-3 gap-8  flex items-center shadow-2xl "> 
-          
-           <div className="flex flex-col ">
-           
-            <p className="font-bold">Elizabeth H. Asch</p>
-            <p>Harvard Medical School'09 <i className="text-[#142b6fdb]">15 Years of Experience</i></p>
-           
-            <div className="flex items-center gap-2">
-             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
-             <p className="text-priTrans">Breast Screening </p>
-            </div>
-           
-            <div className="flex items-center gap-2">
-             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
-             <p className="text-priTrans">Diagnostic Radiology</p>
-            </div>
-         
-           </div>
-         
-          <img className="w-20 h-20 rounded-xl" src="https://vitamu.imgix.net/radiologyRe/Elizabeth%20H.%20Asch-Mobile.png"/>
-         
-         </div>
-        
-         {/* Doctor Card 2 */}
-         <div className="w-full h-34 bg-white rounded-xl py-4 px-3 gap-8  flex items-center shadow-2xl "> 
-          
-           <div className="flex flex-col ">
-           
-            <p className="font-bold">Elizabeth H. Asch</p>
-            <p>Harvard Medical School'09 <i className="text-[#142b6fdb]">15 Years of Experience</i></p>
-           
-            <div className="flex items-center gap-2">
-             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
-             <p className="text-priTrans">Breast Screening </p>
-            </div>
-           
-            <div className="flex items-center gap-2">
-             <div className="w-1 h-1 rounded-full bg-priTrans"></div>
-             <p className="text-priTrans">Diagnostic Radiology</p>
-            </div>
-         
-           </div>
-         
-          <img className="w-20 h-20 rounded-xl" src="https://vitamu.imgix.net/radiologyRe/Pamela%20J.%20DiPiro-Mobile.png"/>
-         
-         </div>
-         
-        
-       </div>
-        </section>
     
     
    {/* History Symptoms */}
@@ -393,7 +573,7 @@ export default function FormNew() {
               setQuestion(e.target.value);
             }}
             type="text"
-            className="w-[96%] lg:w-[85%] mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
+            className="w-[96%] lg:w-[85%] bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  border border-white rounded-2xl duration-1000 outline-none  focus:border-sec focus:ring-1 focus:ring-sec "
             placeholder="Type your question here."
           />
         
@@ -445,12 +625,12 @@ export default function FormNew() {
 
 
             {/* Dropdown Select Area */}
-            <div className="  lg:w-[22vw] w-[84vw] h-[7vh] lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
+            <div className="  lg:w-[22vw] w-[84vw] h-[7vh] bg-slate-100 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
               <div
                 onClick={() => {
                   setDropdown(!isDropdown);
                 }}
-                className="h-[96%] w-[120%] text-pri justify-between bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+                className="h-[96%] w-[120%] text-pri justify-between  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
                 <p> {dropdownText}</p>
                 <img  className={`absolute   right-6 lg:right-5 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
@@ -574,19 +754,21 @@ export default function FormNew() {
         
          </header>
 
-        {/* Name */}
+        {/* What is Insurance */}
         <div className="flex flex-col gap-1 mt-0">
           <p className="text-lg text-pri font-bold mt-4">
             {" "}
             What is your insurance?
           </p>
 
-          <CardHaveInsurance/>
+          
+          <DropdownMenu
+                   right={gV.mq.matches ? "110px" : "0px"}  />
          
         </div>
 
-       <div className="relative right-[23px]">
-       { isDropdownSet &&  <SwiperPage/>}
+       <div className="relative right-[23px] lg:mt-4">
+       { isDropdownSet && (gV.mq.matches ?  <SwiperPage/> : <PayPlans/>) }
        </div>
         
         </section>
@@ -648,15 +830,11 @@ export default function FormNew() {
       />
 
        
-      <div className="w-screen  flex flex-col items-center gap-3 lg:gap-16 font-product ">
+      <div className="w-screen  flex flex-col items-center gap-3 lg:gap-6 font-product ">
       
-        <img
-          src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg"
-          className="w-screen  h-full absolute -z-20 opacity-20"
-          alt="vitamu"
-        />
+      
 
-        <div className="mt-12 "></div>
+        <div className="mt-12 lg:mt-16 "></div>
           
           {/*  Stepper */}
         <Stack sx={ gV.mq.matches ? { width: "100%" }  : { width: "55%" } } spacing={5}>
@@ -675,7 +853,7 @@ export default function FormNew() {
 
 
         {activeStep == 0 &&  ContactDetail }
-        {activeStep == 1 &&  Radiologist }
+        {activeStep == 1 &&  <AvailableRadiologists/> }
         {activeStep == 2 &&  HistorySymptoms  }
         {activeStep == 3 &&  MedicalImages  }
         {activeStep == 4 &&  Insurance  }
@@ -705,9 +883,10 @@ export default function FormNew() {
                
                  /* Payment Step States */
                  activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
-                 activeStep == 4 && setIsPopupOpen(true)
+                 activeStep == 4 &&  setIsPopupOpen(true)
 
                  if (activeStep == 4) {
+                  AmountCalculator(mainPayAmount);
                   setDoc(
                     doc(db, "Mitrua", `${user.email}`),
                     {
@@ -740,7 +919,7 @@ export default function FormNew() {
 
                }}
                className={`bg-sec ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`} >
-                Next
+                Continue to {activeStep == 0 && "Radiologist Selection"} {activeStep == 1 && " History"}  {activeStep == 2 && "Medical Images"} {activeStep == 3 && "Insurance"} {activeStep == 4 && "Payment"}
           </button>
     
        </div>

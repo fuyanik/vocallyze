@@ -100,7 +100,7 @@ const Home = () => {
       <Hero/>
     
     
-     <div className='hidden'>
+    
        <Radiologists/>
        <SliderStepper/>
        <Testom/>
@@ -108,7 +108,7 @@ const Home = () => {
        { /*  <TechnologyHome/> */}
        <LearningCenter/>
        {mq.matches ? <MobileFooter/> : <Footer/>}
-     </div>
+    
       
 
       
