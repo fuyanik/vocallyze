@@ -182,7 +182,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "United Healthcare" ) {
 
-       gV.discountPercent = 40
+       gV.discountPercent = 30
 
        //Insurance discount
        //...
@@ -201,7 +201,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Oscar") {
 
-      gV.discountPercent = 55
+      gV.discountPercent = 45
 
       //Insurance discount
       //...
@@ -217,7 +217,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Aetna" ) {
 
-      gV.discountPercent = 45
+      gV.discountPercent = 35
 
       //Insurance discount
       //...
@@ -233,7 +233,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany ===  "Molina Healthcare" ) {
         
-        gV.discountPercent = 50
+        gV.discountPercent = 40
 
         //Insurance discount
         //...
@@ -249,7 +249,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Humana" ) {
         
-      gV.discountPercent = 55;
+      gV.discountPercent = 45;
 
       //Insurance discount
       //...
@@ -265,7 +265,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Cigna" ) {
      
-      gV.discountPercent = 45;
+      gV.discountPercent = 35;
 
       //Insurance discount
       //...
@@ -295,7 +295,7 @@ export default function FormNew() {
     
     if(gV.insuranceCompany ===  "Anthem") {
      
-      gV.discountPercent = 60;
+      gV.discountPercent = 35;
 
       //Insurance discount
       //...
@@ -309,7 +309,7 @@ export default function FormNew() {
     }
 
     if(gV.insuranceCompany === "Blue California" ) {
-       gV.discountPercent = 55;
+       gV.discountPercent = 45;
 
           //Insurance discount
           //...
@@ -324,7 +324,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Blue Shield" ) {
      
-      gV.discountPercent = 50;
+      gV.discountPercent = 40;
 
       //Insurance discount
       //...
@@ -339,7 +339,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Care Plus" ) {
      
-      gV.discountPercent = 45;
+      gV.discountPercent = 35;
 
       //Insurance discount
       //...
@@ -354,7 +354,7 @@ export default function FormNew() {
 
     if(gV.insuranceCompany === "Freedom Health" ) {
      
-      gV.discountPercent = 40;
+      gV.discountPercent = 30;
 
       //Insurance discount
       //...
@@ -368,7 +368,7 @@ export default function FormNew() {
     }
 
     if(gV.insuranceCompany === "WellCare" ) {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -382,7 +382,7 @@ export default function FormNew() {
     }
 
     if(gV.insuranceCompany === "United American" ) {
-      gV.discountPercent = 55;
+      gV.discountPercent = 35;
 
       //Insurance discount
       //...
@@ -396,7 +396,7 @@ export default function FormNew() {
     }
 
     if(gV.insuranceCompany === "Caresource" ) {
-      gV.discountPercent = 45;
+      gV.discountPercent = 35;
 
       //Insurance discount
       //...

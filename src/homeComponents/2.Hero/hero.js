@@ -55,13 +55,17 @@ const Hero = () => {
        
         <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-center text-center">
          
-         <div className=" lg:text-[76px] lg:w-[40vw] lg:leading-[76px]  leading-[42px]  text-[36px] text-center items-center justify-center   font-bold ">
+         <div className=" lg:text-[76px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]  text-[36px] text-center items-center justify-center   font-bold ">
            <p>Get your online</p>
          
            <div  className="hero__main__header__fade-in flex justify-center relative">
               <p>ultrasound</p>
               <p>MRI</p>
               <p>mammogram</p>
+              <p>CT scan</p>
+              <p>PET scan</p>
+              <p>x-ray</p>
+             
             </div>
          
            <p className="mt-10 lg:mt-[72px]">second opinion </p>

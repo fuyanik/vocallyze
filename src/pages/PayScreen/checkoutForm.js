@@ -131,21 +131,6 @@ const TaxValue = () =>{
 
 
 
-const paymentElementOptions = {
-  
-  style: {
-    base: {
-      fontSize: "18px",
-      color:"white",
-      border:"1px solid white",
-    },
-    invalid: {
-      color: "#9e2146",
-      border:"1px solid white"
-    },
-  }
-}
-
 
   return (
 
