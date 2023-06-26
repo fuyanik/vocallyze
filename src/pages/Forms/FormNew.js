@@ -23,10 +23,9 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase
 import gV from "../../gV";
 import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import PayPlans from "../PayPlans/payPlans";
-import DropdownMenu from "../../formComponents/components/DropdownMenu/dropdownMenu";
 
 import Insurance from "./components/Insurance";
+import AvailableRadiologists from "./components/AvailableRadiologists";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -816,7 +815,7 @@ export default function FormNew() {
 
 
         {activeStep == 0 &&  ContactDetail }
-        {activeStep == 1 && <div> raido </div>  }
+        {activeStep == 1 &&  <AvailableRadiologists/>  }
         {activeStep == 2 &&  HistorySymptoms  }
         {activeStep == 3 &&  MedicalImages  }
         {activeStep == 4 &&  <Insurance/>   }  

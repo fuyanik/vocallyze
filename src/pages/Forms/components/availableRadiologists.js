@@ -164,4 +164,4 @@ const AvailableRadiologists = () => {
   )
 }
 
-export default AvailableRadiologists
+export default AvailableRadiologists;
