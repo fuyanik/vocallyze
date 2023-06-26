@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AvailableRadiologists = () => {
 
+
+  //note
   const [activeStep] = useGlobalState("activeStep")
 
   const [selectedDoctor, setSelectedDoctor] = useState(null)

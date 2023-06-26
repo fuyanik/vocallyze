@@ -25,7 +25,7 @@ import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import Insurance from "./components/Insurance";
-import AvailableRadiologists from "./components/AvailableRadiologists";
+import AvailableRadiologists from "./components/availableRadiologists";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
