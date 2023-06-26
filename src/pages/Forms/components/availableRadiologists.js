@@ -84,7 +84,7 @@ const AvailableRadiologists = () => {
 
   
    {/* Doctors Cards */}
-   <div className="flex flex-col gap-4 mt-3 h-[58vh] overflow-scroll  shadow-sm  lg:w-[106%] w-[108%] pt-4 pr-7 pb-8">
+   <div className="flex flex-col gap-4 mt-3 h-[58vh] overflow-scroll    lg:w-[106%] w-[108%] pt-4 pr-7 pb-8">
 
  
       {radiologists.map((radiologist, index) => (
