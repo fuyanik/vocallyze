@@ -20,7 +20,7 @@
     "file-saver": "^2.0.5",
     "firebase": "^9.15.0",
     "ga-gtag": "^1.1.7",
-    "heroku": "^7.65.0",
+    "heroku": "^7.69.1",
     "http-proxy-middleware": "^2.0.6",
     "jszip": "^3.10.1",
     "lottie-web": "^5.10.0",
