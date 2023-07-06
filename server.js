@@ -6,7 +6,11 @@ const cors = require('cors');
 const axios = require('axios');
 
 
-var port = process.env.PORT || 4242;
+const port = process.env.PORT || 4242;
+
+
+
+
 
 app.use(cors());
 app.use(express.static("public"));
