@@ -5,7 +5,7 @@ module.exports = function(app) {
     '/create-payment-intent',
     createProxyMiddleware({
       target: 'http://localhost:8080',
-      changeOrigin: true
+      changeOrigin: false,
     })
   );
 };
