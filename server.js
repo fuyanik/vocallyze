@@ -12,95 +12,6 @@ app.use(express.static("public"));
 app.use(express.json());
 
 
-/*
-
-app.post("/users", async (req, res) => {
-  const body = req.body;
-
-  let imageFront = body.image;
-
-  let respData = null;
-
-  const data = {
-    version: "7de2ea26c616d5bf2245ad0d5e24f0ff9a6204578a5c876db53142edd9d2cd56",
-    input: {
-      image:
-        imageFront,
-    },
-  };
-
-  const options = {
-    headers: {
-      Authorization: "Token " + "863806d6a8393f5f8b49a95522ab4f8a157c3214",
-      "Content-Type": "application/json",
-    },
-  };
-
-    axios
-    .post("https://api.replicate.com/v1/predictions", data, options)
-    .then((response) => {
-      respData = response.data;
-      console.log(respData)
-
-    });
-
-
-    const optionsRequest = {
-      headers: {
-        'Authorization': 'Token ' + "863806d6a8393f5f8b49a95522ab4f8a157c3214"
-      }
-    };
-
-
-
-    var result = setInterval(() => {
- 
-      let status = null;
-      let output = null;
-    
-      if(respData != null){
-    
-        axios.get(respData.urls.get, optionsRequest).then((response) => {
-    
-          
-          status = response.data.status;
-          console.log("Status: " + status)
-    
-          output = response.data.output;
-          console.log("Output:  "+ output)
-    
-          output && console.log(response.data)
-          output && res.send(response.data)
-          output && clearInterval(result)
-
-        })
-        
-      }
-      else{
-        console.log("No Data")
-      }
-    
-    }, 2000);
-
-
-  
-  
-
-  //Send Server Response
-  //..
-
-
-  //res.send( respData );
-  
-});
-
-
-*/
-
-
-
-
-
 //Vitamu 
 
 //const stripe = require("stripe")(keys.stripeSecretKey);
@@ -158,4 +69,4 @@ app.post("/create-payment-intent", async (req, res) => {
 
 
 
-app.listen(4242, () => console.log("Node server listening on port 4242!"));
+app.listen(8080, () => console.log("Node server listening on port 4242!"));
