@@ -841,19 +841,20 @@ export default function FormNew() {
 
                 /* Sıgn Up Step*/
 
-                activeStep == 1 &&  handleSignup()
+                 activeStep == 1 &&  handleSignup()
                
                  /* Payment Step States */
                  activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
                  activeStep == 4 &&  setIsPopupOpen(true)
 
-                 if (activeStep == 4) {
-                  AmountCalculator(mainPayAmount);
+                 if (activeStep != 4) {
+                  
                   setDoc(
-                    doc(db, "Mitrua", `${user.email}`),
+                    doc(db, "MitruaPartial", `${user.email}`),
                     {
-                        Rechecks: arrayUnion({
-                          activeStep: 3,
+                        Rechecks: {
+                          formStep: activeStep,
+                          activeStep: 0,
                           createDay: new Date().getDate(),
                           createMonth: new Date().getMonth(),
                           createYear: new Date().getFullYear(),
@@ -866,6 +867,36 @@ export default function FormNew() {
                           medicalSendType: dropdownText,
                           medicalCenter: medicalCenter,
                           insurance: gV.insuranceCompany,
+                          isPay: false,
+                        },
+                    },
+                    { merge: true }
+                  );
+
+                 }
+                 
+
+                 /* Payment Step */
+                 if (activeStep == 4) {
+                  AmountCalculator(mainPayAmount);
+                  setDoc(
+                    doc(db, "Mitrua", `${user.email}`),
+                    {
+                        Rechecks: arrayUnion({
+                          activeStep: 1,
+                          createDay: new Date().getDate(),
+                          createMonth: new Date().getMonth(),
+                          createYear: new Date().getFullYear(),
+                          bodyParts: gV.bodyParts,
+                          scanType: gV.scanType,
+                          name: name,
+                          mail: mail,
+                          phone: phone,
+                          question: question,
+                          medicalSendType: dropdownText,
+                          medicalCenter: medicalCenter,
+                          insurance: gV.insuranceCompany,
+                          isPay: false,
                         }),
                     },
                     { merge: true }

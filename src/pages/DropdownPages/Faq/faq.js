@@ -36,7 +36,7 @@ const Faq = ({isOutside = false}) => {
          
           <div className='mt-4'></div>
         
-         <div className="lg:flex lg:flex-col  lg:w-[44%]">
+         <div className={`lg:flex lg:flex-col  ${isOutside ?  "lg:w-[64%]" : "lg:w-[44%]"} `} >
            <DropdownHeader
               display={false}
               yellow_title={"FAQ"}

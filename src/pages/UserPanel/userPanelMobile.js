@@ -81,16 +81,8 @@ const UserPanelMobile = () => {
 
   
 
-  //Accordion info for second recheck
-  //..
-  const [userActiveStep2, setUserActiveStep2] = useState(0);
-  const [userCreateDay2, setUserCreateDay2] = useState("");
-  const [userCreateMonth2, setUserCreateMonth2] = useState();
-  const [userCreateYear2, setUserCreateYear2] = useState();
 
-  const [isAskQuestion, setIsAskQuestion] = useState(false);
 
-  const [FirstRecheck, setFirstRecheck] = useState(null);
 
   const [count, setCount] = useState(0);
   const [isHover, setIsHover] = useState(false);
@@ -120,29 +112,20 @@ const UserPanelMobile = () => {
       if (doc.exists()) {
         console.log("Current data: ", doc.data());
             //Get is LifeLong
-            setIsLifeLong(doc.data().isLifeLong)
-            console.log("isLifeLong: ", isLifeLong)
-            console.log("doc.data().isLifeLong: ", doc.data().isLifeLong)
+         
 
-            doc.data().isAskQuestion && setGlobalState("userPanelNavIndex", 3);
-            setIsAskQuestion(doc.data().isAskQuestion)
+          false && setGlobalState("userPanelNavIndex", 3);
 
-            setFirstRecheck(doc.data().FirstRecheck)
-
-
-        //Get total recheck
-        //..
-        setUserTotalRecheck(doc.data().TotalRechecks);
         
 
         //Get insurance company
         //..
-        gV.insuranceCompany = doc.data().FirstRecheck.insuranceCompany;
+        // gV.insuranceCompany = doc.data().FirstRecheck.insuranceCompany;
       
       
         try {
 
-          setRecheksData(doc.data().LifeLong.rechecks.reverse());
+          setRecheksData(doc.data().Rechecks);
 
         } catch (error) {
 
@@ -166,30 +149,13 @@ const UserPanelMobile = () => {
       
          //Get info first recheck
         //..
-        setUserBiRads(doc.data().FirstRecheck.BiRads);
-      
-        setUserName(user.displayName);
-        setUserAge(doc.data().FirstRecheck.UserAge);
-        setUserPassword(doc.data().FirstRecheck.Password);
-        setUserPhone(doc.data().FirstRecheck.phoneNumber);
-
-        //Get info first recheck for accordions
-        //..
-        setUserActiveStep(doc.data().FirstRecheck.activeStep);
-        setUserCreateDay(doc.data().FirstRecheck.currentDate.day);
-        setUserCreateMonth(doc.data().FirstRecheck.currentDate.month);
-        setUserCreateYear(doc.data().FirstRecheck.currentDate.year);
+   
 
         /* SECOND RECHECK START AREA  */
 
         if(true){
 
-          setUserBiRads2(doc.data().SecondRecheck.BiRads);
-        
-          setUserActiveStep2(doc.data().SecondRecheck.activeStep);
-          setUserCreateDay2(doc.data().SecondRecheck.currentDate.day);
-          setUserCreateMonth2(doc.data().SecondRecheck.currentDate.month);
-          setUserCreateYear2(doc.data().SecondRecheck.currentDate.year);
+       
          
 
         } 
@@ -396,146 +362,30 @@ const UserPanelMobile = () => {
           {userPanelNavIndex === 1 && (
          
          
-         true ?
+         true 
+         
+          ?
          <div className="flex flex-col">
 
              
-            { /* LifeLong New Recheck Area */}
-              { isLifeLong &&  <div className={`flex  flex-col gap-6 pb-5 px-4 border-3`} >
-  
-                    {/* New Recheck Header */}
-                    <div className="flex flex-col gap-4  w-[90vw]">
-                    
-                      <p className="text-[21px] text-[#142b6f] font-bold">
-                        {" "}
-                        New Recheck
-                      </p>
-  
-                      <p className="text-[17px] text-[#142b6f]">
-                        You are on Lifelong plan and you have 4 free rechecks left
-                        for 2023.
-                      </p>
-                      <p className="text-[17px] text-[#142b6f] ">
-                        Choose the type of imaging you had, add your personal
-                        notes, and upload medical images.
-                      </p>
-                      <p className="text-[17px] text-[#142b6f] ">
-                        You may upload multiple scans (such as mammograms and
-                        ultrasound) for one recheck.
-                      </p>
-                    </div>
-  
-                    {/* Select Imaging*/}
-                    <div className="flex flex-col gap-4"> 
-                        <p className="text-[17px] text-[#142b6f] font-bold mt-4"> Type of Imaging </p>
-                        <div className="flex flex-col ">
-                        <div className=" h-14 rounded-2xl flex gap-4 px-2 items-center"> 
-                         <div onClick={()=>{setImagingNum(0); setImagingName("Breast")   }}   className={`w-[30%] h-[80%] duration-500 border  ${imagingNum == 0 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Breast </div>
-                         <div onClick={()=>{setImagingNum(1); setImagingName("Whole Body")    }   }  className={`w-[30%] h-[80%] duration-500 border  ${imagingNum == 1 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Whole Body </div>
-                         <div onClick={()=>{setImagingNum(2); setImagingName("Head/Brain")    }   }  className={`w-[30%] h-[80%] duration-500 border  ${imagingNum == 2 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Head/Brain </div>
-                       
-                        </div>
-                        <div className=" h-14 rounded-2xl flex gap-4 px-2 items-center justify-center"> 
-                     
-                             <div onClick={()=>{setImagingNum(3); setImagingName("Liver")   }   }  className={`w-[40%] h-[80%]  duration-500  border  ${imagingNum == 3 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Liver </div>
-                           <div onClick={()=>{setImagingNum(4); setImagingName("Chest")    }   }  className={`w-[40%] h-[80%] duration-500  border  ${imagingNum == 4 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Chest </div>
-                             </div>
-                        <div className=" h-14 rounded-2xl flex gap-4 px-2 items-center justify-center"> 
-                          <div onClick={()=>{setImagingNum(5); setImagingName("Abdomen")    }    }  className={`w-[33%] h-[80%] duration-500  border  ${imagingNum == 5 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Abdomen </div>
-                          <div onClick={()=>{setImagingNum(6); setImagingName("Pelvic")   }   }  className={`w-[33%] h-[80%]  duration-500 border  ${imagingNum == 6 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Pelvic </div>
-                          <div onClick={()=>{setImagingNum(7); setImagingName("Urinary")     }   }  className={`w-[33%] h-[80%]  duration-500 border  ${imagingNum == 7 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Urinary </div>
-                        </div>
-
-                        <div className=" h-14 rounded-2xl flex gap-4 px-2 items-center justify-center"> 
-
-                          <div onClick={()=>{setImagingNum(8); setImagingName("Extremity")    }    }  className={`w-[60%] h-[80%] duration-500  border  ${imagingNum == 8 ?  "text-[#fff] bg-[#142b6f] " : "text-[#142b6f]"}  cursor-pointer  border-[#142b6f] rounded-3xl flex items-center justify-center` }> Extremity </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-  
-                     {/* Select */}
-                     <div className="flex flex-col gap-4">
-                      <p className="text-[17px] text-[#142b6f] font-bold mt-4"> Story, signs, symptoms and notes </p>
-                      <textarea value={symptomsNotes} onChange={(e)=>{setSymptomsNotes(e.target.value)}} type="text" className="w-full h-[19vh] pt-2  rounded-2xl border-2 border-dotted border-[#142b6f] px-4 outline-none" placeholder="" />
-                      <p className="text-[17px] relative top-2 text-[#142b6f] font-bold mt-4"> Upload Images and Reports</p>
-                      
-                     </div>
-
-                    {/* Upload Image */}
-                      <div className=" items-start flex flex-col justify-start right-3 relative -">
-                        <Card9
-                          imagingName={imagingName}
-                          totalRecheck={0}
-                          displayText={"none"}
-                          buttonText={"Upload Image"}
-                          itemsScrollType={""}
-                          userMailAddress={user.email}
-                        />
-                      </div>
-
-                    {/* Recheck Now */}
-                    <div onClick={()=>{
-
-                      if(symptomsNotes === ""){
-                        toast.error("Please fill the required fields", {}  );
-                      }
-
-                      else{
-
-                        setDoc(
-                          doc(db, "Mitrua", `${user.email}`),
-                          {
-                            LifeLong: {
-                              rechecks: arrayUnion({
-                                createDay: new Date().getDate(),
-                                createMonth: new Date().getMonth(),
-                                createYear: new Date().getFullYear(),
-                                imagingName: imagingName,
-                                imagingNum: imagingNum,
-                                symptomsNotes: symptomsNotes,
-                              }),
-                              
-                            },
-                        
-                        
-                          },
-                          { merge: true }
-                        );  
-                           setSymptomsNotes("");
-                           setImagingNum(0);
-                           toast.success("Your request has been sent successfully", {}  );
-
-                           //refresh page 
-                            setTimeout(() => {
-                            window.location.reload();
-                            }, 440);
-                      }
-
-                    }} className="flex  gap-4 border text-[#fff] bg-[#142b6f] relative bottom-5 cursor-pointer rounded-3xl px-8 py-2 w-fit"> <p>Recheck Now</p>  <p>➔</p> </div>
-                   
-                   <div className="w-full border-b border-[#142b6f]"> </div>
-
-                 
-                 </div>
-                 }
+          
               {
-                    recheckData && recheckData.map((item, index) => {
+                    recheckData && 
+                    recheckData.map((item, index) => {
                       return(
                        
-                    isLifeLong && (
+                    
                      <div>
-                        <p className="ml-5 text-[#142b6f] font-bold border-b-2">{item.imagingName}</p>
                         <CustomizedAccordions
-                        totalRecheck={0}
-                        userActiveStep={3}
+                        totalRecheck={index}
+                        userActiveStep={item.activeStep}
                         userCreateDay={item.createDay}
                         userCreateMonth={item.createMonth}
                         userCreateYear={item.createYear}
                         payType={"secondRecheck"}
                       />
                      </div>
-                    )
+                   
                       )
 
                     })
@@ -545,24 +395,7 @@ const UserPanelMobile = () => {
              
 
 
-              {userTotalRecheck === 2 && (
-                <CustomizedAccordions
-                  totalRecheck={2}
-                  userActiveStep={userActiveStep2}
-                  userCreateDay={userCreateDay2}
-                  userCreateMonth={userCreateMonth2}
-                  userCreateYear={userCreateYear2}
-                  payType={"secondRecheck"}
-                />
-              )}
-              <CustomizedAccordions
-                totalRecheck={1}
-                userActiveStep={userActiveStep}
-                userCreateDay={userCreateDay}
-                userCreateMonth={userCreateMonth}
-                userCreateYear={userCreateYear}
-                payType={"firstRecheck"}
-              />
+            
             </div>
         
         : 
@@ -692,7 +525,7 @@ const UserPanelMobile = () => {
           ) }
 
         {userPanelNavIndex === 7 && (
-            <div className="relative  bottom-[10vh]">  
+            <div className="relative  bottom-[0vh] w-[92vw] self-center left-4">  
             <Faq isOutside = {true}/> 
           
            </div>

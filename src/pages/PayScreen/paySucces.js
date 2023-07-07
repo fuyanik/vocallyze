@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect,useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { doc, setDoc, getDoc   } from "firebase/firestore"; 
+import { doc, setDoc, getDoc, arrayUnion, updateDoc   } from "firebase/firestore"; 
 import { db } from '../../firebase';
 import { getAuth } from 'firebase/auth';
 import { deleteDoc } from 'firebase/firestore';
@@ -19,13 +19,64 @@ const PaySucces = () => {
 
 
   const logo = useRef(null)
-  const [count, setCount] = useState(7);
+  const [count, setCount] = useState(6);
+
+  const auth = getAuth();
+  const user =  auth.currentUser;
+  
+ 
+  const updatePay = async ()  => {
+
+     if (user) {
+       //fetch firebase data firestore
+       const userRef = doc(db, "Mitrua", `${user.email}`);
+       const docSnap = await getDoc(userRef);
+       const data = docSnap.data();
+
+       const rechecks = data.Rechecks;
+
+       console.log(data)
+
+       const returnRecheckNumber = async () => {
+
+        
+          const lastIndex = rechecks.length - 1;
+
+          rechecks[lastIndex].activeStep = 2;
+          rechecks[lastIndex].isPay = true
+        
+
+          await updateDoc(userRef, { Rechecks: rechecks})
 
 
+      }
+
+
+       //Control user is have images or not for detect active step
+       //...
+       returnRecheckNumber();
+   
+
+      } 
+      else {
+       console.log("NO USER");
+     }
+
+  }
 
  useEffect(() => {
 
- 
+  const analytics = getAnalytics();
+
+
+  logEvent(analytics, 'mitrua_pay_succes', {
+    content_type: "text",
+    content_id: 'P11123'
+  });
+
+  console.log("run analytics")
+
+  gtag('event', 'conversion', {'send_to': 'AW-123456789/abcdefghijk'});
 
 
  },[])
@@ -34,9 +85,9 @@ const PaySucces = () => {
   useEffect(() => {
 
         
-   
+    updatePay();
     const interval = setInterval(() => {
-     
+      updatePay();
       setCount(count - 1);
     }, 1000);
    
@@ -61,8 +112,9 @@ const PaySucces = () => {
   let navigate = useNavigate();
   
      setTimeout(() => {
-     true ?  navigate("/user-panel") : navigate("/pay-succes") 
-    }, 7);
+    user ?  navigate("/user-panel") : navigate("/pay-succes") 
+    }, 6000);
+
 
   return (
     

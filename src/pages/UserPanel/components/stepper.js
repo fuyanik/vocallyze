@@ -138,13 +138,13 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
 
   //
   return (
-   <div onClick={()=>{setTestStep(testStep + 1)}} >
+   <div >
 
       <Box className="stepper-box">
         {/*Whichever number your Active Step is, that index is active. acitvestep == 2 ise 2.sıradaki yanar  */}
         <Stepper
           sx={{ display: "flex", backgroundColor: "white", color: "black" }}
-         activeStep={3}
+         activeStep={activeStep1}
          // activeStep={testStep}
           orientation="vertical"
         >
@@ -276,18 +276,17 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
                 
                 {/* Medical Images Step*/}
                 {index === 2 && (
-                  <div
-                    style={{ left: leftValue }}
-                    className="accordion-upload-image"
-                  >
-                    <br></br>
-                    <Card9
-                      totalRecheck={totalRecheck}
-                      displayText={"none"}
-                      buttonText={"Upload Image"}
-                      itemsScrollType={""}
-                      userMailAddress={user.email}
-                    />
+                  
+                    
+                   <div className="w-fit pt-4"> 
+                     <Card9
+                       totalRecheck={totalRecheck}
+                       displayText={"none"}
+                       buttonText={"Upload Image"}
+                       itemsScrollType={""}
+                       userMailAddress={user.email}
+                     />
+                   
                   </div>
                 )}
 
