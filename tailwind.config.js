@@ -16,9 +16,19 @@ module.exports = {
         fadeIn: 'fadeIn 0.5s ease-in-out forwards',
         fadeOut: 'fadeOut 0.5s ease-in-out',
         leftToRight: 'leftToRighto 0.5s ease forwards',
+        stretchWidth: 'stretchWidth 0.5s ease forwards',
+        visible : 'visible 1.8s ease forwards',
       },
 
       keyframes: {
+        visible: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        stretchWidth: {
+          '0%': { width: '0' },
+          '100%': { width: '100vw' },
+        },
         fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },

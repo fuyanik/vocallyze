@@ -58,9 +58,11 @@ const PaySucces = () => {
    
 
       } 
+
       else {
        console.log("NO USER");
-     }
+   
+      }
 
   }
 

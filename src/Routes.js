@@ -13,6 +13,9 @@ import FormNew from './pages/Forms/FormNew';
 import SwiperPage from './pages/Swiper/swiper';
 import PaySucces from './pages/PayScreen/paySucces';
 import UserPanel from './pages/UserPanel/userPanel';
+import Hero from './homeComponents/2.Hero/hero';
+import Login from './pages/Auth/login';
+import PasswordReset from './pages/Auth/passwordReset';
   
 
 export default function App() {
@@ -31,6 +34,14 @@ export default function App() {
 
 
             <Route path="/swiper-page" element={<SwiperPage/>} />
+
+            <Route path="/get-started" element={<Hero isOutside={true}/>} />
+
+            
+            <Route path="/login" element={<Login/>} />
+            <Route path="/reset-password" element={<PasswordReset/>} />
+
+
 
 
             

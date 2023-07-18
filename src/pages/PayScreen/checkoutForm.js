@@ -1,9 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import gV from "../../gV.js";
-import { db } from "../../firebase";
-import { Timestamp} from 'firebase/firestore';
-import { doc, setDoc,   } from "firebase/firestore"; 
+
 import { getAuth } from "firebase/auth";
 import { setGlobalState, useGlobalState } from "../../hookState";
 

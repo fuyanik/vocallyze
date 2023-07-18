@@ -8,14 +8,37 @@ import { Link, useNavigate } from "react-router-dom";
 import SelectBodyParts from "../../pages/Forms/components/selectBodyParts";
 import ScanType from "../../pages/Forms/components/selectScan";
 import IconsMobile from "../Icons/Icons_mobile";
+import Navbar from "../1.Navbar/navbar";
 
 
 
 
-const Hero = () => {
+const Hero = ({isOutside = false}) => {
 
 
   const navigate = useNavigate();
+
+
+  const searchIcon =  <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current w-6 h-6 stroke-2" fill="none" viewBox="0 0 24 24">
+  <circle cx="10" cy="10" r="7"></circle>
+<line x1="21" y1="21" x2="15" y2="15"></line>
+
+</svg>  
+
+ const costIcon = <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current w-6 h-6 stroke-2" fill="none" viewBox="0 0 24 24">
+<path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2"></path>
+<path d="M12 3v3m0 12v3"></path>
+
+</svg>
+
+const customerIcon = <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current w-6 h-6 stroke-2" fill="none" viewBox="0 0 24 24">
+<path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+
+</svg>
+
+const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-star-b69e09e438f36badb1d27701ae8f32e6aa6499e50a2c579926d96bc1326bb973.png"/>
+
+
 
 
 
@@ -23,22 +46,19 @@ const Hero = () => {
    
     {
         id:2,
-        img:"https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/64/142b6f/external-telephone-contact-us-kmg-design-detailed-outline-kmg-design.png",
+       
         text:"Phone consultation"
     },
     {
         id:3,
-        img:"https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/142b6f/external-file-home-office-vitaliy-gorbachev-lineal-vitaly-gorbachev.png",
         text:"Detailed recheck report"
     },
     {
         id:4,
-        img:"https://img.icons8.com/ios/50/142b6f/medical-insurance--v1.png",
         text:"Insurance accepted"
     },
     {
         id:5,
-        img:"https://img.icons8.com/pastel-glyph/64/142b6f/internet.png",
         text:"Fully online process"
     },
    ]
@@ -47,7 +67,12 @@ const Hero = () => {
 
   return (
     <>
-      <div className="w-screen  pt-3 pb-28 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+      <div className="w-screen h-auto   pb-28 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+
+     {isOutside && <Navbar
+      mobileMenuText={'Menu'}
+      mobileMenuTo ={"/mobileNavMenu"}
+      />}
       
       <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-full absolute -z-20 opacity-20"  alt="vitamu"/>
         
@@ -64,7 +89,7 @@ const Hero = () => {
               <p>mammogram</p>
               <p>CT scan</p>
               <p>PET scan</p>
-              <p>x-ray</p>
+              <p>X-ray</p>
              
             </div>
          
@@ -110,13 +135,16 @@ const Hero = () => {
 
     /* Hero Bottom Icons */
     gV.mq.matches ? 
+    
      <div className="flex flex-col gap-2 items-center text-center">
     {icons.map((company,idx) => (
       <div key={idx} className="flex w-[full]  gap-2  items-center">
-      <img
-        className="w-5"
-        src={company.img}
-      />
+   
+   {idx === 0 &&  searchIcon}
+    {idx === 1 &&  costIcon}
+    {idx === 2 &&  customerIcon}
+    {idx === 3 &&  starIcon}
+
       <p className="text-center text-[16px]">{company.text}</p>
     </div>
     ))}
@@ -125,14 +153,16 @@ const Hero = () => {
 
 
 
-<div className=" flex mt-10 gap-20 self-center ">
+<div className=" flex mt-10 gap-32 self-center ">
         
 {icons.map((company,idx) => (
-  <div key={idx} className="flex  w-auto  gap-4  items-center">
-  <img
-    className="w-7"
-    src={company.img}
-  />
+  <div key={idx} className="flex  w-auto  gap-2  items-center">
+ 
+    {idx === 0 &&  searchIcon}
+    {idx === 1 &&  costIcon}
+    {idx === 2 &&  customerIcon}
+    {idx === 3 &&  starIcon}
+  
   <p className="text-center">{company.text}</p>
 </div>
 ))}

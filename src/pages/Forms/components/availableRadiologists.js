@@ -125,7 +125,7 @@ const AvailableRadiologists = () => {
    
 
        {/* Card */}
-      <div  className={`w-full h-34 rounded-xl py-2 lg:py-4 lg:px-5 px-3 justify-between flex items-center shadow-md  border-b border-priTrans duration-300 cursor-pointer` }> 
+      <div  className={`w-full h-34 rounded-xl py-2 lg:py-4 lg:px-5 px-3 justify-between flex items-center shadow-md  duration-300 cursor-pointer` }> 
        
        <div className="flex flex-col  ">
        

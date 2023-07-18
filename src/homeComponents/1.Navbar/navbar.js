@@ -1,6 +1,6 @@
 import "./navbar.css"
 import {useState} from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import NavbarDropdown from "./navbarDropdown";
 import dropdown1 from "./images/dropdown1.jpg"
 import dropdown2 from "./images/dropdown2.jpg"
@@ -18,7 +18,14 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
    
    //navbar change opacitiy and color when user hover in
    const [isWhite, setIsWhite] = useState(false);
-   const [isHover, setIsHover] = useState(false);
+   const [isDropdown, setDropdown] = useState(false);
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+    //Menu Dropdown  
+    const [menuDropdown1, setMenuDropdown1] = useState(false);
+    const [menuDropdown2, setMenuDropdown2] = useState(false);
+
  
   //navbar change opacitiy and color when user scroll in
    const [scrollNumber, setScrollNumber] = useState(0);
@@ -28,6 +35,8 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
 
    const auth = getAuth();
    const user = auth.currentUser;
+   
+   const navigate = useNavigate();
 
 
 
@@ -177,128 +186,130 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
 
 
 return (
+
   <div
-    onMouseLeave={() => setShowDropdown(0)}
-    className="Navbar"
-    style={{ backgroundColor: isWhite && "white" }}
-    onMouseMove={() => {
-      setIsWhite(true);
-    }}
-  >
-    {showDropdown === 1 && (
-      <NavbarDropdown
-        image="https://vitamu.imgix.net/dropdown1.jpg?auto=undefined%2Ccompress"
-        line1head2={LinkHeader("/missed-diagnosis", "Missed Diagnosis ➔ ")}
-        line1text2="10% of breast cancer cases are missed on mammogram screening. Learn how it affects lives."
-        line1head1={LinkHeader("/human-error", "Human Error ➔")}
-        line1text1="Learn what human error is and why it happens   "
-        line2head1={LinkHeader("/early-detection", "Early Diagnosis ➔")}
-        line2text1="It saves lives."
-        line2head2={LinkHeader("/statistics", "Statistics ➔ ")}
-        line2text2="U.S. breast cancer statistics are here."
-        line2head3={LinkHeader("/resources", "Resources ➔ ")}
-        line2text3="Breast cancer, A to Z."
-        onMouseLeave={() => setShowDropdown(0)}
-      />
-    )}
+    onMouseLeave={() => setShowDropdown(0)}  className="Navbar"   style={{ backgroundColor: isWhite && "white" }}  onMouseMove={() => {  setIsWhite(true); }} >
+ 
+    <div className=" font-bold text-black gap-4 hidden lg:flex font-product tracking-wide">
+       <div className="flex items-center  gap-1 cursor-pointer"> <p>SCANS </p>  <img className={`   mt-[3px]  top-1 ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="12" height="4" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/> </div>
+       <div className="cursor-pointer"> <p> HEALTH HUB </p> </div>
+       <div className="flex items-center  gap-1 cursor-pointer"> <p>COMPANY </p>  <img className={`   mt-[3px]  top-1 ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="12" height="4" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/> </div>
+    </div>
 
-    {showDropdown === 2 && (
-      <NavbarDropdown
-        image="https://vitamu.imgix.net/dropdown2.jpg?auto=undefined%2Ccompress"
-        line1head1={LinkHeader("/how-it-works", "How It Works ➔")}
-        line1text1="Learn what recheck is and how it works."
-        line1head2={LinkHeader("/technology", "Technology ➔ ")}
-        line1text2="Meet our artificial intelligence used by radiologists."
-        line1head3={LinkHeader(
-          "/journey-mammogram",
-          "Journey of a Mammogram ➔"
-        )}
-        line1text3="Discover how your mammogram is evaluated on a recheck."
-        line2head1={LinkHeader("/radiology-team", "Radiology Team ➔")}
-        line2text1="Meet the people who carry out our rechecks."
-        line2head2={LinkHeader("/what-next", "What is Next? ➔ ")}
-        line2text2="You have your recheck results. Here is what comes next."
-        line2head3={LinkHeader(
-          "/recheck-report-samples",
-          "Recheck Report Samples ➔"
-        )}
-        line2text3="Want to learn about scenarios, see recheck report samples."
-        onMouseLeave={() => setShowDropdown(0)}
-      />
-    )}
 
-    {showDropdown === 3 && (
-      <NavbarDropdown
-        image="https://vitamu.imgix.net/dropdown3.jpg?auto=undefined%2Ccompress"
-        line1head1={LinkHeader("/our-story", "Our Story ➔ ")}
-        line1text1="This is how we started our journey."
-        line1head2={LinkHeader("/stories", "Stories ➔ ")}
-        line1text2="Meet the women we have helped. "
-        line1head3={LinkHeader("/numbers", "Numbers ➔ ")}
-        line1text3="We recheck 200+ mammograms per day. Live stats here."
-        line2head1={LinkHeader("/donate", "Donate ➔ ")}
-        line2text1="Your donations, however small, keep people alive. Here is a list of proposed charities."
-        line2head2={LinkHeader("/research-fund", "Research Fund ➔ ")}
-        line2text2="We support entrepreneurs, researchers, and physicians who are dedicated to breast cancer diagnosis and treatment."
-        onMouseLeave={() => setShowDropdown(0)}
-      />
-    )}
-    {showDropdown === 4 && (
-      <NavbarDropdown
-        image="https://vitamu.imgix.net/dropdown4.jpg?auto=undefined%2Ccompress"
-        line1head1={LinkHeader("/contact", "Contact ➔ ")}
-        line1text1="Any questions? We are here to help."
-        line1head2={LinkHeader("/faq", "FAQ ➔ ")}
-        line1text2="Here are the answers to some frequently asked questions "
-        line1head3={LinkHeader("/stage-4-support", "Stage 4 Support ➔ ")}
-        line1text3="Have you been diagnosed with stage 4 breast cancer? We can help you"
-        line2head1={LinkHeader("/copy-mammogram", "Get a Copy of  Your Mammogram ➔ ")}
-        line2text1="Learn how to get a copy of your mammogram, for both recheck and future mammogram screenings."
-        line2head2={LinkHeader(
-          "/breast-exam-reminder",
-          "Breast Self-Exam Reminder ➔"
-        )}
-        line2text2="Early detection saves lives. With our reminder, you will never skip a single breast self-exam."
-        onMouseLeave={() => setShowDropdown(0)}
-      />
-    )}
-
-     {/* Facts-Recheck-People-Help */}
-     <div className="nav-items-and-button">
+     {/* Logo */}
+     <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex  ">
       <Link style={{ textDecoration: "none", display: "flex" }} to="/">
-        {" "}
         <img className="vitamu-logo z-0" src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress" alt="vitamu" />{" "}
       </Link>
-
-      <ul className="nav-items">
-        <li className="nav-item" onMouseMove={() => setShowDropdown(1)}>
-          Facts
-        </li>
-        <li className="nav-item" onMouseMove={() => setShowDropdown(2)}>
-          Recheck
-        </li>
-        <li className="nav-item" onMouseMove={() => setShowDropdown(3)}>
-          People
-        </li>
-        <li className="nav-item" onMouseMove={() => setShowDropdown(4)}>
-          {" "}
-          Help
-        </li>
-      </ul>
      </div>
 
+
     {/* Mobile Menu */}
-    <Link
-      className="mobile-dropdown-menu"
-      style={{ textDecoration: "none", display: "inline" }}
-      to={mobileMenuTo}
-    >
-      {" "}
-      <div className="mobile-dropdown-menu"> {mobileMenuText}</div>{" "}
-    </Link>
+     {gV.mq.matches  && 
+     <div className= {` text-pri font-product`} > 
+        <p onClick={()=>{setIsMenuOpen(!isMenuOpen)}}>Menu</p>
+       
+        <section className= {`  ${isMenuOpen ? "flex" : "hidden"}  flex-col gap-8  absolute top-0 left-0 z-50 justify-normal  p-8 h-screen animate-stretchWidth   bg-white  ` }>
+
+        {/* Top */ }
+         <header className="flex animate-visible  justify-between items-center">  
+          
+            <img className="w-36"  src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress" alt="vitamu" />{" "}
+            <img className="relative left-2"  onClick={()=>{setIsMenuOpen(false)}} width="18" height="18" src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/>
+        
+        </header>
+        
+   
+         {/* Main */ }
+        <div className="  font-bold text-pri flex flex-col gap-6 text-[20px] animate-visible  font-product tracking-wide">
+          
+         {/* Item 1  */}
+         <div>
+           
+           <div onClick={()=>{setMenuDropdown1(!menuDropdown1)}} className="flex items-center text-[22px]  gap-2 cursor-pointer">  
+              <p>Scans </p>  
+              <img  className={`absolute   right-6 lg:right-1 text-[13px] ${!menuDropdown1 ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+           </div>
+          
+          { menuDropdown1 && <div className="text-[17px] animate-fadeIn pl-3 pt-1  font-normal"> 
+             <p>Scap Types</p>
+             <p>Body Parts </p>
+             <p>Cities</p>
+           </div>}
+        
+         </div>
+
+          {/* Item 2  */}
+
+          <div>
+           
+           <div className="flex items-center text-[22px]  gap-2 cursor-pointer">  
+              <p>Health Hub </p>  
+           </div>
+          
+           <div className="text-[17px] pl-3 pt-1 hidden font-normal"> 
+             <p>Scap Types</p>
+             <p>Body Parts </p>
+             <p>Cities</p>
+           </div>
+        
+         </div>
+
+          {/* Item 3  */}
+
+          <div>
+           
+           <div onClick={()=>{setMenuDropdown2(!menuDropdown2)}}  className="flex items-center text-[22px]  gap-2 cursor-pointer">  
+              <p>Company </p>  
+              <img  className={`absolute   right-6 lg:right-1 text-[13px] ${!menuDropdown2 ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+           </div>
+          
+           { menuDropdown2 && <div className=" animate-fadeIn text-[17px] pl-3 pt-1  font-normal"> 
+             <p>Scap Types</p>
+             <p>Body Parts </p>
+             <p>Cities</p>
+           </div>}
+        
+         </div>
+
+          {/* Item 4  */}
+
+          <div>
+           
+           <div className="flex items-center text-[22px]  gap-2 cursor-pointer">  
+              <p>Help </p>  
+           </div>
+          
+           <div className="text-[17px] pl-3 pt-1 hidden font-normal"> 
+             <p>Scap Types</p>
+             <p>Body Parts </p>
+             <p>Cities</p>
+           </div>
+        
+         </div>
+
+
+       
+          
+          
+         
+        </div>
+
+
+         {/* Get Started Button*/ }
+        <div onClick={()=>{navigate("/form-new")}} className="animate-visible flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
+
+        
+
+        
+        </section>
+     
+      </div>}
+ 
 
     {/* Mobile Logo*/}
-    <Link
+    { gV.mq.matches && <Link
       className="navbar-logo"
       style={{ textDecoration: "none", display: "flex" }}
       to="/"
@@ -309,8 +320,8 @@ return (
         src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress"
         alt="vitamu"
       />{" "}
-    </Link>
-
+    </Link>}
+    
     {gV.mq.matches && MobileUserPortal()}
 
 
@@ -323,16 +334,8 @@ return (
 
       {/* Get Started Button */}
       <div style={{ position: "relative" }}>
-        {isHover && (
-          <BiRadsDropdown
-            onMouseLeave={() => {
-              setIsHover(false);
-            }}
-            top={"-10%"}
-            left={"-4vw"}
-          />
-        )}
-        <PrimaryButton to={"/form"} onMouse={() => setIsHover(true)} />
+      
+        <PrimaryButton to={"/get-started"}  />
       </div>
 
       {/* İf user is logged in, show USER PANEL button, If user not logged in Show SIGN IN button */}

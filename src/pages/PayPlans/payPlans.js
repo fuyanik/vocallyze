@@ -319,7 +319,7 @@ const PayPlans = ({ isOutside = false, }) => {
            <div className={`w-11 h-10 rounded-full border ${selectedCard == 1 && "bg-pri"} duration-300 `} > </div>
           
 
-           <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[15vh] animate-fadeIn justify-between  border">
+           <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[15vh] animate-fadeIn justify-between   shadow-3xl">
            
             {/*  Card Left */}
             <div className='flex flex-col gap-3 w-fit'>
@@ -388,7 +388,7 @@ const PayPlans = ({ isOutside = false, }) => {
             <div className={`w-11 h-10 rounded-full border ${selectedCard == 2 && "bg-pri"} duration-300 `} > </div>
 
             {/*  Card */}
-             <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[17vh] animate-fadeIn justify-between bg-white shadow-3xl ">
+             <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[17vh] animate-fadeIn justify-between text-pri bg-white shadow-3xl ">
            
            {/*  Card Left */}
            <div className='flex flex-col gap-3 w-fit '>
@@ -515,7 +515,7 @@ const PayPlans = ({ isOutside = false, }) => {
    
 
           {/*  Card */}
-          <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[17vh] animate-fadeIn justify-between  text-white bg-pri shadow-md ">
+          <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[17vh] animate-fadeIn justify-between  text-pri bg-white shadow-md ">
            
            {/*  Card Left */}
             <div className='flex flex-col gap-3 w-fit '>
@@ -531,7 +531,7 @@ const PayPlans = ({ isOutside = false, }) => {
                >
                  <path
                    d="M23.75 0H6.25C4.59301 0.00198482 3.00445 0.661102 1.83277 1.83277C0.661102 3.00445 0.00198482 4.59301 0 6.25L0 23.75C0.00198482 25.407 0.661102 26.9956 1.83277 28.1672C3.00445 29.3389 4.59301 29.998 6.25 30H23.75C25.407 29.998 26.9956 29.3389 28.1672 28.1672C29.3389 26.9956 29.998 25.407 30 23.75V6.25C29.998 4.59301 29.3389 3.00445 28.1672 1.83277C26.9956 0.661102 25.407 0.00198482 23.75 0V0ZM20 13.75H16.25V10H20V13.75ZM22.5 10H27.5V13.75H22.5V10ZM16.25 7.5V2.5H20V7.5H16.25ZM13.75 7.5H10V2.5H13.75V7.5ZM13.75 10V13.75H10V10H13.75ZM7.5 13.75H2.5V10H7.5V13.75ZM2.5 16.25H7.5V20H2.5V16.25ZM10 16.25H13.75V20H10V16.25ZM13.75 22.5V27.5H10V22.5H13.75ZM16.25 22.5H20V27.5H16.25V22.5ZM16.25 20V16.25H20V20H16.25ZM22.5 16.25H27.5V20H22.5V16.25ZM27.5 6.25V7.5H22.5V2.5H23.75C24.7446 2.5 25.6984 2.89509 26.4017 3.59835C27.1049 4.30161 27.5 5.25544 27.5 6.25ZM6.25 2.5H7.5V7.5H2.5V6.25C2.5 5.25544 2.89509 4.30161 3.59835 3.59835C4.30161 2.89509 5.25544 2.5 6.25 2.5ZM2.5 23.75V22.5H7.5V27.5H6.25C5.25544 27.5 4.30161 27.1049 3.59835 26.4017C2.89509 25.6984 2.5 24.7446 2.5 23.75ZM23.75 27.5H22.5V22.5H27.5V23.75C27.5 24.7446 27.1049 25.6984 26.4017 26.4017C25.6984 27.1049 24.7446 27.5 23.75 27.5Z"
-                   fill="white"
+                   fill="#1769FF"
                  />
                </svg>
                <p class="text-[22px] ">5 - Year Membership</p>

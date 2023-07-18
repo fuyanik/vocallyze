@@ -11,9 +11,10 @@
     top: 0;
     padding-inline: 0%;
     justify-content: space-between;
- 
-    padding-right: 5%;
-    padding-left: 3.2%;
+    align-items: center;
+    padding-left: 8%;
+    padding-right: 3%;
+   
 }
 
 .nav-items-and-button {
@@ -37,7 +38,7 @@
     display: flex;
     position: relative;
     object-fit: cover;
-    width: 190px;
+    width: 150px;
     z-index: 3;
     bottom: 0.8vh;
 
