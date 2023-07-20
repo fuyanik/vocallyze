@@ -16,6 +16,7 @@ import UserPanel from './pages/UserPanel/userPanel';
 import Hero from './homeComponents/2.Hero/hero';
 import Login from './pages/Auth/login';
 import PasswordReset from './pages/Auth/passwordReset';
+import HealthHub from './pages/HealthHub/HealthHub';
   
 
 export default function App() {
@@ -32,10 +33,14 @@ export default function App() {
             <Route path="/pay-succes" element={<PaySucces/>} />
             <Route path="/user-panel" element={<UserPanel/>} />
 
+           
+
 
             <Route path="/swiper-page" element={<SwiperPage/>} />
 
             <Route path="/get-started" element={<Hero isOutside={true}/>} />
+            <Route path="/health-hub" element={<HealthHub/>} />
+
 
             
             <Route path="/login" element={<Login/>} />

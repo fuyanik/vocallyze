@@ -190,9 +190,11 @@ return (
   <div
     onMouseLeave={() => setShowDropdown(0)}  className="Navbar"   style={{ backgroundColor: isWhite && "white" }}  onMouseMove={() => {  setIsWhite(true); }} >
  
+
+    {/* Desktop Menu */}
     <div className=" font-bold text-black gap-4 hidden lg:flex font-product tracking-wide">
        <div className="flex items-center  gap-1 cursor-pointer"> <p>SCANS </p>  <img className={`   mt-[3px]  top-1 ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="12" height="4" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/> </div>
-       <div className="cursor-pointer"> <p> HEALTH HUB </p> </div>
+       <Link to={"health-hub"}> <div className="cursor-pointer hover:border-b border-gray-300"> <p> HEALTH HUB </p> </div>  </Link>
        <div className="flex items-center  gap-1 cursor-pointer"> <p>COMPANY </p>  <img className={`   mt-[3px]  top-1 ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="12" height="4" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/> </div>
     </div>
 
@@ -298,7 +300,7 @@ return (
 
 
          {/* Get Started Button*/ }
-        <div onClick={()=>{navigate("/form-new")}} className="animate-visible flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
+         <div onClick={()=>{navigate("/form-new")}} className="animate-visible flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
 
         
 
