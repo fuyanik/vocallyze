@@ -426,9 +426,11 @@ return (
               {/* Item 2  */}
 
               <div>
-                <div className="flex items-center text-[22px]  gap-2 cursor-pointer">
-                  <p>Health Hub </p>
-                </div>
+               <Link to={"/health-hub"}>
+                 <div className="flex items-center text-[22px]  gap-2 cursor-pointer">
+                   <p>Health Hub </p>
+                 </div>
+               </Link>
 
                 <div className="text-[17px] pl-3 pt-1 hidden font-normal">
                   <p>Scap Types</p>
@@ -487,6 +489,9 @@ return (
           </section>
         </div>
       )}
+
+
+
 
       {/* Mobile Logo*/}
       {gV.mq.matches && (
