@@ -38,7 +38,7 @@
     display: flex;
     position: relative;
     object-fit: cover;
-    width: 150px;
+    width: 120px;
     z-index: 3;
     bottom: 0.8vh;
 

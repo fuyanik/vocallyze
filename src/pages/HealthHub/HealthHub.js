@@ -57,6 +57,48 @@ const HealthHub = () => {
             title: "What is Lorem Ipsum?",
             button:"Symptoms",
         },
+        {
+            id: 6,
+            img: "",
+            date: "04 MAY 2021",
+            title: "What is Lorem Ipsum?",
+            button:"Symptoms",
+        },
+        {
+            id: 6,
+            img: "",
+            date: "04 MAY 2021",
+            title: "What is Lorem Ipsum?",
+            button:"Symptoms",
+        },
+        {
+            id: 6,
+            img: "",
+            date: "04 MAY 2021",
+            title: "What is Lorem Ipsum?",
+            button:"Symptoms",
+        },
+        {
+            id: 6,
+            img: "",
+            date: "04 MAY 2021",
+            title: "What is Lorem Ipsum?",
+            button:"Symptoms",
+        },
+        {
+            id: 6,
+            img: "",
+            date: "04 MAY 2021",
+            title: "What is Lorem Ipsum?",
+            button:"Symptoms",
+        },
+        {
+            id: 6,
+            img: "",
+            date: "04 MAY 2021",
+            title: "What is Lorem Ipsum?",
+            button:"Symptoms",
+        },
             
     ];
     
@@ -586,11 +628,11 @@ const HealthHub = () => {
                 </div>
 
                  {/* Cards */}
-                <div className='flex flex-wrap lg:gap-20 gap-10 justify-center '>
+                <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-6 '>
         
                {cards.map((card)=>(
                 
-                 <div className='xl:w-[365px] relative lg:w-[440px]  md:w-[330px] w-[98%] lg:h-[50vh] h-[60vh] rounded-2xl  hover:shadow-md cursor-pointer duration-300  '>
+                 <div className='w-full relative lg:h-[50vh] h-[60vh] rounded-2xl  hover:shadow-md cursor-pointer duration-300  '>
                   
                   <img src={card.img} className='w-full rounded-xl h-[60%]  '/>
                    

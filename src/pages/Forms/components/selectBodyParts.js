@@ -50,14 +50,14 @@ export default function SelectBodyParts() {
          
            
            
-           <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  "relative flex items-center px-5 w-[44%] h-auto  border-[#142b6f] rounded-tl-[44px] rounded-bl-[44px] bg-slate-200" }`}>
+           <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  "relative flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
            
      
              <div
                onClick={() => {
                  setDropdown(!isDropdown);
                }}
-               className="h-auto py-3 w-[120%]  relative text-pri flex-wrap  gap-2 bg-slate-200 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+               className="h-auto py-3 w-[120%]  relative text-pri flex-wrap  gap-2 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
                 {/* Default Place Holder */}
                 <div className="flex gap-2 h-8 items-center justify-center">

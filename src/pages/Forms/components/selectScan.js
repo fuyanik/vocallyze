@@ -34,14 +34,14 @@ export default function SelectScan() {
            
          
      
-    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  " relative flex items-center px-5 w-[36%] h-full  bg-slate-200" } z-0`}>
+    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  " relative flex items-center px-5 w-[36%] h-full  border border-black" } z-0`}>
            
      
              <div
                onClick={() => {
                  setDropdown(!isDropdown);
                }}
-               className="h-auto py-3 w-[120%] lg:w-[95%] relative text-pri flex-wrap  gap-2 bg-slate-200 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+               className="h-auto py-3 w-[120%] lg:w-[95%] relative text-pri flex-wrap  gap-2  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
                  {/* Default Place Holder */}
                  <div className="flex gap-2 h-8 items-center justify-center">
@@ -65,7 +65,7 @@ export default function SelectScan() {
             {/* Dropdown White Area */}
             { isDropdown && 
             
-               <div className="absolute z-40  flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl ">
+               <div className="absolute z-40  flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl ">
                {names.map((name, idx) => (
                   <p 
                   className={` ${scanType.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3  w-full text-left  `}

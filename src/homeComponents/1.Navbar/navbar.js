@@ -306,8 +306,8 @@ return (
       <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex  ">
         <Link style={{ textDecoration: "none", display: "flex" }} to="/">
           <img
-            className="vitamu-logo z-0"
-            src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress"
+            className="vitamu-logo"
+            src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
             alt="vitamu"
           />{" "}
         </Link>
@@ -489,8 +489,6 @@ return (
           </section>
         </div>
       )}
-
-
 
 
       {/* Mobile Logo*/}

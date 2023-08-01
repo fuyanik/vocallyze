@@ -6,7 +6,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  color: #142b6f !important;
+  color: #000 !important;
 }
 .hero__img {
   top: 10vh;
@@ -48,7 +48,7 @@
 }
 .hero__main__header__fade-in {
   position: relative;
-  color: #142b6f;
+  color: #000;
   font-weight: bold;
   left: 0vw;
   text-align: center;
@@ -205,7 +205,7 @@
   }
   .hero__main__header {
     width: 95%;
-    color: #142b6f !important;
+    color: #000 !important;
     position: relative;
     margin-bottom: 6vh;
     text-align: center;
@@ -220,7 +220,7 @@
   }
   .hero__main__header__fade-in {
     position: relative;
-    color: #142b6f;
+    color: #000000;
     font-weight: bold;
     left: 0vw;
     text-align: center;
@@ -279,7 +279,7 @@
   }
   .hero__main__footer p {
     font-weight: 500;
-    color: #142b6f;
+    color: #000;
     text-align: start;
     width: 100%;
     line-height: 23px;

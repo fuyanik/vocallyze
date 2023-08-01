@@ -12,7 +12,7 @@ const Icons = () => {
     {
         id:2,
         img:"https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/64/142b6f/external-telephone-contact-us-kmg-design-detailed-outline-kmg-design.png",
-        text:"Phone consultation"
+        text:"Phone consultationasd"
     },
     {
         id:3,

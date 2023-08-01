@@ -7,9 +7,10 @@ module.exports = {
     extend: {
 
       colors: {
-        pri: '#142b6f',
-        priTrans: '#142b6f90',
+        pri: '#000000',
+        priTrans: '#666666',
         sec: '#ff4949',
+        secTrans: '#ff494990',
       },
 
       animation: {

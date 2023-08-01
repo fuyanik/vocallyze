@@ -9,6 +9,7 @@ import SelectBodyParts from "../../pages/Forms/components/selectBodyParts";
 import ScanType from "../../pages/Forms/components/selectScan";
 import IconsMobile from "../Icons/Icons_mobile";
 import Navbar from "../1.Navbar/navbar";
+import groupPng from "../../assets/images/group.png"
 
 
 
@@ -47,11 +48,11 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
     {
         id:2,
        
-        text:"Phone consultation"
+        text:"60+ radiologists"
     },
     {
         id:3,
-        text:"Detailed recheck report"
+        text:"Starting at $20"
     },
     {
         id:4,
@@ -74,20 +75,20 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       mobileMenuTo ={"/mobileNavMenu"}
       />}
       
-      <div className="w-screen h-auto   pb-28 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+      <div className="w-screen h-auto pb-28 relative text-black font-product tracking-wide  flex  items-center px-[4vw]   ">
 
     
       
         
        
        
-        <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-center text-center">
+        <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-start text-center">
          
          <div className=" lg:text-[76px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]  text-[36px] text-center items-center justify-center   font-bold ">
            <p>Get your online</p>
          
-           <div  className="hero__main__header__fade-in flex justify-center relative">
-              <p>ultrasound</p>
+           <div  className="hero__main__header__fade-in text-black flex  mr-40 justify-center relative">
+              <p className="text-black">ultrasound</p>
               <p>MRI</p>
               <p>mammogram</p>
               <p>CT scan</p>
@@ -107,7 +108,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
       /*  Mobile */
       gV.mq.matches ? 
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 border-2 border-black rounded-full ">
           <SelectBodyParts/>
           <ScanType/>
          <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
@@ -124,7 +125,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
           
         
         
-          <div onClick={()=>{ navigate("/form-new") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-[#ff4949f4] text-white rounded-[44px] relative right-6 z-10  "> 
+          <div onClick={()=>{ navigate("/form-new") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-[#ff4949] text-white rounded-[44px] relative right-6 z-10  "> 
             <p>Get Started</p>
             <p>➔</p>
            </div>
@@ -178,6 +179,10 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
      
        </div>
+
+      <div className="absolute right-0 mr-10">
+        <img src={groupPng}/>
+      </div>
        
       </div>
     </>
