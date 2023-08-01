@@ -69,12 +69,41 @@ const HealthHub = () => {
       mobileMenuTo ={"/mobileNavMenu"}
       />}
 
-        <div className='w-screen pt-24  items-center flex flex-col font-product tracking-wide'>
+        <div className='w-screen pt-[10.8vh] relative  items-center flex flex-col font-product tracking-wide'>
 
-           <div className='lg:w-[86%] w-[96%] h-auto pt-14 pb-6 gap-12 flex flex-col'>
+            <div className='absolute w-screen h-72 bg-[#FEA2BB] z-0'></div>
+
+           
+
+           <div className='lg:w-[80%] w-[96%] h-auto pt-14 pb-6 gap-12 flex flex-col z-10'>
+
+            <div className=' flex flex-col w-full h-auto gap-12'>
+
+                <div className='flex justify-between'>
+
+                    <div className='flex flex-col gap-2'>
+                        <p className='text-xl font-bold'> MRI Scanning Body Parts</p>
+                        <p>Choose a body part to learn more</p>
+                    </div>
+
+                    <div className='text-white bg-black rounded-lg px-5 py-3 h-fit '>Book a private MRI scan</div>
+
+
+                </div>
+
+                <div className='w-full bg-white shadow-2xl rounded-xl h-[54vh]'>
+
+
+
+                    
+                </div>
+
+
+
+            </div>
             
             {/* Tittle and Photos */}
-             <header className='flex flex-col gap-2'>
+             <header className=' hidden flex-col gap-2'>
                  <h1 className='text-6xl lg:text-8xl font-bold text-pri ' >Health Hub</h1>
                  <div className='border w-full h-[48vh]'></div>
             
