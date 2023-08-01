@@ -155,7 +155,7 @@ const DropdownHeader = ({yellow_title, title, subtitle, writer, date, checker,di
         </div>
      </>}
 
-     <div className='border-b border-[#142b6f] w-full h-full mt-5 '></div>
+     <div className='border-b border-[#000000] w-full h-full mt-5 '></div>
 
       
   

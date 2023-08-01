@@ -114,14 +114,14 @@ const SliderStepper = () => {
                     setActiveStep(index)
                   }}
                   sx={{
-                    color: "#142b6f",
+                    color: "#000000",
                     "& .MuiStepLabel-label": {
                       cursor:"pointer",
                       
                       fontFamily: "ProductSans-Light",
                       fontSize: "17px",
                       letterSpacing: "0.4px",
-                      color: "#142b6f",
+                      color: "#000000",
                     },
                   }}
                   

@@ -281,7 +281,7 @@ export default function CustomizedAccordions({totalRecheck}) {
         aria-controls="panel1d-content" id="panel1d-header">
           <Typography
             style={{
-              color: "#142b6f",
+              color: "#000000",
               fontFamily: "ProductSans-Light",
               fontSize: "15.4px",
               fontWeight: "500",
@@ -301,12 +301,12 @@ export default function CustomizedAccordions({totalRecheck}) {
               fontWeight: "bold",
               width: "68%",
               justifyContent: "space-between",
-              color: "#142b6f"
+              color: "#000000"
             }}
           >
             <Typography
               style={{
-                color: "#142b6f",
+                color: "#000000",
                 fontFamily: "ProductSans-Light",
                 fontSize: "15.4px",
                 fontWeight: "600",

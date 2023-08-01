@@ -233,7 +233,7 @@ function Testom() {
          activeStep={activeStep}
          nextButton={
            <Button
-             sx={{ color: "#142b6f", fontFamily: "ProductSans-Light" }}
+             sx={{ color: "#000000", fontFamily: "ProductSans-Light" }}
              size="small"
              onClick={handleNext}
              disabled={activeStep === 8}
@@ -243,7 +243,7 @@ function Testom() {
          }
          backButton={
            <Button
-             sx={{  transform:"rotate(180deg)" ,color: "#142b6f", fontFamily: "ProductSans-Light" }}
+             sx={{  transform:"rotate(180deg)" ,color: "#000000", fontFamily: "ProductSans-Light" }}
              size="small"
              onClick={handleBack}
              disabled={activeStep === 0}
@@ -261,7 +261,7 @@ function Testom() {
          “A biopsy followed the ultrasound, and turns out, I had stage 1 breast cancer!”
          </p>
          <p>Alexandra, 31</p>
-         <p onClick={()=>{navigate("/stories/alexandra")}} className="border mt-2 border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/alexandra")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -272,7 +272,7 @@ function Testom() {
  </p>
        
          <p>Nora, 49</p>
-         <p onClick={()=>{navigate("/stories/nora")}} className="border mt-2 border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/nora")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -281,7 +281,7 @@ function Testom() {
        <div className="slick-texts">
          <p>“We had a big family vacation, but instead, I got to have a biopsy and find out I had breast cancer. “</p>
          <p>Johnsons, 34</p>
-         <p onClick={()=>{navigate("/stories/johnson")}} className="border mt-2 border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/johnson")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -290,7 +290,7 @@ function Testom() {
        <div className="slick-texts">
          <p> “After 6 very long months, I survived. I survived for myself, my little Luna, and my family. “</p>
          <p>Jena, 33</p>
-         <p onClick={()=>{navigate("/stories/pena")}} className="border mt-2 border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/pena")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -299,7 +299,7 @@ function Testom() {
        <div className="slick-texts">
          <p>“Since it’s often difficult to detect cancer at this level, I was extremely grateful.”</p>
          <p>Laura, 54</p>
-         <p onClick={()=>{navigate("/stories/laura")}} className="border mt-2 border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/laura")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -309,7 +309,7 @@ function Testom() {
          <p>“ In exchange for the $60 I paid Vitamu, I had bought something priceless; a critical year in my recovery. “
 </p>
          <p>Rachel, 61</p>
-         <p onClick={()=>{navigate("/stories/rachel")}} className="border mt-2 border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/rachel")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -338,7 +338,7 @@ function Testom() {
          “A biopsy followed the ultrasound, and turns out, I had stage 1 breast cancer!”
          </p>
            <p>Alexandra, 31</p>
-           <p onClick={()=>{navigate("/stories/alexandra")}} className="border border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+           <p onClick={()=>{navigate("/stories/alexandra")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
        </div>
      )}
 
@@ -348,7 +348,7 @@ function Testom() {
  </p>
        
          <p>Nora, 49</p>
-         <p onClick={()=>{navigate("/stories/nora")}} className="border border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/nora")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -357,7 +357,7 @@ function Testom() {
        <div className="slick-texts">
          <p>“We had a big family vacation, but instead, I got to have a biopsy and find out I had breast cancer. “</p>
          <p>Johnsons, 34</p>
-         <p onClick={()=>{navigate("/stories/johnson")}} className="border border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/johnson")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -366,7 +366,7 @@ function Testom() {
        <div className="slick-texts">
          <p> “After 6 very long months, I survived. I survived for myself, my little Luna, and my family. “</p>
          <p>Jena, 33</p>
-         <p onClick={()=>{navigate("/stories/jena")}} className="border border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/jena")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -375,7 +375,7 @@ function Testom() {
        <div className="slick-texts">
          <p>“Since it’s often difficult to detect cancer at this level, I was extremely grateful.”</p>
          <p>Laura, 54</p>
-         <p onClick={()=>{navigate("/stories/laura")}} className="border border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/laura")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -385,7 +385,7 @@ function Testom() {
          <p>“ In exchange for the $60 I paid Vitamu, I had bought something priceless; a critical year in my recovery. “
 </p>
          <p>Rachel, 61</p>
-         <p onClick={()=>{navigate("/stories/rachel")}} className="border border-[#142b6f] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
+         <p onClick={()=>{navigate("/stories/rachel")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
 
        </div>
      )}
@@ -487,7 +487,7 @@ function Testom() {
             activeStep={activeStep}
             nextButton={
               <Button
-                sx={{ color: "#142b6f", fontFamily: "ProductSans-Light" }}
+                sx={{ color: "#000000", fontFamily: "ProductSans-Light" }}
                 size="small"
                 onClick={handleNext}
                 disabled={activeStep === 8}
@@ -497,7 +497,7 @@ function Testom() {
             }
             backButton={
               <Button
-                sx={{  transform:"rotate(180deg)" ,color: "#142b6f", fontFamily: "ProductSans-Light" }}
+                sx={{  transform:"rotate(180deg)" ,color: "#000000", fontFamily: "ProductSans-Light" }}
                 size="small"
                 onClick={handleBack}
                 disabled={activeStep === 0}

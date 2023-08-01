@@ -34,7 +34,7 @@ export default function SelectScan() {
            
          
      
-    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  " relative flex items-center px-5 w-[36%] h-full  border border-black" } z-0`}>
+    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2] " :  " relative flex items-center px-5 w-[36%] h-full  border border-black" } z-0`}>
            
      
              <div
@@ -59,13 +59,13 @@ export default function SelectScan() {
 
               
               
-               <img  className={`absolute   right-6 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+               <img  className={`absolute   right-6 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
              </div>
              
             {/* Dropdown White Area */}
             { isDropdown && 
             
-               <div className="absolute z-40  flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl ">
+               <div className="absolute z-40  flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl bg-white ">
                {names.map((name, idx) => (
                   <p 
                   className={` ${scanType.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3  w-full text-left  `}

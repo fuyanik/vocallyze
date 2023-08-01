@@ -56,7 +56,7 @@ export default function SelectLabels() {
         sx={{
 
           alignItems: "center",
-          border: "1px solid #142b6f",
+          border: "1px solid #000000",
           width:"70px", 
           backgroundColor: "white",
           borderRadius: 8,
@@ -70,7 +70,7 @@ export default function SelectLabels() {
             fontFamily: "'ProductSans-Light'",
             width: "70px",
             height: "22px",
-            color: "#142b6f",
+            color: "#000000",
             borderRadius: 8,
             fontWeight: 600,
             fontSize: "15.7px",

@@ -10,7 +10,7 @@
 
 
         span{
-            border-bottom: 1px solid #142b6fa9;
+            border-bottom: 1px solid #000000a9;
         }
 
         &__yellow{
@@ -43,7 +43,7 @@
         }
 
         &__title{
-            color: #142b6f;
+            color: #000000;
             font-size: 42px;
             line-height: 48px;
             width: 100%;
@@ -52,7 +52,7 @@
 
         &__subtitle{
             width: 85%;
-            color: #142b6fd6;
+            color: #000000d6;
             font-size: 16px;
             letter-spacing: 0.3px;
             line-height: 18px;
@@ -72,7 +72,7 @@
             align-items: center;
 
             &__name{
-                color: #142b6fd6;
+                color: #000000d6;
                 
                 font-size: 14px;
                 letter-spacing: 0.3px;
@@ -80,7 +80,7 @@
 
 
             &__date{
-                color: #142b6fa9;
+                color: #000000a9;
                 font-size: 14px;
                 letter-spacing: 0.3px;
             }
@@ -95,7 +95,7 @@
         }
 
         &__checked{
-            color: #142b6fd6;
+            color: #000000d6;
             display: flex;
             gap: 1vh;
             width: 100%;
@@ -117,7 +117,7 @@
                 width: 24px;
                 height: 24px;
                 cursor: pointer;
-                color: #142b6f;
+                color: #000000;
             }
         }
     
@@ -139,7 +139,7 @@
 
 
         span{
-            border-bottom: 1px solid #142b6fa9;
+            border-bottom: 1px solid #000000a9;
         }
 
         &__yellow{
@@ -158,13 +158,13 @@
 
         &__title{
             width: 100%;
-            color: #142b6f;
+            color: #000000;
             font-size: 36px;
             line-height: 40px;
         }
 
         &__subtitle{
-            color: #142b6fd6;
+            color: #000000d6;
             font-size: 16px;
             letter-spacing: 0.3px;
             line-height: 18px;
@@ -183,14 +183,14 @@
 
             &__name{
              
-                color: #142b6fd6;
+                color: #000000d6;
                 font-size: 13px;
                 letter-spacing: 0.3px;
             }
 
 
             &__date{
-                color: #142b6fa9;
+                color: #000000a9;
                 font-size: 13px;
                 letter-spacing: 0.3px;
             }
@@ -205,7 +205,7 @@
         }
 
         &__checked{
-            color: #142b6fd6;
+            color: #000000d6;
             display: flex;
             gap: 1vh;
             width: 100%;
@@ -228,7 +228,7 @@
                 width: 24px;
                 height: 24px;
                 cursor: pointer;
-                color: #142b6f;
+                color: #000000;
             }
         }
     

@@ -46,9 +46,9 @@ export default function SelectLabels2() {
       <FormControl
         sx={{
            
-          color:"#142b6f",
+          color:"#000000",
           alignItems: "center",
-          border: "1px solid #142b6f",
+          border: "1px solid #000000",
           width:"110px",
           backgroundColor: "white",
           borderRadius: 8,
@@ -61,7 +61,7 @@ export default function SelectLabels2() {
             fontFamily: "'ProductSans-Light'",
             width: "110px",
             height: "22px",
-            color:"#142b6f",
+            color:"#000000",
             borderRadius: 8,
             fontWeight: 600,
             fontSize: "16px",

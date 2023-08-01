@@ -56,11 +56,11 @@
     font-size: 16.1px !important;
     width: fit-content;
     position: relative;
-    color: #142b6feb;
+    color: #000000eb;
 }
 
 .bi-rads-dropdown p:hover{
-    color: #142b6f;
+    color: #000000;
 }
 
 .bi-rads-dropdown p::after{

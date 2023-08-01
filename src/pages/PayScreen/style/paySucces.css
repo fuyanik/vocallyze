@@ -1,7 +1,7 @@
 .pay-succes {
   height: 100vh;
   width: 100vw;
-  background-color: #142B6F;
+  background-color: #000000;
   font-family: "ProductSans-Light";
   letter-spacing: 0.5px;
   overflow: hidden;
@@ -49,14 +49,14 @@
   position: relative;
   bottom: 18vh;
   font-size: 20px;
-  color: #142B6F;
+  color: #000000;
   text-align: center;
 }
 .pay-succes__bottom__text2 {
   position: relative;
   bottom: 17vh;
   font-size: 13px;
-  color: rgba(20, 43, 111, 0.4784313725);
+  color: rgba(0, 0, 0, 0.4784313725);
   text-align: center;
   width: 60%;
 }/*# sourceMappingURL=paySucces.css.map */

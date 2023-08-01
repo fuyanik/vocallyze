@@ -23,7 +23,7 @@ const Accordion = styled((props) => (
   
   
   "&:not(:last-child)": {
-    borderBottom:"1px solid #142b6f",
+    borderBottom:"1px solid #000000",
   },
 
   "&:before": {
@@ -97,7 +97,7 @@ export default function AccordionRedFlags() {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f", color:"#142b6f"
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000", color:"#000000"
           }} >What should I do if there are red-flags?</Typography>
         </AccordionSummary>
 
@@ -122,7 +122,7 @@ export default function AccordionRedFlags() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} > Can I talk to one of your radiologists</Typography>
         </AccordionSummary>
 
@@ -145,7 +145,7 @@ export default function AccordionRedFlags() {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} >Should I give the report to my physician?</Typography>
         </AccordionSummary>
 
@@ -171,7 +171,7 @@ export default function AccordionRedFlags() {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }}>What</Typography>
         </AccordionSummary>
 

@@ -75,19 +75,19 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       mobileMenuTo ={"/mobileNavMenu"}
       />}
       
-      <div className="w-screen h-auto pb-28 relative text-black font-product tracking-wide  flex  items-center px-[4vw]   ">
+      <div className="w-screen h-auto pb-28 relative text-black font-product tracking-wide  flex  items-center px-[4vw] lg:px-[7.8vw]   ">
 
     
       
         
        
        
-        <div className="flex lg:mt-32  mt-16 flex-col gap-5 items-start text-center">
+        <div className="flex lg:mt-32  mt-16 flex-col gap-5 lg:items-start items-center text-center">
          
-         <div className=" lg:text-[76px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]  text-[36px] text-center items-center justify-center   font-bold ">
+         <div className=" lg:text-[76px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]  text-[36px] lg:text-start text-center items-center justify-left   font-bold ">
            <p>Get your online</p>
          
-           <div  className="hero__main__header__fade-in text-black flex  mr-40 justify-center relative">
+           <div  className="hero__main__header__fade-in text-black flex  lg:mr-40  justify-left  relative">
               <p className="text-black">ultrasound</p>
               <p>MRI</p>
               <p>mammogram</p>
@@ -108,7 +108,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
       /*  Mobile */
       gV.mq.matches ? 
-        <div className="flex flex-col items-center gap-3 border-2 border-black rounded-full ">
+        <div className="flex flex-col items-center gap-3 rounded-full ">
           <SelectBodyParts/>
           <ScanType/>
          <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
@@ -180,7 +180,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
      
        </div>
 
-      <div className="absolute right-0 mr-10">
+      <div className="absolute lg:flex hidden right-0 mr-10">
         <img src={groupPng}/>
       </div>
        

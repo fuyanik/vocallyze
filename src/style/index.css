@@ -19,7 +19,7 @@
   
   
   .css-w66kx-MuiChip-root{
-    background-color: #142b6f !important;
+    background-color: #000000 !important;
     color: #fff !important;
   }
   
@@ -36,7 +36,7 @@
   align-items: center;
   text-decoration: none;
   display: flex;
-  background-color: #142b6f;
+  background-color: #000000;
   color: white;
     font-family: "ProductSans-Light";
 
@@ -45,7 +45,7 @@
 
 .button-2:hover {
   background-color: rgb(255, 208, 0);
-  color: #142b6f;
+  color: #000000;
 }
 
 .buttonText-2 {
@@ -72,7 +72,7 @@
 
   --doc-height: 100%;
 
-  --blue: #142b6fbf;
+  --blue: #000000bf;
   --blue-trans: rgba(20, 43, 111, 0.52);
 
   --font-light: "ProductSans-Light";
@@ -267,7 +267,7 @@ body{
 
 
 :root{
-  --navyBlue: #142B6F;
+  --navyBlue: #000000;
 }
 
 
@@ -516,7 +516,7 @@ login-page{
  
 
  .primary-text{
-  color: #142B6F;
+  color: #000000;
   font-family: "ProductSans-Light";
   letter-spacing: 0px;
   letter-spacing: 0.3px;

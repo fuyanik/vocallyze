@@ -132,7 +132,7 @@ const AvailableRadiologists = () => {
         <p className="font-bold text-pri">Elizabeth H. Asch</p>
         <div className="flex flex-col  lg:flex-row lg:gap-2">
           <p className="text-pri"> Harvard Medical School'09 / </p>
-          <i className="text-[#142b6fdb]"> 15 Years of Experience</i> 
+          <i className="text-[#000000db]"> 15 Years of Experience</i> 
         </div>
        
         <div className="flex items-center gap-2">

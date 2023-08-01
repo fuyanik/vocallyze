@@ -491,13 +491,13 @@ return (
 
           <div className="userPanel-main-body  flex flex-col items-center ">
             {/* Header */}
-            <div className="w-[64%]  text-[#142b6f] flex gap-5 flex-col border-b border-[#0202023e] pb-2">
+            <div className="w-[64%]  text-[#000000] flex gap-5 flex-col border-b border-[#0202023e] pb-2">
               <div className="text-[4.125rem] font-semibold  self-start ">
                 <p className=" flex gap-2 ">
                   {" "}
                   <p>Hi,</p>
                   {false ? (
-                    <p className=" h-14 mt-6 bg-[#142b6f44] w-[20vw] rounded-lg animate-pulse">
+                    <p className=" h-14 mt-6 bg-[#00000044] w-[20vw] rounded-lg animate-pulse">
                       {" "}
                     </p>
                   ) : (
@@ -506,7 +506,7 @@ return (
                 </p>
               </div>
 
-              <div className="w-full text-[#142b6f95] justify-between text-[1.23rem] font-medium tracking-wide  flex">
+              <div className="w-full text-[#00000095] justify-between text-[1.23rem] font-medium tracking-wide  flex">
                 <div className="flex gap-9  ">
                   <p
                     onClick={() => {
@@ -519,8 +519,8 @@ return (
                       setIsSelect7(false);
                     }}
                     className={`${
-                      isSlect1 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect1 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     Rechecks
                   </p>
@@ -536,8 +536,8 @@ return (
                       setIsSelect7(false);
                     }}
                     className={`${
-                      isSlect2 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect2 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     Images
                   </p>
@@ -553,8 +553,8 @@ return (
                       setIsSelect7(false);
                     }}
                     className={`${
-                      isSlect3 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect3 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     {" "}
                     Messages
@@ -571,8 +571,8 @@ return (
                       setIsSelect7(false);
                     }}
                     className={`${
-                      isSlect4 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect4 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     Self - Exam
                   </p>
@@ -588,8 +588,8 @@ return (
                       setIsSelect7(false);
                     }}
                     className={`${
-                      isSlect5 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect5 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     Upgrade
                   </p>
@@ -605,8 +605,8 @@ return (
                       setIsSelect7(false);
                     }}
                     className={`${
-                      isSlect6 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect6 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     Get Help
                   </p>
@@ -622,8 +622,8 @@ return (
                       setIsSelect7(true);
                     }}
                     className={`${
-                      isSlect7 && "text-[#142b6f]"
-                    } cursor-pointer hover:text-[#142b6f] duration-200`}
+                      isSlect7 && "text-[#000000]"
+                    } cursor-pointer hover:text-[#000000] duration-200`}
                   >
                     Info
                   </p>
@@ -634,7 +634,7 @@ return (
                     onClick={() => {
                       auth.signOut();
                     }}
-                    className=" cursor-pointer hover:text-[#142b6f] duration-200"
+                    className=" cursor-pointer hover:text-[#000000] duration-200"
                   >
                     Sign Out
                   </p>
@@ -686,7 +686,7 @@ return (
                 
                 
                  /* No Recheck Users Area */
-                <div className="w-[64vw] flex flex-col gap-6 font-product text-[#142b6f]  h-screen">
+                <div className="w-[64vw] flex flex-col gap-6 font-product text-[#000000]  h-screen">
                   
                   <div className="dropdown-page-header__yellow">
                     <div className="flex gap-1">
@@ -722,7 +722,7 @@ return (
                     )}
                     <PrimaryButton
                       color={gV.mq.matches ? null : "white"}
-                      bg={gV.mq.matches ? null : "#142b6f"}
+                      bg={gV.mq.matches ? null : "#000000"}
                       width="220px"
                       height={gV.mq.matches ? "50px" : "40px"}
                       onMouse={() => setIsHover(true)}

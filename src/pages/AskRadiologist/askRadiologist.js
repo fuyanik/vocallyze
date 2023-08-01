@@ -165,7 +165,7 @@ const AskRadiologist = () => {
       mobileMenuTo ={"/mobileNavMenu"}
       />
 
-      <div className="font-product w-screen flex gap-10 bg-slate-50 h-auto lg:px-32 px-4 lg:py-14 py-6 text-[#142b6f]">
+      <div className="font-product w-screen flex gap-10 bg-slate-50 h-auto lg:px-32 px-4 lg:py-14 py-6 text-[#000000]">
       
         <div className="flex flex-col gap-6 lg:mt-10 mt-16 ">
      
@@ -198,7 +198,7 @@ const AskRadiologist = () => {
       
           {/* Name */}
           <div className="flex flex-col gap-3">
-            <p className="text-[17px] text-[#142b6f] font-bold mt-4">
+            <p className="text-[17px] text-[#000000] font-bold mt-4">
               {" "}
               What is your name?
             </p>
@@ -208,14 +208,14 @@ const AskRadiologist = () => {
                 setName(e.target.value);
               }}
               type="text"
-              className="w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 pt-1  rounded-2xl border-2 border-dotted border-[#142b6f] px-4 outline-none"
+              className="w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 pt-1  rounded-2xl border-2 border-dotted border-[#000000] px-4 outline-none"
               placeholder=""
             />
           </div>
       
           {/* Question */}
           <div className="flex flex-col gap-3">
-            <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[65%] w-[96%]">
+            <p className="text-[17px] text-[#000000] font-bold mt-4 lg:w-[65%] w-[96%]">
               Please be as specific as possible. You will get a response from your
               dedicated radiologist in 24 hours.
             </p>
@@ -225,14 +225,14 @@ const AskRadiologist = () => {
                 setQuestion(e.target.value);
               }}
               type="text"
-              className="w-[96%] lg:w-[65%] lg:h-[24vh] h-[16vh] pt-2  rounded-2xl border-2 border-dotted border-[#142b6f] px-4 outline-none"
+              className="w-[96%] lg:w-[65%] lg:h-[24vh] h-[16vh] pt-2  rounded-2xl border-2 border-dotted border-[#000000] px-4 outline-none"
               placeholder="Type your question here."
             />
           </div>
       
           {/* Breast Screen Last 3 Month */}
           <div className="flex flex-col gap-3">
-            <p className="text-[17px] text-[#142b6f] font-bold mt-4 lg:w-[55%] w-[96%]">
+            <p className="text-[17px] text-[#000000] font-bold mt-4 lg:w-[55%] w-[96%]">
               Did you have a breast screening in last 3 monts?
             </p>
       
@@ -266,7 +266,7 @@ const AskRadiologist = () => {
       
           {/* Email */}
           <div className="flex flex-col gap-3">
-            <p className="text-[17px] text-[#142b6f] font-bold mt-4">
+            <p className="text-[17px] text-[#000000] font-bold mt-4">
               {" "}
               To see the answers in your user portal, please enter your e-mail
               address.
@@ -277,7 +277,7 @@ const AskRadiologist = () => {
                 setEmail(e.target.value);
               }}
               type="text"
-              className="w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 pt-1  rounded-2xl border-2 border-dotted border-[#142b6f] px-4 outline-none"
+              className="w-[96%] lg:w-[40%] h-[6vh] lg:pt-2 pt-1  rounded-2xl border-2 border-dotted border-[#000000] px-4 outline-none"
               placeholder=""
             />
           </div>
@@ -286,14 +286,14 @@ const AskRadiologist = () => {
             <button
               onClick={handleSubmit}
               className={` ${
-                isSubmit ? "bg-[#142b6fbf]" : "bg-[#142b6f]"
-              } shadow-2xl text-[17px] text-white w-[55%] lg:w-[35%] hover:bg-[#142b6fe7] duration-500 h-[6vh] rounded-3xl flex items-center justify-center`}
+                isSubmit ? "bg-[#000000bf]" : "bg-[#000000]"
+              } shadow-2xl text-[17px] text-white w-[55%] lg:w-[35%] hover:bg-[#000000e7] duration-500 h-[6vh] rounded-3xl flex items-center justify-center`}
             >
               {isSubmit ? (
                 <div role="status">
                   <svg
                     aria-hidden="true"
-                    class="w-6 h-6 mr-2 text-gray-200 animate-spin  fill-[#142b6f]"
+                    class="w-6 h-6 mr-2 text-gray-200 animate-spin  fill-[#000000]"
                     viewBox="0 0 100 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

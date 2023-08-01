@@ -177,7 +177,7 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
 
                 {index == 2 && (
               
-                <div className="hidden flex-col gap-1 pb-4 text-[#142b6f]">
+                <div className="hidden flex-col gap-1 pb-4 text-[#000000]">
                    <p className="font-product text-[13px]" >Vitamu, Inc.</p>
                    <p className="font-product text-[13px]" >169 Madison Ave #2305 New York, NY 10016</p>
                    <p className="font-product text-[13px]" >+1 646 820 1932</p>
@@ -208,8 +208,8 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
                     )}
 
                       <PrimaryButton
-                        border={"1px solid #142b6f"}
-                        bg={"#142b6f"}
+                        border={"1px solid #000000"}
+                        bg={"#000000"}
                         color={"white"}
                         height={gV.mq.matches ? "43.8" : "36.8px"}
                         onMouse={() => setIsHover(true)}
@@ -262,8 +262,8 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
                       </Link>
   
                       <PrimaryButton
-                        border={"1px solid #142b6f"}
-                        color={"#142b6f"}
+                        border={"1px solid #000000"}
+                        color={"#000000"}
                         bg={"white"}
                         height={gV.mq.matches ? "43.8" : "36.8px"}
                         onMouse={() => setIsHover(true)}

@@ -346,7 +346,7 @@ const UserPanelMobile = () => {
       <div className="userPanel-mobile">
         <div className="userPanel-mobile__header ">
        
-          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> {false ? <p className=" h-12 mt-2 bg-[#142b6f44] w-[40vw] rounded-lg animate-pulse"> </p>  :   user.displayName.split(" ")[0]  } </p>  
+          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> {false ? <p className=" h-12 mt-2 bg-[#00000044] w-[40vw] rounded-lg animate-pulse"> </p>  :   user.displayName.split(" ")[0]  } </p>  
            
            
           <TabsMenu />
@@ -401,7 +401,7 @@ const UserPanelMobile = () => {
         : 
 
           /* No Recheck Users Area */
-          <div className="w-[90vw] mt-4 relative left-3 self-center flex flex-col gap-4 font-product text-[#142b6f]  h-screen">
+          <div className="w-[90vw] mt-4 relative left-3 self-center flex flex-col gap-4 font-product text-[#000000]  h-screen">
                   
           <div className="dropdown-page-header__yellow">
             <div className="flex gap-1">
@@ -437,7 +437,7 @@ const UserPanelMobile = () => {
             )}
             <PrimaryButton
               color={gV.mq.matches ? null : "white"}
-              bg={gV.mq.matches ? null : "#142b6f"}
+              bg={gV.mq.matches ? null : "#000000"}
               width="210px"
               height={gV.mq.matches ? "42px" : "40px"}
               onMouse={() => setIsHover(true)}

@@ -85,7 +85,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
             >
               <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                 <g
-                  fill="#142B6F"
+                  fill="#000000"
                   fill-rule="nonzero"
                   transform="translate(-955.000000, -30.000000)"
                 >
@@ -116,7 +116,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
             >
               <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                 <g
-                  fill="#142B6F"
+                  fill="#000000"
                   fill-rule="nonzero"
                   transform="translate(-955.000000, -30.000000)"
                 >
@@ -150,7 +150,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
             >
               <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                 <g
-                  fill="#142B6F"
+                  fill="#000000"
                   fill-rule="nonzero"
                   transform="translate(-955.000000, -30.000000)"
                 >
@@ -177,7 +177,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
             >
               <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                 <g
-                  fill="#142B6F"
+                  fill="#000000"
                   fill-rule="nonzero"
                   transform="translate(-955.000000, -30.000000)"
                 >
@@ -365,7 +365,7 @@ return (
                     } duration-500`}
                     width="18"
                     height="18"
-                    src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png"
+                    src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png"
                     alt="collapse-arrow"
                   />
                 </div>
@@ -455,7 +455,7 @@ return (
                     } duration-500`}
                     width="18"
                     height="18"
-                    src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png"
+                    src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png"
                     alt="collapse-arrow"
                   />
                 </div>
@@ -501,7 +501,7 @@ return (
           {" "}
           <img
             className="navbar-logo vitamu-logo"
-            src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress"
+            src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
             alt="vitamu"
           />{" "}
         </Link>

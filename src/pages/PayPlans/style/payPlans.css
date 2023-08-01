@@ -40,7 +40,7 @@ p {
 }
 
 .bg--blue {
-  background: #142b6f;
+  background: #000000;
 }
 
 .color--black {
@@ -188,18 +188,18 @@ p {
   height: 48px;
   border-radius: 27px;
   margin-top: auto;
-  background: #142b6f;
+  background: #000000;
 }
 .pay-card__button-normal:hover {
   border: none;
   background-color: white;
-  color: #142b6f;
+  color: #000000;
 }
 .pay-card__button-normal:hover {
-  border: 1px solid #142b6f;
+  border: 1px solid #000000;
 }
 .pay-card__button-enterprise {
-  color: #142b6f;
+  color: #000000;
   cursor: pointer;
   display: flex;
   align-items: center;

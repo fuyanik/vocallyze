@@ -35,12 +35,12 @@ const QontoConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      borderColor: "#142b6f"
+      borderColor: "#000000"
     }
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      borderColor: "#142b6f"
+      borderColor: "#000000"
     }
   },
   [`& .${stepConnectorClasses.line}`]: {
@@ -57,10 +57,10 @@ const QontoStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   height: 22,
   alignItems: "center",
   ...(ownerState.active && {
-    color: "#142b6f"
+    color: "#000000"
   }),
   "& .QontoStepIcon-completedIcon": {
-    color: "#142b6f",
+    color: "#000000",
     zIndex: 1,
     fontSize: 18
   },
@@ -633,7 +633,7 @@ export default function FormNew() {
                 className="h-[96%] w-[120%] text-pri justify-between  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
                 <p> {dropdownText}</p>
-                <img  className={`absolute   right-6 lg:right-5 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+                <img  className={`absolute   right-6 lg:right-5 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
 
               </div>
 
@@ -665,7 +665,7 @@ export default function FormNew() {
           {/* Image Upload */}
           {dropdownText == "I can upload the images now or later." && (
             <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#142b6fb7]  border-t-2  border-[#142b6fbe]">
+              <p className=" text-[#000000b7]  border-t-2  border-[#000000be]">
               </p>
             
               <div className="relative bottom-1">
@@ -683,7 +683,7 @@ export default function FormNew() {
           {/* Shipping CD or USB */}
           {dropdownText == "I prefer to ship the CD or USB stick." && (
             <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#142b6fb7] border-t-2  border-pri pt-2">
+              <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
                 Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle
                 olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m
               </p>
@@ -699,7 +699,7 @@ export default function FormNew() {
           {/* Share Acces Code */}
           {dropdownText == "I will share an access code." && (
             <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#142b6fb7] border-t-2  border-pri pt-2">
+              <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
                 Email adresi yazma. Email adresi yazma Email adresi yazma Email
                 adresi yazma
               </p>
@@ -713,7 +713,7 @@ export default function FormNew() {
           {/* Authorize */}
           {dropdownText == "I authorize you to acquire my images." && (
             <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#142b6fb7] border-t-2  border-pri pt-2">
+              <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
                 No problem, we will acquire your medical files on your behalf.
                 Please type the name of the medical center where you got your
                 screening.

@@ -195,21 +195,21 @@ export default function CustomizedAccordions({userActiveStep, userCreateDay, use
       <div className="flex gap-4">
            { gV.mq.matches && (userActiveStep === 6 
            ?
-           <img className="w-7" src="https://img.icons8.com/ios-glyphs/240/142b6f/ok--v1.png"/> 
+           <img className="w-7" src="https://img.icons8.com/ios-glyphs/240/000000/ok--v1.png"/> 
            : 
-           <img className="w-6" src="https://img.icons8.com/ios-filled/100/142b6f/loading.png"/>
+           <img className="w-6" src="https://img.icons8.com/ios-filled/100/000000/loading.png"/>
              )}
   
            {/*Date */}
-           <p className="w-[200px]  gap-42 text-[#142b6f]" >{ returnAccordionMonth()} {userCreateDay}, {userCreateYear} </p>
+           <p className="w-[200px]  gap-42 text-[#000000]" >{ returnAccordionMonth()} {userCreateDay}, {userCreateYear} </p>
       </div>
        
          {/* Icon and Completed Status */}
          {!gV.mq.matches &&    
-        <div className=" flex items-center  gap-2 w-fit  relative px-3 py-1  text-[#142b6f] rounded-xl  " > 
+        <div className=" flex items-center  gap-2 w-fit  relative px-3 py-1  text-[#000000] rounded-xl  " > 
           {userActiveStep === 6 ?
-            <img className="w-7" src="https://img.icons8.com/ios-glyphs/240/142b6f/ok--v1.png"/> : 
-            <img className="w-6" src="https://img.icons8.com/ios-filled/100/142b6f/loading.png"/>
+            <img className="w-7" src="https://img.icons8.com/ios-glyphs/240/000000/ok--v1.png"/> : 
+            <img className="w-6" src="https://img.icons8.com/ios-filled/100/000000/loading.png"/>
            
            } <p> { (userActiveStep === 6 ? "Completed" :  "Processing")}</p>
          </div> }

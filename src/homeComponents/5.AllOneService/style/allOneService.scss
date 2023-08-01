@@ -27,7 +27,7 @@
             p:nth-child(1){
                 font-weight: bold;
                 font-size: 2.5rem;
-                color: #142b6f;
+                color: #000000;
                 letter-spacing: -0.3px;
                 
             }
@@ -36,10 +36,10 @@
                 line-height: 1.75rem;
                 font-weight: bold;
                 font-size: 1.125rem;
-                color: #142b6f;
+                color: #000000;
                 letter-spacing: 0.3px;
                 cursor: pointer;
-                border-bottom: 2px solid #142b6f;
+                border-bottom: 2px solid #000000;
             }
 
         }
@@ -61,7 +61,7 @@
                 &__img{
                     width: 100%;
                     height: 57.5%;
-                    background-color: #142b6f25;
+                    background-color: #00000025;
                     border-radius: 20px;
                     position: relative;
                     cursor: pointer;
@@ -87,7 +87,7 @@
 
                         p{
                             
-                            color: #142b6f;
+                            color: #000000;
                             font-size: 1rem;
                         }
                         
@@ -100,14 +100,14 @@
                     margin-top: 7%;
                     font-family: "ProductSans-Thin";
                     font-size: 1rem;
-                    color: #142b6f;
+                    color: #000000;
                     letter-spacing: 0.3px;
                 }
 
                 p:nth-child(3){
                     font-weight: bold;
                     font-size: 1.375rem;
-                    color: #142b6f;
+                    color: #000000;
                    letter-spacing: 0.4px;
                 }
               
@@ -177,7 +177,7 @@
                 p:nth-child(1){
                     font-weight: bold;
                     font-size: 1.5rem;
-                    color: #142b6f;
+                    color: #000000;
                     letter-spacing: -0.3px;
                     position: relative;
                     left: 5%;
@@ -212,7 +212,7 @@
                     &__img{
                         width: 100%;
                         height: 35vh;
-                        background-color: #142b6f25;
+                        background-color: #00000025;
                         border-radius: 20px;
                         position: relative;
                         cursor: pointer;
@@ -238,7 +238,7 @@
     
                             p{
                                 
-                                color: #142b6f;
+                                color: #000000;
                                 font-size: 1rem;
                             }
                             
@@ -251,14 +251,14 @@
                         margin-top: 7%;
                         font-family: "ProductSans-Thin";
                         font-size: 1rem;
-                        color: #142b6f;
+                        color: #000000;
                         letter-spacing: 0.3px;
                     }
     
                     p:nth-child(3){
                         font-weight: bold;
                         font-size: 1.375rem;
-                        color: #142b6f;
+                        color: #000000;
                        letter-spacing: 0.4px;
                     }
                   

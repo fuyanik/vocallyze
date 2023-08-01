@@ -21,7 +21,7 @@ const Popup = ({onDismiss, open, contents,className, close = true}) => {
       >
         <div className="relative z-50">
       
-        { close && <div className="absolute left-[85%] bg-[#142b6f] text-white text-md border border-[#142b6f] px-5 py-1 rounded-3xl cursor-pointer tracking-wide hover:shadow-xl "> {gV.mq.matches ? "X" :"Close"}</div>}
+        { close && <div className="absolute left-[85%] bg-[#000000] text-white text-md border border-[#000000] px-5 py-1 rounded-3xl cursor-pointer tracking-wide hover:shadow-xl "> {gV.mq.matches ? "X" :"Close"}</div>}
            
             {contents}
         

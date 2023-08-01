@@ -42,7 +42,7 @@
 
 
 .radiologist-footer{
-    color: #142b6f;
+    color: #000000;
     margin-top: 0px;
     padding-block: 0px;
     width: 100%;
@@ -73,7 +73,7 @@
     letter-spacing: 0.5px;
      position: relative;
    font-size: 18px;
-   color: rgba(20, 43, 111, 0.568);
+   color: rgba(0, 0, 0, 0.701);
 
  
 }
@@ -82,7 +82,7 @@
     font-family: "ProductSans-Light";
     position: relative;
      width: 80%;
-    color: rgb(20, 43, 111);
+    color: black;
     font-size: 30px;
 
 }

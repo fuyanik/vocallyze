@@ -75,16 +75,16 @@ $g-text-color: #656C7C;
 $payment-methods-bg-color: $color-white;
 
 //Enterprise Payment Methods Background Color
-$enterprise-payment-methods-bg-color: #142b6f;
+$enterprise-payment-methods-bg-color: #000000;
 
 
 //All Buttons Text Color
 $g-button-text-color: white;
 
 // Free and Pro Methods Buttons
-$g-btn-bg-color: #142b6f;
+$g-btn-bg-color: #000000;
 $g-btn-hover-bg-color:white;
-$g-btn-hover-color: #142b6f;
+$g-btn-hover-color: #000000;
 
 //Enterprise Method Button
 $g-btn-entr-bg-color: $color-white;
@@ -306,12 +306,12 @@ $g-font-size-h2: $g-font-size * 2;
          $hover-color: $g-btn-hover-color);
        
        &:hover{
-           border: 1px solid #142b6f;
+           border: 1px solid #000000;
        }
       }
 
     &__button-enterprise{
-       color: #142b6f;
+       color: #000000;
        cursor: pointer;
         @include btn(
                       $bg-color: $g-btn-entr-bg-color,

@@ -157,7 +157,7 @@ const ChatScreen = () => {
            <div class="chat-message">
            <div class={` ${message.isAdmin ?  "flex items-end" : " flex items-end justify-end" } `} >
               <div class={` ${message.isAdmin ?  "flex flex-col space-y-2 text-sm max-w-xs mx-2 order-2 items-start" : " text-sm flex flex-col space-y-2  max-w-xs mx-2 order-1 items-end" } `} >
-                 <div ><span class={` ${message.isAdmin ?  "px-4 py-2 rounded-2xl inline-block bg-gray-300 text-gray-600 " : " px-4 py-2 rounded-2xl inline-block rounded-br-none bg-[#142b6f] text-white" } `}>{message.message}</span>   </div>
+                 <div ><span class={` ${message.isAdmin ?  "px-4 py-2 rounded-2xl inline-block bg-gray-300 text-gray-600 " : " px-4 py-2 rounded-2xl inline-block rounded-br-none bg-[#000000] text-white" } `}>{message.message}</span>   </div>
               </div>
            </div>
         </div>
@@ -185,7 +185,7 @@ const ChatScreen = () => {
            
          
            
-            <button class="inline-flex items-center justify-center rounded-3xl px-6 py-2 mt-[2px] lg:mt-0 transition duration-500 ease-in-out text-white bg-[#142b6f] hover:bg-[#142b6f93] focus:outline-none" onClick={() =>{ sendMessage(); setCurrentMessage("")}} type="button" >
+            <button class="inline-flex items-center justify-center rounded-3xl px-6 py-2 mt-[2px] lg:mt-0 transition duration-500 ease-in-out text-white bg-[#000000] hover:bg-[#00000093] focus:outline-none" onClick={() =>{ sendMessage(); setCurrentMessage("")}} type="button" >
                <span class="font-bold">Send</span>
                <span  className="primary-button__arrow ml-3">➔</span>
                

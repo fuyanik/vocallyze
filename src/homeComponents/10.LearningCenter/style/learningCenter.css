@@ -27,7 +27,7 @@
 .learning-center__main__header p:nth-child(1) {
   font-size: 2.125rem;
   line-height: 2.5rem;
-  color: #142b6f;
+  color: #000000;
   letter-spacing: 0.6px;
 }
 .learning-center__main__header p:nth-child(2) {
@@ -37,7 +37,7 @@
   font-size: 1.125rem;
   line-height: 32px;
   position: relative;
-  color: #142b6f;
+  color: #000000;
   z-index: 34;
   font-family: "ProductSans-Thin" !important;
 }
@@ -69,11 +69,11 @@
 }
 .learning-center__main__cards__card__texts p:nth-child(1) {
   font-size: 1rem;
-  color: #142b6f;
+  color: #000000;
 }
 .learning-center__main__cards__card__texts p:nth-child(2) {
   font-size: 1.375rem;
-  color: #142b6f;
+  color: #000000;
 }
 .learning-center__main__cards__card img {
   position: absolute;
@@ -112,7 +112,7 @@
   .learning-center .learning-center__main__header p:nth-child(1) {
     font-size: 2.125rem;
     line-height: 26px;
-    color: #142b6f;
+    color: #000000;
   }
   .learning-center .learning-center__main__header p:nth-child(2) {
     text-align: center;
@@ -120,7 +120,7 @@
     font-size: 1.125rem;
     line-height: 26px;
     position: relative;
-    color: #142b6f;
+    color: #000000;
     z-index: 34;
     font-family: "ProductSans-Thin" !important;
     width: 90%;
@@ -168,11 +168,11 @@
   }
   .learning-center__main__cards__card__texts p:nth-child(1) {
     font-size: 1rem;
-    color: #142b6f;
+    color: #000000;
   }
   .learning-center__main__cards__card__texts p:nth-child(2) {
     font-size: 1.375rem;
-    color: #142b6f;
+    color: #000000;
   }
   .learning-center__main__cards__card img {
     position: absolute;

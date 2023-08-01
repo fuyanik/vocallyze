@@ -10,7 +10,7 @@
     &__item{
        
         bottom: 0;
-        background-color: #142b6f;
+        background-color: #000000;
         font-family: "ProductSans-Light";
         position: relative;
         border-radius: 24px;
@@ -32,7 +32,7 @@
        
 
         &__text{
-            color: #142b6f !important;
+            color: #000000 !important;
             transition: all 0.3s ease-in-out;
       
         }
@@ -108,7 +108,7 @@
        
         bottom: 0;
         background-color: #fff;
-        border: 1px solid #142b6f;
+        border: 1px solid #000000;
         font-family: "ProductSans-Light";
         position: relative;
         border-radius: 24px;

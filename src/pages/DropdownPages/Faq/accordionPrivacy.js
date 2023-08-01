@@ -23,7 +23,7 @@ const Accordion = styled((props) => (
   
   
   "&:not(:last-child)": {
-    borderBottom:"1px solid #142b6f",
+    borderBottom:"1px solid #000000",
   },
 
   "&:before": {
@@ -101,7 +101,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }} >What is HIPAA Compliance and which systems do you use for mammogram rechecks? </Typography>
         </AccordionSummary>
 
@@ -130,7 +130,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }} >Do you store healthcare records or recheck results?</Typography>
         </AccordionSummary>
 
@@ -154,7 +154,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }} >Myth: A mammogram can caouse breast cancer to spread</Typography>
         </AccordionSummary>
 
@@ -179,7 +179,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }}>Myth: If you have a family history of breast cancer, you are likely to develop breast cancer, too</Typography>
         </AccordionSummary>
 
@@ -208,7 +208,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel5")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }} >Breast cancer is contagious</Typography>
         </AccordionSummary>
 
@@ -233,7 +233,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel6")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }} >If the gene mutation BRCA1 or BRCA2 is detected in your DNA, you will definitely develop breast cancer</Typography>
         </AccordionSummary>
 
@@ -259,7 +259,7 @@ export default function AccordionPrivacy() {
         onChange={handleChange("panel7")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#142b6f" 
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px",fontWeight: "300", color:"#000000" 
           }} >Myth: Antiperspirants and deodorants cause breast cancer</Typography>
         </AccordionSummary>
 

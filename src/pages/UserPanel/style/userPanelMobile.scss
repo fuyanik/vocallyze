@@ -27,14 +27,14 @@ $button-color-fade: #ffd00067;
             font-family: "ProductSans-Light";
             font-weight: bold;
             font-size: 2.6rem;
-            color: #142b6f;
+            color: #000000;
 
         }
 
         &__line{
             width: 86%;
             height: 1px;
-            background-color: #142b6f5c;
+            background-color: #0000005c;
             align-self: center;
 
         }
@@ -45,7 +45,7 @@ $button-color-fade: #ffd00067;
       margin-right: 3vw;
         letter-spacing: 1px;
         color: white;
-        background-color: #142b6f;
+        background-color: #000000;
         font-family: "ProductSans-Light";
         font-size: 1.7rem;
         font-weight: 500;

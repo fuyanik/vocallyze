@@ -50,7 +50,7 @@ export default function SelectBodyParts() {
          
            
            
-           <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  "relative flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
+           <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2]" :  "relative flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
            
      
              <div
@@ -75,7 +75,7 @@ export default function SelectBodyParts() {
                 ))}
 
 
-               <img  className={`absolute   right-6 lg:right-4 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+               <img  className={`absolute   right-6 lg:right-4 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
              </div>
              
             {/* Dropdown White Area */}

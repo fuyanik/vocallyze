@@ -24,7 +24,7 @@ const Accordion = styled((props) => (
   
   
   "&:not(:last-child)": {
-    borderBottom:"1px solid #142b6f",
+    borderBottom:"1px solid #000000",
   },
 
   "&:before": {
@@ -102,7 +102,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} >What is a recheck? </Typography>
         </AccordionSummary>
 
@@ -131,7 +131,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} > Who will recheck my mammogram?</Typography>
         </AccordionSummary>
 
@@ -156,7 +156,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} >I had a mammogram screening, but I do not have copy of my mammogram, what should I do?</Typography>
         </AccordionSummary>
 
@@ -183,7 +183,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }}>When will I get my recheck report?</Typography>
         </AccordionSummary>
 
@@ -208,7 +208,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel5")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} >What will my recheck report include?</Typography>
         </AccordionSummary>
 
@@ -236,7 +236,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel6")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} >How much do I pay for a recheck?</Typography>
         </AccordionSummary>
 
@@ -262,7 +262,7 @@ export default function AccordionRecheck() {
         onChange={handleChange("panel7")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#142b6f"
+        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18.6px", fontWeight: "600", letterSpacing:"-0px", color:"#000000"
           }} >Can I get a written copy of my recheck report?</Typography>
         </AccordionSummary>
 

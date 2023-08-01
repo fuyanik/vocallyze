@@ -27,17 +27,17 @@
 .all-one-service__main__header p:nth-child(1) {
   font-weight: bold;
   font-size: 2.5rem;
-  color: #142b6f;
+  color: #000000;
   letter-spacing: -0.3px;
 }
 .all-one-service__main__header p:nth-child(2) {
   line-height: 1.75rem;
   font-weight: bold;
   font-size: 1.125rem;
-  color: #142b6f;
+  color: #000000;
   letter-spacing: 0.3px;
   cursor: pointer;
-  border-bottom: 2px solid #142b6f;
+  border-bottom: 2px solid #000000;
 }
 .all-one-service__main__hero {
   width: 100%;
@@ -55,7 +55,7 @@
 .all-one-service__main__hero__card__img {
   width: 100%;
   height: 57.5%;
-  background-color: rgba(20, 43, 111, 0.1450980392);
+  background-color: rgba(0, 0, 0, 0.1450980392);
   border-radius: 20px;
   position: relative;
   cursor: pointer;
@@ -80,20 +80,20 @@
   gap: 3%;
 }
 .all-one-service__main__hero__card__img__footer p {
-  color: #142b6f;
+  color: #000000;
   font-size: 1rem;
 }
 .all-one-service__main__hero__card i {
   margin-top: 7%;
   font-family: "ProductSans-Thin";
   font-size: 1rem;
-  color: #142b6f;
+  color: #000000;
   letter-spacing: 0.3px;
 }
 .all-one-service__main__hero__card p:nth-child(3) {
   font-weight: bold;
   font-size: 1.375rem;
-  color: #142b6f;
+  color: #000000;
   letter-spacing: 0.4px;
 }
 .all-one-service__main__hero__card p:nth-child(4) {
@@ -139,7 +139,7 @@
   .all-one-service__main__header p:nth-child(1) {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #142b6f;
+    color: #000000;
     letter-spacing: -0.3px;
     position: relative;
     left: 5%;
@@ -164,7 +164,7 @@
   .all-one-service__main__hero__card__img {
     width: 100%;
     height: 35vh;
-    background-color: rgba(20, 43, 111, 0.1450980392);
+    background-color: rgba(0, 0, 0, 0.1450980392);
     border-radius: 20px;
     position: relative;
     cursor: pointer;
@@ -189,20 +189,20 @@
     gap: 3%;
   }
   .all-one-service__main__hero__card__img__footer p {
-    color: #142b6f;
+    color: #000000;
     font-size: 1rem;
   }
   .all-one-service__main__hero__card i {
     margin-top: 7%;
     font-family: "ProductSans-Thin";
     font-size: 1rem;
-    color: #142b6f;
+    color: #000000;
     letter-spacing: 0.3px;
   }
   .all-one-service__main__hero__card p:nth-child(3) {
     font-weight: bold;
     font-size: 1.375rem;
-    color: #142b6f;
+    color: #000000;
     letter-spacing: 0.4px;
   }
   .all-one-service__main__hero__card p:nth-child(4) {

@@ -44,7 +44,7 @@ const AccordionSummary = styled((props) => (
    }}
     expandIcon={
       
-     <MdExpandMore style={{color:"#142b6f"}} className="accordion-icon"
+     <MdExpandMore style={{color:"#000000"}} className="accordion-icon"
     
      
      />
@@ -94,7 +94,7 @@ export default function AccordionSomeQuestion({width}) {
         onChange={handleChange("panel1")}  >
      
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header"  style={{paddingBlock:"32px"}} >
-          <Typography style={{ color:"#142b6f", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
+          <Typography style={{ color:"#000000", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
           }} >For general questions about breast health</Typography>
         </AccordionSummary>
 
@@ -115,7 +115,7 @@ export default function AccordionSomeQuestion({width}) {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingBlock:`${mq.matches ? "32px" : "28px" }`}}>
-        <Typography style={{ color:"#142b6f", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
+        <Typography style={{ color:"#000000", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
        
          
           }} >For general questions about recheck</Typography>
@@ -144,7 +144,7 @@ export default function AccordionSomeQuestion({width}) {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingBlock:"32px"}}>
-        <Typography style={{ color:"#142b6f", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
+        <Typography style={{ color:"#000000", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
 
        
          
@@ -168,7 +168,7 @@ export default function AccordionSomeQuestion({width}) {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{ color:"#142b6f", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
+        <Typography style={{ color:"#000000", fontFamily : "ProductSans-Light", fontSize: "17px",  lineHeight:"25px", letterSpacing:"0.6px"
 
         
           }} >Want to read recheck stories?</Typography>
