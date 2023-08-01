@@ -50,14 +50,14 @@ export default function SelectBodyParts() {
          
            
            
-           <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  "relative flex items-center px-5 w-[44%] h-auto  border-[#142b6f] rounded-tl-[44px] rounded-bl-[44px] bg-white" }`}>
+           <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer" :  "relative flex items-center px-5 w-[44%] h-auto  border-[#142b6f] rounded-tl-[44px] rounded-bl-[44px] bg-slate-200" }`}>
            
      
              <div
                onClick={() => {
                  setDropdown(!isDropdown);
                }}
-               className="h-auto py-3 w-[120%] relative text-pri flex-wrap  gap-2 bg-white flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+               className="h-auto py-3 w-[120%]  relative text-pri flex-wrap  gap-2 bg-slate-200 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
                 {/* Default Place Holder */}
                 <div className="flex gap-2 h-8 items-center justify-center">
@@ -75,7 +75,7 @@ export default function SelectBodyParts() {
                 ))}
 
 
-               <img  className={`absolute   right-6 lg:right-1 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
+               <img  className={`absolute   right-6 lg:right-4 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/142b6f/collapse-arrow.png" alt="collapse-arrow"/>
              </div>
              
             {/* Dropdown White Area */}

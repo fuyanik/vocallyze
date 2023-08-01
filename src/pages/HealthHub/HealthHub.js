@@ -62,9 +62,14 @@ const HealthHub = () => {
   return (
     <>
         <Helmet>  <title>Health Hub</title>     <meta name="description" content="Health Hub" /> </Helmet>
-        <Navbar mobileMenuText={"Menu"} mobileMenuTo={"/mobileNavMenu"} />
+        {true && 
+     
+     <Navbar
+      mobileMenuText={'Menu'}
+      mobileMenuTo ={"/mobileNavMenu"}
+      />}
 
-        <div className='w-screen auto  mt-24 items-center flex flex-col font-product tracking-wide'>
+        <div className='w-screen pt-24  items-center flex flex-col font-product tracking-wide'>
 
            <div className='lg:w-[86%] w-[96%] h-auto pt-14 pb-6 gap-12 flex flex-col'>
             

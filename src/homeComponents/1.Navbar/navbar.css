@@ -1,7 +1,7 @@
 
 
 .Navbar {
-    z-index: 50;
+    z-index: 40;
     display: flex;
     position: fixed;
     width: 100vw;
@@ -12,7 +12,7 @@
     padding-inline: 0%;
     justify-content: space-between;
     align-items: center;
-    padding-left: 8%;
+    padding-left: 10%;
     padding-right: 3%;
    
 }

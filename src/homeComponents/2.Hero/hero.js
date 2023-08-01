@@ -67,14 +67,17 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
   return (
     <>
-      <div className="w-screen h-auto   pb-28 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
-
-     {isOutside && <Navbar
+     {isOutside && 
+     
+     <Navbar
       mobileMenuText={'Menu'}
       mobileMenuTo ={"/mobileNavMenu"}
       />}
       
-      <img src="https://vitamu.imgix.net/codioful-formerly-gradienta-rKv4HduvzIE-unsplash.jpg" className="w-screen h-full absolute -z-20 opacity-20"  alt="vitamu"/>
+      <div className="w-screen h-auto   pb-28 relative text-[#142b6f] font-product tracking-wide  flex flex-col items-center px-[4vw]   ">
+
+    
+      
         
        
        
@@ -113,7 +116,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       
       :
       /* Desktop */
-        <div className=" flex w-[65vw] cursor-pointer  h-[56px] ">
+        <div className=" flex w-[65vw] cursor-pointer  h-[56px]  ">
           
           
           <SelectBodyParts/>
