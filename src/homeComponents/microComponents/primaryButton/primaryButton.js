@@ -6,7 +6,7 @@ const PrimaryButton = ({onMouse,border,to,width,bg,color, height,text = "Get Sta
   return (
     <>
       <Link  style={{ textDecoration: "none",}} to={to}> 
-         <div style={{width:width, height:height, backgroundColor:bg, color: color,border:border}} className="primary-button" onMouseMove={onMouse}  >
+         <div style={{width:width, height:height, backgroundColor:bg, color: color,border:border}} className="primary-button hover:bg-black duration-500" onMouseMove={onMouse}  >
             <span style={{letterSpacing:"0.6px"}} className="primary-button__text">{text}</span>
             <span className="primary-button__line">|</span>
             <span className="primary-button__arrow">➔</span>

@@ -17,6 +17,7 @@ import Hero from './homeComponents/2.Hero/hero';
 import Login from './pages/Auth/login';
 import PasswordReset from './pages/Auth/passwordReset';
 import HealthHub from './pages/HealthHub/HealthHub';
+import Services from './pages/Services/Services';
   
 
 export default function App() {
@@ -40,6 +41,9 @@ export default function App() {
 
             <Route path="/get-started" element={<Hero isOutside={true}/>} />
             <Route path="/health-hub" element={<HealthHub/>} />
+
+            <Route path="/services" element={<Services/>} />
+
 
 
             

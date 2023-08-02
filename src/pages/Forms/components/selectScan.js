@@ -34,14 +34,14 @@ export default function SelectScan() {
            
          
      
-    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2] " :  " relative flex items-center px-5 w-[36%] h-full  border border-black" } z-0`}>
+    <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2] " :  " relative flex items-center px-5 w-[32%] h-full  border border-black" } z-0`}>
            
      
              <div
                onClick={() => {
                  setDropdown(!isDropdown);
                }}
-               className="h-auto py-3 w-[120%] lg:w-[95%] relative text-pri flex-wrap  gap-2  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+               className="h-auto py-3 w-[190%] lg:w-[95%] relative text-pri flex-wrap  gap-2  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
              >
                  {/* Default Place Holder */}
                  <div className="flex gap-2 h-8 items-center justify-center">

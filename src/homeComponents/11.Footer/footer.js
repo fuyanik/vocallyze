@@ -19,7 +19,7 @@ const Footer = ({marginTop}) => {
     <div style={{ marginTop: marginTop }} className="footer ">
       <div className="footer-main">
         <div className="footer-main-left relative">
-          <img src="https://vitamu.imgix.net/vitamuLogo.png?auto=undefined%2Ccompress" className="footer-main-left__vitamu-logo" />
+          <img src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress" className="footer-main-left__vitamu-logo" />
           <p className="footer-main-left__title">
             Terms of Service · Privacy Policy
           </p>
@@ -43,18 +43,10 @@ const Footer = ({marginTop}) => {
             </a>
           </div>
 
-          {
-            isHover &&
-            <BiRadsDropdown
-              onMouseLeave={() => setIsHover(false)}
-              top={gV.mq.matches ? "50%" : "29%"}
-              left={gV.mq.matches ? "02%" : "-1%"}
-            />
-          }
+         
 
           <PrimaryButton
             width={"230px"}
-            onMouse={() => setIsHover(true)}
           />
 
           <p className="footer-main-left__text">

@@ -19,7 +19,7 @@ import SliderStepperMobile from '../homeComponents/SliderStepper/sliderStepperMo
 import SliderStepper from '../homeComponents/SliderStepper/sliderStepper';
 import Icons from '../homeComponents/Icons/Icons';
 import IconsMobile from '../homeComponents/Icons/Icons_mobile';
-import TechnologyHome from '../homeComponents/TechnologyHome/technologyHome';
+
 import { Helmet } from 'react-helmet';
 import PayScreen from './PayScreen/payScreen';
 
@@ -84,7 +84,7 @@ const Home = () => {
 
       <Helmet>
         <title>Vitamu</title>
-        <meta name="description" content="Vitamu" />
+        <meta name="description" content="Mitrua" />
       </Helmet>
     
 

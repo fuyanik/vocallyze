@@ -53,7 +53,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
 
 
     //Menu Dropdown  
-    const [menuDropdown1, setMenuDropdown1] = useState(true);
+    const [menuDropdown1, setMenuDropdown1] = useState(false);
     const [menuDropdown2, setMenuDropdown2] = useState(false);
 
  
@@ -282,11 +282,12 @@ return (
 
             <div onMouseMove={()=>{setAboutDrop(1)}} className={`px-4 py-2  ${aboutDrop == 1 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} > <p> How It Works</p> </div>
            
-            <div onMouseMove={()=>{setAboutDrop(2)}} className={`px-4 py-2  ${aboutDrop == 2 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} > <p> FAQ </p>  </div>
-            <div onMouseMove={()=>{setAboutDrop(3)}} className={`px-4 py-2  ${aboutDrop == 3 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} > <p> Testimonials</p>  </div>
-            <div onMouseMove={()=>{setAboutDrop(4)}} className={`px-4 py-2  ${aboutDrop == 4 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> Out Story</p>  </div>
-            <div onMouseMove={()=>{setAboutDrop(5)}} className={`px-4 py-2  ${aboutDrop == 5 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> News</p> </div>
-            <div onMouseMove={()=>{setAboutDrop(6)}} className={`px-4 py-2  ${aboutDrop == 6 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> Contact Us</p> </div>
+           
+            <div onMouseMove={()=>{setAboutDrop(3)}} className={`px-4 py-2  ${aboutDrop == 3 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} > <p> Radiology Team</p>  </div>
+            <div onMouseMove={()=>{setAboutDrop(4)}} className={`px-4 py-2  ${aboutDrop == 4 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> Sample Reports</p>  </div>
+            <div onMouseMove={()=>{setAboutDrop(5)}} className={`px-4 py-2  ${aboutDrop == 5 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> Stories</p> </div>
+            <div onMouseMove={()=>{setAboutDrop(6)}} className={`px-4 py-2  ${aboutDrop == 6 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> Help</p> </div>
+            <div onMouseMove={()=>{setAboutDrop(7)}} className={`px-4 py-2  ${aboutDrop == 7 &&  "bg-[#F6F5F5]"} rounded-lg duration-300`} >  <p> FAQ</p> </div>
           
           
           </div>)}
@@ -432,11 +433,7 @@ return (
                  </div>
                </Link>
 
-                <div className="text-[17px] pl-3 pt-1 hidden font-normal">
-                  <p>Scap Types</p>
-                  <p>Body Parts </p>
-                  <p>Cities</p>
-                </div>
+              
               </div>
 
               {/* Item 3  */}
@@ -467,7 +464,9 @@ return (
                      <p>How it Works</p>
                      <p>Radiology Team </p>
                      <p>Sample Reports</p>
-                     <p>Faq</p>
+                     <p>Stories</p>
+                     <p>Help</p>
+                     <p>FAQ</p>
                    </div>
                   </div>
                 )}
@@ -523,7 +522,7 @@ return (
 
         {/* İf user is logged in, show USER PANEL button, If user not logged in Show SIGN IN button */}
       </div>
-    </div>
+      </div>
 
 
 
