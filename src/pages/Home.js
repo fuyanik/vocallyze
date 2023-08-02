@@ -83,7 +83,7 @@ const Home = () => {
   <div className='VitamuHome' > 
 
       <Helmet>
-        <title>Vitamu</title>
+        <title>Mitrua - Home</title>
         <meta name="description" content="Mitrua" />
       </Helmet>
     
