@@ -96,6 +96,9 @@ const FAQItem = ({ question, answer }) => {
 };
 
 
+
+
+
   return (
     <> 
 
@@ -261,7 +264,7 @@ gV.mq.matches
 
 
       {/* Screen 2 - SCANS LOOK FOR */}
-      <div className='w-screen lg:pt-[24vh] pt-3 lg:mt-40 relative bg-[#FFF0F4] flex  font-product flex-col lg:h-auto h-auto   px-[3vw] lg:px-[7vw] '>
+      <div className='w-screen lg:pt-[24vh] pb-12 pt-3 lg:mt-40 relative bg-[#FFF0F4] flex  font-product flex-col lg:h-auto h-auto   px-[3vw] lg:px-[7vw] '>
 
         <div class="lg:flex items-center absolute hidden   right-6 -top-36 gap-4 p-4 xl:justify-center"><div class="flex w-fit min-w-[400px] max-w-md items-start gap-x-4 rounded-xl bg-white p-6 shadow-lg"><blockquote class="w-full space-y-4"><p>“Can’t recommend them highly enough. Half the cost of the big private names and scan booked, completed and results back in very quickly. Clinician giving the results gave sound practical follow on advice.”</p><div class="flex items-center justify-between"><div class="flex items-center gap-4"><img alt="Headshot of Rhianne" class="h-14 w-14 shrink-0 rounded-full object-cover" src="https://vitamu.imgix.net/radiologyRe/Elizabeth%20H.%20Asch-Mobile.png"/><div><span class="block font-medium">Rhianne</span><span class="block text-sm text-neutral-600">Birmingham</span></div></div><div><div class="text-primary-300 flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg></div></div></div></blockquote></div><div class="flex w-fit min-w-[400px] max-w-md items-start gap-x-4 rounded-xl bg-white p-6 shadow-lg"><blockquote class="w-full space-y-4"><p>“I booked a private scan over concern about headaches. The head &amp; spine scan turned out to be fine but threw up an unexpected issue. Treatment from booking to contact with the consultant was efficient, courteous &amp; friendly in all departments.”</p><div class="flex items-center justify-between"><div class="flex items-center gap-4"><img alt="Headshot of Maureen" class="h-14 w-14 shrink-0 rounded-full object-cover" src="https://vitamu.imgix.net/radiologyRe/Kitt%20Shaffer.png"/><div><span class="block font-medium">Maureen</span><span class="block text-sm text-neutral-600">Chelmsford</span></div></div><div><div class="text-primary-300 flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg></div></div></div></blockquote></div><div class="flex w-fit min-w-[400px] max-w-md items-start gap-x-4 rounded-xl bg-white p-6 shadow-lg"><blockquote class="w-full space-y-4"><p>“Quite EXCELLENT The whole process from booking to having the MRI images and the radiologists report in the right hands could not have been faster. The price was hugely competitive too!”</p><div class="flex items-center justify-between"><div class="flex items-center gap-4"><img alt="Headshot of Torill" class="h-14 w-14 shrink-0 rounded-full object-cover" src="https://vitamu.imgix.net/radiologyTeam/Emily%20S.%20Nia-Mobile.png"/><div><span class="block font-medium">Torill</span><span class="block text-sm text-neutral-600">Colchester</span></div></div><div><div class="text-primary-300 flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 fill-current"><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" fill="currentColor" stroke-width="0"></path></svg></div></div></div></blockquote></div></div>
  
@@ -278,6 +281,7 @@ gV.mq.matches
       
       
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    
             <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/head-and-brain">
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
@@ -294,7 +298,7 @@ gV.mq.matches
 
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -305,12 +309,19 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">Head/Brain</h3>
                 <p class="text-sm leading-relaxed">Examines the brain, skull and surrounding tissues to identify anomalies, including possible causes of headaches, dizziness and memory loss.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/knee">
+</a> 
+
+
+
+
+
+
+           <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/knee">
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                  
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -329,7 +340,7 @@ gV.mq.matches
 
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -348,7 +359,7 @@ gV.mq.matches
 
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -367,7 +378,7 @@ gV.mq.matches
 
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -385,7 +396,7 @@ gV.mq.matches
                     <svg class="stroke-current stroke-3" fill="none" stroke-linejoin="round" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g><path d="M39,23   c-4.375,6.375-4,14-7,17s-6.237,0.974-11,3c-5.875,2.5-7.438,8-12,8c-3.416,0-4-1.5-4-3s2-3.75,2-7c0-2.813-2-5.875-2-10   c0-6.688,4.502-18,16-18c7.5,0,15.833,4,20,4c2.167,0,6,0,9,0s9,0.667,9,3s-4.25,5.167-7.5,8.75s-6.49,7.988-10.313,8.625   c-4.5,0.75-4.2,0.385-7.552-0.121"></path></g></svg>
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -404,7 +415,7 @@ gV.mq.matches
 
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -426,7 +437,7 @@ gV.mq.matches
 
                   </div>
                   <div>
-                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-primary-300 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-400 group-hover:text-sec w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
   <line x1="5" y1="12" x2="11" y2="18"></line>
   <line x1="5" y1="12" x2="11" y2="6"></line>
@@ -437,8 +448,8 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">View more</h3>
                 <p class="text-sm leading-relaxed">Visit our body parts directory to find out more about the scans you can book with us.</p>
               </div>
-</a>      </div>
-
+</a>      
+     </div>
 
 
       
@@ -447,7 +458,7 @@ gV.mq.matches
 
 
      {/* Screen 3 - SCANNİNG SERVİCES */}
-     <div className='w-screen pt-10 mt-10 bg-slate-50 lg:h-screen  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
+     <div className='w-screen pt-10  bg-slate-50 lg:h-screen  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
 
      <div class="container">
       <div class="max-w-xl">
@@ -521,7 +532,7 @@ gV.mq.matches
      </div>
 
      {/* Screen 4 - FAQ */}
-     <div className='w-screen pt-10 mt-10  lg:h-screen  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
+     <div className='w-screen py-10 mt-10  lg:h-auto  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
 
     <div className='grid gap-12 lg:grid-cols-12'> 
       
@@ -578,6 +589,10 @@ gV.mq.matches
       
      
       </div>
+
+
+
+     
     
     
     </>

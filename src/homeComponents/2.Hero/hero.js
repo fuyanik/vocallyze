@@ -83,7 +83,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
        
         <div className="flex lg:mt-32  mt-16 flex-col gap-5 lg:items-start items-center text-center">
          
-         <div className=" lg:text-[76px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]  text-[36px] lg:text-start text-center items-center justify-left   font-bold ">
+         <div className=" lg:text-[69px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-start text-center items-center justify-left   font-bold ">
            <p>Get your online</p>
          
            <div  className="hero__main__header__fade-in text-black flex   justify-center lg:justify-start  relative">
@@ -98,7 +98,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
          
            <p className="mt-10 lg:mt-[72px]">second opinion </p>
         </div>
-         <p className="lg:text-[20px]" >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
+         <p className="lg:text-[17px] text-[20px] " >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
    
       {  
 
@@ -156,7 +156,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 
 
-<div className=" flex mt-10 gap-12 self-start ">
+<div className=" flex mt-3 gap-12 self-start ">
         
 {icons.map((company,idx) => (
   <div key={idx} className="flex  w-auto  gap-3  items-center">
@@ -181,8 +181,8 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 
 
-      <div className="absolute  lg:flex hidden right-0 mr-10">
-        <img src={groupPng}/>
+      <div className="absolute  lg:flex hidden right-12 top-6 shadow-xl rounded-2xl  ">
+        <img className=" h-[80vh] rounded-xl" src="https://vitamu.imgix.net/img1.jpg" />
       </div>
        
       </div>
