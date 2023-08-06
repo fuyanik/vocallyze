@@ -371,7 +371,7 @@ object-fit: cover;
         text-align: start;
         margin-left: 3vw;
         margin-top: 16px;
-    color: rgb(20, 43, 111);
+    color: #000000b9;
 
        
     }
@@ -380,7 +380,7 @@ object-fit: cover;
         display: block;
         font-size: 15px;
         margin-top: 10px;
-        color: rgba(20, 43, 111, 0.592);
+        color: #000000b9;
 
 
     }
@@ -408,20 +408,21 @@ object-fit: cover;
     }
     /* Doctor Name */
     .docName {
+        color: #000;
         margin-left: 5px;
         font-size: 33px;
         max-width: 190px;
     }
     /* School Name */
     .schName {
-        color: rgba(128, 128, 128, 0.733);
+        color: #000000b9;
         margin-left: 5px;
         font-size: 17px;
         max-width: 185px;
     }
     /* Experience*/
     .exp {
-        color: rgba(128, 128, 128, 0.733);
+        color: #000000b9;
         margin-top: 10px;
         margin-left: 5px;
         max-width: 200px;
@@ -432,7 +433,7 @@ object-fit: cover;
         font-family: "ProductSans-Light";
         font-size: 14.4px;
         text-align: center;
-        color: rgb(20, 43, 111);
+        color: #000000b9;
        
         
       
@@ -521,7 +522,7 @@ object-fit: cover;
     margin-right: -5px;
     font-size: 18px;
     line-height: 22px;
-    color: rgb(20, 43, 111);
+    color: #000000b9;
     width: 100%;
     font-weight: 700;
     align-self: flex-start;
@@ -533,7 +534,7 @@ object-fit: cover;
     align-self: flex-start;
     font-size: 16px;
     width: 100%;
-    color: rgba(20, 43, 111, 0.592);
+    color: #000000b9;
     font-weight: 400;
     margin-top: 7px;
     line-height: 21px;
@@ -543,7 +544,7 @@ object-fit: cover;
     align-self: flex-start;
     font-family: "ProductSans-Light";
     font-size: 13px;
-    color: rgba(20, 43, 111, 0.592);
+    color: #0000008d;
     max-width: 250px;
     font-weight: 400;
     margin-top: 1px;

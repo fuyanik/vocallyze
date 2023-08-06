@@ -117,7 +117,7 @@ export default function SelectBodyParts({isOutside = false}) {
               <div className="flex gap-2 h-8 items-center justify-center">
              <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/ff4949/search--v1.png" alt="search--v1"/>
          
-                { bodyParts.length == 0 && <p className="font-bold lg:font-normal">Body Part(s)</p>}
+                { bodyParts.length == 0 && <p className="font-normal lg:font-normal">Body Part(s)</p>}
               </div>
          
               {/* All User Selected Body Parts */}

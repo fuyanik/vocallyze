@@ -99,7 +99,7 @@ export default function SelectScan({isOutside = false}) {
                    {/* Default Place Holder */}
                    <div className="flex gap-2 h-8 items-center justify-center">
                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/ff4949/search--v1.png" alt="search--v1"/>
-                    { scanType.length == 0 && <p className="font-bold lg:font-normal">Scan Type(s)</p>}
+                    { scanType.length == 0 && <p className="font-normal lg:font-normal">Scan Type(s)</p>}
                   </div>
             
                   {/* All User Selected Body Parts */}

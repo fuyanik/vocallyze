@@ -1394,8 +1394,8 @@ video {
   --form-md: 17px;
   --form-sm: 15px;
   --doc-height: 100%;
-  --blue: #142b6fbf;
-  --blue-trans: rgba(20, 43, 111, 0.52);
+  --blue: #121215bf;
+  --blue-trans: rgba(0, 0, 0, 0.52);
   --font-light: "ProductSans-Light";
   --font-thin: "ProductSans-Thin";
 }

@@ -23,6 +23,8 @@ import Ultrasound from './pages/Services/Ultrasound';
 import CTScan from './pages/Services/CtScan';
 import Mammogram from './pages/Services/Mammogram';
 import Xray from './pages/Services/XRay';
+import HowWorks from './pages/HowWorks/HowWorks';
+
 
   
 
@@ -62,6 +64,11 @@ export default function App() {
             
             <Route path="/login" element={<Login/>} />
             <Route path="/reset-password" element={<PasswordReset/>} />
+
+
+            <Route path="/how-works" element={<HowWorks/>} />
+
+
 
 
 
