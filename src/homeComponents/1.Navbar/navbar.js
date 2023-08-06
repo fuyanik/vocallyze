@@ -290,8 +290,10 @@ return (
                   aboutDrop == 1 && "bg-[#F6F5F5]"
                 } rounded-lg duration-300`}
               >
-                {" "}
-                <p> How It Works</p>{" "}
+               <Link to={"/how-works"}>
+                 {" "}
+                 <p> How It Works</p>{" "}
+               </Link>
               </div>
 
               <div
