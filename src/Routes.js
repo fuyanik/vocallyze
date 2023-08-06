@@ -18,6 +18,12 @@ import Login from './pages/Auth/login';
 import PasswordReset from './pages/Auth/passwordReset';
 import HealthHub from './pages/HealthHub/HealthHub';
 import Services from './pages/Services/Services';
+import MRI from './pages/Services/MRI';
+import Ultrasound from './pages/Services/Ultrasound';
+import CTScan from './pages/Services/CtScan';
+import Mammogram from './pages/Services/Mammogram';
+import Xray from './pages/Services/XRay';
+
   
 
 export default function App() {
@@ -43,6 +49,13 @@ export default function App() {
             <Route path="/health-hub" element={<HealthHub/>} />
 
             <Route path="/services" element={<Services/>} />
+
+            <Route path="/mri" element={<MRI/>} />
+            <Route path="/ultrasound" element={<Ultrasound/>} />
+            <Route path="/ct" element={<CTScan/>} />
+            <Route path="/mammogram" element={<Mammogram/>} />
+            <Route path="/x-ray" element={<Xray/>} />
+
 
 
 

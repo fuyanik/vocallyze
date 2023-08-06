@@ -329,10 +329,10 @@ return (
 
     <div className="text3 self-start ml-3"> Swipe right to see more</div>
     <div className="doctor-main">
-      <div className="text1"> OUR RADIOLOGY TEAM</div>
+      <div className="text1 hidden"> OUR RADIOLOGY TEAM</div>
       <div className="text2">
         We are a team of U.S. board-certified radiologists. Two of us will
-        recheck your mammogram to make sure you are breast cancer-free.{" "}
+        recheck your radiology images to make sure you are breast cancer-free.{" "}
       </div>
 
       <div className="doctor-section">
@@ -388,14 +388,14 @@ return (
       >
         {isHover && (
           <BiRadsDropdown
-             top={gV.mq.matches ? "-2vh" : "-30%"}
-            left={gV.mq.matches ?  "-13vw" : "-2.5vw"}
-            onMouseLeave={() => setIsHover(false)}
+             top={gV.mq.matches ? "-26vh" : "-30%"}
+             left={gV.mq.matches ?  "-17vw" : "-7.5vw"}
+             onMouseLeave={() => setIsHover(false)}
            
           />
         )}
 
-        <PrimaryButton to={"/form"} onMouse={() => setIsHover(true)} />
+        <PrimaryButton  onMouse={() => setIsHover(true)} />
       </div>
     </div>
   </div>

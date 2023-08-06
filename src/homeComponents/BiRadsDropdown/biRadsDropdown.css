@@ -2,17 +2,17 @@
 
 .bi-rads-dropdown{
     background-color: white;
-    padding: 10px 20px;
+    padding: 20px 20px;
     gap: 10px;
     z-index: 10000 !important;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    top: 80%;
-    left: 17%;
+   
     position: absolute;
-    width: 315px;
-    height: 230px;
+    align-self: center;
+    width: auto;
+    height: auto;
     color: #FFFFFF !important;
     border-radius: 30px;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
@@ -33,58 +33,37 @@
     
 }
 
-.bi-rads-dropdown h2{
-    margin-top: 6px;
-    font-family: "ProductSans-Light";
-    color: var(--navyBlue);
-    font-size: 17.2px !important;
-    font-weight: 700;
-    position: relative;
-    width: 190%;
-  
-}
-.bi-rads-dropdown p:nth-child(2){
-    margin-top: -6px;
-}
 
-.bi-rads-dropdown p {
-    box-sizing:border-box;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    font-family: "ProductSans-Light" !important;
-    color: var(--navyBlue);
-    font-size: 16.1px !important;
-    width: fit-content;
-    position: relative;
-    color: #000000eb;
-}
 
-.bi-rads-dropdown p:hover{
-    color: #000000;
-}
 
-.bi-rads-dropdown p::after{
-    content: "";
-    position: absolute;
-    background-color: #ffd000;
-    height: 2px;
-    width: 0;
-    left: 0;
-    bottom: 1px;
-    transition: 0.4s;
-}
 
-.bi-rads-dropdown p:hover::after{
-    width: 100%;
+
+@media only screen and (max-width:1080px) { 
+
+
+    .bi-rads-dropdown{
+        background-color: white;
+        padding: 20px 20px;
+        gap: 10px;
+        z-index: 10000 !important;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+       
+        position: absolute;
+        align-self: center;
+        width: auto ;
+        height: auto;
+        border-radius: 30px;
+        box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+        animation: biRadsAnim 700ms forwards;
     
+    
+    }
+    
+
+
 }
-
-
-
-.bi-rads-dropdown-item-last-child{
- min-width: 240px !important;
-}
-
 
     
    

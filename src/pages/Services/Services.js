@@ -3,11 +3,12 @@ import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import gV from '../../gV';
 import Navbar from '../../homeComponents/1.Navbar/navbar';
+import Radiologists from '../../homeComponents/7.Radiologists/radiologists';
 import SelectBodyParts from '../Forms/components/selectBodyParts';
 import SelectScan from '../Forms/components/selectScan';
 
 
-const Services = () => {
+const Services = ({title,imageUrl,heroText,}) => {
 
   const icons = [
    
@@ -118,10 +119,10 @@ const FAQItem = ({ question, answer }) => {
 
         <div className='w-full lg:mb-10  h-fit flex flex-col '>
 
-          <div className='flex  w-fit gap-7 h-fit'> <p className='text-priTrans'> Services</p>  <img className='rotate-90' width="12" height="14" src="https://img.icons8.com/ios-filled/50/666666/collapse-arrow.png" alt="collapse-arrow"/>  <p>MRI Scans</p></div>
+          <div className='flex  w-fit gap-7 h-fit'> <p className='text-priTrans'> Services</p>  <img className='rotate-90' width="12" height="14" src="https://img.icons8.com/ios-filled/50/666666/collapse-arrow.png" alt="collapse-arrow"/>  <p>{title}</p></div>
 
-          <h1 className='text-[3.75rem] font-bold'>MRI Scans</h1>
-          <p className='text-priTrans lg:w-[50%]'>We've made it easier than ever to book a private MRI scan near you. By partnering with over 150 scanning centres across the UK, we're able to show you every available option - from prices to locations to services - to help you make the best decision for you.</p>
+          <h1 className='text-[3.75rem] font-bold'>{title} </h1>
+          <p className='text-priTrans lg:w-[50%]'>{heroText}</p>
 
 
           <ul class="lg:grid sm:grid-cols-2 hidden gap-x-2 gap-y-6 max-w-xl mt-3">
@@ -258,7 +259,7 @@ gV.mq.matches
 
         </div>
 
-        <img className='absolute right-12 lg:flex hidden rounded-2xl mb-8' src='https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,w_500/v1/images/services/mri-hero_jpg.jpg' />
+        <img className='absolute right-12 lg:flex hidden rounded-2xl mb-8' src={imageUrl}/>
 
       </div>
 
@@ -456,6 +457,11 @@ gV.mq.matches
         
      </div>
 
+      <div className='w-screen lg:pt-6  relative flex  font-product flex-col  h-fit   px-[3vw]  '>
+        <Radiologists
+        />
+      </div>
+
 
      {/* Screen 3 - SCANNİNG SERVİCES */}
      <div className='w-screen pt-10  bg-slate-50 lg:h-screen  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
@@ -589,10 +595,6 @@ gV.mq.matches
       
      
       </div>
-
-
-
-     
     
     
     </>

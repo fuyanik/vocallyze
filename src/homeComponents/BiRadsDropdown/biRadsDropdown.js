@@ -1,11 +1,13 @@
 import gV from "../../gV";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./biRadsDropdown.css";
 import { getAuth } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { setGlobalState } from "../../hookState";
+import SelectBodyParts from "../../pages/Forms/components/selectBodyParts";
+import ScanType from "../../pages/Forms/components/selectScan";
 
 const BiRadsDropdown = ({ onMouseLeave, top, left }) => {
     
@@ -42,6 +44,8 @@ const BiRadsDropdown = ({ onMouseLeave, top, left }) => {
     }, [isPay])
 
 
+    const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -49,104 +53,17 @@ const BiRadsDropdown = ({ onMouseLeave, top, left }) => {
         left: left,
       }}
       onMouseLeave={onMouseLeave}
-      className="bi-rads-dropdown z-20"
+      className="bi-rads-dropdown    z-50"
     >
-      <h2 className="bi-rads-dropdown-header">Choose your Bi-rads score:</h2>
-      
-      <Link style={{ textDecoration: "none" }} to="/form">
-        {" "}
-        <p
-          className="bi-rads-dropdown-item"
-          onClick={() => {
-            
-            setGlobalState("isSummaryPopUp", false)
 
-            if (isPay) {
-                gV.payType = "secondRecheck";
-                gV.MailAddres = user.email;
-            }
-            gV.biRads = "1";
-            gV.p = 0;
-            gV.isShowBiradsPage = false;
-          }}
-        >
-          Bi-rads 1 ➔
-        </p>{" "}
-      </Link>
+      <div className="flex flex-col items-center  gap-3 rounded-full ">
+          <SelectBodyParts isOutside={true} />
+          <ScanType isOutside={true} />
+         <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]   duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
+        </div>
      
-      <Link style={{ textDecoration: "none" }} to="/form">
-        {" "}
-        <p
-          className="bi-rads-dropdown-item"
-          onClick={() => {
-            setGlobalState("isSummaryPopUp", false)
-
-            if (isPay) {
-                gV.payType = "secondRecheck";
-                gV.MailAddres = user.email;
-            }
-            
-            gV.biRads = "2";
-            gV.p = 0;
-            gV.isShowBiradsPage = false;
-          }}
-        >
-          Bi-rads 2 ➔
-        </p>{" "}
-      </Link>
      
-      <Link style={{ textDecoration: "none" }} to="/form">
-        {" "}
-        <p
-          className="bi-rads-dropdown-item"
-          onClick={() => {
-            setGlobalState("isSummaryPopUp", false)
-
-            if (isPay) {
-                gV.payType = "secondRecheck";
-                gV.MailAddres = user.email;
-            }
-            gV.biRads = "3";
-            gV.p = 0;
-            gV.isShowBiradsPage = false;
-          }}
-        >
-          Bi-rads 3 ➔
-        </p>{" "}
-      </Link>
-    
-      <Link style={{ textDecoration: "none" }} to="/form">
-        {" "}
-        <p
-          className="bi-rads-dropdown-item"
-          onClick={() => {
-
-            setGlobalState("isSummaryPopUp", false)
-            if (isPay) {
-                gV.payType = "secondRecheck";
-                gV.MailAddres = user.email;
-            }
-            gV.biRads = "4";
-            gV.isShowBiradsPage = true;
-            gV.isShowBiRads123 = false;
-            gV.p = -1;
-          }}
-        >
-          Bi-rads 4 ➔
-        </p>{" "}
-      </Link>
-
-      <Link style={{ textDecoration: "none" }} to="/form">
-        {" "}
-        <p
-          className="bi-rads-dropdown-item bi-rads-dropdown-item-last-child"
-          onClick={() => {
-            gV.p = -1;
-          }}
-        >
-           Bi-rads 5 or Bi-rads 6 ➔{" "}
-        </p>{" "}
-      </Link>
+   
     </div>
   );
 };
