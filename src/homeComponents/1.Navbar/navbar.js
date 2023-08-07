@@ -387,7 +387,7 @@ return (
             <header className="flex animate-visible  justify-between items-center">
               <img
                 className="w-36"
-                src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress"
+                src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
                 alt="vitamu"
               />{" "}
               <img

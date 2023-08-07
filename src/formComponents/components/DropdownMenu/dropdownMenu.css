@@ -25,14 +25,14 @@
   font-weight: 300;
   font-size: 16px;
   font-family: "ProductSans-Light";
-  color: #142b6fdd;
+  color: #000000dd;
   letter-spacing: 0px;
   border-radius: 25px;
 }
 
 .dropdown-content {
   font-size: 16px;
-  color: #142B6F;
+  color: #000000;
   font-family: "ProductSans-Light";
   overflow-y: scroll;
   max-height: 220px;

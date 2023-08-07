@@ -383,7 +383,7 @@ justify-content: space-between;
   padding-left: 15px;
   color: #FFFFFF;
   font-family: "ProductSans-Light";
-  background-color: #06005e;
+  background-color: #000e;
   border-radius: 35px;
   display: flex;
   align-items: center;
@@ -401,7 +401,7 @@ justify-content: space-between;
   color: #FFFFFF;
   font-family: "ProductSans-Light";
   background-color: white;
-  color: #06005e;
+  color: #000e;
   border-radius: 35px;
   display: flex;
   align-items: center;
@@ -409,7 +409,7 @@ justify-content: space-between;
   width: 33%;
   height:  34px;
   position: relative;
-  border: 1px solid #06005e;
+  border: 1px solid #000e;
   border-radius: 16px;
  
 }
