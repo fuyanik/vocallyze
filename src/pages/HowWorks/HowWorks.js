@@ -10,7 +10,7 @@ const HowWorks = () => {
       mobileMenuTo ={"/mobileNavMenu"}
       />
 
-    <div className='w-screen flex justify-center mt-[10.8vh]  font-product '>
+    <div className='w-screen flex justify-center pt-[10.8vh]  font-product '>
 
       <div className='w-screen items-center justify-center flex flex-col gap-5 pb-12'> 
 
@@ -185,7 +185,7 @@ const HowWorks = () => {
           <div class="  flex-col items-center self-center justify-center lg:mt-12  mt-5">
     
             <div class="space-y-4 md:text-center max-w-2xl mx-auto mb-12">
-      <h2 class="text-[38px] font-bold">Why choose Scan.com?</h2>
+      <h2 class="text-[38px] font-bold">Why choose Mitrua?</h2>
       <p class="text-base lg:text-lg text-neutral-600">We're taking the stress out of scanning. With no waiting lists, we'll provide clinical guidance, simple referrals, and speedy results all in one place, at one affordable price.</p>
             </div>
 
@@ -196,8 +196,8 @@ const HowWorks = () => {
           <tr>
             <td class="border-b bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">What's included <span class="hidden sm:inline">in the cost?</span></td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
-              <span class="md:hidden">Scan.com</span>
-              <img alt="Scan.com Logo" class="shrink-0 w-40 mx-auto hidden md:block" width="192" height="31" src="https://res.cloudinary.com/scan-com/image/upload/v1/images/rebranded-logo_svg.svg"/>
+              <span class="md:hidden">Mitrua.com</span>
+              <img alt="Mitrua.com Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"/>
             </td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">NHS</td>
             <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Private <span class="hidden sm:inline">Hospital</span></td>

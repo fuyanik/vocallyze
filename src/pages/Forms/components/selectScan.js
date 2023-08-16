@@ -94,7 +94,7 @@ export default function SelectScan({isOutside = false}) {
                  onClick={() => {
                    setDropdown(!isDropdown);
                  }}
-                 className="h-auto py-3 w-[190%] lg:w-[95%] relative text-pri flex-wrap  gap-2  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+                 className="h-auto py-3 w-[120%]  relative text-pri flex-wrap  gap-2 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
                >
                    {/* Default Place Holder */}
                    <div className="flex gap-2 h-8 items-center justify-center">
@@ -109,10 +109,8 @@ export default function SelectScan({isOutside = false}) {
                      <p onClick={()=>{ setScanType(prevBodyParts => prevBodyParts.filter(part => part !== bodyPart) );  setDropdown(false)}} className="text-[11px] font-bold relative left-1">X</p>
                    </div>
                   ))}
-            
                 
-                
-                 <img  className={`absolute   right-6 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
+                 <img  className={`absolute right-6 lg:right-4 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
                </div>
                
               {/* Dropdown White Area */}

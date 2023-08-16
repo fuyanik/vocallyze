@@ -63,6 +63,9 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
    //set open dropdown menu
    const [showDropdown, setShowDropdown] = useState(0);
 
+
+   const [isHover, setIsHover] = useState(false);
+
    const auth = getAuth();
    const user = auth.currentUser;
    
@@ -204,15 +207,7 @@ const Navbar = ({mobileMenuText,mobileMenuTo}) => {
    
     });
 
-   
-    //dropdown pages header and links
-   const LinkHeader = (to,text) => {
-    return(
-      <>
-      {<Link to={to} style={{textDecoration:'none'}} >  <h2> {text}  </h2> </Link>}
-      </>
-    )
-   }
+
 
 
 return (
@@ -226,14 +221,26 @@ return (
       }}
     >
       {/* Desktop Menu */}
-      <div className=" font-bold text-black gap-10 hidden lg:flex font-product tracking-wide">
+      <div className=" relative font-bold text-black gap-10 hidden lg:flex font-product tracking-wide">
+       
+        {/* Exit Services & About Dropdown Helper*/}
+        <div   
+        onMouseMove={() => {
+          setIsHoverServices(false); 
+          setIsHoverAbout(false)
+        
+        }}
+          className="  z-50  left-28 absolute w-[42%] self-center h-[7vh] rounded-2xl ">
+          </div>
+
         {/* Services */}
         <div
-          onMouseMove={() => {
-            setIsHoverServices(true);
-          }}
-          className="flex items-center  gap-2 cursor-pointer"
+        onMouseMove={() => {
+          setIsHoverServices(true); }}
+          className="flex relative items-center  gap-2 cursor-pointer"
         >
+          
+
           {" "}
           <p> Services </p>{" "}
           <img
@@ -280,8 +287,22 @@ return (
               onMouseLeave={() => {
                 setIsHoverAbout(false);
               }}
-              className=" flex flex-col w-[14vw] h-fit mt-7 top-0 py-4 px-2  font-normal self-center  absolute bg-white border shadow-2xl  rounded-2xl"
+              className=" flex flex-col w-[16vw] h-fit mt-7 top-0 py-4 px-2  font-normal self-center  absolute bg-white border shadow-2xl  rounded-2xl"
             >
+              
+              <div
+                onMouseMove={() => {
+                  setAboutDrop(2);
+                }}
+                className={`px-4 py-2  ${
+                  aboutDrop == 2 && "bg-[#F6F5F5]"
+                } rounded-lg duration-300`}
+              >
+               <Link to={"/how-works"}>
+                 {" "}
+                 <p> Why Second Opinion?</p>{" "}
+               </Link>
+              </div>
               <div
                 onMouseMove={() => {
                   setAboutDrop(1);
@@ -295,7 +316,6 @@ return (
                  <p> How It Works</p>{" "}
                </Link>
               </div>
-
               <div
                 onMouseMove={() => {
                   setAboutDrop(3);
@@ -369,7 +389,7 @@ return (
 
       {/* Mobile Menu */}
       {gV.mq.matches && (
-        <div className={` text-pri font-product`}>
+        <div  className={` text-pri font-product`}>
           <p
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);
@@ -532,16 +552,33 @@ return (
             </div>
 
             {/* Get Started Button*/}
+
+            <div
+            onMouseLeave={() => setIsHover(false)}
+       className="w-full  flex relative items-center justify-center z-50  "
+      >
+            {isHover && (
+          <BiRadsDropdown
+             top={gV.mq.matches ? "-320%" : "-90%"}
+             
+           
+          />
+        )}
+
             {!menuDropdown1 && (
               <div
-                onClick={() => {
-                  navigate("/form-new");
-                }}
+               onClick={() => setIsHover(true)}
                 className="animate-visible flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl"
               >
                 Get Started
               </div>
             )}
+
+            </div>
+       
+       
+       
+       
           </section>
         </div>
       )}
@@ -571,20 +608,31 @@ return (
 
         {/* Get Started Button */}
         <div style={{ position: "relative" }}>
-          <PrimaryButton to={"/get-started"} />
-        </div>
+        {isHover && (
+          <BiRadsDropdown
+            onMouseLeave={() => {
+              setIsHover(false);
+            }}
+            top={"-10%"}
+            left={"-12vw"}
+          />
+        )}
+        <PrimaryButton to={"/form"} onMouse={() => setIsHover(true)} />
+      </div>
 
         {/* İf user is logged in, show USER PANEL button, If user not logged in Show SIGN IN button */}
       </div>
     </div>
 
+
     {isHoverServices && !gV.mq.matches && (
       <div
+        
         onMouseLeave={() => setIsHoverServices(false)}
-        className=" flex gap-20 animate-fadeIn font-product w-full mt-[10.8vh] py-10 px-[10%]  absolute h-[56vh] bg-white shadow-2xl z-50 "
+        className=" flex gap-20 animate-fadeIn font-product w-full mt-[10.8vh] py-10 px-[10%]  fixed h-[56vh] bg-white shadow-2xl z-20 "
       >
         {/* Services */}
-        <div className="flex flex-col gap-3 w-72  ">
+        <div  className="flex flex-col gap-3 w-72  ">
           <p className="text-xl font-bold "> Services </p>
           <p className="text-sm ">
             {" "}

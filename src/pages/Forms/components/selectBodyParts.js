@@ -128,8 +128,8 @@ export default function SelectBodyParts({isOutside = false}) {
                </div>
               ))}
          
-         
              <img  className={`absolute   right-6 lg:right-4 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
+         
            </div>
            
           {/* Dropdown White Area */}

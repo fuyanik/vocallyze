@@ -378,18 +378,15 @@ return (
       <p className="textBottom">
         We have 30+ certified radiologists in our team.{" "}
       </p>
+      
       <div
-        onClick={() => {
-          gV.biRads = "3";
-          gV.p = 0;
-          gV.isShowBiradsPage = false;
-        }}
-        style={{ position: "relative" }}
+       className=" flex relative items-center justify-center  "
+      
       >
         {isHover && (
           <BiRadsDropdown
-             top={gV.mq.matches ? "-26vh" : "-30%"}
-             left={gV.mq.matches ?  "-17vw" : "-7.5vw"}
+             top={gV.mq.matches ? "-360%" : "-90%"}
+          
              onMouseLeave={() => setIsHover(false)}
            
           />
