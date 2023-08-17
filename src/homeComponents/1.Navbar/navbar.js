@@ -230,7 +230,7 @@ return (
           setIsHoverAbout(false)
         
         }}
-          className="  z-50  left-28 absolute w-[42%] self-center h-[7vh] rounded-2xl ">
+          className="  z-10  left-28 absolute w-[42%] self-center h-[7vh] rounded-2xl ">
           </div>
 
         {/* Services */}
@@ -255,9 +255,9 @@ return (
         </div>
 
         {/* Health Hub */}
-        <Link to={"/health-hub"}>
+        <Link className="z-20" to={"/health-hub"}>
           {" "}
-          <div className="cursor-pointer hover:border-b border-gray-300">
+          <div className="cursor-pointer hover:border-b border-gray-300 duration-500">
             {" "}
             <p> Health Hub </p>{" "}
           </div>{" "}
