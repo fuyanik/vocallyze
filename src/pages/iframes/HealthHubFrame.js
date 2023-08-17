@@ -112,12 +112,12 @@ const HealthHubFrame = () => {
 
    
 
-   <div className='lg:w-[80%] w-[96%] h-auto lg:pt-0 pt-8 pb-0  flex flex-col z-10'>
+   <div className='lg:w-[86%] w-[100%] h-auto lg:pt-0 pt-8 pb-0  flex flex-col z-10'>
 
     <div className=' flex flex-col w-full h-auto '>
        
 
-      <div className='w-full self-center grid -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white py-3 shadow-2xl rounded-2xl'>
+      <div className='w-full self-center grid -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white py-3  rounded-2xl'>
        
 
 <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/mri/adrenal-glands">
