@@ -108,29 +108,16 @@ const HealthHubFrame = () => {
   return (
     <div className='w-full  relative  items-center flex flex-col font-product tracking-wide'>
 
-    <div className='absolute w-full h-72 bg-[#FEA2BB] z-0'></div>
+
 
    
 
-   <div className='lg:w-[80%] w-[96%] h-auto lg:pt-14 pt-8 pb-6 gap-12 flex flex-col z-10'>
+   <div className='lg:w-[80%] w-[96%] h-auto lg:pt-0 pt-8 pb-0  flex flex-col z-10'>
 
-    <div className=' flex flex-col w-full h-auto gap-12'>
-
-        <div className='flex   justify-between'>
-
-            <div className='flex flex-col gap-2'>
-                <p className='text-[28px] lg:text-[32px] font-bold'> MRI Scanning Body Parts</p>
-                <p>Choose a body part to learn more</p>
-            </div>
-
-            <div className='text-white bg-black rounded-lg px-5 py-3 h-fit lg:flex hidden '>Book a private MRI scan</div>
-
-
-        </div>
-
+    <div className=' flex flex-col w-full h-auto '>
        
 
-<div className='w-full self-center grid -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white py-3 shadow-2xl rounded-2xl'>
+      <div className='w-full self-center grid -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white py-3 shadow-2xl rounded-2xl'>
        
 
 <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/mri/adrenal-glands">
@@ -596,13 +583,7 @@ const HealthHubFrame = () => {
 
 
     </div>
-    
-    {/* Tittle and Photos */}
-     <header className=' hidden flex-col gap-2'>
-         <h1 className='text-6xl lg:text-8xl font-bold text-pri ' >Health Hub</h1>
-         <div className='border w-full h-[48vh]'></div>
-    
-     </header>
+
 
   
   
