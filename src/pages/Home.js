@@ -98,16 +98,266 @@ const Home = () => {
       
       
        <Hero/>
-    
+       
     
     
        <Radiologists/>
-       <SliderStepper/>
-       <Testom/>
-       <AllOneService/>
-       { /*  <TechnologyHome/> */}
-       <LearningCenter/>
+          {/* Why choose scan */}
+          <div className='w-[93vw] lg:w-[60vw] ml-[21vw] relative '> 
+          <div class="  flex-col items-center self-center justify-center   mt-5">
+    
+            <div class="space-y-4 md:text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-[38px] font-bold">Why choose Mitrua?</h2>
+      <p class="text-base lg:text-lg text-neutral-600">We're taking the stress out of scanning. With no waiting lists, we'll provide clinical guidance, simple referrals, and speedy results all in one place, at one affordable price.</p>
+            </div>
+
+           <div class="rounded-2xl border border-grey-300 shadow-sm justify-center flex ">
+     
+      <table class="  w-fit border-collapse">
+        <thead>
+          <tr>
+            <td class="border-b bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">What's included <span class="hidden sm:inline">in the cost?</span></td>
+            <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
+              <span class="md:hidden">Mitrua.com</span>
+              <img alt="Mitrua.com Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"/>
+            </td>
+            <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">NHS</td>
+            <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Private <span class="hidden sm:inline">Hospital</span></td>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Your scan</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2">
+                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 13l4 4L19 7"></path>
+</svg>
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2">
+                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 13l4 4L19 7"></path>
+</svg>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">A report of your results</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2">
+                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 13l4 4L19 7"></path>
+</svg>
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2">
+                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 13l4 4L19 7"></path>
+</svg>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Online access to your images</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2">
+                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 13l4 4L19 7"></path>
+</svg>
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2">
+                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 13l4 4L19 7"></path>
+</svg>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Self refer without a GP letter</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Pre-scan clinician call</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Post-scan clinician call</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Patient-friendly report powered by Scanslated</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Online booking with appointment availability</td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+              <td class="border-y px-2 md:px-6 py-4 md:py-6">
+                  <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
+                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+<path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                  </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+        
+           </div>
+         </div>
+
+         </div>
+       
+    
+       
+      
+       
+
+
+       
+      
+     
        {mq.matches ? <MobileFooter/> : <Footer/>}
+
+       
     
       
 
