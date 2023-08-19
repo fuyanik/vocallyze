@@ -6,11 +6,13 @@ import imageSvg2 from  "../../assets/svg/image-2.svg"
 import imageSvg3 from  "../../assets/svg/image-3.svg"
 import imageSvg4 from  "../../assets/svg/image-4.svg"
 import imageSvg5 from  "../../assets/svg/image-5.svg"
+import gV from '../../gV';
 
 const HealthHub = () => {
 
 
     const [selected, setSelected] = React.useState(0);
+    const [isShowMore, setIsShowMore] = React.useState(false);
 
     const cards = [
         {
@@ -141,7 +143,9 @@ const HealthHub = () => {
 
                
 
-   <div className='w-full self-center grid -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white py-3 shadow-2xl rounded-2xl'>
+   <div className=' relative w-full self-center grid grid-cols-2 -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white pt-3 py-10 shadow-2xl rounded-2xl'>
+
+    <div onClick={()=>{setIsShowMore(!isShowMore)}} className='absolute lg:hidden flex gap-1 items-center right-5 bottom-3 text-sm text-pri'> <p>{!isShowMore ? "Show More" : "Show Less"}</p> <p className={` ${isShowMore ? "hidden" :"rotate-90" }`}>➔</p> </div>
                
 
    <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/mri/adrenal-glands">
@@ -231,9 +235,6 @@ const HealthHub = () => {
        </span>
 </a>
 
-
-
-
 <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/mri/cervical-spine">
           
 <span class="w-8 h-8 mr-4">
@@ -269,6 +270,11 @@ const HealthHub = () => {
 </a>
 
 
+
+{ 
+
+(!gV.mq.matches || isShowMore ) &&
+  <>
 
 
 
@@ -548,8 +554,8 @@ const HealthHub = () => {
 </a>
 
 
-
-
+ </>
+}
 
 
 

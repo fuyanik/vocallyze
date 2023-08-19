@@ -22,6 +22,8 @@ import IconsMobile from '../homeComponents/Icons/Icons_mobile';
 
 import { Helmet } from 'react-helmet';
 import PayScreen from './PayScreen/payScreen';
+import HealthHub from './HealthHub/HealthHub';
+import Informational from '../homeComponents/Informational/Informational';
 
 
 
@@ -98,12 +100,14 @@ const Home = () => {
       
       
        <Hero/>
+
        
     
     
        <Radiologists/>
+
           {/* Why choose scan */}
-          <div className='w-[93vw] lg:w-[60vw] ml-[21vw] relative '> 
+          <div className='w-[93vw] lg:w-[60vw] lg:ml-[21vw] ml-[2vw]  relative '> 
           <div class="  flex-col items-center self-center justify-center   mt-5">
     
             <div class="space-y-4 md:text-center max-w-2xl mx-auto mb-12">
@@ -345,6 +349,11 @@ const Home = () => {
          </div>
 
          </div>
+
+         <Informational/>
+         <HealthHub/>
+
+       
        
     
        
