@@ -56,7 +56,7 @@ const BiRadsDropdown = ({ onMouseLeave, top, left }) => {
       className="bi-rads-dropdown    z-50"
     >
 
-      <div className="flex flex-col items-center  gap-3 rounded-full ">
+      <div className="flex flex-col items-center font-product  gap-3 rounded-full ">
           <SelectBodyParts isOutside={true} />
           <ScanType isOutside={true} />
          <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]   duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
