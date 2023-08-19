@@ -92,7 +92,7 @@ const Informational = () => {
 
   </div>
 
-  <div class="container grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
+  <div class="container lg:grid place-items-center gap-8 my-8 lg:my-15   hidden lg:grid-cols-2 xl:px-16">
     
   <div class="order-2 max-w-lg lg:order-1">
     <h2 class="mb-4 text-4xl">

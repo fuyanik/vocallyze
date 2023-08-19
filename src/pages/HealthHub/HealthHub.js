@@ -111,7 +111,7 @@ const HealthHub = () => {
 
   return (
     <>
-        <Helmet>  <title>Health Hub</title>     <meta name="description" content="Health Hub" /> </Helmet>
+       
         {true && 
      
      <Navbar
@@ -143,9 +143,9 @@ const HealthHub = () => {
 
                
 
-   <div className=' relative w-full self-center grid grid-cols-2 -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 bg-white pt-3 py-10 shadow-2xl rounded-2xl'>
+   <div className=' relative w-full self-center grid grid-cols-2 -mx-4 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6 lg:gap-8 bg-white pt-3 py-10 shadow-2xl rounded-2xl'>
 
-    <div onClick={()=>{setIsShowMore(!isShowMore)}} className='absolute lg:hidden flex gap-1 items-center right-5 bottom-3 text-sm text-pri'> <p>{!isShowMore ? "Show More" : "Show Less"}</p> <p className={` ${isShowMore ? "hidden" :"rotate-90" }`}>➔</p> </div>
+    <div onClick={()=>{setIsShowMore(!isShowMore)}} className='absolute lg:hidden flex gap-1 items-center right-5 bottom-3 text-sm text-pri'> <p>{!isShowMore ? "Show More" : ""}</p> <p className={` ${isShowMore ? "hidden" :"rotate-90" }`}>➔</p> </div>
                
 
    <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/mri/adrenal-glands">
@@ -269,15 +269,6 @@ const HealthHub = () => {
           </span>
 </a>
 
-
-
-{ 
-
-(!gV.mq.matches || isShowMore ) &&
-  <>
-
-
-
 <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/mri/elbow">
 
 <span class="w-8 h-8 mr-4">
@@ -330,6 +321,17 @@ const HealthHub = () => {
 
           </span>
 </a>
+
+
+
+{ 
+
+(!gV.mq.matches || isShowMore ) &&
+  <>
+
+
+
+
 
 <a class="flex items-center px-4 py-2 overflow-hidden transition-colors duration-200 ease-out rounded-md hover:bg-neutral-100/75 text-base group" href="/body-parts/full-body-scan">
         <span class="w-8 h-8 mr-4">
@@ -622,7 +624,7 @@ const HealthHub = () => {
              </header>
 
             {/* Main  */}
-             <div className='flex flex-col gap-6'>
+             <div className=' flex-col gap-6  hidden'>
                
                 {/* Navigator */}
                 <div className='flex gap-2 w-full overflow-x-auto pb-2' >

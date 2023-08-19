@@ -105,9 +105,11 @@ const Home = () => {
     
     
        <Radiologists/>
-
+       <div>
+        <HealthHub/>
+       </div>
           {/* Why choose scan */}
-          <div className='w-[93vw] lg:w-[60vw] lg:ml-[21vw] ml-[2vw]  relative '> 
+          <div className='w-[93vw] lg:w-[60vw] lg:ml-[21vw] ml-[2vw] font-product relative '> 
           <div class="  flex-col items-center self-center justify-center   mt-5">
     
             <div class="space-y-4 md:text-center max-w-2xl mx-auto mb-12">
@@ -351,7 +353,7 @@ const Home = () => {
          </div>
 
          <Informational/>
-         <HealthHub/>
+        
 
        
        
