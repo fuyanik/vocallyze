@@ -4,34 +4,32 @@ import gV from "../../../gV";
 
 
 const names = [
-  "Brain/Head",
-  "Lumbar ",
-  "Knee ",
-  "Shoulder ",
-  "Cervical ",
-  "Thoracic ",
+  "Adrenal Glands",
+  "Brain & Head",
+  "Breast",
+  "Calf",
+  "Cardiac",
+  "Cervical Spine",
+  "Coccyx",
+  "Elbow",
+  "Foot and Ankle",
+  "Full Body Scan",
+  "Hand",
   "Hip",
-  "Wrist" ,
-  "Foot",
-  "Hand",
-  "Chest",
-  "Abdomen",
-  "Pelvis",
-  "Neck",
-  "Shoulder",
-  "Arm",
-  "Forearm",
-  "Wrist",
-  "Hand",
-  "Thigh",
+  "Kidney",
   "Knee",
-  "Ankle",
-  "Foot",
-  "Spine",
- 
- 
-
+  "Liver",
+  "Lumbar Spine",
+  "MRCP",
+  "Neck",
+  "Orbits",
+  "Pelvis",
+  "Shoulder",
+  "Small Bowel",
+  "Thoracic Spine",
+  "Wrist"
 ];
+
 
 
 
@@ -84,7 +82,7 @@ export default function SelectBodyParts({isOutside = false}) {
              {/* Dropdown White Area */}
              { isDropdown && 
              
-                <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-48 lg:right-0 overflow-y-scroll bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
+                <div className="absolute z-40 flex flex-col gap-3 items-start py-2 lg:px-12 px-8  text-pri w-full h-48 lg:right-0 overflow-y-scroll bg-white top-[9vh] animate-fadeIn rounded-[30px] shadow-xl">
                 {names.map((name, idx) => (
                    <p 
                    className={` ${bodyParts.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3   w-full text-left `}

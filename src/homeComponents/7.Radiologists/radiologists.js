@@ -393,7 +393,9 @@ return (
         )}
 
         <PrimaryButton  onMouse={() => setIsHover(true)} />
+      
       </div>
+      <div className="px-6 py-2 relative bottom-3 lg:bottom-0 flex items-start justify-center font-product  border self-center border-black rounded-full text-black"> Meet the Team</div>
     </div>
   </div>
 );

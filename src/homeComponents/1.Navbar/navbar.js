@@ -629,7 +629,7 @@ return (
       <div
         
         onMouseLeave={() => setIsHoverServices(false)}
-        className=" flex gap-20 animate-fadeIn font-product w-full mt-[10.8vh] py-10 px-[10%]  fixed h-[56vh] bg-white shadow-2xl z-20 "
+        className=" flex gap-20 animate-fadeIn font-product w-full mt-[10.8vh] py-10 px-[10%]  fixed h-[56vh] bg-white shadow-2xl z-50 "
       >
         {/* Services */}
         <div  className="flex flex-col gap-3 w-72  ">

@@ -33,6 +33,8 @@ const Home = () => {
   const [countryName, setCountryName] = useState("");
   const [cityName, setCityName] = useState("");
 
+
+
  
   useEffect(() => {
     gV.isShowBiradsPage = true;
@@ -105,26 +107,26 @@ const Home = () => {
     
     
        <Radiologists/>
-       <div>
+       <div className='hidden'>
         <HealthHub/>
        </div>
+
           {/* Why choose scan */}
-          <div className='w-[93vw] lg:w-[60vw] lg:ml-[21vw] ml-[2vw] font-product relative '> 
+          <div className='w-[93vw]  lg:w-fit self-center flex font-product relative '> 
           <div class="  flex-col items-center self-center justify-center   mt-5">
     
-            <div class="space-y-4 md:text-center max-w-2xl mx-auto mb-12">
+            <div class="space-y-1 md:text-center max-w-2xl mx-auto lg:mb-12 mb-8">
       <h2 class="text-[38px] font-bold">Why choose Mitrua?</h2>
       <p class="text-base lg:text-lg text-neutral-600">We're taking the stress out of scanning. With no waiting lists, we'll provide clinical guidance, simple referrals, and speedy results all in one place, at one affordable price.</p>
             </div>
 
-           <div class="rounded-2xl border border-grey-300 shadow-sm justify-center flex ">
+    <div class="rounded-2xl border border-grey-300  shadow-sm justify-center flex ">
      
       <table class="  w-fit border-collapse">
         <thead>
           <tr>
             <td class="border-b bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">What's included <span class="hidden sm:inline">in the cost?</span></td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
-              <span class="md:hidden">Mitrua.com</span>
               <img alt="Mitrua.com Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"/>
             </td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">NHS</td>

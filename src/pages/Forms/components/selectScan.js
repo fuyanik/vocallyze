@@ -6,13 +6,11 @@ import { setGlobalState } from "../../../hookState";
 
 
 const names = [
- "Mammogram",
-  "MRI",
   "CT Scan",
+  "MRI",
+  "Mammogram",
   "Ultrasound",
   "X-Ray",
-
-
 ];
 
 
@@ -68,7 +66,7 @@ export default function SelectScan({isOutside = false}) {
               {/* Dropdown White Area */}
               { isDropdown && 
               
-                 <div className="absolute z-40  flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl bg-white ">
+                 <div className="absolute z-40  flex flex-col gap-3 items-start py-2 px-8 text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl bg-white ">
                  {names.map((name, idx) => (
                     <p 
                     className={` ${scanType.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3  w-full text-left  `}

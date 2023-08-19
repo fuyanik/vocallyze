@@ -58,10 +58,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
         id:4,
         text:"Insurance accepted"
     },
-    {
-        id:5,
-        text:"Fully online process"
-    },
+   
    ]
 
 
@@ -164,7 +161,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
     {idx === 0 &&  searchIcon}
     {idx === 1 &&  costIcon}
     {idx === 2 &&  customerIcon}
-    {idx === 3 &&  starIcon}
+  
   
   <p className="text-center">{company.text}</p>
 </div>
