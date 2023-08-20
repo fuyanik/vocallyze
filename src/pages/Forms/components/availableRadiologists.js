@@ -22,7 +22,7 @@ const AvailableRadiologists = () => {
         school: "Harvard Medical School'09",
         experience: "13 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyRe/Elizabeth%20H.%20Asch-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyRe/Elizabeth%20H.%20Asch-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {   
@@ -31,7 +31,7 @@ const AvailableRadiologists = () => {
         school: "Tufts University School of Medicine ",
         experience: "33 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyRe/Pamela%20J.%20DiPiro-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyRe/Pamela%20J.%20DiPiro-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -40,7 +40,7 @@ const AvailableRadiologists = () => {
         school: "Medical College of Wisconsin",
         experience: "33 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Roy%20Zimmer-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Roy%20Zimmer-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -49,7 +49,7 @@ const AvailableRadiologists = () => {
         school: "Harvard Medical School",
         experience: "31 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Priscilla%20J%20Slanetz-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Priscilla%20J%20Slanetz-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -58,7 +58,7 @@ const AvailableRadiologists = () => {
         school: "Medical College of Georgia",
         experience: "24 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Kevin%20P%20Daly-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Kevin%20P%20Daly-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -67,7 +67,7 @@ const AvailableRadiologists = () => {
         school: "Ruprecht Karls University ",
         experience: "14 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyRe/Regina%20Maria%20Koch.png"
+        image: "https://vitamu.imgix.net/radiologyRe/Regina%20Maria%20Koch.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -76,7 +76,7 @@ const AvailableRadiologists = () => {
         school: "University of Texas ",
         experience: "16 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Emily%20S.%20Nia-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Emily%20S.%20Nia-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -85,7 +85,7 @@ const AvailableRadiologists = () => {
         school: "Tufts University School of Medicine ",
         experience: "19 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/James%20Lin-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/James%20Lin-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -94,7 +94,7 @@ const AvailableRadiologists = () => {
         school: "New York Medical College",
         experience: "20 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Derek%20Mason-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Derek%20Mason-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -103,7 +103,7 @@ const AvailableRadiologists = () => {
         school: "Rutgers New Jersey Medical School",
         experience: "20 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Yasmin%20Clark-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Yasmin%20Clark-Mobile.png?auto=undefined%2Ccompress"
 
     },
     {
@@ -112,7 +112,7 @@ const AvailableRadiologists = () => {
         school: "Harvard Medical School",
         experience: "18 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
-        image: "https://vitamu.imgix.net/radiologyTeam/Abraha%20Taddese-Mobile.png"
+        image: "https://vitamu.imgix.net/radiologyTeam/Abraha%20Taddese-Mobile.png?auto=undefined%2Ccompress"
 
     },
   

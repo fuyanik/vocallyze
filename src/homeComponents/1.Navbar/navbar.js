@@ -1,11 +1,7 @@
 import "./navbar.css"
 import {useState} from 'react';
 import { Link, useNavigate} from 'react-router-dom';
-import NavbarDropdown from "./navbarDropdown";
-import dropdown1 from "./images/dropdown1.jpg"
-import dropdown2 from "./images/dropdown2.jpg"
-import dropdown3 from "./images/dropdown3.jpg"
-import vitamuLogo from "./images/vitamuLogo.png"
+
 import { getAuth } from "firebase/auth";
 import BiRadsDropdown from "../BiRadsDropdown/biRadsDropdown";
 import PrimaryButton from "../microComponents/primaryButton/primaryButton";
@@ -594,7 +590,7 @@ return (
           <img
             className="navbar-logo vitamu-logo"
             src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
-            alt="vitamu"
+            alt="vitamu"xw
           />{" "}
         </Link>
       )}

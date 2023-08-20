@@ -1,0 +1,200 @@
+.dropdown-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4vh;
+  width: 100.5%;
+  font-family: "ProductSans-Light";
+}
+.dropdown-page-header__yellow {
+  border-radius: 20px;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 8px 16px !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #ff4949;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: 1000ms;
+}
+.dropdown-page-header__yellow p {
+  -webkit-animation: FadeIn-birads 3s;
+          animation: FadeIn-birads 3s;
+}
+@-webkit-keyframes FadeIn-birads {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes FadeIn-birads {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.dropdown-page-header__title {
+  color: #000;
+  font-size: 42px;
+  line-height: 48px;
+  width: 100%;
+  font-family: "Optima";
+}
+.dropdown-page-header__subtitle {
+  width: 85%;
+  color: rgba(16, 16, 18, 0.8392156863);
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  line-height: 18px;
+  line-height: 21px;
+  font-family: "ProductSans-Light";
+}
+.dropdown-page-header__name-date {
+  margin-top: 2vh;
+  display: flex;
+  gap: 1vh;
+  width: 100%;
+  font-size: 14px;
+  gap: 10px;
+  justify-content: none;
+  align-items: center;
+}
+.dropdown-page-header__name-date__name {
+  color: rgba(0, 0, 0, 0.8392156863);
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+.dropdown-page-header__name-date__date {
+  color: rgba(0, 3, 10, 0.662745098);
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+.dropdown-page-header__name-date__circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ff4949;
+}
+.dropdown-page-header__checked {
+  color: rgba(0, 0, 0, 0.8392156863);
+  display: flex;
+  gap: 1vh;
+  width: 100%;
+  font-size: 14px;
+  align-items: center;
+}
+.dropdown-page-header__social {
+  margin-top: 28px;
+  display: flex;
+  gap: 11px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: flex-end;
+  position: relative;
+  right: 10.8%;
+  bottom: 8.5vh;
+}
+.dropdown-page-header__social__logo {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #000207;
+}
+
+@media screen and (max-width: 1080px) {
+  .dropdown-page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 94.5%;
+    font-family: "ProductSans-Light";
+    padding-bottom: 3vh;
+  }
+  .dropdown-page-header__yellow {
+    border-radius: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 4px 18px !important;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #ff4949;
+    color: white;
+    font-size: 15px;
+  }
+  .dropdown-page-header__title {
+    width: 100%;
+    color: #01030a;
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .dropdown-page-header__subtitle {
+    color: rgba(0, 0, 0, 0.8392156863);
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    line-height: 18px;
+    line-height: 21px;
+    width: 100%;
+  }
+  .dropdown-page-header__name-date {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: 94vw;
+    font-size: 13px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .dropdown-page-header__name-date__name {
+    color: rgba(0, 2, 6, 0.8392156863);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+  .dropdown-page-header__name-date__date {
+    color: rgba(0, 0, 0, 0.662745098);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+  .dropdown-page-header__name-date__circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ff4949;
+  }
+  .dropdown-page-header__checked {
+    color: rgba(0, 1, 4, 0.8392156863);
+    display: flex;
+    gap: 1vh;
+    width: 100%;
+    font-size: 14px;
+    align-items: center;
+    position: relative;
+    right: 2vw;
+  }
+  .dropdown-page-header__social {
+    margin-top: 17px;
+    display: flex;
+    gap: 11px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-self: flex-start;
+    right: 0;
+    bottom: 0;
+  }
+  .dropdown-page-header__social__logo {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    color: #000104;
+  }
+}/*# sourceMappingURL=header.css.map */

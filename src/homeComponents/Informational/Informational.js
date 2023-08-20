@@ -3,13 +3,26 @@ import PrimaryButton from '../microComponents/primaryButton/primaryButton'
 
 const Informational = () => {
   return (
-    <div className='flex flex-col self-center font-product mr-16'>
+    <div className='flex flex-col self-center font-product '>
 
-  <div class="container  grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
+
+
+  <div class="lg:container self-center   grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
     
     <div>
-    <img class="" lazy="true" width="343" height="191" srcset="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,w_auto/v1/images/medical-doctors_webp.webp" alt="Illustration of medical doctors" data-src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,h_191,w_343/v1/images/medical-doctors_png.png" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_2.0,f_webp,h_191,w_343/v1/images/medical-doctors_png.png"/>
+   
+   
+       <div className='relative overflow-hidden lg:w-auto w-[90vw] self-center'>
+         <img
+           className=" relative top-12 w-full h-full object-cover"
+           src="https://vitamu.imgix.net/WhatsApp%20Image%202023-08-20%20at%2018.59.57.jpeg"
+           alt="Resim"
+         />
+       </div>
+  
+ 
     </div>
+   
     <div class="max-w-lg">
       <h2 class="mb-4 text-4xl font-bold">Get your second opinion in 24 hours.</h2>
   
@@ -55,7 +68,11 @@ const Informational = () => {
   
   </div>
 
-  <div class="container  grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
+
+
+
+
+  <div class="lg:container  grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
     
   <div class="order-2 max-w-lg lg:order-1">
     <h2 class="mb-4 text-4xl">
@@ -66,15 +83,25 @@ const Informational = () => {
     </div>
   </div>
   <div class="order-1 lg:order-2">
-<img alt="Patients waiting for appointments illustration" srcset="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,w_auto/v1/images/waiting-list_webp.webp" class=" lg:mx-auto lg:p-0 cld-responsive" lazy="true" width="343" height="191" data-src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,h_191,w_343/v1/images/waiting-list_png.png" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_2.0,f_webp,h_191,w_343/v1/images/waiting-list_png.png"/>
+
+  <div className='relative overflow-hidden  lg:w-auto w-[90vw] '>
+         <img
+           className=" relative top-12 w-full h-full object-cover"
+           src="https://vitamu.imgix.net/WhatsApp%20Image%202023-08-20%20at%2019.09.45.jpeg"
+           alt="Resim"
+         />
+       </div>
+  
   </div>
 
   </div>
 
-  <div class="container grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
+
+  <div class="lg:container grid place-items-center gap-8 my-2 lg:my-16 lg:grid-cols-2 xl:px-16">
     
-  <div class="-mt-10 lg:mt-0">
-    <img alt="United Kingdom Map with Scanning Locations Highlighted" srcset="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/v1/images/locations-map_png.png 1x, https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/v1/images/locations-map%402x_png.png 2x" class="pb-4 mx-auto lg:p-0" lazy="true" width="343" height="326" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/v1/images/locations-map_png.png"/>
+  <div class="mt-10 lg:mt-0  lg:w-auto w-[90vw] ">
+    <img src='https://www.theabr.org/wp-content/uploads/2017/06/ABR-Logo-Horizontal.png'/>
+  
   </div>
   <div class="max-w-lg">
     <h2 class="mb-4 text-4xl">We work with board-certified radiologists only.</h2>
@@ -89,9 +116,13 @@ const Informational = () => {
 
   </div>
 
-  <div class="container lg:grid place-items-center gap-8 my-8 lg:my-15   hidden lg:grid-cols-2 xl:px-16">
-    
-  <div class="order-2 max-w-lg lg:order-1">
+  <div class="lg:container lg:grid place-items-center gap-8 my-16 lg:my-16    lg:grid-cols-2 xl:px-16">
+     
+
+  <div class="order-1 lg:order-2">
+  <img alt="Imaging reports powered by Scanslated" class=" pb-4 mx-auto lg:p-0 cld-responsive lg:w-auto w-[90vw] " lazy="true" width="780" height="446" data-src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_2.0,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png"/>
+  </div>
+  <div class="order-1 max-w-lg lg:order-1">
     <h2 class="mb-4 text-4xl">
     You will get a patient friendly and detailed second opinion report.</h2>
 
@@ -136,9 +167,7 @@ const Informational = () => {
       </a>
     </div>
   </div>
-  <div class="order-1 lg:order-2">
-  <img alt="Imaging reports powered by Scanslated" class=" pb-4 mx-auto lg:p-0 cld-responsive" lazy="true" width="780" height="446" data-src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_2.0,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png"/>
-  </div>
+ 
 
   </div>
 

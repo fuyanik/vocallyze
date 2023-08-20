@@ -325,7 +325,7 @@ return (
   <div className="main self-center lg:relative lg:bottom-10">
     
     <div className="text3 self-start ml-3"> OUR RADIOLOGY TEAM</div>
-    <div className="text0">Two of us will recheck your <div className="w-fit inline "><p className="w-fit inline">mammogram</p></div> to make sure you are breast cancer-free. </div>
+    <div className="text0">Two of us will recheck your <div className="w-fit inline "><p className="w-fit inline">mammogram</p></div> to make sure you are not misdiagnosed or overdiagnosed. </div>
 
     <div className="text3 self-start ml-3"> Swipe right to see more</div>
     <div className="doctor-main">

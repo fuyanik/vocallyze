@@ -1,0 +1,18 @@
+.radiology-team{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding-top: 13vh;
+   align-items: center;
+   
+}
+
+.radiology-teamo{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding-top: 13vh;
+   align-items: center;
+   
+
+}

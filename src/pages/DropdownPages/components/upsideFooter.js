@@ -13,7 +13,7 @@ const UpsideFooter = () => {
   return (
     <>
       <div className="upside-footer relative">
-        <p className="normal-text">We make sure you are breast cancer-free.</p>
+        <p className="normal-text">We make sure you are not misdiagnosed or overdiagnosed.</p>
 
 
         {isHover && 
