@@ -91,13 +91,13 @@
   font-weight: 600;
   font-size: 16px;
   font-family: "ProductSans-Light";
-  color: #142B6F;
+  color: #000000;
   width: 87vw;
 }
 
 
 .dropdown-content {
-  color: #142B6F;
+  color: #080a11;
   font-family: "ProductSans-Light";
   overflow-y: scroll;
   height: 25vh;

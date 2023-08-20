@@ -40,7 +40,7 @@ const PayPlans = ({ isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#fff"
+                    fill="#000"
                   />
                 </svg>
   )
@@ -346,7 +346,7 @@ const PayPlans = ({ isOutside = false, }) => {
               <div class="flex items-center gap-1 ">
                 
                 <p class="text-xl ">  ${VariableCalculator(planOneValue) | 0} {" "} / </p>
-                {gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">   <s>${planOneValue} </s> </p>}
+                {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && <p class="pay-card__value-area__period">   <s>${planOneValue} </s> </p>}
                 <p className='text-[#676767] text-sm'> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
              
               </div>
@@ -466,7 +466,7 @@ const PayPlans = ({ isOutside = false, }) => {
              <div class="flex items-center gap-1 ">
                
                <p class="text-xl ">  ${VariableCalculator(planTwoValue) | 0} {" "} / </p>
-               {gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">   <s>${planTwoValue} </s> </p>}
+               { ( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && <p class="pay-card__value-area__period">   <s>${planTwoValue} </s> </p>}
                <p className='text-[#676767] text-sm'> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
             
              </div>
@@ -542,7 +542,7 @@ const PayPlans = ({ isOutside = false, }) => {
              <div class="flex items-center gap-1 ">
                
                <p class="text-xl ">  ${VariableCalculator(planThreeValue) | 0} {" "} / </p>
-               {gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">   <s>${planThreeValue} </s> </p>}
+               {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && <p class="pay-card__value-area__period">   <s>${planThreeValue} </s> </p>}
                <p className='text-[#676767] text-sm'> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
             
              </div>

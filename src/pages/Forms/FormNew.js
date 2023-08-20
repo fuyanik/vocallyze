@@ -451,7 +451,6 @@ export default function FormNew() {
     {/* Start Step Contents */}
 
      const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-priTrans  bg-slate-100 "
-
      
      
     
@@ -507,7 +506,7 @@ export default function FormNew() {
       <div className="flex flex-col gap-1">
         <p className="text-lg text-pri font-bold mt-4">
           {" "}
-          Mail Address
+          E-Mail Address
         </p>
         <input
           value={mail}
@@ -563,8 +562,7 @@ export default function FormNew() {
 
             <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
              {" "}
-             We respect your privacy. Your contact details will not be shared
-            with anyone.
+             Please enter your personal health story, concerns, and questions.
             </p>
 
           <textarea
@@ -574,7 +572,7 @@ export default function FormNew() {
             }}
             type="text"
             className="w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-priTrans "
-            placeholder="Type your question here."
+            placeholder="Start typing here."
           />
         
        
@@ -590,6 +588,8 @@ export default function FormNew() {
 
          
          </section>
+
+
 
 
     {/* Medical Images */}
@@ -680,16 +680,16 @@ export default function FormNew() {
             </div>
           )}
 
+
           {/* Shipping CD or USB */}
           {dropdownText == "I prefer to ship the CD or USB stick." && (
             <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
               <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
-                Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla müzikle
-                olmaz.Kazanıyoruz oylarınızı bölmeyin. Bu iş dansla m
+              You may ship your images in a CD or USB stick to the address below:
               </p>
 
               <div className="flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
-                <p className="mt-2">Vitamu, Inc.</p>
+                <p className="mt-2">Mitrua, Inc.</p>
                 <p>169 Madison Ave #2305 New York, NY 10016</p>
                 <p>+1 646 820 1932</p>
               </div>
@@ -700,15 +700,15 @@ export default function FormNew() {
           {dropdownText == "I will share an access code." && (
             <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
               <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
-                Email adresi yazma. Email adresi yazma Email adresi yazma Email
-                adresi yazma
+              If you have an access code from your provider, you may share it with the e-mail address below:
               </p>
 
               <div className="flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg ">
-                <p className="">acceasdss@mitrua.com</p>
+                <p className="">access@mitrua.com</p>
               </div>
             </div>
           )}
+
 
           {/* Authorize */}
           {dropdownText == "I authorize you to acquire my images." && (
@@ -733,9 +733,6 @@ export default function FormNew() {
         </div>
       </section>
     );
-
-
-
      
 
     //Close popup page

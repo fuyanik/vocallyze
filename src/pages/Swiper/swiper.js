@@ -296,7 +296,7 @@ const SwiperPage = ({  isOutside = false, }) => {
     
         <Swiper
           
-          initialSlide={1}
+          initialSlide={0}
           spaceBetween={0}
           effect={"coverflow"}
           grabCursor={true}
@@ -402,7 +402,7 @@ const SwiperPage = ({  isOutside = false, }) => {
              {" "}
              ${VariableCalculator(planOneValue) | 0}{" "}
            </p>
-         { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
+         { ( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) &&  <p class="pay-card__value-area__period">
              / <s>${planOneValue}</s>
            </p>}
            <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
@@ -424,25 +424,10 @@ const SwiperPage = ({  isOutside = false, }) => {
                  fill="#000000"
                />
              </svg>
-             <p class="color--black">5-second opinions (all body parts)</p>
+             <p class="color--black">Detailed second opinion report</p>
            </div>
 
-           <div class="flex items-center gap-3">
-             <svg
-               width="18"
-               height="13"
-               viewBox="0 0 18 13"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg"
-             >
-               <path
-                 d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                 fill="#000000"
-               />
-             </svg>
-             <p class="color--black">Detailed report for each second opinion  </p>
-
-           </div>
+           
 
            <div class="flex items-center gap-3">
              <svg
@@ -462,22 +447,7 @@ const SwiperPage = ({  isOutside = false, }) => {
              <p class="color--black">Marked images with personalized radiologist notes</p>
            </div>
 
-           <div class="flex items-center gap-3">
-           <svg
-               width="14"
-               height="14"
-               viewBox="0 0 14 14"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg"
-             >
-               <path
-                 d="M13.3 0.710001C12.91 0.320001 12.28 0.320001 11.89 0.710001L6.99997 5.59L2.10997 0.700001C1.71997 0.310001 1.08997 0.310001 0.699971 0.700001C0.309971 1.09 0.309971 1.72 0.699971 2.11L5.58997 7L0.699971 11.89C0.309971 12.28 0.309971 12.91 0.699971 13.3C1.08997 13.69 1.71997 13.69 2.10997 13.3L6.99997 8.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L8.40997 7L13.3 2.11C13.68 1.73 13.68 1.09 13.3 0.710001Z"
-                 fill="#B1B8C9"
-               />
-             </svg>
-             
-             <p class="color--black relative left-1">Ask a radiologist (Unlimited questions)</p>
-           </div>
+          
 
          </div>
 
@@ -567,7 +537,7 @@ const SwiperPage = ({  isOutside = false, }) => {
                 {" "}
                 ${VariableCalculator(planTwoValue) | 0}{" "}
               </p>
-            { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
+            { ( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) &&  <p class="pay-card__value-area__period">
                 / <s>${planTwoValue}</s>
               </p>}
               <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
@@ -614,8 +584,8 @@ const SwiperPage = ({  isOutside = false, }) => {
                   backgroundColor="blue"
                   color="blue"
                   width="18"
-                  height="13"
-                  viewBox="0 0 18 13"
+                  height="22"
+                  viewBox="0 0 18 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -629,19 +599,21 @@ const SwiperPage = ({  isOutside = false, }) => {
 
               <div class="flex items-center gap-3">
               <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
+                  backgroundColor="blue"
+                  color="blue"
+                  width="18"
+                  height="13"
+                  viewBox="0 0 18 13"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M13.3 0.710001C12.91 0.320001 12.28 0.320001 11.89 0.710001L6.99997 5.59L2.10997 0.700001C1.71997 0.310001 1.08997 0.310001 0.699971 0.700001C0.309971 1.09 0.309971 1.72 0.699971 2.11L5.58997 7L0.699971 11.89C0.309971 12.28 0.309971 12.91 0.699971 13.3C1.08997 13.69 1.71997 13.69 2.10997 13.3L6.99997 8.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L8.40997 7L13.3 2.11C13.68 1.73 13.68 1.09 13.3 0.710001Z"
-                    fill="#B1B8C9"
+                    d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
+                    fill="#000000"
                   />
                 </svg>
                 
-                <p class="color--black relative left-1">Ask a radiologist (Unlimited questions)</p>
+                <p class="color--black relative">Ask a radiologist (Unlimited questions)</p>
               </div>
 
             </div>
@@ -680,9 +652,9 @@ const SwiperPage = ({  isOutside = false, }) => {
                 {" "}
                 ${VariableCalculator(planThreeValue) | 0}{" "}
               </p>
-            { gV.insuranceCompany !== "none" &&  <p class="pay-card__value-area__period">
-                / <s>${planThreeValue}</s>
-              </p>}
+            { ( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) &&  <p class="pay-card__value-area__period">
+                /  <s className="">${planThreeValue}</s>
+              </p> }
               <p style={{color:"#676767"}}> {( gV.insuranceCompany !== "I do not have an active insurance plan." && gV.insuranceCompany !== "My insurance is not listed."  && gV.insuranceCompany !== "none"   ) && gV.insuranceCompany}</p>
             </div>
 
@@ -698,7 +670,7 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#fff"
+                    fill="#000000"
                   />
                 </svg>
                 <p class="">5 radiology second opinions per year</p>
@@ -714,7 +686,7 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#fff"
+                    fill="#000"
                   />
                 </svg>
                 <p class="">Detailed report for each second opinion</p>
@@ -732,7 +704,7 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#fff"
+                    fill="#000"
                   />
                 </svg>
                 <p class="">Marked images with personalized radiologist notes</p>
@@ -748,7 +720,7 @@ const SwiperPage = ({  isOutside = false, }) => {
                 >
                   <path
                     d="M6.00001 10.17L2.53001 6.7C2.14002 6.31 1.51001 6.31 1.12001 6.7C0.730015 7.09 0.730015 7.72 1.12001 8.11L5.30001 12.29C5.69001 12.68 6.32001 12.68 6.71001 12.29L17.29 1.71C17.68 1.32 17.68 0.69 17.29 0.3C16.9 -0.0900003 16.27 -0.0900003 15.88 0.3L6.00001 10.17Z"
-                    fill="#fff"
+                    fill="#000"
                   />
                 </svg>
                 <p class="">Ask a radiologist (Unlimited questions)</p>

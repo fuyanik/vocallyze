@@ -20,47 +20,102 @@ const AvailableRadiologists = () => {
         id:0,
         name: "Elizabeth H. Asch",
         school: "Harvard Medical School'09",
-        experience: "15 Years of Experience",
+        experience: "13 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
         image: "https://vitamu.imgix.net/radiologyRe/Elizabeth%20H.%20Asch-Mobile.png"
 
     },
     {   
         id:1,
-        name: "Elizabeth H. Asch",
-        school: "Harvard Medical School'09",
-        experience: "15 Years of Experience",
+        name: "Pamela J. DiPiro",
+        school: "Tufts University School of Medicine ",
+        experience: "33 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
         image: "https://vitamu.imgix.net/radiologyRe/Pamela%20J.%20DiPiro-Mobile.png"
 
     },
     {
         id:2,
-        name: "Elizabeth H. Asch",
-        school: "Harvard Medical School'09",
-        experience: "15 Years of Experience",
+        name: "Roy Zimmer",
+        school: "Medical College of Wisconsin",
+        experience: "33 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
         image: "https://vitamu.imgix.net/radiologyTeam/Roy%20Zimmer-Mobile.png"
 
     },
     {
         id:3,
-        name: "Elizabeth H. Asch",
-        school: "Harvard Medical School'09",
-        experience: "15 Years of Experience",
+        name: "Priscilla J Slanetz",
+        school: "Harvard Medical School",
+        experience: "31 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
         image: "https://vitamu.imgix.net/radiologyTeam/Priscilla%20J%20Slanetz-Mobile.png"
 
     },
     {
         id:4,
-        name: "Elizabeth H. Asch",
-        school: "Harvard Medical School'09",
-        experience: "15 Years of Experience",
+        name: "Kevin P Daly",
+        school: "Medical College of Georgia",
+        experience: "24 Years of Experience",
         speciality: ["Breast Screening", "Diagnostic Radiology"],
         image: "https://vitamu.imgix.net/radiologyTeam/Kevin%20P%20Daly-Mobile.png"
 
     },
+    {
+        id:5,
+        name: "Regina Maria Koch",
+        school: "Ruprecht Karls University ",
+        experience: "14 Years of Experience",
+        speciality: ["Breast Screening", "Diagnostic Radiology"],
+        image: "https://vitamu.imgix.net/radiologyRe/Regina%20Maria%20Koch.png"
+
+    },
+    {
+        id:6,
+        name: "Emily S. Nia ",
+        school: "University of Texas ",
+        experience: "16 Years of Experience",
+        speciality: ["Breast Screening", "Diagnostic Radiology"],
+        image: "https://vitamu.imgix.net/radiologyTeam/Emily%20S.%20Nia-Mobile.png"
+
+    },
+    {
+        id:7,
+        name: "James Lin",
+        school: "Tufts University School of Medicine ",
+        experience: "19 Years of Experience",
+        speciality: ["Breast Screening", "Diagnostic Radiology"],
+        image: "https://vitamu.imgix.net/radiologyTeam/James%20Lin-Mobile.png"
+
+    },
+    {
+        id:8,
+        name: "Derek Mason",
+        school: "New York Medical College",
+        experience: "20 Years of Experience",
+        speciality: ["Breast Screening", "Diagnostic Radiology"],
+        image: "https://vitamu.imgix.net/radiologyTeam/Derek%20Mason-Mobile.png"
+
+    },
+    {
+        id:9,
+        name: "Yasmin Clark",
+        school: "Rutgers New Jersey Medical School",
+        experience: "20 Years of Experience",
+        speciality: ["Breast Screening", "Diagnostic Radiology"],
+        image: "https://vitamu.imgix.net/radiologyTeam/Yasmin%20Clark-Mobile.png"
+
+    },
+    {
+        id:10,
+        name: "Abraha Taddese",
+        school: "Harvard Medical School",
+        experience: "18 Years of Experience",
+        speciality: ["Breast Screening", "Diagnostic Radiology"],
+        image: "https://vitamu.imgix.net/radiologyTeam/Abraha%20Taddese-Mobile.png"
+
+    },
+  
 
 ]
 
@@ -129,15 +184,15 @@ const AvailableRadiologists = () => {
        
        <div className="flex flex-col  ">
        
-        <p className="font-bold text-pri">Elizabeth H. Asch</p>
+        <p className="font-bold text-pri">{radiologist.name}</p>
         <div className="flex flex-col  lg:flex-row lg:gap-2">
-          <p className="text-pri"> Harvard Medical School'09 / </p>
-          <i className="text-[#000000db]"> 15 Years of Experience</i> 
+          <p className="text-pri"> {radiologist.school} / </p>
+          <i className="text-[#000000db]"> {radiologist.experience}</i> 
         </div>
        
         <div className="flex items-center gap-2">
          <div className="w-1 h-1 rounded-full bg-priTrans"></div>
-         <p className="text-priTrans">Breast Screening </p>
+         <p className="text-priTrans">All Body Parts </p>
         </div>
        
         <div className="flex items-center gap-2">

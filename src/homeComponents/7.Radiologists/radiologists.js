@@ -332,7 +332,7 @@ return (
       <div className="text1 hidden"> OUR RADIOLOGY TEAM</div>
       <div className="text2">
         We are a team of U.S. board-certified radiologists. Two of us will
-        recheck your radiology images to make sure you are breast cancer-free.{" "}
+        recheck your radiology images to make sure you are not misdiagnosed or overdiagnosed.{" "}
       </div>
 
       <div className="doctor-section">
