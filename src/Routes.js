@@ -26,6 +26,7 @@ import Xray from './pages/Services/XRay';
 import HowWorks from './pages/HowWorks/HowWorks';
 import HealthHubFrame from './pages/iframes/HealthHubFrame';
 import RadiologyTeam from './pages/RadiologyTeam/radiologyTeam';
+import Contact from './pages/DropdownPages/Help/Contact';
 
 
   
@@ -70,6 +71,7 @@ export default function App() {
 
             <Route path="/how-works" element={<HowWorks/>} />
             <Route path="/radiology-team" element={<RadiologyTeam/>} />
+            <Route path="/contact" element={<Contact/>} />
 
 
             <Route path="/health-hub-iframe" element={<HealthHubFrame/>} />

@@ -345,17 +345,19 @@ return (
                 {" "}
                 <p> Stories</p>{" "}
               </div>
-              <div
-                onMouseMove={() => {
-                  setAboutDrop(6);
-                }}
-                className={`px-4 py-2  ${
-                  aboutDrop == 6 && "bg-[#F6F5F5]"
-                } rounded-lg duration-300`}
-              >
-                {" "}
-                <p> Help</p>{" "}
-              </div>
+             <Link to="/contact">
+               <div
+                 onMouseMove={() => {
+                   setAboutDrop(6);
+                 }}
+                 className={`px-4 py-2  ${
+                   aboutDrop == 6 && "bg-[#F6F5F5]"
+                 } rounded-lg duration-300`}
+               >
+                 {" "}
+                 <p> Help</p>{" "}
+               </div>
+             </Link>
               <div
                 onMouseMove={() => {
                   setAboutDrop(7);
@@ -535,11 +537,16 @@ return (
                   <div className=" animate-fadeIn  font-normal">
                     <div className="h-[1px] w-full bg-slate-200"> </div>
                     <div className=" pl-3 pt-1 text-[17px] flex flex-col gap-1 ">
+                      <Link to="/how-works">
+                        <p>Why Second Opinion</p>
+                      </Link>
                       <p>How it Works</p>
                       <p>Radiology Team </p>
                       <p>Sample Reports</p>
                       <p>Stories</p>
-                      <p>Help</p>
+                      <Link to="/contact">
+                        <p>Help</p>
+                      </Link>
                       <p>FAQ</p>
                     </div>
                   </div>
