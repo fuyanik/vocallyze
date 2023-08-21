@@ -97,7 +97,7 @@ const handleImageChange = (e) => {
   arrays.map((item, idx) => {
     const storageRef = ref(
       storage,
-      `/${user ? user.email : gV.MailAddres}/${item.name}`
+      `/${user ? user.email : gV.MailAddres}/${idx}`
     );
     const uploadImage = uploadBytesResumable(storageRef, item);
     

@@ -299,30 +299,23 @@ return (
                  <p> Why Second Opinion?</p>{" "}
                </Link>
               </div>
-              <div
-                onMouseMove={() => {
-                  setAboutDrop(1);
-                }}
-                className={`px-4 py-2  ${
-                  aboutDrop == 1 && "bg-[#F6F5F5]"
-                } rounded-lg duration-300`}
-              >
-               <Link to={"/how-works"}>
-                 {" "}
-                 <p> How It Works</p>{" "}
-               </Link>
-              </div>
-              <div
-                onMouseMove={() => {
-                  setAboutDrop(3);
-                }}
-                className={`px-4 py-2  ${
-                  aboutDrop == 3 && "bg-[#F6F5F5]"
-                } rounded-lg duration-300`}
-              >
-                {" "}
-                <p> Radiology Team</p>{" "}
-              </div>
+
+             
+
+              <Link to="/radiology-team">
+                <div
+                  onMouseMove={() => {
+                    setAboutDrop(3);
+                  }}
+                  className={`px-4 py-2  ${
+                    aboutDrop == 3 && "bg-[#F6F5F5]"
+                  } rounded-lg duration-300`}
+                >
+                  {" "}
+                  <p> Radiology Team</p>{" "}
+                </div>
+              </Link>
+
               <div
                 onMouseMove={() => {
                   setAboutDrop(4);
@@ -334,17 +327,9 @@ return (
                 {" "}
                 <p> Sample Reports</p>{" "}
               </div>
-              <div
-                onMouseMove={() => {
-                  setAboutDrop(5);
-                }}
-                className={`px-4 py-2  ${
-                  aboutDrop == 5 && "bg-[#F6F5F5]"
-                } rounded-lg duration-300`}
-              >
-                {" "}
-                <p> Stories</p>{" "}
-              </div>
+
+              
+
              <Link to="/contact">
                <div
                  onMouseMove={() => {
@@ -540,10 +525,11 @@ return (
                       <Link to="/how-works">
                         <p>Why Second Opinion</p>
                       </Link>
-                      <p>How it Works</p>
-                      <p>Radiology Team </p>
+                 
+                      <Link to="/radiology-team">
+                        <p>Radiology Team </p>
+                      </Link>
                       <p>Sample Reports</p>
-                      <p>Stories</p>
                       <Link to="/contact">
                         <p>Help</p>
                       </Link>
