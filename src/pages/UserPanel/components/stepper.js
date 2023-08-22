@@ -235,7 +235,7 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
                     <div className="flex flex-col gap-2 ">
                       <Link
                         className="style-none"
-                        to={`${gV.mq.matches ? "/swiper-page" : "/pay-plans"}`}
+                        to="/form-new-payments"
                       >
                         <div
                           onClick={() => {

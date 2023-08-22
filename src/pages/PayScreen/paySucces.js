@@ -98,6 +98,8 @@ const PaySucces = () => {
   }, [count]);
 
 
+
+  
   useEffect(() => {
      
      lottie.loadAnimation({

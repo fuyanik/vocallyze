@@ -27,6 +27,7 @@ import HowWorks from './pages/HowWorks/HowWorks';
 import HealthHubFrame from './pages/iframes/HealthHubFrame';
 import RadiologyTeam from './pages/RadiologyTeam/radiologyTeam';
 import Contact from './pages/DropdownPages/Help/Contact';
+import FormNewPayment from './pages/Forms/FormNewPaymen';
 
 
   
@@ -40,6 +41,7 @@ export default function App() {
         <Routes> 
             <Route path="/" element={<Home/>}/>  
             <Route path="/form-new" element={<FormNew/>} />
+            <Route path="/form-new-payments" element={<FormNewPayment/>} />
           
             <Route path="/pay-screen" element={<PayScreen/>} />
             <Route path="/pay-succes" element={<PaySucces/>} />
@@ -75,6 +77,7 @@ export default function App() {
 
 
             <Route path="/health-hub-iframe" element={<HealthHubFrame/>} />
+          
 
 
 
