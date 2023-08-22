@@ -271,7 +271,7 @@ export default function AccordionRecheck() {
 
 
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-          <p>Your recheck report will be digitally signed by our radiologists, meaning you will not need a physical copy. However, if you want one, just drop us an e-mail at hello@vitamu.com, and we can send you a physical copy for free.</p>
+          <p>Your recheck report will be digitally signed by our radiologists, meaning you will not need a physical copy. However, if you want one, just drop us an e-mail at hello@mitrua.com, and we can send you a physical copy for free.</p>
         </div>
         
      

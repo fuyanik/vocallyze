@@ -60,7 +60,7 @@ const gV =
  
 
     //INSURANCE
-    insuranceCompany: "Cigna",
+    insuranceCompany: "none",
     phoneNumber: 0,
 
     insuranceText: "none",

@@ -57,7 +57,7 @@ export const SideInformation = () => {
         <div>
           <p className="bi-rads__right__main__card__text">856 265-0362</p>
           <p className="bi-rads__right__main__card__text">
-            hello@vitamu.com
+            hello@mitrua.com
           </p>
         </div>
       </div>
@@ -341,7 +341,7 @@ const BiRads3 = () => {
               <div>
                 <p className="bi-rads__right__main__card__text">856 265-0362</p>
                 <p className="bi-rads__right__main__card__text">
-                  hello@vitamu.com
+                  hello@mitrua.com
                 </p>
               </div>
             </div>

@@ -126,10 +126,10 @@ export default function CustomizedAccordions() {
           
           > Send an email:  
           
-          <a className="style-none"  href="mailto:hello@vitamu.com"><span style={{
+          <a className="style-none"  href="mailto:hello@mitrua.com"><span style={{
             color: "black",
             fontWeight: "700"
-          }}> hello@vitamu.com </span>  </a> </Typography>
+          }}> hello@mitrua.com </span>  </a> </Typography>
         </AccordionDetails>
       </Accordion>
 
