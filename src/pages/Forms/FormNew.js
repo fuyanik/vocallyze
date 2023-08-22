@@ -880,6 +880,7 @@ export default function FormNew() {
                     doc(db, "Mitrua", `${user.email}`),
                     {
                         Rechecks: arrayUnion({
+                          formStep: activeStep,
                           activeStep: 1,
                           createDay: new Date().getDate(),
                           createMonth: new Date().getMonth(),

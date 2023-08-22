@@ -42,8 +42,8 @@ const PaySucces = () => {
         
           const lastIndex = rechecks.length - 1;
 
-          rechecks[lastIndex].activeStep = 2;
-          rechecks[lastIndex].isPay = true
+          rechecks[0].activeStep = 2;
+          rechecks[0].isPay = true
         
 
           await updateDoc(userRef, { Rechecks: rechecks})

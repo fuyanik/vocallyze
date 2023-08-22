@@ -38,7 +38,7 @@ const UserPanelMobile = () => {
 
   const [changedEmail, setChangedEmail] = useState("");
   const [changedPassword, setChangedPassword] = useState(null);
-  const [changedPhone, setChangedPhone] = useState("313131");
+  const [changedPhone, setChangedPhone] = useState("");
 
   // it helps in reset input field after update email
   const [val, setVal] = useState();
