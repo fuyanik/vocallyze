@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useGlobalState } from '../../../hookState'
+import React, { useEffect, useState } from 'react'
+import { setGlobalState, useGlobalState } from '../../../hookState'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,7 +12,12 @@ const AvailableRadiologists = () => {
   const [selectedDoctor, setSelectedDoctor] = useState(null)
   const [doctors, setDoctors] = useState([])
 
-  const doctorObj = []
+  useEffect(() => {
+    console.log(doctors)
+
+    setGlobalState("doctors", doctors)
+  }, [doctors])
+
 
 
   const  radiologists = [

@@ -23,6 +23,7 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase
 import gV from "../../gV";
 import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import { Timestamp } from "firebase/firestore";
 
 import Insurance from "./components/Insurance";
 import AvailableRadiologists from "./components/availableRadiologists";
@@ -429,9 +430,14 @@ export default function FormNew() {
   const auth = getAuth();
   const user = auth.currentUser;
 
+
+  const [isOpenPaymentPopup, setIsOpenPaymentPopup] = useState(false)
+
  
   const [activeStep] = useGlobalState("activeStep")
   const [mainPayAmount] = useGlobalState("mainPayAmount")
+  const [doctors] = useGlobalState("doctors")
+  const [paymentPlan] = useGlobalState("paymentPlan")
  
 
   
@@ -445,6 +451,10 @@ export default function FormNew() {
     const [isPopupOpen, setIsPopupOpen] = useState(false)
     const [isDropdown, setDropdown] = useState(false)
     const [dropdownText, setDropdownText] = useState("Choose your answer.")
+
+
+
+    
     
 
 
@@ -865,6 +875,10 @@ export default function FormNew() {
                           medicalCenter: medicalCenter,
                           insurance: gV.insuranceCompany,
                           isPay: false,
+                          createdAt: Timestamp.now().toDate(),
+                          doctors: doctors,
+                          paymentPlan: paymentPlan,
+                          
                         },
                     },
                     { merge: true }
@@ -875,6 +889,8 @@ export default function FormNew() {
 
                  /* Payment Step */
                  if (activeStep == 4) {
+
+
                   AmountCalculator(mainPayAmount);
                   setDoc(
                     doc(db, "Mitrua", `${user.email}`),
@@ -895,6 +911,11 @@ export default function FormNew() {
                           medicalCenter: medicalCenter,
                           insurance: gV.insuranceCompany,
                           isPay: false,
+                          createdAt: Timestamp.now().toDate(),
+                          doctors: doctors,
+                          paymentPlan: paymentPlan,
+                          payTotalWithoutTax: gV.payTotal,
+                          
                         }),
                     },
                     { merge: true }

@@ -65,6 +65,10 @@ const PayPlans = ({ isOutside = false, }) => {
     selectedCard === 1 &&  setGlobalState("mainPayAmount", planOneValue);
     selectedCard === 2 &&  setGlobalState("mainPayAmount", planTwoValue);
     selectedCard === 3 &&  setGlobalState("mainPayAmount", planThreeValue);
+
+    selectedCard === 1 &&  setGlobalState("paymentPlan", "One Time Payment / Web Pay")
+    selectedCard === 2 &&  setGlobalState("paymentPlan", "1 Year / Web Pay")
+    selectedCard === 3 &&  setGlobalState("paymentPlan", "5 Year / Web Pay")
   }, [selectedCard]);
 
 

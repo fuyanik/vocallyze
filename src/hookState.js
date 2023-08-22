@@ -16,6 +16,10 @@ const { setGlobalState, useGlobalState } = createGlobalState({
   scanType: [],
   bodyParts: [],
 
+  doctors: [],
+
+  paymentPlan: "none",
+
 
 
 
@@ -28,7 +32,7 @@ const { setGlobalState, useGlobalState } = createGlobalState({
  isFormPopUp: false,
  insuranceCompany: "none",
 
- mainPayAmount: 499,
+ mainPayAmount: 299,
 
 
 

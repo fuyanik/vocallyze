@@ -31,7 +31,7 @@ const SwiperPage = ({  isOutside = false, }) => {
   const [activeStep] = useGlobalState("activeStep");
 
 
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
 
 
@@ -272,12 +272,20 @@ const SwiperPage = ({  isOutside = false, }) => {
   }
 
   const handleSlideChange = (swiper) => {
+    
     const activeIndex = swiper.activeIndex;
     console.log('Mevcut slayt:', activeIndex);
     setActiveIndex(activeIndex);
     activeIndex === 0 && setGlobalState("mainPayAmount", planOneValue)
     activeIndex === 1 && setGlobalState("mainPayAmount", planTwoValue)
     activeIndex === 2 && setGlobalState("mainPayAmount", planThreeValue)
+
+    activeIndex === 0 && setGlobalState("paymentPlan", "One Time Payment / Mobile Pay")
+    activeIndex === 1 && setGlobalState("paymentPlan", "1 Year / Mobile Pay")
+    activeIndex === 2 && setGlobalState("paymentPlan", "5 Year / Mobile Pay")
+
+
+
   };
 
 

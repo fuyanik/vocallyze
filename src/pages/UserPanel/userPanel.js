@@ -485,7 +485,7 @@ return (
             </Link>
 
             <Link className="style-none" to="/">
-              <p className="userPanel-main-header-text">Go to Vitamu.com</p>
+              <p className="userPanel-main-header-text">Go to Mitrua.com</p>
             </Link>
           </div>
 
