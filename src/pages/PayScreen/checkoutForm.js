@@ -15,9 +15,12 @@ import {
 import "./style/payScreen.css";
 
 import stripeImg from "./stripe.png";
+import { useNavigate } from "react-router-dom";
 
 
 export default function CheckoutForm() {
+
+  const navigate = useNavigate();
 
 
 
@@ -54,13 +57,16 @@ export default function CheckoutForm() {
     if (!clientSecret) {
       return;
     }
+
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
           setMessage("Payment succeeded!");
+         
           break;
         case "processing":
           setMessage("Your payment is processing.");
+          
           break;
         case "requires_payment_method":
           setMessage("Your payment was not successful, please try again.");
@@ -78,11 +84,6 @@ export default function CheckoutForm() {
 
     e.preventDefault();
 
-  
-
-    
-   
-   
 
    
     if (!stripe || !elements) {
@@ -91,29 +92,26 @@ export default function CheckoutForm() {
       return;
     }
 
+
     setIsLoading(true);
 
-    const { error } = await stripe.confirmPayment({
-  
-      elements,
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        // return_url: "http://localhost:3000/pay-succes"
-        return_url: "http://mitrua.com/pay-succes"
+      // Make sure to change this to your payment completion page
+       
 
-      },  
-    });
-
-    // This point will only be reached if there is an immediate error when
-    // confirming the payment. Otherwise, your customer will be redirected to
-    // your `return_url`. For some payment methods like iDEAL, your customer will
-    // be redirected to an intermediate site first to authorize the payment, then
-    // redirected to the `return_url`.
-    if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
-    } else {
-      setMessage("An unexpected error occurred.");
-    }
+        const result = await stripe.confirmPayment({
+          //`Elements` instance that was used to create the Payment Element
+          elements,
+          confirmParams: {
+              //return_url: "http://localhost:3000/pay-succes"
+              return_url: "http://mitrua.com/pay-succes"
+          },
+        });
+    
+        if (result.error) {
+          // Show error to your customer (for example, payment details incomplete)
+          console.log(result.error.message);
+        }  
+   
 
 
     setIsLoading(false);
