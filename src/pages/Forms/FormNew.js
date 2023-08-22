@@ -11,7 +11,7 @@ import VideoLabelIcon from "@mui/icons-material/VideoLabel";
 import StepConnector, {
   stepConnectorClasses
 } from "@mui/material/StepConnector";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../homeComponents/1.Navbar/navbar";
 import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
 import Card9 from "../../formComponents/Card9/card9";
@@ -27,6 +27,7 @@ import { Timestamp } from "firebase/firestore";
 
 import Insurance from "./components/Insurance";
 import AvailableRadiologists from "./components/availableRadiologists";
+import emailjs from 'emailjs-com';
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -453,6 +454,13 @@ export default function FormNew() {
     const [dropdownText, setDropdownText] = useState("Choose your answer.")
 
 
+    useEffect(() => {
+    //Create random password
+    //...
+    gV.password = Math.random().toString(36).slice(-10);
+    }, [])
+
+
 
     
     
@@ -755,9 +763,18 @@ export default function FormNew() {
   //...
   const handleSignup = async  () => {
 
+    var templateParams = {
+      user_name: name,
+      user_email: mail,
+      password: gV.password,
+    };
+    //send email
+
+      !user && emailjs.send('service_8ey3p9f', 'template_ut7vege', templateParams, 'xBTh1qYqTM9n5L1_P')
+
     try {
 
-        await createUserWithEmailAndPassword(auth, mail, "313131").then((userCredential) => {
+        await createUserWithEmailAndPassword(auth, mail, gV.password).then((userCredential) => {
           // Signed in 
           console.log("SIGN UP SUCCESS")
 
@@ -878,6 +895,7 @@ export default function FormNew() {
                           createdAt: Timestamp.now().toDate(),
                           doctors: doctors,
                           paymentPlan: paymentPlan,
+                          password: gV.password,
                           
                         },
                     },
@@ -889,6 +907,8 @@ export default function FormNew() {
 
                  /* Payment Step */
                  if (activeStep == 4) {
+
+                 
 
 
                   AmountCalculator(mainPayAmount);
@@ -915,6 +935,7 @@ export default function FormNew() {
                           doctors: doctors,
                           paymentPlan: paymentPlan,
                           payTotalWithoutTax: gV.payTotal,
+                          password: gV.password,
                           
                         }),
                     },
