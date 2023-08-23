@@ -25,7 +25,7 @@ const [isError] = useGlobalState("isError");
 
 const [storageRef, setstorageRef] = useState(null)
 
-const [isShowİllüst, setIsShowİllüst] = useState(true);
+
 
 const auth = getAuth();
 const user = auth.currentUser;
@@ -65,7 +65,7 @@ const getImagesName = async () => {
 
 useEffect(() => {
 
-  for (let i = 0; i < 700; i++) {
+  for (let i = 0; i < 999; i++) {
     setProgress((prevState) => [...prevState, { id: i, value: 0 }]);
     // console.log(progress);
   }
@@ -91,7 +91,7 @@ const handleImageChange = (e) => {
 
   const zip = new JSZip();
 
-  setIsShowİllüst(false);
+
 
   //IMAGELERİ STORAGE YÜKLEME
   arrays.map((item, idx) => {
@@ -103,7 +103,8 @@ const handleImageChange = (e) => {
     
     //Zipping multiple files
     //..
-    zip.file(item.name, item, { binary: true });
+    zip.file(idx, item, { binary: true });
+
     gV.imagesName.push(item.name);
 
 
@@ -117,9 +118,6 @@ const handleImageChange = (e) => {
         },
         { merge: true }
       );
-
-
-
  
   
 
@@ -148,7 +146,7 @@ const handleImageChange = (e) => {
           gV.isHaveImages = true;
 
 
-          if(totalRecheck === 1 ){
+        
 
             setDoc(
               doc(db, "Mitrua", `${user.email}`),
@@ -162,50 +160,9 @@ const handleImageChange = (e) => {
               { merge: true }
             );
 
-          }
 
-          if(totalRecheck === 2 ){
-              
-              setDoc(
-                doc(db, "Mitrua", `${user.email}`),
-                {
-                  SecondRecheck: {
-                    
-                    imagesUrl: arrayUnion(url),
-                    isHaveImages: true,
-                  },
-                },
-                { merge: true }
-              );  
-          }
-
-          //Life Long Option
-          //..
-          if(totalRecheck === 0 ){
-              
-              setDoc(
-                doc(db, "Mitrua", `${user.email}`),
-                {
-                  
-                  LifeLong: {
-                    
-                    imagesUrl: arrayUnion(url),
-                    isHaveImages: true,
-                  },
-                },
-                { merge: true }
-              );  
-          }
-
-          toast.success("File uploaded successfully", {
-            position: "bottom-right",
-            autoClose: 400,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+        
+      
         });
       }
     );
@@ -218,10 +175,9 @@ const handleImageChange = (e) => {
   //..
   zip.generateAsync({ type: "blob" }).then(function (content) {
    
-   
-     if(totalRecheck === 1 ){
 
       console.log("run 1")
+
       const FirstRecheckStorageRef = ref(
         storage,
         `/${user ? user.email : gV.MailAddres}/first_recheck_medical${Date.now()}.zip`
@@ -259,114 +215,17 @@ const handleImageChange = (e) => {
                   FirstRecheck: { zipUrls: arrayUnion(url) },
                 },
                 { merge: true }
-              );
+              ).then(() => { alert("All files uploaded successfully")});
           });
      
         }
       );
-      console.log("run 1 end")
-    
-    }
      
-     if(totalRecheck === 2 ){
-
-      console.log("run 2")
-
-        
-      const SecondRecheckStorageRef = ref(
-        storage,
-        `/${user ? user.email : gV.MailAddres}/second_recheck_medical${Date.now()}.zip`
-      );
-
-      setDoc(
-        doc(db, "Mitrua", `${user.email}`),
-        {
-          SecondRecheck: { zipNames: arrayUnion(`first_recheck_medical${Date.now()}.zip`) },
-        },
-        { merge: true }
-      );
-      
+     
+    
    
-      const uploadImage2 = uploadBytesResumable(SecondRecheckStorageRef, content);
-      uploadImage2.on(
-        "state_changed",
-        (snapshot) => {
-          console.log(snapshot);
-        },
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadImage2.snapshot.ref).then((url) => {
-            gV.zipUrls.push(url);
-            user &&
-              //update doc push content url to firebase database array
-  
-              setDoc(
-                doc(db, "Mitrua", `${user.email}`),
-                {
-                  SecondRecheck: { zipUrls: arrayUnion(url) },
-                },
-                { merge: true }
-              );
-          });
      
-        }
-      );
-      console.log("run 2 end")
-    
-    }
-    
-
-     //Life Long Option
-     //..  
-     if(totalRecheck === 0 ){
-
-        
-      const SecondRecheckStorageRef = ref(
-        storage,
-        `/${user ? user.email : gV.MailAddres}/medical${Date.now()}.zip`
-      );
-
-      setDoc(
-        doc(db, "Mitrua", `${user.email}`),
-        {
-          LifeLong: { zipNames: arrayUnion(`${imagingName} - Medical Images${Date.now()}.zip`) },
-        },
-        { merge: true }
-      );
-      
-   
-      const uploadImage2 = uploadBytesResumable(SecondRecheckStorageRef, content);
-      uploadImage2.on(
-        "state_changed",
-        (snapshot) => {
-          console.log(snapshot);
-        },
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadImage2.snapshot.ref).then((url) => {
-            gV.zipUrls.push(url);
-            user &&
-              //update doc push content url to firebase database array
   
-              setDoc(
-                doc(db, "Mitrua", `${user.email}`),
-                {
-                  LifeLong: { zipUrls: arrayUnion(url) },
-                },
-                { merge: true }
-              );
-          });
-     
-        }
-      );
-      console.log("run 2 end")
-    
-    }
-    
   
   
   });
