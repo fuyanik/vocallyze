@@ -3,7 +3,7 @@ import PrimaryButton from '../microComponents/primaryButton/primaryButton'
 
 const Informational = () => {
   return (
-    <div className='flex flex-col self-center font-product '>
+    <div className='flex flex-col self-center font-product relative  '>
 
 
 
@@ -23,7 +23,7 @@ const Informational = () => {
  
     </div>
    
-    <div class="max-w-lg">
+    <div class="max-w-lg lg:w-auto w-[90vw] self-center">
       <h2 class="mb-4 text-4xl font-bold">Get your second opinion in 24 hours.</h2>
   
     <div class="space-y-4 text-base">
@@ -70,11 +70,9 @@ const Informational = () => {
 
 
 
-
-
   <div class="lg:container  grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
     
-  <div class="order-2 max-w-lg lg:order-1">
+  <div class="order-2 max-w-lg lg:order-1 lg:w-auto w-[90vw] self-center">
     <h2 class="mb-4 text-4xl">
     Your peace of mind is at the heart of what we do.
 </h2>
@@ -103,7 +101,7 @@ const Informational = () => {
     <img src='https://www.theabr.org/wp-content/uploads/2017/06/ABR-Logo-Horizontal.png'/>
   
   </div>
-  <div class="max-w-lg">
+  <div class="max-w-lg lg:w-auto w-[90vw] self-center">
     <h2 class="mb-4 text-4xl">We work with board-certified radiologists only.</h2>
 
     <div class="space-y-4 text-base">
@@ -119,10 +117,10 @@ const Informational = () => {
   <div class="lg:container lg:grid place-items-center gap-8 my-16 lg:my-16    lg:grid-cols-2 xl:px-16">
      
 
-  <div class="order-1 lg:order-2">
+  <div class="order-1 lg:order-2 ">
   <img alt="Imaging reports powered by Scanslated" class=" pb-4 mx-auto lg:p-0 cld-responsive lg:w-auto w-[90vw] " lazy="true" width="780" height="446" data-src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_2.0,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png"/>
   </div>
-  <div class="order-1 max-w-lg lg:order-1">
+  <div class="order-1 max-w-lg lg:order-1 lg:w-auto w-[90vw] self-center">
     <h2 class="mb-4 text-4xl">
     You will get a patient friendly and detailed second opinion report.</h2>
 

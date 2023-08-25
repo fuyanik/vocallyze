@@ -29,12 +29,12 @@ const Contact = () => {
       <div className="human-error">
           <div className="human-error-main">
               
-                 <div style={{width:"68%"}} className="">
+                 <div className="">
 
-                        <div className="human-error-main-header-left font-product">
+                        <div className=" font-product">
                            
                            
-                            <h4 className='font-product text-black text-[36px] lg:w-full w-[60%]'>Have questions? We have answers.</h4>
+                            <h4 className='font-product text-black text-[36px] lg:w-full w-[80%]'>Have questions? We have answers.</h4>
 
                             <div className='flex flex-col' style={{gap:"13px"}} >
 
