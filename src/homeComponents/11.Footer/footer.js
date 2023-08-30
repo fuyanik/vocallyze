@@ -61,83 +61,62 @@ const Footer = ({marginTop}) => {
 
         <div className="footer-main-right">
           <ul>
-            <p className="footer-main-rgiht-header">Facts</p>
+            <p className="footer-main-rgiht-header">Services</p>
             <Link className="style-none" to="/human-error">
-              <li>Human Error</li>
+              <li>MRI</li>
             </Link>
             <Link to="/missed-diagnosis">
               {" "}
-              <li>Missed Diagnosis</li>{" "}
+              <li>Mammogram</li>{" "}
             </Link>
             <Link to="/early-detection">
               {" "}
-              <li>Early Detection</li>{" "}
+              <li>Ultrasound</li>{" "}
             </Link>
             <Link to="/statistics">
               {" "}
-              <li>Statistics</li>{" "}
+              <li>CT Scan</li>{" "}
             </Link>
             <Link to="/resources">
               {" "}
-              <li>Resources</li>{" "}
+              <li>X-Ray</li>{" "}
+            </Link>
+            <Link to="/resources">
+              {" "}
+              <li>Full Body Scan</li>{" "}
+            </Link>
+            <Link to="/resources">
+              {" "}
+              <li>Pregnancy</li>{" "}
             </Link>
           </ul>
 
           <ul>
-            <p className="footer-main-rgiht-header">Recheck </p>
+            <p className="footer-main-rgiht-header">About </p>
             <Link to="/how-works">
               {" "}
-              <li>How It Works</li>{" "}
+              <li>Why Second Opinion</li>{" "}
             </Link>
-            <Link to="/technology">
+            <Link to="/radiology-team">
               {" "}
-              <li>Technology</li>{" "}
+              <li>Radiology Team</li>{" "}
             </Link>
             <Link to="/journey-mammogram">
               {" "}
-              <li>Journey of a Mammogram</li>{" "}
+              <li>Sample Reports</li>{" "}
+            </Link>
+            <Link to="/contact">
+              {" "}
+              <li>Help</li>{" "}
             </Link>
             <Link to="/what-next">
               {" "}
-              <li>What is Next?</li>{" "}
+              <li>FAQ</li>{" "}
             </Link>
           </ul>
 
-          <ul>
-            <p className="footer-main-rgiht-header">People</p>
-            <Link to="/stories">
-              {" "}
-              <li>Stories</li>{" "}
-            </Link>
-            <Link to="/donate">
-              {" "}
-              <li>Donate</li>{" "}
-            </Link>
-            <Link to="/research-fund">
-              {" "}
-              <li>Research Fund</li>{" "}
-            </Link>
-          </ul>
-
-          <ul>
-            <p className="footer-main-rgiht-header">Help</p>
-            <Link to="/contact">
-              {" "}
-              <li>Contact</li>{" "}
-            </Link>
-            <Link to="/faq">
-              {" "}
-              <li>FAQ</li>
-            </Link>
-            <Link to="/stage-4-support">
-              {" "}
-              <li>Stage 4 Support</li>{" "}
-            </Link>
-            <Link to="/breast-exam-reminder">
-              {" "}
-              <li>Breast Self-Exam Reminder</li>{" "}
-            </Link>
-          </ul>
+         
+        
         </div>
       </div>
     </div>

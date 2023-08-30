@@ -91,7 +91,7 @@ export default function MobileFooterCustomizedAccordions() {
               display: "inline",
               width: "100%",
 
-          }} >Facts</Typography>
+          }} >Services</Typography>
         </AccordionSummary>
 
         <AccordionDetails>
@@ -99,11 +99,14 @@ export default function MobileFooterCustomizedAccordions() {
           <ul  className="mobile-footer-accordion-list">
              
          
-          <Link className="style-none" to="/human-error">  <li>Human Error</li> </Link>
-          <Link className="style-none" to="/missed-diagnosis"><li>Missed Diagnosis</li> </Link>
-          <Link className="style-none" to="/early-detection">  <li>Early Detection</li> </Link>
-          <Link className="style-none" to="/statistics">   <li> Statistics</li> </Link>
-          <Link className="style-none" to="/resources"> <li> Resources</li> </Link>
+          <Link className="style-none" to="/human-error">  <li>MRI</li> </Link>
+          <Link className="style-none" to="/missed-diagnosis"><li>Mammogram</li> </Link>
+          <Link className="style-none" to="/early-detection">  <li>Ultrasound</li> </Link>
+          <Link className="style-none" to="/statistics">   <li> Ct Scan</li> </Link>
+          <Link className="style-none" to="/resources"> <li> X-Ray</li> </Link>
+          <Link className="style-none" to="/resources"> <li> Full Body Scan</li> </Link>
+          <Link className="style-none" to="/resources"> <li> Pregnancy</li> </Link>
+     
           
           
            </ul>
@@ -122,81 +125,25 @@ export default function MobileFooterCustomizedAccordions() {
               fontSize: "17.6px",
               fontWeight: "500"
 
-          }} >Recheck</Typography>
+          }} >About</Typography>
         </AccordionSummary>
        
         <AccordionDetails>
         <ul  className="mobile-footer-accordion-list">
              
          
-        <Link  className="style-none" to="/how-works">  <li>How it Works</li> </Link>
-        <Link  className="style-none" to="/technology">    <li>Technology</li></Link>
-        <Link  className="style-none" to="/journey-mammogram">    <li>Journey of a Mammogram</li></Link>
-        <Link  className="style-none" to="/what-next">   <li>What is Next? </li></Link>
-        <Link  className="style-none" to="/radiology-team">   <li> Radiology Team</li></Link>
+        <Link  className="style-none" to="/how-works">  <li>Why Second Opinion</li> </Link>
+        <Link  className="style-none" to="/radiology-team">    <li>Radiology Team</li></Link>
+        <Link  className="style-none" to="/">    <li>Sample Reports</li></Link>
+        <Link  className="style-none" to="/contact">   <li>Help </li></Link>
+        <Link  className="style-none" to="/radiology-team">   <li> FAQ</li></Link>
         <Link  className="style-none" to="/recheck-report-samples">      <li> Report Samples</li></Link>
              
              
               </ul>
         </AccordionDetails>
       </Accordion>
-      <Accordion
-        expanded={expanded === "panel3"}
-        onChange={handleChange("panel3")}
-      >
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography style={{
-              color: "#000000",
-              fontFamily : "ProductSans-Light",
-              fontSize: "17.6px",
-              fontWeight: "500"
-
-          }}  >People</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <ul  className="mobile-footer-accordion-list">
-             
-         
-        <Link className="style-none" to="/our-story">     <li>Our Story</li> </Link>
-        <Link className="style-none" to="/stories">    <li>Number</li> </Link>
-        <Link className="style-none" to="/numbers">     <li>Stories</li> </Link>
-        <Link className="style-none" to="/donate">    <li>Donate </li>  </Link>
-        <Link className="style-none" to="/research-fund">   <li> Research Fund</li> </Link>
-        <Link className="style-none" to="/join-team">      <li> Join the Team</li> </Link>
-             
-             
-              </ul>
-     
-        </AccordionDetails>
-      </Accordion>
-
-
-      <Accordion
-        expanded={expanded === "panel4"}
-        onChange={handleChange("panel4")}
-      >
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography style={{
-              color: "#000000",
-              fontFamily : "ProductSans-Light",
-              fontSize: "17.6px",
-              fontWeight: "500"
-
-          }}  >Help</Typography>
-        </AccordionSummary>
-         <AccordionDetails>
-         
-            <ul  className="mobile-footer-accordion-list">
-          
-             <Link  className="style-none" to="/contact">   <li>Contact</li> </Link>
-             <Link  className="style-none" to="/faq">  <li>FAQ</li> </Link>
-             <Link  className="style-none" to="/stage-4-support">   <li>Stage 4 Support</li> </Link>
-             <Link  className="style-none" to="/copy-mammogram"><li>Getting a Copy of Yout Mammogram </li> </Link>
-             
-              </ul>
-     
-        </AccordionDetails>
-      </Accordion>
+  
     </div>
   );
 }

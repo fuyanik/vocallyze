@@ -71,7 +71,7 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
   const leftValue = gV.mq.matches ? "-7%" : "-28%";
 
   const [zipUrls, setZipUrls] = useState([]);
-  const docRef = doc(db, "VitamuUsersREAL", `${user.email}`);
+  const docRef = doc(db, "Mitrua", `${user.email}`);
 
   const getResult = async () => {
 

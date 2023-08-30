@@ -373,7 +373,7 @@ const Home = () => {
        
       
      
-       { /*mq.matches ? <MobileFooter/> : <Footer/> */}
+       { mq.matches ? <MobileFooter/> : <Footer/> }
 
        
     
