@@ -106,7 +106,7 @@ const Home = () => {
        
     
     
-       <Radiologists/>
+       <Radiologists isOutside={true}/>
        <div >
         <HealthHub/>
        </div>

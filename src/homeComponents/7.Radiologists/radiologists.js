@@ -8,8 +8,9 @@ import { useState } from "react";
 import BiRadsDropdown from "../BiRadsDropdown/biRadsDropdown";
 import PrimaryButton from "../microComponents/primaryButton/primaryButton";
 import gV from "../../gV"
+import { Link } from "react-router-dom";
 
-const Radiologists = ({isBiradsPage = false, isTeamPage = false} ) => {
+const Radiologists = ({isOutside = false, isTeamPage = false} ) => {
 
     const [isHover, setIsHover] = useState(false);
 
@@ -395,7 +396,9 @@ return (
         <PrimaryButton  onMouse={() => setIsHover(true)} />
       
       </div>
-      <div className="px-6 py-2 relative bottom-3 lg:bottom-0 flex items-start justify-center font-product  border self-center border-black rounded-full text-black"> Meet the Team</div>
+    { isOutside &&  <Link to={"/radiology-team"}>
+        <div className="px-6 hover:bg-black hover:text-white duration-500 py-2 relative bottom-3 lg:bottom-0 flex items-start justify-center font-product  border self-center border-black rounded-full text-black"> Meet the Team</div>
+      </Link>}
     </div>
   </div>
 );
