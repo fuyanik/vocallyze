@@ -95,6 +95,10 @@ const Footer = ({marginTop}) => {
             <p className="footer-main-rgiht-header">About </p>
             <Link to="/how-works">
               {" "}
+              <li>How It Works</li>{" "}
+            </Link>
+            <Link to="/why-second-opinion">
+              {" "}
               <li>Why Second Opinion</li>{" "}
             </Link>
             <Link to="/radiology-team">

@@ -285,6 +285,20 @@ return (
               }}
               className=" flex flex-col w-[16vw] h-fit mt-7 top-0 py-4 px-2  font-normal self-center  absolute bg-white border shadow-2xl  rounded-2xl"
             >
+
+<div
+                onMouseMove={() => {
+                  setAboutDrop(1);
+                }}
+                className={`px-4 py-2  ${
+                  aboutDrop == 1 && "bg-[#F6F5F5]"
+                } rounded-lg duration-300`}
+              >
+               <Link to={"/how-works"}>
+                 {" "}
+                 <p> How It Works</p>{" "}
+               </Link>
+              </div>
               
               <div
                 onMouseMove={() => {
@@ -294,7 +308,7 @@ return (
                   aboutDrop == 2 && "bg-[#F6F5F5]"
                 } rounded-lg duration-300`}
               >
-               <Link to={"/how-works"}>
+               <Link to={"/why-second-opinion"}>
                  {" "}
                  <p> Why Second Opinion?</p>{" "}
                </Link>
@@ -522,7 +536,12 @@ return (
                   <div className=" animate-fadeIn  font-normal">
                     <div className="h-[1px] w-full bg-slate-200"> </div>
                     <div className=" pl-3 pt-1 text-[17px] flex flex-col gap-1 ">
-                      <Link to="/how-works">
+
+                    <Link to="/how-works">
+                        <p>How It Works</p>
+                      </Link>
+
+                      <Link to="/why-second-opinion">
                         <p>Why Second Opinion</p>
                       </Link>
                  
@@ -626,7 +645,7 @@ return (
           <p className="text-sm ">
             {" "}
             Discover the range of diagnostic and preventative scanning services
-            we provide.{" "}
+            we provide second opinions.{" "}
           </p>
         </div>
 
@@ -634,7 +653,7 @@ return (
         <div className="flex flex-col gap-8 pr-3 ">
           <div className="flex flex-col gap-1">
             <p className="text-[24px] font-bold "> Diagnostic </p>
-            <p className="text-sm "> Scans to diagnose symptoms. </p>
+            <p className="text-sm ">Second opinions to diagnose symptoms. </p>
           </div>
 
           <div className="flex flex-col gap-5">
@@ -871,7 +890,7 @@ return (
         <div className="flex flex-col gap-8 pr-3 ">
           <div className="flex flex-col gap-1">
             <p className="text-[24px] font-bold "> Preventative </p>
-            <p className="text-sm "> Scans to detect anomalies.</p>
+            <p className="text-sm "> Second opinions to detect anomalies.</p>
           </div>
 
           <div className="flex flex-col gap-5">
@@ -970,15 +989,14 @@ return (
             </div>
           </div>
 
-          <p className="text-lg font-bold"> Not sure what scan you need?</p>
+          <p className="text-lg font-bold"> Need help?</p>
           <p className="text-sm">
-            Our patient service team will be happy to talk you through your
-            options.
+            Our customer services team will be happy to answer your questions.
           </p>
 
           <div className="text-sm border rounded-full px-5 py-2 w-fit bg-white cursor-pointer">
             {" "}
-            Talk to us
+            <a className="style-none"  href="mailto:hello@mitrua.com"> <span>E-Mail Us</span> </a>
           </div>
         </div>
       </div>

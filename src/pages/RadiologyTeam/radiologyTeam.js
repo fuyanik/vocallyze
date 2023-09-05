@@ -37,14 +37,7 @@ const RadiologyTeam = () => {
   
 
       <div style={ gV.mq.matches ? {width:"95%", } : {width:"80%", marginTop:"5vh" }}>
-        <DropdownHeader
-              yellow_title={"Our Radiology Team"}
-              title={"Here at Mitrua, we work with board-certified radiologists. World class experts, centered around you."}
-              subtitle={"Vitamu prioritizes patient-centered care with the help of exceptional, board-certified radiologists who are leaders in their field."}
-              writer={"Elizabeth H. Asch, MD"}
-              date={"Updated on February 12, 2023"}
-              checker={"Priscilla J Slanetz, MD"}
-             />
+      
       </div>
 
 

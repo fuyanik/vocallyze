@@ -41,7 +41,7 @@ const Contact = () => {
                               <t className="text-[24px] font-bold">Visit our <Link className='style-none' to="/faq"><span style={{cursor:"pointer"}} >F.A.Q</span></Link> </t>
                               <t style={{color:"rgb(148, 148, 148)", fontSize:"16px"}}>Drop us an email. We will get back to you in 10 minutes. </t>
                              
-                              <t className="text-[24px] font-bold"><a className="style-none"  href="mailto:hello@mitrua.com"> <span>hello@mitrua.com</span> </a>  </t>
+                              <t className="text-[24px] font-bold"> <a className="style-none"  href="mailto:hello@mitrua.com"> <span>hello@mitrua.com</span> </a>  </t>
                               <t style={{color:"rgb(148, 148, 148)", fontSize:"16px"}}> In a rush? Give us a call</t>
                              
                               <t className="text-[24px] font-bold"><span>+1 646 820 1932</span></t>

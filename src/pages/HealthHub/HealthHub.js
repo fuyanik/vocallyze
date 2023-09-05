@@ -8,7 +8,7 @@ import imageSvg4 from  "../../assets/svg/image-4.svg"
 import imageSvg5 from  "../../assets/svg/image-5.svg"
 import gV from '../../gV';
 
-const HealthHub = () => {
+const HealthHub = ({isOutside = false}) => {
 
 
     const [selected, setSelected] = React.useState(0);
@@ -112,7 +112,7 @@ const HealthHub = () => {
   return (
     <>
        
-        {true && 
+        {!isOutside && 
      
      <Navbar
       mobileMenuText={'Menu'}
@@ -132,11 +132,10 @@ const HealthHub = () => {
                 <div className='flex   justify-between'>
 
                     <div className='flex flex-col gap-2'>
-                        <p className='text-[28px] lg:text-[32px] font-bold'> MRI Scanning Body Parts</p>
+                        <p className='text-[28px] lg:text-[32px] font-bold'>  Scanning Body Parts</p>
                         <p>Choose a body part to learn more</p>
                     </div>
 
-                    <div className='text-white bg-black rounded-lg px-5 py-3 h-fit lg:flex hidden '>Book a private MRI scan</div>
 
 
                 </div>

@@ -132,7 +132,8 @@ export default function MobileFooterCustomizedAccordions() {
         <ul  className="mobile-footer-accordion-list">
              
          
-        <Link  className="style-none" to="/how-works">  <li>Why Second Opinion</li> </Link>
+        <Link  className="style-none" to="/how-works">  <li>How It Works</li> </Link>
+        <Link  className="style-none" to="/why-second-opinion">  <li>Why Second Opinion</li> </Link>
         <Link  className="style-none" to="/radiology-team">    <li>Radiology Team</li></Link>
         <Link  className="style-none" to="/">    <li>Sample Reports</li></Link>
         <Link  className="style-none" to="/contact">   <li>Help </li></Link>

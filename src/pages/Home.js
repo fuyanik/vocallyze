@@ -108,7 +108,7 @@ const Home = () => {
     
        <Radiologists isOutside={true}/>
        <div >
-        <HealthHub/>
+        <HealthHub isOutside={true} />
        </div>
 
           {/* Why choose scan */}
@@ -362,17 +362,6 @@ const Home = () => {
          <Informational/>
         
 
-       
-       
-    
-       
-      
-       
-
-
-       
-      
-     
        { mq.matches ? <MobileFooter/> : <Footer/> }
 
        

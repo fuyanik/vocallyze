@@ -28,6 +28,7 @@ import HealthHubFrame from './pages/iframes/HealthHubFrame';
 import RadiologyTeam from './pages/RadiologyTeam/radiologyTeam';
 import Contact from './pages/DropdownPages/Help/Contact';
 import FormNewPayment from './pages/Forms/FormNewPaymen';
+import WhySecondOpinion from './pages/WhySecondOpinion/WhySecondOpinion';
 
 
   
@@ -74,6 +75,7 @@ export default function App() {
             <Route path="/how-works" element={<HowWorks/>} />
             <Route path="/radiology-team" element={<RadiologyTeam/>} />
             <Route path="/contact" element={<Contact/>} />
+            <Route path="/why-second-opinion" element={<WhySecondOpinion/>} />
 
 
             <Route path="/health-hub-iframe" element={<HealthHubFrame/>} />
