@@ -168,13 +168,13 @@ const HowWorks = () => {
               <span class="md:hidden">Mitrua.com</span>
               <img alt="Mitrua.com Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"/>
             </td>
-            <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">NHS</td>
+            <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Hospital</td>
             <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Private <span class="hidden sm:inline">Hospital</span></td>
           </tr>
         </thead>
         <tbody>
             <tr>
-              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Your scan</td>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Second Opinion</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -246,7 +246,7 @@ const HowWorks = () => {
               </td>
             </tr>
             <tr>
-              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Self refer without a GP letter</td>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Second opinion from two radiologists</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -274,7 +274,7 @@ const HowWorks = () => {
               </td>
             </tr>
             <tr>
-              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Pre-scan clinician call</td>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Ask a radiologist</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -302,7 +302,7 @@ const HowWorks = () => {
               </td>
             </tr>
             <tr>
-              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Post-scan clinician call</td>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Result in 24 hours</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -330,7 +330,7 @@ const HowWorks = () => {
               </td>
             </tr>
             <tr>
-              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Patient-friendly report powered by Scanslated</td>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Patient-friendly report</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -358,7 +358,7 @@ const HowWorks = () => {
               </td>
             </tr>
             <tr>
-              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Online booking with appointment availability</td>
+              <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Fully online process</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">

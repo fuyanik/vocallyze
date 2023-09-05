@@ -64,6 +64,12 @@ const WhySecondOpinion = () => {
                 <p> In some cases, having a second opinion can provide a level of medicolegal protection for both patients and healthcare providers. It demonstrates due diligence and a commitment to ensuring the accuracy of the diagnosis.</p>
             </div>
 
+           
+            <div className='flex flex-col gap-2 rounded-lg relative  px-6 py-4 '> 
+             At Mitrua.com, you can get a radiology second opinion by two U.S. board-certified radiologists. Super detailed reports delivered in 24 hours – starting at $20. 
+              </div>
+
+
             <div className='flex flex-col gap-2 rounded-lg relative  px-6 py-4 '>
 
             {isHover && (
