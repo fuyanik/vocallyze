@@ -6,8 +6,8 @@ const MRI = () => {
     <>
     <Services
     title={'MRI'}
-    imageUrl={'https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,w_500/v1/images/services/mri-hero_jpg.jpg' }
-    heroText={"We've made it easier than ever to book a private MRI scan near you. By partnering with over 150 scanning centres across the UK, we're able to show you every available option - from prices to locations to services - to help you make the best decision for you."}
+    imageUrl={'https://vitamu.imgix.net/WhatsApp%20Image%202023-09-07%20at%2002.34.11.jpeg' }
+    heroText={"Get your MRI second opinion today. A super clear second opinion report by two U.S. board certified radiologist, results in 24 hours."}
     />
     </>
   )

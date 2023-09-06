@@ -358,6 +358,7 @@ return (
             {radiologists.map((item, index) => (
               <div key={index} className="doctor-section__item ">
                 <img
+                
                   class={`doctor-img-mobile ${index == 8 ? "mr-10" : ""}`}
                   srcset={gV.mq.matches ? item.img_mob : item.img }
                 />

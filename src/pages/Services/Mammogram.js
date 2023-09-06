@@ -7,8 +7,7 @@ const Mammogram = () => {
 
    <Services
     title={'Mammogram'}
-    imageUrl={'https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,w_500/v1/images/services/mri-hero_jpg.jpg' }
-    heroText={"We've made it easier than ever to book a private MRI scan near you. By partnering with over 150 scanning centres across the UK, we're able to show you every available option - from prices to locations to services - to help you make the best decision for you."}
+    imageUrl={'https://images.unsplash.com/photo-1579154341098-e4e158cc7f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80' }
     />
     
     

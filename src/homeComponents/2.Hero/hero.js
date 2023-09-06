@@ -95,7 +95,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
          
            <p className="mt-10 lg:mt-[72px]">second opinion </p>
         </div>
-         <p className="lg:text-[17px] text-[20px] " >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
+         <p className="lg:text-[17px] text-[17px] " >Radiology second opinions from U.S. board-certified radiologists. Results in 24 hours.</p>
    
       {  
 
