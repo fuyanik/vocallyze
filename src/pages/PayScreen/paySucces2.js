@@ -11,7 +11,7 @@ const PaySucces2 = () => {
   useEffect(() => {
 
     // wait 1 second 
-    setTimeout(() => { navigate('/pay-succes')}, 1000)
+    navigate('/pay-succes')
    
 
   }, [])

@@ -763,14 +763,7 @@ export default function FormNew() {
   //...
   const handleSignup = async  () => {
 
-    var templateParams = {
-      user_name: name,
-      user_email: mail,
-      password: gV.password,
-    };
-    //send email
 
-      !user && emailjs.send('service_8ey3p9f', 'template_ut7vege', templateParams, 'xBTh1qYqTM9n5L1_P')
 
     try {
 
@@ -800,6 +793,15 @@ export default function FormNew() {
 
 
     }
+
+    var templateParams = {
+      user_name: name,
+      user_email: mail,
+      password: gV.password,
+    };
+    //send email
+
+      user && emailjs.send('service_i7knjsi', 'template_oazumi8', templateParams, 'xBTh1qYqTM9n5L1_P')
   };
 
     

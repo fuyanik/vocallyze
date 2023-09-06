@@ -53,8 +53,8 @@ const fetchData = async (totalValue) => {
        items: [{ 
         amount:  totalValue,
         user_mail: user.email,
-        name: "asdsd",
-        id: "vitamu", 
+        name: user.name,
+        id: "mitrua", 
       
       }
       ],
