@@ -12,6 +12,7 @@ import PayScreen from './pages/PayScreen/payScreen';
 import FormNew from './pages/Forms/FormNew';
 import SwiperPage from './pages/Swiper/swiper';
 import PaySucces from './pages/PayScreen/paySucces';
+import PaySucces2 from './pages/PayScreen/paySucces2';
 import UserPanel from './pages/UserPanel/userPanel';
 import Hero from './homeComponents/2.Hero/hero';
 import Login from './pages/Auth/login';
@@ -45,7 +46,9 @@ export default function App() {
             <Route path="/form-new-payments" element={<FormNewPayment/>} />
           
             <Route path="/pay-screen" element={<PayScreen/>} />
+
             <Route path="/pay-succes" element={<PaySucces/>} />
+            <Route path="/pay-succes2" element={<PaySucces2/>} />
             <Route path="/user-panel" element={<UserPanel/>} />
 
            
