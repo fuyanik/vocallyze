@@ -3,13 +3,14 @@ import { useEffect,useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc, getDoc, arrayUnion, updateDoc   } from "firebase/firestore"; 
 import { db } from '../../firebase';
-import { getAuth } from 'firebase/auth';
+
 import { deleteDoc } from 'firebase/firestore';
 import { useRef } from 'react';
 import lottie from 'lottie-web';
 import './style/paySucces.css'
 import { getAnalytics, logEvent } from "firebase/analytics";
 import gtag from 'ga-gtag';
+import { getAuth } from 'firebase/auth';
 
 
 
@@ -21,11 +22,18 @@ const PaySucces = () => {
   const logo = useRef(null)
   const [count, setCount] = useState(6);
 
+
   const auth = getAuth();
   const user =  auth.currentUser;
   
  
+  
+  
+ 
   const updatePay = async ()  => {
+
+    const auth = getAuth();
+    const user =  auth.currentUser;
 
      if (user) {
        //fetch firebase data firestore
@@ -116,7 +124,7 @@ const PaySucces = () => {
   let navigate = useNavigate();
   
      setTimeout(() => {
-     navigate("/user-panel") 
+     user &&   navigate("/user-panel") 
     }, 6000);
 
 
