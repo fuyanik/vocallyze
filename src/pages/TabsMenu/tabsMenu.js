@@ -82,9 +82,9 @@ const TabsMenu = ({isMore = false}) => {
 
         <div  className='tabs-menu__item2'>
           
-          <div className={` duration-300 bg-[#000000] h-[82%] w-[26.8%] left-[2%] ${active == 6 && " w-[26.4%] left-[30%]"} ${active == 7 && " w-[26.4%] left-[55.4%]"} ${active == 8 && " w-[14.9%] left-[83.5%]"} rounded-[20px]  -z-10 absolute`}></div>
+          <div className={` duration-300 bg-[#000000] h-[82%] ${active == 4 && " w-[26.8%] left-[2%]"}  ${active == 5 && " w-[26.8%] left-[2%]"}  ${active == 6 && " w-[26.4%] left-[30%]"} ${active == 7 && " w-[26.4%] left-[55.4%]"} ${active == 8 && " w-[14.9%] left-[83.5%]"} rounded-[20px]  -z-10 absolute`}></div>
          
-          <p className={`   ${ (active != 6 && active != 7 &&  active != 8 )  ?  "text-[#fff] " : "text-[#000000] "  }   ${active == 5  &&  "text-[#fff] "}  `} onClick={()=>{setActive(5); setGlobalState("userPanelNavIndex", 5)  } } >   Self - Exam    </p>
+          <p className={`   ${active == 5  &&  "text-[#fff] "}  `} onClick={()=>{setActive(5); setGlobalState("userPanelNavIndex", 5)  } } >   Self - Exam    </p>
           
           <p className={` text-[#000000]   ${active == 6 &&  "text-[#fff] "}   `} onClick={()=>{setActive(6); setGlobalState("userPanelNavIndex", 6) }  }>  Upgrade   </p>
          

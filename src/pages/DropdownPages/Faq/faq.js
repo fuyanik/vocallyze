@@ -22,6 +22,7 @@ const Faq = ({isOutside = false}) => {
 
   return (
     <>
+   { !isOutside && <Navbar/>}
 
 
   <Helmet>
@@ -36,7 +37,7 @@ const Faq = ({isOutside = false}) => {
          
           <div className='mt-4'></div>
         
-         <div className={`lg:flex lg:flex-col  ${isOutside ?  "lg:w-[64%]" : "lg:w-[44%]"} `} >
+         <div className={`lg:flex lg:flex-col  ${isOutside ?  "lg:w-[36%]" : "lg:w-[44%]"} `} >
            <DropdownHeader
               display={false}
               yellow_title={"FAQ"}

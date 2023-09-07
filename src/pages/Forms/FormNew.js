@@ -28,6 +28,7 @@ import { Timestamp } from "firebase/firestore";
 import Insurance from "./components/Insurance";
 import AvailableRadiologists from "./components/availableRadiologists";
 import emailjs from 'emailjs-com';
+import SampleReports from "../DropdownPages/SampleReports/SampleReports";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -450,6 +451,7 @@ export default function FormNew() {
 
 
     const [isPopupOpen, setIsPopupOpen] = useState(false)
+    const [isPopupOpen2, setIsPopupOpen2] = useState(false)
     const [isDropdown, setDropdown] = useState(false)
     const [dropdownText, setDropdownText] = useState("Choose your answer.")
 
@@ -482,7 +484,7 @@ export default function FormNew() {
             Contact Details
           </p>
       
-          <p className="text-[16px] mt-1 font-bold text-pri">
+          <p  className="text-[16px] mt-1 font-bold text-pri">
             {" "}
             Step {activeStep + 1} of 5
           </p>
@@ -758,6 +760,9 @@ export default function FormNew() {
    function onDismiss() {
     setIsPopupOpen(false);
   }
+   function onDismiss2() {
+    setIsPopupOpen2(false);
+  }
 
    //Sing up user
   //...
@@ -817,15 +822,22 @@ export default function FormNew() {
       close={false}
       />
 
+      <Popup
+        open={isPopupOpen2}
+        onDismiss={onDismiss2}
+        contents={<SampleReports isOutside={true} />}
+      
+      />
+
        
       <div className="w-screen  flex flex-col items-center gap-3 lg:gap-6 font-product ">
       
       
 
-        <div className="mt-12 lg:mt-16 "></div>
+        <div className="mt-14 lg:mt-16 "></div>
           
           {/*  Stepper */}
-        <Stack sx={ gV.mq.matches ? { width: "100%" }  : { width: "55%" } } spacing={5}>
+       { false && <Stack sx={  gV.mq.matches ? { width: "100%" }  : { width: "55%" } } spacing={5}>
           <Stepper
             alternativeLabel
             activeStep={activeStep}
@@ -837,7 +849,11 @@ export default function FormNew() {
               </Step>
             ))}
           </Stepper>
-        </Stack>
+        </Stack>}
+
+
+          <div onClick={()=>{setIsPopupOpen2(true)}} className="self-start  flex items-center gap-5 left-5 relative border border-black px-4 py-1 rounded-full">  <p>Want to see a sample report? </p> <img className="h-5" width="20" height="5" src="https://img.icons8.com/ios/50/expand-arrow--v1.png" alt="expand-arrow--v1"/> </div>
+
 
 
         {activeStep == 0 &&  ContactDetail }

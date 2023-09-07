@@ -28,17 +28,15 @@ const Contact = () => {
       mobileMenuText={"Menu"}
       mobileMenuTo={"/mobileNavMenu"}
       />
-      <div className="human-error">
-          <div className="human-error-main">
+      <div className=" w-screen h-full py-[12.8vh] lg:py-[15.8vh] flex flex-col items-center justify-center font-product">
+          <div className=" w-[92vw] lg:w-[66vw]">
               
-                 <div className="">
 
-                        <div className=" font-product">
                            
                            
-                            <h4 className='font-product text-black text-[36px] lg:w-full w-[80%]'>Have questions? We have answers.</h4>
+                            <h4 className='font-product text-black text-[32px] leading-[36px] w-full border-b pb-2'>Have questions? We have answers.</h4>
 
-                            <div className='flex flex-col' style={{gap:"13px"}} >
+                            <div className='flex flex-col gap-2 mt-10'  >
 
                               <t className="text-[24px] font-bold">Visit our <Link className='style-none' to="/faq"><span style={{cursor:"pointer"}} >F.A.Q</span></Link> </t>
                               <t style={{color:"rgb(148, 148, 148)", fontSize:"16px"}}>Drop us an email. We will get back to you in 10 minutes. </t>
@@ -53,12 +51,10 @@ const Contact = () => {
                              
 
 
-                          </div>
 
 
-                       </div>
                           
-                 </div>
+                             </div>
                
                  
             

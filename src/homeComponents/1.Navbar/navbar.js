@@ -333,17 +333,6 @@ return (
                 </div>
               </Link>
 
-              <div
-                onMouseMove={() => {
-                  setAboutDrop(4);
-                }}
-                className={`px-4 py-2  ${
-                  aboutDrop == 4 && "bg-[#F6F5F5]"
-                } rounded-lg duration-300`}
-              >
-                {" "}
-                <p> Sample Reports</p>{" "}
-              </div>
 
               
 
@@ -360,17 +349,21 @@ return (
                  <p> Help</p>{" "}
                </div>
              </Link>
-              <div
-                onMouseMove={() => {
-                  setAboutDrop(7);
-                }}
-                className={`px-4 py-2  ${
-                  aboutDrop == 7 && "bg-[#F6F5F5]"
-                } rounded-lg duration-300`}
-              >
-                {" "}
-                <p> FAQ</p>{" "}
-              </div>
+            
+            <Link to={"/faq"}>
+                <div
+                  onMouseMove={() => {
+                    setAboutDrop(7);
+                  }}
+                  className={`px-4 py-2  ${
+                    aboutDrop == 7 && "bg-[#F6F5F5]"
+                  } rounded-lg duration-300`}
+                >
+                  {" "}
+                  <p> FAQ</p>{" "}
+                </div>
+            </Link>
+          
             </div>
           )}
         </div>
@@ -583,7 +576,9 @@ return (
                       <Link to="/contact">
                         <p>Help</p>
                       </Link>
-                      <p>FAQ</p>
+                      <Link to="/faq">
+                        <p>FAQ</p>
+                      </Link>
                     </div>
                   </div>
                 )}

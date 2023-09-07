@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import gV from '../../../gV'
 import Navbar from '../../../homeComponents/1.Navbar/navbar'
+import PrimaryButton from '../../../homeComponents/microComponents/primaryButton/primaryButton'
 
 
-const SampleReports = () => {
+const SampleReports = ({isOutside = false}) => {
 
 
 
@@ -35,7 +36,7 @@ const SampleReports = () => {
         }
 
         if(tabsNum == 3){
-            setWidth("w-[19.9%]")
+            setWidth("w-[20.9%]")
             setLeft("left-[77.5%]")
         }
 
@@ -50,7 +51,7 @@ const SampleReports = () => {
       return (
       <>
 
-       <div className={`absolute ${left}  ${top}   flex items-center w-[300px] h-[120px]`}>
+       <div className={`absolute ${left}  ${top} hidden    items-center w-[300px] h-[120px]`}>
         
           {/* Explanation Area */} 
            <div className={` text-[#fff] px-4 py-2 font-extralight flex flex-col   absolute lg:w-[245px]  lg:h-[120px] w-[235px] h-[120px] lg:ml-[6vw]  ml-[16vw] rounded-2xl bg-[#000] opacity-0  ${showNum == num ?  "animate-fadeIn" : "hidden" }` }>
@@ -83,7 +84,7 @@ const SampleReports = () => {
       return (
         <>
           
-           <div className=" bg-[#ffffff]    font-product items-center justify-center  tracking-wide  lg:w-auto w-[96vw] px-6 py-3  rounded-3xl relative cursor-pointer">
+           <div className=" bg-[#ffffffca] shadow-sm  border-t   font-product items-center justify-center  tracking-wide  lg:w-auto w-[96vw] px-6 py-3  rounded-3xl relative cursor-pointer">
           
                <div  className={`absolute ${left} ${width}  top-[6px] z-10  lg:h-[70%] h-[80%] bottom-10 bg-[#000000] rounded-2xl duration-300 ease-in-out`}   >  </div> 
           
@@ -179,16 +180,16 @@ const SampleReports = () => {
 
   return (
    <>
-    
+   { !isOutside &&
      <Navbar
       mobileMenuText={"Menu"}
       mobileMenuTo={"/mobileNavMenu"}
-      />
+      />}
 
-     <section className="w-screen font-product  h-auto py-[15vh] overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-6 lg:gap-10 justify-center">
+     <section className={`w-screen font-product   h-auto ${isOutside ? "py-2" : "py-[15vh]"}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-6 lg:gap-10 justify-center`}>
     
     {/*  Header */}
-     <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] '>
+     { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] '>
           
         
             <h1 className='text-[32px] self-center tracking-wide leading-[38px]'> Second Opinion Report Samples </h1>
@@ -197,7 +198,7 @@ const SampleReports = () => {
             <p className="lg:w-[100%]  text-pri lg:text-center">
             Mitrua users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
             </p>
-     </div>
+     </div>}
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
@@ -290,10 +291,13 @@ const SampleReports = () => {
 
      </div>
 
+     <div className='flex flex-col items-center justify-center gap-2'>
+         <PrimaryButton to={"/"} />
+        <div onClick={()=>{ window.scrollTo(0, 0); }} className='absoule right-5 bottom-5 px-6 py-2 rounded-3xl border border-black cursor-pointer'> Scroll to Page</div>
+     </div>
     
      </section>
      
-     <div className='absoule right-10 bottom-10 px-6 py-2 rounded-3xl'> Top to Page</div>
    </>
   );
 }

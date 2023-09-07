@@ -41,7 +41,7 @@ export const SideInformation = () => {
       <div className="bi-rads__right__main__card">
         <div className="bi-rads__right__main__card__header">
           <p className="bi-rads__right__main__card__header__title">
-            Vitamu April 2023 Numbers:
+            Mitrua August 2023 Numbers:
           </p>
           <div className="bi-rads__right__main__card__header__area">
             <p>2.317 rechecks

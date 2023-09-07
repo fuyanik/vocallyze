@@ -18,7 +18,7 @@ const Insurance = () => {
     <header className="flex flex-col gap-2">
      <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
        <p className="text-[22px] font-bold text-pri">
-         Insurances
+         Insurance
        </p>
 
        <p className="text-[16px] mt-1 font-bold text-pri">

@@ -27,24 +27,8 @@ const DropdownHeader = ({yellow_title, title, subtitle, writer, date, checker,di
 
   return (
 
-    <div className="dropdown-page-header">
-      
-      <div className="dropdown-page-header__yellow">
-        <div className='flex gap-1'>
-       <p> We recheck </p>
-       {count == 0 && <p>mammograms.</p>}
-       {count == 1 && <p>ultrasounds.</p>}
-       {count == 2 && <p>breast MRIs</p>}
-       {count == 3 && <p>mammograms.</p>}
-       {count == 4 && <p>ultrasounds.</p>}
-       {count == 5 && <p>breast MRIs.</p>}
-
-       
-      
-       
-        </div>
-        
-      </div>
+    <div className="dropdown-page-header ">
+    
 
       <div className="dropdown-page-header__title">
         {title}

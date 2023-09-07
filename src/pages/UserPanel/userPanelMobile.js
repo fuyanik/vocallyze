@@ -87,19 +87,6 @@ const UserPanelMobile = () => {
   const [count, setCount] = useState(0);
   const [isHover, setIsHover] = useState(false);
  
-  useEffect(() => {
- 
- const interval = setInterval(() => {
-  
-   setCount(count + 1);
-   if(count == 5){
-     setCount(0)
-   }
- }, 2000);
-
-
- return () => clearInterval(interval);
-   }, [count]);
 
 
 

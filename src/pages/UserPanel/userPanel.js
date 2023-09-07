@@ -830,7 +830,7 @@ return (
 
 
             {isSlect6 && (
-              <div className="relative left-[4vw] bottom-[3vh] w-[72vw] animate-fadeIn -z-0">
+              <div className="relative  bottom-[3vh]  animate-fadeIn -z-0">
                 {" "}
                 <Faq isOutside={true} />{" "}
               </div>
