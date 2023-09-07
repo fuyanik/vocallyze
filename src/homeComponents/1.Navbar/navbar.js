@@ -260,14 +260,7 @@ return (
         </Link>
 
 
-        {/* How It Works */}
-        <Link className="z-20" to={"/how-works"}>
-          {" "}
-          <div className="cursor-pointer hover:border-b border-gray-300 duration-500">
-            {" "}
-            <p> How It Works </p>{" "}
-          </div>{" "}
-        </Link>
+       
 
         {/* About */}
         <div
@@ -547,14 +540,7 @@ return (
                 </Link>
               </div>
 
-              {/* How It Works */}
-              <div>
-                <Link to={"/how-works"}>
-                  <div className="flex items-center text-[22px]  gap-2 cursor-pointer">
-                    <p>How It Works </p>
-                  </div>
-                </Link>
-              </div>
+             
 
 
               {/* About */}
