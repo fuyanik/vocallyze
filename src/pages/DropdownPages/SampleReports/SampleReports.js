@@ -142,7 +142,7 @@ const SampleReports = ({isOutside = false}) => {
              <div class="flex flex-col items-center justify-center">
           
              <div onClick={()=>{setTabsNum(2)}} className={`w-[48vw]  h-[11vw] ${tabsNum == 2 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
-             Improper Imaging
+             Incomplete Imaging
               </div>
         
              </div>
@@ -189,7 +189,7 @@ const SampleReports = ({isOutside = false}) => {
      <section className={`w-screen font-product   h-auto ${isOutside ? "py-2" : "py-[15vh]"}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
     
     {/*  Header */}
-     { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] '>
+     { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
           
         
             <h1 className='text-[32px] self-center tracking-wide leading-[38px]'> Second Opinion Report Samples </h1>
@@ -202,7 +202,7 @@ const SampleReports = ({isOutside = false}) => {
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
-     {isOutside && <p className='relative -mt-8 '>Scroll down to see whole report</p>}
+     {isOutside && <p className='relative -mt-9 bg-white text-center z-50 w-full '>Scroll down to see whole report</p>}
 
      {/*  Vertical Reports*/}
      <div className='flex overflow-hidden relative bottom-0  flex-col px-2 gap-10 lg:mt-10'>
@@ -293,10 +293,10 @@ const SampleReports = ({isOutside = false}) => {
 
      </div>
 
-     <div className='flex flex-col items-center justify-center gap-2'>
+    { !isOutside && <div className='flex flex-col items-center justify-center gap-2'>
          <PrimaryButton to={"/"} />
         <div onClick={()=>{ window.scrollTo(0, 0); }} className='absoule right-5 bottom-5 px-6 py-2 rounded-3xl border border-black cursor-pointer'> Scroll to Top</div>
-     </div>
+     </div>}
     
      </section>
      
