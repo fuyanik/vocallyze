@@ -35,7 +35,7 @@ const SampleReports = () => {
         }
 
         if(tabsNum == 3){
-            setWidth("w-[21%]")
+            setWidth("w-[19.9%]")
             setLeft("left-[77.5%]")
         }
 
@@ -85,14 +85,14 @@ const SampleReports = () => {
           
            <div className=" bg-[#ffffff]    font-product items-center justify-center  tracking-wide  lg:w-auto w-[96vw] px-6 py-3  rounded-3xl relative cursor-pointer">
           
-               <div  className={`absolute ${left} ${width} w-[26%] top-[6px] z-10  lg:h-[70%] h-[80%] bottom-10 bg-[#000000] rounded-2xl duration-300 ease-in-out`}   >  </div> 
+               <div  className={`absolute ${left} ${width}  top-[6px] z-10  lg:h-[70%] h-[80%] bottom-10 bg-[#000000] rounded-2xl duration-300 ease-in-out`}   >  </div> 
           
                <div className=" w-full  relative flex items-center justify-center lg:gap-9 gap-5">
           
-                  <p  className={`h-[96%] w-fit ${tabsNum == 0 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(0);  }  } >  Missed Diagnosis </p>
-                  <p  className={`h-[96%] w-fit ${tabsNum == 1 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(1);  } } >  Underdiagnosis </p>
-                  <p  className={`h-[96%] w-fit ${tabsNum == 2 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);   }} >   Incomplete Imaging</p>
-                  <p  className={`h-[96%] w-fit  ${tabsNum == 3 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);   } } >  Urgent Action  </p>
+                  <p  className={`h-[96%]  ${tabsNum == 0 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(0);  }  } >  Missed Diagnosis </p>
+                  <p  className={`h-[96%]  ${tabsNum == 1 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(1);  } } >  Underdiagnosis </p>
+                  <p  className={`h-[96%]  ${tabsNum == 2 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);   }} >   Incomplete Imaging</p>
+                  <p  className={`h-[96%]   ${tabsNum == 3 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);   } } >  Urgent Action  </p>
           
                </div>
           
@@ -270,6 +270,7 @@ const SampleReports = () => {
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-2.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-3.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-4.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-5.png?auto=undefined%2Ccompress'/>
        </div> }
       
        {tabsNum == 3 &&  <div className='relative'>
@@ -281,6 +282,7 @@ const SampleReports = () => {
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-3.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-4.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-5.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-6.png?auto=undefined%2Ccompress'/>
        </div> }
        
        
