@@ -8,26 +8,14 @@ const SampleReports = () => {
 
 
     const [showNum, setShowNum] = useState(0)
-    const [count, setCount] = useState(0);
+
 
     const [tabsNum, setTabsNum] = useState(0)
     
     const [left, setLeft] = useState("left-[1%]")
     const [width, setWidth] = useState("")
 
-    useEffect(() => {
-      
-      const interval = setInterval(() => {
-       
-        setCount(count + 1);
-        if(count == 5){
-          setCount(0)
-        }
-      }, 2000);
-     
-  
-      return () => clearInterval(interval);
-    }, [count]);
+
     
  
 
@@ -74,10 +62,10 @@ const SampleReports = () => {
           
                <div className=" w-full  relative flex items-center justify-center lg:gap-9 gap-5">
           
-                  <p  className={`h-[96%] w-fit ${tabsNum == 0 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(0);  setWidth("w-[26%]"); setLeft("left-[1%]")  }  } >  Missed Diagnosis </p>
-                  <p  className={`h-[96%] w-fit ${tabsNum == 1 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(1);  setWidth("w-[21%]"); setLeft("left-[27%]") } } >  Underdiagnosis </p>
-                  <p  className={`h-[96%] w-fit ${tabsNum == 2 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);  setWidth("w-[26%]"); setLeft("left-[50.5%]") }} >   Incomplete Imaging</p>
-                  <p  className={`h-[96%] w-fit  ${tabsNum == 3 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);  setWidth("w-[21%]"); setLeft("left-[77.5%]")  } } >  Urgent Action  </p>
+                  <p  className={`h-[96%] w-fit ${tabsNum == 0 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(0);  setWidth("w-[26%]"); setLeft("left-[1%]");  }  } >  Missed Diagnosis </p>
+                  <p  className={`h-[96%] w-fit ${tabsNum == 1 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(1);  setWidth("w-[21%]"); setLeft("left-[27%]"); } } >  Underdiagnosis </p>
+                  <p  className={`h-[96%] w-fit ${tabsNum == 2 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);  setWidth("w-[26%]"); setLeft("left-[50.5%]"); }} >   Incomplete Imaging</p>
+                  <p  className={`h-[96%] w-fit  ${tabsNum == 3 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);  setWidth("w-[21%]"); setLeft("left-[77.5%]");  } } >  Urgent Action  </p>
           
                </div>
           

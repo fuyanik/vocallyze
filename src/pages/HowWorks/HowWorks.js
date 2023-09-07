@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import gV from '../../gV'
 import Navbar from '../../homeComponents/1.Navbar/navbar'
 import Footer from '../../homeComponents/11.Footer/footer'
@@ -115,7 +116,9 @@ const HowWorks = ({isOutside = false}) => {
               <p class="mb-1 text-sm font-medium lg:text-base">You will get your second opinion report </p>
               <p class="mb-4 text-xl font-semibold">Tomorrow</p>
               <p class="mb-3 text-sm lg:text-base text-neutral-700">Your second opinion report will be more than a cold and vague radiology report—detailed analysis of the case, radiologist notes, and marked images. </p>
-              <div class= " px-5 py-3 bg-black hover:bg-sec duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
+             <Link to={"/sample-reports"}>
+               <div class= " px-5 py-3 bg-black hover:bg-sec duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
+             </Link>
             </div>
           </div>
         </div>
