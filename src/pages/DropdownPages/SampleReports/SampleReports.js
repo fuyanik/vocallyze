@@ -75,9 +75,9 @@ const SampleReports = () => {
                <div className=" w-full  relative flex items-center justify-center lg:gap-9 gap-5">
           
                   <p  className={`h-[96%] w-fit ${tabsNum == 0 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(0);  setWidth("w-[26%]"); setLeft("left-[1%]")  }  } >  Missed Diagnosis </p>
-                  <p  className={`h-[96%] w-fit ${tabsNum == 1 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(1);  setWidth("w-[17%]"); setLeft("left-[27%]") } } >  Happy Eye </p>
-                  <p  className={`h-[96%] w-fit ${tabsNum == 2 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);  setWidth("w-[26%]"); setLeft("left-[46%]") }} >  Incomplete Imaging </p>
-                  <p  className={`h-[96%] w-fit  ${tabsNum == 3 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);  setWidth("w-[26%]"); setLeft("left-[73%]")  } } >  Over - Diagnosis   </p>
+                  <p  className={`h-[96%] w-fit ${tabsNum == 1 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(1);  setWidth("w-[21%]"); setLeft("left-[27%]") } } >  Underdiagnosis </p>
+                  <p  className={`h-[96%] w-fit ${tabsNum == 2 ? "text-[#ffffff]" : "text-[#000000]" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);  setWidth("w-[26%]"); setLeft("left-[50.5%]") }} >   Incomplete Imaging</p>
+                  <p  className={`h-[96%] w-fit  ${tabsNum == 3 ? "text-[#ffffff]" : "text-[#000000]" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);  setWidth("w-[21%]"); setLeft("left-[77.5%]")  } } >  Urgent Action  </p>
           
                </div>
           
@@ -95,14 +95,14 @@ const SampleReports = () => {
       return (
         <>
          <div class="relative w-[95vw]  overflow-auto">
-          <div class="max-w-md mx-auto bg-slate-200 shadow-xl min-w-0 dark:bg-slate-800 dark:highlight-white/5">
+          <div class="max-w-md mx-auto bg-gray-100 shadow-xl min-w-0 dark:bg-slate-800 dark:highlight-white/5">
            <div class="overflow-x-auto  pb-8 flex ">
             
 
            <div class="flex-none py-2 first:pl-0 last:pr-0">
              <div class="flex flex-col items-center justify-center">
           
-             <div onClick={()=>{setTabsNum(0)}} className={`w-[45vw]  h-[11vw] ${tabsNum == 0 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-xl duration-300` } > 
+             <div onClick={()=>{setTabsNum(0)}} className={`w-[45vw]  h-[11vw] ${tabsNum == 0 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
                 Missed Diagnosis
               </div>
         
@@ -114,8 +114,8 @@ const SampleReports = () => {
              <div class="flex flex-col items-center justify-center">
           
 
-             <div onClick={()=>{setTabsNum(1)}} className={`w-[31vw]  h-[11vw] ${tabsNum == 1 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-xl duration-300` } > 
-             Happy Eye
+             <div onClick={()=>{setTabsNum(1)}} className={`w-[40vw]  h-[11vw] ${tabsNum == 1 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             Underdiagnosis 
               </div>
         
              </div>
@@ -125,8 +125,8 @@ const SampleReports = () => {
            <div class="flex-none py-2 px-1 first:pl-6 last:pr-6">
              <div class="flex flex-col items-center justify-center">
           
-             <div onClick={()=>{setTabsNum(2)}} className={`w-[50vw]  h-[11vw] ${tabsNum == 2 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-xl duration-300` } > 
-                Incomplete Imaging
+             <div onClick={()=>{setTabsNum(2)}} className={`w-[48vw]  h-[11vw] ${tabsNum == 2 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             Improper Imaging
               </div>
         
              </div>
@@ -136,8 +136,8 @@ const SampleReports = () => {
            <div class="flex-none py-2 px-1 first:pl-6 last:pr-6">
              <div class="flex flex-col items-center justify-center">
             
-             <div onClick={()=>{setTabsNum(3)}} className={`w-[44vw]  h-[11vw] ${tabsNum == 3 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-xl duration-300` } > 
-                Over - Diagnosis
+             <div onClick={()=>{setTabsNum(3)}} className={`w-[44vw]  h-[11vw] ${tabsNum == 3 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             Urgent Action
               </div>
         
              </div>
@@ -170,28 +170,24 @@ const SampleReports = () => {
       mobileMenuTo={"/mobileNavMenu"}
       />
 
-     <section className="w-screen font-product  h-auto py-[15vh] overflow-hidden  bg-slate-200 relative flex flex-col items-center gap-6 lg:gap-10 justify-center">
+     <section className="w-screen font-product  h-auto py-[15vh] overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-6 lg:gap-10 justify-center">
     
     {/*  Header */}
-     <div className='flex flex-col gap-4 relative  lg:w-[70vw] items-center justify-center w-[95vw] '>
+     <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] '>
           
         
-            <h1 className='text-[32px] self-center tracking-wide'> Second Opinion Report Samples </h1>
+            <h1 className='text-[32px] self-center tracking-wide leading-[38px]'> Second Opinion Report Samples </h1>
           
           
-            <p className="lg:w-[100%]  text-pri">
-              You got your screening for peace of mind but ended up with some vague
-              term of Birads 3. I am Elizabeth H. Asch, a US board-certified
-              radiologist, and I will try to answer all the questions on your mind.
-              It will take only two minutes to read this piece; please make it to
-              the end.
+            <p className="lg:w-[100%]  text-pri lg:text-center">
+            Mitrua users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
             </p>
      </div>
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
      {/*  Vertical Reports*/}
-     <div className='flex overflow-hidden relative bottom-8  flex-col px-2 gap-10'>
+     <div className='flex overflow-hidden relative bottom-8  flex-col px-2 gap-10 lg:mt-10'>
 
 
       {  tabsNum == 0 && <div className='relative'>
@@ -218,10 +214,10 @@ const SampleReports = () => {
           />
 
 
-           <img className='border-b  lg:w-[70vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/1-1.png'/>
-           <img className='border-b  lg:w-[70vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-2.png'/>
-           <img className='border-b  lg:w-[70vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-3.png'/>
-           <img className='border-b  lg:w-[70vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-4.png'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-2.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-3.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress'/>
        </div> }
 
 
@@ -246,21 +242,30 @@ const SampleReports = () => {
     title={"Yellow Sofa"}
    />
  
-    <img className='border-b  lg:w-[37vw] lg:h-[96vh] h-[80vh]  rounded-lg bg-cover  ' src='https://vitamu.imgix.net/Recheck%20Report%20-%20Sample%20(1)_page-0002.jpg?auto=undefined%2Ccompress'/>
+ <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/2-1.png?auto=undefined%2Ccompress'/>
+ <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/2-2.png?auto=undefined%2Ccompress'/>
+ <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6  ' src='https://vitamu.imgix.net/2-3.png?auto=undefined%2Ccompress'/>
        </div> }
       
        {tabsNum == 2 &&  <div className='relative'>
          <Ping
            title={"Yellow Sofa"}
           />
-           <img className='border-b  lg:w-[37vw] h-[96vh] rounded-lg bg-cover  ' src='https://vitamu.imgix.net/Recheck%20Report%20-%20Sample%20(1)_page-0003.jpg?auto=undefined%2Ccompress'/>
+            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/3-1.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-2.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-3.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-4.png?auto=undefined%2Ccompress'/>
        </div> }
       
        {tabsNum == 3 &&  <div className='relative'>
          <Ping
            title={"Yellow Sofa"}
           />
-           <img className='border-b  lg:w-[37vw] h-[96vh] rounded-lg bg-cover  ' src='https://vitamu.imgix.net/Recheck%20Report%20-%20Sample%20(1)_page-0004.jpg?auto=undefined%2Ccompress'/>
+             <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/4-1.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-2.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-3.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-4.png?auto=undefined%2Ccompress'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-5.png?auto=undefined%2Ccompress'/>
        </div> }
        
        
@@ -270,7 +275,8 @@ const SampleReports = () => {
 
     
      </section>
-    
+     
+     <div className='absoule right-10 bottom-10 px-6 py-2 rounded-3xl'> Top to Page</div>
    </>
   );
 }
