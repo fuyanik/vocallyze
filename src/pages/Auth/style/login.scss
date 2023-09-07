@@ -312,7 +312,7 @@
                        background-color: #000000;
    
                        &:hover{
-                        background-color: #1a3891;
+                        background-color: #000000;
                        }
                     
                    }
@@ -327,7 +327,7 @@
                        transition: 100ms;
    
                        &:hover{
-                           color: rgb(1, 39, 169);
+                           color: rgb(0, 0, 0);
                            text-decoration-line: underline;
                            text-decoration: underline;
                        
@@ -389,10 +389,10 @@
    
            &__footer-text2{
                font-size: 15px;
-               color: rgb(1, 39, 169);
+               color: rgb(0, 0, 0);
                border-bottom: 2px solid rgba(46, 46, 56, 0.126);
                line-height: 20px;
-               letter-spacing: 1px;
+               
    
                
            }

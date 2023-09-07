@@ -179,8 +179,8 @@ const Login = ({isMailErr = false }) => {
             </p>
           )}
           {!isMailErr && (
-            <Link className="style-none" to="/get-started">
-              <p className="login-page__main__footer-text2">Recheck Today</p>
+            <Link className="style-none" to="/form-new">
+              <p className="border-b border-black">Get Started</p>
             </Link>
           )}
         </div>
