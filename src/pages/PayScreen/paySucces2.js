@@ -10,15 +10,19 @@ const PaySucces2 = () => {
     
   useEffect(() => {
 
-    // wait 1 second 
-    navigate('/pay-succes')
+    // wait 3 seconds and redirect to pay-succes
+    setTimeout(() => {
+
+      navigate('/pay-succes')
+
+    }, 300)
    
 
   }, [])
 
 
   return (
-    <div>asdasd</div>
+    <div></div>
   )
 }
 
