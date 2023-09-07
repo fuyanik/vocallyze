@@ -19,7 +19,7 @@ const SampleReports = () => {
     
  
 
-    const Ping = ({title,left,top,num}) => {
+    const Ping = ({title,left,top,num,text}) => {
       return (
       <>
 
@@ -32,7 +32,7 @@ const SampleReports = () => {
               <p  className='hover:bg-white hover:border-[#000000] hover:text-[#000000] flex h-6 px-4 pb-1 items-center justify-center border border-[#fff] rounded-md'>x</p>
             </div>
             
-            <p className='text-[13px] mt-2'>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut </p>
+            <p className='text-[13px] mt-2'>{text} </p>
           
            </div>
         
@@ -78,12 +78,12 @@ const SampleReports = () => {
 
     const TabsMenuMob = () => {
 
-      var tag = ">"
+      
 
       return (
         <>
          <div class="relative w-[95vw]  overflow-auto">
-          <div class="max-w-md mx-auto bg-gray-100 shadow-xl min-w-0 dark:bg-slate-800 dark:highlight-white/5">
+          <div class="max-w-md mx-auto bg-gray-100 shadow-xl min-w-0  ">
            <div class="overflow-x-auto  pb-8 flex ">
             
 
