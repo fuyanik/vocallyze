@@ -217,7 +217,7 @@ return (
       }}
     >
       {/* Desktop Menu */}
-      <div className=" relative font-bold text-black gap-10 hidden lg:flex font-product tracking-wide">
+      <div className=" relative font-bold text-black gap-8 hidden lg:flex font-product tracking-wide">
        
         {/* Exit Services & About Dropdown Helper*/}
         <div   
@@ -250,12 +250,22 @@ return (
           />{" "}
         </div>
 
-        {/* Health Hub */}
-        <Link className="z-20" to={"/health-hub"}>
+        {/* Sample Reports */}
+        <Link className="z-20" to={"/sample-reports"}>
           {" "}
           <div className="cursor-pointer hover:border-b border-gray-300 duration-500">
             {" "}
-            <p> Health Hub </p>{" "}
+            <p> Sample Reports </p>{" "}
+          </div>{" "}
+        </Link>
+
+
+        {/* How It Works */}
+        <Link className="z-20" to={"/how-works"}>
+          {" "}
+          <div className="cursor-pointer hover:border-b border-gray-300 duration-500">
+            {" "}
+            <p> How It Works </p>{" "}
           </div>{" "}
         </Link>
 
@@ -371,6 +381,8 @@ return (
             </div>
           )}
         </div>
+   
+   
       </div>
 
       {/* Logo */}
@@ -453,26 +465,50 @@ return (
                         </div>
 
                         <div className="flex flex-col gap-4">
+                        <Link to={"/mri"}>
+                            <div className="flex gap-4 items-center cursor-pointer">
+                              {" "}
+                              {svgMRI} <p className="text-sm"> MRI</p>{" "}
+                            </div>
+                        </Link>
+
+
+
+                       <Link to={"/mammogram"}> 
                           <div className="flex gap-4 items-center cursor-pointer">
                             {" "}
-                            {svgMRI} <p className="text-sm"> MRI</p>{" "}
+                            <div class="w-8 h-8 stroke-1">
+               
+               <img className=" relative mt-1" src="https://vitamu.imgix.net/Screenshot%202023-08-04%20at%2019.15.28.png"/>
+            
+             </div> <p className="text-sm"> Mammogram</p>{" "}
                           </div>
-                          <div className="flex gap-4 items-center cursor-pointer">
-                            {" "}
-                            {svgOpenMRI} <p className="text-sm"> Open MRI</p>{" "}
-                          </div>
+
+                          </Link>
+
+
+                           <Link to={"/ct"}>
                           <div className="flex gap-4 items-center cursor-pointer">
                             {" "}
                             {svgCT} <p className="text-sm"> CT</p>{" "}
                           </div>
+                          </Link>
+                        
+                        
+                          <Link to={"/ultrasound"}>
                           <div className="flex gap-4 items-center cursor-pointer">
                             {" "}
                             {Ultrasound} <p className="text-sm"> Ultrasound</p>{" "}
                           </div>
+                         </Link>
+
+
+                          <Link to={"/x-ray"}>
                           <div className="flex gap-4 items-center cursor-pointer">
                             {" "}
                             {xRay} <p className="text-sm"> X-Ray</p>{" "}
                           </div>
+                          </Link>
                         </div>
                       </div>
 
@@ -501,18 +537,27 @@ return (
                 )}
               </div>
 
-              {/* Item 2  */}
+              {/* Health Hub  */}
 
               <div>
-                <Link to={"/health-hub"}>
+                <Link to={"/sample-reports"}>
                   <div className="flex items-center text-[22px]  gap-2 cursor-pointer">
-                    <p>Health Hub </p>
+                    <p>Sample Reports </p>
                   </div>
                 </Link>
               </div>
 
-              {/* Item 3  */}
+              {/* How It Works */}
+              <div>
+                <Link to={"/how-works"}>
+                  <div className="flex items-center text-[22px]  gap-2 cursor-pointer">
+                    <p>How It Works </p>
+                  </div>
+                </Link>
+              </div>
 
+
+              {/* About */}
               <div>
                 <div
                   onClick={() => {

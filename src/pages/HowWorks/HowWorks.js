@@ -5,27 +5,33 @@ import Footer from '../../homeComponents/11.Footer/footer'
 import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter'
 
 
-const HowWorks = () => {
+const HowWorks = ({isOutside = false}) => {
+
+  window.scrollTo(0, 0);
+ 
   return (
     <> 
-     <Navbar
+
+   { !isOutside &&  <Navbar
       mobileMenuText={'Menu'}
       mobileMenuTo ={"/mobileNavMenu"}
-      />
+      />}
 
-    <div className='w-screen flex justify-center pt-[10.8vh]  font-product '>
+    <div className={`w-screen ${isOutside ? "pt-0 " : "pt-[10.8vh] "} flex justify-center  font-product`} >
 
       <div className='w-screen items-center justify-center flex flex-col gap-5 pb-12'> 
 
           {/* How works */}
-          <div class="py-8 mb-8 border-b md:mb-12 bg-neutral-50 lg:py-24 flex flex-col items-center justify-center ">
+          <div class="py-8 mb-8 border-b md:mb-12 w-screen bg-neutral-50 lg:py-14 flex flex-col items-center justify-center ">
+      
           <h1 class="text-[42px] font-bold mb-2 lg:mb-4">How It Works</h1>
            <p class="opacity-75 text-base lg:text-lg text-neutral-800 w-[90vw] text-center ">A hassle-free experience. Results in 24 hours.</p>
+        
           </div>
 
 
            {/* Stepper */}
-          <div className='flex lg:w-[60vw] w-[90vw]   justify-center'>
+          <div className='flex lg:w-[60vw] w-[96vw]   justify-center'>
   <div class=" flex flex-col justify-center items-center ">
    
    
@@ -150,7 +156,7 @@ const HowWorks = () => {
 
 
          {/* Why choose scan */}
-         <div className='w-[93vw] lg:w-[60vw] '> 
+         <div className={`w-[93vw] lg:w-[60vw] ${isOutside && ""} `} > 
           <div class="  flex-col items-center self-center justify-center lg:mt-12  mt-5">
     
             <div class="space-y-4 md:text-center max-w-2xl mx-auto mb-12">
@@ -160,16 +166,16 @@ const HowWorks = () => {
 
            <div class="rounded-2xl border border-grey-300 shadow-sm justify-center flex ">
      
-      <table class="  w-fit border-collapse">
+      <table class="  w-full border-collapse">
         <thead>
           <tr>
-            <td class="border-b bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">What's included <span class="hidden sm:inline">in the cost?</span></td>
+            <td class="border-b rounded-tl-2xl bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">What's included <span class="hidden sm:inline">in the cost?</span></td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
               <span class="md:hidden">Mitrua.com</span>
               <img alt="Mitrua.com Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"/>
             </td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Hospital</td>
-            <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Private <span class="hidden sm:inline">Hospital</span></td>
+            <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold  text-center text-sm md:text-base lg:text-lg rounded-tr-2xl">Private Clinic </td>
           </tr>
         </thead>
         <tbody>
@@ -405,7 +411,9 @@ const HowWorks = () => {
     
      </div>
 
-     { gV.mq.matches ? <MobileFooter/> : <Footer/> }
+    <div className= {`${isOutside && "hidden"}`} >
+       { gV.mq.matches ? <MobileFooter/> : <Footer/> }
+    </div>
      </>
   )
 }

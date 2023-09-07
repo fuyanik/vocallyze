@@ -7,9 +7,11 @@ import Radiologists from '../../homeComponents/7.Radiologists/radiologists';
 import SelectBodyParts from '../Forms/components/selectBodyParts';
 import SelectScan from '../Forms/components/selectScan';
 import imageSvg2 from "../../assets/svg/image-2.svg";
+import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter';
+import Footer from '../../homeComponents/11.Footer/footer';
 
 
-const Services = ({title,imageUrl,heroText,}) => {
+const Services = ({title,imageUrl, otherScanning }) => {
 
   const icons = [
    
@@ -99,7 +101,8 @@ const FAQItem = ({ question, answer }) => {
 
 
 
-
+window.scrollTo(0, 0);
+ 
 
   return (
     <> 
@@ -120,11 +123,12 @@ const FAQItem = ({ question, answer }) => {
 
         <div className='w-full lg:mb-10  h-fit flex flex-col '>
 
-          <div className='flex  w-fit gap-7 h-fit'> <p className='text-priTrans'> Services</p>  <img className='rotate-90' width="12" height="14" src="https://img.icons8.com/ios-filled/50/666666/collapse-arrow.png" alt="collapse-arrow"/>  <p>{title} Second Opinion</p></div>
+      <div className='flex flex-col gap-5 lg:gap-0'>
+      <div className='flex  w-fit lg:gap-7 gap-2 h-fit'> <p className='text-priTrans'> Services</p>  <img className='rotate-90' width="12" height="14" src="https://img.icons8.com/ios-filled/50/666666/collapse-arrow.png" alt="collapse-arrow"/>  <p>{title} Second Opinion</p></div>
 
-          <h1 className='text-[3.75rem] font-bold'>{title} Second Opinion </h1>
-          <p className='text-priTrans lg:w-[50%]'>Get your {title} second opinion today. A super clear second opinion report by two U.S. board certified radiologist, results in 24 hours.</p>
-
+          <h1 className='lg:text-[3.75rem] text-[3rem] leading-[54px] lg:leading-[76px] w-full lg:w-[65%] font-bold'>{title} Second Opinion </h1>
+          <p className='text-priTrans lg:w-[50%] '>Get your {title} second opinion today. A super clear second opinion report by two U.S. board certified radiologists, results in 24 hours.</p>
+          </div>
 
     <ul class="lg:grid sm:grid-cols-2 hidden gap-x-2 gap-y-6 max-w-xl mt-3">
 
@@ -468,22 +472,25 @@ gV.mq.matches
       </div>
 
 
-     {/* Screen 3 - SCANNİNG SERVİCES */}
-     <div className='w-screen pt-10  bg-slate-50 lg:h-screen  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
 
-     <div class="container">
-      <div class="max-w-xl">
-        <h2 class="mb-6 text-[42px] font-bold">Other scanning services</h2>
-        <p class="text-neutral-500 text-lg leading-4.5 mt-4">We provide second opinions for all major radiology images.
-        </p>
+     {/* Screen 3 - SCANNİNG SERVİCES */}
+     <div className='w-screen pt-10  bg-slate-50   flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
+
+    
+     
+      <div class=" flex flex-col gap-4">
+        <h2 class="text-[32px] leading-[38px]  ">Other second opinion services</h2>
+        <p class="text-neutral-500 text-lg text-[16px] leading-6  ">We provide second opinions for all major radiology images. </p>
       </div>
-      <div class="grid grid-flow-col auto-cols-[minmax(260px,auto)] overflow-scroll gap-8 mt-12 pb-4">
-          <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/services/private-ultrasound-scans">
+      
+      <div class="grid grid-flow-col auto-cols-[minmax(260px,auto)] overflow-scroll gap-8 lg:mt-12 mt-6 pb-4 ">
+      
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[0].url}>
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
-              <img src="https://vitamu.imgix.net/img1.jpg" alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
+              <img src={otherScanning[0].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>
             <div class="flex justify-between mb-2 space-x-4">
-              <h3 class="text-2xl">Ultrasound Scan</h3>
+              <h3 class="text-2xl">{otherScanning[0].title}</h3>
               <div>
                 <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-300 group-hover:text-primary-700 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -494,14 +501,16 @@ gV.mq.matches
               </div>
             </div>
             <div class="xl:pr-8">
-              <p class="mb-4 text-sm leading-relaxed text-neutral-500">Ultrasound is a safe medical imaging method, which uses high frequency sound waves to create pictures (sonograms) of the joints, soft tissues, organs and blood vessels.</p>
+              <p class="mb-4 text-sm leading-relaxed text-neutral-500">{otherScanning[0].text}</p>
             </div>
-</a>          <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/services/private-ct-scans">
+</a>       
+
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[1].url}>
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
-              <img src="https://vitamu.imgix.net/dropdown2.jpg" alt="Private CT Scans" class="object-cover w-full h-full"/>
+              <img src={otherScanning[1].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>
             <div class="flex justify-between mb-2 space-x-4">
-              <h3 class="text-2xl">CT Scan</h3>
+              <h3 class="text-2xl">{otherScanning[1].title}</h3>
               <div>
                 <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-300 group-hover:text-primary-700 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -512,14 +521,16 @@ gV.mq.matches
               </div>
             </div>
             <div class="xl:pr-8">
-              <p class="mb-4 text-sm leading-relaxed text-neutral-500">CT scans can be used to detect, locate and monitor diseases and abnormalities in the brain, neck, chest, abdomen, pelvis and blood vessels, and to assess bones, joints and fractures.</p>
+              <p class="mb-4 text-sm leading-relaxed text-neutral-500">{otherScanning[1].text}</p>
             </div>
-</a>          <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="https://fullbodyscan.com/">
+</a>      
+
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[2].url}>
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
-              <img src="https://vitamu.imgix.net/i1.jpg" alt="Private Full Body MRI Scans" class="object-cover w-full h-full"/>
+              <img src={otherScanning[2].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>
             <div class="flex justify-between mb-2 space-x-4">
-              <h3 class="text-2xl">Full Body MRI Scan</h3>
+              <h3 class="text-2xl">{otherScanning[2].title}</h3>
               <div>
                 <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-300 group-hover:text-primary-700 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -530,25 +541,48 @@ gV.mq.matches
               </div>
             </div>
             <div class="xl:pr-8">
-              <p class="mb-4 text-sm leading-relaxed text-neutral-500">Our full body scan service offers a preventative screening of the brain, chest, abdomen, pelvis, and key blood vessels, to look for abnormalities as early as possible.</p>
+              <p class="mb-4 text-sm leading-relaxed text-neutral-500">{otherScanning[2].text}</p>
             </div>
-</a>      </div>
-    </div>
+</a>       
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[3].url}>
+            <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
+              <img src={otherScanning[3].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
+            </div>
+            <div class="flex justify-between mb-2 space-x-4">
+              <h3 class="text-2xl">{otherScanning[3].title}</h3>
+              <div>
+                <div class="transform rotate-180 stroke-1.25 transition-colors duration-200 ease text-neutral-300 group-hover:text-primary-700 w-10 h-10"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="5" y1="12" x2="19" y2="12"></line>
+  <line x1="5" y1="12" x2="11" y2="18"></line>
+  <line x1="5" y1="12" x2="11" y2="6"></line>
+</svg>
+</div>
+              </div>
+            </div>
+            <div class="xl:pr-8">
+              <p class="mb-4 text-sm leading-relaxed text-neutral-500">{otherScanning[3].text}</p>
+            </div>
+</a>       
+
+
+      </div>
+   
        
 
      </div>
 
+
      {/* Screen 4 - FAQ */}
      <div className='w-screen py-10 mt-10  lg:h-auto  flex  font-product flex-col  h-auto   px-[3vw] lg:px-[7vw] '>
 
-    <div className='grid gap-12 lg:grid-cols-12'> 
+    <div className='grid lg:grid-cols-12'> 
       
       
       <div class="lg:col-span-6 xl:col-span-5">
-      <h2 class="mb-4 text-[42px] leading-[48px]">Frequently Asked Questions</h2>
+      <h2 class="mb-4 text-[32px] leading-[38px]">Frequently Asked Questions</h2>
       <div class="mb-8 space-y-4 text-base leading-relaxed text-neutral-500 lg:text-lg">
-        <p>If you have any questions about booking an MRI  scan with us, <a class="primary-text-link" href="/faqs">visit our FAQ guide</a>.</p>
-        <p>Can’t see an answer to your question? Our friendly patient care team are happy to help.</p>
+        <p className='leading-6'>If you have any questions about booking an MRI  scan with us, <a class="primary-text-link" href="/faqs">visit our FAQ guide</a>.</p>
+        <p className='leading-6'>Can’t see an answer to your question? Our friendly patient care team are happy to help.</p>
       </div>
       <a class="button button-primary" href="/faqs">More FAQs</a>
       </div>
@@ -596,6 +630,9 @@ gV.mq.matches
       
      
       </div>
+  
+
+      { gV.mq.matches ? <MobileFooter/> : <Footer/> }
     
     
     </>

@@ -30,6 +30,7 @@ import RadiologyTeam from './pages/RadiologyTeam/radiologyTeam';
 import Contact from './pages/DropdownPages/Help/Contact';
 import FormNewPayment from './pages/Forms/FormNewPaymen';
 import WhySecondOpinion from './pages/WhySecondOpinion/WhySecondOpinion';
+import SampleReports from './pages/DropdownPages/SampleReports/SampleReports';
 
 
   
@@ -79,6 +80,9 @@ export default function App() {
             <Route path="/radiology-team" element={<RadiologyTeam/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/why-second-opinion" element={<WhySecondOpinion/>} />
+            <Route path="/sample-reports" element={<SampleReports/>} />
+
+
 
 
             <Route path="/health-hub-iframe" element={<HealthHubFrame/>} />

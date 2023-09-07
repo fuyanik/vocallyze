@@ -15,7 +15,8 @@ import Footer from "../../homeComponents/11.Footer/footer";
 
 const RadiologyTeam = () => {
 
-
+  window.scrollTo(0, 0);
+ 
 
   return (
    <div> 
