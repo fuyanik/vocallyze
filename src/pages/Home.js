@@ -114,7 +114,7 @@ const Home = () => {
         <HowWorks isOutside={true} />
        </div>
        
-       <div >
+       <div className='hidden' >
         <HealthHub isOutside={true} />
        </div>
 

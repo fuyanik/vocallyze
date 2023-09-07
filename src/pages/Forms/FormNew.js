@@ -831,11 +831,11 @@ export default function FormNew() {
       />
 
        
-      <div className="w-screen  flex flex-col items-center gap-3 lg:gap-6 font-product ">
+      <div className="w-screen  flex flex-col items-center gap-3 lg:gap-4 font-product ">
       
       
 
-        <div className="mt-14 lg:mt-16 "></div>
+        <div className="mt-14 lg:mt-20 "></div>
           
           {/*  Stepper */}
        { false && <Stack sx={  gV.mq.matches ? { width: "100%" }  : { width: "55%" } } spacing={5}>
@@ -853,10 +853,12 @@ export default function FormNew() {
         </Stack>}
 
 
-          <div onClick={()=>{setIsPopupOpen2(!isPopupOpen2)}} className="w-fit self-start duration-500 bg-black text-white  flex items-center gap-5 left-5 relative border border-black px-4 py-1 rounded-full"> 
-           <p className="duration-500">{isPopupOpen2 ?  "Close the sample reports" : "Want to see a sample report? " }</p> 
-           <img className={`h-5 ${isPopupOpen2 ? "rotate-180" : "rotate0"}  duration-500 `} width="20" height="5" src="https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png" alt="expand-arrow--v1"/> 
-          </div>
+         <div className="lg:w-[46vw] self-start lg:self-auto  ">
+           <div onClick={()=>{setIsPopupOpen2(!isPopupOpen2)}} className="w-fit self-start  duration-500 bg-black text-white  flex items-center gap-5 left-5 lg:left-0 relative border border-black px-4 py-1 rounded-full"> 
+            <p className="duration-500">{isPopupOpen2 ?  "Close the sample reports" : "Want to see a sample report? " }</p> 
+            <img className={`h-5 ${isPopupOpen2 ? "rotate-180" : "rotate0"}  duration-500 `} width="20" height="5" src="https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png" alt="expand-arrow--v1"/> 
+           </div>
+         </div>
 
 
 

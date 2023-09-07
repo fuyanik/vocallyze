@@ -85,7 +85,7 @@
   display: flex;
   background: var(--rsbs-bg);
   flex-direction: column;
-  height:  90vh;
+  height:  81vh;
   transform: translate3d(0, var(--rsbs-overlay-translate-y), 0);
   will-change: height;
 }

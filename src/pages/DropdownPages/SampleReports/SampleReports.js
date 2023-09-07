@@ -186,7 +186,7 @@ const SampleReports = ({isOutside = false}) => {
       mobileMenuTo={"/mobileNavMenu"}
       />}
 
-     <section className={`w-screen font-product   h-auto ${isOutside ? "py-2" : "py-[15vh]"}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
+     <section className={`font-product   h-auto ${isOutside ? "py-2 lg:w-full" : "py-[15vh] w-screen "}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
     
     {/*  Header */}
      { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
@@ -202,10 +202,10 @@ const SampleReports = ({isOutside = false}) => {
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
-     {isOutside && <p className='relative -mt-9 bg-white text-center z-50 w-full '>Scroll down to see whole report</p>}
+     {isOutside && <p className='relative -mt-9 lg:-mt-6 bg-white text-center z-50 w-full '>Scroll down to see whole report</p>}
 
      {/*  Vertical Reports*/}
-     <div className='flex overflow-hidden relative bottom-0  flex-col px-2 gap-10 lg:mt-10'>
+     <div className='flex overflow-hidden relative bottom-0 lg:bottom-12  flex-col px-2 gap-10 lg:mt-10'>
 
 
       {  tabsNum == 0 && <div className='relative'>
