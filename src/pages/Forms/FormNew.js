@@ -823,6 +823,7 @@ export default function FormNew() {
       />
 
       <Popup
+        close={true}
         open={isPopupOpen2}
         onDismiss={onDismiss2}
         contents={<SampleReports isOutside={true} />}
@@ -852,9 +853,9 @@ export default function FormNew() {
         </Stack>}
 
 
-          <div onClick={()=>{setIsPopupOpen2(true)}} className="self-start bg-black text-white  flex items-center gap-5 left-5 relative border border-black px-4 py-1 rounded-full"> 
-           <p>Want to see a sample report? </p> 
-           <img className="h-5" width="20" height="5" src="https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png" alt="expand-arrow--v1"/> 
+          <div onClick={()=>{setIsPopupOpen2(!isPopupOpen2)}} className="self-start duration-500  flex items-center gap-5 left-5 relative border border-black px-4 py-1 rounded-full"> 
+           <p className="duration-500">{isPopupOpen2 ?  "Close the sample reports" : "Want to see a sample report? " }</p> 
+           <img className={`h-5 ${isPopupOpen2 ? "rotate-180" : "rotate0"}  duration-500 `} width="20" height="5" src="https://img.icons8.com/ios/50/expand-arrow--v1.png" alt="expand-arrow--v1"/> 
           </div>
 
 

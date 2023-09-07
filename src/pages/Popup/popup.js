@@ -3,7 +3,7 @@ import { BottomSheet } from "react-spring-bottom-sheet";
 import gV from "../../gV";
 
 
-const Popup = ({onDismiss, open, contents,className, close = true}) => {
+const Popup = ({onDismiss, open, contents,className, close = false}) => {
 
   
 
@@ -21,7 +21,7 @@ const Popup = ({onDismiss, open, contents,className, close = true}) => {
       >
         <div className="relative z-50">
       
-        { close && <div className="absolute left-[85%] bg-[#000000] text-white text-md border border-[#000000] px-5 py-1 rounded-3xl cursor-pointer tracking-wide hover:shadow-xl "> {gV.mq.matches ? "X" :"Close"}</div>}
+        { false && <div className=" left-[85%] bg-[#000000] text-white text-md border border-[#000000] px-5 py-1 rounded-3xl cursor-pointer tracking-wide hover:shadow-xl "> {false ? "X" :"Close"}</div>}
            
             {contents}
         

@@ -186,7 +186,7 @@ const SampleReports = ({isOutside = false}) => {
       mobileMenuTo={"/mobileNavMenu"}
       />}
 
-     <section className={`w-screen font-product   h-auto ${isOutside ? "py-2" : "py-[15vh]"}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-6 lg:gap-10 justify-center`}>
+     <section className={`w-screen font-product   h-auto ${isOutside ? "py-2" : "py-[15vh]"}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
     
     {/*  Header */}
      { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] '>
@@ -202,8 +202,10 @@ const SampleReports = ({isOutside = false}) => {
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
+     {isOutside && <p className='relative -mt-8 '>Scroll down to see whole report</p>}
+
      {/*  Vertical Reports*/}
-     <div className='flex overflow-hidden relative bottom-8  flex-col px-2 gap-10 lg:mt-10'>
+     <div className='flex overflow-hidden relative bottom-0  flex-col px-2 gap-10 lg:mt-10'>
 
 
       {  tabsNum == 0 && <div className='relative'>
@@ -293,7 +295,7 @@ const SampleReports = ({isOutside = false}) => {
 
      <div className='flex flex-col items-center justify-center gap-2'>
          <PrimaryButton to={"/"} />
-        <div onClick={()=>{ window.scrollTo(0, 0); }} className='absoule right-5 bottom-5 px-6 py-2 rounded-3xl border border-black cursor-pointer'> Scroll to Page</div>
+        <div onClick={()=>{ window.scrollTo(0, 0); }} className='absoule right-5 bottom-5 px-6 py-2 rounded-3xl border border-black cursor-pointer'> Scroll to Top</div>
      </div>
     
      </section>
