@@ -118,7 +118,14 @@ const Informational = () => {
      
 
   <div class="order-1 lg:order-2 ">
-  <img alt="Imaging reports powered by Scanslated" class=" pb-4 mx-auto lg:p-0 cld-responsive lg:w-auto w-[90vw] " lazy="true" width="780" height="446" data-src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_auto,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png" src="https://res.cloudinary.com/scan-com/image/upload/f_webp/q_auto:good/c_scale,dpr_2.0,f_webp,h_446,w_780/v1/images/scanslated-diagram_png.png"/>
+  
+ <div className='w-[40vw] h-[60vh]  flex flex-col gap-2 overflow-scroll'>
+   <img alt="Imaging reports powered by Scanslated" className="border-t rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress"/>
+   <img alt="Imaging reports powered by Scanslated" className="border-t rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-2.png?auto=undefined%2Ccompress"/>
+   <img alt="Imaging reports powered by Scanslated" className="border-t rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-3.png?auto=undefined%2Ccompress"/>
+   <img alt="Imaging reports powered by Scanslated" className="border-t rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress"/>
+ </div>
+  
   </div>
   <div class="order-1 max-w-lg lg:order-1 lg:w-auto w-[90vw] self-center">
     <h2 class="mb-4 text-4xl">
@@ -156,7 +163,8 @@ const Informational = () => {
       </div>
     </div>
     <div class="mt-8 space-y-2 lg:flex lg:space-x-4 lg:space-y-0 border border-black w-fit px-4 py-2 rounded-full">
-      <a href="https://scanslated.com/sample-report/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 font-semibold">
+    
+      <a href="/sample-reports" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 font-semibold">
         <span>Report Samples</span>
         <span class="w-6 stroke-2"><svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
