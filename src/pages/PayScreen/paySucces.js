@@ -124,7 +124,7 @@ const PaySucces = () => {
   let navigate = useNavigate();
   
      setTimeout(() => {
-     user &&   navigate("/user-panel") 
+     user ?   navigate("/user-panel")  :  navigate("/login") 
     }, 6000);
 
 
