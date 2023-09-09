@@ -24,7 +24,7 @@ const PaySucces = () => {
   
 
   const logo = useRef(null)
-  const [count, setCount] = useState(6);
+  const [count, setCount] = useState(9);
 
  
   const updatePay = async ()  => {
@@ -110,7 +110,7 @@ const PaySucces = () => {
   
      setTimeout(() => {
      user ?   navigate("/user-panel")  :  navigate("/login") 
-    }, 6000);
+    }, 9000);
 
 
   return (
