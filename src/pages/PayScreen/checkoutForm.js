@@ -100,6 +100,7 @@ export default function CheckoutForm() {
 
   
       //fetch firebase data firestore
+      /*
       const userRef = doc(db, "Mitrua", `${user.email}`);
       const docSnap = await getDoc(userRef);
       const data = docSnap.data();
@@ -130,6 +131,8 @@ export default function CheckoutForm() {
   
 
      } 
+
+     */
 
 
     setIsLoading(true);
