@@ -15,17 +15,9 @@ const PaySucces2 = () => {
 
       //navigate new page 
       window.location.href = "https://www.mitrua.com/pay-succes "
-
      
 
-
-       
-
-      
-
-     
-
-    }, 300)
+    }, 40)
    
 
   }, [])
