@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { doc, setDoc, getDoc, arrayUnion, updateDoc   } from "firebase/firestore"; 
 import { db } from '../../firebase';
 
-import { deleteDoc } from 'firebase/firestore';
-import { useRef } from 'react';
-import lottie from 'lottie-web';
+
 import './style/paySucces.css'
 import { getAnalytics, logEvent } from "firebase/analytics";
 import gtag from 'ga-gtag';
@@ -20,10 +18,7 @@ const PaySucces = () => {
   const auth = getAuth();
   const user =  auth.currentUser;
 
-
-  
-
-  const logo = useRef(null)
+ 
   const [count, setCount] = useState(6);
 
  
@@ -93,23 +88,13 @@ const PaySucces = () => {
 
 
   
-  useEffect(() => {
-     
-     lottie.loadAnimation({
-      container: logo.current,
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      animationData: require('./assets/anim2.json')
-    })
-    return () => { lottie.destroy() }
-  },[])
+ 
 
   
   let navigate = useNavigate();
   
      setTimeout(() => {
-     user ?   navigate("/user-panel")  :  navigate("/login") 
+    // user ?   navigate("/user-panel")  :  navigate("/login") 
     }, 6000);
 
 
@@ -121,11 +106,11 @@ const PaySucces = () => {
     <div className='pay-succes bg-sec'> 
             <p className='pay-succes__text'>Checkout</p>
             <p className='pay-succes__text2'>Thanks!</p>
-            <p className='pay-succes__text3 relative bottom-8'>{count}</p>
+            <p className='pay-succes__text3 '>{count}</p>
        
 
         <div className='pay-succes__bottom'>
-            <div className='pay-succes__bottom__animation' ref={logo} ></div>
+            <div className='pay-succes__bottom__animation'  ></div>
             <p className='pay-succes__bottom__text'>We got your recheck request and payment.</p>
             <p className='pay-succes__bottom__text2'>You are now being directed to your user portal.</p>
         </div>
