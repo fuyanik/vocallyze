@@ -70,49 +70,7 @@ const PaySucces = () => {
       }
 
   }
-  const updatePay2 =  ()  => {
-
-    const auth = getAuth();
-    const user =  auth.currentUser;
-
-     if (user) {
-       //fetch firebase data firestore
-       const userRef = doc(db, "Mitrua", `${user.email}`);
-       const docSnap =  getDoc(userRef);
-       const data = docSnap.data();
-
-       const rechecks = data.Rechecks;
-
-       console.log(data)
-
-       const returnRecheckNumber =  () => {
-
-        
-          const lastIndex = rechecks.length - 1;
-
-          rechecks[0].activeStep = 2;
-          rechecks[0].isPay = true
-        
-
-           updateDoc(userRef, { Rechecks: rechecks})
-
-
-      }
-
-
-       //Control user is have images or not for detect active step
-       //...
-       returnRecheckNumber();
-   
-
-      } 
-
-      else {
-       console.log("NO USER");
-   
-      }
-
-  }
+ 
 
    
   
@@ -120,7 +78,6 @@ const PaySucces = () => {
 
         
     updatePay();
-    updatePay2();
 
 
 
