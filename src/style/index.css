@@ -290,6 +290,51 @@ body{
 
 
 
+/* PRODUCT SANS */
+@font-face {
+  font-family: "ProductSans-Thin";
+  src: url(../fonts/ProductSans/ProductSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "ProductSans-Thin";
+  src: url(../fonts/ProductSans/ProductSans-Regular.woff) format("woff");
+  font-weight: bold;
+}
+
+
+
+@font-face {
+  font-family: "ProductSans-Light";
+  src: url(../fonts/ProductSans/ProductSans-Regular.woff) format("woff");
+}
+
+ @font-face {
+  font-family: "ProductSans-Light";
+  src: url(../fonts/ProductSans/ProductSans-Medium.woff) format("woff");
+  font-weight: bold;
+}
+ 
+
+
+
+
+/* OPTİMA */
+
+@font-face {
+  font-family: "Optima";
+  src: url(../fonts/Optima/AnyConv.com__OPTIMA.woff) format("woff")
+}
+
+@font-face {
+  font-family: "Optima";
+  src: url(../fonts/Optima/AnyConv.com__OPTIMA_B.woff) format("woff");
+  font-weight:bold;
+}
+@font-face {
+  font-family: "Optima Medium";
+  src: url(../fonts/Optima/AnyConv.com__Optima\ Medium.woff) format("woff")
+}
 
 .human-error {
   scroll-behavior: smooth;

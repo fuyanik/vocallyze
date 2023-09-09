@@ -10,10 +10,20 @@ const PaySucces2 = () => {
     
   useEffect(() => {
 
-    // wait 3 seconds and redirect to pay-succes
+   
     setTimeout(() => {
 
-      navigate('/pay-succes')
+      //navigate new page 
+      window.location.href = "https://www.mitrua.com/pay-succes "
+
+     
+
+
+       
+
+      
+
+     
 
     }, 300)
    

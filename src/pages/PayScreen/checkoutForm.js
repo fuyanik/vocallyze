@@ -145,8 +145,8 @@ export default function CheckoutForm() {
           elements,
           confirmParams: {
               //return_url: "http://localhost:3000/pay-succes"
-              return_url: "https://www.mitrua.com/pay-succes"
-              //return_url: "https://mitrua.com/pay-succes2"
+              //return_url: "https://www.mitrua.com/pay-succes"
+              return_url: "https://mitrua.com/pay-succes2"
           },
         });
     
