@@ -32,6 +32,7 @@ import FormNewPayment from './pages/Forms/FormNewPaymen';
 import WhySecondOpinion from './pages/WhySecondOpinion/WhySecondOpinion';
 import SampleReports from './pages/DropdownPages/SampleReports/SampleReports';
 import Faq from './pages/DropdownPages/Faq/faq';
+import Payingo from './pages/PayScreen/Payingo';
 
 
   
@@ -49,7 +50,7 @@ export default function App() {
           
             <Route path="/pay-screen" element={<PayScreen/>} />
 
-            <Route path="/pay-succes" element={<PaySucces/>} />
+            <Route path="/pay-succes" element={<Payingo/>} />
             <Route path="/pay-succes2" element={<PaySucces2/>} />
             <Route path="/user-panel" element={<UserPanel/>} />
 

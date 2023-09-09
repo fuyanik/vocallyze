@@ -75,10 +75,8 @@ const PaySucces = () => {
    
   
   useEffect(() => {
-
         
     updatePay();
-
 
 
     const interval = setInterval(() => {
