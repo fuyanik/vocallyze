@@ -12,23 +12,20 @@ import { getAnalytics, logEvent } from "firebase/analytics";
 import gtag from 'ga-gtag';
 import { getAuth } from 'firebase/auth';
 
-
+const auth = getAuth();
+const user =  auth.currentUser;
 
 const PaySucces = () => {
 
+  const auth = getAuth();
+  const user =  auth.currentUser;
 
 
+  
 
   const logo = useRef(null)
   const [count, setCount] = useState(6);
 
-
-  const auth = getAuth();
-  const user =  auth.currentUser;
-  
- 
-  
-  
  
   const updatePay = async ()  => {
 
@@ -73,29 +70,60 @@ const PaySucces = () => {
       }
 
   }
+  const updatePay2 =  ()  => {
 
- useEffect(() => {
+    const auth = getAuth();
+    const user =  auth.currentUser;
 
-  const analytics = getAnalytics();
+     if (user) {
+       //fetch firebase data firestore
+       const userRef = doc(db, "Mitrua", `${user.email}`);
+       const docSnap =  getDoc(userRef);
+       const data = docSnap.data();
+
+       const rechecks = data.Rechecks;
+
+       console.log(data)
+
+       const returnRecheckNumber =  () => {
+
+        
+          const lastIndex = rechecks.length - 1;
+
+          rechecks[0].activeStep = 2;
+          rechecks[0].isPay = true
+        
+
+           updateDoc(userRef, { Rechecks: rechecks})
 
 
-  logEvent(analytics, 'mitrua_pay_succes', {
-    content_type: "text",
-    content_id: 'P11123'
-  });
-
-  console.log("run analytics")
-
-  gtag('event', 'conversion', {'send_to': 'AW-123456789/abcdefghijk'});
+      }
 
 
- },[])
+       //Control user is have images or not for detect active step
+       //...
+       returnRecheckNumber();
+   
+
+      } 
+
+      else {
+       console.log("NO USER");
+   
+      }
+
+  }
+
    
   
   useEffect(() => {
 
         
     updatePay();
+    updatePay2();
+
+
+
     const interval = setInterval(() => {
       updatePay();
       setCount(count - 1);

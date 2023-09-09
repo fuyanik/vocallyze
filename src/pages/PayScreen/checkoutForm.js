@@ -16,9 +16,19 @@ import "./style/payScreen.css";
 
 import stripeImg from "./stripe.png";
 import { useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase.js";
 
 
 export default function CheckoutForm() {
+
+
+
+
+
+
+
+
 
   const navigate = useNavigate();
 
@@ -85,12 +95,48 @@ export default function CheckoutForm() {
     e.preventDefault();
 
 
+
+
+
    
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
+
+  
+      //fetch firebase data firestore
+      const userRef = doc(db, "Mitrua", `${user.email}`);
+      const docSnap = await getDoc(userRef);
+      const data = docSnap.data();
+
+      const rechecks = data.Rechecks;
+
+      console.log(data)
+
+      const returnRecheckNumber = async () => {
+
+       
+         const lastIndex = rechecks.length - 1;
+
+         rechecks[0].activeStep = 2;
+         rechecks[0].isPay = true
+       
+
+         await updateDoc(userRef, { Rechecks: rechecks})
+
+
+     
+
+    
+
+      //Control user is have images or not for detect active step
+      //...
+      returnRecheckNumber();
+  
+
+     } 
 
 
     setIsLoading(true);
@@ -102,9 +148,9 @@ export default function CheckoutForm() {
           //`Elements` instance that was used to create the Payment Element
           elements,
           confirmParams: {
-              //return_url: "http://localhost:3000/pay-succes"
+              return_url: "http://localhost:3000/user-panel"
               //return_url: "http://mitrua.com/pay-succes"
-              return_url: "http://mitrua.com/pay-succes2"
+              //return_url: "http://mitrua.com/pay-succes2"
           },
         });
     
@@ -112,6 +158,8 @@ export default function CheckoutForm() {
           // Show error to your customer (for example, payment details incomplete)
           console.log(result.error.message);
         }  
+
+      
    
 
 
