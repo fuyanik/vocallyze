@@ -23,13 +23,6 @@ import { db } from "../../firebase.js";
 export default function CheckoutForm() {
 
 
-
-
-
-
-
-
-
   const navigate = useNavigate();
 
 
@@ -148,9 +141,9 @@ export default function CheckoutForm() {
           //`Elements` instance that was used to create the Payment Element
           elements,
           confirmParams: {
-              return_url: "http://localhost:3000/user-panel"
-              //return_url: "http://mitrua.com/pay-succes"
-              //return_url: "http://mitrua.com/pay-succes2"
+              //return_url: "http://localhost:3000/user-panel"
+              return_url: "https://mitrua.com/pay-succes"
+              //return_url: "https://mitrua.com/pay-succes2"
           },
         });
     
