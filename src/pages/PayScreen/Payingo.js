@@ -1,17 +1,32 @@
 
-import React from 'react'
+import React, { useRef } from 'react'
 import { useEffect,useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc, getDoc, arrayUnion, updateDoc   } from "firebase/firestore"; 
 import { db } from '../../firebase';
 import { browserLocalPersistence, getAuth, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
-
-
+import './style/paySucces.css'
+import lottie from 'lottie-web';
 
 const Payingo = () => {
-    const auth = getAuth();
-    const user =  auth.currentUser;
+  
 
+    const logo = useRef(null)
+    useEffect(() => {
+     
+      lottie.loadAnimation({
+       container: logo.current,
+       renderer: 'svg',
+       loop: false,
+       autoplay: true,
+       animationData: require('./assets/anim2.json')
+     })
+     return () => { lottie.destroy() }
+   },[])
+
+
+   const auth = getAuth();
+   const user =  auth.currentUser;
 
 
     const [count, setCount] = useState(9);
@@ -131,7 +146,28 @@ const Payingo = () => {
 
 
   return (
-    <div>PAY SUCCESSS</div>
+    <>
+    
+      
+    <div className='pay-succes bg-sec'> 
+            <p className='pay-succes__text'>Checkout</p>
+            <p className='pay-succes__text2'>Thanks!</p>
+            <p className='pay-succes__text3 relative bottom-8'>{count}</p>
+       
+
+        <div className='pay-succes__bottom'>
+            <div className='pay-succes__bottom__animation' ref={logo} ></div>
+            <p className='pay-succes__bottom__text'>We got your recheck request and payment.</p>
+            <p className='pay-succes__bottom__text2'>You are now being directed to your user portal.</p>
+        </div>
+
+              
+              
+             
+      
+    </div>
+    
+    </>
   )
 }
 
