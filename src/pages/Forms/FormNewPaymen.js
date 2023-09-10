@@ -531,7 +531,11 @@ export default function FormNewPayment() {
       <Popup
       open={isPopupOpen}
       onDismiss={onDismiss}
-      contents={<PayScreen/>}
+      contents={ 
+        <div>
+          <h1 onClick={()=>{setIsPopupOpen(false)}} className="absolute z-50 right-6 top-0 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
+          <PayScreen/> 
+        </div>}
       close={false}
       />
 
