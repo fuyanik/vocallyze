@@ -822,6 +822,10 @@ export default function FormNew() {
         // if a user forgets to sign out.
         // ...
         // New sign-in will be persisted with session persistence.
+      
+      
+      
+      
         return signInWithEmailAndPassword(auth, mail, gV.password);
       })
       .catch((error) => {

@@ -89,6 +89,10 @@ export default function CheckoutForm() {
 
 
 
+    
+
+
+
 
 
    
@@ -99,43 +103,30 @@ export default function CheckoutForm() {
     }
 
   
-      //fetch firebase data firestore
-      /*
-      const userRef = doc(db, "Mitrua", `${user.email}`);
-      const docSnap = await getDoc(userRef);
-      const data = docSnap.data();
-
-      const rechecks = data.Rechecks;
-
-      console.log(data)
-
-      const returnRecheckNumber = async () => {
-
-       
-         const lastIndex = rechecks.length - 1;
-
-         rechecks[0].activeStep = 2;
-         rechecks[0].isPay = true
-       
-
-         await updateDoc(userRef, { Rechecks: rechecks})
-
-
-     
-
-    
-
-      //Control user is have images or not for detect active step
-      //...
-      returnRecheckNumber();
-  
-
-     } 
-
-     */
-
 
     setIsLoading(true);
+
+    const auth = getAuth();
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        // Existing and future Auth states are now persisted in the current
+        // session only. Closing the window would clear any existing state even
+        // if a user forgets to sign out.
+        // ...
+        // New sign-in will be persisted with session persistence.
+      
+      
+      
+      
+        return signInWithEmailAndPassword(auth, user.email, gV.password);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log(errorCode, errorMessage)
+      });
 
       // Make sure to change this to your payment completion page
        
@@ -145,8 +136,8 @@ export default function CheckoutForm() {
           elements,
           confirmParams: {
               //return_url: "http://localhost:3000/pay-succes"
-              //return_url: "https://www.mitrua.com/pay-succes"
-              return_url:   "https://vitamu.com/redirect"
+              return_url: "https://www.mitrua.com/pay-succes"
+              //return_url:   "https://vitamu.com/redirect"
           },
         });
     
