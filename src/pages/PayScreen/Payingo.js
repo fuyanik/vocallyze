@@ -29,7 +29,7 @@ const Payingo = () => {
    const user =  auth.currentUser;
 
 
-    const [count, setCount] = useState(9);
+    const [count, setCount] = useState(6);
 
 
 
@@ -140,7 +140,7 @@ const Payingo = () => {
   
     setTimeout(() => {
     user &&   navigate("/user-panel")  
-   }, 9000);
+   }, 5000);
 
   
 
