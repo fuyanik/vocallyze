@@ -12,26 +12,28 @@ const Payingo = () => {
     const auth = getAuth();
     const user =  auth.currentUser;
 
-  // Local storage'dan veri almak için bir fonksiyon
-  const getFromLocalStorage = (key) => {
-  return localStorage.getItem(key);
-};
-
-
-
-
 
 
     const [count, setCount] = useState(9);
 
 
 
-    const signInWithLocalStorage =  () => {
-      const storedMailAddress = getFromLocalStorage("mailAddress");
-      const storedPass = getFromLocalStorage("pass");
+    const signInWithParams =  () => {
+      
+      const searchParams = new URLSearchParams(window.location.search);
+      const email = searchParams.get('email');
+      const pass = searchParams.get('pass');
+ 
+     if (email && pass) {
+       console.log('Mail:', email);
+       console.log('Pass:', pass);
+     }
+     else {
+      console.log("bi sikim yok");
+     }
   
-      console.log(storedMailAddress);
-      console.log(storedPass);
+
+    
 
       setPersistence(auth, browserLocalPersistence)
       .then(() => {
@@ -43,7 +45,7 @@ const Payingo = () => {
         
       
       
-        return signInWithEmailAndPassword(auth, storedMailAddress, storedPass );
+        return signInWithEmailAndPassword(auth, email, pass );
       })
       .catch((error) => {
         // Handle Errors here.
@@ -104,8 +106,8 @@ const Payingo = () => {
      
     
     useEffect(() => {
-      
-      signInWithLocalStorage();
+
+      signInWithParams();
       updatePay();
   
   

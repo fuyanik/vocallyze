@@ -89,11 +89,6 @@ export default function CheckoutForm() {
 
 
 
-    
-
-
-
-
 
    
     if (!stripe || !elements) {
@@ -106,7 +101,12 @@ export default function CheckoutForm() {
 
     setIsLoading(true);
 
-    
+    const email = user.email;
+    const pass = gV.password ;
+
+
+
+        const url = `http://www.mitrua.com/pay-succes?email=${email}&pass=${pass}`;
 
       // Make sure to change this to your payment completion page
        
@@ -116,8 +116,8 @@ export default function CheckoutForm() {
           elements,
           confirmParams: {
 
-              //return_url: "http://localhost:3000/pay-succes"
-              return_url: "https://www.mitrua.com/pay-succes"
+              return_url: url
+              //return_url: "https://www.mitrua.com/pay-succes"
               //return_url:   "https://vitamu.com/redirect"
           },
         });
