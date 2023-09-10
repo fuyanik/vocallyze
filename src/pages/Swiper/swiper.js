@@ -41,7 +41,7 @@ const SwiperPage = ({  isOutside = false, }) => {
   //...
   const planOneValue = 199;
   const planTwoValue = 499;
-  const planThreeValue = 1; 
+  const planThreeValue = 1599; 
 
 
    

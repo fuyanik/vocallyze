@@ -337,7 +337,7 @@ const UserPanelMobile = () => {
            
            
           <TabsMenu />
-          { (userPanelNavIndex === 4 || userPanelNavIndex === 5 || userPanelNavIndex === 6 || userPanelNavIndex === 7 || userPanelNavIndex === 8   )  && <TabsMenu isMore={true} />}
+          
           
          
           <div className="userPanel-mobile__header__line"></div>
@@ -531,10 +531,7 @@ const UserPanelMobile = () => {
                     <p>{user.displayName}</p>
                   </div>
 
-                  <div>
-                    <p>Date of the Birth</p>
-                    <p> {2022 - userAge}</p>
-                  </div>
+                 
 
                   <div>
                     <p>E-mail address</p>
@@ -546,10 +543,7 @@ const UserPanelMobile = () => {
                     <p>{userPhone}</p>
                   </div>
 
-                  <div>
-                    <p>Last Bi-rads Score</p>
-                    <p>{userTotalRecheck == 2 ? userBiRads2 : userBiRads}</p>
-                  </div>
+                  
 
                   <div className="userPanel-main-body-info-left-card-button">
                     Delete My Account

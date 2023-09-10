@@ -554,7 +554,7 @@ return (
                     }}
                     className={`${
                       isSlect3 && "text-[#000000]"
-                    } cursor-pointer hover:text-[#000000] duration-200`}
+                    } cursor-pointer hidden hover:text-[#000000] duration-200`}
                   >
                     {" "}
                     Messages
@@ -572,11 +572,13 @@ return (
                     }}
                     className={`${
                       isSlect4 && "text-[#000000]"
-                    } cursor-pointer hover:text-[#000000] duration-200`}
+                    } cursor-pointer hidden hover:text-[#000000] duration-200`}
                   >
                     Self - Exam
                   </p>
 
+
+               { /*  Upgrade */}
                   <p
                     onClick={() => {
                       setIsSelect1(false);
@@ -589,7 +591,7 @@ return (
                     }}
                     className={`${
                       isSlect5 && "text-[#000000]"
-                    } cursor-pointer hover:text-[#000000] duration-200`}
+                    } cursor-pointer  hover:text-[#000000] duration-200`}
                   >
                     Upgrade
                   </p>
@@ -606,7 +608,7 @@ return (
                     }}
                     className={`${
                       isSlect6 && "text-[#000000]"
-                    } cursor-pointer hover:text-[#000000] duration-200`}
+                    } cursor-pointer hidden hover:text-[#000000] duration-200`}
                   >
                     Get Help
                   </p>
@@ -623,7 +625,7 @@ return (
                     }}
                     className={`${
                       isSlect7 && "text-[#000000]"
-                    } cursor-pointer hover:text-[#000000] duration-200`}
+                    } cursor-pointer  hover:text-[#000000] duration-200`}
                   >
                     Info
                   </p>
@@ -824,7 +826,7 @@ return (
             {isSlect5 && (
               <div className="transform">
                 {" "}
-                <PayPlans isOutside={true} />{" "}
+                <PayPlans isOutside={true} />  {" "}
               </div>
             )}
 
@@ -847,10 +849,7 @@ return (
                       <p>{user.displayName}</p>
                     </div>
 
-                    <div>
-                      <p>Date of the Birth</p>
-                      <p> {2022 - userAge}</p>
-                    </div>
+                    
 
                     <div>
                       <p>E-mail address</p>
@@ -862,10 +861,7 @@ return (
                       <p>{userPhone}</p>
                     </div>
 
-                    <div>
-                      <p>Last Bi-rads Score</p>
-                      <p>{userTotalRecheck == 2 ? userBiRads2 : userBiRads}</p>
-                    </div>
+                  
 
                     <div className="userPanel-main-body-info-left-card-button">
                       Delete My Account

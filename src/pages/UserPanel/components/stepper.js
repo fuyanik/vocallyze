@@ -189,7 +189,7 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
                     fontFamily: "ProductSans-Light",
                     fontSize: "13px",
                     width: "80%",
-                    color: "rgba(20, 43, 111, 0.592)",
+                    color: "black",
                   }}
                 >
                   {step.description}

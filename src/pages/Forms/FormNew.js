@@ -654,6 +654,9 @@ const addToLocalStorage = (key, value) => {
             <p className="text-[17px] text-pri font-bold mt-4 lg:w-[55%] w-[96%]">
               How do you want to share your medical images?
             </p>
+          
+            {dropdownText == "I will share an access code."  &&  <p className="text-priTrans"> Once you share your access code with access@mitrua.com, image status will be updated.  </p> } 
+            {dropdownText == "I prefer to ship the CD or USB stick."  &&  <p className="text-priTrans"> It may take up to 7 days to obtain physical copies of your images. If you can upload the images by yourself, your recheck report will be ready tomorrow. </p> } 
 
 
             {/* Dropdown Select Area */}
@@ -928,16 +931,11 @@ const addToLocalStorage = (key, value) => {
       
 
           <button onClick={() => {
-                 
-               
-
-
-
 
 
                 /* Sıgn Up Step*/
 
-                 activeStep == 1 &&  handleSignup()
+                  activeStep == 1 &&  handleSignup()
                   activeStep == 2 &&  handleSignIn()
                   activeStep == 3 &&  handleSignIn()
                
@@ -982,16 +980,16 @@ const addToLocalStorage = (key, value) => {
                  /* Payment Step */
                  if (activeStep == 4) {
 
-                  handleSignIn();
-
-                 
-
+                  
 
                   AmountCalculator(mainPayAmount);
+
                   setDoc(
                     doc(db, "Mitrua", `${user.email}`),
                     {
-                        Rechecks: arrayUnion({
+                        Rechecks: [ 
+                          
+                          {
                           formStep: activeStep,
                           activeStep: 1,
                           createDay: new Date().getDate(),
@@ -1013,11 +1011,14 @@ const addToLocalStorage = (key, value) => {
                           payTotalWithoutTax: gV.payTotal,
                           password: gV.password,
                           
-                        }),
+                        },],
+                        
+                        
                     },
                     { merge: true }
                   );
-                 }
+              
+                }
 
 
                  /* User and Info Logs */

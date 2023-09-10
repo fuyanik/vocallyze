@@ -94,14 +94,83 @@ export default function CustomizedAccordions({totalRecheck}) {
   };
 
 
+
  
  // 
 
- const docRef = doc(db, "VitamuUsersREAL", `${user.email}`);
+ const docRef = doc(db, "Mitrua", `${user.email}`);
 
- // 
-  //get users data from firebase and save it to array
-  // that functions help download to images URL when user click on download button
+ //get data firestore database 
+
+  const [recheksData, setRecheksData] = useState([]);
+
+ const getInfo = async () => {
+
+  const docRef = doc(db, "Mitrua", `${user.email}`);
+  await getDoc(docRef).then((doc) => {
+    if (doc.exists()) { 
+      console.log("Current data: ", doc.data());
+
+      setRecheksData(doc.data().Rechecks);
+      console.log(doc.data().Rechecks);
+
+    }}).catch((error) => {});
+ };
+
+
+
+
+ useEffect(() => {
+  getInfo();
+  return () => {
+    
+  }
+ },[])
+
+
+ const returnAccordionMonth = () => {
+
+
+  if(recheksData[0].createMonth === 0){
+    return "January"
+  }
+  if(recheksData[0].createMonth === 1){
+    return "February"
+  }
+  if(recheksData[0].createMonth === 2){
+    return "March"
+  }
+  if(recheksData[0].createMonth === 3){
+    return "April"
+  }
+  if(recheksData[0].createMonth === 4){
+    return "May"
+  }
+  if(recheksData[0].createMonth === 5){
+    return "June"
+  }
+  if(recheksData[0].createMonth === 6){
+    return "July"
+  }
+  if(recheksData[0].createMonth === 7){
+    return "August"
+  }
+  if(recheksData[0].createMonth === 8){
+    return "September"
+  }
+  if(recheksData[0].createMonth === 9 ){
+    return "October"
+  }
+  if(recheksData[0].createMonth === 10 ){
+    return "November"
+  }
+  if(recheksData[0].createMonth === 11 ){
+    return "December"
+  }
+
+  
+ }
+
 
 
   const [zipUrls, setZipUrls] = useState([]);
@@ -279,45 +348,38 @@ export default function CustomizedAccordions({totalRecheck}) {
         <AccordionSummary
         
         aria-controls="panel1d-content" id="panel1d-header">
-          <Typography
-            style={{
-              color: "#000000",
-              fontFamily: "ProductSans-Light",
-              fontSize: "15.4px",
-              fontWeight: "500",
-              lineHeight: " 19px",
-              
-            }}
-          >
-            { totalRecheck == 1 ?  gV.currentDate  : gV.currentDate2 }{" "}
-          </Typography>
 
           <div
             style={{
               position: "relative",
               display: "flex",
               flexDirection: "row",
-              left: `${gV.mq.matches ? "4%" :"12.5%" }`,
-              fontWeight: "bold",
-              width: "68%",
-              justifyContent: "space-between",
-              color: "#000000"
+              left: `${gV.mq.matches ? "-6%" :"6.5%" }`,
+              width: "20%",
+              
+             
             }}
           >
-            <Typography
-              style={{
-                color: "#000000",
-                fontFamily: "ProductSans-Light",
-                fontSize: "15.4px",
-                fontWeight: "600",
-                position: "relative",
-                letterSpacing: "-0px",
-                width: "90%",
-                
-              }}
-            >
-              {showAppliesText.toString()} Images
-            </Typography>
+           <div className="flex lg:gap-4 gap-2 lg:text-normal lg:text-[14px] text-[12px]">
+           { recheksData[0] &&  recheksData[0].scanType.map((item) => ( 
+            <p className="text-white bg-sec  whitespace-nowrap   font-normal font-product px-3 py-1 rounded-full relative lg:bottom-1"> {item}</p>
+            ))  }
+             <div className=" flex gap-2 relative lg:bottom-1">
+              { recheksData[0] &&  recheksData[0].bodyParts.map((item) => ( 
+            
+               
+                 <p className="text-white bg-black font-normal  whitespace-nowrap  font-product px-3 py-1 rounded-full"> {item}</p>
+                  
+              ))  }
+              </div>
+
+
+
+            
+           </div>
+
+             
+             
 
           </div>
         </AccordionSummary>

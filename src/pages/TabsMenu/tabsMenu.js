@@ -69,33 +69,19 @@ const TabsMenu = ({isMore = false}) => {
   return (
        
     <>
-       { 
-       !isMore ?
+       
+     
           <div  className='tabs-menu__item'>
               <div className={selectorClass}></div>
               <p className={` ${active == 1 && "tabs-menu__item__text" }`} onClick={()=>{setActive(1); setGlobalState("userPanelNavIndex", 1)}} >  Rechecks  </p>
               <p className={` ${active == 2 && "tabs-menu__item__text" }`} onClick={()=>{setActive(2); setGlobalState("userPanelNavIndex", 2) }  }>  Images  </p>
-              <p className={` ${active == 3 && "tabs-menu__item__text" }`} onClick={()=>{setActive(3); setGlobalState("userPanelNavIndex", 3) } }>  Messages  </p>
-              <p className={` ${active == 4 && "tabs-menu__item__text" }`} onClick={()=>{setActive(4); setGlobalState("userPanelNavIndex", 4)  } }>  More  </p>
+              <p className={` ${active == 3 && "tabs-menu__item__text" }`} onClick={()=>{setActive(3); setGlobalState("userPanelNavIndex", 6) } }>  Upgrade  </p>
+              <p className={` ${active == 4 && "tabs-menu__item__text" }`} onClick={()=>{setActive(4); setGlobalState("userPanelNavIndex", 8)  } }>  Info  </p>
           </div>
-          :
-
-        <div  className='tabs-menu__item2'>
-          
-          <div className={` duration-300 bg-[#000000] h-[82%] ${active == 4 && " w-[26.8%] left-[2%]"}  ${active == 5 && " w-[26.8%] left-[2%]"}  ${active == 6 && " w-[26.4%] left-[30%]"} ${active == 7 && " w-[26.4%] left-[55.4%]"} ${active == 8 && " w-[14.9%] left-[83.5%]"} rounded-[20px]  -z-10 absolute`}></div>
-         
-          <p className={`   ${active == 5  &&  "text-[#fff] "}  `} onClick={()=>{setActive(5); setGlobalState("userPanelNavIndex", 5)  } } >   Self - Exam    </p>
-          
-          <p className={` text-[#000000]   ${active == 6 &&  "text-[#fff] "}   `} onClick={()=>{setActive(6); setGlobalState("userPanelNavIndex", 6) }  }>  Upgrade   </p>
-         
-          <p className={` text-[#000000]   ${active == 7 &&  "text-[#fff] "}  `} onClick={()=>{setActive(7); setGlobalState("userPanelNavIndex", 7) } }>  Get Help   </p>
-         
-          <p className={` text-[#000000]   ${active == 8 &&  "text-[#fff] "} `} onClick={()=>{setActive(8); setGlobalState("userPanelNavIndex", 8)  } }>  Info  </p>
-   
-       </div>
+    
 
        
-        }
+      
       
     </>
   )
