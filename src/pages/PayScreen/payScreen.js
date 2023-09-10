@@ -17,8 +17,8 @@ import { getAuth } from "firebase/auth";
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
 
-//const stripePromise = loadStripe("pk_live_51NaPvrCBleCtOxyzN6KxGYhMC1FzC5iEq5zNKFOvaKZO9J0X6TzVvNPLwh1mLOvINXN2OpwFB7SiYamXQijmvKLh006OMRfS9m");
-const stripePromise = loadStripe("pk_test_51LOrQYKGr3XuaAt4k9NHq0fW5AMPq71nMA6c9SIPVvRXadetwvACfgR4Fk5gk6zs6hnHrH0VdqevAoMHa8f9s2PB00txc9mDlI");
+const stripePromise = loadStripe("pk_live_51NaPvrCBleCtOxyzN6KxGYhMC1FzC5iEq5zNKFOvaKZO9J0X6TzVvNPLwh1mLOvINXN2OpwFB7SiYamXQijmvKLh006OMRfS9m");
+//const stripePromise = loadStripe("pk_test_51LOrQYKGr3XuaAt4k9NHq0fW5AMPq71nMA6c9SIPVvRXadetwvACfgR4Fk5gk6zs6hnHrH0VdqevAoMHa8f9s2PB00txc9mDlI");
 
 
 // const stripePromise = loadStripe(keys.stripePublishableKey);
@@ -45,7 +45,7 @@ const ClosehandleClick = () => {
 
 const fetchData = async (totalValue) => {
   
- await fetch("https://vitamu.com/create-payment-intent", {
+ await fetch("https://nodejstesto-79f1b4446c49.herokuapp.com/create-payment-intent", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
    
