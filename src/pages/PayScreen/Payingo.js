@@ -4,7 +4,7 @@ import { useEffect,useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc, getDoc, arrayUnion, updateDoc   } from "firebase/firestore"; 
 import { db } from '../../firebase';
-import { getAuth } from 'firebase/auth';
+import { browserLocalPersistence, getAuth, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 
 
 
@@ -12,7 +12,48 @@ const Payingo = () => {
     const auth = getAuth();
     const user =  auth.currentUser;
 
+  // Local storage'dan veri almak için bir fonksiyon
+  const getFromLocalStorage = (key) => {
+  return localStorage.getItem(key);
+};
+
+
+
+
+
+
     const [count, setCount] = useState(9);
+
+
+
+    const signInWithLocalStorage =  () => {
+      const storedMailAddress = getFromLocalStorage("mailAddress");
+      const storedPass = getFromLocalStorage("pass");
+  
+      console.log(storedMailAddress);
+      console.log(storedPass);
+
+      setPersistence(auth, browserLocalPersistence)
+      .then(() => {
+        // Existing and future Auth states are now persisted in the current
+        // session only. Closing the window would clear any existing state even
+        // if a user forgets to sign out.
+        // ...
+        // New sign-in will be persisted with session persistence.
+        
+      
+      
+        return signInWithEmailAndPassword(auth, storedMailAddress, storedPass );
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log(errorCode, errorMessage)
+      });
+
+    }
 
  
     const updatePay = async ()  => {
@@ -63,7 +104,8 @@ const Payingo = () => {
      
     
     useEffect(() => {
-          
+      
+      signInWithLocalStorage();
       updatePay();
   
   

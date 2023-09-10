@@ -431,6 +431,11 @@ export default function FormNew() {
  
  }
 
+ // Local storage'a veri eklemek için bir fonksiyon
+const addToLocalStorage = (key, value) => {
+  localStorage.setItem(key, value);
+};
+
   const auth = getAuth();
   const user = auth.currentUser;
 
@@ -451,6 +456,8 @@ export default function FormNew() {
     const [question, setQuestion] = useState("")
     const [medicalCenter, setMedicalCenter] = useState("")
 
+    const [isCameForm, setIsCameForm] = useState(false)
+
 
     const [isPopupOpen, setIsPopupOpen] = useState(false)
     const [isPopupOpen2, setIsPopupOpen2] = useState(false)
@@ -461,13 +468,14 @@ export default function FormNew() {
     useEffect(() => {
     //Create random password
     //...
-    gV.password = Math.random().toString(36).slice(-10);
+    if(!user) {
+      gV.password = Math.random().toString(36).slice(-10);
+      addToLocalStorage("pass", gV.password); // Local storage'a veriyi ekler
+      setIsCameForm(true)
+    }
+    
     }, [])
 
-
-
-    
-    
 
 
     {/* Start Step Contents */}
@@ -516,6 +524,7 @@ export default function FormNew() {
           onChange={(e) => {
             setName(e.target.value);
             gV.MailAddres = e.target.value;
+            
           }}
           type="text"
           className={contactInputStyle}
@@ -534,6 +543,7 @@ export default function FormNew() {
           value={mail}
           onChange={(e) => {
             setMail(e.target.value);
+            addToLocalStorage("mailAddress", e.target.value); // Local storage'a veriyi ekler
           }}
           type="text"
           className={contactInputStyle}
