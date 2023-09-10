@@ -99,13 +99,13 @@ export default function MobileFooterCustomizedAccordions() {
           <ul  className="mobile-footer-accordion-list">
              
          
-          <Link className="style-none" to="/human-error">  <li>MRI</li> </Link>
-          <Link className="style-none" to="/missed-diagnosis"><li>Mammogram</li> </Link>
-          <Link className="style-none" to="/early-detection">  <li>Ultrasound</li> </Link>
-          <Link className="style-none" to="/statistics">   <li> Ct Scan</li> </Link>
-          <Link className="style-none" to="/resources"> <li> X-Ray</li> </Link>
-          <Link className="style-none" to="/resources"> <li> Full Body Scan</li> </Link>
-          <Link className="style-none" to="/resources"> <li> Pregnancy</li> </Link>
+          <Link className="style-none" to="/mri">  <li>MRI</li> </Link>
+          <Link className="style-none" to="/mammogram"><li>Mammogram</li> </Link>
+          <Link className="style-none" to="/ultrasound">  <li>Ultrasound</li> </Link>
+          <Link className="style-none" to="/ct">   <li> Ct Scan</li> </Link>
+          <Link className="style-none" to="/x-ray"> <li> X-Ray</li> </Link>
+          <Link className="style-none" to="/full-body"> <li> Full Body Scan</li> </Link>
+          <Link className="style-none" to="/pregnancy"> <li> Pregnancy</li> </Link>
      
           
           

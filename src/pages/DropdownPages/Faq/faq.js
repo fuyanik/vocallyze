@@ -51,14 +51,10 @@ const Faq = ({isOutside = false}) => {
   
             <div className={`${!gV.mq.matches && "w-[120%]"}  `} style={{display: "flex", flexDirection:"column", gap:"30px"}}>
   
-              <p style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500", marginTop:"50px"}}>Recheck </p>
+              <p style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500", marginTop:"50px"}}> </p>
               <AccordionRecheck/>
   
-              <p style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500"}}>Red-Flags </p>
-              <AccordionRedFlags/>
-             
-              <p style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500"}}>Privacy </p>
-              <AccordionPrivacy/>
+            
   
   
             </div>

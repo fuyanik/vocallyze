@@ -863,7 +863,7 @@ const addToLocalStorage = (key, value) => {
       <div>
         <h1 onClick={()=>{setIsPopupOpen(false)}} className="absolute z-50 right-6 top-0 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
         <PayScreen/> 
-      </div>}
+      </div> }
       close={false}
       />
 
@@ -871,7 +871,14 @@ const addToLocalStorage = (key, value) => {
         close={true}
         open={isPopupOpen2}
         onDismiss={onDismiss2}
-        contents={<SampleReports isOutside={true} />}
+        contents={
+          <div>
+           <h1 onClick={()=>{setIsPopupOpen2(false)}} className="absolute z-50 right-4 top-1 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
+           <SampleReports isOutside={true}/>
+          </div>
+         
+        
+        }
       
       />
 

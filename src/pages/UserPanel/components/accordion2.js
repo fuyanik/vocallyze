@@ -354,7 +354,7 @@ export default function CustomizedAccordions({totalRecheck}) {
               position: "relative",
               display: "flex",
               flexDirection: "row",
-              left: `${gV.mq.matches ? "-6%" :"6.5%" }`,
+              left: `${gV.mq.matches ? "-6%" :"-0.5%" }`,
               width: "20%",
               
              

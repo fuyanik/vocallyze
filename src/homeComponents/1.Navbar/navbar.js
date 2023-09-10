@@ -508,14 +508,21 @@ return (
                         </div>
 
                         <div className="flex flex-col gap-4">
-                          <div className="flex gap-4 items-center cursor-pointer">
-                            {" "}
-                            {svgPregnancy} <p className="text-sm"> Pregnancy</p>{" "}
-                          </div>
-                          <div className="flex gap-4 items-center cursor-pointer">
-                            {" "}
-                            {svgBodyMrı} <p className="text-sm"> Full Body</p>{" "}
-                          </div>
+                         
+                         <Link to="/pregnancy">
+                           <div className="flex gap-4 items-center cursor-pointer">
+                             {" "}
+                             {svgPregnancy} <p className="text-sm"> Pregnancy</p>{" "}
+                           </div>
+                         </Link>
+                        
+                         <Link to="/full-body">
+                           <div className="flex gap-4 items-center cursor-pointer">
+                             {" "}
+                             {svgBodyMrı} <p className="text-sm"> Full Body</p>{" "}
+                           </div>
+                         </Link>
+                      
                         </div>
                       </div>
                     </div>
@@ -920,9 +927,9 @@ return (
           </div>
 
           <div className="flex flex-col gap-5">
-            <a
+            <Link
               class="flex gap-3 items-center py-3 group w-full justify-between rounded-xl"
-              href="/services/private_pregnancy_scans"
+              to="/pregnancy"
             >
               <div class="flex items-center gap-4">
                 <div class="w-8 h-8 stroke-1">{svgPregnancy}</div>
@@ -941,13 +948,12 @@ return (
                   <line x1="5" y1="12" x2="11" y2="6"></line>
                 </svg>
               </div>
-            </a>
+            </Link>
 
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={"/full-body"}
               class="flex gap-3 items-center  group w-full justify-between rounded-xl"
-              href="https://fullbodyscan.com/"
+            
             >
               <div class="flex items-center gap-4">
                 <div class="w-8 h-8 stroke-1">
@@ -975,7 +981,7 @@ return (
                   <line x1="5" y1="12" x2="11" y2="6"></line>
                 </svg>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 

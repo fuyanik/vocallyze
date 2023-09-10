@@ -33,6 +33,8 @@ import WhySecondOpinion from './pages/WhySecondOpinion/WhySecondOpinion';
 import SampleReports from './pages/DropdownPages/SampleReports/SampleReports';
 import Faq from './pages/DropdownPages/Faq/faq';
 import Payingo from './pages/PayScreen/Payingo';
+import Pregnancy from './pages/Services/Pregnancy';
+import FullBody from './pages/Services/FullBody';
 
 
   
@@ -69,6 +71,8 @@ export default function App() {
             <Route path="/ct" element={<CTScan/>} />
             <Route path="/mammogram" element={<Mammogram/>} />
             <Route path="/x-ray" element={<Xray/>} />
+            <Route path="/pregnancy" element={<Pregnancy/>} />
+            <Route path="/full-body" element={<FullBody/>} />
 
 
 

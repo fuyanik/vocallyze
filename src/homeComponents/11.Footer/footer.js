@@ -62,30 +62,30 @@ const Footer = ({marginTop}) => {
         <div className="footer-main-right">
           <ul>
             <p className="footer-main-rgiht-header">Services</p>
-            <Link className="style-none" to="/human-error">
+            <Link className="style-none" to="/mri">
               <li>MRI</li>
             </Link>
-            <Link to="/missed-diagnosis">
+            <Link to="/mammogram">
               {" "}
               <li>Mammogram</li>{" "}
             </Link>
-            <Link to="/early-detection">
+            <Link to="/ultrasound">
               {" "}
               <li>Ultrasound</li>{" "}
             </Link>
-            <Link to="/statistics">
+            <Link to="/ct">
               {" "}
               <li>CT Scan</li>{" "}
             </Link>
-            <Link to="/resources">
+            <Link to="/x-ray">
               {" "}
               <li>X-Ray</li>{" "}
             </Link>
-            <Link to="/resources">
+            <Link to="/full-body">
               {" "}
               <li>Full Body Scan</li>{" "}
             </Link>
-            <Link to="/resources">
+            <Link to="/pregnancy">
               {" "}
               <li>Pregnancy</li>{" "}
             </Link>

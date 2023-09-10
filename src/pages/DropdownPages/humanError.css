@@ -270,7 +270,7 @@ letter-spacing: 0.2px;
 .accordions-text{
     font-family: "ProductSans-Light";
     font-weight: 400;
-    color: #142b6fd1;
+    color: rgba(0, 0, 0, 0.78);
     font-size: 18px;
     line-height: 23.399999618530273px;
 }
@@ -278,7 +278,6 @@ letter-spacing: 0.2px;
 .accordions-text span{
     font-family: "ProductSans-Light";
     font-weight: 800;
-    color: #142b6f;
     font-size: 18.4px;
     letter-spacing: 0px;
    

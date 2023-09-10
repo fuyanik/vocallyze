@@ -186,7 +186,7 @@ const SampleReports = ({isOutside = false}) => {
       mobileMenuTo={"/mobileNavMenu"}
       />}
 
-     <section className={`font-product   h-auto ${isOutside ? "py-2 lg:w-full" : "py-[15vh] w-screen "}  overflow-hidden  bg-gray-100 relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
+     <section className={`font-product   h-auto ${isOutside ? "py-10 lg:w-ful bg-gray-100" : "py-[15vh] w-screen bg-gray-100 "}  overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
     
     {/*  Header */}
      { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
@@ -202,7 +202,7 @@ const SampleReports = ({isOutside = false}) => {
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
-     {isOutside && <p className='relative -mt-9 lg:-mt-6 bg-white text-center z-50 w-full '>Scroll down to see whole report</p>}
+     {isOutside && <p className='relative -mt-9 lg:-mt-6 bg-white text-center rounded-full px-4 w-fit z-50  '>Scroll down to see whole report</p>}
 
      {/*  Vertical Reports*/}
      <div className='flex overflow-hidden relative bottom-0 lg:bottom-12  flex-col px-2 gap-10 lg:mt-10'>
@@ -232,7 +232,7 @@ const SampleReports = ({isOutside = false}) => {
           />
 
 
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress'/>
+           <img className='border-b animate-fadeIn  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-2.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-3.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress'/>
@@ -260,7 +260,7 @@ const SampleReports = ({isOutside = false}) => {
     title={"Yellow Sofa"}
    />
  
- <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/2-1.png?auto=undefined%2Ccompress'/>
+ <img className='border-b animate-fadeIn  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/2-1.png?auto=undefined%2Ccompress'/>
  <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/2-2.png?auto=undefined%2Ccompress'/>
  <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6  ' src='https://vitamu.imgix.net/2-3.png?auto=undefined%2Ccompress'/>
        </div> }
@@ -269,7 +269,7 @@ const SampleReports = ({isOutside = false}) => {
          <Ping
            title={"Yellow Sofa"}
           />
-            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/3-1.png?auto=undefined%2Ccompress'/>
+            <img className='border-b animate-fadeIn  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/3-1.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-2.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-3.png?auto=undefined%2Ccompress'/>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-4.png?auto=undefined%2Ccompress'/>
