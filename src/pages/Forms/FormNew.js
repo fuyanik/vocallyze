@@ -29,6 +29,8 @@ import Insurance from "./components/Insurance";
 import AvailableRadiologists from "./components/availableRadiologists";
 import emailjs from 'emailjs-com';
 import SampleReports from "../DropdownPages/SampleReports/SampleReports";
+import {setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
+
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -772,12 +774,13 @@ export default function FormNew() {
 
     try {
 
-        await createUserWithEmailAndPassword(auth, mail, gV.password).then((userCredential) => {
-          // Signed in 
-          console.log("SIGN UP SUCCESS")
+      setPersistence(auth, browserSessionPersistence).then(() => {
+         
+        return createUserWithEmailAndPassword(auth, mail, gV.password)
+      });
 
+      
 
-        });
         updateProfile(auth.currentUser, { displayName: name });
       
        
