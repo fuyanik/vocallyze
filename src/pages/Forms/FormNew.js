@@ -774,13 +774,13 @@ export default function FormNew() {
 
     try {
 
-      setPersistence(auth, browserSessionPersistence).then(() => {
-         
-        return createUserWithEmailAndPassword(auth, mail, gV.password)
-      });
+        await createUserWithEmailAndPassword(auth, mail, gV.password).then((userCredential) => {
+          // Signed in 
+          console.log("SIGN UP SUCCESS")
 
-      
+          const user = userCredential.user;
 
+        });
         updateProfile(auth.currentUser, { displayName: name });
       
        
@@ -810,6 +810,27 @@ export default function FormNew() {
     //send email
 
       user && emailjs.send('service_i7knjsi', 'template_oazumi8', templateParams, 'xBTh1qYqTM9n5L1_P')
+  };
+
+  const handleSignIn =  () => {
+
+    const auth = getAuth();
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        // Existing and future Auth states are now persisted in the current
+        // session only. Closing the window would clear any existing state even
+        // if a user forgets to sign out.
+        // ...
+        // New sign-in will be persisted with session persistence.
+        return signInWithEmailAndPassword(auth, mail, gV.password);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log(errorCode, errorMessage)
+      });
   };
 
     
@@ -889,10 +910,18 @@ export default function FormNew() {
       
 
           <button onClick={() => {
+                 
+               
+
+
+
+
 
                 /* Sıgn Up Step*/
 
                  activeStep == 1 &&  handleSignup()
+                  activeStep == 2 &&  handleSignIn()
+                  activeStep == 3 &&  handleSignIn()
                
                  /* Payment Step States */
                  activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
@@ -934,6 +963,8 @@ export default function FormNew() {
 
                  /* Payment Step */
                  if (activeStep == 4) {
+
+                  handleSignIn();
 
                  
 
