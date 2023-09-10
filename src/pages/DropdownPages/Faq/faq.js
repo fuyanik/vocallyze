@@ -49,9 +49,9 @@ const Faq = ({isOutside = false}) => {
              />
   
   
-            <div className={`${!gV.mq.matches && "w-[120%]"}  `} style={{display: "flex", flexDirection:"column", gap:"30px"}}>
+            <div className={`${!gV.mq.matches && "w-[120%]"}  top-4 relative `} style={{display: "flex", flexDirection:"column", gap:"30px"}}>
   
-              <p style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500", marginTop:"50px"}}> </p>
+              <p className='hidden' style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500", marginTop:"50px"}}> </p>
               <AccordionRecheck/>
   
             
