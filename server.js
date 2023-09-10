@@ -1,9 +1,8 @@
 
 const express = require("express");
 const app = express();
-const keys = require("./config/keys");
 const cors = require('cors');
-const axios = require('axios');
+
 
 
 const port = process.env.PORT || 4242;

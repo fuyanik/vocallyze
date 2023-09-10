@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import gV from "../../gV.js";
 
-import { getAuth } from "firebase/auth";
+import { browserLocalPersistence, getAuth, setPersistence, signInWithEmailAndPassword } from "firebase/auth";
 import { setGlobalState, useGlobalState } from "../../hookState";
 
 
@@ -107,7 +107,7 @@ export default function CheckoutForm() {
     setIsLoading(true);
 
     const auth = getAuth();
-    setPersistence(auth, browserSessionPersistence)
+    setPersistence(auth, browserLocalPersistence)
       .then(() => {
         // Existing and future Auth states are now persisted in the current
         // session only. Closing the window would clear any existing state even
