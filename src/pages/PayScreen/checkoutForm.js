@@ -114,6 +114,7 @@ export default function CheckoutForm() {
         // if a user forgets to sign out.
         // ...
         // New sign-in will be persisted with session persistence.
+        
       
       
       
@@ -135,6 +136,7 @@ export default function CheckoutForm() {
           //`Elements` instance that was used to create the Payment Element
           elements,
           confirmParams: {
+
               //return_url: "http://localhost:3000/pay-succes"
               return_url: "https://www.mitrua.com/pay-succes"
               //return_url:   "https://vitamu.com/redirect"
