@@ -29,7 +29,7 @@ const { setGlobalState, useGlobalState } = createGlobalState({
  isPayScreen: false,
  isFormValidate: false,
  userPanelNavIndex: 0,
- isFormPopUp: false,
+ isLoginPopup: false,
  insuranceCompany: "none",
 
  mainPayAmount: 299,

@@ -81,7 +81,7 @@ const YellowButton = ({text}) => {
     )
  }
 
-export default function AccordionRecheck() {
+export default function AccordionRecheck({isOutside = false}) {
   const [expanded, setExpanded] = React.useState("panel1");
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -265,51 +265,58 @@ If you have any special requests before, during, or after the recheck process, y
       </Accordion>
 
 
-      <Accordion
-        expanded={expanded === "panel7"}
-        onChange={handleChange("panel7")}
-      >
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
-          }} >Do you store my medical data?</Typography>
-        </AccordionSummary>
 
+{  !isOutside &&
+    <div>
+        <Accordion
+          expanded={expanded === "panel7"}
+          onChange={handleChange("panel7")}
+        >
+          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
+            }} >Do you store my medical data?</Typography>
+          </AccordionSummary>
       
-        <AccordionDetails>
-
-
-        <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-          <p>We never store the files you upload or your recheck reports without your consent. If you do not give us permission to keep your records, the images, and reports are kept on Amazon Web Services servers for 24 hours and then deleted permanently.</p>
-        </div>
         
-     
-        </AccordionDetails>
+          <AccordionDetails>
       
       
-      </Accordion>
-      <Accordion
-        expanded={expanded === "panel8"}
-        onChange={handleChange("panel8")}
-      >
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
-          }} >Is Mitrua.com HIPAA compliant?</Typography>
-        </AccordionSummary>
-
-      
-        <AccordionDetails>
-
-
-        <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-           <p>The Health Insurance Portability and Accountability Act (HIPAA) sets the standard for sensitive patient data protection. Companies that deal with protected health information (PHI) must have physical, network, and process security measures in place and follow them to ensure HIPAA Compliance.</p>
-           <p>Here at Mitrua, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your images for a second opinion report, we use HIPAA compliant Amazon Web Services servers. During the journey of your images recheck, the first step we take is to anonymize your images, so that neither our radiologists nor any other team member will know your name.</p>
-        </div>
+          <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
+            <p>We never store the files you upload or your recheck reports without your consent. If you do not give us permission to keep your records, the images, and reports are kept on Amazon Web Services servers for 24 hours and then deleted permanently.</p>
+          </div>
+          
+       
+          </AccordionDetails>
         
-     
-        </AccordionDetails>
+        
+        </Accordion>
+      
+        <Accordion
+          expanded={expanded === "panel8"}
+          onChange={handleChange("panel8")}
+        >
+          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
+            }} >Is Mitrua.com HIPAA compliant?</Typography>
+          </AccordionSummary>
+      
+        
+          <AccordionDetails>
       
       
-      </Accordion>
+          <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
+             <p>The Health Insurance Portability and Accountability Act (HIPAA) sets the standard for sensitive patient data protection. Companies that deal with protected health information (PHI) must have physical, network, and process security measures in place and follow them to ensure HIPAA Compliance.</p>
+             <p>Here at Mitrua, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your images for a second opinion report, we use HIPAA compliant Amazon Web Services servers. During the journey of your images recheck, the first step we take is to anonymize your images, so that neither our radiologists nor any other team member will know your name.</p>
+          </div>
+          
+       
+          </AccordionDetails>
+        
+        
+        </Accordion>
+    </div>
+
+}
 
 
     </div>

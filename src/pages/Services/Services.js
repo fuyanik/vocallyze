@@ -9,6 +9,7 @@ import SelectScan from '../Forms/components/selectScan';
 import imageSvg2 from "../../assets/svg/image-2.svg";
 import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter';
 import Footer from '../../homeComponents/11.Footer/footer';
+import AccordionRecheck from '../DropdownPages/Faq/accordionRecheck';
 
 
 const Services = ({title,imageUrl, otherScanning }) => {
@@ -584,42 +585,12 @@ gV.mq.matches
         <p className='leading-6'>If you have any questions about booking an MRI  scan with us, <a class="primary-text-link" href="/faqs">visit our FAQ guide</a>.</p>
         <p className='leading-6'>Can’t see an answer to your question? Our friendly patient care team are happy to help.</p>
       </div>
-      <a class="button button-primary" href="/faqs">More FAQs</a>
+      <a class="button button-primary" href="/faq">More FAQs</a>
       </div>
    
       <ul className="lg:col-span-6 xl:col-start-7">
+        <AccordionRecheck isOutside={true} />
 
-     <FAQItem
-        question="Do I need a GP referral or self-referral?"
-        answer="A key benefit of booking with Scan.com is that you do not need a GP referral to access our services. There is also no self-referral process. Instead, our in-house medical team will contact you once you have booked and made payment for your scan. Our clinicians will ask you for all of the relevant information they need to compile a referral on your behalf, which is then passed on to your chosen scanning site."
-      />
-      <FAQItem
-        question="How will I receive my results?"
-        answer="Once you have had your scan, your radiologist’s report will be emailed to you in PDF format, usually within 7 working days. Digital copies of your images are also available as required for onward care. The method for accessing the images differs depending on your chosen scanning site. Some sites use IEP (Image Exchange Portal), while others require an image request form to be completed. Please refer to your results email for further information."
-      />
-
-      <FAQItem
-        question="What's included in the price of my booking?"
-        answer={
-          <>
-            <p>A pre-scan consultation from one of our medical team over the phone or via email.</p>
-            <p>A written referral by our medical team, using the information from your consultation.</p>
-            <p>An MRI scan at your chosen scanning centre.</p>
-            <p>A written report on your scan by a consultant radiologist.</p>
-            <p>Access to copies of your scan images, which are downloadable, as required.</p>
-            <p>A post-scan consultation with one of our medical team if there are any adverse findings in your scan.</p>
-          </>
-        }
-      />
-      <FAQItem
-        question="How long does an MRI Scan take?"
-        answer="An MRI scan on a single body part typically takes between 10–30 minutes. Full-body MRI scans, additional body parts, or more complex scans can last up to 90 minutes. This time frame can vary, and your radiographer will let you know the estimated duration of your scan before the procedure starts. Visit our news page for more information on how MRI scans work."
-      />
-      <FAQItem
-        question="Can I cancel and get a refund?"
-        answer="Yes, we do offer cancellations and refunds, though depending on the status of your booking this may incur a £50 cancellation fee. For more information, visit our terms and conditions."
-      />
-     
       </ul>
 
       </div>

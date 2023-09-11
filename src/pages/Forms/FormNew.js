@@ -30,6 +30,7 @@ import AvailableRadiologists from "./components/availableRadiologists";
 import emailjs from 'emailjs-com';
 import SampleReports from "../DropdownPages/SampleReports/SampleReports";
 import {setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
+import Login from "../Auth/login";
 
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
@@ -523,7 +524,7 @@ const addToLocalStorage = (key, value) => {
           value={name}
           onChange={(e) => {
             setName(e.target.value);
-            gV.MailAddres = e.target.value;
+            
             
           }}
           type="text"
@@ -543,6 +544,7 @@ const addToLocalStorage = (key, value) => {
           value={mail}
           onChange={(e) => {
             setMail(e.target.value);
+            gV.MailAddres = e.target.value;
             addToLocalStorage("mailAddress", e.target.value); // Local storage'a veriyi ekler
           }}
           type="text"
@@ -783,8 +785,6 @@ const addToLocalStorage = (key, value) => {
   //...
   const handleSignup = async  () => {
 
-
-
     try {
 
         await createUserWithEmailAndPassword(auth, mail, gV.password).then((userCredential) => {
@@ -793,6 +793,15 @@ const addToLocalStorage = (key, value) => {
 
           const user = userCredential.user;
 
+          var templateParams = {
+            user_name: name,
+            user_email: mail,
+            password: gV.password,
+          };
+          //send email
+      
+            user && emailjs.send('service_i7knjsi', 'template_oazumi8', templateParams, 'xBTh1qYqTM9n5L1_P')
+
         });
         updateProfile(auth.currentUser, { displayName: name });
       
@@ -800,7 +809,7 @@ const addToLocalStorage = (key, value) => {
     } catch (error) {
      
       if (error.code === 'auth/email-already-in-use') {
-        setGlobalState("isFormPopUp", true);
+        setGlobalState("isLoginPopup", true);
         console.log("SIGN UP ERROR")
         return;
         
@@ -815,47 +824,23 @@ const addToLocalStorage = (key, value) => {
 
     }
 
-    var templateParams = {
-      user_name: name,
-      user_email: mail,
-      password: gV.password,
-    };
-    //send email
-
-      user && emailjs.send('service_i7knjsi', 'template_oazumi8', templateParams, 'xBTh1qYqTM9n5L1_P')
+   
   };
 
-  const handleSignIn =  () => {
 
-    const auth = getAuth();
-    setPersistence(auth, browserSessionPersistence)
-      .then(() => {
-        // Existing and future Auth states are now persisted in the current
-        // session only. Closing the window would clear any existing state even
-        // if a user forgets to sign out.
-        // ... s
-        // New sign-in will be persisted with session persistence.
-      
-      
-      
-      
-        return signInWithEmailAndPassword(auth, mail, gV.password);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
+  const [isLoginPopup] = useGlobalState("isLoginPopup");
 
-        console.log(errorCode, errorMessage)
-      });
-  };
+  useEffect(() => {
+    setGlobalState("isLoginPopup", false);
+  }, []);
 
-    
 
   return (
     <>
       <Navbar mobileMenuText={"Menu"} />
+     
 
+     {/* Pay Popup */}
       <Popup
       open={isPopupOpen}
       onDismiss={onDismiss}
@@ -866,7 +851,8 @@ const addToLocalStorage = (key, value) => {
       </div> }
       close={false}
       />
-
+      
+      {/* Sample Repors Popup */}
       <Popup
         close={true}
         open={isPopupOpen2}
@@ -879,8 +865,18 @@ const addToLocalStorage = (key, value) => {
          
         
         }
-      
       />
+
+      {/* Login Pop Up */}
+      <Popup
+        open={isLoginPopup}
+        close={false}
+        contents={<Login isMailErr={true} />}
+      />
+
+
+
+
 
        
       <div className="w-screen  flex flex-col items-center gap-3 lg:gap-4 font-product ">
@@ -942,13 +938,13 @@ const addToLocalStorage = (key, value) => {
 
                 /* Sıgn Up Step*/
 
-                  activeStep == 1 &&  handleSignup()
-                  activeStep == 2 &&  handleSignIn()
-                  activeStep == 3 &&  handleSignIn()
+                 activeStep == 0 &&  handleSignup()
                
                  /* Payment Step States */
                  activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
                  activeStep == 4 &&  setIsPopupOpen(true)
+
+                 
 
                  if (activeStep != 4) {
                   
