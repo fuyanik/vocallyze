@@ -62,7 +62,7 @@ const Faq = ({isOutside = false}) => {
 
          
 
-         <SideInformation/>
+     
         
         
 

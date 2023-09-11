@@ -78,11 +78,16 @@ const Login = ({isMailErr = false }) => {
     }
   };
 
-
+  var actionCodeSettings = {
+    // After password reset, the user will be give the ability to go back
+    // to this page.
+    url: 'https://www.mitrua.com/login',
+    handleCodeInApp: false
+  };
 
   const handleResetPassword = async () => {
 
-    await sendPasswordResetEmail(auth, gV.MailAddres).
+    await sendPasswordResetEmail(auth, gV.MailAddres, actionCodeSettings).
     then(() => {
 
      
