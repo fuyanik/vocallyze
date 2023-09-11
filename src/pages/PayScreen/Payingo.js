@@ -139,7 +139,7 @@ const Payingo = () => {
     let navigate = useNavigate();
   
     setTimeout(() => {
-    user &&   navigate("/user-panel")  
+    user ?  navigate("/user-panel")  :  navigate("/login") 
    }, 5000);
 
   
