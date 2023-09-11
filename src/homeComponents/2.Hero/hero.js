@@ -179,7 +179,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 
       <div className="absolute  lg:flex hidden right-12 top-6 shadow-xl rounded-2xl  ">
-        <img className=" h-[638px] rounded-xl" src="https://vitamu.imgix.net/img1.jpg" />
+        <img className=" h-[638px] rounded-xl" src="https://vitamu.imgix.net/img1.jpg?auto=compress" />
       </div>
        
       </div>
