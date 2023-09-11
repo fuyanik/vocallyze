@@ -1,5 +1,4 @@
 import React from 'react'
-import vitamuLogo from "./images/vitamuLogo.png";
 import "./style/login.css"
 import "./style/passwordReset.css"
 import { useState } from 'react';
@@ -7,6 +6,8 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+
+
 const PasswordReset = () => {
     let navigate = useNavigate();
 
@@ -21,11 +22,8 @@ const PasswordReset = () => {
                 console.log(error)
               toast(error.code, { type: "error" });
         });
-      
 
     }
-
-
 
 
   return (

@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -45,6 +45,8 @@ const Login = ({isMailErr = false }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [isSendMail, setIsSendMail]= useState(false);
+
 
   useEffect(() => {
 
@@ -53,6 +55,7 @@ const Login = ({isMailErr = false }) => {
     }
 
   }, [email]);
+
 
 
 
@@ -74,6 +77,25 @@ const Login = ({isMailErr = false }) => {
       toast(error.code, { type: "error" });
     }
   };
+
+
+
+  const handleResetPassword = async () => {
+
+    await sendPasswordResetEmail(auth, gV.MailAddres).
+    then(() => {
+
+     
+         setIsSendMail(true)
+       
+        
+    }).catch((error) => {
+            console.log(error)
+          toast(error.code, { type: "error" });
+    });
+
+};
+
 
 
   return (
@@ -111,8 +133,8 @@ const Login = ({isMailErr = false }) => {
           <div className="login-page__main__form-area">
             <p className="login-page__main__form-area__title">Welcome Back!</p>
             {isMailErr ? (
-              <p className="login-page__main__form-area__title2">
-                auth/email-already-in-use
+              <p className="login-page__main__form-area__title2 w-[90%] text-[15px] leading-1 text-center">
+               It seems you've visited Mitrua.com before. There's an account linked to this email address. Please enter your password. If you can't recall your password, click on "reset password."
               </p>
             ) : (
               <p className="login-page__main__form-area__title2">
@@ -144,11 +166,12 @@ const Login = ({isMailErr = false }) => {
               >
                 Login
               </div>
-              <Link className="style-none" to="/reset-password">
-                <p className="login-page__main__form-area__inputs__forgot-password">
-                  Forgot your password?
+
+             
+                <p onClick={handleResetPassword}className="login-page__main__form-area__inputs__forgot-password ">
+                  Reset your password
                 </p>
-              </Link>
+             
             </div>
 
             <div
@@ -171,6 +194,12 @@ const Login = ({isMailErr = false }) => {
               />{" "}
               <p>Login with Google </p>
             </div>
+          
+            {isSendMail && <div className="w-[80%] animate-fadeIn text-[14px] flex  py-1 gap-5 px-4 items-center justify-between text-[white] bg-[#198754] rounded-xl ">
+              <img width="32" height="32" src="https://img.icons8.com/ffffff/checked--v1.png" alt="checked--v1"/> 
+              <p> We sent your new password to your e-mail address, please check your inbox.</p>
+            </div>}
+
           </div>
 
           {!isMailErr && (
@@ -183,6 +212,7 @@ const Login = ({isMailErr = false }) => {
               <p className="border-b border-black">Get Started</p>
             </Link>
           )}
+
         </div>
       </div>
 

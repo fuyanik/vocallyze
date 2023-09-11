@@ -24,7 +24,7 @@
         padding-top: 7vh;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         align-items: center;
         height: auto;
         
@@ -41,7 +41,7 @@
             background-color: white;
             border-radius: 13px;
             box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-            justify-content: center;
+            padding-top: 4vh;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -116,20 +116,16 @@
                 }
 
                   &__forgot-password{
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: 400;
                     color: black;
                     letter-spacing: -0.3px;
                     text-decoration: none;
                     cursor: pointer;
                     transition: 100ms;
+                    text-decoration-line: underline;
+                    text-decoration: underline;
 
-                    &:hover{
-                        color: rgb(1, 39, 169);
-                        text-decoration-line: underline;
-                        text-decoration: underline;
-                    
-            } 
           }
             }
 
@@ -227,7 +223,7 @@
            height: auto;
            padding: 0px;
            background-color: white;
-           padding-top: 7vh;
+           padding-top: 1vh;
            padding-bottom: 2vh;
    
            &__logo{
@@ -318,20 +314,17 @@
                    }
    
                      &__forgot-password{
-                       font-size: 14px;
+                       font-size: 16px;
                        font-weight: 400;
                        color: rgb(3, 17, 66);
                        letter-spacing: 0.3px;
                        text-decoration: none;
                        cursor: pointer;
-                       transition: 100ms;
+                       transition: 300ms;
+                       text-decoration-line: underline;
+                       text-decoration: underline;
    
-                       &:hover{
-                           color: rgb(0, 0, 0);
-                           text-decoration-line: underline;
-                           text-decoration: underline;
-                       
-               } 
+             
              }
                }
    
