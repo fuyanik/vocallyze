@@ -26,10 +26,10 @@ const Login = ({isMailErr = false }) => {
       setCount(count - 1);
 
        if(user){
-         setIsUserFound(true)
+        !isMailErr && setIsUserFound(true)
 
          setTimeout(()=>{
-         navigate("/user-panel")
+          !isMailErr &&   navigate("/user-panel")
          }, 1000)
       } 
     

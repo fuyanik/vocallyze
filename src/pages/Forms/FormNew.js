@@ -835,6 +835,42 @@ const addToLocalStorage = (key, value) => {
   }, []);
 
 
+  useEffect(() => {
+
+       
+    setDoc(
+      doc(db, "MitruaPartial", `${user ? user.email : gV.MailAddres }`),
+      {
+          Rechecks: {
+            formStep: activeStep,
+            activeStep: 0,
+            createDay: new Date().getDate(),
+            createMonth: new Date().getMonth(),
+            createYear: new Date().getFullYear(),
+            bodyParts: gV.bodyParts,
+            scanType: gV.scanType,
+            name: name,
+            mail: mail,
+            phone: phone,
+            question: question,
+            medicalSendType: dropdownText,
+            medicalCenter: medicalCenter,
+            insurance: gV.insuranceCompany,
+            isPay: false,
+            createdAt: Timestamp.now().toDate(),
+            doctors: doctors,
+            paymentPlan: paymentPlan,
+            password: gV.password,
+            
+          },
+      },
+      { merge: true }
+    );
+
+
+  }, [activeStep]);
+
+
   return (
     <>
       <Navbar mobileMenuText={"Menu"} />
@@ -868,12 +904,12 @@ const addToLocalStorage = (key, value) => {
       />
 
       {/* Login Pop Up */}
-      <Popup
+    { !user &&  <Popup
         open={isLoginPopup}
         close={false}
         contents={<Login isMailErr={true} />}
       />
-
+}
 
 
 
@@ -924,6 +960,7 @@ const addToLocalStorage = (key, value) => {
 
          {/* Back Button */}
          { activeStep !=0 && <button  onClick={() => {
+          
                    setGlobalState("activeStep", activeStep - 1);
                 }} className="w-11 h-11 absolute z-20   animate-leftToRight rounded-full bg-sec flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
        
@@ -946,38 +983,10 @@ const addToLocalStorage = (key, value) => {
 
                  
 
-                 if (activeStep != 4) {
-                  
-                  setDoc(
-                    doc(db, "MitruaPartial", `${user.email}`),
-                    {
-                        Rechecks: {
-                          formStep: activeStep,
-                          activeStep: 0,
-                          createDay: new Date().getDate(),
-                          createMonth: new Date().getMonth(),
-                          createYear: new Date().getFullYear(),
-                          bodyParts: gV.bodyParts,
-                          scanType: gV.scanType,
-                          name: name,
-                          mail: mail,
-                          phone: phone,
-                          question: question,
-                          medicalSendType: dropdownText,
-                          medicalCenter: medicalCenter,
-                          insurance: gV.insuranceCompany,
-                          isPay: false,
-                          createdAt: Timestamp.now().toDate(),
-                          doctors: doctors,
-                          paymentPlan: paymentPlan,
-                          password: gV.password,
-                          
-                        },
-                    },
-                    { merge: true }
-                  );
+               
+               
 
-                 }
+                 
                  
 
                  /* Payment Step */
