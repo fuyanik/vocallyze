@@ -56,8 +56,8 @@ const PayPlans = ({ isOutside = false, }) => {
   
   //Plans default values
   //...
-  const planOneValue = 199;
-  const planTwoValue = 499;
+  const planOneValue = 299;
+  const planTwoValue = 599;
   const planThreeValue = 1599; 
 
   useEffect(() => {

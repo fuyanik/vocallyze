@@ -31,6 +31,7 @@ import emailjs from 'emailjs-com';
 import SampleReports from "../DropdownPages/SampleReports/SampleReports";
 import {setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
 import Login from "../Auth/login";
+import { Navigate } from "react-router-dom";
 
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
@@ -882,7 +883,7 @@ const addToLocalStorage = (key, value) => {
       onDismiss={onDismiss}
       contents={ 
       <div>
-        <h1 onClick={()=>{setIsPopupOpen(false)}} className="absolute z-50 right-6 top-0 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
+        <h1 onClick={()=>{setIsPopupOpen(false)}} className="absolute z-50 cursor-pointer right-6 top-0 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
         <PayScreen/> 
       </div> }
       close={false}
@@ -895,7 +896,7 @@ const addToLocalStorage = (key, value) => {
         onDismiss={onDismiss2}
         contents={
           <div>
-           <h1 onClick={()=>{setIsPopupOpen2(false)}} className="absolute z-50 right-4 top-1 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
+           <h1 onClick={()=>{setIsPopupOpen2(false)}} className="absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
            <SampleReports isOutside={true}/>
           </div>
          
@@ -907,7 +908,15 @@ const addToLocalStorage = (key, value) => {
     { !user &&  <Popup
         open={isLoginPopup}
         close={false}
-        contents={<Login isMailErr={true} />}
+        contents={
+          <div>
+          <h1 onClick={()=>{window.location.href = "/form-new" }} className="absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
+          <Login isMailErr={true} />
+         </div>
+        
+      
+      
+      }
       />
 }
 
