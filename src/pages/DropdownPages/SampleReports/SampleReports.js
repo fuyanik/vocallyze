@@ -8,10 +8,10 @@ const SampleReports = ({isOutside = false}) => {
 
 
 
-    const [showNum, setShowNum] = useState(0)
+    const [showNum, setShowNum] = useState(1)
 
 
-    const [tabsNum, setTabsNum] = useState(0)
+    const [tabsNum, setTabsNum] = useState(1)
     
     const [left, setLeft] = useState("left-[1%]")
     const [width, setWidth] = useState("")
@@ -232,10 +232,10 @@ const SampleReports = ({isOutside = false}) => {
           />
 
 
-           <img className='border-b animate-fadeIn  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-2.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-3.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress'/>
+           <img className='border-b hidden  animate-fadeIn  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress'/>
+           <img className='border-b hidden  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-2.png?auto=undefined%2Ccompress'/>
+           <img className='border-b hidden  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-3.png?auto=undefined%2Ccompress'/>
+           <img className='border-b hidden  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress'/>
        </div> }
 
 

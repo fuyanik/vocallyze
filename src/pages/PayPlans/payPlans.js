@@ -54,6 +54,7 @@ const PayPlans = ({ isOutside = false, }) => {
   const [selectedCard, setSelectedCard] = useState(0);
 
   
+  
   //Plans default values
   //...
   const planOneValue = 299;
