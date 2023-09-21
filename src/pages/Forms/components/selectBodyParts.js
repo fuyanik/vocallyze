@@ -4,31 +4,49 @@ import gV from "../../../gV";
 
 
 const names = [
+  "Abdomen",
   "Adrenal Glands",
+  "Angiography",
+  "Biliary System",
+  "Bone",
   "Brain & Head",
   "Breast",
   "Calf",
   "Cardiac",
   "Cervical Spine",
+  "Chest (Thorax)",
   "Coccyx",
+  "Ear",
   "Elbow",
+  "Female Genitalia (Ovaries, endometrium, uterus, cervix)",
   "Foot and Ankle",
   "Full Body Scan",
+  "Gall Bladder",
   "Hand",
   "Hip",
   "Kidney",
   "Knee",
+  "Large Bowel",
   "Liver",
   "Lumbar Spine",
   "MRCP",
+  "Male Genitalia(Testicles)",
   "Neck",
   "Orbits",
+  "Pancreas",
+  "Paranasal",
   "Pelvis",
+  "Perianal",
+  "Pituitary Gland",
+  "Prostate",
   "Shoulder",
   "Small Bowel",
-  "Thoracic Spine",
+  "Temporomandibular Joints",
+  "Thyroid Gland",
+  "Urinary System",
   "Wrist"
 ];
+
 
 
 
