@@ -84,18 +84,7 @@ const Radiologists = ({isOutside = false, isTeamPage = false} ) => {
 
       },
 
-      {
-        name: "Luis S. Beltran ",
-       
-        school: " New York Medical College  ",
-      
-        field: "Diagnostic Radiology",
-        experience: "19",
-
-        img:"https://vitamu.imgix.net/radiologyRe/Luis%20S.%20Beltran.png?auto=undefined%2Ccompress",
-        img_mob:"https://vitamu.imgix.net/radiologyRe/Luis%20S.%20Beltran-Mobile.png?auto=undefined%2Ccompress"
-
-      },
+    
     
        
       {
