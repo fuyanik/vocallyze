@@ -134,7 +134,7 @@ export default function MobileFooterCustomizedAccordions() {
          
         <Link  className="style-none" to="/how-works">  <li>How It Works</li> </Link>
         <Link  className="style-none" to="/why-second-opinion">  <li>Why Second Opinion</li> </Link>
-        <Link  className="style-none" to="/radiology-team">    <li>Radiology Team</li></Link>
+        <Link  className="style-none hidden" to="/radiology-team">    <li>Radiology Team</li></Link>
         <Link  className="style-none" to="/">    <li>Sample Reports</li></Link>
         <Link  className="style-none" to="/contact">   <li>Help </li></Link>
         <Link  className="style-none" to="/radiology-team">   <li> FAQ</li></Link>

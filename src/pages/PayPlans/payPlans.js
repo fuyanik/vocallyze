@@ -83,7 +83,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
     if(gV.insuranceCompany === "United Healthcare" ) {
 
-      gV.discountPercent = 30
+      gV.discountPercent = 20
 
       //Insurance discount
       //...
@@ -99,7 +99,7 @@ const PayPlans = ({ isOutside = false, }) => {
      }
 
    if(gV.insuranceCompany === "Oscar") {
-     gV.discountPercent = 45;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...
@@ -112,7 +112,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Aetna" ) {
 
-     gV.discountPercent = 35
+     gV.discountPercent = 25
 
      //Insurance discount
      //...
@@ -125,7 +125,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany ===  "Molina Healthcare" ) {
        
-       gV.discountPercent = 40
+       gV.discountPercent = 20
 
        //Insurance discount
        //...
@@ -138,7 +138,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Humana" ) {
        
-     gV.discountPercent = 45;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...
@@ -152,7 +152,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Cigna" ) {
     
-     gV.discountPercent = 35;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...
@@ -165,7 +165,7 @@ const PayPlans = ({ isOutside = false, }) => {
    
    if(gV.insuranceCompany ===  "Magellan" ) {
     
-     gV.discountPercent = 30;
+     gV.discountPercent = 20;
 
      //Insurance discount
      //...
@@ -178,7 +178,7 @@ const PayPlans = ({ isOutside = false, }) => {
    
    if(gV.insuranceCompany ===  "Anthem") {
     
-     gV.discountPercent = 35;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...
@@ -190,7 +190,7 @@ const PayPlans = ({ isOutside = false, }) => {
    }
 
    if(gV.insuranceCompany === "Blue California" ) {
-      gV.discountPercent = 45;
+      gV.discountPercent = 25;
 
          //Insurance discount
          //...
@@ -203,7 +203,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Blue Shield" ) {
     
-     gV.discountPercent = 40;
+     gV.discountPercent = 20;
 
      //Insurance discount
      //...
@@ -216,7 +216,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Care Plus" ) {
     
-     gV.discountPercent = 35;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...
@@ -229,7 +229,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
    if(gV.insuranceCompany === "Freedom Health" ) {
     
-     gV.discountPercent = 30;
+     gV.discountPercent = 20;
 
      //Insurance discount
      //...
@@ -253,7 +253,7 @@ const PayPlans = ({ isOutside = false, }) => {
    }
 
    if(gV.insuranceCompany === "United American" ) {
-     gV.discountPercent = 35;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...
@@ -265,7 +265,7 @@ const PayPlans = ({ isOutside = false, }) => {
    }
 
    if(gV.insuranceCompany === "Caresource" ) {
-     gV.discountPercent = 35;
+     gV.discountPercent = 25;
 
      //Insurance discount
      //...

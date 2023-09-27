@@ -83,9 +83,6 @@ const Radiologists = ({isOutside = false, isTeamPage = false} ) => {
         img_mob:"https://vitamu.imgix.net/radiologyTeam/Jason%20Sinner-Mobile.png?auto=undefined%2Ccompress"
 
       },
-
-    
-    
        
       {
         name: "Stacey Akua Kontoh",

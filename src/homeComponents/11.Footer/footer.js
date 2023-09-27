@@ -101,7 +101,7 @@ const Footer = ({marginTop}) => {
               {" "}
               <li>Why Second Opinion</li>{" "}
             </Link>
-            <Link to="/radiology-team">
+            <Link className="hidden" to="/radiology-team">
               {" "}
               <li>Radiology Team</li>{" "}
             </Link>

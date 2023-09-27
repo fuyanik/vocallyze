@@ -319,19 +319,21 @@ return (
 
              
 
-              <Link to="/radiology-team">
-                <div
-                  onMouseMove={() => {
-                    setAboutDrop(3);
-                  }}
-                  className={`px-4 py-2  ${
-                    aboutDrop == 3 && "bg-[#F6F5F5]"
-                  } rounded-lg duration-300`}
-                >
-                  {" "}
-                  <p> Radiology Team</p>{" "}
-                </div>
-              </Link>
+           <div className="hidden">
+               <Link to="/radiology-team">
+                 <div
+                   onMouseMove={() => {
+                     setAboutDrop(3);
+                   }}
+                   className={`px-4 py-2  ${
+                     aboutDrop == 3 && "bg-[#F6F5F5]"
+                   } rounded-lg duration-300`}
+                 >
+                   {" "}
+                   <p> Radiology Team</p>{" "}
+                 </div>
+               </Link>
+           </div>
 
 
               
@@ -575,11 +577,13 @@ return (
                       <Link to="/why-second-opinion">
                         <p>Why Second Opinion</p>
                       </Link>
-                 
-                      <Link to="/radiology-team">
-                        <p>Radiology Team </p>
-                      </Link>
-                      <p>Sample Reports</p>
+                 <div className="hidden">
+                  
+                       <Link to="/radiology-team">
+                         <p>Radiology Team </p>
+                       </Link>
+                 </div>
+                    
                       <Link to="/contact">
                         <p>Help</p>
                       </Link>
