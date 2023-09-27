@@ -956,11 +956,11 @@ const addToLocalStorage = (key, value) => {
 
 
         {activeStep == 0 &&  ContactDetail }
-        {activeStep == 1 &&  <AvailableRadiologists/>  }
-        {activeStep == 2 &&  HistorySymptoms  }
-        {activeStep == 3 &&  MedicalImages  }
-        {activeStep == 4 &&  <Insurance/>   }  
-       
+        {activeStep == 1 &&  HistorySymptoms  }
+        {activeStep == 2 &&  MedicalImages  }
+        {activeStep == 3 &&  <Insurance/>   }  
+
+        {activeStep == 999 &&  <AvailableRadiologists/>  }
 
      
        {/* Bottom Buttons */}
@@ -981,25 +981,17 @@ const addToLocalStorage = (key, value) => {
 
           <button onClick={() => {
 
-
                 /* Sıgn Up Step*/
 
                  activeStep == 0 &&  handleSignup()
                
                  /* Payment Step States */
-                 activeStep != 4 &&  setGlobalState("activeStep", activeStep + 1);
-                 activeStep == 4 &&  setIsPopupOpen(true)
-
-                 
-
-               
-               
-
-                 
+                 activeStep != 3 &&  setGlobalState("activeStep", activeStep + 1);
+                 activeStep == 3 &&  setIsPopupOpen(true)
                  
 
                  /* Payment Step */
-                 if (activeStep == 4) {
+                 if (activeStep == 3) {
 
                   
 
