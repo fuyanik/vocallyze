@@ -108,7 +108,7 @@ const HowWorks = ({isOutside = false}) => {
       <h2 class="mt-4 mb-2 text-[20px] font-bold">Receive your second opinion</h2>
       <div class="space-y-4 text-sm text-neutral-700 md:text-base">
         
-        <p class="pb-4">You will get a detailed second opinion report by two U.S. board-certified radiologists, in 24 hours.</p>
+        <p class="pb-4"></p>
       
         <div class="mb-8 border-t border-neutral-200 rounded shadow">
           <div class="p-4 space-y-4 rounded shadow-xs lg:p-6">

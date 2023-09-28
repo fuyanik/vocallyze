@@ -69,7 +69,7 @@ const WhySecondOpinion = () => {
 
            
             <div className='flex flex-col gap-2 rounded-lg relative  px-6 py-4 '> 
-             At Mitrua.com, you can get a radiology second opinion by two U.S. board-certified radiologists. Super detailed reports delivered in 24 hours – starting at $20. 
+             At Mitrua.com,  Super detailed reports delivered in 24 hours – starting at $20. 
               </div>
 
 

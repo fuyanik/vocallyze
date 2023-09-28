@@ -37,7 +37,7 @@ const Informational = () => {
     <path d="M5 13l4 4L19 7"></path>
   </svg>
           </div>
-          <span class="text-sm text-neutral-600">Double check by two U.S. board-certified radiologists</span>
+          <span class="text-sm text-neutral-600"></span>
         </div>
         <div class="flex items-center space-x-4">
           <div class="shrink-0 stroke-2 w-7 h-7">
@@ -69,7 +69,6 @@ const Informational = () => {
   </div>
 
 
-
   <div class="lg:container  grid place-items-center gap-8 my-8 lg:my-15 lg:grid-cols-2 xl:px-16">
     
   <div class="order-2 max-w-lg lg:order-1 lg:w-auto w-[90vw] self-center">
@@ -95,29 +94,12 @@ const Informational = () => {
   </div>
 
 
-  <div class="lg:container grid place-items-center gap-8 my-2 lg:my-16 lg:grid-cols-2 xl:px-16">
-    
-  <div class="mt-10 lg:mt-0  lg:w-auto w-[90vw] ">
-    <img src='https://www.theabr.org/wp-content/uploads/2017/06/ABR-Logo-Horizontal.png'/>
-  
-  </div>
-  <div class="max-w-lg lg:w-auto w-[90vw] self-center">
-    <h2 class="mb-4 text-4xl">We work with board-certified radiologists only.</h2>
 
-    <div class="space-y-4 text-base">
-      <p>A minimum experience of 8 years is a must to work with us. Board-certified radiologists are superstars in their fields. Whichever your body part is, we will show you a list of available radiologists, and you will be free to choose two of them for your second opinion.
-      </p>
-    </div>
-    <br></br>
-    <PrimaryButton/>
-  </div>
-
-  </div>
 
   <div class="lg:container lg:grid place-items-center gap-8 my-16 lg:my-16    lg:grid-cols-2 xl:px-16">
      
 
-  <div class="order-1 lg:order-2 ">
+  <div class="order-1 lg:order-1 ">
   
  <div className='lg:w-[40vw] w-full    flex-col gap-2 overflow-scroll'>
    <img alt="Imaging reports powered by Scanslated" className="border-t hidden rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress"/>

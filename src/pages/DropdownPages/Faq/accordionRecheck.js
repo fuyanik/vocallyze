@@ -97,34 +97,6 @@ export default function AccordionRecheck({isOutside = false}) {
 
 
 
-      <Accordion
-        
-        onChange={handleChange("panel1")}
-      >
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#000000"
-          }} >Who will evaluate my images? </Typography>
-        </AccordionSummary>
-
-
-        <AccordionDetails>
-
-          
-          
-            
-             
-        <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-             <p>Our team consists of more than 80 radiologists, all of whom are US-based and board-certified.You will choose two of our radiologists to carry out your second opinion. You will make your choice based on the radiologist’s availability and specialty. </p>
-        </div>
-
-        
-        
-        </AccordionDetails>
-    
-    
-    
-      </Accordion>
-
 
       <Accordion
         expanded={expanded === "panel2"}
@@ -140,7 +112,7 @@ export default function AccordionRecheck({isOutside = false}) {
        
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
             <p>It is always good to keep a copy of your images with you for both a recheck and further screening comparisons. However, for a second opinion, we are able to acquire your images from your medical center if you authorize us. </p>
-            <p>Please choose “I authorize you to acquire my images” when filling out the form.Please keep that in mind, your imaging center will call you for confirmation.</p>
+            <p>Please choose “I authorize you to acquire my images” when filling out the form. Please keep that in mind, your imaging center will call you for confirmation.</p>
          </div>
         
         

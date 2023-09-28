@@ -128,7 +128,7 @@ window.scrollTo(0, 0);
       <div className='flex  w-fit lg:gap-7 gap-2 h-fit'> <p className='text-priTrans'> Services</p>  <img className='rotate-90' width="12" height="14" src="https://img.icons8.com/ios-filled/50/666666/collapse-arrow.png" alt="collapse-arrow"/>  <p>{title} Second Opinion</p></div>
 
           <h1 className='lg:text-[3.75rem] text-[3rem] leading-[54px] lg:leading-[76px] w-full lg:w-[65%] font-bold'>{title} Second Opinion </h1>
-          <p className='text-priTrans lg:w-[50%] '>Get your {title} second opinion today. A super clear second opinion report by two U.S. board certified radiologists, results in 24 hours.</p>
+          <p className='text-priTrans lg:w-[50%] '>Get your {title} second opinion today. Results in 24 hours.</p>
           </div>
 
     <ul class="lg:grid sm:grid-cols-2 hidden gap-x-2 gap-y-6 max-w-xl mt-3">
