@@ -69,7 +69,7 @@ const WhySecondOpinion = () => {
 
            
             <div className='flex flex-col gap-2 rounded-lg relative  px-6 py-4 '> 
-             At Mitrua.com,  Super detailed reports delivered in 24 hours – starting at $20. 
+            Change to "At Mitrua.com, highly detailed reports delivered in 24 hours - starting at $120. 
               </div>
 
 

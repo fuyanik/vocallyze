@@ -83,7 +83,7 @@ const HowWorks = ({isOutside = false}) => {
       <h2 class="mt-4 mb-2 text-[20px] font-bold">Check your insurance coverage and make the payment</h2>
       <div class="space-y-4 text-sm text-neutral-700 md:text-base">
         
-        <p>We accept major insurance plans. The prices shown at the end of form is the total price for your second opinion, with no hidden fees.</p>
+        <p>We accept major insurance plans. The prices shown at the end of the form is the total price for your second opinion, with no hidden fees.</p>
   
       </div>
     </div>
@@ -115,7 +115,7 @@ const HowWorks = ({isOutside = false}) => {
             <div class="">
               <p class="mb-1 text-sm font-medium lg:text-base">You will get your second opinion report </p>
               <p class="mb-4 text-xl font-semibold">Tomorrow</p>
-              <p class="mb-3 text-sm lg:text-base text-neutral-700">Your second opinion report will be more than a cold and vague radiology report—detailed analysis of the case, radiologist notes, and marked images. </p>
+              <p class="mb-3 text-sm lg:text-base text-neutral-700">Your second opinion report will be more than a cold and vague radiology report  it will contain a detailed analysis of your the case, radiologist notes, and marked images. </p>
              <Link to={"/sample-reports"}>
                <div class= " px-5 py-3 bg-black hover:bg-sec duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
              </Link>
@@ -143,7 +143,7 @@ const HowWorks = ({isOutside = false}) => {
       <h2 class="mt-4 mb-2 text-[20px] font-bold">Ask questions if you have any</h2>
       <div class="space-y-4 text-sm text-neutral-700 md:text-base">
         
-        <p>Mitrua reports usually answer all the questions our users have. If you still have unanswered questions, you will be able to get answers from Mitrua radiologists.</p>
+        <p>Mitrua reports usually answer all the questions our users have. If you still have unanswered questions, the answers from one of our radiologists.</p>
    
   
       </div>

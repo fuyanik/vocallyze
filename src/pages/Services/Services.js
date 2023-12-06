@@ -467,10 +467,7 @@ gV.mq.matches
         
      </div>
 
-      <div className='w-screen lg:pt-6  relative flex  font-product flex-col  h-fit   px-[3vw]  '>
-        <Radiologists
-        />
-      </div>
+     
 
 
 

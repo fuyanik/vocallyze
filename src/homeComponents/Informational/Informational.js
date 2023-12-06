@@ -76,7 +76,7 @@ const Informational = () => {
     Your peace of mind is at the heart of what we do.
 </h2>
     <div class="space-y-4 text-base">
-      <p>Human error is a real pain in radiology and missed diagnosis / overdiagnosis makes things way worse. We make sure your initial results were accurate and nothing was missed/over diagnosed. Also, our reports are super easy to understand without complex technical terms or vague statements.</p>
+      <p>Human error is a real issue in radiology and missed diagnosis / overdiagnosis can make things much worse. We check to ensure that the results you have been given are accurate and nothing has been missed or over diagnosed. We also make sure that our reports are clear, easy to understand and don't use complex technical terms or make vague statements.</p>
     </div>
   </div>
   <div class="order-1 lg:order-2">
