@@ -74,11 +74,11 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
       {isOutside && <div className="h-20"> </div>}
       
-      <div className="w-screen b h-auto lg:pb-28 relative text-black font-product tracking-wide  flex  items-center  px-[4vw] lg:px-[7.8vw]   ">
+      <div className="w-screen  h-auto lg:pb-28 relative text-black font-product tracking-wide  flex  items-center justify-center sm:justify-normal lg:px-[7.8vw]   ">
         
        
        
-        <div className="flex lg:mt-32  mt-16 flex-col gap-5 lg:items-start items-center text-center">
+        <div className="flex lg:mt-32  mt-16 flex-col gap-5 lg:items-start items-center  text-center">
          
          <div className=" lg:text-[69px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-start text-center items-center justify-left   font-bold ">
            <p>Get your online</p>
