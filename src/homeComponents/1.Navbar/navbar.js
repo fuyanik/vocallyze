@@ -319,7 +319,7 @@ return (
 
              
 
-           <div className="hidden">
+           <div className="">
                <Link to="/radiology-team">
                  <div
                    onMouseMove={() => {
@@ -577,7 +577,7 @@ return (
                       <Link to="/why-second-opinion">
                         <p>Why Second Opinion</p>
                       </Link>
-                 <div className="hidden">
+                 <div className="">
                   
                        <Link to="/radiology-team">
                          <p>Radiology Team </p>

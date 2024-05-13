@@ -5,7 +5,7 @@
     display: flex;
     position: fixed;
     width: 100vw;
-    height: 10.8vh;
+    height: 75px;
     border-top: 5px solid rgb(249, 208, 24);
     transition: 500ms;
     top: 0;

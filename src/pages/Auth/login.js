@@ -122,7 +122,7 @@ const Login = ({isMailErr = false }) => {
   
     {!isUserFound ?  
     
-    <div className={`login-page ${isMailErr ? "lg:mt-0" : "lg:mt-12"}  mt-0`} >
+    <div className={`login-page ${isMailErr ? "lg:mt-0" : "lg:mt-12"}  mt-10`} >
         <div
           className={`${isMailErr ? "login-page__err" : "login-page__main"}`}
         >

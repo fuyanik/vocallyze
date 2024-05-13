@@ -291,7 +291,7 @@ gV.mq.matches
       
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
     
-            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/head-and-brain">
+            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group"  >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -325,7 +325,7 @@ gV.mq.matches
 
 
 
-           <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/knee">
+           <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                 <div class="w-12 h-12 mb-3">
@@ -343,7 +343,7 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">Knee</h3>
                 <p class="text-sm leading-relaxed">Shows the bones, muscles, ligaments, tendons, and nerves that make up the knee joint. It can help identify causes of pain.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/thoracic-spine">
+</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -362,7 +362,7 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">Thoracic Spine</h3>
                 <p class="text-sm leading-relaxed">Looks at the vertebrae, discs, nerves and spinal cord in the middle section of the spine, to identify causes of numbness, tingling, or pain.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/mrcp">
+</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -381,7 +381,7 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">MRCP</h3>
                 <p class="text-sm leading-relaxed">Magnetic resonance cholangio pancreatography (MRCP) scans evaluate the pancreas, bile ducts and gallbladder.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/hip">
+</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -400,7 +400,7 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">Hip</h3>
                 <p class="text-sm leading-relaxed">An assessment of the hip joint and surrounding tissues, to identify inflammation, arthritis, tumours and other abnormalities.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/liver">
+</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -418,7 +418,7 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">Liver</h3>
                 <p class="text-sm leading-relaxed">A method of viewing the lobes of the liver, as well as surrounding blood vessels. Can identify damage, liver diseases, and tumours.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts/lumbar-spine">
+</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -437,7 +437,7 @@ gV.mq.matches
                 <h3 class="mb-2 display-xl">Lumbar Spine</h3>
                 <p class="text-sm leading-relaxed">A scan of the last 5 vertebrae between the ribs and pelvis, to identify bone, soft tissue, nerve or disc issues that could cause pain or numbness in the back or legs.</p>
               </div>
-</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href="/body-parts">
+</a>            <a class="rounded-md shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
               <div class="p-8 bg-white rounded-md">
                 <div class="flex justify-between">
                   <div class="w-12 h-12 mb-3">
@@ -483,7 +483,7 @@ gV.mq.matches
       
       <div class="grid grid-flow-col auto-cols-[minmax(260px,auto)] overflow-scroll gap-8 lg:mt-12 mt-6 pb-4 ">
       
-    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[0].url}>
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
               <img src={otherScanning[0].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>
@@ -503,7 +503,7 @@ gV.mq.matches
             </div>
 </a>       
 
-    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[1].url}>
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
               <img src={otherScanning[1].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>
@@ -523,7 +523,7 @@ gV.mq.matches
             </div>
 </a>      
 
-    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[2].url}>
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
               <img src={otherScanning[2].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>
@@ -542,7 +542,7 @@ gV.mq.matches
               <p class="mb-4 text-sm leading-relaxed text-neutral-500">{otherScanning[2].text}</p>
             </div>
 </a>       
-    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" href={otherScanning[3].url}>
+    <a class="rounded-md p-8 shadow hover:shadow-lg bg-white transition-all duration-200 ease-out overflow-hidden group" >
             <div class="relative mb-6 -m-8 overflow-hidden h-60 rounded-t-md">
               <img src={otherScanning[3].imageUrl} alt="Private Ultrasound Scans" class="object-cover w-full h-full"/>
             </div>

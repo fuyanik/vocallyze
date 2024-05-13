@@ -324,7 +324,7 @@ const PayPlans = ({ isOutside = false, }) => {
            <div className={`w-11 h-10 rounded-full border ${selectedCard == 1 && "bg-pri"} duration-300 `} > </div>
           
 
-           <div className="w-full flex items-center rounded-3xl py-2 px-4 h-[15vh] animate-fadeIn justify-between   shadow-3xl">
+           <div className="w-full flex items-center rounded-3xl py-8 px-7  animate-fadeIn justify-between   shadow-3xl">
            
             {/*  Card Left */}
             <div className='flex flex-col gap-3 w-fit'>
@@ -387,7 +387,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
           {/* Smart */}
-         <div onClick={()=>{setSelectedCard(2)}}  className='flex items-center gap-4 cursor-pointer'>
+         <div onClick={()=>{setSelectedCard(2)}}  className='hidden items-center gap-4 cursor-pointer '>
         
             {/*  Select Circle */}
             <div className={`w-11 h-10 rounded-full border ${selectedCard == 2 && "bg-pri"} duration-300 `} > </div>
@@ -513,7 +513,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
         {/* Lifelong  */}
-       <div onClick={()=>{setSelectedCard(3)}}  className='flex items-center gap-4 cursor-pointer'>
+         <div onClick={()=>{setSelectedCard(3)}}  className='hidden items-center gap-4 cursor-pointer'>
 
           {/*  Select Circle */}
           <div className={`w-11 h-10 rounded-full border ${selectedCard == 3 && "bg-pri"} duration-300 `} > </div>
@@ -582,7 +582,7 @@ const PayPlans = ({ isOutside = false, }) => {
           
           </div> 
     
-       </div>
+        </div>
 
 
           
