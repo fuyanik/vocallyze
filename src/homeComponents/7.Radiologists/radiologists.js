@@ -318,7 +318,7 @@ return (
     <div className="doctor-main">
       <div className="text1 hidden"> OUR RADIOLOGY TEAM</div>
       <div className="text2">
-      We are a team of experienced radiologists. We are licenced and registered with the U.K General Medical Council and are members of the Royal College of Radiologists. Two of us will recheck your radiology images to make sure that you always receive the correct diagnosis.
+      We are a team of experienced radiologists. We are a team of U.S. Board certified radiologists.
       </div>
 
       <div className="doctor-section">
