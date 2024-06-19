@@ -104,11 +104,8 @@ const Home = () => {
       
       
        <Hero/>
-
-       
     
-    
-      { /* <Radiologists isOutside={true}/> */}
+      <Radiologists isOutside={true}/> 
 
        <div>
         <HowWorks isOutside={true} />

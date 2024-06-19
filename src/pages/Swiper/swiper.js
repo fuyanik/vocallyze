@@ -466,8 +466,8 @@ const SwiperPage = ({  isOutside = false, }) => {
          </SwiperSlide>
 }
 
-           {/* Smart */}
-          <SwiperSlide  className="flex flex-col gap-2 border bg-white text-pri  px-3 pt-3">
+           {/* Smart 
+          <SwiperSlide  className="hidden flex-col gap-2 border bg-white text-pri  px-3 pt-3 ">
             
             <header className="flex items-center justify-between">
              <div className="flex gap-5 items-center justify-center">
@@ -633,8 +633,8 @@ const SwiperPage = ({  isOutside = false, }) => {
           </SwiperSlide>
 
 
-           {/* Lifelong */}
-           <SwiperSlide  className="flex  flex-col gap-2 bg-white  border text-pri px-5 pt-5">
+         
+           <SwiperSlide  className="hidden  flex-col gap-2 bg-white  border text-pri px-5 pt-5">
             <header className="flex items-center justify-between">
              <div className="flex gap-5 items-center justify-center">
              <svg
@@ -740,6 +740,7 @@ const SwiperPage = ({  isOutside = false, }) => {
         
 
           </SwiperSlide>
+          */}
           
       
         </Swiper>

@@ -45,7 +45,7 @@ const ClosehandleClick = () => {
 
 const fetchData = async (totalValue) => {
   
- await fetch("https://nodejstesto-79f1b4446c49.herokuapp.com/create-payment-intent", {
+ await fetch("https://mitrua-affa3c9dd3be.herokuapp.com/create-payment-intent", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
    
