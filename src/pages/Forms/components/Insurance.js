@@ -23,7 +23,7 @@ const Insurance = () => {
 
        <p className="text-[16px] mt-1 font-bold text-pri">
          {" "}
-         Step {activeStep + 1} of 5
+         Step {activeStep + 1} of 4
        </p>
      </header>
 

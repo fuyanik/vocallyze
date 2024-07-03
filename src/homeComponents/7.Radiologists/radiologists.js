@@ -363,7 +363,7 @@ return (
 
     <div className="radiologist-footer">
       <p className="textBottom">
-        We have 30+ certified UK radiologists in our team.{" "}
+        We have 30+ certified US-based radiologists in our team.{" "}
       </p>
       
       <div

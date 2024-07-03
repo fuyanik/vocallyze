@@ -44,10 +44,12 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 
   const icons = [
+    
+ 
    
     {
         id:2,
-       
+
         text:"60+ radiologists"
     },
     {

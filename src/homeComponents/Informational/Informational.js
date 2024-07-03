@@ -37,7 +37,8 @@ const Informational = () => {
     <path d="M5 13l4 4L19 7"></path>
   </svg>
           </div>
-          <span class="text-sm text-neutral-600"></span>
+          <span class="text-sm text-neutral-600">US Board-certified radiologistsContact Details
+          </span>
         </div>
         <div class="flex items-center space-x-4">
           <div class="shrink-0 stroke-2 w-7 h-7">

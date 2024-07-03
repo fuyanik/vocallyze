@@ -498,7 +498,7 @@ const addToLocalStorage = (key, value) => {
       
           <p  className="text-[16px] mt-1 font-bold text-pri">
             {" "}
-            Step {activeStep + 1} of 5
+            Step {activeStep + 1} of 4
           </p>
       
           
@@ -589,7 +589,7 @@ const addToLocalStorage = (key, value) => {
           
               <p className="text-[16px] mt-1 font-bold text-pri">
                 {" "}
-                Step {activeStep + 1} of 5
+                Step {activeStep + 1} of 4
               </p>
           
               
@@ -639,7 +639,7 @@ const addToLocalStorage = (key, value) => {
 
             <p className="text-[16px] mt-1 font-bold text-pri">
               {" "}
-              Step {activeStep + 1} of 5
+              Step {activeStep + 1} of 4
             </p>
           </div>
 
@@ -1042,7 +1042,7 @@ const addToLocalStorage = (key, value) => {
 
                }}
                className={`bg-sec ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`} >
-                Continue to {activeStep == 0 && "Radiologist Selection"} {activeStep == 1 && " History"}  {activeStep == 2 && "Medical Images"} {activeStep == 3 && "Insurance"} {activeStep == 4 && "Payment"}
+                Continue to {activeStep == 0 && "History"} {activeStep == 1 && "Medical Images "}  {activeStep == 2 && "Insurance"} {activeStep == 3 && "Payment"} {activeStep == 4 && ""}
           </button>
     
        </div>
