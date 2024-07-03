@@ -2,6 +2,8 @@ import React from 'react'
 import PrimaryButton from '../microComponents/primaryButton/primaryButton'
 
 const Informational = () => {
+
+  // d
   return (
     <div className='flex flex-col self-center font-product relative  '>
 
@@ -37,7 +39,7 @@ const Informational = () => {
     <path d="M5 13l4 4L19 7"></path>
   </svg>
           </div>
-          <span class="text-sm text-neutral-600">US Board-certified radiologistsContact Details
+          <span class="text-sm text-neutral-600">US Board-certified radiologists
           </span>
         </div>
         <div class="flex items-center space-x-4">
