@@ -1,82 +1,78 @@
-import PropTypes from "prop-types";
-import { styled } from "@mui/material/styles";
-import Stack from "@mui/material/Stack";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import Check from "@mui/icons-material/Check";
-import SettingsIcon from "@mui/icons-material/Settings";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import VideoLabelIcon from "@mui/icons-material/VideoLabel";
-import StepConnector, {
-  stepConnectorClasses
-} from "@mui/material/StepConnector";
-import React, { useEffect, useState } from "react";
-import Navbar from "../../homeComponents/1.Navbar/navbar";
-import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js'
-import Card9 from "../../formComponents/Card9/card9";
-import SwiperPage from "../Swiper/swiper";
-import { setGlobalState, useGlobalState } from "../../hookState";
-import PayScreen from "../PayScreen/payScreen";
-import Popup from "../Popup/popup";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
-import gV from "../../gV";
-import { arrayUnion, doc, setDoc } from "firebase/firestore";
-import { db } from "../../firebase";
-import { Timestamp } from "firebase/firestore";
+import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import Check from '@mui/icons-material/Check';
+import SettingsIcon from '@mui/icons-material/Settings';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import VideoLabelIcon from '@mui/icons-material/VideoLabel';
+import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import React, { useEffect, useState } from 'react';
+import Navbar from '../../homeComponents/1.Navbar/navbar';
+import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js';
+import Card9 from '../../formComponents/Card9/card9';
+import SwiperPage from '../Swiper/swiper';
+import { setGlobalState, useGlobalState } from '../../hookState';
+import PayScreen from '../PayScreen/payScreen';
+import Popup from '../Popup/popup';
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
+import gV from '../../gV';
+import { arrayUnion, doc, setDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
+import { Timestamp } from 'firebase/firestore';
 
-import Insurance from "./components/Insurance";
-import AvailableRadiologists from "./components/availableRadiologists";
+import Insurance from './components/Insurance';
+import AvailableRadiologists from './components/availableRadiologists';
 import emailjs from 'emailjs-com';
-import SampleReports from "../DropdownPages/SampleReports/SampleReports";
-import {setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
-import Login from "../Auth/login";
-import { Navigate } from "react-router-dom";
-
+import SampleReports from '../DropdownPages/SampleReports/SampleReports';
+import { setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from 'firebase/auth';
+import Login from '../Auth/login';
+import { Navigate } from 'react-router-dom';
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 10,
-    left: "calc(-50% + 16px)",
-    right: "calc(50% + 16px)"
+    left: 'calc(-50% + 16px)',
+    right: 'calc(50% + 16px)',
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      borderColor: "#000000"
-    }
+      borderColor: '#000000',
+    },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      borderColor: "#000000"
-    }
+      borderColor: '#000000',
+    },
   },
   [`& .${stepConnectorClasses.line}`]: {
-    borderColor:
-      theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
+    borderColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
     borderTopWidth: 3,
-    borderRadius: 1
-  }
+    borderRadius: 1,
+  },
 }));
 
-const QontoStepIconRoot = styled("div")(({ theme, ownerState }) => ({
-  color: theme.palette.mode === "dark" ? theme.palette.grey[700] : "#eaeaf0",
-  display: "flex",
+const QontoStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#eaeaf0',
+  display: 'flex',
   height: 22,
-  alignItems: "center",
+  alignItems: 'center',
   ...(ownerState.active && {
-    color: "#000000"
+    color: '#000000',
   }),
-  "& .QontoStepIcon-completedIcon": {
-    color: "#000000",
+  '& .QontoStepIcon-completedIcon': {
+    color: '#000000',
     zIndex: 1,
-    fontSize: 18
+    fontSize: 18,
   },
-  "& .QontoStepIcon-circle": {
+  '& .QontoStepIcon-circle': {
     width: 10,
     height: 10,
-    borderRadius: "50%",
-    backgroundColor: "currentColor"
-  }
+    borderRadius: '50%',
+    backgroundColor: 'currentColor',
+  },
 }));
 
 function QontoStepIcon(props) {
@@ -84,11 +80,7 @@ function QontoStepIcon(props) {
 
   return (
     <QontoStepIconRoot ownerState={{ active }} className={className}>
-      {completed ? (
-        <Check className="QontoStepIcon-completedIcon" />
-      ) : (
-        <div className="QontoStepIcon-circle" />
-      )}
+      {completed ? <Check className='QontoStepIcon-completedIcon' /> : <div className='QontoStepIcon-circle' />}
     </QontoStepIconRoot>
   );
 }
@@ -104,30 +96,26 @@ QontoStepIcon.propTypes = {
    * Mark the step as completed. Is passed to child components.
    * @default false
    */
-  completed: PropTypes.bool
+  completed: PropTypes.bool,
 };
 
-
-const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark" ? theme.palette.grey[700] : "#ccc",
+const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
   zIndex: 1,
-  color: "#fff",
+  color: '#fff',
   width: 50,
   height: 50,
-  display: "flex",
-  borderRadius: "50%",
-  justifyContent: "center",
-  alignItems: "center",
+  display: 'flex',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
   ...(ownerState.active && {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
-    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)"
+    backgroundImage: 'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
   }),
   ...(ownerState.completed && {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)"
-  })
+    backgroundImage: 'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+  }),
 }));
 
 function ColorlibStepIcon(props) {
@@ -136,14 +124,11 @@ function ColorlibStepIcon(props) {
   const icons = {
     1: <SettingsIcon />,
     2: <GroupAddIcon />,
-    3: <VideoLabelIcon />
+    3: <VideoLabelIcon />,
   };
 
   return (
-    <ColorlibStepIconRoot
-      ownerState={{ completed, active }}
-      className={className}
-    >
+    <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
   );
@@ -164,128 +149,23 @@ ColorlibStepIcon.propTypes = {
   /**
    * The label displayed in the step icon.
    */
-  icon: PropTypes.node
+  icon: PropTypes.node,
 };
 
-const steps = ["", "", "", "", "",];
+const steps = ['', '', '', '', ''];
 
 const medicalSendType = [
-  "I can upload the images now or later.",
-  "I prefer to ship the CD or USB stick.",
-  "I will share an access code.",
-  "I authorize you to acquire my images."
-  
+  'I can upload the images now or later.',
+  'I prefer to ship the CD or USB stick.',
+  'I will share an access code.',
+  'I authorize you to acquire my images.',
 ];
 
-
-
-
 export default function FormNew() {
-
-    //All amount variables and *Global* variables are set here
-   //...
-   const AmountCalculator = (mainPay) => {
-
-    if(gV.insuranceCompany === "United Healthcare" ) {
-
-       gV.discountPercent = 30
-
-       //Insurance discount
-       //...
-       gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-       
-      
-
-       
-       //Total amount user see pay plans page
-       //...
-       gV.payTotal = mainPay - gV.discountAmount
-       
-       
-       return gV.payTotal;
-      }
-
-    if(gV.insuranceCompany === "Oscar") {
-
-      gV.discountPercent = 45
-
-      //Insurance discount
-      //...
-      gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-      
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount
-      
-      
-      return gV.payTotal;
-    }
-
-    if(gV.insuranceCompany === "Aetna" ) {
-
-      gV.discountPercent = 35
-
-      //Insurance discount
-      //...
-      gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-      
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount
-      
-      
-      return gV.payTotal;
-    }
-
-    if(gV.insuranceCompany ===  "Molina Healthcare" ) {
-        
-        gV.discountPercent = 40
-
-        //Insurance discount
-        //...
-        gV.discountAmount = (mainPay * (gV.discountPercent / 100))
-        
-        //Total amount user see pay plans page
-        //...
-        gV.payTotal = mainPay - gV.discountAmount
-        
-        
-        return gV.payTotal;
-    }
-
-    if(gV.insuranceCompany === "Humana" ) {
-        
-      gV.discountPercent = 45;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-     
-    }
-
-    if(gV.insuranceCompany === "Cigna" ) {
-     
-      gV.discountPercent = 35;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-    
-    if(gV.insuranceCompany ===  "Magellan" ) {
-     
+  //All amount variables and *Global* variables are set here
+  //...
+  const AmountCalculator = (mainPay) => {
+    if (gV.insuranceCompany === 'United Healthcare') {
       gV.discountPercent = 30;
 
       //Insurance discount
@@ -298,9 +178,22 @@ export default function FormNew() {
 
       return gV.payTotal;
     }
-    
-    if(gV.insuranceCompany ===  "Anthem") {
-     
+
+    if (gV.insuranceCompany === 'Oscar') {
+      gV.discountPercent = 45;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'Aetna') {
       gV.discountPercent = 35;
 
       //Insurance discount
@@ -314,22 +207,7 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "Blue California" ) {
-       gV.discountPercent = 45;
-
-          //Insurance discount
-          //...
-          gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-          //Total amount user see pay plans page
-          //...
-          gV.payTotal = mainPay - gV.discountAmount;
-
-          return gV.payTotal;
-    }
-
-    if(gV.insuranceCompany === "Blue Shield" ) {
-     
+    if (gV.insuranceCompany === 'Molina Healthcare') {
       gV.discountPercent = 40;
 
       //Insurance discount
@@ -343,8 +221,21 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "Care Plus" ) {
-     
+    if (gV.insuranceCompany === 'Humana') {
+      gV.discountPercent = 45;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'Cigna') {
       gV.discountPercent = 35;
 
       //Insurance discount
@@ -358,8 +249,7 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "Freedom Health" ) {
-     
+    if (gV.insuranceCompany === 'Magellan') {
       gV.discountPercent = 30;
 
       //Insurance discount
@@ -373,7 +263,77 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "WellCare" ) {
+    if (gV.insuranceCompany === 'Anthem') {
+      gV.discountPercent = 35;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'Blue California') {
+      gV.discountPercent = 45;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'Blue Shield') {
+      gV.discountPercent = 40;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'Care Plus') {
+      gV.discountPercent = 35;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'Freedom Health') {
+      gV.discountPercent = 30;
+
+      //Insurance discount
+      //...
+      gV.discountAmount = mainPay * (gV.discountPercent / 100);
+
+      //Total amount user see pay plans page
+      //...
+      gV.payTotal = mainPay - gV.discountAmount;
+
+      return gV.payTotal;
+    }
+
+    if (gV.insuranceCompany === 'WellCare') {
       gV.discountPercent = 25;
 
       //Insurance discount
@@ -387,7 +347,7 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "United American" ) {
+    if (gV.insuranceCompany === 'United American') {
       gV.discountPercent = 35;
 
       //Insurance discount
@@ -401,7 +361,7 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "Caresource" ) {
+    if (gV.insuranceCompany === 'Caresource') {
       gV.discountPercent = 35;
 
       //Insurance discount
@@ -415,8 +375,11 @@ export default function FormNew() {
       return gV.payTotal;
     }
 
-    if(gV.insuranceCompany === "I do not have an active insurance plan." || gV.insuranceCompany === "My insurance is not listed." || gV.insuranceCompany === "none"   ){
-    
+    if (
+      gV.insuranceCompany === 'I do not have an active insurance plan.' ||
+      gV.insuranceCompany === 'My insurance is not listed.' ||
+      gV.insuranceCompany === 'none'
+    ) {
       gV.discountPercent = 0;
 
       //Insurance discount
@@ -429,466 +392,397 @@ export default function FormNew() {
 
       return gV.payTotal;
     }
- 
- 
- }
+  };
 
- // Local storage'a veri eklemek için bir fonksiyon
-const addToLocalStorage = (key, value) => {
-  localStorage.setItem(key, value);
-};
+  // Local storage'a veri eklemek için bir fonksiyon
+  const addToLocalStorage = (key, value) => {
+    localStorage.setItem(key, value);
+  };
 
   const auth = getAuth();
   const user = auth.currentUser;
 
+  const [isOpenPaymentPopup, setIsOpenPaymentPopup] = useState(false);
 
-  const [isOpenPaymentPopup, setIsOpenPaymentPopup] = useState(false)
+  const [activeStep] = useGlobalState('activeStep');
+  const [mainPayAmount] = useGlobalState('mainPayAmount');
+  const [doctors] = useGlobalState('doctors');
+  const [paymentPlan] = useGlobalState('paymentPlan');
 
- 
-  const [activeStep] = useGlobalState("activeStep")
-  const [mainPayAmount] = useGlobalState("mainPayAmount")
-  const [doctors] = useGlobalState("doctors")
-  const [paymentPlan] = useGlobalState("paymentPlan")
- 
+  const [name, setName] = useState('');
+  const [mail, setMail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [question, setQuestion] = useState('');
+  const [medicalCenter, setMedicalCenter] = useState('');
 
-  
-    const [name, setName] = useState("")
-    const [mail, setMail] = useState("")
-    const [phone, setPhone] = useState("")
-    const [question, setQuestion] = useState("")
-    const [medicalCenter, setMedicalCenter] = useState("")
+  const [isCameForm, setIsCameForm] = useState(false);
 
-    const [isCameForm, setIsCameForm] = useState(false)
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isPopupOpen2, setIsPopupOpen2] = useState(false);
+  const [isDropdown, setDropdown] = useState(false);
+  const [dropdownText, setDropdownText] = useState('Choose your answer.');
 
-
-    const [isPopupOpen, setIsPopupOpen] = useState(false)
-    const [isPopupOpen2, setIsPopupOpen2] = useState(false)
-    const [isDropdown, setDropdown] = useState(false)
-    const [dropdownText, setDropdownText] = useState("Choose your answer.")
-
-
-    useEffect(() => {
+  useEffect(() => {
     //Create random password
     //...
-    if(!user) {
+    if (!user) {
       gV.password = Math.random().toString(36).slice(-10);
-      addToLocalStorage("pass", gV.password); // Local storage'a veriyi ekler
-      setIsCameForm(true)
+      addToLocalStorage('pass', gV.password); // Local storage'a veriyi ekler
+      setIsCameForm(true);
     }
-    
-    }, [])
+  }, []);
 
+  {
+    /* Start Step Contents */
+  }
 
+  const contactInputStyle =
+    'w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-priTrans  bg-slate-100 ';
 
-    {/* Start Step Contents */}
+  {
+    /* Contact Detail */
+  }
+  const ContactDetail = (
+    <section className='w-[92vw] lg:w-[46vw]  animate-fadeIn flex flex-col h-auto pt-0 px-2'>
+      <header className='flex flex-col gap-2'>
+        <header className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
+          <p className='text-[22px] font-bold text-pri'>Contact Details</p>
 
-     const contactInputStyle = "w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-priTrans  bg-slate-100 "
-     
-     
-    
-    {/* Contact Detail */}
-    const ContactDetail =  
-    <section className="w-[92vw] lg:w-[46vw]  animate-fadeIn flex flex-col h-auto pt-0 px-2">
-              
-      <header className="flex flex-col gap-2">
-        <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-          <p className="text-[22px] font-bold text-pri">
-            Contact Details
-          </p>
-      
-          <p  className="text-[16px] mt-1 font-bold text-pri">
-            {" "}
-            Step {activeStep + 1} of 4
-          </p>
-      
-          
+          <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
         </header>
 
-        <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
-        {" "}
-        We respect your privacy. Your contact details will not be shared
-        with anyone.
-      </p>
+        <p className='text-[16px] leading-[22px] mt-2  text-priTrans'>
+          {' '}
+          We respect your privacy. Your contact details will not be shared with anyone.
+        </p>
       </header>
 
-    
-
       {/* Name */}
-      <div className="flex flex-col gap-1 mt-2">
-        
-        <p className="text-lg text-pri font-bold mt-4">
-          {" "}
-          What is your name?
-        </p>
-       
+      <div className='flex flex-col gap-1 mt-2'>
+        <p className='text-lg text-pri font-bold mt-4'> What is your name?</p>
+
         <input
-          value={name}
+          value={name || user?.displayName}
           onChange={(e) => {
             setName(e.target.value);
-            
-            
           }}
-          type="text"
+          type='text'
           className={contactInputStyle}
-          placeholder="Type your name here."
+          placeholder='Type your name here.'
         />
-
       </div>
 
       {/* Mail */}
-      <div className="flex flex-col gap-1">
-        <p className="text-lg text-pri font-bold mt-4">
-          {" "}
-          E-Mail Address
-        </p>
+      <div className='flex flex-col gap-1'>
+        <p className='text-lg text-pri font-bold mt-4'> E-Mail Address</p>
         <input
-          value={mail}
+          value={mail || user?.email}
           onChange={(e) => {
             setMail(e.target.value);
             gV.MailAddres = e.target.value;
-            addToLocalStorage("mailAddress", e.target.value); // Local storage'a veriyi ekler
+            addToLocalStorage('mailAddress', e.target.value); // Local storage'a veriyi ekler
           }}
-          type="text"
+          type='text'
           className={contactInputStyle}
-          placeholder="Type your name email here."
+          placeholder='Type your name email here.'
         />
       </div>
 
       {/* Phone */}
-      <div className="flex flex-col gap-1">
-        <p className="text-lg text-pri font-bold mt-4">
-          {" "}
-          Phone Number
-        </p>
+      <div className='flex flex-col gap-1'>
+        <p className='text-lg text-pri font-bold mt-4'> Phone Number</p>
         <input
-          value={phone}
+          value={phone || user?.providerData[0].phoneNumber}
           onChange={(e) => {
             setPhone(e.target.value);
           }}
-          type="phone"
+          type='phone'
           className={contactInputStyle}
-          placeholder="Type your phone number here."
+          placeholder='Type your phone number here.'
         />
       </div>
-
-     
     </section>
-       
-    
-    
-   {/* History Symptoms */}
-    const HistorySymptoms = 
-         <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-pri">
-          
-        <div className="flex flex-col gap-2">
-            
-            <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-              <p className="text-[22px] font-bold text-pri">
-              History and Symptoms
-              </p>
-          
-              <p className="text-[16px] mt-1 font-bold text-pri">
-                {" "}
-                Step {activeStep + 1} of 4
-              </p>
-          
-              
-            </header>
+  );
 
-            <p className="text-[16px] leading-[22px] mt-2  text-priTrans">
-             {" "}
-             Please enter your personal health story, complaints, concerns, and questions.
-            </p>
+  {
+    /* History Symptoms */
+  }
+  const HistorySymptoms = (
+    <section className='w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-pri'>
+      <div className='flex flex-col gap-2'>
+        <header className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
+          <p className='text-[22px] font-bold text-pri'>History and Symptoms</p>
 
-          <textarea
-            value={question}
-            onChange={(e) => {
-              setQuestion(e.target.value);
-            }}
-            type="text"
-            className="w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-priTrans "
-            placeholder="Start typing here."
-          />
-        
-       
-       
-       
-       
-       
-        </div>
-
-        
-
-      
-
-         
-         </section>
-
-
-
-
-    {/* Medical Images */}
-    const MedicalImages = (
-      <section className="w-[92vw] lg:w-[46vw] animate-fadeIn   flex flex-col h-auto pt-0 px-2">
-      
-        <header className="flex flex-col gap-2">
-          <div className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-            <p className="text-[22px] font-bold text-pri">
-              Medical Images
-            </p>
-
-            <p className="text-[16px] mt-1 font-bold text-pri">
-              {" "}
-              Step {activeStep + 1} of 4
-            </p>
-          </div>
-
-          <p className="text-[16px] hidden leading-[22px] mt-2  text-priTrans">
-            {" "}
-            We respect your privacy. Your contact details will not be shared
-            with anyone.
-          </p>
+          <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
         </header>
 
-        {/* Do You Have Medical Images */}
-        <div className="flex flex-col gap-5 ">
-          {/* Medical Images Question with Dropdown */}
-          <div className="flex flex-col gap-2">
-            <p className="text-[17px] text-pri font-bold mt-4 lg:w-[55%] w-[96%]">
-              How do you want to share your medical images?
+        <p className='text-[16px] leading-[22px] mt-2  text-priTrans'>
+          {' '}
+          Please enter your personal health story, complaints, concerns, and questions.
+        </p>
+
+        <textarea
+          value={question}
+          onChange={(e) => {
+            setQuestion(e.target.value);
+          }}
+          type='text'
+          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-priTrans '
+          placeholder='Start typing here.'
+        />
+      </div>
+    </section>
+  );
+
+  {
+    /* Medical Images */
+  }
+  const MedicalImages = (
+    <section className='w-[92vw] lg:w-[46vw] animate-fadeIn   flex flex-col h-auto pt-0 px-2'>
+      <header className='flex flex-col gap-2'>
+        <div className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
+          <p className='text-[22px] font-bold text-pri'>Medical Images</p>
+
+          <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
+        </div>
+
+        <p className='text-[16px] hidden leading-[22px] mt-2  text-priTrans'>
+          {' '}
+          We respect your privacy. Your contact details will not be shared with anyone.
+        </p>
+      </header>
+
+      {/* Do You Have Medical Images */}
+      <div className='flex flex-col gap-5 '>
+        {/* Medical Images Question with Dropdown */}
+        <div className='flex flex-col gap-2'>
+          <p className='text-[17px] text-pri font-bold mt-4 lg:w-[55%] w-[96%]'>
+            How do you want to share your medical images?
+          </p>
+
+          {dropdownText == 'I will share an access code.' && (
+            <p className='text-priTrans'>
+              {' '}
+              Once you share your access code with access@mitrua.com, image status will be updated.{' '}
             </p>
-          
-            {dropdownText == "I will share an access code."  &&  <p className="text-priTrans"> Once you share your access code with access@mitrua.com, image status will be updated.  </p> } 
-            {dropdownText == "I prefer to ship the CD or USB stick."  &&  <p className="text-priTrans"> It may take up to 7 days to obtain physical copies of your images. If you can upload the images by yourself, your recheck report will be ready tomorrow. </p> } 
-
-
-            {/* Dropdown Select Area */}
-            <div className="  lg:w-[22vw] w-[84vw] h-[7vh] bg-slate-100 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer">
-              <div
-                onClick={() => {
-                  setDropdown(!isDropdown);
-                }}
-                className="h-[96%] w-[120%] text-pri justify-between  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
-              >
-                <p> {dropdownText}</p>
-                <img  className={`absolute   right-6 lg:right-5 text-[13px] ${!isDropdown ? "rotate-180" : "rotate-270 "} duration-500`} width="18" height="18" src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" alt="collapse-arrow"/>
-
-              </div>
-
-              {/* Dropdown White Area */}
-              {isDropdown && (
-                <div className="absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl">
-                  {medicalSendType.map((name, idx) => (
-                    <p
-                      className={` py-[3px] px-3   w-full text-left `}
-                      onClick={() => {
-                        setDropdown(false);
-                        setDropdownText(name);
-                      }}
-                    >
-                      {name}
-                    </p>
-                  ))}
-                </div>
-              )}
-
-             
-            </div>
-          </div>
-
-        
-        
-          {/* All Medical Images Options Start Here */}
-
-          {/* Image Upload */}
-          {dropdownText == "I can upload the images now or later." && (
-            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#000000b7]  border-t-2  border-[#000000be]">
-              </p>
-            
-              <div className="relative bottom-1">
-                <Card9
-                  totalRecheck={1}
-                  displayText={"none"}
-                  buttonText={"Upload Image"}
-                  itemsScrollType={""}
-                />
-              </div>
-             
-            </div>
+          )}
+          {dropdownText == 'I prefer to ship the CD or USB stick.' && (
+            <p className='text-priTrans'>
+              {' '}
+              It may take up to 7 days to obtain physical copies of your images. If you can upload the images by
+              yourself, your recheck report will be ready tomorrow.{' '}
+            </p>
           )}
 
-
-          {/* Shipping CD or USB */}
-          {dropdownText == "I prefer to ship the CD or USB stick." && (
-            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
-              You may ship your images in a CD or USB stick to the address below:
-              </p>
-
-              <div className="flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg ">
-                <p className="mt-2">Mitrua, Inc.</p>
-                <p>169 Madison Ave #2305 New York, NY 10016</p>
-                <p>+1 646 820 1932</p>
-              </div>
-            </div>
-          )}
-
-          {/* Share Acces Code */}
-          {dropdownText == "I will share an access code." && (
-            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
-              If you have an access code from your provider, you may share it with the e-mail address below:
-              </p>
-
-              <div className="flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg ">
-                <p className="">access@mitrua.com</p>
-              </div>
-            </div>
-          )}
-
-
-          {/* Authorize */}
-          {dropdownText == "I authorize you to acquire my images." && (
-            <div className="flex flex-col gap-3 text-pri animate-fadeIn ">
-              <p className=" text-[#000000b7] border-t-2  border-pri pt-2">
-                No problem, we will acquire your medical files on your behalf.
-                Please type the name of the medical center where you got your
-                screening.
-              </p>
-
-              <input
-                value={medicalCenter}
-                onChange={(e) => {
-                  setMedicalCenter(e.target.value);
-                }}
-                type="text"
-                className={contactInputStyle}
-                placeholder="Type the name of your medical center"
+          {/* Dropdown Select Area */}
+          <div className='  lg:w-[22vw] w-[84vw] h-[7vh] bg-slate-100 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer'>
+            <div
+              onClick={() => {
+                setDropdown(!isDropdown);
+              }}
+              className='h-[96%] w-[120%] text-pri justify-between  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out '>
+              <p> {dropdownText}</p>
+              <img
+                className={`absolute   right-6 lg:right-5 text-[13px] ${
+                  !isDropdown ? 'rotate-180' : 'rotate-270 '
+                } duration-500`}
+                width='18'
+                height='18'
+                src='https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png'
+                alt='collapse-arrow'
               />
             </div>
-          )}
-        </div>
-      </section>
-    );
-     
 
-    //Close popup page
-   //...
-   function onDismiss() {
+            {/* Dropdown White Area */}
+            {isDropdown && (
+              <div className='absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl'>
+                {medicalSendType.map((name, idx) => (
+                  <p
+                    className={` py-[3px] px-3   w-full text-left `}
+                    onClick={() => {
+                      setDropdown(false);
+                      setDropdownText(name);
+                    }}>
+                    {name}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* All Medical Images Options Start Here */}
+
+        {/* Image Upload */}
+        {dropdownText == 'I can upload the images now or later.' && (
+          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
+            <p className=' text-[#000000b7]  border-t-2  border-[#000000be]'></p>
+
+            <div className='relative bottom-1'>
+              <Card9 totalRecheck={1} displayText={'none'} buttonText={'Upload Image'} itemsScrollType={''} />
+            </div>
+          </div>
+        )}
+
+        {/* Shipping CD or USB */}
+        {dropdownText == 'I prefer to ship the CD or USB stick.' && (
+          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
+            <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
+              You may ship your images in a CD or USB stick to the address below:
+            </p>
+
+            <div className='flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg '>
+              <p className='mt-2'>Mitrua, Inc.</p>
+              <p>169 Madison Ave #2305 New York, NY 10016</p>
+              <p>+1 646 820 1932</p>
+            </div>
+          </div>
+        )}
+
+        {/* Share Acces Code */}
+        {dropdownText == 'I will share an access code.' && (
+          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
+            <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
+              If you have an access code from your provider, you may share it with the e-mail address below:
+            </p>
+
+            <div className='flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg '>
+              <p className=''>access@mitrua.com</p>
+            </div>
+          </div>
+        )}
+
+        {/* Authorize */}
+        {dropdownText == 'I authorize you to acquire my images.' && (
+          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
+            <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
+              No problem, we will acquire your medical files on your behalf. Please type the name of the medical center
+              where you got your screening.
+            </p>
+
+            <input
+              value={medicalCenter}
+              onChange={(e) => {
+                setMedicalCenter(e.target.value);
+              }}
+              type='text'
+              className={contactInputStyle}
+              placeholder='Type the name of your medical center'
+            />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+
+  //Close popup page
+  //...
+  function onDismiss() {
     setIsPopupOpen(false);
   }
-   function onDismiss2() {
+  function onDismiss2() {
     setIsPopupOpen2(false);
   }
 
-   //Sing up user
+  //Sing up user
   //...
-  const handleSignup = async  () => {
-
+  const handleSignup = async () => {
     try {
+      await createUserWithEmailAndPassword(auth, mail, gV.password).then((userCredential) => {
+        // Signed in
+        console.log('SIGN UP SUCCESS');
 
-        await createUserWithEmailAndPassword(auth, mail, gV.password).then((userCredential) => {
-          // Signed in 
-          console.log("SIGN UP SUCCESS")
+        const user = userCredential.user;
 
-          const user = userCredential.user;
+        var templateParams = {
+          user_name: name,
+          user_email: mail,
+          password: gV.password,
+        };
+        //send email
 
-          var templateParams = {
-            user_name: name,
-            user_email: mail,
-            password: gV.password,
-          };
-          //send email
-      
-            user && emailjs.send('service_i7knjsi', 'template_oazumi8', templateParams, 'xBTh1qYqTM9n5L1_P')
-
-        });
-        updateProfile(auth.currentUser, { displayName: name });
-      
-       
+        user && emailjs.send('service_i7knjsi', 'template_oazumi8', templateParams, 'xBTh1qYqTM9n5L1_P');
+      });
+      updateProfile(auth.currentUser, { displayName: name });
     } catch (error) {
-     
       if (error.code === 'auth/email-already-in-use') {
-        setGlobalState("isLoginPopup", true);
-        console.log("SIGN UP ERROR")
+        setGlobalState('isLoginPopup', true);
+        console.log('SIGN UP ERROR');
         return;
-        
       }
       if (error.code === 'auth/invalid-email') {
-        
-        console.log("SIGN UP ERROR")
+        console.log('SIGN UP ERROR');
         return;
-        
       }
-
-
     }
-
-   
   };
 
-
-  const [isLoginPopup] = useGlobalState("isLoginPopup");
+  const [isLoginPopup] = useGlobalState('isLoginPopup');
 
   useEffect(() => {
-    setGlobalState("isLoginPopup", false);
+    setGlobalState('isLoginPopup', false);
   }, []);
 
+  useEffect(() => {
+    const currentStep = user?.accessToken ? 1 : 0;
+    setGlobalState('activeStep', currentStep);
+    setGlobalState('isLoginPopup', false);
+  }, [user?.accessToken]);
 
   useEffect(() => {
-
-       
     setDoc(
-      doc(db, "MitruaPartial", `${user ? user.email : gV.MailAddres }`),
+      doc(db, 'MitruaPartial', `${user ? user.email : gV.MailAddres}`),
       {
-          Rechecks: {
-            formStep: activeStep,
-            activeStep: 0,
-            createDay: new Date().getDate(),
-            createMonth: new Date().getMonth(),
-            createYear: new Date().getFullYear(),
-            bodyParts: gV.bodyParts,
-            scanType: gV.scanType,
-            name: name,
-            mail: mail,
-            phone: phone,
-            question: question,
-            medicalSendType: dropdownText,
-            medicalCenter: medicalCenter,
-            insurance: gV.insuranceCompany,
-            isPay: false,
-            createdAt: Timestamp.now().toDate(),
-            doctors: doctors,
-            paymentPlan: paymentPlan,
-            password: gV.password,
-            
-          },
+        Rechecks: {
+          formStep: activeStep,
+          activeStep: 0,
+          createDay: new Date().getDate(),
+          createMonth: new Date().getMonth(),
+          createYear: new Date().getFullYear(),
+          bodyParts: gV.bodyParts,
+          scanType: gV.scanType,
+          name: name,
+          mail: mail,
+          phone: phone,
+          question: question,
+          medicalSendType: dropdownText,
+          medicalCenter: medicalCenter,
+          insurance: gV.insuranceCompany,
+          isPay: false,
+          createdAt: Timestamp.now().toDate(),
+          doctors: doctors,
+          paymentPlan: paymentPlan,
+          password: gV.password,
+        },
       },
-      { merge: true }
+      { merge: true },
     );
-
-
   }, [activeStep]);
-
 
   return (
     <>
-      <Navbar mobileMenuText={"Menu"} />
-     
+      <Navbar mobileMenuText={'Menu'} />
 
-     {/* Pay Popup */}
+      {/* Pay Popup */}
       <Popup
-      open={isPopupOpen}
-      onDismiss={onDismiss}
-      contents={ 
-      <div>
-        <h1 onClick={()=>{setIsPopupOpen(false)}} className="absolute z-50 cursor-pointer right-6 top-0 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
-        <PayScreen/> 
-      </div> }
-      close={false}
+        open={isPopupOpen}
+        onDismiss={onDismiss}
+        contents={
+          <div>
+            <h1
+              onClick={() => {
+                setIsPopupOpen(false);
+              }}
+              className='absolute z-50 cursor-pointer right-6 top-0 bg-black text-white px-3 py-1 rounded-full'>
+              {' '}
+              Close
+            </h1>
+            <PayScreen />
+          </div>
+        }
+        close={false}
       />
-      
+
       {/* Sample Repors Popup */}
       <Popup
         close={true}
@@ -896,159 +790,167 @@ const addToLocalStorage = (key, value) => {
         onDismiss={onDismiss2}
         contents={
           <div>
-           <h1 onClick={()=>{setIsPopupOpen2(false)}} className="absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
-           <SampleReports isOutside={true}/>
+            <h1
+              onClick={() => {
+                setIsPopupOpen2(false);
+              }}
+              className='absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full'>
+              {' '}
+              Close
+            </h1>
+            <SampleReports isOutside={true} />
           </div>
-         
-        
         }
       />
 
       {/* Login Pop Up */}
-    { !user &&  <Popup
-        open={isLoginPopup}
-        close={false}
-        contents={
-          <div>
-          <h1 onClick={()=>{window.location.href = "/form-new" }} className="absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
-          <Login isMailErr={true} />
-         </div>
-        
-      
-      
-      }
-      />
-}
+      {!user && (
+        <Popup
+          open={isLoginPopup}
+          close={false}
+          contents={
+            <div>
+              <h1
+                onClick={() => {
+                  window.location.href = '/form-new';
+                }}
+                className='absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full'>
+                {' '}
+                Close
+              </h1>
+              <Login isMailErr={true} />
+            </div>
+          }
+        />
+      )}
 
+      <div className='w-screen  flex flex-col items-center gap-3 lg:gap-4 font-product '>
+        <div className='mt-14 lg:mt-20 '></div>
 
+        {/*  Stepper */}
+        {false && (
+          <Stack sx={gV.mq.matches ? { width: '100%' } : { width: '55%' }} spacing={5}>
+            <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+              {steps.map((label, idx) => (
+                <Step key={idx}>
+                  <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+          </Stack>
+        )}
 
+        <div className='lg:w-[46vw] self-start lg:self-auto  '>
+          <div
+            onClick={() => {
+              setIsPopupOpen2(!isPopupOpen2);
+            }}
+            className='w-fit self-start  duration-500 bg-black text-white  flex items-center gap-5 left-5 lg:left-0 relative border border-black px-4 py-1 rounded-full'>
+            <p className='duration-500'>
+              {isPopupOpen2 ? 'Close the sample reports' : 'Want to see a sample report? '}
+            </p>
+            <img
+              className={`h-5 ${isPopupOpen2 ? 'rotate-180' : 'rotate0'}  duration-500 `}
+              width='20'
+              height='5'
+              src='https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png'
+              alt='expand-arrow--v1'
+            />
+          </div>
+        </div>
 
-       
-      <div className="w-screen  flex flex-col items-center gap-3 lg:gap-4 font-product ">
-      
-      
+        {activeStep == 0 && ContactDetail}
+        {activeStep == 1 && HistorySymptoms}
+        {activeStep == 2 && MedicalImages}
+        {activeStep == 3 && <Insurance />}
 
-        <div className="mt-14 lg:mt-20 "></div>
-          
-          {/*  Stepper */}
-       { false && <Stack sx={  gV.mq.matches ? { width: "100%" }  : { width: "55%" } } spacing={5}>
-          <Stepper
-            alternativeLabel
-            activeStep={activeStep}
-            connector={<QontoConnector />}
-          >
-            {steps.map((label,idx) => (
-              <Step key={idx}>
-                <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-        </Stack>}
+        {activeStep == 999 && <AvailableRadiologists />}
 
+        {/* Bottom Buttons */}
+        <div
+          className={`absolute ${
+            isPopupOpen && 'hidden'
+          } w-[85vw] lg:w-[45vw] justify-between  bottom-3 mt-10  flex items-center font-product animate-fadeIn`}>
+          {/* Back Button */}
+          {activeStep != 0 && (
+            <button
+              onClick={() => {
+                setGlobalState('activeStep', activeStep - 1);
+              }}
+              className='w-11 h-11 absolute z-20   animate-leftToRight rounded-full bg-sec flex items-center justify-center  text-white'>
+              {' '}
+              <img
+                width='20'
+                height='20'
+                src='https://img.icons8.com/metro/26/FFFFFF/chevron-left.png'
+                alt='chevron-left'
+              />
+            </button>
+          )}
 
-         <div className="lg:w-[46vw] self-start lg:self-auto  ">
-           <div onClick={()=>{setIsPopupOpen2(!isPopupOpen2)}} className="w-fit self-start  duration-500 bg-black text-white  flex items-center gap-5 left-5 lg:left-0 relative border border-black px-4 py-1 rounded-full"> 
-            <p className="duration-500">{isPopupOpen2 ?  "Close the sample reports" : "Want to see a sample report? " }</p> 
-            <img className={`h-5 ${isPopupOpen2 ? "rotate-180" : "rotate0"}  duration-500 `} width="20" height="5" src="https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png" alt="expand-arrow--v1"/> 
-           </div>
-         </div>
+          {true && <div> </div>}
 
+          {/* Next Button */}
 
+          <button
+            onClick={() => {
+              /* Sıgn Up Step*/
 
-        {activeStep == 0 &&  ContactDetail }
-        {activeStep == 1 &&  HistorySymptoms  }
-        {activeStep == 2 &&  MedicalImages  }
-        {activeStep == 3 &&  <Insurance/>   }  
+              activeStep == 0 && handleSignup();
 
-        {activeStep == 999 &&  <AvailableRadiologists/>  }
+              /* Payment Step States */
+              activeStep != 3 && setGlobalState('activeStep', activeStep + 1);
+              activeStep == 3 && setIsPopupOpen(true);
 
-     
-       {/* Bottom Buttons */}
-       <div className= {`absolute ${isPopupOpen && "hidden"} w-[85vw] lg:w-[45vw] justify-between  bottom-3 mt-10  flex items-center font-product animate-fadeIn`} >
-        
+              /* Payment Step */
+              if (activeStep == 3) {
+                AmountCalculator(mainPayAmount);
 
-         {/* Back Button */}
-         { activeStep !=0 && <button  onClick={() => {
-          
-                   setGlobalState("activeStep", activeStep - 1);
-                }} className="w-11 h-11 absolute z-20   animate-leftToRight rounded-full bg-sec flex items-center justify-center  text-white"> <img width="20" height="20" src="https://img.icons8.com/metro/26/FFFFFF/chevron-left.png" alt="chevron-left"/></button>}
-       
+                setDoc(
+                  doc(db, 'Mitrua', `${user.email}`),
+                  {
+                    Rechecks: [
+                      {
+                        formStep: activeStep,
+                        activeStep: 1,
+                        createDay: new Date().getDate(),
+                        createMonth: new Date().getMonth(),
+                        createYear: new Date().getFullYear(),
+                        bodyParts: gV.bodyParts,
+                        scanType: gV.scanType,
+                        name: name,
+                        mail: mail,
+                        phone: phone,
+                        question: question,
+                        medicalSendType: dropdownText,
+                        medicalCenter: medicalCenter,
+                        insurance: gV.insuranceCompany,
+                        isPay: false,
+                        createdAt: Timestamp.now().toDate(),
+                        doctors: doctors,
+                        paymentPlan: paymentPlan,
+                        payTotalWithoutTax: gV.payTotal,
+                        password: gV.password,
+                      },
+                    ],
+                  },
+                  { merge: true },
+                );
+              }
 
-        {true && <div> </div> }
-
-        {/* Next Button */}
-      
-
-          <button onClick={() => {
-
-                /* Sıgn Up Step*/
-
-                 activeStep == 0 &&  handleSignup()
-               
-                 /* Payment Step States */
-                 activeStep != 3 &&  setGlobalState("activeStep", activeStep + 1);
-                 activeStep == 3 &&  setIsPopupOpen(true)
-                 
-
-                 /* Payment Step */
-                 if (activeStep == 3) {
-
-                  
-
-                  AmountCalculator(mainPayAmount);
-
-                  setDoc(
-                    doc(db, "Mitrua", `${user.email}`),
-                    {
-                        Rechecks: [ 
-                          
-                          {
-                          formStep: activeStep,
-                          activeStep: 1,
-                          createDay: new Date().getDate(),
-                          createMonth: new Date().getMonth(),
-                          createYear: new Date().getFullYear(),
-                          bodyParts: gV.bodyParts,
-                          scanType: gV.scanType,
-                          name: name,
-                          mail: mail,
-                          phone: phone,
-                          question: question,
-                          medicalSendType: dropdownText,
-                          medicalCenter: medicalCenter,
-                          insurance: gV.insuranceCompany,
-                          isPay: false,
-                          createdAt: Timestamp.now().toDate(),
-                          doctors: doctors,
-                          paymentPlan: paymentPlan,
-                          payTotalWithoutTax: gV.payTotal,
-                          password: gV.password,
-                          
-                        },],
-                        
-                        
-                    },
-                    { merge: true }
-                  );
-              
-                }
-
-
-                 /* User and Info Logs */
-                 console.log("BodyParts", gV.bodyParts )
-                 console.log("ScanType", gV.scanType )
-                 console.log("activeStep", activeStep, "name", name, "mail", mail, "phone", phone, )
-                 user && console.log("user", user.email)
-
-               }}
-               className={`bg-sec ${activeStep == 0 ? "w-full" : "w-[82%]" } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`} >
-                Continue to {activeStep == 0 && "History"} {activeStep == 1 && "Medical Images "}  {activeStep == 2 && "Insurance"} {activeStep == 3 && "Payment"} {activeStep == 4 && ""}
+              /* User and Info Logs */
+              // console.log('BodyParts', gV.bodyParts);
+              // console.log('ScanType', gV.scanType);
+              // console.log('activeStep', activeStep, 'name', name, 'mail', mail, 'phone', phone);
+              // user && console.log('user', user.email);
+            }}
+            className={`bg-sec ${
+              activeStep == 0 ? 'w-full' : 'w-[82%]'
+            } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
+            Continue to {activeStep == 0 && 'History'} {activeStep == 1 && 'Medical Images '}{' '}
+            {activeStep == 2 && 'Insurance'} {activeStep == 3 && 'Payment'} {activeStep == 4 && ''}
           </button>
-    
-       </div>
-
-       
-     
+        </div>
       </div>
     </>
   );
