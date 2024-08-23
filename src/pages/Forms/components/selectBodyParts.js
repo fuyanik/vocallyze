@@ -69,18 +69,18 @@ export default function SelectBodyParts({isOutside = false}) {
            <>
             { !isOutside ? 
             
-            <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2]" :  "relative flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
+            <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50" :   "relative bg-slate-50 flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
             
             
               <div
                 onClick={() => {
                   setDropdown(!isDropdown);
                 }}
-                className="h-auto py-3 w-[120%]  relative text-pri flex-wrap  gap-2 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
+                className="h-auto py-3 w-[120%]   relative text-pri flex-wrap  gap-2 flex items-center px-4 rounded-full z-10 duration-200 ease-in-out "
               >
                  {/* Default Place Holder */}
                  <div className="flex gap-2 h-8 items-center justify-center">
-                <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/ff4949/search--v1.png" alt="search--v1"/>
+                <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/5D9695/search--v1.png" alt="search--v1"/>
             
                    { bodyParts.length == 0 && <p className="font-bold lg:font-normal">Body Part(s)</p>}
                  </div>

@@ -10,6 +10,8 @@ import ScanType from "../../pages/Forms/components/selectScan";
 import IconsMobile from "../Icons/Icons_mobile";
 import Navbar from "../1.Navbar/navbar";
 import groupPng from "../../assets/images/group.png"
+import AllOneService from "../5.AllOneService/allOneService";
+import Informational from "../Informational/Informational";
 
 
 
@@ -67,26 +69,22 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
   return (
     <>
-     {isOutside && 
      
-     <Navbar
-      mobileMenuText={'Menu'}
-      mobileMenuTo ={"/mobileNavMenu"}
-      />}
 
-      {isOutside && <div className="h-20"> </div>}
+     
       
-      <div className="w-screen  h-auto lg:pb-28 relative text-black font-product tracking-wide  flex  items-center justify-center sm:justify-normal lg:px-[7.8vw]   ">
+      <div className="w-screen h-[103vh]   lg:pb-0 lg:pt-28  relative text-black font-product tracking-wide  flex  sm:items-start items-center justify-center sm:justify-center   ">
         
+        {/* get background image all div */}
+        <img className="absolute top-[2%] left-[1%] w-[98%] h-[97%] object-cover -z-10" src="https://vitamu.imgix.net/Adsız%20tasarım-10.png" alt="groupPng"/>
        
-       
-        <div className="flex lg:mt-32  mt-16 flex-col gap-5 lg:items-start items-center  text-center">
+        <div className="flex lg:mt-0 border border-blue-100  mt-16 flex-col gap-6 lg:items-center items-center  text-center">
          
-         <div className=" lg:text-[69px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-start text-center items-center justify-left   font-bold ">
+         <div className=" border border-blue-100   lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
            <p>Get your online</p>
          
-           <div  className="hero__main__header__fade-in text-black flex   justify-center lg:justify-start  relative">
-              <p className="text-black">ultrasound</p>
+           <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center  relative">
+              <p className="">ultrasound</p>
               <p>MRI</p>
               <p>mammogram</p>
               <p>CT scan</p>
@@ -97,7 +95,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
          
            <p className="mt-10 lg:mt-[72px]">second opinion </p>
         </div>
-         <p className="lg:text-[17px] text-[17px] " > Results in 24 hours.</p>
+        
    
       {  
 
@@ -109,21 +107,17 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
         <div className="flex flex-col items-center  gap-3 rounded-full ">
           <SelectBodyParts/>
           <ScanType/>
-         <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-[#ff4949]  hover:bg-[#ff595990] duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
+         <div onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-second hover:bg-prim duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
         </div>
       
       
       :
       /* Desktop */
         <div className=" flex w-[65vw] cursor-pointer  h-[54px]  ">
-          
-          
           <SelectBodyParts/>
           <ScanType/>
           
-        
-        
-          <div onClick={()=>{ navigate("/form-new") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-[#ff4949] text-white rounded-[44px] relative right-6 z-10  "> 
+          <div onClick={()=>{ navigate("/form-new") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-second hover:bg-prim duration-500 text-white rounded-[44px] relative right-6 z-10  "> 
             <p>Get Started</p>
             <p>➔</p>
            </div>
@@ -132,57 +126,22 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 } 
 
- 
-  {
+        <div className="flex gap-10 text-black"> 
+           <div className="flex gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
+           <div className="flex gap-2"> {costIcon} <p>Track the entire process from your personal dashboard</p> </div> 
+           <div className="flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+         
+         
+        </div>
 
-    /* Hero Bottom Icons */
-    gV.mq.matches ? 
-    
-     <div className="flex flex-col gap-2 items-center text-center">
-    {icons.map((company,idx) => (
-      <div key={idx} className="flex w-[full]  gap-2  items-center">
-   
-   {idx === 0 &&  searchIcon}
-    {idx === 1 &&  costIcon}
-    {idx === 2 &&  customerIcon}
-    {idx === 3 &&  starIcon}
-
-      <p className="text-center text-[16px]">{company.text}</p>
-    </div>
-    ))}
-
-    </div>  : 
-
-
-
-<div className=" flex mt-3 gap-10 self-start ">
-        
-{icons.map((company,idx) => (
-  <div key={idx} className="flex  w-auto  gap-3  items-center">
- 
-    {idx === 0 &&  searchIcon}
-    {idx === 1 &&  costIcon}
-    {idx === 2 &&  customerIcon}
-  
-  
-  <p className="text-center">{company.text}</p>
-</div>
-))}
-</div>
-  }
-     
-
-        
-        
-
+       
      
        </div>
+       
 
 
 
-      <div className="absolute  lg:flex hidden right-12 top-6 shadow-xl rounded-2xl  ">
-        <img className=" h-[638px] rounded-xl" src="https://vitamu.imgix.net/img1.jpg?auto=compress" />
-      </div>
+    
        
       </div>
     </>

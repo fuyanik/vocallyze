@@ -133,8 +133,7 @@
     font-family: "ProductSans-Light";
     gap: 5vh;
     overflow: scroll;
-    -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     overflow-y: hidden;
   }

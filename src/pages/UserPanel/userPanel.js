@@ -479,13 +479,13 @@ return (
             <Link to="/">
               <img
                 alt="img"
-                className="userPanel-main-header-logo"
-                src="https://vitamu.imgix.net/Group%202.png?auto=undefined%2Ccompress"
+                className="w-52"
+                src="https://vitamu.imgix.net/MEDIFYRE-2.png"
               />
             </Link>
 
             <Link className="style-none" to="/">
-              <p className="userPanel-main-header-text">Go to Mitrua.com</p>
+              <p className="userPanel-main-header-text">Go to Medifyre.com</p>
             </Link>
           </div>
 
@@ -554,7 +554,7 @@ return (
                     }}
                     className={`${
                       isSlect3 && "text-[#000000]"
-                    } cursor-pointer hidden hover:text-[#000000] duration-200`}
+                    } cursor-pointer  hover:text-[#000000] duration-200`}
                   >
                     {" "}
                     Messages

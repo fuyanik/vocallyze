@@ -78,12 +78,6 @@
   color: rgba(0, 0, 0, 0.262745098);
   letter-spacing: 0px;
 }
-.login-page__main__form-area__inputs__input:-ms-input-placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.262745098);
-  letter-spacing: 0px;
-}
 .login-page__main__form-area__inputs__input::placeholder {
   font-size: 16px;
   font-weight: 400;
@@ -119,14 +113,12 @@
   text-decoration: none;
   cursor: pointer;
   transition: 100ms;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
   text-decoration: underline;
 }
 .login-page__main__form-area__divider {
   margin-top: 20px;
   width: 80%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -254,12 +246,6 @@
     color: rgba(0, 0, 0, 0.262745098);
     letter-spacing: 0px;
   }
-  .login-page__main__form-area__inputs__input:-ms-input-placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.262745098);
-    letter-spacing: 0px;
-  }
   .login-page__main__form-area__inputs__input::placeholder {
     font-size: 16px;
     font-weight: 400;
@@ -295,14 +281,12 @@
     text-decoration: none;
     cursor: pointer;
     transition: 300ms;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    text-decoration-line: underline;
     text-decoration: underline;
   }
   .login-page__main__form-area__divider {
     margin-top: 0px;
     width: 80%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     display: flex;

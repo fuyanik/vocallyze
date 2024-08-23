@@ -20,7 +20,6 @@
 .bi-rads__right {
   position: relative;
   width: 27vw;
-  position: -webkit-sticky;
   position: sticky;
   top: 5vh;
   align-items: center;
@@ -356,16 +355,6 @@
     background-color: rgb(255, 208, 0);
     color: #000000;
   }
-  @-webkit-keyframes bottomToTop {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-  }
   @keyframes bottomToTop {
     0% {
       opacity: 0;
@@ -374,16 +363,6 @@
     100% {
       opacity: 1;
       transform: translateX(0%);
-    }
-  }
-  @-webkit-keyframes bottomToTopRev {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-100%);
     }
   }
   @keyframes bottomToTopRev {

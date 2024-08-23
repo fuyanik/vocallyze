@@ -10,7 +10,7 @@ import gV from "../../gV";
 
 
 
-const Navbar = ({mobileMenuText,mobileMenuTo}) => { 
+const Navbar = () => { 
 
 
 
@@ -377,8 +377,8 @@ return (
       <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex  ">
         <Link style={{ textDecoration: "none", display: "flex" }} to="/">
           <img
-            className="vitamu-logo"
-            src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
+            className="w-48"
+            src="https://vitamu.imgix.net/MEDIFYRE-2.png"
             alt="vitamu"
           />{" "}
         </Link>
@@ -404,7 +404,7 @@ return (
             <header className="flex animate-visible  justify-between items-center">
               <img
                 className="w-36"
-                src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
+                src="https://vitamu.imgix.net/MEDIFYRE-2.png"
                 alt="vitamu"
               />{" "}
               <img
@@ -637,8 +637,8 @@ return (
         >
           {" "}
           <img
-            className="navbar-logo vitamu-logo"
-            src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
+            className="w-40"
+            src="https://vitamu.imgix.net/MEDIFYRE-2.png"
             alt="vitamu"xw
           />{" "}
         </Link>

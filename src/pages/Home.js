@@ -25,6 +25,8 @@ import PayScreen from './PayScreen/payScreen';
 import HealthHub from './HealthHub/HealthHub';
 import Informational from '../homeComponents/Informational/Informational';
 import HowWorks from './HowWorks/HowWorks';
+import NavbarGen from '../homeComponents/NavbarGen/NavbarGen';
+import PanelHero from '../homeComponents/PanelHero/PanelHero';
 
 
 
@@ -89,7 +91,7 @@ const Home = () => {
   <div className='VitamuHome' > 
 
       <Helmet>
-        <title>Mitrua - Home</title>
+        <title>MEDIFYRE - Home</title>
         <meta name="description" content="Mitrua" />
       </Helmet>
     
@@ -97,13 +99,11 @@ const Home = () => {
  
   
   
-      <Navbar
-      mobileMenuText={'Menu'}
-      mobileMenuTo ={"/mobileNavMenu"}
-      />
-      
+       <NavbarGen/>
       
        <Hero/>
+
+       <PanelHero/>
     
       <Radiologists isOutside={true}/> 
 

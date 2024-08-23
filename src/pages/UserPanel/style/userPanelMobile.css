@@ -41,21 +41,10 @@
   margin-left: 0vw;
   padding-left: 4vw;
   padding-block: 2vh;
-  -webkit-animation: textAnimation 400ms ease-in-out forwards;
-          animation: textAnimation 400ms ease-in-out forwards;
+  animation: textAnimation 400ms ease-in-out forwards;
   opacity: 0;
   border-bottom-right-radius: 40px;
   border-top-right-radius: 40px;
-}
-@-webkit-keyframes textAnimation {
-  0% {
-    opacity: 0;
-    transform: translateX(-300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
 }
 @keyframes textAnimation {
   0% {
