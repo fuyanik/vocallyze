@@ -78,9 +78,9 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
         {/* get background image all div */}
         <img className="absolute top-[2%] left-[1%] w-[98%] h-[97%] object-cover -z-10" src="https://vitamu.imgix.net/Adsız%20tasarım-10.png" alt="groupPng"/>
        
-        <div className="flex lg:mt-0 border border-blue-100  mt-16 flex-col gap-6 lg:items-center items-center  text-center">
+        <div className="flex lg:mt-0  mt-16 flex-col gap-6 lg:items-center items-center  text-center">
          
-         <div className=" border border-blue-100   lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
+         <div className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
            <p>Get your online</p>
          
            <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center  relative">
