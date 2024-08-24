@@ -12,8 +12,8 @@ import Navbar from "../1.Navbar/navbar";
 import groupPng from "../../assets/images/group.png"
 import AllOneService from "../5.AllOneService/allOneService";
 import Informational from "../Informational/Informational";
-
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 
 const Hero = ({isOutside = false}) => {
@@ -65,7 +65,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
    
    ]
 
-
+   AOS.init();
 
   return (
     <>
@@ -80,8 +80,8 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
        
         <div className="flex lg:mt-0  mt-16 flex-col gap-6 lg:items-center items-center  text-center">
          
-         <div className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
-           <p>Get your online</p>
+         <div data-aos-delay="150" data-aos-duration="400" data-aos="fade-up"    className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
+           <p  >Get your online</p>
          
            <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center  relative">
               <p className="">ultrasound</p>
@@ -93,7 +93,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
              
             </div>
          
-           <p className="mt-10 lg:mt-[72px]">second opinion </p>
+           <p data-aos="fade-up" className="mt-10 lg:mt-[72px]">second opinion </p>
         </div>
         
    
@@ -113,7 +113,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       
       :
       /* Desktop */
-        <div className=" flex w-[65vw] cursor-pointer  h-[54px]  ">
+        <div data-aos-delay="300" data-aos-duration="400" data-aos="fade-up"  className="  flex w-[65vw] cursor-pointer  h-[54px]  ">
           <SelectBodyParts/>
           <ScanType/>
           
@@ -126,7 +126,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 } 
 
-        <div className="flex gap-10 text-black"> 
+        <div data-aos-delay="500" data-aos-duration="400" data-aos="fade-up"  className="flex gap-10 text-black"> 
            <div className="flex gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
            <div className="flex gap-2"> {costIcon} <p>Track the entire process from your personal dashboard</p> </div> 
            <div className="flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 

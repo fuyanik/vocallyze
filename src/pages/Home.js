@@ -27,6 +27,7 @@ import Informational from '../homeComponents/Informational/Informational';
 import HowWorks from './HowWorks/HowWorks';
 import NavbarGen from '../homeComponents/NavbarGen/NavbarGen';
 import PanelHero from '../homeComponents/PanelHero/PanelHero';
+import SampleReports from './DropdownPages/SampleReports/SampleReports';
 
 
 
@@ -90,21 +91,22 @@ const Home = () => {
     
   <div className='VitamuHome' > 
 
-      <Helmet>
-        <title>MEDIFYRE - Home</title>
-        <meta name="description" content="Mitrua" />
-      </Helmet>
+       <Helmet>
+         <title>MEDIFYRE - Home</title>
+         <meta name="description" content="Medifyre" />
+       </Helmet>
     
-
- 
-  
-  
        <NavbarGen/>
-      
        <Hero/>
-
        <PanelHero/>
+      <SampleReports/>
     
+
+
+
+
+
+
       <Radiologists isOutside={true}/> 
 
        <div>
