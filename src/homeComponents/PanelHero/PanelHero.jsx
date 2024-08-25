@@ -4,14 +4,17 @@ import UserPanelMobileHero from '../../pages/UserPanel/UserPanelMobileHero'
 
 const PanelHero = () => {
   return (
-    <div   className='w-screen h-auto  gap-8 flex flex-col justify-center items-center -mt-[23rem]'>
+    <div   className='w-screen h-auto  gap-8 flex flex-col justify-center items-center sm:-mt-[21rem] -mt-[23rem] '>
        
        
-         <div className='bg-[#ffffff68]  sm:w-[82%] w-[94%] h-full rounded-lg flex justify-center items-center '>
+         <div className='bg-[#ffffff68]   sm:w-[82%] w-[94%] h-full rounded-lg flex justify-center items-center '>
        
-         <div className='bg-white w-[95%] h-[96%] rounded-lg z'>
+         <div className='bg-white w-[95%] h-[96%] rounded-lg sm:mt-5 '>
 
-             <UserPanelMobileHero/>
+             <div className='sm:hidden flex mt-10'>
+              <UserPanelMobileHero/>
+             </div>
+             <img src='https://vitamu.imgix.net/Screenshot%202024-08-23%20at%2014.50.56.png' className='w-full sm:flex hidden h-full object-contain '/>
        
        
          </div>
