@@ -22,20 +22,14 @@ export default function SelectScan({isOutside = false}) {
 
 
 
-
-  
-
-
   return (
-   
- 
            
          
      
           <>
              { !isOutside ?  
              
-             <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50 " :  " bg-slate-50 relative flex items-center px-5 w-[32%] h-full  border border-black" } z-0`}>
+             <div className={` z-30 ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50 " :  " bg-slate-50 relative flex items-center px-5 w-[32%] h-full  border border-black" } z-0`}>
              
             
                <div
@@ -66,7 +60,7 @@ export default function SelectScan({isOutside = false}) {
               {/* Dropdown White Area */}
               { isDropdown && 
               
-                 <div className="absolute z-40  flex flex-col gap-3 items-start py-2 px-8 text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl bg-white ">
+                 <div className="absolute z-50  flex flex-col gap-3 items-start py-2 px-8 text-pri w-full h-auto overflow-y-auto top-16 lg:top-[9vh] animate-fadeIn rounded-2xl shadow-xl bg-white ">
                  {names.map((name, idx) => (
                     <p 
                     className={` ${scanType.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3  w-full text-left  `}

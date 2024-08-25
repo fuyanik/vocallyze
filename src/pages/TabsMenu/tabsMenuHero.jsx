@@ -38,14 +38,14 @@ const TabsMenuHero= () => {
   
   return (
        
-    <>
+    <div className='z-10'>
        
      
-          <div  className='tabs-menu__item'>
+          <div  className='tabs-menu__item bg-[#000000]'>
               <div className={selectorClass}></div>
               <p className={` ${active == 1 && "tabs-menu__item__text" }`} onClick={()=>{setActive(1); setGlobalState("userPanelNavIndex", 1)}} >  Rechecks  </p>
               <p className={` ${active == 2 && "tabs-menu__item__text" }`} onClick={()=>{setActive(2); setGlobalState("userPanelNavIndex", 2) }  }>  Images  </p>
-              <p className={` ${active == 3 && "tabs-menu__item__text" }`} onClick={()=>{setActive(3); setGlobalState("userPanelNavIndex", 6) } }>  Upgrade  </p>
+              <p className={` ${active == 3 && "tabs-menu__item__text" }`} onClick={()=>{setActive(3); setGlobalState("userPanelNavIndex", 3) } }>  Messages  </p>
               <p className={` ${active == 4 && "tabs-menu__item__text" }`} onClick={()=>{setActive(4); setGlobalState("userPanelNavIndex", 8)  } }>  Info  </p>
           </div>
     
@@ -53,7 +53,7 @@ const TabsMenuHero= () => {
        
       
       
-    </>
+    </div>
   )
 }
 

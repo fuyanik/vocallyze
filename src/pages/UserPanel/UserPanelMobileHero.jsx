@@ -3,7 +3,7 @@ import Navbar from "../../homeComponents/1.Navbar/navbar";
 import "./style/userPanelMobile.css";
 import { useState,useEffect } from "react";
 import CustomizedAccordions from "./components/accordion";
-import CustomizedAccordions2 from "./components/accordion2";
+import CustomizedAccordions2 from "./components/accordion2Hero";
 import SelectLabels from "./components/select";
 import SelectLabels2 from "./components/select2";
 
@@ -50,12 +50,11 @@ const UserPanelMobileHero = () => {
   return (
     <>
 
-      <div className="  w-[100%] pt-5 ">
-        <div className="userPanel-mobile__header ">
+      <div className="  w-[100%] pt-2 ">
+        <div className=" flex flex-col gap-4">
        
-          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> Elyza</p>  
-           
-           
+          <p className="userPanel-mobile__header__title flex gap-2  text-black -mb-3 "> <p>Hi,</p> Elyza</p>  
+          <p className="text-sm hidden font-bold font-product pl-4" >Track the entire process from your personal dashboard and ask quesiton raidologist</p>
           <TabsMenuHero />
           
           

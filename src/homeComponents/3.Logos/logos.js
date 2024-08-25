@@ -6,7 +6,7 @@ const Logos = () => {
 
 return (
 <div> 
-   <div className=" flex "> 
+   <div className=" flex mt-6 "> 
   
  
                <a href='https://www.nytimes.com/2019/10/24/well/live/machine-intelligence-AI-breast-cancer-mammogram.html' target="_blank">  <div className="logo1"></div> </a>

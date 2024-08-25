@@ -188,10 +188,10 @@ const SampleReports = ({isOutside = false}) => {
      { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
           
         
-            <h1 className='text-[32px] self-center tracking-wide leading-[38px] text-second'> Our Second Opinion Report Samples </h1>
+            <h1 className='text-[32px] self-center tracking-wide leading-[38px] text-center text-second'> Our Second Opinion Report Samples </h1>
           
           
-            <p className="lg:w-[100%]  lg:text-center text-second">
+            <p className="lg:w-[100%]  lg:text-center text-center text-second">
             Medifyre users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
             </p>
      </div>}
