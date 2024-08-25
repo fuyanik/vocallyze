@@ -1,20 +1,22 @@
 import React from 'react'
 import Logos from '../3.Logos/logos'
+import UserPanelMobileHero from '../../pages/UserPanel/UserPanelMobileHero'
 
 const PanelHero = () => {
   return (
-    <div data-aos-delay="600" data-aos-duration="800" data-aos="fade-up"  className='w-screen h-[80vh]  gap-8 flex flex-col justify-center items-center -mt-60'>
+    <div   className='w-screen h-auto  gap-8 flex flex-col justify-center items-center -mt-[23rem]'>
        
        
-         <div className='bg-[#ffffff68]  w-[82%] h-full rounded-lg flex justify-center items-center '>
-         <div className='bg-white w-[98%] h-[96%] rounded-lg z'>
+         <div className='bg-[#ffffff68]  sm:w-[82%] w-[94%] h-full rounded-lg flex justify-center items-center '>
+       
+         <div className='bg-white w-[95%] h-[96%] rounded-lg z'>
 
-            <img src='https://vitamu.imgix.net/Screenshot%202024-08-23%20at%2014.50.56.png' className='w-full h-full object-contain '/>
+             <UserPanelMobileHero/>
        
        
          </div>
         </div>
-        <Logos/>
+        <div className='sm:flex hidden'> <Logos/> </div> 
     </div>
   )
 }

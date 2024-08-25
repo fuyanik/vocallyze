@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @screen iphone7 {
+    .mt-28-iphone7 {
+      @apply mt-28;
+    }
+  }
+}
+
 
 
 * {

@@ -6,6 +6,10 @@ module.exports = {
   theme: {
     extend: {
 
+      screens: {
+        'iphone7': {'max': '375px'},  // iPhone 7 için max genişlik: 375px
+      },
+
       colors: {
         prim:"#83C9B9",
         second: "#5D9695",

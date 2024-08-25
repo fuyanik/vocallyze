@@ -41,10 +41,6 @@ const customerIcon = <svg xmlns="http://www.w3.org/2000/svg" class="stroke-curre
 
 const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-star-b69e09e438f36badb1d27701ae8f32e6aa6499e50a2c579926d96bc1326bb973.png"/>
 
-
-
-
-
   const icons = [
     
  
@@ -73,12 +69,13 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
      
       
-      <div className="w-screen h-[103vh]   lg:pb-0 lg:pt-28  relative text-black font-product tracking-wide  flex  sm:items-start items-center justify-center sm:justify-center   ">
+      <div className="w-screen h-[103vh]   lg:pb-0 lg:pt-28  relative text-black font-product tracking-wide  flex  sm:items-start  justify-center sm:justify-center   ">
         
         {/* get background image all div */}
-        <img className="absolute top-[2%] left-[1%] w-[98%] h-[97%] object-cover -z-10" src="https://vitamu.imgix.net/Adsız%20tasarım-10.png" alt="groupPng"/>
+        <img className="absolute sm:hidden flex sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/background916.png" alt="groupPng"/>
+        <img className="absolute sm:flex hidden sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng"/>
        
-        <div className="flex lg:mt-0  mt-16 flex-col gap-6 lg:items-center items-center  text-center">
+        <div className="flex lg:mt-0 mt-28-iphone7 mt-36 flex-col gap-6 lg:items-center items-center  text-center">
          
          <div data-aos-delay="150" data-aos-duration="400" data-aos="fade-up"    className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
            <p  >Get your online</p>
@@ -126,7 +123,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 } 
 
-        <div data-aos-delay="500" data-aos-duration="400" data-aos="fade-up"  className="flex gap-10 text-black"> 
+        <div data-aos-delay="500" data-aos-duration="400" data-aos="fade-up"  className="sm:flex hidden gap-10 text-black"> 
            <div className="flex gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
            <div className="flex gap-2"> {costIcon} <p>Track the entire process from your personal dashboard</p> </div> 
            <div className="flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
@@ -137,9 +134,6 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
        
      
        </div>
-       
-
-
 
     
        

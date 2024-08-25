@@ -17,7 +17,7 @@ const NavbarGen = () => {
     
 
   return (
-    <nav  className= {`flex fixed items-center justify-between  py-4 pl-2 pr-4 text-sm ${ isScroll ? "w-[630px]" : "w-[580px]"} ${ isScroll ? "bg-white/60" : "bg-white/20"} h-[56px] shadow-sm  rounded-lg top-8 self-center   duration-700   border-t border-white z-40  backdrop-filter backdrop-blur-md  `}>
+    <nav  className= {`flex fixed items-center justify-between  py-4 pl-2 pr-4 text-sm self-center w-[90vw]  ${ isScroll ? "sm:w-[630px]" : "sm:w-[580px]"} ${ isScroll ? "bg-white/60" : "bg-white/20"} h-[56px] shadow-sm  rounded-lg top-8 self-center   duration-700   border-t border-white z-40  backdrop-filter backdrop-blur-md  `}>
    
     
     <div className='flex items-center justify-center gap-4  '> 
@@ -28,7 +28,7 @@ const NavbarGen = () => {
     
      <div className='w-[1px] h-7 bg-gray-500 opacity-25'></div>
     
-     <div className='flex gap-7 justify-center items-center text-black '>
+     <div className='sm:flex hidden gap-7 justify-center items-center text-black '>
         <p className='cursor-pointer hover:opacity-60 duration-300'> Sample Reports</p>
         <p className='cursor-pointer hover:opacity-60 duration-300'>About</p>
         <p className='cursor-pointer hover:opacity-60 duration-300'>Help</p>

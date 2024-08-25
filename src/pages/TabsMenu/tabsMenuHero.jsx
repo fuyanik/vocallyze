@@ -2,43 +2,13 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './style/tabsMenu.css'
 import { setGlobalState } from '../../hookState'
-import { doc, getDoc } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
-import { db } from '../../firebase'
 
-const TabsMenu = ({isMore = false}) => {
+
+const TabsMenuHero= () => {
        
-
-    const auth = getAuth();
-    const user = auth.currentUser;
-
-
 
     const [active, setActive] = useState(1)
     const [selectorClass, setselectorClass] = useState("tabs-menu__item__selector")
-
-
-    const getInfo = async  () => {
-        const docRef = doc(db, "VitamuUsersREAL", `${user.email}`);
-    
-        //Paying users
-        await  getDoc(docRef).then((doc) => {
-
-            if (doc.exists()) {
-                console.log("Current data: ", doc.data());
-
-              //  doc.data().isAskQuestion && setActive(3)
-                  
-            }
-            
-        })
-    }
-
-    useEffect(() => {
-        getInfo()
-    }, [])
-         
-
     
     
     useEffect(() => {
@@ -87,7 +57,7 @@ const TabsMenu = ({isMore = false}) => {
   )
 }
 
-export default TabsMenu
+export default TabsMenuHero
 
 
 /*  
