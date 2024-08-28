@@ -99,20 +99,13 @@ const Home = () => {
        <NavbarGen/>
        <Hero/>
        <PanelHero/>
-      <SampleReports/>
-    
-
-
-    
-
-
-
-      <Radiologists isOutside={true}/> 
-
-       <div>
-        <HowWorks isOutside={true} />
-       </div>
+       <SampleReports/>
+       <HowWorks isOutside={true} />
        
+    
+      { /* <Radiologists isOutside={true}/>  */ } 
+
+    
        <div className='hidden' >
         <HealthHub isOutside={true} />
        </div>

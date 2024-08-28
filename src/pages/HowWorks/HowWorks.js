@@ -8,7 +8,7 @@ import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter'
 
 const HowWorks = ({isOutside = false}) => {
 
-  window.scrollTo(0, 0);
+  //window.scrollTo(0, 0);
  
   return (
     <> 
@@ -23,10 +23,11 @@ const HowWorks = ({isOutside = false}) => {
       <div className='w-screen items-center justify-center flex flex-col gap-5 pb-12'> 
 
           {/* How works */}
-          <div class="py-8 mb-8 border-b md:mb-12 w-screen bg-neutral-50 lg:py-14 flex flex-col items-center justify-center ">
-      
-          <h1 class="text-[42px] font-bold mb-2 lg:mb-4">How It Works</h1>
-           <p class="opacity-75 text-base lg:text-lg text-neutral-800 w-[90vw] text-center ">A hassle-free experience. Results in 24 hours.</p>
+          <div class=" relative py-8 mb-8  md:mb-12 w-screen  lg:py-14 flex flex-col items-center justify-center ">
+          <img className=' absolute w-[98%] rounded-sm h-full object-cover -z-10 ' src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng'/>
+       
+          <h1 class="text-[42px] font-bold mb-2 lg:mb-4 text-black">How It Works</h1>
+           <p class="opacity-75 text-base lg:text-lg text-black w-[90vw] text-center ">A hassle-free experience. Results in 24 hours.</p>
         
           </div>
 
@@ -47,7 +48,7 @@ const HowWorks = ({isOutside = false}) => {
     
     <div class="pt-1">
 
-    <div class="w-10 h-10 stroke-1.5 text-sec">
+    <div class="w-10 h-10 stroke-1.5 text-prim">
       <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3.5 5.5l1.5 1.5l2.5 -2.5"></path>
     <path d="M3.5 11.5l1.5 1.5l2.5 -2.5"></path>
@@ -77,7 +78,7 @@ const HowWorks = ({isOutside = false}) => {
       <span class="inline-flex items-center justify-center p-2 font-medium border-8 border-white rounded-full text-xs w-11 h-11 text-neutral-700 bg-neutral-200 how-it-works__counter">02</span>
     </div>
     <div class="pt-1">
-    <img width="40" height="40" src="https://img.icons8.com/ios/50/ff4949/medical-insurance--v1.png" alt="medical-insurance--v1"/>
+    <img width="40" height="40" src="https://img.icons8.com/ios/50/83C9B9/medical-insurance--v1.png" alt="medical-insurance--v1"/>
      
   
       <h2 class="mt-4 mb-2 text-[20px] font-bold">Check your insurance coverage and make the payment</h2>
@@ -96,7 +97,7 @@ const HowWorks = ({isOutside = false}) => {
       <span class="inline-flex items-center justify-center p-2 font-medium border-8 border-white rounded-full text-xs w-11 h-11 text-neutral-700 bg-neutral-200 how-it-works__counter">03</span>
     </div>
     <div class="pt-1">
-    <div class="w-10 h-10 stroke-1.5 text-sec">
+    <div class="w-10 h-10 stroke-1.5 text-prim">
       <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="9"></circle>
     <polyline points="12 7 12 12 15 15"></polyline>
@@ -117,7 +118,7 @@ const HowWorks = ({isOutside = false}) => {
               <p class="mb-4 text-xl font-semibold">Tomorrow</p>
               <p class="mb-3 text-sm lg:text-base text-neutral-700">Your second opinion report will be more than a cold and vague radiology report  it will contain a detailed analysis of your the case, radiologist notes, and marked images. </p>
              <Link to={"/sample-reports"}>
-               <div class= " px-5 py-3 bg-black hover:bg-sec duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
+               <div class= " px-5 py-3 bg-second hover:bg-prim duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
              </Link>
             </div>
           </div>
@@ -133,7 +134,7 @@ const HowWorks = ({isOutside = false}) => {
       <span class="inline-flex items-center justify-center p-2 font-medium border-8 border-white rounded-full text-xs w-11 h-11 text-neutral-700 bg-neutral-200 how-it-works__counter">04</span>
     </div>
     <div class="pt-1">
-      <div class="w-10 h-10 stroke-1.5 text-sec">
+      <div class="w-10 h-10 stroke-1.5 text-prim">
       <svg class="stroke-current stroke-4" viewBox="0 0 52 52" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M8.67 15.17V13A4.33 4.33 0 0113 8.67h4.33M8.67 36.83V39A4.33 4.33 0 0013 43.33h4.33M34.67 8.67H39A4.33 4.33 0 0143.33 13v2.17M34.67 43.33H39A4.33 4.33 0 0043.33 39v-2.17M26 24.83a4.67 4.67 0 100-9.33 4.67 4.67 0 000 9.33zM19 36.5v-2.33a4.67 4.67 0 014.67-4.67h4.66A4.67 4.67 0 0133 34.17v2.33"></path>
   </svg>
@@ -185,7 +186,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Second Opinion</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -209,7 +210,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">A report of your results</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -233,7 +234,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Online access to your images</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -257,7 +258,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Second opinion from two radiologists</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -285,7 +286,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Ask a radiologist</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -313,7 +314,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Result in 24 hours</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -341,7 +342,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Patient-friendly report</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
@@ -369,7 +370,7 @@ const HowWorks = ({isOutside = false}) => {
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Fully online process</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
-                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-sec">
+                <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
                   <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>

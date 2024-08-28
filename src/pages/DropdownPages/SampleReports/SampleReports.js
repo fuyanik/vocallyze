@@ -244,7 +244,7 @@ const SampleReports = ({isOutside = false}) => {
      </div>
 
     { !isOutside && <div className='flex flex-col items-center justify-center gap-2'>
-         <PrimaryButton to={"/"} />
+         <PrimaryButton  to={"/"} />
         <div onClick={()=>{ window.scrollTo(0, 0); }} className='absoule right-5 bottom-5 px-6 py-2 rounded-3xl border border-black cursor-pointer'> Scroll to Top</div>
      </div>}
     
