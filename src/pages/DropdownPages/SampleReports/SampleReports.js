@@ -182,7 +182,7 @@ const SampleReports = ({isOutside = false}) => {
    <>
 
 
-     <section className={`font-product text-black   h-auto ${isOutside ? "py-10 lg:w-ful bg-gray-100" : "py-[5vh] w-[98vw] self-center bg-slate-50"} rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
+     <section className={`font-product text-black   h-auto  py-[4vh] w-[98vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
     
     {/*  Header */}
      { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
