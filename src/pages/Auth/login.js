@@ -81,7 +81,7 @@ const Login = ({isMailErr = false }) => {
   var actionCodeSettings = {
     // After password reset, the user will be give the ability to go back
     // to this page.
-    url: 'https://www.mitrua.com/login',
+    url: 'https://www.medifyre.com/login',
     handleCodeInApp: false
   };
 
@@ -139,7 +139,7 @@ const Login = ({isMailErr = false }) => {
             <p className="login-page__main__form-area__title">Welcome Back!</p>
             {isMailErr ? (
               <p className="login-page__main__form-area__title2 w-[90%] text-[15px] leading-1 text-center">
-               It seems you've visited Mitrua.com before. There's an account linked to this email address. Please enter your password. If you can't recall your password, click on "reset password."
+               It seems you've visited Medifyre.com before. There's an account linked to this email address. Please enter your password. If you can't recall your password, click on "reset password."
               </p>
             ) : (
               <p className="login-page__main__form-area__title2">

@@ -1032,7 +1032,7 @@ return (
 
           <div className="text-sm border rounded-full px-5 py-2 w-fit bg-white cursor-pointer">
             {" "}
-            <a className="style-none"  href="mailto:hello@mitrua.com"> <span>E-Mail Us</span> </a>
+            <a className="style-none"  href="mailto:hello@medifyre.com"> <span>E-Mail Us</span> </a>
           </div>
         </div>
       </div>

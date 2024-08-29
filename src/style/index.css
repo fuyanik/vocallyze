@@ -11,6 +11,12 @@
   }
 }
 
+.stroke-current-new {
+  stroke: #5D9695;
+}
+.stroke-current-new-red {
+  stroke: #9d100d;
+}
 
 
 * {

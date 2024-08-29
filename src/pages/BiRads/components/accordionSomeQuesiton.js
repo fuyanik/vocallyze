@@ -127,7 +127,7 @@ export default function AccordionSomeQuestion({width}) {
         <div style={{display:"flex", flexDirection:"column", gap:"20px"}}>
           <p style={{display:"flex", flexDirection:"row",width:"100%", gap:"6px", color:"rgb(101, 101, 101)"}} className="normal-text">Visit <Link to="/faq" className="style-none"><span  style={{fontFamily:"ProductSans-Thin"}}>Frequently Asked Questions.</span></Link></p>
           <p style={{color:"gray"}} className="normal-text" >or</p>
-          <p style={{display:"flex", flexDirection:"row",width:"100%", gap:"6px", color:"gray"}} className="normal-text">Drop us an-mail: <a className="style-none"  href="mailto:hello@mitrua.com"><span  style={{fontFamily:"ProductSans-Thin"}}>hello@mitrua.com</span> </a>  </p>
+          <p style={{display:"flex", flexDirection:"row",width:"100%", gap:"6px", color:"gray"}} className="normal-text">Drop us an-mail: <a className="style-none"  href="mailto:hello@medifyre.com"><span  style={{fontFamily:"ProductSans-Thin"}}>hello@medifyre.com</span> </a>  </p>
 
         </div>
 

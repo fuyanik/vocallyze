@@ -194,7 +194,7 @@ const BiRads2 = () => {
               <div>
                 <p className="bi-rads__right__main__card__text">856 265-0362</p>
                 <p className="bi-rads__right__main__card__text">
-                  hello@mitrua.com
+                  hello@Medifyre.com
                 </p>
               </div>
             </div>

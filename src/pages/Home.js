@@ -99,20 +99,20 @@ const Home = () => {
        <NavbarGen/>
        <Hero/>
        <PanelHero/>
-       <SampleReports/>
+       <SampleReports isOutside={true}/>
        <HowWorks isOutside={true} />
        
     
       { /* <Radiologists isOutside={true}/>  */ } 
 
     
-       <div className='hidden' >
+       <div  >
         <HealthHub isOutside={true} />
        </div>
 
-    
+     { /* <Informational/> */ }
 
-         <Informational/>
+         
         
 
        { mq.matches ? <MobileFooter/> : <Footer/> }

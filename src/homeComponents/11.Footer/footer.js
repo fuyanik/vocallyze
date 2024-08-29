@@ -19,25 +19,25 @@ const Footer = ({marginTop}) => {
     <div style={{ marginTop: marginTop }} className="footer ">
       <div className="footer-main">
         <div className="footer-main-left relative">
-          <img src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress" className="footer-main-left__vitamu-logo" />
+          <img src='https://vitamu.imgix.net/MEDIFYRE-2.png' className="w-40" />
           <p className="footer-main-left__title">
             Terms of Service · Privacy Policy
           </p>
 
           <div className="footer-main-left__social-logos">
-            <a href="https://www.facebook.com/vitamucom" target="_blank">
+            <a href="https://www.facebook.com/medifyrecom" target="_blank">
               {" "}
               <RiFacebookFill className="footer-main-left__social-logos__logo" />{" "}
             </a>
-            <a href="https://www.instagram.com/vitamucom/" target="_blank">
+            <a href="https://www.instagram.com/medifyrecom/" target="_blank">
               {" "}
               <AiOutlineInstagram className="footer-main-left__social-logos__logo" />{" "}
             </a>
-            <a href="https://twitter.com/vitamucom" target="_blank">
+            <a href="https://twitter.com/medifyrecom" target="_blank">
               {" "}
               <BsTwitter className="footer-main-left__social-logos__logo" />{" "}
             </a>
-            <a href="https://www.linkedin.com/company/vitamu/" target="_blank">
+            <a href="https://www.linkedin.com/company/medifyre/" target="_blank">
               {" "}
               <RiLinkedinFill className="footer-main-left__social-logos__logo" />{" "}
             </a>
@@ -55,7 +55,7 @@ const Footer = ({marginTop}) => {
           </p>
           <img src={payment_logo} className="footer-main-left__payment-logo" />
           <p className="footer-main-left__text">
-            Vitamu© 2023 All Rights Reserved
+            Medifyre© 2024 All Rights Reserved
           </p>
         </div>
 

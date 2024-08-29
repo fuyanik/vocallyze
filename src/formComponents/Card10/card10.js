@@ -39,7 +39,7 @@ const Card10 = ({text1,text2,display}) => {
 
              <p>{text1}</p>
              <p>{text2} </p>
-             <p>If you cannot afford a recheck, please send us an e-mail at hello@mitrua.com. We can help.</p>
+             <p>If you cannot afford a recheck, please send us an e-mail at hello@medifyre.com. We can help.</p>
            </div>
 
           { /* <input placeholder="$120.00" className="nameİnput"/>  */}

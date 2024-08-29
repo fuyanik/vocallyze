@@ -21,7 +21,7 @@ return (
 <div className="mobile-footer"> 
    <div className='mobile-footer-main'> 
         {/* <div className='dividero-footer'></div> */}
-         <img alt='image' className="w-40" src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress" />
+         <img alt='image' className="w-48 " src='https://vitamu.imgix.net/MEDIFYRE-2.png' />
          <MobileFooterCustomizedAccordions/>
          <p className='mobile-footer-text'>Terms of Service · Privacy Policy</p>
          <img alt='image'  className='mobile-footer-icons' src= {mobileFooterIcons}/>
@@ -33,7 +33,7 @@ return (
          <p className='mobile-footer-text2'>These statements have not been evaluated by the FDA, NHS, or Health Canada. This service is not intended to treat or cure any disease.</p>
          <img  className='mobile-footer-pay' src= {mobileFooterPay}/>
        
-         <p className='mobile-footer-text2'>  Mitrua 2023 All Rights Reserved.</p>
+         <p className='mobile-footer-text2'>  Medifyre 2023 All Rights Reserved.</p>
          
               
 

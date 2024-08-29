@@ -224,9 +224,9 @@ Marked images: Markings in the suspicious areas in your images.</p>
 
 
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-            <p>Your report will be digitally signed by our radiologists, meaning you will not need a physical copy. However, if you want one, just drop us an e-mail at <a className="style-none"  href="mailto:hello@mitrua.com"> <span>hello@mitrua.com</span> </a> , and we can send you a physical copy for free.</p>
+            <p>Your report will be digitally signed by our radiologists, meaning you will not need a physical copy. However, if you want one, just drop us an e-mail at <a className="style-none"  href="mailto:hello@medifyre.com"> <span>hello@medifyre.com</span> </a> , and we can send you a physical copy for free.</p>
             Can I talk to a radiologist?
-If you have any special requests before, during, or after the recheck process, you can talk to your assigned radiologists. Drop us an e-mail at <a className="style-none"  href="mailto:ask@mitrua.com"> <span>ask@mitrua.com</span> </a>  and we can arrange this for you
+If you have any special requests before, during, or after the recheck process, you can talk to your assigned radiologists. Drop us an e-mail at <a className="style-none"  href="mailto:ask@medifyre.com"> <span>ask@medifyre.com</span> </a>  and we can arrange this for you
           
          </div>
         
@@ -269,7 +269,7 @@ If you have any special requests before, during, or after the recheck process, y
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
-            }} >Is Mitrua.com HIPAA compliant?</Typography>
+            }} >Is medifyre.com HIPAA compliant?</Typography>
           </AccordionSummary>
       
         
@@ -278,7 +278,7 @@ If you have any special requests before, during, or after the recheck process, y
       
           <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
              <p>The Health Insurance Portability and Accountability Act (HIPAA) sets the standard for sensitive patient data protection. Companies that deal with protected health information (PHI) must have physical, network, and process security measures in place and follow them to ensure HIPAA Compliance.</p>
-             <p>Here at Mitrua, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your images for a second opinion report, we use HIPAA compliant Amazon Web Services servers. During the journey of your images recheck, the first step we take is to anonymize your images, so that neither our radiologists nor any other team member will know your name.</p>
+             <p>Here at Medifyre, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your images for a second opinion report, we use HIPAA compliant Amazon Web Services servers. During the journey of your images recheck, the first step we take is to anonymize your images, so that neither our radiologists nor any other team member will know your name.</p>
           </div>
           
        

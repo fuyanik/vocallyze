@@ -49,7 +49,7 @@ const HowWorks = ({isOutside = false}) => {
     <div class="pt-1">
 
     <div class="w-10 h-10 stroke-1.5 text-prim">
-      <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3.5 5.5l1.5 1.5l2.5 -2.5"></path>
     <path d="M3.5 11.5l1.5 1.5l2.5 -2.5"></path>
     <path d="M3.5 17.5l1.5 1.5l2.5 -2.5"></path>
@@ -98,7 +98,7 @@ const HowWorks = ({isOutside = false}) => {
     </div>
     <div class="pt-1">
     <div class="w-10 h-10 stroke-1.5 text-prim">
-      <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="9"></circle>
     <polyline points="12 7 12 12 15 15"></polyline>
   </svg>
@@ -135,7 +135,7 @@ const HowWorks = ({isOutside = false}) => {
     </div>
     <div class="pt-1">
       <div class="w-10 h-10 stroke-1.5 text-prim">
-      <svg class="stroke-current stroke-4" viewBox="0 0 52 52" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="stroke-current-new stroke-4" viewBox="0 0 52 52" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M8.67 15.17V13A4.33 4.33 0 0113 8.67h4.33M8.67 36.83V39A4.33 4.33 0 0013 43.33h4.33M34.67 8.67H39A4.33 4.33 0 0143.33 13v2.17M34.67 43.33H39A4.33 4.33 0 0043.33 39v-2.17M26 24.83a4.67 4.67 0 100-9.33 4.67 4.67 0 000 9.33zM19 36.5v-2.33a4.67 4.67 0 014.67-4.67h4.66A4.67 4.67 0 0133 34.17v2.33"></path>
   </svg>
   
@@ -185,23 +185,25 @@ const HowWorks = ({isOutside = false}) => {
         <tbody>
             <tr>
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Second Opinion</td>
+             
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
+              
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2">
-                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 13l4 4L19 7"></path>
 </svg>
                   </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2">
-                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 13l4 4L19 7"></path>
 </svg>
                   </div>
@@ -211,21 +213,21 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">A report of your results</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2">
-                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 13l4 4L19 7"></path>
 </svg>
                   </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2">
-                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 13l4 4L19 7"></path>
 </svg>
                   </div>
@@ -235,21 +237,21 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Online access to your images</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2">
-                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 13l4 4L19 7"></path>
 </svg>
                   </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2">
-                    <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 13l4 4L19 7"></path>
 </svg>
                   </div>
@@ -259,14 +261,14 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Second opinion from two radiologists</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -275,7 +277,7 @@ const HowWorks = ({isOutside = false}) => {
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -287,14 +289,14 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Ask a radiologist</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -303,7 +305,7 @@ const HowWorks = ({isOutside = false}) => {
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -315,14 +317,14 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Result in 24 hours</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -331,7 +333,7 @@ const HowWorks = ({isOutside = false}) => {
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -343,14 +345,14 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Patient-friendly report</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -359,7 +361,7 @@ const HowWorks = ({isOutside = false}) => {
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -371,14 +373,14 @@ const HowWorks = ({isOutside = false}) => {
               <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">Fully online process</td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                 <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
-                  <svg class="stroke-current" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="stroke-current-new" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 </svg>
                 </div>
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -387,7 +389,7 @@ const HowWorks = ({isOutside = false}) => {
               </td>
               <td class="border-y px-2 md:px-6 py-4 md:py-6">
                   <div class="shrink-0 w-6 mx-auto stroke-2 text-neutral-400">
-                    <svg class="stroke-current" viewBox="0 0 30 30" fill="none">
+                    <svg class="stroke-current-new-red" viewBox="0 0 30 30" fill="none">
 <path d="M22.5 7.5L7.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7.5 7.5L22.5 22.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>

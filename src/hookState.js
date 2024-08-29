@@ -6,7 +6,7 @@ import React from 'react';
 
 const { setGlobalState, useGlobalState } = createGlobalState({
 
-  /* Mitrua */
+  /* Medifyre */
    
   /* Select Dropdown */ 
   isDropdownSet: false,

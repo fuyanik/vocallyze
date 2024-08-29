@@ -41,7 +41,7 @@ export const SideInformation = () => {
       <div className="bi-rads__right__main__card">
         <div className="bi-rads__right__main__card__header">
           <p className="bi-rads__right__main__card__header__title">
-            Mitrua August 2023 Numbers:
+            Medifyre August 2023 Numbers:
           </p>
           <div className="bi-rads__right__main__card__header__area">
             <p>2.317 rechecks
@@ -57,7 +57,7 @@ export const SideInformation = () => {
         <div>
           <p className="bi-rads__right__main__card__text">856 265-0362</p>
           <p className="bi-rads__right__main__card__text">
-            hello@mitrua.com
+            hello@medifyre.com
           </p>
         </div>
       </div>
@@ -341,7 +341,7 @@ const BiRads3 = () => {
               <div>
                 <p className="bi-rads__right__main__card__text">856 265-0362</p>
                 <p className="bi-rads__right__main__card__text">
-                  hello@mitrua.com
+                  hello@medifyre.com
                 </p>
               </div>
             </div>

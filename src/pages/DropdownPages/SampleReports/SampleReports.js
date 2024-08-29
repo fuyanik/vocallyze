@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import gV from '../../../gV'
 import Navbar from '../../../homeComponents/1.Navbar/navbar'
 import PrimaryButton from '../../../homeComponents/microComponents/primaryButton/primaryButton'
+import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen'
 
 
 const SampleReports = ({isOutside = false}) => {
@@ -43,7 +44,7 @@ const SampleReports = ({isOutside = false}) => {
         
     }, [tabsNum])
 
-
+    window.scrollTo(0, 0);
     
  
 
@@ -110,7 +111,9 @@ const SampleReports = ({isOutside = false}) => {
 
       return (
         <>
+        
          <div class="relative w-[95vw]  overflow-auto">
+         
           <div class="max-w-md mx-auto bg-gray-100 shadow-xl min-w-0  ">
            <div class="overflow-x-auto  pb-8 flex ">
             
@@ -182,10 +185,10 @@ const SampleReports = ({isOutside = false}) => {
    <>
 
 
-     <section className={`font-product text-black   h-auto  py-[4vh] w-[98vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
-    
+     <section className={`font-product text-black ${!isOutside ? "py-28" : "py-[4vh]"}   h-auto   w-[98vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
+    { !isOutside && <NavbarGen/>}
     {/*  Header */}
-     { !isOutside && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
+     { true && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
           
         
             <h1 className='text-[32px] self-center tracking-wide leading-[38px] text-center text-second'> Our Second Opinion Report Samples </h1>
@@ -198,7 +201,7 @@ const SampleReports = ({isOutside = false}) => {
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
-     {isOutside && <p className='relative -mt-9 lg:-mt-6 bg-white text-center rounded-full px-4 w-fit z-50  '>Scroll down to see whole report</p>}
+     {false && <p className='relative -mt-9 lg:-mt-6 bg-white text-center rounded-full px-4 w-fit z-50  '>Scroll down to see whole report</p>}
 
      {/*  Vertical Reports*/}
      <div className='flex h-[80vh]  overflow-scroll relative bottom-0 lg:bottom-12  flex-col px-2 gap-10 lg:mt-10'>

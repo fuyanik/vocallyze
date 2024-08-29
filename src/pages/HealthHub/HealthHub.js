@@ -122,9 +122,7 @@ const HealthHub = ({isOutside = false}) => {
 
         <div className='w-screen pt-[10.8vh] relative  items-center flex flex-col font-product tracking-wide'>
 
-            <div className='absolute w-screen h-72 bg-[#FEA2BB] z-0'></div>
-
-           
+        <img className=' absolute w-[98%] rounded-sm h-72 object-cover -z-10 rounded-lg ' src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng'/>
 
            <div className='lg:w-[80%] w-[96%] h-auto lg:pt-14 pt-8 pb-6 gap-12 flex flex-col z-10'>
 
