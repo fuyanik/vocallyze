@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 
 const NavbarGen = () => {
@@ -23,22 +24,22 @@ const NavbarGen = () => {
     <div className='flex items-center justify-center gap-4  '> 
     
    
-         <img className='w-36' src='https://vitamu.imgix.net/MEDIFYRE-2.png'/> 
+        <Link to={"/"}> <img className='w-36' src='https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress'/>  </Link> 
       
     
      <div className='w-[1px] h-7 bg-gray-500 opacity-25'></div>
     
      <div className='sm:flex hidden gap-7 justify-center items-center text-black '>
-        <p className='cursor-pointer hover:opacity-60 duration-300'> Sample Reports</p>
-        <p className='cursor-pointer hover:opacity-60 duration-300'>About</p>
-        <p className='cursor-pointer hover:opacity-60 duration-300'>Help</p>
+       <Link to={"/sample-reports"}>  <p className='cursor-pointer hover:opacity-60 duration-300'> Sample Reports</p> </Link> 
+       <Link to={"/why-second-opinion"}><p className='cursor-pointer hover:opacity-60 duration-300'>About</p> </Link>
+        <Link to={"/faq"}> <p className='cursor-pointer hover:opacity-60 duration-300'>Help</p>  </Link>
      </div>
     </div>
  
    <div className='flex items-center justify-center gap-4 text-black'>
-   { !isScroll && <div className='items-center justify-center  bg-white hover:bg-second hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans'>Log in </div>}
-   { isScroll && <div className='items-center justify-center cursor-pointer animate-rightToLeft hover:opacity-60 duration-300 border-b border-gray '>Log in</div>}
-   { isScroll && <div className='items-center justify-center  bg-white hover:bg-second hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans animate-fadeIn'>Get Start</div>}
+   { !isScroll && <Link to={"/login"}>  <div className='items-center justify-center  bg-white hover:bg-second hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans'>Log in </div> </Link>}
+   { isScroll && <Link to={"/login"}>  <div className='items-center justify-center cursor-pointer animate-rightToLeft hover:opacity-60 duration-300 border-b border-gray '>Log in</div> </Link>}
+   { isScroll && <Link to={"/"}> <div className='items-center justify-center  bg-white hover:bg-second hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans animate-fadeIn'>Get Start</div> </Link>}
    </div>
 
     </nav>

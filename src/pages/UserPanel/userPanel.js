@@ -480,7 +480,7 @@ return (
               <img
                 alt="img"
                 className="w-52"
-                src="https://vitamu.imgix.net/MEDIFYRE-2.png"
+                src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
               />
             </Link>
 

@@ -122,7 +122,7 @@ const Login = ({isMailErr = false }) => {
   
     {!isUserFound ?  
     
-    <div className={`login-page ${isMailErr ? "lg:mt-0" : "lg:mt-12"}  mt-10`} >
+    <div className={`login-page ${isMailErr ? "lg:mt-0" : "lg:mt-0"}  mt-10`} >
         <div
           className={`${isMailErr ? "login-page__err" : "login-page__main"}`}
         >
@@ -130,8 +130,8 @@ const Login = ({isMailErr = false }) => {
             {" "}
             <img
               alt="image"
-              src="https://vitamu.imgix.net/Group%201%20(3).png?auto=undefined%2Ccompress"
-              className=" w-32"
+              src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
+              className=" w-52"
             />
           </Link>
 

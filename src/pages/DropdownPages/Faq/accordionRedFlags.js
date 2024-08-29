@@ -130,7 +130,7 @@ export default function AccordionRedFlags() {
         <AccordionDetails>
        
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-            <p>If you have any special requests before, during, or after the recheck process, you can talk to your assigned radiologists. Drop us an e-mail at <span>hello@mitrua.com</span>, and we can arrange this for you.</p>
+            <p>If you have any special requests before, during, or after the recheck process, you can talk to your assigned radiologists. Drop us an e-mail at <span>hello@medifyre.com</span>, and we can arrange this for you.</p>
         </div>
         
         

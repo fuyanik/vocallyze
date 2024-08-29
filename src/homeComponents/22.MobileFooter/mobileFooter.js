@@ -21,7 +21,7 @@ return (
 <div className="mobile-footer"> 
    <div className='mobile-footer-main'> 
         {/* <div className='dividero-footer'></div> */}
-         <img alt='image' className="w-48 " src='https://vitamu.imgix.net/MEDIFYRE-2.png' />
+         <img alt='image' className="w-48 " src='https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress' />
          <MobileFooterCustomizedAccordions/>
          <p className='mobile-footer-text'>Terms of Service · Privacy Policy</p>
          <img alt='image'  className='mobile-footer-icons' src= {mobileFooterIcons}/>

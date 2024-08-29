@@ -44,7 +44,7 @@ const SampleReports = ({isOutside = false}) => {
         
     }, [tabsNum])
 
-    window.scrollTo(0, 0);
+  { !isOutside &&  window.scrollTo(0, 0);}
     
  
 
@@ -211,34 +211,22 @@ const SampleReports = ({isOutside = false}) => {
       <div data-aos="fade-up"   data-aos-duration="800"  className='relative'>
           <img   className='border-b   lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
           
-           <img className='border-b hidden  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress'/>
        </div> }
 
 
        {tabsNum == 1 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
-          <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/2-2.png?auto=undefined%2Ccompress'/>
-          <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6  ' src='https://vitamu.imgix.net/2-3.png?auto=undefined%2Ccompress'/>
        </div> }
       
        {tabsNum == 2 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
            <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-2.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-3.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-4.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/3-5.png?auto=undefined%2Ccompress'/>
         </div> }
       
        {tabsNum == 3 &&  
         <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
            <img className='border-b lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-2.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-3.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-4.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-5.png?auto=undefined%2Ccompress'/>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover mt-6   ' src='https://vitamu.imgix.net/4-6.png?auto=undefined%2Ccompress'/>
          </div> }
        
        

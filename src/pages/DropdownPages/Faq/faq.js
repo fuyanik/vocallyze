@@ -14,6 +14,7 @@ import DropdownHeader from '../components/Header';
 
 import { SideInformation } from '../../BiRads/biRads3';
 import { Helmet } from 'react-helmet';
+import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
 
 const Faq = ({isOutside = false}) => {
   useEffect(() => {  window.scrollTo(0, 0); }, []);
@@ -22,7 +23,7 @@ const Faq = ({isOutside = false}) => {
 
   return (
     <>
-   { !isOutside && <Navbar/>}
+  
 
 
   <Helmet>
@@ -30,10 +31,11 @@ const Faq = ({isOutside = false}) => {
    <meta name="description" content="Faq" />
 </Helmet>
 
-   {  !isOutside &&   <Navbar mobileMenuText={"Menu"} mobileMenuTo={"/mobileNavMenu"} />}
+  
       
       <div className="human-error">
         <div className="human-error-main">
+        {  !isOutside &&   <NavbarGen />}
          
           <div className='mt-4'></div>
         

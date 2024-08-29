@@ -109,8 +109,8 @@ window.scrollTo(0, 0);
     <> 
 
       <Helmet>
-        <title>Mitrua - Services</title>
-        <meta name="description" content="Mitrua - Services" />
+        <title>Medifyre - Services</title>
+        <meta name="description" content="Medifyre - Services" />
       </Helmet>
   
       <Navbar

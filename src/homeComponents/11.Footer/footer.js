@@ -19,7 +19,7 @@ const Footer = ({marginTop}) => {
     <div style={{ marginTop: marginTop }} className="footer ">
       <div className="footer-main">
         <div className="footer-main-left relative">
-          <img src='https://vitamu.imgix.net/MEDIFYRE-2.png' className="w-40" />
+          <img src='https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress' className="w-40" />
           <p className="footer-main-left__title">
             Terms of Service · Privacy Policy
           </p>

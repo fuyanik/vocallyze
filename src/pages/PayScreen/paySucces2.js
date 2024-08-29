@@ -14,7 +14,7 @@ const PaySucces2 = () => {
     setTimeout(() => {
 
       //navigate new page 
-      window.location.href = "https://www.mitrua.com/pay-succes "
+      window.location.href = "https://www.medifyre.com/pay-succes "
      
 
     }, 40)

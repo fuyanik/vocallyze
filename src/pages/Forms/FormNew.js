@@ -563,7 +563,7 @@ export default function FormNew() {
           {dropdownText == 'I will share an access code.' && (
             <p className='text-priTrans'>
               {' '}
-              Once you share your access code with access@mitrua.com, image status will be updated.{' '}
+              Once you share your access code with access@medifyre.com, image status will be updated.{' '}
             </p>
           )}
           {dropdownText == 'I prefer to ship the CD or USB stick.' && (
@@ -632,7 +632,7 @@ export default function FormNew() {
             </p>
 
             <div className='flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg '>
-              <p className='mt-2'>Mitrua, Inc.</p>
+              <p className='mt-2'>Medifyre, Inc.</p>
               <p>169 Madison Ave #2305 New York, NY 10016</p>
               <p>+1 646 820 1932</p>
             </div>
@@ -647,7 +647,7 @@ export default function FormNew() {
             </p>
 
             <div className='flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg '>
-              <p className=''>access@mitrua.com</p>
+              <p className=''>access@medifyre.com</p>
             </div>
           </div>
         )}

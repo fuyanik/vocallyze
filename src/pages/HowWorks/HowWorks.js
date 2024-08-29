@@ -4,6 +4,7 @@ import gV from '../../gV'
 import Navbar from '../../homeComponents/1.Navbar/navbar'
 import Footer from '../../homeComponents/11.Footer/footer'
 import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter'
+import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen'
 
 
 const HowWorks = ({isOutside = false}) => {
@@ -13,12 +14,14 @@ const HowWorks = ({isOutside = false}) => {
   return (
     <> 
 
-   { !isOutside &&  <Navbar
+  
+
+    <div className={`w-screen ${isOutside ? "pt-0 " : "pt-[10.8vh] "} flex justify-center  font-product`} >
+
+    { !isOutside &&  <NavbarGen
       mobileMenuText={'Menu'}
       mobileMenuTo ={"/mobileNavMenu"}
       />}
-
-    <div className={`w-screen ${isOutside ? "pt-0 " : "pt-[10.8vh] "} flex justify-center  font-product`} >
 
       <div className='w-screen items-center justify-center flex flex-col gap-5 pb-12'> 
 
@@ -64,7 +67,7 @@ const HowWorks = ({isOutside = false}) => {
       <div class="space-y-4 text-sm text-neutral-700 md:text-base">
         
         <p>We will need your contact details, health history and complaints, and medical images.</p>
-        <p>You may upload your medical images, mail us a CD or USB stick, share an access code, or authorize Mitrua to obtain your images.</p>
+        <p>You may upload your medical images, mail us a CD or USB stick, share an access code, or authorize Medifyre to obtain your images.</p>
   
       </div>
     </div>
@@ -144,7 +147,7 @@ const HowWorks = ({isOutside = false}) => {
       <h2 class="mt-4 mb-2 text-[20px] font-bold">Ask questions if you have any</h2>
       <div class="space-y-4 text-sm text-neutral-700 md:text-base">
         
-        <p>Mitrua reports usually answer all the questions our users have. If you still have unanswered questions, the answers from one of our radiologists.</p>
+        <p>Medifyre reports usually answer all the questions our users have. If you still have unanswered questions, the answers from one of our radiologists.</p>
    
   
       </div>
@@ -176,7 +179,7 @@ const HowWorks = ({isOutside = false}) => {
             <td class="border-b rounded-tl-2xl bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">What's included <span class="hidden sm:inline">in the cost?</span></td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
               <span class="md:hidden">Medifyre.com</span>
-              <img alt="Medify Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src='https://vitamu.imgix.net/MEDIFYRE-2.png'/>
+              <img alt="Medify Logo" class="shrink-0 w-28 mx-auto hidden md:block"  src='https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress'/>
             </td>
             <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">Hospital</td>
             <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold  text-center text-sm md:text-base lg:text-lg rounded-tr-2xl">Private Clinic </td>

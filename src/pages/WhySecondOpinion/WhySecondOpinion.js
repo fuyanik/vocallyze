@@ -69,7 +69,7 @@ const WhySecondOpinion = () => {
 
            
             <div className='flex flex-col gap-2 rounded-lg relative  px-6 py-4 '> 
-            Change to "At Mitrua.com, highly detailed reports delivered in 24 hours - starting at $120. 
+            Change to "At Medifyre.com, highly detailed reports delivered in 24 hours - starting at $120. 
               </div>
 
 
@@ -126,6 +126,6 @@ Seeking a second opinion for radiology has key advantages for patients and indiv
 6.	Patient Empowerment: Seeking a second opinion empowers patients to take an active role in their healthcare. It encourages them to ask questions, seek clarification, and become more informed about their condition and treatment options.
 7.	Medicolegal Considerations: In some cases, having a second opinion can provide a level of medicolegal protection for both patients and healthcare providers. It demonstrates due diligence and a commitment to ensuring the accuracy of the diagnosis.
 
-At Mitrua.com, you can get a radiology second opinion by two U.S. board-certified radiologists. Super detailed reports delivered in 24 hours – starting at $20.
+At Medifyre.com, you can get a radiology second opinion by two U.S. board-certified radiologists. Super detailed reports delivered in 24 hours – starting at $20.
 
 */

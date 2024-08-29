@@ -72,8 +72,9 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       <div className="w-screen h-auto   lg:pb-96 pb-28 lg:pt-28   relative text-black font-product tracking-wide  flex  sm:items-start  justify-center sm:justify-center   ">
         
         {/* get background image all div */}
-        <img className="absolute sm:hidden flex sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/background916.png" alt="groupPng"/>
-        <img className="absolute sm:flex hidden sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng"/>
+        <img className="absolute sm:hidden flex sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/background916.png?w=864&h=1536&ar=864%3A1536&auto=compress" alt="groupPng"/>
+       
+        <img className="absolute sm:flex hidden sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng"/>
        
         <div className="flex lg:mt-0 mt-28-iphone7 mt-36 flex-col gap-6 lg:items-center items-center  text-center">
          
