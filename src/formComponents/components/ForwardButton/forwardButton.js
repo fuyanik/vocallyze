@@ -4,7 +4,7 @@ import "./forwardButton.css";
 
 
 
-//gV.buttonType == 0  ?  "Continue" : <MdOutlineArrowForward className='forward-icon' />
+//gV.buttonType == 0  ?  ""Continue"""" : <MdOutlineArrowForward className='forward-icon ' />
 
 const ForwardButton = ({className,forwardButtonClick, width,left,buttonText,onKeyDown}) => {
 
@@ -18,16 +18,11 @@ const ForwardButton = ({className,forwardButtonClick, width,left,buttonText,onKe
         width: width,
         left: left
         }}
-
-
         
         > <span className='button-text'> { buttonText } </span> </button>
     )
-
-
     
     }
- 
 
 
 

@@ -29,7 +29,7 @@ export default function SelectScan({isOutside = false}) {
           <>
              { !isOutside ?  
              
-             <div className={` z-30 ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50 " :  " bg-slate-50 relative flex items-center px-5 w-[32%] h-full  border border-black" } z-0`}>
+             <div className={` z-30 ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50 " :  " bg-slate-50 relative flex items-center px-5 w-[32%] h-full  border-y border-second" } z-0`}>
              
             
                <div
@@ -79,7 +79,7 @@ export default function SelectScan({isOutside = false}) {
 
             : 
 
-            <div className={` ${true ?  "w-[77vw] lg:w-[26vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2] " :  " relative flex items-center px-5 w-[32%] h-full  border border-black" } z-0`}>
+            <div className={` ${true ?  "w-[77vw] lg:w-[21vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2] " :  " relative flex items-center px-5 w-[32%] h-full  border border-black" } z-0`}>
              
             
                <div
@@ -90,7 +90,7 @@ export default function SelectScan({isOutside = false}) {
                >
                    {/* Default Place Holder */}
                    <div className="flex gap-2 h-8 items-center justify-center">
-                   <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/ff4949/search--v1.png" alt="search--v1"/>
+                   <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/5D9695/search--v1.png" alt="search--v1"/>
                     { scanType.length == 0 && <p className="font-normal lg:font-normal">Scan Type(s)</p>}
                   </div>
             

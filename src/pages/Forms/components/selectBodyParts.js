@@ -69,7 +69,7 @@ export default function SelectBodyParts({isOutside = false}) {
            <>
             { !isOutside ? 
             
-            <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50" :   "relative bg-slate-50 flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
+            <div className={` ${gV.mq.matches ?  "w-[77vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-slate-50" :   "relative bg-slate-50 flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-second" }`}>
             
             
               <div
@@ -103,7 +103,7 @@ export default function SelectBodyParts({isOutside = false}) {
                 <div className="absolute z-40 flex flex-col gap-3 items-start py-2 lg:px-12 px-8  text-pri w-full h-48 lg:right-0 overflow-y-scroll bg-white top-[9vh] animate-fadeIn rounded-[30px] shadow-xl">
                 {names.map((name, idx) => (
                    <p 
-                   className={` ${bodyParts.includes(name) && "border-l-[3px] border-pri" } py-[3px] px-3   w-full text-left `}
+                   className={` ${bodyParts.includes(name) && "border-l-[3px] border-second" } py-[3px] px-3   w-full text-left `}
                    onClick={()=>{setDropdown(false); !bodyParts.includes(name) && setBodyParts(prevBodyParts => [...prevBodyParts, name]); gV.bodyParts.push(name)  }  }>
                      
                      {name}
@@ -120,7 +120,7 @@ export default function SelectBodyParts({isOutside = false}) {
 
            :
 
-           <div className={` ${true ?  "w-[77vw] lg:w-[26vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2]" :  "relative flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-black" }`}>
+           <div className={` ${true ?  "w-[77vw] lg:w-[21vw] h-auto gap-4 lg:h-[6vh] rounded-full flex items-center relative cursor-pointer bg-[#f2f2f2]" :  "relative flex items-center px-5 w-[44%] h-auto   rounded-tl-[44px] rounded-bl-[44px]  border border-second" }`}>
             
             
            <div
@@ -131,7 +131,7 @@ export default function SelectBodyParts({isOutside = false}) {
            >
               {/* Default Place Holder */}
               <div className="flex gap-2 h-8 items-center justify-center">
-             <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/ff4949/search--v1.png" alt="search--v1"/>
+             <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/5D9695/search--v1.png" alt="search--v1"/>
          
                 { bodyParts.length == 0 && <p className="font-normal lg:font-normal">Body Part(s)</p>}
               </div>
