@@ -2,7 +2,9 @@
 
 .bi-rads-dropdown{
     background-color: white;
-    padding: 20px 20px;
+    padding-top: 3px;
+    padding-inline: 20px;
+    padding-bottom: 20px;
     gap: 10px;
     z-index: 10000 !important;
     display: flex;
@@ -44,7 +46,9 @@
 
     .bi-rads-dropdown{
         background-color: white;
-        padding: 20px 20px;
+        padding-top: 3px;
+        padding-inline: 20px;
+        
         gap: 10px;
         z-index: 10000 !important;
         display: flex;

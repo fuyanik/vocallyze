@@ -3,12 +3,13 @@ import gV from '../../../gV'
 import Navbar from '../../../homeComponents/1.Navbar/navbar'
 import PrimaryButton from '../../../homeComponents/microComponents/primaryButton/primaryButton'
 import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 const SampleReports = ({isOutside = false}) => {
 
 
-
+     AOS.init();
     const [showNum, setShowNum] = useState(1)
 
 
@@ -85,7 +86,7 @@ const SampleReports = ({isOutside = false}) => {
       return (
         <>
           
-           <div className=" bg-[#ffffffca] shadow-md   font-product items-center justify-center  tracking-wide  lg:w-auto w-[96vw] px-6 py-3  rounded-3xl relative cursor-pointer">
+           <div data-aos-duration="600" data-aos="fade-up"  className=" bg-[#ffffffca] shadow-md   font-product items-center justify-center  tracking-wide  lg:w-auto w-[96vw] px-6 py-3  rounded-3xl relative cursor-pointer">
           
                <div  className={`absolute ${left} ${width}  top-[6px] z-10  lg:h-[70%] h-[80%] bottom-10 bg-second rounded-2xl duration-300 ease-in-out`}   >  </div> 
           
@@ -112,7 +113,7 @@ const SampleReports = ({isOutside = false}) => {
       return (
         <>
         
-         <div class="relative w-[95vw]  overflow-auto">
+         <div data-aos-duration="600" data-aos="fade-up"  class="relative w-[95vw]  overflow-auto">
          
           <div class="max-w-md mx-auto bg-gray-100 shadow-xl min-w-0  ">
            <div class="overflow-x-auto  pb-8 flex ">
@@ -177,10 +178,6 @@ const SampleReports = ({isOutside = false}) => {
 
 
 
-
-
-
-
   return (
    <>
 
@@ -191,10 +188,10 @@ const SampleReports = ({isOutside = false}) => {
      { true && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
           
         
-            <h1 className='text-[32px] self-center tracking-wide leading-[38px] text-center text-second'> Our Second Opinion Report Samples </h1>
+            <h1 data-aos-duration="600" data-aos="fade-up"  className='text-[32px] self-center tracking-wide leading-[38px] text-center text-second'> Our Second Opinion Report Samples </h1>
           
           
-            <p className="lg:w-[100%]  lg:text-center text-center text-second">
+            <p data-aos-duration="600" data-aos="fade-up"  className="lg:w-[100%]  lg:text-center text-center text-second">
             Medifyre users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
             </p>
      </div>}

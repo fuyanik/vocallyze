@@ -31,10 +31,10 @@ const HowWorks = ({isOutside = false}) => {
               src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng'
             />
 
-            <h1 class="text-[42px] font-bold mb-2 lg:mb-4 text-black">
+            <h1 data-aos-duration="400" data-aos="fade-up"  class="text-[42px] font-bold mb-2 lg:mb-4 text-black">
               How It Works
             </h1>
-            <p class="opacity-75 text-base lg:text-lg text-black w-[90vw] text-center ">
+            <p data-aos-duration="400" data-aos="fade-up"  class="opacity-75 text-base lg:text-lg text-black w-[90vw] text-center ">
               A hassle-free experience. Results in 24 hours.
             </p>
           </div>
@@ -204,8 +204,8 @@ const HowWorks = ({isOutside = false}) => {
           <div className={`w-[93vw] lg:w-[60vw] ${isOutside && ""} `}>
             <div class="  flex-col items-center self-center justify-center lg:mt-12  mt-5">
               <div class="space-y-1 md:text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-[32px] font-bold">Why choose Medifyre?</h2>
-                <p class="text-base lg:text-lg text-neutral-600 ">
+                <h2 data-aos-duration="600" data-aos="fade-up"  class="text-[32px] font-bold">Why choose Medifyre?</h2>
+                <p data-aos-duration="600" data-aos="fade-up" class="text-base lg:text-lg text-neutral-600 ">
                   We're taking the stress out of scanning. With no waiting
                   lists, we'll provide clinical guidance, simple referrals, and
                   speedy results all in one place, at one affordable price.

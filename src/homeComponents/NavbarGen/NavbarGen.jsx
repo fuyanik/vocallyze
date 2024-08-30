@@ -49,8 +49,9 @@ const NavbarGen = () => {
         {isHover && (
           <BiRadsDropdown
              top={gV.mq.matches ? "-0%" : "-40%"}
-             left={gV.mq.matches ? "-200%" : "-150%"}
+             left={gV.mq.matches ? "-203%" : "-150%"}
              onMouseLeave={() => setIsHover(false)}
+             onClick={() => setIsHover(false)}
           />
         )}
 
