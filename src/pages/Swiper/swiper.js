@@ -38,9 +38,9 @@ const SwiperPage = ({  isOutside = false, }) => {
 
   
   //Plans default values
-  //...
-  const planOneValue = 399;
-  const planTwoValue = 999;
+  //..
+  const planOneValue = 299;
+  const planTwoValue = 599;
   const planThreeValue = 1599; 
 
 
@@ -466,7 +466,7 @@ const SwiperPage = ({  isOutside = false, }) => {
          </SwiperSlide>
 }
 
-           {/* Smart 
+            
           <SwiperSlide  className="hidden flex-col gap-2 border bg-white text-pri  px-3 pt-3 ">
             
             <header className="flex items-center justify-between">
@@ -740,7 +740,7 @@ const SwiperPage = ({  isOutside = false, }) => {
         
 
           </SwiperSlide>
-          */}
+          
           
       
         </Swiper>

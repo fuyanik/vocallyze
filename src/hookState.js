@@ -33,12 +33,6 @@ const { setGlobalState, useGlobalState } = createGlobalState({
  insuranceCompany: "none",
 
  mainPayAmount: 299,
-
-
-
- 
-
-
   
 });
 

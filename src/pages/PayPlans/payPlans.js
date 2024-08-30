@@ -387,7 +387,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
           {/* Smart */}
-         <div onClick={()=>{setSelectedCard(2)}}  className='hidden items-center gap-4 cursor-pointer '>
+         <div onClick={()=>{setSelectedCard(2)}}  className=' items-center gap-4 cursor-pointer '>
         
             {/*  Select Circle */}
             <div className={`w-11 h-10 rounded-full border ${selectedCard == 2 && "bg-pri"} duration-300 `} > </div>
@@ -513,7 +513,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
         {/* Lifelong  */}
-         <div onClick={()=>{setSelectedCard(3)}}  className='hidden items-center gap-4 cursor-pointer'>
+         <div onClick={()=>{setSelectedCard(3)}}  className=' items-center gap-4 cursor-pointer'>
 
           {/*  Select Circle */}
           <div className={`w-11 h-10 rounded-full border ${selectedCard == 3 && "bg-pri"} duration-300 `} > </div>
