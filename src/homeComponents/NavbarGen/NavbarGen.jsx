@@ -67,7 +67,7 @@ const NavbarGen = () => {
     <nav
       className={`flex items-center justify-between py-4 pl-2 pr-4 text-sm self-center w-[90vw] ${  isScroll ? "sm:w-[685px]" : "sm:w-[665px]"  } ${isScroll ? "bg-white/70 " : "bg-white/20 "} ${isScroll ? "shadow-lg": "shadow-sm"} lg:h-[56px] h-[62px]  rounded-lg duration-700  backdrop-filter backdrop-blur-md`} >
    
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex items-center justify-center lg:gap-4 gap-2">
         <Link to={"/"}>
           <img
             className={`${
