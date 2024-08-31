@@ -44,10 +44,27 @@ const Footer = ({marginTop}) => {
           </div>
 
          
+           <div className='flex flex-col gap-2 rounded-lg relative '>
 
-          <PrimaryButton
-            width={"230px"}
+            {isHover && (
+          <BiRadsDropdown
+             top={gV.mq.matches ? "-200%" : "-90%"}
+             left={gV.mq.matches ? "-0%" : "00%"}
+
+          
+             onMouseLeave={() => setIsHover(false)}
+           
           />
+        )}
+     <PrimaryButton
+          bg={"#5D9695"}
+            width={"230px"}
+            onMouse={() => setIsHover(true)}
+          />
+       
+            </div>
+
+       
 
           <p className="footer-main-left__text">
             These statements have not been evaluated by the FDA or NHS. This

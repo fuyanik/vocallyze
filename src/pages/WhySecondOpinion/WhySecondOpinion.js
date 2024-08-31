@@ -5,31 +5,35 @@ import Footer from '../../homeComponents/11.Footer/footer'
 import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter'
 import BiRadsDropdown from '../../homeComponents/BiRadsDropdown/biRadsDropdown'
 import PrimaryButton from '../../homeComponents/microComponents/primaryButton/primaryButton'
+import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen'
 
 const WhySecondOpinion = () => {
 
     const [isHover, setIsHover] = useState(false)
 
-    window.scrollTo(0, 0);
+  
  
   return (
     <>
 
-<Navbar
-      mobileMenuText={"Menu"}
-      mobileMenuTo={"/mobileNavMenu"}
-      />
 
-      <div className='lg:px-28 lg:pt-28 px-2 mt-14 flex flex-col font-product lg:w-[100%] w-full gap-10 items-center  '>
 
-        <div className='flex flex-col gap-2 bg-gray-100 items-center justify-center p-10 rounded-md w-full'>
+      <div className='lg:px-0 lg:pt-8 px-2 mt-14 flex flex-col font-product lg:w-[100%] w-full gap-10 items-center  '>
+      <NavbarGen
+    
+    />
+        <div className=' relative flex flex-col gap-2  items-center justify-center lg:px-10 px-4 py-20 rounded-md w-full'>
             <h1 className='text-[42px] font-bold'>Why Second Opinion ?</h1>
+            <p className='text-center lg:w-[60%] w-[90%]'>Seeking a second opinion for radiology has key advantages for patients and individuals in general. Here are some reasons why everyone should consider seeking a second opinion for radiological findings:</p>
+            <img
+              className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "
+              src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng'
+            />
         </div>
 
 
-        <div className='flex flex-col pl-4 lg:w-[70%] w-full  text-[17px] text-[#000000ad] '>
+        <div className='flex flex-col pl-4 lg:w-[70%] w-full  text-[17px] text-second '>
 
-        <p className='0   px-6 py-4 '>Seeking a second opinion for radiology has key advantages for patients and individuals in general. Here are some reasons why everyone should consider seeking a second opinion for radiological findings:</p>
             
 
             <div className='flex flex-col gap-2 rounded-lg  px-6 py-4  '>
@@ -86,7 +90,7 @@ const WhySecondOpinion = () => {
           />
         )}
 
-        <PrimaryButton  onMouse={() => setIsHover(true)} />
+        <PrimaryButton bg={"#5D9695"}  onMouse={() => setIsHover(true)} />
             </div>
 
 
