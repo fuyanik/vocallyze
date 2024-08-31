@@ -30,6 +30,7 @@ module.exports = {
         fadeOut: 'fadeOut 0.5s ease-in-out',
         leftToRight: 'leftToRighto 0.5s ease forwards',
         rightToLeft: 'rightToLeft 0.5s ease forwards',
+        bottomToTop: 'bottomToTop 0.5s ease forwards',
         stretchWidth: 'stretchWidth 0.5s ease forwards',
         visible : 'visible 1.8s ease forwards',
       },
@@ -55,6 +56,10 @@ module.exports = {
         rightToLeft: {
           '0%': { transform: 'translateX(160%)' },
           '100%': { transform: 'translateX(0)' },
+        },
+        bottomToTop: {
+          '0%': { transform: 'translateY(160%)' },
+          '100%': { transform: 'translateY(0)' },
         },
         fadeOut: {
           '0%': { opacity: 1 },

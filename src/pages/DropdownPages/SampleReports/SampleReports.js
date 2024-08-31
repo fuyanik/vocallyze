@@ -5,6 +5,7 @@ import PrimaryButton from '../../../homeComponents/microComponents/primaryButton
 import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Helmet } from 'react-helmet'
 
 const SampleReports = ({isOutside = false}) => {
 
@@ -175,15 +176,34 @@ const SampleReports = ({isOutside = false}) => {
 
 
     }
-
-
+ 
+ 
+  
 
   return (
    <>
+  
+    {!isOutside &&  <NavbarGen/> }
+  
+   { !isOutside && <Helmet>
+    <title>Medifyre - Sample Second Opinion Reports | Get Expert Medical Opinions Online</title>
+    <meta name="description" content="Explore Medifyre's sample second opinion reports to see how our expert radiologists provide detailed insights and answers to all your medical queries." />
+    <meta name="keywords" content="Medifyre, second opinion reports, medical opinions, radiologist reports, medical second opinion, healthcare services online" />
+    <meta property="og:title" content="Medifyre - Sample Second Opinion Reports" />
+    <meta property="og:description" content="Explore our sample reports to see how our expert radiologists provide comprehensive medical opinions and answers." />
+    <meta property="og:image" content="https://vitamu.imgix.net/Second%20Opinion%20Report.png" />
+    <meta property="og:url" content="https:/medifyre.com/sample-reports" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   </Helmet>}
 
+   
+   
+   
 
      <section className={`font-product text-black ${!isOutside ? "py-28" : "py-[4vh]"}   h-auto   w-[98vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
-    { !isOutside && <NavbarGen/>}
+   
+    
     {/*  Header */}
      { true && <div className='flex flex-col gap-4 relative  lg:w-[60vw] items-center justify-center w-[92vw] z-10 '>
           
@@ -231,10 +251,7 @@ const SampleReports = ({isOutside = false}) => {
 
      </div>
 
-    { !isOutside && <div className='flex flex-col items-center justify-center gap-2'>
-         <PrimaryButton  to={"/"} />
-        <div onClick={()=>{ window.scrollTo(0, 0); }} className='absoule right-5 bottom-5 px-6 py-2 rounded-3xl border border-black cursor-pointer'> Scroll to Top</div>
-     </div>}
+  
     
      </section>
      

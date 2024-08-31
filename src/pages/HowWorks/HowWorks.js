@@ -7,6 +7,7 @@ import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter'
 import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Helmet } from 'react-helmet'
 
 const HowWorks = ({isOutside = false}) => {
 
@@ -14,14 +15,43 @@ const HowWorks = ({isOutside = false}) => {
   AOS.init();
   return (
     <>
+  {!isOutside &&   <NavbarGen  /> }
+    { !isOutside &&  <Helmet>
+        <title>Medifyre - How It Works </title>
+        <meta
+          name="description"
+          content="Learn how Medifyre's process works to provide expert radiology second opinions online. Start by completing a simple form, check your insurance, and receive your detailed report."
+        />
+        <meta
+          name="keywords"
+          content="how it works, radiology second opinion, medical reports, Medifyre process, medical second opinion"
+        />
+        <meta property="og:title" content="How It Works - Medifyre" />
+        <meta
+          property="og:description"
+          content="Understand the steps involved in getting a second opinion from Medifyre's expert radiologists. Complete the form, check insurance, and get a detailed medical report."
+        />
+        <meta property="og:image" content="%PUBLIC_URL%/path/to/your-image.png" />
+        <meta property="og:url" content="https://medifyre.com/how-it-works" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How It Works - Medifyre" />
+        <meta
+          name="twitter:description"
+          content="Follow these steps to get a second opinion from top radiologists at Medifyre. Quick, easy, and reliable medical advice."
+        />
+        <meta name="twitter:image" content="%PUBLIC_URL%/path/to/your-image.png" />
+      </Helmet>
+     }
+     
       <div
         className={`w-screen ${
           isOutside ? "pt-0 " : "pt-[10.8vh] "
         } flex justify-center  font-product`}
       >
-        {!isOutside && (
-          <NavbarGen mobileMenuText={"Menu"} mobileMenuTo={"/mobileNavMenu"} />
-        )}
+      
+         
+       
 
         <div className="w-screen items-center justify-center flex flex-col gap-5 pb-12">
           {/* How works */}

@@ -6,6 +6,7 @@ import MobileFooter from '../../homeComponents/22.MobileFooter/mobileFooter'
 import BiRadsDropdown from '../../homeComponents/BiRadsDropdown/biRadsDropdown'
 import PrimaryButton from '../../homeComponents/microComponents/primaryButton/primaryButton'
 import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen'
+import { Helmet } from 'react-helmet'
 
 const WhySecondOpinion = () => {
 
@@ -15,15 +16,42 @@ const WhySecondOpinion = () => {
  
   return (
     <>
+ <NavbarGen />
+   <Helmet>
+        <title>Medifyre - Why Get a Second Opinion? </title>
+        <meta
+          name="description"
+          content="Discover the benefits of seeking a second opinion in radiology. Ensure accuracy, explore alternatives, avoid overdiagnosis, and empower yourself with Medifyre."
+        />
+        <meta
+          name="keywords"
+          content="second opinion, radiology second opinion, medical imaging, diagnostic accuracy, Medifyre, patient empowerment, healthcare decisions"
+        />
+        <meta property="og:title" content="Why Get a Second Opinion? - Medifyre" />
+        <meta
+          property="og:description"
+          content="Learn why a second opinion is crucial in radiology for accurate diagnosis, alternative options, and patient empowerment."
+        />
+        <meta property="og:image" content="%PUBLIC_URL%/path/to/your-image.png" />
+        <meta property="og:url" content="https://medifyre.com/why-second-opinion" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Why Get a Second Opinion? - Medifyre" />
+        <meta
+          name="twitter:description"
+          content="Find out the advantages of getting a second opinion in radiology with Medifyre. Ensure accurate diagnosis and explore all your options."
+        />
+        <meta name="twitter:image" content="%PUBLIC_URL%/path/to/your-image.png" />
+      </Helmet>
 
 
 
-      <div className='lg:px-0 lg:pt-8 px-2 mt-14 flex flex-col font-product lg:w-[100%] w-full gap-10 items-center  '>
-      <NavbarGen
+      <div className=' flex flex-col font-product lg:w-[100%] w-full gap-10 items-center  '>
+     
     
-    />
-        <div className=' relative flex flex-col gap-2  items-center justify-center lg:px-10 px-4 py-20 rounded-md w-full'>
-            <h1 className='text-[42px] font-bold'>Why Second Opinion ?</h1>
+   
+        <div className=' relative flex flex-col gap-2  items-center justify-center lg:px-10  lg:py-24 px-4 pt-28 pb-8 rounded-md w-full'>
+            <h1 className='lg:text-[42px] text-[32px] font-bold'>Why Second Opinion ?</h1>
             <p className='text-center lg:w-[60%] w-[90%]'>Seeking a second opinion for radiology has key advantages for patients and individuals in general. Here are some reasons why everyone should consider seeking a second opinion for radiological findings:</p>
             <img
               className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "

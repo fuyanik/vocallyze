@@ -89,12 +89,19 @@ const Home = () => {
   return (
 
     
-  <div className='VitamuHome' > 
+  <div className='VitamuHome' >  
 
-       <Helmet>
-         <title>MEDIFYRE - Home</title>
-         <meta name="description" content="Medifyre" />
-       </Helmet>
+ <Helmet>
+    <title>Medifyre - Expert Medical Second Opinions Online | Trusted Healthcare Services</title>
+    <meta name="description" content="Medifyre provides expert medical second opinions online, connecting you with top radiologists to answer all your healthcare questions." />
+    <meta name="keywords" content="Medifyre, medical second opinions, online healthcare, expert radiologists, medical reports, second opinion services" />
+    <meta property="og:title" content="Medifyre - Expert Medical Second Opinions Online" />
+    <meta property="og:description" content="Get trusted medical second opinions from top radiologists. Medifyre helps you make informed healthcare decisions with ease." />
+    <meta property="og:image" content="https://yourwebsite.com/path/to/homepage-image.png" />
+    <meta property="og:url" content="https://medifyre.com" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </Helmet>
     
        <NavbarGen/>
        <Hero/>
@@ -103,14 +110,14 @@ const Home = () => {
        <HowWorks isOutside={true} />
        
     
-      { /* <Radiologists isOutside={true}/>  */ } 
+      {/* <Radiologists isOutside={true}/>  */} 
 
     
-       <div  >
-        <HealthHub isOutside={true} />
-       </div>
+      
+      {/* <HealthHub   isOutside={true} />  */} 
+      
 
-     { /* <Informational/> */ }
+       { /* <Informational/> */ }
 
          
         
