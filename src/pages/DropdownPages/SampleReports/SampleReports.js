@@ -199,20 +199,20 @@ const SampleReports = ({isOutside = false}) => {
    
    
 
-     <section className={`font-product text-black ${!isOutside ? "py-0" : "py-[0vh]"}   h-auto   w-[98vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
+     <section className={`font-product text-black ${!isOutside ? "py-0" : "py-[0vh]"}   h-auto   lg:w-[98vw] w-[100vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
    
     
     {/*  Header */}
     
-      <div className={`flex flex-col gap-4 relative ${isOutside ? "py-10" : "py-28"}   lg:w-[100vw] items-center justify-center w-[92vw] z-10 `}>
+      <div className={`flex flex-col gap-4 relative ${isOutside ? "py-10" : "py-28"}   lg:w-[100vw] w-[100vw] px-7 items-center justify-center  z-10 `}>
       <img
               className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "
-              src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng'
+              src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
             />
-       <img data-aos-duration="600" data-aos="fade-up"   className='w-48 lg:self-center self-start' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png'/>
+       <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png'/>
           
-          <h1 data-aos-duration="600" data-aos="fade-up"  className='text-[42px] self-center tracking-wide leading-[38px]  text-black font-bold'> Our Second Opinion Report Samples </h1>
-            <p data-aos-duration="600" data-aos="fade-up"  className="lg:w-[100%]  lg:text-center  text-black">
+          <h1 data-aos-duration="600" data-aos="fade-up"  className='text-[42px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'>  Second Opinion Report Samples </h1>
+            <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center  text-black">
             Medifyre users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
             </p>
             

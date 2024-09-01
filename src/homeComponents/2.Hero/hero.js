@@ -115,7 +115,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       
       :
       /* Desktop */
-        <div data-aos-delay="300" data-aos-duration="400" data-aos="fade-up"  className="  flex w-[65vw] cursor-pointer  h-[54px]  ">
+        <div  data-aos-delay="300" data-aos-duration="400" data-aos="fade-up"  className="  flex w-[65vw] cursor-pointer  h-[58px]  ">
           <SelectBodyParts/>
           <ScanType/>
           
@@ -129,9 +129,11 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 } 
 
         <div data-aos-delay="500" data-aos-duration="400" data-aos="fade-up"  className="lg:flex hidden gap-10 text-black"> 
-           <div className="flex gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
+           
+           <div className="flex gap-2"> {searchIcon} <p>Largest Specialist Network</p> </div> 
+           <div className="flex gap-2"> {searchIcon} <p>Full Refund Guarantee</p> </div> 
            <div className="flex gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Track the entire process from your personal dashboard</p> </div> 
-           <div className="flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+           <div className="flex gap-2"> {customerIcon} <p>Follow-up Consultations</p> </div> 
          
          
         </div>
@@ -148,3 +150,11 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 };
 
 export default Hero;
+
+/* 
+*Full Refund Guarantee
+*Personalized Dashboard
+*Largest Specialist Network in the USA
+*Follow-up Consultations Available
+
+*/
