@@ -50,7 +50,7 @@ const WhySecondOpinion = () => {
      
     
    
-        <div className=' relative flex flex-col gap-2  items-center justify-center lg:px-10  lg:py-24 px-4 pt-28 pb-8 rounded-md w-full'>
+        <div className=' relative flex flex-col gap-2  items-center justify-center lg:px-10  lg:py-28 px-4 pt-28 pb-8 rounded-md w-full'>
             <h1 className='lg:text-[42px] text-[32px] font-bold'>Why Second Opinion ?</h1>
             <p className='text-center lg:w-[60%] w-[90%]'>Seeking a second opinion for radiology has key advantages for patients and individuals in general. Here are some reasons why everyone should consider seeking a second opinion for radiological findings:</p>
             <img

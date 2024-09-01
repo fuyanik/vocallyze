@@ -46,7 +46,7 @@ const HowWorks = ({isOutside = false}) => {
      
       <div
         className={`w-screen ${
-          isOutside ? "pt-0 " : "pt-[10.8vh] "
+          isOutside ? "pt-0 " : "pt-[0.0vh] "
         } flex justify-center  font-product`}
       >
       
@@ -55,7 +55,8 @@ const HowWorks = ({isOutside = false}) => {
 
         <div className="w-screen items-center justify-center flex flex-col gap-5 pb-12">
           {/* How works */}
-          <div class=" relative py-8 mb-8  md:mb-12 w-screen  lg:py-14 flex flex-col items-center justify-center ">
+        
+          <div class={` relative py-8 mb-8  md:mb-12 w-screen ${isOutside ? "lg:py-14" : "lg:py-28"}   flex flex-col items-center justify-center `}>
             <img
               className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "
               src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3390&ar=6400%3A3390&auto=compress" alt="groupPng'
@@ -65,7 +66,7 @@ const HowWorks = ({isOutside = false}) => {
               How It Works
             </h1>
             <p data-aos-duration="400" data-aos="fade-up"  class="opacity-75 text-base lg:text-lg text-black w-[90vw] text-center ">
-              A hassle-free experience. Results in 24 hours.
+            Experience a simple, hassle-free process designed for your convenience. Receive your detailed medical second opinion within just 24 hours, ensuring you get the expert insights you need quickly and easily.
             </p>
           </div>
 
