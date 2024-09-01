@@ -73,7 +73,7 @@ const UserPanelMobileHero = () => {
                      <div>
                         <CustomizedAccordionsHero
                         totalRecheck={1}
-                        userActiveStep={2}
+                        userActiveStep={6}
                         userCreateDay={23}
                         userCreateMonth={3}
                         userCreateYear={2024}

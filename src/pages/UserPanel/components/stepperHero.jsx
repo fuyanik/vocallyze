@@ -60,11 +60,28 @@ const steps = [
 
 export default function VerticalLinearStepperHero({ activeStep1, totalRecheck }) {
 
+  
+
 
 
   const [isHover, setIsHover] = React.useState(false);
+
+  const downloadResultFake = () => {
+    toast.error('This is a demo. To access full results, please fill out the form on the homepage.', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: 0,
+      });
+ 
+
+  }
  
   
+
   
 
   //
@@ -222,14 +239,16 @@ export default function VerticalLinearStepperHero({ activeStep1, totalRecheck })
 
 
                 {index === 6 && (
-                  <div
+                  <div className="flex flex-col text-sm gap-3 w-[90%]" >  
                
-                  >
-                     <PrimaryButton
-
-                     text="Download Result"
+                 
+                    <p className="ml-1">Your recheck has been completed thoroughly. Please download your comprehensive results from the link below.</p>
+                     <div onClick={downloadResultFake }>  <PrimaryButton  bg={"#5D9695"} text="Download Result"/> </div>
                      
-                     />
+                 
+                    
+                  
+                   
                   </div>
                   
                 )}
