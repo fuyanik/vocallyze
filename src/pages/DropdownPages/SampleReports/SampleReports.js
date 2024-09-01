@@ -112,16 +112,16 @@ const SampleReports = ({isOutside = false}) => {
       return (
         <>
         
-         <div data-aos-duration="600" data-aos="fade-up"  class="relative w-[95vw]  overflow-auto">
+         <div data-aos-duration="600" data-aos="fade-up"  class="relative w-[95vw] ">
          
-          <div class="max-w-md mx-auto bg-gray-100 shadow-xl min-w-0  ">
-           <div class="overflow-x-auto  pb-8 flex ">
+          
+           <div class=" flex flex-wrap  gap-1 items-center justify-center  border border-[#00000042] rounded-xl py-3 ">
             
 
-           <div class="flex-none py-2 first:pl-0 last:pr-0">
+           <div class="flex-none ">
              <div class="flex flex-col items-center justify-center">
           
-             <div onClick={()=>{setTabsNum(0)}} className={`w-[45vw]  h-[11vw] ${tabsNum == 0 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             <div onClick={()=>{setTabsNum(0)}} className={`px-4 py-2 ${tabsNum == 0 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  " } items-center justify-center flex rounded-full duration-300` } > 
                 Missed Diagnosis
               </div>
         
@@ -129,11 +129,11 @@ const SampleReports = ({isOutside = false}) => {
            </div>
 
           
-           <div class="flex-none py-2 px-1 first:pl-6 last:pr-6">
+           <div class="flex-none ">
              <div class="flex flex-col items-center justify-center">
           
 
-             <div onClick={()=>{setTabsNum(1)}} className={`w-[40vw]  h-[11vw] ${tabsNum == 1 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             <div onClick={()=>{setTabsNum(1)}} className={`px-4 py-2  ${tabsNum == 1 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000] " } items-center justify-center flex rounded-full duration-300` } > 
              Underdiagnosis 
               </div>
         
@@ -141,10 +141,10 @@ const SampleReports = ({isOutside = false}) => {
            </div>
 
           
-           <div class="flex-none py-2 px-1 first:pl-6 last:pr-6">
+           <div class="flex-none  ">
              <div class="flex flex-col items-center justify-center">
           
-             <div onClick={()=>{setTabsNum(2)}} className={`w-[48vw]  h-[11vw] ${tabsNum == 2 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             <div onClick={()=>{setTabsNum(2)}} className={`px-8 py-2  ${tabsNum == 2 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  " } items-center justify-center flex rounded-full duration-300` } > 
              Incomplete Imaging
               </div>
         
@@ -152,10 +152,10 @@ const SampleReports = ({isOutside = false}) => {
            </div>
 
          
-           <div class="flex-none py-2 px-1 first:pl-6 last:pr-6">
+           <div class="flex-none ">
              <div class="flex flex-col items-center justify-center">
             
-             <div onClick={()=>{setTabsNum(3)}} className={`w-[44vw]  h-[11vw] ${tabsNum == 3 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  border border-[#000000]" } items-center justify-center flex rounded-full duration-300` } > 
+             <div onClick={()=>{setTabsNum(3)}} className={`px-8 py-2  ${tabsNum == 3 ? "text-[#ffffff] bg-[#000000] " : "text-[#000000]  " } items-center justify-center flex rounded-full duration-300` } > 
              Urgent Action
               </div>
         
@@ -165,7 +165,7 @@ const SampleReports = ({isOutside = false}) => {
 
 
            </div>
-          </div>
+        
          </div>
         </>
       )
@@ -175,8 +175,8 @@ const SampleReports = ({isOutside = false}) => {
 
     }
  
- 
-  
+
+  {!isOutside &&  window.scrollTo(0, 0);}
 
   return (
    <>
@@ -220,7 +220,6 @@ const SampleReports = ({isOutside = false}) => {
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
 
-     {false && <p className='relative -mt-9 lg:-mt-6 bg-white text-center rounded-full px-4 w-fit z-50  '>Scroll down to see whole report</p>}
 
      {/*  Vertical Reports*/}
      <div className='flex h-[80vh]  overflow-scroll relative bottom-0 lg:bottom-12  flex-col px-2 gap-10 lg:mt-10'>

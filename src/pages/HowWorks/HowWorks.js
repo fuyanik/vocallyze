@@ -11,8 +11,10 @@ import { Helmet } from 'react-helmet'
 
 const HowWorks = ({isOutside = false}) => {
 
-  //window.scrollTo(0, 0);
+
+  {!isOutside &&  window.scrollTo(0, 0);}
   AOS.init();
+  
   return (
     <>
   {!isOutside &&   <NavbarGen  /> }

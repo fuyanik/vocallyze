@@ -12,7 +12,7 @@ const WhySecondOpinion = () => {
 
     const [isHover, setIsHover] = useState(false)
 
-  
+    window.scrollTo(0, 0);
  
   return (
     <>

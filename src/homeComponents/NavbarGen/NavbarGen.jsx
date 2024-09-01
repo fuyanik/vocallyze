@@ -117,7 +117,7 @@ const NavbarGen = () => {
         )}
 
         {isScroll && (
-          <div className="flex relative items-center justify-center">
+          <div className="flex relative items-center justify-center font-procut text-sm">
             {isHover && (
               <BiRadsDropdown
                 top={gV.mq.matches ? "-0%" : "-40%"}

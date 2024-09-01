@@ -44,25 +44,20 @@ const Footer = ({marginTop}) => {
           </div>
 
          
-           <div className='flex flex-col gap-2 rounded-lg relative '>
+        <div  className=" flex relative text-sm font-product "> 
 
-            {isHover && (
+        {isHover && (
           <BiRadsDropdown
-             top={gV.mq.matches ? "-200%" : "-90%"}
-             left={gV.mq.matches ? "-0%" : "00%"}
-
-          
+             top={gV.mq.matches ? "-0%" : "0%"}
+             left={gV.mq.matches ? "-0%" : "-0%"}
              onMouseLeave={() => setIsHover(false)}
-           
+             onClick={() => setIsHover(false)}
           />
         )}
-     <PrimaryButton
-          bg={"#5D9695"}
-            width={"230px"}
-            onMouse={() => setIsHover(true)}
-          />
-       
-            </div>
+
+       <Link onMouseMove={()=>{setIsHover(true)}} to={"/"}> <div className='items-center  justify-center animate-fadeIn   bg-second hover:bg-prim text-white hover:text-white duration-500 rounded-lg px-12 py-[9px] cursor-pointer border border-primTrans'>Get Started</div> </Link> 
+    
+     </div>
 
        
 
