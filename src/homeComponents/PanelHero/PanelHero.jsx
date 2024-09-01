@@ -4,7 +4,7 @@ import UserPanelMobileHero from '../../pages/UserPanel/UserPanelMobileHero'
 
 const PanelHero = () => {
   return (
-    <div   className='w-screen h-auto     gap-2 flex flex-col justify-center items-center lg:-mt-[26rem] -mt-[6rem] '>
+    <div   className='w-screen h-auto     gap-2 flex flex-col justify-center items-center lg:-mt-[26rem] -mt-[13.4rem] '>
        
          <div className='bg-[#ffffff68]   sm:w-[82%] w-[94%] h-full rounded-lg flex justify-center items-center '>
        

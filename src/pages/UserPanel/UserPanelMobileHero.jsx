@@ -53,8 +53,8 @@ const UserPanelMobileHero = () => {
       <div className="  w-[100%] pt-2 ">
         <div className=" flex flex-col gap-4">
        
-          <p className="userPanel-mobile__header__title flex gap-2  text-black -mb-3 "> <p>Hi,</p> Elyza</p>  
-          <p className="text-sm hidden font-bold font-product pl-4" >Track the entire process from your personal dashboard and ask quesiton raidologist</p>
+          <p className="userPanel-mobile__header__title flex gap-2  text-black -mb-3 "> <p>Hi,</p> Guest!</p>  
+          <p className="text-sm  font-bold font-product pl-4" >Track the entire process from your personal dashboard and ask quesiton raidologist. (This is just a demo!)</p>
           <TabsMenuHero />
           
           
@@ -176,19 +176,19 @@ const UserPanelMobileHero = () => {
 
                   <div>
                     <p>Name</p>
-                    <p>Elyza</p>
+                    <p>Guest</p>
                   </div>
 
                  
 
                   <div>
                     <p>E-mail address</p>
-                    <p>elyza@gmail.com</p>
+                    <p>Guest E-mail</p>
                   </div>
 
                   <div>
                     <p>Phone Number</p>
-                    <p>82312312312</p>
+                    <p>Guest Phone</p>
                   </div>
 
                   

@@ -69,7 +69,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
      
       
-      <div className="w-screen h-auto   lg:pb-96 pb-28 lg:pt-28   relative text-black font-product tracking-wide  flex  sm:items-start  justify-center sm:justify-center   ">
+      <div className="w-screen h-auto   lg:pb-96 pb-60 lg:pt-28   relative text-black font-product tracking-wide  flex  sm:items-start  justify-center sm:justify-center   ">
         
         {/* get background image all div */}
         <img className="absolute sm:hidden flex sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/background916.png?w=864&h=1536&ar=864%3A1536&auto=compress" alt="groupPng"/>
@@ -128,13 +128,14 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
 } 
 
-        <div data-aos-delay="500" data-aos-duration="400" data-aos="fade-up"  className="lg:flex hidden gap-10 text-black"> 
+        <div   className="lg:flex lg:flex-row  flex flex-col items-center justify-center lg:gap-10 gap-2 text-black px-2"> 
            
-           <div className="flex gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
-           <div className="flex gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
-           <div className="flex gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Track the entire process from your personal dashboard</p> </div> 
-           <div className="flex gap-2"> {customerIcon} <p>Insurance accepted"</p> </div> 
-         
+           <div className="lg:flex hidden gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-left"  className="flex gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
+           <div className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Track the entire process from your personal dashboard</p> </div> 
+           <div data-aos-delay="600" data-aos-duration="300" data-aos="fade-right"  className="flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+           <div data-aos-delay="700" data-aos-duration="300" data-aos="fade-left"  className="flex lg:hidden gap-2 items-center justify-center  "> {searchIcon} <p>Personal Dashboard</p> </div> 
+           
          
         </div>
 
