@@ -67,9 +67,9 @@ export default function VerticalLinearStepperHero({ activeStep1, totalRecheck })
   const [isHover, setIsHover] = React.useState(false);
 
   const downloadResultFake = () => {
-    toast.error('This is a demo. To access full results, please fill out the form on the homepage.', {
+    toast.error('This is a demo. For your full results, please fill out the form.', {
       position: "bottom-center",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
