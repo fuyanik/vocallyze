@@ -17,7 +17,7 @@ const PanelHero = () => {
              <div className='lg:hidden flex '>
               <UserPanelMobileHero/>
              </div>
-             <img   src='https://vitamu.imgix.net/Screenshot%202024-09-02%20at%2017.20.05.png?w=2222&h=1376&ar=2222%3A1376&auto=compress' className='w-full lg:flex hidden h-full object-contain '/>
+             <img   src='https://vitamu.imgix.net/upscale%20tasar%C4%B1m-13.png?w=6400&h=3959&ar=6400%3A3959&auto=compress' className='w-full lg:flex hidden h-full object-contain '/>
        
        
          </div>

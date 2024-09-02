@@ -50,11 +50,21 @@ const UserPanelMobileHero = () => {
   return (
     <>
 
-      <div className="  w-[100%] pt-2 ">
-        <div className=" flex flex-col gap-4">
-       
-          <p className="userPanel-mobile__header__title flex gap-2  text-black -mb-3 "> <p>Hi,</p> Guest!</p>  
-          <p className="text-sm  font-bold font-product pl-4" >Track the entire process from your personal dashboard and ask quesiton raidologist. (This is just a demo!)</p>
+      <div className="  w-[100%] pt-0 ">
+        <div className=" flex flex-col gap-3 ">
+          
+           <div className=" w-[100%]  relative flex justify-center  h-20 -mb-3 ">
+            <img className="h-full absolute " src="https://vitamu.imgix.net/Adsız%20newtasarım-15.png"/>
+          
+            <div className="flex items-center justify-center gap-1 bg-second text-sm z-20 h-fit self-center py-2  rounded-lg px-3 text-white shadow-lg "> 
+             <p className="w-[6px] h-[6px] bg-white rounded-full "></p>
+             <p className="  text-center self-center  font-bold font-product iphone7:text-[13px]">Track the process from your dashboard </p>
+             <p className="w-[6px] h-[6px] bg-white rounded-full"></p>
+            </div>
+           </div>
+          
+          <p className="userPanel-mobile__header__title flex gap-2  text-black -mb-2 "> <p>Hi,</p> Guest!</p>  
+          <p className="text-sm  font-bold font-product pl-4 hidden" >Track the entire process from your personal dashboard and ask quesiton raidologist. (This is just a demo!)</p>
           <TabsMenuHero />
           
           

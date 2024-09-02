@@ -130,15 +130,15 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
         <div   className="lg:flex lg:flex-row  flex flex-col items-center justify-center lg:gap-10 gap-2 text-black px-2"> 
            
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>60+ Radiologists</p> </div> 
            
            <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
            <div  data-aos-delay="500" data-aos-duration="300" data-aos="fade-left"  className="lg:hidden flex gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
          
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Personal dashboard</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Follow-up Consultations</p> </div> 
         
-           <div data-aos-delay="600" data-aos-duration="300" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"   className="lg:hidden  flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+           <div data-aos-delay="600" data-aos-duration="300" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>Insurance Accepted</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"   className="lg:hidden  flex gap-2"> {customerIcon} <p>Insurance Accepted</p> </div> 
          
          
            <div data-aos-delay="700" data-aos-duration="300" data-aos="fade-left"  className="flex lg:hidden gap-2 items-center justify-center  "> {searchIcon} <p>Personal Dashboard</p> </div> 

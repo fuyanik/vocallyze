@@ -378,7 +378,7 @@ return (
         <Link style={{ textDecoration: "none", display: "flex" }} to="/">
           <img
             className="w-48"
-            src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
+            src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
             alt="vitamu"
           />{" "}
         </Link>
@@ -404,7 +404,7 @@ return (
             <header className="flex animate-visible  justify-between items-center">
               <img
                 className="w-36"
-                src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
+                src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
                 alt="vitamu"
               />{" "}
               <img
@@ -638,7 +638,7 @@ return (
           {" "}
           <img
             className="w-40"
-            src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
+            src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
             alt="vitamu"xw
           />{" "}
         </Link>

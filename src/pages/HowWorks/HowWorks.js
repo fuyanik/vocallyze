@@ -258,7 +258,7 @@ const HowWorks = ({isOutside = false}) => {
                         <img
                           alt="Medify Logo"
                           class="shrink-0 w-28 mx-auto hidden md:block"
-                          src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
+                          src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
                         />
                       </td>
                       <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">

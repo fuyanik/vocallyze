@@ -20,7 +20,7 @@ const BiRadsDropdown = ({ onMouseLeave, top, left, onClick }) => {
       onMouseLeave={onMouseLeave}
       className='bi-rads-dropdown  z-50'>
        <div className='flex w-full   -mb-5  text-black items-center justify-between '> 
-        <img className={`w-32 duration-500  `} src='https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress'/>  
+        <img className={`w-32 duration-500  `} src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600'/>  
         <p onClick={onClick}  className='rounded-lg px-3 py-1 border border-second hover:bg-second hover:text-white duration-700 text-black text-sm  w-fit'>Close</p>
        </div>
      

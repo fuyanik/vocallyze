@@ -130,7 +130,7 @@ const Login = ({isMailErr = false }) => {
             {" "}
             <img
               alt="image"
-              src="https://vitamu.imgix.net/MEDIFYRE-2.png?w=6000&h=3375&ar=6000%3A3375&auto=compress"
+              src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
               className=" w-52"
             />
           </Link>
