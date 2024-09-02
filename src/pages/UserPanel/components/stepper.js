@@ -296,7 +296,7 @@ export default function VerticalLinearStepper({ activeStep1, totalRecheck }) {
                   onClick={downloadResult}
                   >
                      <PrimaryButton
-
+                      bg={"#5D9695"}
                      text="Download Result"
                      
                      />

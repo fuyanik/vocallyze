@@ -492,7 +492,7 @@ return (
           <div className="userPanel-main-body  flex flex-col items-center ">
             {/* Header */}
             <div className="w-[64%]  text-[#000000] flex gap-5 flex-col border-b border-[#0202023e] pb-2">
-              <div className="text-[4.125rem] font-semibold  self-start ">
+              <div className="flex items-center w-full justify-between text-[4.125rem] font-semibold  self-start ">
                 <p className=" flex gap-2 ">
                   {" "}
                   <p>Hi,</p>
@@ -504,6 +504,13 @@ return (
                     user.displayName.split(" ")[0]
                   )}{" "}
                 </p>
+
+                  <div className="bg-second flex gap-3 items-center shadow-xl  px-8 py-4 rounded-xl text-base text-white tracking-wider font-normal">
+                   <p className="w-2 h-2 rounded-full bg-white"></p>
+                   <p> Track the entire process from your personal dashboard </p>
+                   <p className="w-2 h-2  rounded-full bg-white"></p>
+                  </div>
+              
               </div>
 
               <div className="w-full text-[#00000095] justify-between text-[1.23rem] font-medium tracking-wide  flex">

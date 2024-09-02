@@ -78,7 +78,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
        
         <div className="flex lg:mt-0 mt-28-iphone7 mt-36 flex-col gap-6 lg:items-center items-center  text-center">
          
-         <div data-aos-delay="150" data-aos-duration="400" data-aos="fade-up"    className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left   font-bold ">
+         <div data-aos-delay="150" data-aos-duration="400" data-aos="fade-up"    className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left font-bold ">
            <p  >Get your online</p>
          
            <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center  relative">
@@ -130,10 +130,17 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
         <div   className="lg:flex lg:flex-row  flex flex-col items-center justify-center lg:gap-10 gap-2 text-black px-2"> 
            
-           <div className="lg:flex hidden gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-left"  className="flex gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
-           <div className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Track the entire process from your personal dashboard</p> </div> 
-           <div data-aos-delay="600" data-aos-duration="300" data-aos="fade-right"  className="flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>60+ radiologists</p> </div> 
+           
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
+           <div  data-aos-delay="500" data-aos-duration="300" data-aos="fade-left"  className="lg:hidden flex gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
+         
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Personal dashboard</p> </div> 
+        
+           <div data-aos-delay="600" data-aos-duration="300" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"   className="lg:hidden  flex gap-2"> {customerIcon} <p>Insurance accepted</p> </div> 
+         
+         
            <div data-aos-delay="700" data-aos-duration="300" data-aos="fade-left"  className="flex lg:hidden gap-2 items-center justify-center  "> {searchIcon} <p>Personal Dashboard</p> </div> 
            
          

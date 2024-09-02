@@ -36,11 +36,12 @@ import Payingo from './pages/PayScreen/Payingo';
 import Pregnancy from './pages/Services/Pregnancy';
 import FullBody from './pages/Services/FullBody';
 
+ 
+
 
   
 
 export default function App() {
-
 
 
   return (
