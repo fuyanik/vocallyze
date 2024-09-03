@@ -12,7 +12,7 @@ const PanelHero = () => {
     return (
     <>
 
-     <div className={`absolute ${left}  ${top}  items-center w-[300px] h-[120px]`}>
+     <div className={`lg:absolute  hidden ${left}  ${top}  items-center w-[300px] h-[120px]`}>
       
         {/* Explanation Area */} 
          <div className={` font-product text-slate-50 px-4 py-2 font-extralight flex flex-col   absolute lg:w-[245px]  lg:h-[120px] w-[235px] h-[120px] lg:ml-[5vw] lg:bottom-4  ml-[16vw] rounded-2xl bg-black/80 backdrop-filter backdrop-blur-md  ${showNum == num ?  "animate-fadeIn" : "hidden" }` }>
