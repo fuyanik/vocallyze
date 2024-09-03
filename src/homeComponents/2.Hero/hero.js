@@ -76,12 +76,12 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
        
         <img className="absolute sm:flex hidden sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng"/>
        
-        <div className="flex lg:mt-0 mt-28-iphone7 mt-36 flex-col gap-6 lg:items-center items-center  text-center">
+        <div className="flex lg:mt-12  mt-28-iphone7 mt-36 flex-col lg:gap-10 gap-6 lg:items-center items-center  text-center">
          
          <div data-aos-delay="150" data-aos-duration="400" data-aos="fade-up"    className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left font-bold ">
            <p  >Get your online</p>
          
-           <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center  relative">
+           <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center relative">
               <p className="">ultrasound</p>
               <p>MRI</p>
               <p>mammogram</p>
