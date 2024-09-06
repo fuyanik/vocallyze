@@ -142,7 +142,7 @@ const WhySecondOpinion = ({isOutside = false}) => {
     return (
       <div
         ref={ref}
-        className={`flex items-center h-12 w-full ${bgTrans} bg-gray-200 rounded-full overflow-hidden shadow-xl`}
+        className={`flex items-center h-10 w-full ${bgTrans} bg-gray-200 rounded-full overflow-hidden shadow-xl`}
       >
         <animated.div
           style={{ width }}
