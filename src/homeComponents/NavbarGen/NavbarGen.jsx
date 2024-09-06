@@ -65,7 +65,7 @@ const NavbarGen = () => {
   {!isSideMenu && (
   <div className="flex justify-center w-full fixed top-8 z-40">
     <nav
-      className={`flex items-center justify-between py-4 pl-2 pr-4 text-sm self-center w-[90vw] ${  isScroll ? "sm:w-[685px]" : "sm:w-[665px]"  } ${isScroll ? "bg-white/70 " : "bg-white/20 "} ${isScroll ? "shadow-lg": "shadow-sm"} lg:h-[56px] h-[62px]  rounded-lg duration-700  backdrop-filter backdrop-blur-md`} >
+      className={`flex items-center justify-between py-4 pl-2 pr-4 text-sm self-center w-[90vw] ${  isScroll ? "sm:w-[795px]" : "sm:w-[735px]"  } ${isScroll ? "bg-white/70 " : "bg-white/20 "} ${isScroll ? "shadow-lg": "shadow-sm"} lg:h-[56px] h-[62px]  rounded-lg duration-700  backdrop-filter backdrop-blur-md`} >
    
       <div className="flex items-center justify-center lg:gap-4 gap-2">
         <Link to={"/"}>
@@ -81,18 +81,18 @@ const NavbarGen = () => {
 
         <div className="sm:flex hidden gap-6 justify-center items-center text-black">
           <Link to={"/sample-reports"}>
-            <p className="cursor-pointer hover:opacity-60 duration-300">
+            <p className="cursor-pointer hover:text-second duration-300">
               Sample Reports
             </p>
           </Link>
-          <Link to={"/how-works"}>
-            <p className="cursor-pointer hover:opacity-60 duration-300">
-              How It Works
+          <Link to={"/why-second-opinion"}>
+            <p className="cursor-pointer hover:text-second duration-300">
+              Why Second Opinion
             </p>
           </Link>
-          <Link to={"/why-second-opinion"}>
-            <p className="cursor-pointer hover:opacity-60 duration-300">
-              Help
+          <Link to={"/contact"}>
+            <p className="cursor-pointer hover:text-second duration-300">
+              Contact
             </p>
           </Link>
         </div>
@@ -104,14 +104,14 @@ const NavbarGen = () => {
         {!isScroll && (
           <Link to={"/login"}>
             <div className="items-center justify-center animate-leftToRight bg-white hover:bg-second hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans">
-              Log in
+              Dashboard
             </div>
           </Link>
         )}
         {isScroll && (
           <Link to={"/login"}>
-            <div className="hidden lg:flex items-center justify-center cursor-pointer animate-rightToLeft hover:opacity-60 duration-300 border-b">
-              Log In
+            <div className="hidden lg:flex hover:text-second items-center justify-center cursor-pointer animate-rightToLeft  duration-300 border-b">
+            Dashboard
             </div>
           </Link>
         )}

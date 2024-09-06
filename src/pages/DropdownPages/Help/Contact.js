@@ -8,6 +8,7 @@ import gV from '../../../gV';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import "../humanError.css"
+import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
 
 const Contact = () => {
   useEffect(() => {  window.scrollTo(0, 0); }, []);
@@ -24,10 +25,7 @@ const Contact = () => {
   </Helmet>
 
 
-      <Navbar
-      mobileMenuText={"Menu"}
-      mobileMenuTo={"/mobileNavMenu"}
-      />
+   <NavbarGen/>
       <div className=" w-screen h-full py-[12.8vh] lg:py-[15.8vh] flex flex-col items-center justify-center font-product">
           <div className=" w-[92vw] lg:w-[66vw]">
               

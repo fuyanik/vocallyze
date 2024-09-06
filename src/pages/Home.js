@@ -28,6 +28,7 @@ import HowWorks from './HowWorks/HowWorks';
 import NavbarGen from '../homeComponents/NavbarGen/NavbarGen';
 import PanelHero from '../homeComponents/PanelHero/PanelHero';
 import SampleReports from './DropdownPages/SampleReports/SampleReports';
+import WhySecondOpinion from './WhySecondOpinion/WhySecondOpinion';
 
 
 
@@ -89,7 +90,7 @@ const Home = () => {
   return (
 
     
-  <div className='VitamuHome' >  
+  <div className='flex flex-col overflow-hidden pb-[5vh]' >  
 
  <Helmet>
     <title>Medifyre - Expert Medical Second Opinions Online | Trusted Healthcare Services</title>
@@ -106,6 +107,7 @@ const Home = () => {
        <NavbarGen/>
        <Hero/>
        <PanelHero/>
+       <WhySecondOpinion isOutside={true} />
        <SampleReports isOutside={true}/>
        <HowWorks isOutside={true} />
        

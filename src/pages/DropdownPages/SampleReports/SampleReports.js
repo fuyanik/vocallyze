@@ -155,7 +155,7 @@ const SampleReports = ({isOutside = false}) => {
            <div class="flex-none py-2 px-1 first:pl-6 last:pr-6">
              <div class="flex flex-col items-center justify-center">
             
-             <div onClick={()=>{setTabsNum(3)}} className={`w-[44vw]  h-[11vw] ${tabsNum == 3 ? "text-[#ffffff] bg-second shadow-md  " : "text-[second  border border-second " } items-center justify-center flex rounded-full duration-300` } > 
+             <div onClick={()=>{setTabsNum(3)}} className={`w-[44vw]  h-[11vw] ${tabsNum == 3 ? "text-[#ffffff] bg-second shadow-md  " : "text-second  border border-second " } items-center justify-center flex rounded-full duration-300` } > 
              Urgent Action
               </div>
         
@@ -199,7 +199,7 @@ const SampleReports = ({isOutside = false}) => {
    
    
 
-     <section className={`font-product text-black ${!isOutside ? "py-0" : "py-[0vh]"}   h-auto   lg:w-[98vw] w-[100vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
+     <section className={`font-product text-black ${!isOutside ? "py-0" : "py-[0vh]"}   h-auto   lg:w-[100vw] w-[100vw] self-center bg-slate-50 rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center`}>
    
     
     {/*  Header */}

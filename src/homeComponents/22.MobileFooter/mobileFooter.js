@@ -33,7 +33,7 @@ return (
          <p className='mobile-footer-text2'>These statements have not been evaluated by the FDA, NHS, or Health Canada. This service is not intended to treat or cure any disease.</p>
          <img  className='mobile-footer-pay' src= {mobileFooterPay}/>
        
-         <p className='mobile-footer-text2'>  Medifyre 2023 All Rights Reserved.</p>
+         <p className='mobile-footer-text2'>  Medifyre 2024 All Rights Reserved.</p>
          
               
 
