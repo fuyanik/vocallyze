@@ -18,20 +18,47 @@ const WhySecondOpinion = ({isOutside = false}) => {
 
 
 
-  const DonutChart = ({perc, bg, bgTrans}) => {
+  const DonutChart = ({ perc, bg, bgTrans }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+  
+    // Intersection Observer
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect(); // Start animation only once
+          }
+        },
+        {
+          threshold: 0.5, // Adjust this threshold as needed
+        }
+      );
+  
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+  
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+  
     const percentage = perc;
     const radius = 64;
     const circumference = 2 * Math.PI * radius;
-    const offset = circumference - (percentage / 100) * circumference;
   
     const { animatedValue } = useSpring({
       from: { animatedValue: 0 },
-      animatedValue: percentage,
-      config: { duration: 1200 },
+      animatedValue: isVisible ? percentage : 0,
+      config: { duration: 2200 },
     });
   
     return (
-      <div className="flex  w-full justify-center ">
+      <div className="flex w-full justify-center" ref={ref}>
         <svg className="w-44">
           <circle
             className={bgTrans}
@@ -54,38 +81,69 @@ const WhySecondOpinion = ({isOutside = false}) => {
             cx="50%"
             cy="50%"
           />
-  <animated.text
-  x="50%"
-  y="50%"
-  textAnchor="middle"
-  dy=".3em"
-  className="text-2xl font-bold text-blue-600"
->
-  {animatedValue.to(val => `${Math.floor(val)}%`)}
-</animated.text>
-
+          <animated.text
+            x="50%"
+            y="50%"
+            textAnchor="middle"
+            dy=".3em"
+            className="text-2xl font-bold text-blue-600"
+          >
+            {animatedValue.to(val => `${Math.floor(val)}%`)}
+          </animated.text>
         </svg>
       </div>
     );
   };
   
-  const HorizontalBarChart = ({perc, bg, bgTrans}) => {
+  
+  const HorizontalBarChart = ({ perc, bg, bgTrans }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+  
+    // Intersection Observer
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect(); // Animasyonu yalnızca bir kez başlat
+          }
+        },
+        {
+          threshold: 0.5, // Bu değeri ihtiyacınıza göre ayarlayın
+        }
+      );
+  
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+  
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+  
     const percentage = perc;
   
     const { width } = useSpring({
       from: { width: '0%' },
-      to: { width: `${percentage}%` },
-      config: { duration: 1500 },
+      to: { width: isVisible ? `${percentage}%` : '0%' },
+      config: { duration: 1200 },
     });
   
     const { number } = useSpring({
       from: { number: 0 },
-      to: { number: percentage },
-      config: { duration: 1500 },
+      to: { number: isVisible ? percentage : 0 },
+      config: { duration: 1200 },
     });
   
     return (
-      <div className={`flex items-center h-12 w-full ${bgTrans} bg-gray-200 rounded-full overflow-hidden shadow-xl`} >
+      <div
+        ref={ref}
+        className={`flex items-center h-12 w-full ${bgTrans} bg-gray-200 rounded-full overflow-hidden shadow-xl`}
+      >
         <animated.div
           style={{ width }}
           className={` ${bg} h-full flex items-center justify-end pr-2 rounded-full`}

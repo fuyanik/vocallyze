@@ -3,6 +3,7 @@ import Logos from '../3.Logos/logos'
 import UserPanelMobileHero from '../../pages/UserPanel/UserPanelMobileHero'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Link } from 'react-router-dom';
 
 const PanelHero = () => {
 
@@ -12,7 +13,7 @@ const PanelHero = () => {
     return (
     <>
 
-     <div className={`lg:absolute lg:flex hidden   ${left}  ${top}  items-center w-[300px] h-[120px]`}>
+     <div  className={`lg:absolute lg:flex hidden   ${left}  ${top}   items-center w-[300px] h-[120px]`}>
       
         {/* Explanation Area */} 
          <div className={` font-product text-slate-50 px-4 py-2 font-extralight flex flex-col   absolute lg:w-[245px]  lg:h-[120px] w-[235px] h-[120px] lg:ml-[5vw] lg:bottom-4  ml-[16vw] rounded-2xl bg-black/80 backdrop-filter backdrop-blur-md  ${showNum == num ?  "animate-fadeIn" : "hidden" }` }>
@@ -26,7 +27,7 @@ const PanelHero = () => {
          </div>
       
          {/* Ping */}
-         <div onClick={()=>{setShowNum(num)}}>
+         <div  onClick={()=>{setShowNum(num)}}>
           <span  class="relative flex h-11 w-11">
             <span  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-second "></span>
             <span class=" h-11 w-11 relative inline-flex items-center justify-center rounded-full  bg-black  pb-1 pl-[1px] cursor-pointer hover:rotate-90  duration-700 "  onMouseLeave={()=>{setShowNum(0)}} onMouseMove={()=>{setShowNum(num)} }  >
@@ -61,12 +62,12 @@ const PanelHero = () => {
             
             <div className='lg:flex hidden items-center justify-center gap-4'>
               <div onClick={()=>{ window.scrollTo(0, 0);}} data-aos-duration="600" data-aos="fade-right" className='px-10 py-2 rounded-full bg-second self-center text-white w-fit shadow-lg cursor-pointer'> Get Started </div>
-              <div  data-aos-duration="600" data-aos="fade-left" className='px-10 py-2 rounded-full text-second border border-second self-center  w-fit shadow-lg cursor-pointer'> Why Second Opinion?</div>
+             <Link to={"/why-second-opinion"}>  <div  data-aos-duration="600" data-aos="fade-left" className='px-10 py-2 rounded-full text-second border border-second self-center  w-fit shadow-lg cursor-pointer'> Why Second Opinion?</div> </Link> 
             </div>
           </div>
             
-              <img  className='w-[90%] self-center  lg:flex  hidden object-contain 'data-aos-duration="600" data-aos="fade-up"    src='https://vitamu.imgix.net/Ads%C4%B1z%20(1920%20x%201080%20piksel)-2.png?w=4954&h=2516&rect=526%2C494%2C4954%2C2516' />
-              <img  className='w-[100%]  self-center  lg:hidden flex  object-contain 'data-aos-duration="600" data-aos="fade-up"    src='https://vitamu.imgix.net/Adsız%20(1920%20x%201080%20piksel)%20Kopyası.png' />
+              <img   className='w-[90%] self-center  lg:flex  hidden object-contain ' data-aos-duration="1200" data-aos="fade-up"    src='https://vitamu.imgix.net/Ads%C4%B1z%20(1920%20x%201080%20piksel)-2.png?w=4954&h=2516&rect=526%2C494%2C4954%2C2516' />
+              <img  className='w-[100%]  self-center  lg:hidden flex  object-contain ' data-aos-duration="1200" data-aos="fade-up"    src='https://vitamu.imgix.net/Adsız%20(1920%20x%201080%20piksel)%20Kopyası.png' />
           
               <Ping title={"Follow-up Consultations"} left={"left-[18%]"} top={"top-[55.4%]"} text={"Additional appointments are used to discuss and evaluate a patient's need for a second opinion."}  num={2}  />
               <Ping title={"How It Works"} left={"left-[51%]"} top={"top-[52.2%]"}  text={"Discover the steps involved in obtaining a second opinion and how our service guides you."}  num={1} />

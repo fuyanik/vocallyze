@@ -90,7 +90,7 @@ const Home = () => {
   return (
 
     
-  <div className='flex flex-col overflow-hidden pb-[5vh]' >  
+  <div className='flex flex-col overflow-hidden ' >  
 
  <Helmet>
     <title>Medifyre - Expert Medical Second Opinions Online | Trusted Healthcare Services</title>
