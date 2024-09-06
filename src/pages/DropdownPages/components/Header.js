@@ -132,10 +132,10 @@ const DropdownHeader = ({yellow_title, title, subtitle, writer, date, checker,di
         </div>
   
         <div className="dropdown-page-header__social">
-         <a href='https://www.facebook.com/vitamucom' target="_blank" > <RiFacebookFill className="dropdown-page-header__social__logo" /></a>
-          <a href='https://www.instagram.com/vitamucom/' target="_blank">  <AiOutlineInstagram className="dropdown-page-header__social__logo" /></a>
-         <a href='https://twitter.com/vitamucom' target="_blank"> <BsTwitter className="dropdown-page-header__social__logo" /></a>
-          <a href='https://www.linkedin.com/company/vitamu/' target="_blank"> <RiLinkedinFill className="dropdown-page-header__social__logo" /></a>
+         <a href='https://www.facebook.com/medifyre' target="_blank" > <RiFacebookFill className="dropdown-page-header__social__logo" /></a>
+          <a href='https://www.instagram.com/medifyre/' target="_blank">  <AiOutlineInstagram className="dropdown-page-header__social__logo" /></a>
+         <a href='https://twitter.com/medifyre' target="_blank"> <BsTwitter className="dropdown-page-header__social__logo" /></a>
+          <a href='https://www.linkedin.com/company/medifyre/' target="_blank"> <RiLinkedinFill className="dropdown-page-header__social__logo" /></a>
         </div>
      </>}
 

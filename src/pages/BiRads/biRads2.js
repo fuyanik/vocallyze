@@ -117,7 +117,7 @@ const BiRads2 = () => {
              <p>If there are some suspicious areas in your breast that your radiologist missed, then that mass will be detected at least one year later. </p>
              
              <p><span>How we help.</span></p>
-             <p>At Vitamu, we are a team of 30+ U.S. board-certified <Link to="radiology-team"><span>radiologists</span></Link>, and we recheck your mammograms, ultrasounds, and breast MRIs to ensure you are breast cancer free. Once you get started, two of our radiologists will evaluate your medical images separately with the help of our artificial intelligence. Suppose a red flag (i.e., a potential case of cancer) is reported by either of these radiologists or by our artificial intelligence, we will arrange for you to have a physical examination at one of our partner locations.</p>
+             <p>At Medifyre, we are a team of 30+ U.S. board-certified <Link to="radiology-team"><span>radiologists</span></Link>, and we recheck your mammograms, ultrasounds, and breast MRIs to ensure you are breast cancer free. Once you get started, two of our radiologists will evaluate your medical images separately with the help of our artificial intelligence. Suppose a red flag (i.e., a potential case of cancer) is reported by either of these radiologists or by our artificial intelligence, we will arrange for you to have a physical examination at one of our partner locations.</p>
              <p>If nothing concerning is found during the review of your mammograms/ultrasounds, we will inform you that you are breast cancer free. The whole process will take just 24 hours from when we receive the copy of your mammogram/ultrasound.</p>
              <p>You will get a detailed imaging <span>report</span> with clear explanations in either case. </p>
              <p>All our radiologists are U.S. board certified and have degrees from top-tier schools in the United States. A recheck costs $120 and is as low as $20 if you have an active insurance plan. </p>
@@ -178,7 +178,7 @@ const BiRads2 = () => {
             <div className="bi-rads__right__main__card">
               <div className="bi-rads__right__main__card__header">
                 <p className="bi-rads__right__main__card__header__title">
-                  Vitamu April 2023 Numbers:
+                  Medifyre April 2023 Numbers:
                 </p>
                 <div className="bi-rads__right__main__card__header__area">
                   <p>2.317 rechecks

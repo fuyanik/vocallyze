@@ -108,13 +108,11 @@ export default function AccordionPrivacy() {
 
         <AccordionDetails>
 
-          
-          
             
              
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
           <p>The Health Insurance Portability and Accountability Act (HIPAA) sets the standard for sensitive patient data protection. Companies that deal with protected health information (PHI) must have physical, network, and process security measures in place and follow them to ensure HIPAA Compliance. </p>
-          <p>Here at Vitamu, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your mammograms for recheck, we use HIPAA compliant Amazon Web Services servers. During the journey of your mammogram recheck, the first step we take is to anonymise your mammogram, so that neither our radiologists or any other team member will know your name.</p>
+          <p>Here at medifyre, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your mammograms for recheck, we use HIPAA compliant Amazon Web Services servers. During the journey of your mammogram recheck, the first step we take is to anonymise your mammogram, so that neither our radiologists or any other team member will know your name.</p>
          </div>
 
         

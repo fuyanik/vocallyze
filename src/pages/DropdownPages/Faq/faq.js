@@ -27,7 +27,7 @@ const Faq = ({isOutside = false}) => {
 
 
   <Helmet>
-  <title>Vitamu - Faq</title>
+  <title>Medifyre - Faq</title>
    <meta name="description" content="Faq" />
 </Helmet>
 

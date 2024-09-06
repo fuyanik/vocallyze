@@ -70,7 +70,7 @@ const Login = ({isMailErr = false }) => {
         }
         else {
           
-          email === "mustafa@vitamu.com" ? navigate("/panel") :  navigate("/user-panel") 
+          email === "?????" ? navigate("/panel") :  navigate("/user-panel") 
         }
     }  
     } catch (error) {
@@ -107,7 +107,7 @@ const Login = ({isMailErr = false }) => {
     <>
     
   <Helmet>
-  <title>Vitamu - User Panel</title>
+  <title>Medifyre - User Panel</title>
    <meta name="description" content="User Panel" />
 </Helmet>
 

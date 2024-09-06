@@ -153,7 +153,7 @@ export default function AccordionSomeQuestion({width}) {
 
 
         <AccordionDetails>
-        <p style={{display:"flex", flexDirection:"column",width:"100%", gap:"0", color:"rgb(101, 101, 101)"}} className="normal-text">Understood. Drop us an e-mail at:  <a className="style-none"  href="mailto:radiologist@vitamu.com"><span style={{fontFamily:"ProductSans-Thin"}}>radiologist@vitamu.com</span></a> </p>
+        <p style={{display:"flex", flexDirection:"column",width:"100%", gap:"0", color:"rgb(101, 101, 101)"}} className="normal-text">Understood. Drop us an e-mail at:  <a className="style-none"  href="mailto:radiologist@medifyre.com"><span style={{fontFamily:"ProductSans-Thin"}}>radiologist@medifyre.com</span></a> </p>
         <p style={{marginTop:"15px",color:"rgb(101, 101, 101)",width:"100%"}} className="normal-text">You will get a response in 24 hours. </p>
 
         

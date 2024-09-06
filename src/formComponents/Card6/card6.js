@@ -29,7 +29,7 @@ const Card6 = () => {
             <p>We are a team of 30+ US board-certified  radiologists, and we recheck {gV.showAppliesText.toString()} with artificial intelligence to make sure your diagnosis was accurate and nothing was missed.</p>
                <div className="card6-texts-child"> 
                   <p>To stay in contact with you, please provide us with your email address. We will send your<span> password </span>to the same email address.</p>
-                  <p className="mt-2" style={{lineHeight: "18px" }}>We hate spam e-mails, too. You can drop me an e-mail anytime you want at jessica@vitamu.com</p>
+                  <p className="mt-2" style={{lineHeight: "18px" }}>We hate spam e-mails, too. You can drop me an e-mail anytime you want at jessica@medifyre.com</p>
                </div>
           </div>
           <input  disabled= {false ? true : false}  onChange={handleChange} className="nameİnput" placeholder={user ? user.email : "Type your e-mail here."}/>

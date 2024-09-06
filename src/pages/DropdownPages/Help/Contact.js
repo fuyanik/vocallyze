@@ -20,7 +20,7 @@ const Contact = () => {
 
 
   <Helmet>
-    <title>Vitamu - Contact</title>
+    <title>Medifyre - Contact</title>
      <meta name="description" content="Contact" />
   </Helmet>
 

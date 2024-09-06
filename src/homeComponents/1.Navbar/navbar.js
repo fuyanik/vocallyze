@@ -379,7 +379,7 @@ return (
           <img
             className="w-48"
             src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
-            alt="vitamu"
+            alt="medifyre"
           />{" "}
         </Link>
       </div>

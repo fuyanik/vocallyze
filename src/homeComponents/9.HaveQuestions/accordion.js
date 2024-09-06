@@ -223,7 +223,7 @@ export default function CustomizedAccordions() {
             color:"#000000"
           }}
           
-          > investor@vitamu.com</span>
+          > investor@medifyre.com</span>
           <Typography
            style={{
             marginBottom: "0px",
@@ -241,7 +241,7 @@ export default function CustomizedAccordions() {
             color:"#000000"
           }}
           
-          > press@vitamu.com</span>
+          > press@medifyre.com</span>
      
         </AccordionDetails>
       </Accordion>

@@ -306,7 +306,7 @@ function Testom() {
 
      {activeStep === 5 && (
        <div className="slick-texts">
-         <p>“ In exchange for the $60 I paid Vitamu, I had bought something priceless; a critical year in my recovery. “
+         <p>“ In exchange for the $60 I paid Medifyre, I had bought something priceless; a critical year in my recovery. “
 </p>
          <p>Rachel, 61</p>
          <p onClick={()=>{navigate("/stories/rachel")}} className="border mt-2 border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
@@ -382,7 +382,7 @@ function Testom() {
 
      {activeStep === 5 && (
        <div className="slick-texts">
-         <p>“ In exchange for the $60 I paid Vitamu, I had bought something priceless; a critical year in my recovery. “
+         <p>“ In exchange for the $60 I paid Medifyre, I had bought something priceless; a critical year in my recovery. “
 </p>
          <p>Rachel, 61</p>
          <p onClick={()=>{navigate("/stories/rachel")}} className="border border-[#000000] px-3 py-1 rounded-2xl w-fit cursor-pointer"> Read Story </p>
