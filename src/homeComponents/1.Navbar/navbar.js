@@ -405,7 +405,7 @@ return (
               <img
                 className="w-36"
                 src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
-                alt="vitamu"
+                alt="medifyre "
               />{" "}
               <img
                 className="relative left-2"
@@ -639,7 +639,7 @@ return (
           <img
             className="w-40"
             src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
-            alt="vitamu"xw
+            alt="vitamu"
           />{" "}
         </Link>
       )}

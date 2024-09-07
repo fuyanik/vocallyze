@@ -207,7 +207,8 @@ const WhySecondOpinion = ({isOutside = false}) => {
        {/*  Header */}
        
         <div className={`flex flex-col gap-4 relative ${isOutside ? "py-10" : "py-32"}   lg:w-[100vw]  w-[100vw] px-7 items-center justify-center  z-10 `}>
-         <img
+         <img      
+                 alt='why second opinion bg'
                  className=" absolute w-[100%] rounded-sm h-full object-cover -z-10 "
                  src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
                />

@@ -21,10 +21,10 @@ return (
 <div className="mobile-footer"> 
    <div className='mobile-footer-main'> 
         {/* <div className='dividero-footer'></div> */}
-         <img alt='image' className="w-48 " src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' />
+         <img alt='medifyre logo' className="w-48 " src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' />
          <MobileFooterCustomizedAccordions/>
          <p className='mobile-footer-text'>Terms of Service · Privacy Policy</p>
-         <img alt='image'  className='mobile-footer-icons' src= {mobileFooterIcons}/>
+         <img alt='medifyre icons'  className='mobile-footer-icons' src= {mobileFooterIcons}/>
   
            <br></br>
 

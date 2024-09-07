@@ -20,7 +20,7 @@ const Footer = ({marginTop}) => {
       
       <div className="footer-main">
         <div className="footer-main-left relative">
-          <img src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' className="w-40" />
+          <img src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' className="w-40" alt="medifyre logo" />
           <p className="footer-main-left__title">
             Terms of Service · Privacy Policy
           </p>

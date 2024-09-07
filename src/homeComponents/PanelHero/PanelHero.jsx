@@ -53,7 +53,7 @@ const PanelHero = () => {
              </div>
 
           <div className='lg:flex flex items-center flex-col gap-4  font-product '> 
-            <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png'/>
+            <img data-aos-duration="600" data-aos="fade-up" alt='best second opinion app'   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png'/>
             <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[28px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'>  Track the Entire Process </h1>
             <p data-aos-duration="600" data-aos="fade-up"  className=" lg:block hidden w-[90vw] lg:w-[70vw] font-product text-center  text-black">
             Keep an eye on every step of your second opinion request through your personal dashboard. It offers real-time updates <i className='text-second'>  —no need to download anything—  </i>from the submission of your medical records to the receipt of your final report, ensuring you're always informed and in control.
@@ -66,8 +66,8 @@ const PanelHero = () => {
             </div>
           </div>
             
-              <img   className='w-[90%] self-center  lg:flex  hidden object-contain ' data-aos-duration="1200" data-aos="fade-up"    src='https://vitamu.imgix.net/Ads%C4%B1z%20(1920%20x%201080%20piksel)-2.png?w=4954&h=2516&rect=526%2C494%2C4954%2C2516' />
-              <img  className='w-[100%]  self-center  lg:hidden flex  object-contain ' data-aos-duration="1200" data-aos="fade-up"    src='https://vitamu.imgix.net/Adsız%20(1920%20x%201080%20piksel)%20Kopyası.png' />
+              <img   className='w-[90%] self-center  lg:flex  hidden object-contain ' data-aos-duration="1200" data-aos="fade-up"    src='https://vitamu.imgix.net/Ads%C4%B1z%20(1920%20x%201080%20piksel)-2.png?w=4954&h=2516&rect=526%2C494%2C4954%2C2516' alt='tracking your process' />
+              <img  className='w-[100%]  self-center  lg:hidden flex  object-contain ' data-aos-duration="1200" data-aos="fade-up"    src='https://vitamu.imgix.net/Adsız%20(1920%20x%201080%20piksel)%20Kopyası.png' alt='tracking your process' />
           
               <Ping title={"Follow-up Consultations"} left={"left-[18%]"} top={"top-[55.4%]"} text={"Additional appointments are used to discuss and evaluate a patient's need for a second opinion."}  num={2}  />
               <Ping title={"How It Works"} left={"left-[51%]"} top={"top-[52.2%]"}  text={"Discover the steps involved in obtaining a second opinion and how our service guides you."}  num={1} />

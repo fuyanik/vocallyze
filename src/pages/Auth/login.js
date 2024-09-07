@@ -129,7 +129,7 @@ const Login = ({isMailErr = false }) => {
           <Link style={{ textDecoration: "none", display: "flex" }} to="/">
             {" "}
             <img
-              alt="image"
+              alt="medifyre logo"
               src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
               className=" w-52"
             />

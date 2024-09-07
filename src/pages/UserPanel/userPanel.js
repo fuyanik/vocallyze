@@ -478,7 +478,7 @@ return (
           <div className="userPanel-main-header">
             <Link to="/">
               <img
-                alt="img"
+                alt="medifyre logo"
                 className="w-52"
                 src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
               />
