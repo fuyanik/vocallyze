@@ -14,7 +14,7 @@ const WhySecondOpinion = ({isOutside = false}) => {
 
   const logo = useRef(null)
 
-  window.scrollTo(0, 0);
+ // window.scrollTo(0, 0);
 
 
 
@@ -48,7 +48,7 @@ const WhySecondOpinion = ({isOutside = false}) => {
     }, []);
   
     const percentage = perc;
-    const radius = 64;
+    const radius = gV.mq.matches ? 40 : 64;
     const circumference = 2 * Math.PI * radius;
   
     const { animatedValue } = useSpring({
@@ -94,6 +94,8 @@ const WhySecondOpinion = ({isOutside = false}) => {
       </div>
     );
   };
+  
+
   
   
   const HorizontalBarChart = ({ perc, bg, bgTrans }) => {
@@ -212,38 +214,37 @@ const WhySecondOpinion = ({isOutside = false}) => {
            
              <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'>  Why Second Opinion</h1>
                <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
-               Obtaining a second medical opinion helps you make confident decisions about your diagnosis and treatment. Medifyre's expert physicians provide you with the most accurate diagnosis and the best treatment options available.
+               Obtaining a second medical opinion helps you make confident decisions about your diagnosis and treatment.
                </p>
                
         </div>
        
         {/*  Main - Left & Right Side */}
-        <div className='flex gap-16 w-full  px-28 '>
+        <div className='lg:flex lg:flex-row flex-col gap-16 w-full lg:text-start text-center  lg:px-28 px-8 '>
 
           {/* Left Side */}
-          <div className='flex flex-col items-center justify-center w-[50%] gap-5 '>
-             <p className='text-[40px] leading-[51px]'> <span className='text-second'> 12 million </span> patients are misdiagnosed every year.</p>
-             <p className='text-[40px] leading-[51px]'> Of those misdiagnosed  <span className='text-second'> 10-20% </span> are patients with serious conditions.</p>
-             <p className='text-[40px] leading-[51px] mt-20'> <span className='text-second'> 88% </span>  of second opinions result in a changed or refined diagnosis.</p>
+          <div className='flex flex-col items-center justify-center lg:w-[50%] w-[100%] gap-5 '>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:text-[40px] lg:leading-[51px] text-[25px] leading-10 '> <span className='text-second'> 12 million </span> patients are misdiagnosed every year.</p>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:text-[40px] lg:leading-[51px] text-[25px] leading-10'> Of those misdiagnosed  <span className='text-second'> 10-20% </span> are patients with serious conditions.</p>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:inline hidden text-[40px] leading-[51px] mt-20'> <span className='text-second'> 88% </span>  of second opinions result in a changed or refined diagnosis.</p>
           
           </div>
            
            {/* Right Side */}
-          <div className='flex flex-col w-[50%]  gap-16 '>
-            <img className='w-full hidden object-contain' src='https://www.docpanel.com/wp-content/uploads/12-million-patients-graphic.svg'/>
-            <div className='w-full ' ref={logo} ></div>
+          <div className='flex flex-col lg:w-[50%] w-[100%]  lg:gap-16 gap-0 '>
+             <div data-aos-duration="600" data-aos="fade-up" className='w-full lg:mt-0 mt-6' ref={logo} ></div>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:hidden inline text-[25px] leading-10 mt-10'> <span className='text-second'> 88% </span>  of second opinions result in a changed or refined diagnosis.</p>
 
-
-             <div className='flex gap-1  w-full'>
-                <div className='flex flex-col w-1/3 items-center justify-center gap-4 '>
+             <div className='flex gap-1 w-full'>
+                <div data-aos-duration="600" data-aos="fade-right" className='flex flex-col w-1/3  items-center justify-center lg:gap-4 gap-0 '>
                     <DonutChart perc={67} bg={"text-teal-600"} bgTrans={"text-teal-100"} />
                    <p className='font-bold text-sm '>REFINED DIAGNOSIS</p>
                 </div>
-                <div className='flex flex-col w-1/3 items-center justify-center gap-4 '>
+                <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col w-1/3  items-center justify-center lg:gap-4 gap-0'>
                     <DonutChart perc={21} bg={"text-sky-800"} bgTrans={"text-sky-100"}/>
                    <p className='font-bold text-sm '>CHANGED DIAGNOSIS</p>
                 </div>
-                <div className='flex flex-col w-1/3 items-center justify-center gap-4 '>
+                <div data-aos-duration="600" data-aos="fade-left" className='flex flex-col w-1/3  items-center justify-center lg:gap-4 gap-0 '>
                     <DonutChart perc={12} bg={"text-violet-800"} bgTrans={"text-violet-100"}/>
                    <p className='font-bold text-sm '>CONFIRMED DIAGNOSIS</p>
                 </div>
@@ -256,22 +257,23 @@ const WhySecondOpinion = ({isOutside = false}) => {
 
         </div>
 
-        {/*  Bottom Horizantol Bars */}
-        <div className='flex   w-full px-28 justify-around items-center '>
 
-            <div className='flex flex-col w-1/4 items-center justify-center  gap-4  '>
+        {/*  Bottom Horizantol Bars */}
+        <div className='lg:flex lg:flex-row lg:gap-0 lg:mt-0 gap-5 mt-10    flex flex-col  w-full lg:px-28 px-8 justify-around items-center '>
+
+            <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col lg:w-1/4 w-full items-center justify-center  gap-4  '>
                 <HorizontalBarChart perc={69} bg={"bg-teal-600"} bgTrans={"bg-teal-100"}/>
                 <p className='font-bold text-sm text-center '>OF BODY MRI SECOND OPINIONS REVEAL AT LEAST ONE DISCREPANCY</p>
             </div>
        
-            <div className='flex flex-col w-1/4 items-center justify-center gap-4  '>
+            <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col lg:w-1/4 w-full items-center justify-center gap-4  '>
                 <HorizontalBarChart perc={51} bg={"bg-sky-800"} bgTrans={"bg-sky-100"}/>
-                <p className='font-bold text-sm text-center '>OF BODY MRI SECOND OPINIONS REVEAL AT LEAST ONE DISCREPANCY</p>
+                <p className='font-bold text-sm text-center '>OF BREAST IMAGING SECOND OPINIONS RESULT IN A BIG CHANGE OF INTERPRETATION</p>
             </div>
        
-            <div className='flex flex-col w-1/4 items-center justify-center gap-4  '>
+            <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col lg:w-1/4 w-full items-center justify-center gap-4  '>
                 <HorizontalBarChart perc={82} bg={"bg-violet-800"} bgTrans={"bg-violet-100"} />
-                <p className='font-bold text-sm text-center '>OF BODY MRI SECOND OPINIONS REVEAL AT LEAST ONE DISCREPANCY</p>
+                <p className='font-bold text-sm text-center '>OF MUSCULOSKELTAL MRI & CT SECOND OPINIONS RESULT IN A MORE ACCURATE DIAGNOSIS </p>
             </div>
        
 
