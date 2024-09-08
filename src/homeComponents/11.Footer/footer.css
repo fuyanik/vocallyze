@@ -174,7 +174,7 @@ color: black;
 .footer-main-right li::after{
     content: "";
     position: absolute;
-    background-color: #ffd000;
+    background-color: #5D9695;
     height: 2px;
     width: 0;
     left: 0;

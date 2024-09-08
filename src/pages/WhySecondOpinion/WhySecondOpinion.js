@@ -14,7 +14,7 @@ const WhySecondOpinion = ({isOutside = false}) => {
 
   const logo = useRef(null)
 
- // window.scrollTo(0, 0);
+  !isOutside && window.scrollTo(0, 0);
 
 
 

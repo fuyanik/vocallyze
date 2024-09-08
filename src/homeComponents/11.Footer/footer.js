@@ -74,7 +74,7 @@ const Footer = ({marginTop}) => {
 
         <div className="footer-main-right">
           <ul>
-            <p className="footer-main-rgiht-header">Services</p>
+            <p className="footer-main-right-header">Services</p>
             <Link className="style-none" to="/mri">
               <li>MRI</li>
             </Link>

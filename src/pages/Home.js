@@ -29,6 +29,7 @@ import NavbarGen from '../homeComponents/NavbarGen/NavbarGen';
 import PanelHero from '../homeComponents/PanelHero/PanelHero';
 import SampleReports from './DropdownPages/SampleReports/SampleReports';
 import WhySecondOpinion from './WhySecondOpinion/WhySecondOpinion';
+import FooterGen from '../homeComponents/FooterGen/FooterGen';
 
 
 
@@ -120,11 +121,12 @@ const Home = () => {
       
 
        { /* <Informational/> */ }
+        
+      
 
-         
         
 
-       { mq.matches ? <MobileFooter/> : <Footer/> }
+       {  mq.matches ? <MobileFooter/> : <Footer/>  }
 
        
     

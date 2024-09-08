@@ -42,7 +42,7 @@ const PanelHero = () => {
 
   AOS.init();
   return (
-    <div data-aos-delay="700" data-aos-duration="1100" data-aos="fade-up"   className='w-screen h-auto     gap-2 flex flex-col justify-center items-center lg:-mt-[24rem] -mt-[13.4rem] '>
+    <div data-aos-delay="700" data-aos-duration="1100" data-aos="fade-up"   className='w-screen h-auto     gap-2 flex flex-col justify-center items-center lg:-mt-[23rem] -mt-[13.4rem] '>
        
          <div  className='bg-[#ffffff68]  lg:pb-5 pb-6   sm:w-[82%] w-[98%] h-full rounded-lg flex justify-center items-center '>
        
