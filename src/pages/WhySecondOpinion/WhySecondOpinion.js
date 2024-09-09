@@ -9,6 +9,7 @@ import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen'
 import { Helmet } from 'react-helmet'
 import { useSpring, animated } from 'react-spring';
 import lottie from 'lottie-web';
+import FooterGen from '../../homeComponents/FooterGen/FooterGen'
 
 const WhySecondOpinion = ({isOutside = false}) => {
 
@@ -286,6 +287,8 @@ const WhySecondOpinion = ({isOutside = false}) => {
      
        
         </section>
+
+        {!isOutside &&  <FooterGen/> }
         
       </>
      );

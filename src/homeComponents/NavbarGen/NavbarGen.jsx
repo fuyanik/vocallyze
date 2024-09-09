@@ -26,7 +26,7 @@ const NavbarGen = () => {
    
     {/* Side Menu */}
     { isSideMenu && 
-     <div className={`flex flex-col gap-16 w-screen h-screen fixed bg-white z-50  animate-leftToRight px-8 py-5`} >
+     <div className={`flex flex-col gap-12 w-screen h-screen fixed bg-white z-50  animate-leftToRight px-8 py-5`} >
       
        {/*  Logo & Close Button */}
        <div className='flex justify-between items-center w-full border-b border-primTrans '> 
@@ -35,10 +35,12 @@ const NavbarGen = () => {
        </div>
 
       {/*  Links */}  
-       <div className='flex flex-col gap-10 text-second font-bold font-product text-3xl'>
-          <Link  to={"/sample-reports"}> <p data-aos-delay="300" data-aos-duration="300" data-aos="fade-right" className='cursor-pointer hover:opacity-60 duration-300'> Sample Reports</p> </Link>
+       <div className='flex flex-col gap-5 text-second font-bold font-product text-2xl'>
+          <Link  to={"/sample-reports"}> <p data-aos-delay="200" data-aos-duration="300" data-aos="fade-right" className='cursor-pointer hover:opacity-60 duration-300'> Sample Reports</p> </Link>
+          <Link to={"/why-second-opinion"}> <p data-aos-delay="300" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Why Second Opinion</p> </Link>
           <Link to={"/how-works"}> <p data-aos-delay="400" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>How It Works</p> </Link>
-          <Link to={"/why-second-opinion"}> <p data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Help</p> </Link>
+          <Link to={"/contact"}> <p data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Contact</p> </Link>
+          <Link to={"/faq"}> <p data-aos-delay="600" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Faq</p> </Link>
        </div>
 
     
@@ -46,7 +48,7 @@ const NavbarGen = () => {
 
         {isHover && (
           <BiRadsDropdown
-             top={gV.mq.matches ? "-270%" : "-40%"}
+             top={gV.mq.matches ? "-360%" : "-40%"}
              left={gV.mq.matches ? "-2vw" : "-150%"}
              onMouseLeave={() => setIsHover(false)}
              onClick={() => setIsHover(false)}

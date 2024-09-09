@@ -125,8 +125,7 @@ const Home = () => {
       
 
         
-
-       {  mq.matches ? <MobileFooter/> : <Footer/>  }
+      <FooterGen/>
 
        
     

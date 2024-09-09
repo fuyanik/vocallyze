@@ -8,6 +8,7 @@ import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Helmet } from 'react-helmet'
+import FooterGen from '../../homeComponents/FooterGen/FooterGen'
 
 const HowWorks = ({isOutside = false}) => {
 
@@ -702,9 +703,7 @@ const HowWorks = ({isOutside = false}) => {
         </div>
       </div>
 
-      <div className={`${isOutside && "hidden"}`}>
-        {gV.mq.matches ? <MobileFooter /> : <Footer />}
-      </div>
+      {!isOutside &&  <FooterGen/> }
     </>
   );
 }

@@ -15,6 +15,7 @@ import DropdownHeader from '../components/Header';
 import { SideInformation } from '../../BiRads/biRads3';
 import { Helmet } from 'react-helmet';
 import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
+import FooterGen from '../../../homeComponents/FooterGen/FooterGen';
 
 const Faq = ({isOutside = false}) => {
   useEffect(() => {  window.scrollTo(0, 0); }, []);
@@ -31,52 +32,46 @@ const Faq = ({isOutside = false}) => {
    <meta name="description" content="Faq" />
 </Helmet>
 
+ <NavbarGen/>
+
   
       
-      <div className="human-error">
-        <div className="human-error-main">
-        {  !isOutside &&   <NavbarGen />}
-         
-          <div className='mt-4'></div>
-        
-         <div className={`lg:flex lg:flex-col  ${isOutside ?  "lg:w-[36%]" : "lg:w-[44%]"} `} >
-           <DropdownHeader
-              display={false}
-              yellow_title={"FAQ"}
-              title={"Frequently Asked Questions"}
-              subtitle={"'Frequently Asked Questions' section where you can find answers to commonly asked questions about our products or services. This section is designed to provide answers to the most commonly asked questions. If you can't find what you're looking for here, please don't hesitate to contact us. Our customer support is here for you and always ready to help. Thank you!"}
-              writer={"Elizabeth H. Asch, MD"}
-              date={"Updated on February 12, 2023"}
-              checker={"Priscilla J Slanetz, MD"}
-             />
-  
-  
-            <div className={`${!gV.mq.matches && "w-[120%]"}  top-4 relative `} style={{display: "flex", flexDirection:"column", gap:"30px"}}>
-  
-              <p className='hidden' style={{fontFamily:"ProductSans-Light", color:"#000000", fontSize:"32px", fontWeight:"500", marginTop:"50px"}}> </p>
-              <AccordionRecheck/>
-  
-            
-  
-  
-            </div>
-         </div>
+      <section className={` text-black  pb-10  h-auto   lg:w-screen w-[100vw] self-center  rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center font-product`}>
+      
+       
+      {/*  Header */}   
+       <div className={`flex flex-col gap-4 relative py-32   lg:w-[100vw]  w-[100vw] px-7 items-center justify-center  z-10 `}>
+        <img      
+                alt='why second opinion bg'
+                className=" absolute w-[100%] rounded-sm h-full object-cover -z-10 "
+                src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
+              />
+          
+            <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'> Have questions? We have answers.</h1>
+              <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
+              Find answers to common questions and get the information you need to make the most of our services.
+              </p>
+              
+       </div>
 
-         
+      {/*  Main */}  
+       <div className={"lg:w-[90vw] w-[95vw] justify-center self-center lg:flex lg:flex-row flex flex-col-reverse  rounded-lg bg-white shadow-xl -mt-32 z-30"}>
 
-     
-        
-        
+         <div className='lg:w-[80%] w-full lg:py-10 pb-5 flex  justify-center'>
+          <AccordionRecheck/>
+          </div>
+       
+      
 
-                     
 
-                          
-        
-        
-        </div>
-      </div>
 
-      {gV.mq.matches ? <MobileFooter/> :   <div > <Footer/></div>}
+       </div>
+
+      
+
+       </section>
+
+      <FooterGen/> 
 
 
 

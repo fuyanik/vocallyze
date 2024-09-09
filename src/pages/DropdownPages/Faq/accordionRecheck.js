@@ -103,7 +103,7 @@ export default function AccordionRecheck({isOutside = false}) {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#000000"
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
           }} > I had a screening, but I do not have a copy of my images. What should I do?</Typography>
         </AccordionSummary>
 
@@ -128,7 +128,7 @@ export default function AccordionRecheck({isOutside = false}) {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#000000"
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
           }} >When will I get my second opinion report?</Typography>
         </AccordionSummary>
 
@@ -149,12 +149,12 @@ export default function AccordionRecheck({isOutside = false}) {
     
       </Accordion>
 
-      <Accordion
+      <Accordion 
         expanded={expanded === "panel4"}
         onChange={handleChange("panel4")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#000000"
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
           }}>What will my second opinion report include?</Typography>
         </AccordionSummary>
 
@@ -173,7 +173,7 @@ Marked images: Markings in the suspicious areas in your images.</p>
 
 <p>What to see sample reports?</p>
 <Link to={"/sample-reports"}>
-               <div class= " px-5 py-3 bg-black hover:bg-sec duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
+               <div class= " px-5 py-3 bg-second hover:bg-prim duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
              </Link>
 
 
@@ -191,7 +191,7 @@ Marked images: Markings in the suspicious areas in your images.</p>
         onChange={handleChange("panel5")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#000000"
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
           }} >How much will I pay for a second opinion report?</Typography>
         </AccordionSummary>
 
@@ -215,7 +215,7 @@ Marked images: Markings in the suspicious areas in your images.</p>
         onChange={handleChange("panel6")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#000000"
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
           }} >Can I get a written copy of my second opinion report?</Typography>
         </AccordionSummary>
 
@@ -245,7 +245,7 @@ If you have any special requests before, during, or after the recheck process, y
           onChange={handleChange("panel7")}
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
+          <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#5D9695"
             }} >Do you store my medical data?</Typography>
           </AccordionSummary>
       
@@ -268,7 +268,7 @@ If you have any special requests before, during, or after the recheck process, y
           onChange={handleChange("panel8")}
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#000000"
+          <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#5D9695"
             }} >Is medifyre.com HIPAA compliant?</Typography>
           </AccordionSummary>
       

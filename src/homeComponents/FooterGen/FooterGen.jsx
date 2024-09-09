@@ -18,44 +18,91 @@ const FooterGen = () => {
   
   
     return (
-    <div className='w-screen flex items-center relative h-[600px] -mt-20 border  '>
-         <img className='w-full absolute  h-full ' src='https://vitamu.imgix.net/svg-4.png' alt='vawe'/>
+    <div className='w-screen flex items-end h-[570px] relative  -mt-20  font-product   '>
+       
+         <img className='w-full lg:flex hidden absolute  h-full ' src='https://vitamu.imgix.net/svg-4.png?w=1316&h=1380&rect=902%2C0%2C1316%' alt='vawe'/>
+         <img className='w-full lg:hidden flex absolute  h-full ' src='https://vitamu.imgix.net/svg-12.png?w=1316&h=1380&rect=902%2C0%2C1316%2C1380' alt='vawe'/>
+          
+          <div className='w-full flex lg:h-[80%]  z-30 lg:pl-40 lg:pr-20 pl-0 pr-0 lg:pb-0 pb-16  '>  
+          
+             <div className='lg:w-[50%] w-full flex flex-col lg:gap-6 gap-4 h-full lg:pt-16 pt-0 px-8   '>
+              <img className='w-40'  src='https://vitamu.imgix.net/MEDIFYRE%20Kopyas%C4%B1-4.png?w=2048&h=601&auto=compress&rect=0%2C254%2C2048%2C601' alt='medifyre logo'/>
+              <p className='text-white  cursor-pointer'>Terms of Service · Privacy Policy</p>
 
-         <div className=" relative">
-          <img src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' className="w-40" alt="medifyre logo" />
-          <p className="footer-main-left__title">
-            Terms of Service · Privacy Policy
-          </p>
-
-         
-
-         
-        <div  className=" flex relative text-sm font-product "> 
+                 <div  className=" flex relative text-sm font-product "> 
 
         {isHover && (
           <BiRadsDropdown
-             top={gV.mq.matches ? "-0%" : "0%"}
-             left={gV.mq.matches ? "-0%" : "-0%"}
+             top={gV.mq.matches ? "-310%" : "0%"}
+             left={gV.mq.matches ? "-1%" : "-0%"}
              onMouseLeave={() => setIsHover(false)}
              onClick={() => setIsHover(false)}
           />
         )}
 
-       <Link onMouseMove={()=>{setIsHover(true)}} to={"/"}> <div className='items-center  justify-center animate-fadeIn   bg-second hover:bg-prim text-white hover:text-white duration-500 rounded-lg px-12 py-[9px] cursor-pointer border border-primTrans'>Get Started</div> </Link> 
+       <Link onMouseMove={()=>{setIsHover(true)}} to={"/"}> <p className='bg-white px-12 py-2 rounded-xl text-second w-fit'>Get Started</p></Link> 
     
      </div>
-
+        
+         
+              
        
+       
+       
+              <p className='text-white opacity-75 text-sm lg:w-[70%] w-full'>These statements have not been evaluated by the FDA or NHS. This service is not intended to treat or cure any disease</p>
+              <img className='w-40 '  src='https://vitamu.imgix.net/77a9a243-69ff-47d8-9e26-0b340f0a25f4.png?w=389&h=121&rect=0%2C0%2C389%2C121' alt='visa mastercard logo'/>
+              <p className='text-white'>Medifyre© 2024 All Rights Reserved</p>
+             </div>
 
-          <p className="footer-main-left__text">
-            These statements have not been evaluated by the FDA or NHS. This
-            service is not intended to treat or cure any disease
-          </p>
-          <img  className="footer-main-left__payment-logo" />
-          <p className="footer-main-left__text">
-            Medifyre© 2024 All Rights Reserved
-          </p>
-        </div>
+
+
+
+
+
+
+
+             <div className='w-[50%]  lg:flex hidden  pb-7 h-[70%] self-end text-white   items-center px-10'>
+              
+             <div className='flex flex-col gap-10 w-full  '> 
+             
+               <div className='flex flex-col'>
+                <h1 className='border-b border-white w-full text-lg font-bold'>Services</h1>
+                <div className='flex flex-wrap gap-5 mt-2'>
+                 
+                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>MRI</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Mammogram</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>CT Scan</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>X-Ray</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Full Body Scan</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Pregnancy</p> </div> 
+              
+                </div>
+
+               </div>
+             
+               <div className='flex flex-col'>
+                <h1 className='border-b border-gray-10 w-full text-lg font-bold'>About</h1>
+                <div className='flex flex-wrap gap-5 mt-2'>
+                
+                 <Link to="/sample-reports">  <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p> Sample Reports</p> </div> </Link> 
+                 <Link to="/why-second-opinion"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Why Second Opinion</p> </div> </Link> 
+                 <Link to="/how-works"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>How It Works</p> </div>  </Link> 
+                 <Link to="/contact"><div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p><p>Contact</p> </div>  </Link> 
+                 <Link to="/faq"><div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p><p>FAQ</p> </div> </Link> 
+              
+                </div>
+
+               </div>
+             
+             
+              </div>
+             
+            
+             </div>
+             
+
+          </div>
+      
 
 
        

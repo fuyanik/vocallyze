@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet';
 import "../humanError.css"
 import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
 import lottie from 'lottie-web';
+import FooterGen from '../../../homeComponents/FooterGen/FooterGen';
 
 const Contact = () => {
   useEffect(() => {  window.scrollTo(0, 0); }, []);
@@ -102,7 +103,7 @@ const Contact = () => {
 
      
       
-       {gV.mq.matches ? <MobileFooter/> : <div><Footer/></div>} 
+         <FooterGen/> 
      
        </>
   )
