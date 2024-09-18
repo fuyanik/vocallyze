@@ -122,8 +122,8 @@ const Payingo = () => {
     
     useEffect(() => {
 
-      signInWithParams();
-      updatePay();
+     // signInWithParams();
+      //updatePay();
   
   
       const interval = setInterval(() => {
@@ -139,7 +139,7 @@ const Payingo = () => {
     let navigate = useNavigate();
   
     setTimeout(() => {
-    // user ?  navigate("/user-panel")  :  navigate("/login") 
+   navigate("/register") 
    }, 5000);
 
   
@@ -149,7 +149,7 @@ const Payingo = () => {
     <>
     
       
-    <div className='pay-succes bg-sec'> 
+    <div className='pay-succes '> 
             <p className='pay-succes__text'>Checkout</p>
             <p className='pay-succes__text2'>Thanks!</p>
             <p className='pay-succes__text3 relative bottom-8'>{count}</p>
