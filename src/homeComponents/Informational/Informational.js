@@ -105,12 +105,8 @@ const Informational = () => {
   <div class="order-1 lg:order-1 ">
   
  <div className='lg:w-[40vw] w-full    flex-col gap-2 overflow-scroll'>
-   <img alt="Imaging reports powered by Scanslated" className="border-t hidden rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-1.png?auto=undefined%2Ccompress"/>
-   <img alt="Imaging reports powered by Scanslated" className="border-t hidden rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-2.png?auto=undefined%2Ccompress"/>
-   <img alt="Imaging reports powered by Scanslated" className="border-t hidden rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-3.png?auto=undefined%2Ccompress"/>
-   <img alt="Imaging reports powered by Scanslated" className="border-t hidden rounded-sm  shadow-lg mb-10 mx-auto lg:p-0 cld-responsive lg:w-[76%] w-[90vw] " lazy="true"  src="https://vitamu.imgix.net/1-4.png?auto=undefined%2Ccompress"/>
     
-    <img className='w-[92vw] lg:w-fit pb-4 lg:pb-0' src='https://vitamu.imgix.net/Gif-min.gif'/>
+    <img className='w-[92vw] lg:w-fit pb-4 lg:pb-0' src='https://vitamu.imgix.net/img1.jpg?auto=compress'/>
 
  </div> 
 

@@ -183,7 +183,7 @@ export default function FormNewPayment() {
 
     if(gV.insuranceCompany === "United Healthcare" ) {
 
-       gV.discountPercent = 30
+       gV.discountPercent = 20
 
        //Insurance discount
        //...

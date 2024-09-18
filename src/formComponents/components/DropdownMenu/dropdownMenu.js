@@ -44,7 +44,7 @@ const DropdownMenu = ({top,right}) => {
     
     return (
 
-        <div className="dropdown bg-slate-100 rounded-full" style={{
+        <div className="dropdown bg-slate-100 rounded-full -z-10" style={{
            top: top,
            marginRight: right,
         }}>
@@ -70,7 +70,7 @@ const DropdownMenu = ({top,right}) => {
              className="item duration-500"
              onClick={(e) => {
              
-              setGlobalState("isDropdownSet", true);
+              
 
                setIsSelected(e.target.textContent);
                gV.insuranceCompany = e.target.textContent;

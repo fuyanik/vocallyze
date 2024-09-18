@@ -195,7 +195,7 @@ const WhySecondOpinion = ({isOutside = false}) => {
    <meta property="og:url" content="https://medifyre.com/why-second-opinion" />
    <meta property="og:type" content="website" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</Helmet>}
+  </Helmet>}
 
    
       

@@ -42,7 +42,7 @@ const getImagesName = async () => {
  await getDoc(userRef).then((docSnap) => {
     if (docSnap.exists()) {
        
-        imagesData = docSnap.data().FirstRecheck.zipNames;
+        imagesData = docSnap.data().FirstRecheck.imagesName;
 
    
     }
@@ -268,83 +268,75 @@ return (
                  />
                 
              </div>
+
+             <div className="flex w-full px-5 flex-col gap-2 items-center mt-3 lg:w-[90%] max-h-[30vh] overflow-scroll justify-center border-3 border-red-400">
+                  {arrays.length > 0 &&
+                    arrays.map((item, idx) => (
+                      <div className={`flex items-center justify-between px-5 py-3 gap-2 animate-fadeIn  ${progress[idx].progress == 100 ? "bg-green-100" : " bg-slate-50"} shadow-xl rounded-xl w-full`} >
+                        
+                        <div className="flex items-center gap-2  w-full">
+                          <img   width="35"  height="28"  src="https://img.icons8.com/cute-clipart/128/file.png"   alt="file"  />
+                          
+                         
+                          <div className="flex w-full flex-wrap gap-1   justify-center">
+                        
+                            <div className="w-full flex  items-center justify-between">
+                              <p className="text-sm text-start text-[#343434]">{item.name.length > 25 ? `${item.name.substring(0, 25)}...` : item.name} </p> 
+                              <p className="text-[11px] text-[#692525]">({progress[idx].progress }%) </p> 
+                            </div>
+                         
+                             <progress  className="w-full animate-fadeIn " value={progress[idx].progress} max="100" />
+                          
+                           {/* <div className="text-sm text-[#692525]">({progress[idx].progress}%) </div> */ }
+                            
+                          </div>
+                      
+                        </div>
+
+                       { progress[idx].progress !== 100 ? <div
+                          class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-blue-800 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                          role="status"
+                        ></div> : <div className="h-4 w-4"> </div>  }
+
+                      </div>
+                    ))}
+
+
+               {imagesName.map((item, idx) => (
+                  <div className={`flex items-center justify-between px-5 py-3 gap-2 animate-fadeIn  ${100 == 100 ? "bg-green-100" : " bg-slate-50"} shadow-xl rounded-xl w-full`} >
+                        
+                  <div className="flex items-center gap-2  w-full">
+                    <img   width="35"  height="28"  src="https://img.icons8.com/cute-clipart/128/file.png"   alt="file"  />
+                    
+                   
+                    <div className="flex w-full flex-wrap gap-1   justify-center">
+                  
+                      <div className="w-full flex  items-center justify-between">
+                        <p className="text-sm text-start text-[#343434]">{item.length > 25 ? `${item.substring(0, 25)}...` : item} </p> 
+                        <p className="text-[11px] text-[#692525]">({100}%) </p> 
+                      </div>
+                   
+                       <progress  className="w-full animate-fadeIn " value={100} max="100" />
+                    
+                     {/* <div className="text-sm text-[#692525]">({progress[idx].progress}%) </div> */ }
+                      
+                    </div>
+                
+                  </div>
+
+                 { 100 !== 100 ? <div
+                    class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-blue-800 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                  ></div> : <div className="h-4 w-4"> </div>  }
+
+                </div>
+                 ))}
+            
+            
+                </div>
               
               
 
-           <div className="flex mt-4  flex-col w-auto max-h-[30vh] lg:h-auto overflow-scroll">
-                 {arrays.map((item, idx) => (
-                   <div className="lg:w-[20vw] w-[88vw] bg-slate-100 flex items-center justify-center mt-1 text-lg py-2 rounded-full text-pri " key={idx}>
-                     {" "}
-                    <p style={{fontSize:"13px"}}> {item.name} ({progress[idx].progress}%)</p>
-                    
-                    <svg style={{cursor: "pointer"}} onClick={  ()=>{
-            
-                       /*delete images function */
-                        setArray(arrays.filter((item, index) => index !== idx));
-            
-                        //delete images from storage
-                         const storageRef = ref(storage, `/${user ? user.email : gV.MailAddres }/${item.name}`);
-                          deleteObject(storageRef);
-            
-                        //delete images Url from firestore database
-                        updateDoc(userRef, {
-                         imagesName: arrayRemove(item.name),
-                         });
-                   
-            
-                       toast.success('Delete image successfully.', {
-                         position: "bottom-right",
-                         autoClose: 700,
-                         hideProgressBar: false,
-                         closeOnClick: true,
-                         pauseOnHover: true,
-                         draggable: true,
-                         progress: undefined,
-                         }).catch(error => {
-                           console.log(error);
-                         });
-                    }} className="svg-images" stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-                  
-                   </div>
-                 ))}
-            
-                 {imagesName.map((item, idx) => (
-                   <div style={{backgroundColor:"#0b090910"}} className="lg:w-[20vw] w-[88vw] flex items-center justify-center mt-1 text-lg py-2 rounded-full text-pri " key={idx}>
-                     {" "}
-                    <p style={{fontSize:"13px"}}> {item}</p>
-                    
-                    <svg style={{cursor: "pointer"}} onClick={ ()=>{
-            
-                       /*delete images function */
-                        setImagesName(imagesName.filter((item, index) => index !== idx));
-            
-                        //delete images from storage
-                         const storageRef = ref(storage, `/${user ? user.email : gV.MailAddres }/${item}`);
-                          deleteObject(storageRef);
-            
-                          //delete images URL from firestore database iamgesUrl array which select user item
-                           updateDoc(userRef, {
-                           imagesName: arrayRemove(item),
-                           });
-                       
-               
-            
-                       toast.success('Delete image successfully.', {
-                         position: "bottom-right",
-                         autoClose: 700,
-                         hideProgressBar: false,
-                         closeOnClick: true,
-                         pauseOnHover: true,
-                         draggable: true,
-                         progress: undefined,
-                         }).catch(error => {
-                           console.log(error);
-                         });
-                    }} className="svg-images" stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-                  
-                   </div>
-                 ))}
-           </div>
 
            </div>
 

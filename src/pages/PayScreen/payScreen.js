@@ -25,16 +25,12 @@ const stripePromise = loadStripe("pk_test_51PtVvzP6lnbAQ8ErmoRdTj5dRVzAZUFwnljKe
 
 const PayScreen = () => { 
 
-      const auth = getAuth();
-      const user = auth.currentUser;
 
 //close page
 const ClosehandleClick = () => { 
     setGlobalState("isPayScreen", false);
 }
 
-
- 
 
 const fetchData = async (totalValue) => {
   
@@ -45,9 +41,9 @@ const fetchData = async (totalValue) => {
     body: JSON.stringify({
        items: [{ 
         amount:  totalValue,
-        user_mail: user.email,
-        name: user.name,
-        id: "mitrua", 
+        user_mail: localStorage.getItem("mailAddress") ,
+        name: localStorage.getItem("name") ,
+        id: "medifyre", 
       
       }
       ],

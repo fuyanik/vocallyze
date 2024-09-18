@@ -13,11 +13,11 @@ const Insurance = () => {
  
  
     return (
-    <section className="w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 ">
+    <section className="w-[92vw] lg:w-full animate-fadeIn flex flex-col h-[58%] pt-0 px-2 ">
         
     <header className="flex flex-col gap-2">
      <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-       <p className="text-[22px] font-bold text-pri">
+       <p className="text-[32px] font-bold text-pri">
          Insurance
        </p>
 
@@ -43,7 +43,7 @@ const Insurance = () => {
     
    </div>
 
-  <div className="relative right-[23px] lg:right-[0px] lg:mt-4">
+  <div className=" ">
   { isDropdownSet && (gV.mq.matches ?  <SwiperPage/> : <PayPlans/>) }
   </div>
    

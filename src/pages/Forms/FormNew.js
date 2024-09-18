@@ -9,7 +9,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../../homeComponents/1.Navbar/navbar';
 import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js';
 import Card9 from '../../formComponents/Card9/card9';
@@ -29,7 +29,10 @@ import emailjs from 'emailjs-com';
 import SampleReports from '../DropdownPages/SampleReports/SampleReports';
 import { setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from 'firebase/auth';
 import Login from '../Auth/login';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import NavbarGen from '../../homeComponents/NavbarGen/NavbarGen.jsx';
+import lottie from 'lottie-web';
+
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -152,6 +155,7 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
+
 const steps = ['', '', '', '', ''];
 
 const medicalSendType = [
@@ -161,12 +165,53 @@ const medicalSendType = [
   'I authorize you to acquire my images.',
 ];
 
+
 export default function FormNew() {
+
+  const logo = useRef(null)
+  const logo2 = useRef(null)
+  const logo3 = useRef(null)
+
+
+
+//lottie anims
+useEffect(() => {
+ 
+  lottie.loadAnimation({
+   container: logo.current,
+   renderer: 'svg',
+   loop: true,
+   autoplay: true,
+   animationData: require('./assets/anim7.json')
+ })
+  lottie.loadAnimation({
+   container: logo2.current,
+   renderer: 'svg',
+   loop: true,
+   autoplay: true,
+   animationData: require('./assets/anim9.json')
+ })
+  lottie.loadAnimation({
+   container: logo3.current,
+   renderer: 'svg',
+   loop: true,
+   autoplay: true,
+   animationData: require('./assets/anim11.json')
+ })
+
+
+
+ return () => { lottie.destroy() }
+},[])
+
+
+
+
   //All amount variables and *Global* variables are set here
   //...
   const AmountCalculator = (mainPay) => {
     if (gV.insuranceCompany === 'United Healthcare') {
-      gV.discountPercent = 30;
+      gV.discountPercent = 20;
 
       //Insurance discount
       //...
@@ -399,6 +444,7 @@ export default function FormNew() {
     localStorage.setItem(key, value);
   };
 
+  
   const auth = getAuth();
   const user = auth.currentUser;
 
@@ -408,6 +454,7 @@ export default function FormNew() {
   const [mainPayAmount] = useGlobalState('mainPayAmount');
   const [doctors] = useGlobalState('doctors');
   const [paymentPlan] = useGlobalState('paymentPlan');
+   const [isDropdownSet] = useGlobalState("isDropdownSet")
 
   const [name, setName] = useState('');
   const [mail, setMail] = useState('');
@@ -421,6 +468,18 @@ export default function FormNew() {
   const [isPopupOpen2, setIsPopupOpen2] = useState(false);
   const [isDropdown, setDropdown] = useState(false);
   const [dropdownText, setDropdownText] = useState('Choose your answer.');
+
+ 
+
+  useEffect(() => {
+    
+    
+    setName(localStorage.getItem("name"))
+    setQuestion(localStorage.getItem("question"))
+    setMail(localStorage.getItem("mailAddress"))
+  
+  }, []);
+
 
   useEffect(() => {
     //Create random password
@@ -443,28 +502,29 @@ export default function FormNew() {
     /* Contact Detail */
   }
   const ContactDetail = (
-    <section className='w-[92vw] lg:w-[46vw]  animate-fadeIn flex flex-col h-auto pt-0 px-2'>
+    <section className='w-[92vw] lg:w-full  animate-fadeIn flex flex-col h-[58%] pt-0 px-2 text-pri'>
       <header className='flex flex-col gap-2'>
         <header className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='text-[22px] font-bold text-pri'>Contact Details</p>
+          <p className='text-[32px] font-bold text-pri'>Contact Details</p>
 
           <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
         </header>
 
         <p className='text-[16px] leading-[22px] mt-2  text-priTrans'>
           {' '}
-          We respect your privacy. Your contact details will not be shared with anyone.
+          We have saved all the information you provided, and our doctors will review it as soon as possible. To keep you informed about your case, we will need your email address. 
         </p>
       </header>
 
       {/* Name */}
-      <div className='flex flex-col gap-1 mt-2'>
+      <div className=' hidden flex-col gap-1 mt-2'>
         <p className='text-lg text-pri font-bold mt-4'> What is your name?</p>
 
         <input
           value={name || user?.displayName}
           onChange={(e) => {
             setName(e.target.value);
+            addToLocalStorage('name', e.target.value); 
           }}
           type='text'
           className={contactInputStyle}
@@ -474,23 +534,25 @@ export default function FormNew() {
 
       {/* Mail */}
       <div className='flex flex-col gap-1'>
-        <p className='text-lg text-pri font-bold mt-4'> E-Mail Address</p>
-        <input
-          value={mail || user?.email}
-          onChange={(e) => {
-            setMail(e.target.value);
-            gV.MailAddres = e.target.value;
-            addToLocalStorage('mailAddress', e.target.value); // Local storage'a veriyi ekler
-          }}
-          type='text'
-          className={contactInputStyle}
-          placeholder='Type your name email here.'
-        />
-      </div>
+  <p className='text-lg text-pri font-bold mt-4'>E-Mail Address</p>
+  <input
+    
+    value={mail || localStorage.getItem("mailAddress")}
+    onChange={(e) => {
+      const lowerCaseEmail = e.target.value.toLowerCase(); // Küçük harfe çevir
+      setMail(lowerCaseEmail);
+      gV.MailAddres = lowerCaseEmail;
+      addToLocalStorage('mailAddress', lowerCaseEmail); // Local storage'a veriyi ekler
+    }}
+    type='email'
+    className={contactInputStyle}
+    placeholder='Type your email address here.'
+  />
+</div>
 
       {/* Phone */}
-      <div className='flex flex-col gap-1'>
-        <p className='text-lg text-pri font-bold mt-4'> Phone Number</p>
+      <div className=' hidden flex-col gap-1  '>
+        <p className='text-lg text-pri font-bold mt-4 '> Password</p>
         <input
           value={phone || user?.providerData[0].phoneNumber}
           onChange={(e) => {
@@ -508,26 +570,38 @@ export default function FormNew() {
     /* History Symptoms */
   }
   const HistorySymptoms = (
-    <section className='w-[92vw] lg:w-[46vw] animate-fadeIn flex flex-col h-auto pt-0 px-2 text-pri'>
+    <section className='w-[92vw] lg:w-full animate-fadeIn flex flex-col h-[58%]  pt-0 px-2 text-pri'>
       <div className='flex flex-col gap-2'>
-        <header className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='text-[22px] font-bold text-pri'>History and Symptoms</p>
+        <header className=' flex pb-1 items-center justify-between  '>
+          <p className='text-[32px] font-bold text-pri'>History and Symptoms</p>
 
-          <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
+          <i className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</i>
         </header>
 
-        <p className='text-[16px] leading-[22px] mt-2  text-priTrans'>
+        <input
+          value={name || localStorage.getItem("name")}
+          onChange={(e) => {
+            setName(e.target.value);
+            addToLocalStorage('name', e.target.value); 
+          }}
+          type='text'
+          className={contactInputStyle}
+          placeholder='Type your name here.'
+        />
+
+        <p className='text-[16px] leading-[22px] mt-5  text-priTrans'>
           {' '}
           Please enter your personal health story, complaints, concerns, and questions.
         </p>
 
         <textarea
-          value={question}
+          value={question || localStorage.getItem("question") }
           onChange={(e) => {
             setQuestion(e.target.value);
+            addToLocalStorage('question', e.target.value); 
           }}
           type='text'
-          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[32vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-priTrans '
+          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[40vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-secondTrans '
           placeholder='Start typing here.'
         />
       </div>
@@ -538,10 +612,10 @@ export default function FormNew() {
     /* Medical Images */
   }
   const MedicalImages = (
-    <section className='w-[92vw] lg:w-[46vw] animate-fadeIn   flex flex-col h-auto pt-0 px-2'>
+    <section className='w-[92vw] lg:w-full animate-fadeIn   flex flex-col h-[58%] pt-0 px-2'>
       <header className='flex flex-col gap-2'>
         <div className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='text-[22px] font-bold text-pri'>Medical Images</p>
+          <p className='text-[32px] font-bold text-pri'>Medical Images</p>
 
           <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
         </div>
@@ -717,6 +791,7 @@ export default function FormNew() {
     }
   };
 
+
   const [isLoginPopup] = useGlobalState('isLoginPopup');
 
   useEffect(() => {
@@ -725,13 +800,14 @@ export default function FormNew() {
 
   useEffect(() => {
     const currentStep = user?.accessToken ? 1 : 0;
-    setGlobalState('activeStep', currentStep);
+    //setGlobalState('activeStep', currentStep);
     setGlobalState('isLoginPopup', false);
   }, [user?.accessToken]);
 
   useEffect(() => {
+   /*
     setDoc(
-      doc(db, 'MitruaPartial', `${user ? user.email : gV.MailAddres}`),
+      doc(db, 'MitruaPartial', `${user ? user.email : gV.MailAddres }`),
       {
         Rechecks: {
           formStep: activeStep,
@@ -757,11 +833,18 @@ export default function FormNew() {
       },
       { merge: true },
     );
+    */
   }, [activeStep]);
+
+
+
+  
+  
+  
+  
 
   return (
     <>
-      <Navbar mobileMenuText={'Menu'} />
 
       {/* Pay Popup */}
       <Popup
@@ -824,8 +907,7 @@ export default function FormNew() {
         />
       )}
 
-      <div className='w-screen  flex flex-col items-center gap-3 lg:gap-4 font-product '>
-        <div className='mt-14 lg:mt-20 '></div>
+      <div className={`w-screen h-screen overflow-hidden  ${isDropdownSet && "bg-black/20" } ${isPopupOpen && "blur-lg"} duration-700 lg:flex lg:flex-row flex flex-col items-center   font-product `}>
 
         {/*  Stepper */}
         {false && (
@@ -839,8 +921,15 @@ export default function FormNew() {
             </Stepper>
           </Stack>
         )}
-
-        <div className='lg:w-[46vw] self-start lg:self-auto  '>
+        
+        <div className='lg:w-1/2  px-10   relative w-screen h-full   flex flex-col items-center lg:justify-center justify-center '>
+       
+       <Link to={"/"}>  <img className='absolute lg:flex hidden w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+       
+         <img className="absolute  hidden h-full w-full object-cover -z-10" src="https://vitamu.imgix.net/background916.png?w=864&h=1536&ar=864%3A1536&auto=compress" alt="groupPng"/>
+       
+        {/*  Want to see sample reports */}
+        <div className='lg:w-[46vw] hidden self-start lg:self-auto  '>
           <div
             onClick={() => {
               setIsPopupOpen2(!isPopupOpen2);
@@ -859,25 +948,141 @@ export default function FormNew() {
           </div>
         </div>
 
-        {activeStep == 0 && ContactDetail}
-        {activeStep == 1 && HistorySymptoms}
+        {activeStep == 0 && HistorySymptoms}
+        {activeStep == 1 && ContactDetail}
         {activeStep == 2 && MedicalImages}
         {activeStep == 3 && <Insurance />}
-
         {activeStep == 999 && <AvailableRadiologists />}
+        
+         </div>
+       
+       
+        {/*  Right Second Opinion Report Area */}
+        <div className='lg:flex lg:flex-col  py-16 hidden w-1/2 h-full  bg-slate-50 -z-10 '>
+         
+          
+          <div className='flex w-[100%]  h-[94%] shadow-lg ml-16 border rounded-xl overflow-hidden'>
+
+             <div className='w-[25%] relative h-full bg-slate-100 flex flex-col justify-between'> 
+               
+               <div className='flex flex-col w-full ml-3 gap-5'> 
+                <img className=' w-40 b-4   ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/>
+              
+                <div className='h-3 w-[55%] rounded-full bg-gray-300'> </div>
+                <div className='h-3 w-[80%] rounded-full bg-gray-300'> </div>
+                <div className='h-3 w-[65%] rounded-full bg-gray-300'> </div>
+              
+               </div>
+                
+               <div className='w-full h-[11%] border-t flex items-center justify-between px-3'>
+                
+                 <div className='w-8 h-8 bg-second rounded-full items-center justify-center text-white flex'> 
+                 {name ? name.charAt(0).toUpperCase() : ''} 
+                  
+                </div> 
+
+                <img width="16" height="16" src="https://img.icons8.com/ios/50/appointment-reminders--v1.png" alt="appointment-reminders--v1"/>
+            
+               </div>
+           
+             </div>
+
+
+             <div className='w-[75%] h-full  flex flex-col'> 
+
+               <div className='h-[14%] w-full border-b bg-second text-white flex flex-col gap-1  justify-end px-2 py-2'>
+                 <p className='text-lg'>Second Opinion Report</p>
+                 
+                 <div className='flex gap-3'> 
+                   <p className='bg-white rounded-full px-4 py-[2px] text-second text-sm items-center justify-center flex'>{gV.bodyParts[0]}</p> 
+                   <p className='bg-white rounded-full px-4 py-[2px] text-second text-sm items-center justify-center flex'>{gV.scanType[0]}</p> 
+                  </div> 
+                
+               </div>
+
+               <div className='w-full h-full bg-white flex flex-col gap-8 p-8'> 
+
+                 <div className={` w-full flex gap-3 items-center   `}> 
+                      
+                    {/* rounded profile */}
+                    <div className='flex w-10 h-10 bg-gray-300 rounded-full items-center justify-center'> 
+                     <img width="28" height="28" src="https://img.icons8.com/pastel-glyph/64/ffffff/gender-neutral-user.png" alt="gender-neutral-user"/>
+                    </div>
+                   
+                   {/* name */}
+                   <div className='flex flex-col items-start justify-start '>
+                   { name == "" ?  <div className='h-4 w-[50%] rounded-full bg-gray-200 animate-fadeIn'> </div> :
+                    <p className=' text-[20px] font-bold]'> {name}</p>
+                    
+                  }
+                       <p className=' text-[12px] text-black'> {mail}</p>
+                    </div>
+
+                 </div>
+                
+                 <div className={` ${activeStep !== 0 && "hidden"} w-full flex gap-36`}> 
+                    <div className='h-3 w-[50%] rounded-full bg-gray-200'> </div>
+                    <div className='h-3 w-[20%] rounded-full bg-gray-200'> </div> 
+                 </div>
+                
+                 <div className={` ${activeStep !== 0 && "hidden"} w-full flex gap-16`}> 
+                    <div className='h-3 w-[70%] rounded-full bg-gray-200'> </div>
+                    <div className='h-3 w-[15%] rounded-full bg-gray-200'> </div> 
+                 </div>
+
+                 <div className={` ${activeStep == 0 ? "hidden" : "flex"} w-[90%] flex flex-col gap-2 opacity-40 text-black max-h-40 overflow-y-scroll text-sm animate-fadeInSlow font-product`}> 
+                  <p className='text-lg font-bold animate-fadeIn'>History and Symptoms</p>
+                  <p className='animate-fadeInSlow text-black text-sm'> {question}</p>
+                 </div>
+               
+                 <div className={` ${activeStep !== 0 && "hidden"} w-full flex gap-28`}> 
+                    <div className='h-3 w-[60%] rounded-full bg-gray-200'> </div>
+                    <div className='h-3 w-[30%] rounded-full bg-gray-200'> </div> 
+                 </div>
+               
+                 <div className={` ${false && "hidden"} w-full flex gap-8`}> 
+                    <div className='h-3 w-[80%] rounded-full bg-gray-200'> </div>
+                    <div className='h-3 w-[25%] rounded-full bg-gray-200'> </div> 
+                 </div>
+
+                 <div className={` ${false && "hidden"} w-full flex gap-40`}> 
+                    <div className='h-3 w-[50%] rounded-full bg-gray-200'> </div>
+                    <div className='h-3 w-[15%] rounded-full bg-gray-200'> </div> 
+                 </div>
+
+               
+            
+               </div>
+               
+
+             </div>
+           </div> 
+           
+        
+           <div className={` ${activeStep == 1 ? "hidden" : "hidden"} w-[80%]`} ref={logo} > </div>
+           <div className={` ${activeStep == 2 ? "hidden" : "hidden"} w-[80%]`} ref={logo2} > </div>
+           <div className={` ${activeStep == 3 ? "hidden" : "hidden"} w-[70%]`} ref={logo3} > </div>
+         
+        
+         
+        
+         </div>
+
+
 
         {/* Bottom Buttons */}
         <div
           className={`absolute ${
             isPopupOpen && 'hidden'
-          } w-[85vw] lg:w-[45vw] justify-between  bottom-3 mt-10  flex items-center font-product animate-fadeIn`}>
+          } w-[85vw]  lg:w-[45vw]  justify-between ${isDropdownSet ? "hidden" : "bottom-10"}   left-0  flex items-center font-product animate-fadeIn`}>
           {/* Back Button */}
           {activeStep != 0 && (
-            <button
+      
+        <button
               onClick={() => {
                 setGlobalState('activeStep', activeStep - 1);
               }}
-              className='w-11 h-11 absolute z-20   animate-leftToRight rounded-full bg-sec flex items-center justify-center  text-white'>
+              className={` ${isDropdownSet && "hidden"}  w-11 h-11 absolute z-20  right-80  animate-leftToRight rounded-full bg-second flex items-center justify-center  text-white`}>
               {' '}
               <img
                 width='20'
@@ -890,24 +1095,29 @@ export default function FormNew() {
 
           {true && <div> </div>}
 
-          {/* Next Button */}
 
+
+          {/* Next Button */}
           <button
             onClick={() => {
               /* Sıgn Up Step*/
 
-              activeStep == 0 && handleSignup();
+              //activeStep == 1 && handleSignup();
 
               /* Payment Step States */
               activeStep != 3 && setGlobalState('activeStep', activeStep + 1);
-              activeStep == 3 && setIsPopupOpen(true);
+             // activeStep == 3 && setIsPopupOpen(true);
+              activeStep == 3 && setGlobalState("isDropdownSet", true);
+
+              (activeStep == 3 && isDropdownSet) && setIsPopupOpen(true);
+              
 
               /* Payment Step */
               if (activeStep == 3) {
                 AmountCalculator(mainPayAmount);
 
                 setDoc(
-                  doc(db, 'Mitrua', `${user.email}`),
+                  doc(db, 'Mitrua', `${localStorage.getItem("mailAddress") }`),
                   {
                     Rechecks: [
                       {
@@ -944,13 +1154,20 @@ export default function FormNew() {
               // console.log('activeStep', activeStep, 'name', name, 'mail', mail, 'phone', phone);
               // user && console.log('user', user.email);
             }}
-            className={`bg-sec ${
-              activeStep == 0 ? 'w-full' : 'w-[82%]'
-            } z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
+            className={`bg-second ${
+              activeStep == 0 ? 'w-[90%]' : 'w-[46%]'
+            } ${isDropdownSet && "w-[80%]"}
+            ${isDropdownSet && "left-80"}
+            
+            z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
+          
             Continue to {activeStep == 0 && 'History'} {activeStep == 1 && 'Medical Images '}{' '}
             {activeStep == 2 && 'Insurance'} {activeStep == 3 && 'Payment'} {activeStep == 4 && ''}
           </button>
         </div>
+     
+     
+     
       </div>
     </>
   );

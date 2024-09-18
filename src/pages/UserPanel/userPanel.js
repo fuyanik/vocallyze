@@ -505,11 +505,7 @@ return (
                   )}{" "}
                 </p>
 
-                  <div className="bg-second flex gap-3 items-center shadow-xl  px-8 py-4 rounded-xl text-base text-white tracking-wider font-normal">
-                   <p className="w-2 h-2 rounded-full bg-white"></p>
-                   <p> Track the entire process from your personal dashboard </p>
-                   <p className="w-2 h-2  rounded-full bg-white"></p>
-                  </div>
+                 
               
               </div>
 

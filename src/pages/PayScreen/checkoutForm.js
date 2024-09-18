@@ -100,8 +100,8 @@ export default function CheckoutForm() {
 
     setIsLoading(true);
 
-    const email = user.email;
-    const pass = gV.password ;
+    const email = localStorage.getItem("mailAddress")
+    const pass = localStorage.getItem("pass");
 
 
 

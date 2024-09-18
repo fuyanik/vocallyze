@@ -11,6 +11,20 @@
   }
 }
 
+progress[value]::-webkit-progress-value {
+  background-color: rgb(34 197 94); /* Örnek bir arka plan rengi */
+  border-radius: 8px;     /* Örnek bir kenar yarıçapı */
+  height: 8px;
+  transition: width 0.3s ease; /* Genişlik değişikliklerinde geçiş efekti */
+  /* Daha fazla stil özelliği ekleyebilirsiniz */
+}
+progress[value]::-webkit-progress-bar {
+  width: 100%;
+  background: rgba(128, 128, 128, 0.105);
+  height: 8px;
+  border-radius: 8px;
+}
+
 .stroke-current-new {
   stroke: #5D9695;
 }

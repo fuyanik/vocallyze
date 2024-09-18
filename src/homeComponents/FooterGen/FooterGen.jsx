@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useState } from "react";
 import PrimaryButton from "../microComponents/primaryButton/primaryButton";
 
@@ -15,6 +15,7 @@ import BiRadsDropdown from "../BiRadsDropdown/biRadsDropdown";
 const FooterGen = () => {
 
     const [isHover , setIsHover] = useState(false);
+    const navigate = useNavigate();
   
   
     return (
@@ -33,7 +34,7 @@ const FooterGen = () => {
 
         {isHover && (
           <BiRadsDropdown
-             top={gV.mq.matches ? "-310%" : "0%"}
+             top={gV.mq.matches ? "-310%" : "-340%"}
              left={gV.mq.matches ? "-1%" : "-0%"}
              onMouseLeave={() => setIsHover(false)}
              onClick={() => setIsHover(false)}
@@ -66,22 +67,22 @@ const FooterGen = () => {
              <div className='flex flex-col gap-10 w-full  '> 
              
                <div className='flex flex-col'>
-                <h1 className='border-b border-white w-full text-lg font-bold'>Services</h1>
+                <h1 className=' w-full text-lg font-bold'>Services</h1>
                 <div className='flex flex-wrap gap-5 mt-2'>
                  
-                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>MRI</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Mammogram</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>CT Scan</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>X-Ray</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Full Body Scan</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Pregnancy</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>MRI</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Mammogram</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>CT Scan</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>X-Ray</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Full Body Scan</p> </div> 
+                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Pregnancy</p> </div> 
               
                 </div>
 
                </div>
              
                <div className='flex flex-col'>
-                <h1 className='border-b border-gray-10 w-full text-lg font-bold'>About</h1>
+                <h1 className=' w-full text-lg font-bold  ' >About</h1>
                 <div className='flex flex-wrap gap-5 mt-2'>
                 
                  <Link to="/sample-reports">  <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p> Sample Reports</p> </div> </Link> 
