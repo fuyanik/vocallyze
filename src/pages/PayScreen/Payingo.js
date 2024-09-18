@@ -75,10 +75,9 @@ const Payingo = () => {
  
     const updatePay = async ()  => {
   
-      const auth = getAuth();
-      const user =  auth.currentUser;
+     
   
-       if (user) {
+      
          //fetch firebase data firestore
          const userRef = doc(db, "Mitrua", `${localStorage.getItem("mailAddress")}`);
          const docSnap = await getDoc(userRef);
@@ -89,9 +88,6 @@ const Payingo = () => {
          console.log(data)
   
          const returnRecheckNumber = async () => {
-  
-          
-            
   
             rechecks[0].activeStep = 2;
             rechecks[0].isPay = true
@@ -108,12 +104,9 @@ const Payingo = () => {
          returnRecheckNumber();
      
   
-        } 
+      
   
-        else {
-         console.log("NO USER");
-     
-        }
+      
   
     }
    
