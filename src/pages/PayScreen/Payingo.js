@@ -74,9 +74,6 @@ const Payingo = () => {
 
  
     const updatePay = async ()  => {
-  
-     
-  
       
          //fetch firebase data firestore
          const userRef = doc(db, "Mitrua", `${localStorage.getItem("mailAddress")}`);
@@ -141,6 +138,7 @@ const Payingo = () => {
   return (
     <>
     
+
       
     <div className='pay-succes '> 
             <p className='pay-succes__text'>Checkout</p>
