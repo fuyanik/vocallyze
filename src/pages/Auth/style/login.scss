@@ -80,6 +80,7 @@
                      padding-left: 10px;
                      background-color: rgba(81, 81, 94, 0.079);
                      font-size: 16px;
+                     animation-duration: 500ms;
 
                      &::placeholder{
                         font-size: 16px;
@@ -90,7 +91,8 @@
 
                      &:focus{
                         outline: none;
-                        border: 2px solid black;
+                        border: 1px solid #5D9695;
+                        animation-duration: 500ms;
                      }
 
                    }

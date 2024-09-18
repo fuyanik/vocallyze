@@ -107,7 +107,7 @@ const Login = ({isMailErr = false }) => {
     <>
     
   <Helmet>
-  <title>Medifyre - User Panel</title>
+  <title>Medifyre - Login</title>
    <meta name="description" content="User Panel" />
 </Helmet>
 

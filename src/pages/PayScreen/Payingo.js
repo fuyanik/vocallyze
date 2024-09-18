@@ -44,7 +44,7 @@ const Payingo = () => {
        console.log('Pass:', pass);
      }
      else {
-      console.log("bi sikim yok");
+     
      }
   
 
@@ -139,7 +139,7 @@ const Payingo = () => {
     let navigate = useNavigate();
   
     setTimeout(() => {
-    user ?  navigate("/user-panel")  :  navigate("/login") 
+    // user ?  navigate("/user-panel")  :  navigate("/login") 
    }, 5000);
 
   

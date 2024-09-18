@@ -145,22 +145,10 @@ const UserPanel = () => {
         console.log( doc.data().isAskQuestion);
 
         setRecheksData(doc.data().Rechecks);
-
-
-    
       
       
 
-        //Get insurance company
-        //..
-        gV.insuranceCompany = doc.data().FirstRecheck.insuranceCompany;
-
        
-       
-       
-       
-
-
 
 
       }
@@ -501,7 +489,7 @@ return (
                       {" "}
                     </p>
                   ) : (
-                    user.displayName.split(" ")[0]
+                    user.displayName
                   )}{" "}
                 </p>
 

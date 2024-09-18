@@ -11,8 +11,7 @@ import Home from './pages/Home';
 import PayScreen from './pages/PayScreen/payScreen';
 import FormNew from './pages/Forms/FormNew';
 import SwiperPage from './pages/Swiper/swiper';
-import PaySucces from './pages/PayScreen/paySucces';
-import PaySucces2 from './pages/PayScreen/paySucces2';
+
 import UserPanel from './pages/UserPanel/userPanel';
 import Hero from './homeComponents/2.Hero/hero';
 import Login from './pages/Auth/login';
@@ -35,6 +34,7 @@ import Faq from './pages/DropdownPages/Faq/faq';
 import Payingo from './pages/PayScreen/Payingo';
 import Pregnancy from './pages/Services/Pregnancy';
 import FullBody from './pages/Services/FullBody';
+import Register from './pages/Auth/register';
 
  
 
@@ -54,7 +54,7 @@ export default function App() {
             <Route path="/pay-screen" element={<PayScreen/>} />
 
             <Route path="/pay-succes" element={<Payingo/>} />
-            <Route path="/pay-succes2" element={<PaySucces2/>} />
+
             <Route path="/user-panel" element={<UserPanel/>} />
 
            
@@ -80,6 +80,7 @@ export default function App() {
 
             
             <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
             <Route path="/reset-password" element={<PasswordReset/>} />
 
 
