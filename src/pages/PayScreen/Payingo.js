@@ -80,7 +80,7 @@ const Payingo = () => {
   
        if (user) {
          //fetch firebase data firestore
-         const userRef = doc(db, "Mitrua", `${user.email}`);
+         const userRef = doc(db, "Mitrua", `${localStorage.getItem("mailAddress")}`);
          const docSnap = await getDoc(userRef);
          const data = docSnap.data();
   
@@ -91,7 +91,7 @@ const Payingo = () => {
          const returnRecheckNumber = async () => {
   
           
-            const lastIndex = rechecks.length - 1;
+            
   
             rechecks[0].activeStep = 2;
             rechecks[0].isPay = true
@@ -123,7 +123,7 @@ const Payingo = () => {
     useEffect(() => {
 
      // signInWithParams();
-      //updatePay();
+      updatePay();
   
   
       const interval = setInterval(() => {

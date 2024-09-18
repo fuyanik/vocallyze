@@ -25,44 +25,7 @@ const Register = ({isMailErr = false }) => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
-  const updatePay = async ()  => {
-  
-    const auth = getAuth();
-    const user =  auth.currentUser;
 
-   
-       //fetch firebase data firestore
-       const userRef = doc(db, "Mitrua", `${localStorage.getItem("mailAddress")}`);
-       const docSnap = await getDoc(userRef);
-       const data = docSnap.data();
-
-       const rechecks = data.Rechecks;
-
-       console.log(data)
-
-       const returnRecheckNumber = async () => {
-
-        
-         
-
-          rechecks[0].activeStep = 2;
-          rechecks[0].isPay = true
-        
-
-          await updateDoc(userRef, { Rechecks: rechecks})
-
-
-      }
-
-
-       //Control user is have images or not for detect active step
-       //...
-       returnRecheckNumber();
-   
-
-    
-
-  }
 
  // toast(error.code, { type: "error" });
   const handleRegister = async () => {
@@ -71,7 +34,7 @@ const Register = ({isMailErr = false }) => {
         await createUserWithEmailAndPassword(auth, localStorage.getItem("mailAddress"), password).then((userCredential) => {
 
             const user = userCredential.user
-            updatePay()
+           
             console.log(user)
 
              user && navigate("/user-panel")
