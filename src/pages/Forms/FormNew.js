@@ -168,6 +168,23 @@ const medicalSendType = [
 
 export default function FormNew() {
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    // Ekran boyutu değiştiğinde tetiklenecek fonksiyon
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px, mobil ve web ayırımı için örnek bir genişliktir
+    };
+
+    // Ekran boyutu değişikliklerini dinleme
+    window.addEventListener('resize', handleResize);
+
+    // Component unmount olduğunda event listener'ı temizle
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const logo = useRef(null)
   const logo2 = useRef(null)
   const logo3 = useRef(null)
@@ -572,12 +589,13 @@ useEffect(() => {
   const HistorySymptoms = (
     <section className='w-[92vw] lg:w-full animate-fadeIn flex flex-col h-[58%]  pt-0 px-2 text-pri'>
       <div className='flex flex-col gap-2'>
-        <header className=' flex pb-1 items-center justify-between  '>
-          <p className='text-[32px] font-bold text-pri'>History and Symptoms</p>
+        <header className=' flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707]  '>
+          <p className='lg:text-[32px] text-[22px] font-bold text-black'>History and Symptoms</p>
 
-          <i className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</i>
+          <i className='text-[16px] mt-1 font-bold text-black'> Step {activeStep + 1} of 4</i>
         </header>
-
+      
+        <p className='text-lg text-black font-bold mt-1'>Full name</p>
         <input
           value={name || localStorage.getItem("name")}
           onChange={(e) => {
@@ -586,13 +604,11 @@ useEffect(() => {
           }}
           type='text'
           className={contactInputStyle}
-          placeholder='Type your name here.'
+          placeholder='First and last'
         />
-
-        <p className='text-[16px] leading-[22px] mt-5  text-priTrans'>
-          {' '}
-          Please enter your personal health story, complaints, concerns, and questions.
-        </p>
+         
+         <p className='text-lg text-black font-bold lg:mt-4 mt-2'> Your personal health story, complaints, concerns, and questions.</p>
+       
 
         <textarea
           value={question || localStorage.getItem("question") }
@@ -601,8 +617,8 @@ useEffect(() => {
             addToLocalStorage('question', e.target.value); 
           }}
           type='text'
-          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[40vh] shadow-2xl h-[41vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-secondTrans '
-          placeholder='Start typing here.'
+          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[35vh] shadow-md h-[30vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-secondTrans '
+          placeholder='Every detail matters to us.'
         />
       </div>
     </section>
@@ -805,6 +821,7 @@ useEffect(() => {
     setGlobalState('isLoginPopup', false);
   }, [user?.accessToken]);
 
+
   useEffect(() => {
    /*
     setDoc(
@@ -836,16 +853,12 @@ useEffect(() => {
     );
     */
   }, [activeStep]);
-
-
-
-  
-  
   
   
 
   return (
-    <>
+    <> 
+ 
 
       {/* Pay Popup */}
       <Popup
@@ -873,42 +886,15 @@ useEffect(() => {
         open={isPopupOpen2}
         onDismiss={onDismiss2}
         contents={
-          <div>
-            <h1
-              onClick={() => {
-                setIsPopupOpen2(false);
-              }}
-              className='absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full'>
-              {' '}
-              Close
-            </h1>
-            <SampleReports isOutside={true} />
-          </div>
+         
+         
+            <SampleReports isOutside={true} isPopup={true} />
+         
         }
       />
 
-      {/* Login Pop Up */}
-      {!user && (
-        <Popup
-          open={isLoginPopup}
-          close={false}
-          contents={
-            <div>
-              <h1
-                onClick={() => {
-                  window.location.href = '/form-new';
-                }}
-                className='absolute z-50 cursor-pointer right-4 top-1 bg-black text-white px-3 py-1 rounded-full'>
-                {' '}
-                Close
-              </h1>
-              <Login isMailErr={true} />
-            </div>
-          }
-        />
-      )}
-
-      <div className={`w-screen h-screen overflow-hidden  ${isDropdownSet && "bg-black/20" } ${isPopupOpen && "blur-lg"} duration-700 lg:flex lg:flex-row flex flex-col items-center   font-product `}>
+     
+      <div className={`w-screen h-screen overflow-hidden   ${isDropdownSet && "bg-black/20" } ${isPopupOpen && "blur-lg"} duration-700 lg:flex lg:flex-row flex flex-col items-center  font-product `}>
 
         {/*  Stepper */}
         {false && (
@@ -923,12 +909,29 @@ useEffect(() => {
           </Stack>
         )}
         
-        <div className='lg:w-1/2  px-10   relative w-screen h-full   flex flex-col items-center lg:justify-center justify-center '>
+        <div className='lg:w-1/2  lg:px-10   relative w-screen h-full  flex flex-col items-center lg:justify-center justify-start  '>
        
-       <Link to={"/"}>  <img className='absolute lg:flex hidden w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+        <Link to={"/"}>  <img className='absolute lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
        
-         <img className="absolute  hidden h-full w-full object-cover -z-10" src="https://vitamu.imgix.net/background916.png?w=864&h=1536&ar=864%3A1536&auto=compress" alt="groupPng"/>
-       
+         <div className='flex lg:hidden w-full px-5 justify-between items-center  '>
+           <Link to={"/"}>  <img className='  w-32 ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+      
+           <div  onClick={() => {   setIsPopupOpen2(!isPopupOpen2); }}   className='w-fit  duration-500 bg-black text-white  flex items-center gap-5  relative border border-black px-4 py-1 rounded-full text-sm'>
+          
+            <p className='duration-500'>   {isPopupOpen2 ? 'Close' : 'Sample Report'}   </p>
+          
+            <img
+              className={`h-5 ${isPopupOpen2 ? 'rotate-180' : 'rotate0'}  duration-500 `}
+              width='20'
+              height='5'
+              src='https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png'
+              alt='expand-arrow--v1'
+            />
+          </div>
+
+         </div>
+
+
         {/*  Want to see sample reports */}
         <div className='lg:w-[46vw] hidden self-start lg:self-auto  '>
           <div
@@ -956,6 +959,8 @@ useEffect(() => {
         {activeStep == 999 && <AvailableRadiologists />}
         
          </div>
+       
+
        
        
         {/*  Right Second Opinion Report Area */}
@@ -1070,12 +1075,11 @@ useEffect(() => {
          </div>
 
 
-
         {/* Bottom Buttons */}
         <div
           className={`absolute ${
             isPopupOpen && 'hidden'
-          } w-[85vw]  lg:w-[45vw]  justify-between ${isDropdownSet ? "hidden" : "bottom-10"}   left-0  flex items-center font-product animate-fadeIn`}>
+          } w-screen  lg:w-[45vw]  ${isDropdownSet && "hidden"} lg:bottom-10 bottom-3  left-0  flex items-center justify-between font-product animate-fadeIn`}>
           {/* Back Button */}
           {activeStep != 0 && (
       
@@ -1083,7 +1087,7 @@ useEffect(() => {
               onClick={() => {
                 setGlobalState('activeStep', activeStep - 1);
               }}
-              className={` ${isDropdownSet && "hidden"}  w-11 h-11 absolute z-20  right-80  animate-leftToRight rounded-full bg-second flex items-center justify-center  text-white`}>
+              className={` ${isDropdownSet && "hidden"}  w-11 h-11 absolute z-20 left-5  lg:right-80 right-0  animate-leftToRight rounded-full bg-second flex items-center justify-center  text-white`}>
               {' '}
               <img
                 width='20'
@@ -1156,11 +1160,10 @@ useEffect(() => {
               // user && console.log('user', user.email);
             }}
             className={`bg-second ${
-              activeStep == 0 ? 'w-[90%]' : 'w-[46%]'
-            } ${isDropdownSet && "w-[80%]"}
-            ${isDropdownSet && "left-80"}
+              activeStep == 0 ? 'w-[84%] right-8 ' : 'lg:w-[46%] w-[70%] right-8'
+            } 
             
-            z-20  relative duration-500 font-bold self-end right-0 float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
+            z-20  relative duration-500 font-bold self-end float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
           
             Continue to {activeStep == 0 && 'History'} {activeStep == 1 && 'Medical Images '}{' '}
             {activeStep == 2 && 'Insurance'} {activeStep == 3 && 'Payment'} {activeStep == 4 && ''}

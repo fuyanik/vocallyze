@@ -8,7 +8,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Helmet } from 'react-helmet'
 import FooterGen from '../../../homeComponents/FooterGen/FooterGen'
 
-const SampleReports = ({isOutside = false}) => {
+const SampleReports = ({isOutside = false , isPopup = false} ) => {
 
 
      AOS.init();
@@ -205,7 +205,7 @@ const SampleReports = ({isOutside = false}) => {
     
     {/*  Header */}
     
-      <div className={`flex flex-col gap-4 relative ${isOutside ? "py-10" : "py-28"}   lg:w-[100vw] w-[100vw] px-7 items-center justify-center  z-10 `}>
+      <div className={`flex flex-col gap-4 relative ${isPopup && "hidden"} ${isOutside ? "py-10" : "py-28"}   lg:w-[100vw] w-[100vw] px-7 items-center justify-center  z-10 `}>
       <img     
              alt='report samples bg'
               className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "
@@ -213,7 +213,7 @@ const SampleReports = ({isOutside = false}) => {
             />
         
         { !isOutside && <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png'/>}
-          <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'>  Second Opinion Report Samples </h1>
+          <h1 data-aos-duration="600" data-aos="fade-up"  className={`lg:text-[42px]  text-[32px]  self-center tracking-wide leading-[38px] text-center  text-black font-bold`}>  Second Opinion Report Samples </h1>
             <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
             Medifyre users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
             </p>
