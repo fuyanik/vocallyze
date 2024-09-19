@@ -577,7 +577,7 @@ const PayPlans = ({ isOutside = false, }) => {
          
         
          {/* One-Time */}
-         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(1);  } }   className='h-[80%] cursor-pointer hover:mb-5 duration-500  w-[30%] bg-white/40 backdrop-filter backdrop-blur-xl  border rounded-tr-[50px] rounded-bl-[50px] p-10 text-black'>
+         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(1);  } }   className='h-[84%] relative cursor-pointer hover:mb-5 duration-500  w-[30%] bg-white/40 backdrop-filter backdrop-blur-xl  border rounded-tr-[50px] rounded-bl-[50px] p-10 text-black'>
 
             {/* Card col */}
             <div className='flex flex-col gap-5 w-fit '>
@@ -596,7 +596,7 @@ const PayPlans = ({ isOutside = false, }) => {
                     fill="#5D9695"
                   />
                 </svg>
-                <p class="text-[32px] ">One-Time</p>
+                <p class="text-[32px] ">One - Time</p>
              
               </div>
                
@@ -622,7 +622,7 @@ const PayPlans = ({ isOutside = false, }) => {
                
               </div>
 
-              <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` flex w-full py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Get Started</p>
+              <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` absolute bottom-3 w-[80%] flex  py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Get Started</p>
            
             </div>
           
@@ -631,7 +631,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
          {/* One-Year*/}
-         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(2);  }}  className='h-[80%] animate-fadeIn cursor-pointer  hover:mb-5 duration-500  w-[30%] bg-white/60 backdrop-filter backdrop-blur-md shadow-lg  rounded-tr-[50px] rounded-bl-[50px] p-10 text-black '>
+         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(2);  }}  className='h-[84%] relative animate-fadeIn cursor-pointer  hover:mb-5 duration-500  w-[30%] bg-white/60 backdrop-filter backdrop-blur-md shadow-lg  rounded-tr-[50px] rounded-bl-[50px] p-10 text-black '>
        
               {/*  Card col */}
               <div className='flex flex-col gap-5 w-fit  '>
@@ -701,7 +701,7 @@ const PayPlans = ({ isOutside = false, }) => {
                    fill="#5D9695"
                  />
               </svg>
-                <p class="text-[32px] ">One-Year</p>
+                <p class="text-[32px] ">One - Year</p>
                 </div>
 
                 <p className='px-4 py-2 rounded-full bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)] text-white'>Best Value</p>
@@ -727,11 +727,12 @@ const PayPlans = ({ isOutside = false, }) => {
                    <div className='flex items-center justify-center gap-4 '> {svgTik} <p>Ask a radiologist (Unlimited Questions) </p> </div>
                    <div className='flex items-center justify-center gap-4 '> {svgTik} <p>Follow-up Consultation </p> </div>
                    <div className='hidden items-center justify-center gap-4 '> {svgTik} <p>Digital Access to Medical History </p> </div>
+                   <div className='flex items-center justify-center gap-4 '> {svgTik} <p>Digital Access to Medical History </p> </div>
                    <p></p>
                  
                </div>
 
-               <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` flex w-full py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Get Started</p>
+               <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` absolute bottom-3 w-[80%] flex py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Get Started</p>
 
             
              </div>
@@ -744,7 +745,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
          {/* Five-Year*/}
-         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(3);}} className='h-[80%] cursor-pointer  hover:mb-5 duration-500 r w-[30%] bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)] shadow-xl border rounded-tr-[50px] rounded-bl-[50px] p-10 text-black'>
+         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(3);}} className='h-[84%] relative cursor-pointer  hover:mb-5 duration-500 r w-[30%] bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)] shadow-xl border rounded-tr-[50px] rounded-bl-[50px] p-10 text-black'>
 
             {/* Card col */}
             <div className='flex flex-col gap-5 w-fit text-white '>
@@ -763,7 +764,7 @@ const PayPlans = ({ isOutside = false, }) => {
                    fill="#ffffff"
                  />
                </svg>
-                <p class="text-[32px] ">Five Year</p>
+                <p class="text-[32px] ">Lifetime</p>
              
               </div>
                
@@ -786,12 +787,13 @@ const PayPlans = ({ isOutside = false, }) => {
                   <div className='flex items-center justify-center gap-4 '> {svgTikWhite} <p>Ask a radiologist (Unlimited Questions) </p> </div>
                   <div className='flex items-center justify-center gap-4 '> {svgTikWhite} <p>Follow-up Consultation </p> </div>
                   <div className='hidden items-center justify-center gap-4 '> {svgTikWhite} <p>Digital Access to Medical History </p> </div>
+                  <div className='flex items-center justify-center gap-4 '> {svgTikWhite} <p>Digital Access to Medical History </p> </div>
                   <p></p>
                 
               </div>
                   
                    
-              <p onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className='flex animate-fadeIn w-full cursor-pointer py-3 rounded-full  items-center justify-center bg-white text-second  self-center'>Get Started</p>
+              <p onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className=' absolute bottom-3 flex animate-fadeIn w-[80%] cursor-pointer py-3 rounded-full  items-center justify-center bg-white text-second  self-center'>Get Started</p>
               
            
             </div>
@@ -854,7 +856,7 @@ const PayPlans = ({ isOutside = false, }) => {
                     fill="#ff4949"
                   />
                 </svg>
-                <p class="text-[24px] ">One-Time</p>
+                <p class="text-[24px] ">One - Time</p>
              
               </div>
               

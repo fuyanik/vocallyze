@@ -223,7 +223,6 @@ useEffect(() => {
 
 
 
-
   //All amount variables and *Global* variables are set here
   //...
   const AmountCalculator = (mainPay) => {
@@ -242,7 +241,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Oscar') {
-      gV.discountPercent = 45;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -256,7 +255,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Aetna') {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -270,7 +269,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Molina Healthcare') {
-      gV.discountPercent = 40;
+      gV.discountPercent = 20;
 
       //Insurance discount
       //...
@@ -284,7 +283,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Humana') {
-      gV.discountPercent = 45;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -298,7 +297,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Cigna') {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -312,7 +311,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Magellan') {
-      gV.discountPercent = 30;
+      gV.discountPercent = 20;
 
       //Insurance discount
       //...
@@ -326,7 +325,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Anthem') {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -340,7 +339,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Blue California') {
-      gV.discountPercent = 45;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -354,7 +353,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Blue Shield') {
-      gV.discountPercent = 40;
+      gV.discountPercent = 20;
 
       //Insurance discount
       //...
@@ -368,7 +367,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Care Plus') {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -382,7 +381,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Freedom Health') {
-      gV.discountPercent = 30;
+      gV.discountPercent = 20;
 
       //Insurance discount
       //...
@@ -410,7 +409,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'United American') {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -424,7 +423,7 @@ useEffect(() => {
     }
 
     if (gV.insuranceCompany === 'Caresource') {
-      gV.discountPercent = 35;
+      gV.discountPercent = 25;
 
       //Insurance discount
       //...
@@ -522,7 +521,7 @@ useEffect(() => {
     <section className='w-[92vw] lg:w-full  animate-fadeIn flex flex-col h-[58%] pt-0 px-2 text-pri'>
       <header className='flex flex-col gap-2'>
         <header className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='text-[32px] font-bold text-pri'>Contact Details</p>
+          <p className='lg:text-[32px] text-[22px] font-bold text-pri'>Contact Details</p>
 
           <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
         </header>
@@ -617,7 +616,7 @@ useEffect(() => {
             addToLocalStorage('question', e.target.value); 
           }}
           type='text'
-          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[35vh] shadow-md h-[30vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-secondTrans '
+          className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[35vh] shadow-md iphone7:h-[30vh] h-[34vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-secondTrans '
           placeholder='Every detail matters to us.'
         />
       </div>
@@ -631,7 +630,7 @@ useEffect(() => {
     <section className='w-[92vw] lg:w-full animate-fadeIn   flex flex-col h-[58%] pt-0 px-2'>
       <header className='flex flex-col gap-2'>
         <div className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='text-[32px] font-bold text-pri'>Medical Images</p>
+          <p className='lg:text-[32px] text-[22px] font-bold text-pri'>Medical Images</p>
 
           <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
         </div>
@@ -894,7 +893,7 @@ useEffect(() => {
       />
 
      
-      <div className={`w-screen h-screen overflow-hidden   ${isDropdownSet && "bg-black/20" } ${isPopupOpen && "blur-lg"} duration-700 lg:flex lg:flex-row flex flex-col items-center  font-product `}>
+      <div className={`w-screen h-screen overflow-hidden   ${isDropdownSet && "lg:bg-black/20 bg-normal" } ${isPopupOpen && "lg:blur-lg blur-none"} duration-700 lg:flex lg:flex-row flex flex-col items-center  font-product `}>
 
         {/*  Stepper */}
         {false && (
@@ -910,11 +909,13 @@ useEffect(() => {
         )}
         
         <div className='lg:w-1/2  lg:px-10   relative w-screen h-full  flex flex-col items-center lg:justify-center justify-start  '>
+         
+         {/* Web Logo */}
+         <Link to={"/"}>  <img className='absolute lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
        
-        <Link to={"/"}>  <img className='absolute lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
-       
+          {/* Mobile Logo & Sample Reports */}
          <div className='flex lg:hidden w-full px-5 justify-between items-center  '>
-           <Link to={"/"}>  <img className='  w-32 ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+           <Link to={"/"}>  <img className='  iphone7:w-32 w-40 ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
       
            <div  onClick={() => {   setIsPopupOpen2(!isPopupOpen2); }}   className='w-fit  duration-500 bg-black text-white  flex items-center gap-5  relative border border-black px-4 py-1 rounded-full text-sm'>
           
@@ -930,33 +931,15 @@ useEffect(() => {
           </div>
 
          </div>
-
-
-        {/*  Want to see sample reports */}
-        <div className='lg:w-[46vw] hidden self-start lg:self-auto  '>
-          <div
-            onClick={() => {
-              setIsPopupOpen2(!isPopupOpen2);
-            }}
-            className='w-fit self-start  duration-500 bg-black text-white  flex items-center gap-5 left-5 lg:left-0 relative border border-black px-4 py-1 rounded-full'>
-            <p className='duration-500'>
-              {isPopupOpen2 ? 'Close the sample reports' : 'Want to see a sample report? '}
-            </p>
-            <img
-              className={`h-5 ${isPopupOpen2 ? 'rotate-180' : 'rotate0'}  duration-500 `}
-              width='20'
-              height='5'
-              src='https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png'
-              alt='expand-arrow--v1'
-            />
-          </div>
-        </div>
-
+        
+        <div className='lg:hidden flex iphone7:mt-0 mt-2'></div>
+     
         {activeStep == 0 && HistorySymptoms}
         {activeStep == 1 && ContactDetail}
         {activeStep == 2 && MedicalImages}
         {activeStep == 3 && <Insurance />}
         {activeStep == 999 && <AvailableRadiologists />}
+       
         
          </div>
        
@@ -1079,7 +1062,7 @@ useEffect(() => {
         <div
           className={`absolute ${
             isPopupOpen && 'hidden'
-          } w-screen  lg:w-[45vw]  ${isDropdownSet && "hidden"} lg:bottom-10 bottom-3  left-0  flex items-center justify-between font-product animate-fadeIn`}>
+          } w-screen  lg:w-1/2 lg:px-10 px-0  ${isDropdownSet && "lg:hidden flex"} lg:bottom-10 bottom-3   gap-3 lg:justify-end justify-center  flex items-center font-product animate-fadeIn`}>
           {/* Back Button */}
           {activeStep != 0 && (
       
@@ -1087,7 +1070,7 @@ useEffect(() => {
               onClick={() => {
                 setGlobalState('activeStep', activeStep - 1);
               }}
-              className={` ${isDropdownSet && "hidden"}  w-11 h-11 absolute z-20 left-5  lg:right-80 right-0  animate-leftToRight rounded-full bg-second flex items-center justify-center  text-white`}>
+              className={` ${isDropdownSet && "flex"}  w-11 h-11  z-20 l  animate-leftToRight rounded-full bg-second flex items-center justify-center  text-white`}>
               {' '}
               <img
                 width='20'
@@ -1098,7 +1081,7 @@ useEffect(() => {
             </button>
           )}
 
-          {true && <div> </div>}
+      
 
 
 
@@ -1112,7 +1095,7 @@ useEffect(() => {
               /* Payment Step States */
               activeStep != 3 && setGlobalState('activeStep', activeStep + 1);
              // activeStep == 3 && setIsPopupOpen(true);
-              activeStep == 3 && setGlobalState("isDropdownSet", true);
+              !gV.mq.matches && activeStep == 3 && setGlobalState("isDropdownSet", true);
 
               (activeStep == 3 && isDropdownSet) && setIsPopupOpen(true);
               
@@ -1160,10 +1143,10 @@ useEffect(() => {
               // user && console.log('user', user.email);
             }}
             className={`bg-second ${
-              activeStep == 0 ? 'w-[84%] right-8 ' : 'lg:w-[46%] w-[70%] right-8'
+              activeStep == 0 ? 'lg:w-[44%] w-[90%]  ' : 'lg:w-[46%] w-[70%] '
             } 
             
-            z-20  relative duration-500 font-bold self-end float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
+            z-20   duration-500 font-bold self-end float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
           
             Continue to {activeStep == 0 && 'History'} {activeStep == 1 && 'Medical Images '}{' '}
             {activeStep == 2 && 'Insurance'} {activeStep == 3 && 'Payment'} {activeStep == 4 && ''}

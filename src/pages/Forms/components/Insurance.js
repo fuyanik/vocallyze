@@ -17,7 +17,7 @@ const Insurance = () => {
         
     <header className="flex flex-col gap-2">
      <header className="gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] ">
-       <p className="text-[32px] font-bold text-pri">
+       <p className="lg:text-[32px] text-[22px] font-bold text-pri">
          Insurance
        </p>
 
@@ -44,7 +44,7 @@ const Insurance = () => {
    </div>
 
   <div className=" ">
-  { isDropdownSet && (gV.mq.matches ?  <SwiperPage/> : <PayPlans/>) }
+  { isDropdownSet && (gV.mq.matches ? <div className='relative right-[23px] iphone7:mt-0 mt-10' > <SwiperPage/> </div>  : <PayPlans/>) }
   </div>
    
    </section>

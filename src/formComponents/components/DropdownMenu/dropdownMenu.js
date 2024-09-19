@@ -70,7 +70,7 @@ const DropdownMenu = ({top,right}) => {
              className="item duration-500"
              onClick={(e) => {
              
-              
+             gV.mq.matches &&  setGlobalState("isDropdownSet", true);
 
                setIsSelected(e.target.textContent);
                gV.insuranceCompany = e.target.textContent;
