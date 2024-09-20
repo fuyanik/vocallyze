@@ -577,7 +577,7 @@ const PayPlans = ({ isOutside = false, }) => {
          
         
          {/* One-Time */}
-         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(1);  } }   className='h-[84%] relative cursor-pointer hover:mb-5 duration-500  w-[30%] bg-white/40 backdrop-filter backdrop-blur-xl  border rounded-tr-[50px] rounded-bl-[50px] p-10 text-black'>
+         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(1);  } }   className='h-[84%] relative cursor-pointer hover:mb-5 duration-500  w-[30%] bg-white/40 backdrop-filter backdrop-blur-xl  border rounded-tr-[50px] rounded-bl-[50px] py-10 px-8 text-black'>
 
             {/* Card col */}
             <div className='flex flex-col gap-5 w-fit '>
@@ -631,7 +631,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
          {/* One-Year*/}
-         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(2);  }}  className='h-[84%] relative animate-fadeIn cursor-pointer  hover:mb-5 duration-500  w-[30%] bg-white/60 backdrop-filter backdrop-blur-md shadow-lg  rounded-tr-[50px] rounded-bl-[50px] p-10 text-black '>
+         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(2);  }}  className='h-[84%] relative animate-fadeIn cursor-pointer  hover:mb-5 duration-500  w-[30%] bg-white/60 backdrop-filter backdrop-blur-md shadow-lg  rounded-tr-[50px] rounded-bl-[50px] py-10 px-8 text-black '>
        
               {/*  Card col */}
               <div className='flex flex-col gap-5 w-fit  '>
@@ -745,7 +745,7 @@ const PayPlans = ({ isOutside = false, }) => {
 
 
          {/* Five-Year*/}
-         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(3);}} className='h-[84%] relative cursor-pointer  hover:mb-5 duration-500 r w-[30%] bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)] shadow-xl border rounded-tr-[50px] rounded-bl-[50px] p-10 text-black'>
+         <div onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } }  onMouseMove={()=>{setSelectedCard(3);}} className='h-[84%] relative cursor-pointer  hover:mb-5 duration-500 r w-[30%] bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)] shadow-xl border rounded-tr-[50px] rounded-bl-[50px] py-10 px-8 text-black'>
 
             {/* Card col */}
             <div className='flex flex-col gap-5 w-fit text-white '>

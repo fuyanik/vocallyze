@@ -30,6 +30,10 @@ const Register = ({isMailErr = false }) => {
  // toast(error.code, { type: "error" });
   const handleRegister = async () => {
 
+   if(password == password2) {
+
+  
+
     try {
         await createUserWithEmailAndPassword(auth, localStorage.getItem("mailAddress"), password).then((userCredential) => {
 
@@ -51,6 +55,12 @@ const Register = ({isMailErr = false }) => {
           return;
         }
       }
+
+    }
+
+    else{
+      toast("Passwords must match.", { type: "error" });
+    }
  
 };
 

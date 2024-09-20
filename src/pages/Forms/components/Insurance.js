@@ -46,6 +46,13 @@ const Insurance = () => {
   <div className=" ">
   { isDropdownSet && (gV.mq.matches ? <div className='relative right-[23px] iphone7:mt-0 mt-10' > <SwiperPage/> </div>  : <PayPlans/>) }
   </div>
+
+   { !isDropdownSet &&
+    <div className='w-full h-full lg:mt-2 flex items-center justify-start'> 
+
+    <img className='w-[90%] lg:w-[55%] lg:mt-4 mt-0 ' src='https://vitamu.imgix.net/22HRS-5.png?w=2450&h=1873&rect=0%2C221%2C2450%2C1873' alt='monthly numbers'/>
+    
+    </div>}
    
    </section>
   )

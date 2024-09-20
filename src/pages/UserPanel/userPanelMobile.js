@@ -28,6 +28,7 @@ import Faq from "../DropdownPages/Faq/faq";
 import SwiperPage from "../Swiper/swiper";
 import BiRadsDropdown from "../../homeComponents/BiRadsDropdown/biRadsDropdown";
 import PrimaryButton from "../../homeComponents/microComponents/primaryButton/primaryButton";
+import NavbarGen from "../../homeComponents/NavbarGen/NavbarGen";
 
 
 const UserPanelMobile = () => {
@@ -328,10 +329,16 @@ const UserPanelMobile = () => {
 
   return (
     <>
-      <Navbar mobileMenuText={"Menu"} mobileMenuTo={"/MobileNavMenu"} />
+     
 
       <div className="userPanel-mobile">
         <div className="userPanel-mobile__header ">
+          <div className="flex items-center justify-center w-full h-10 ">
+          <Link to={"/"}>  
+             <img className='w-40' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/>
+           </Link> 
+
+          </div>
        
           <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> {false ? <p className=" h-12 mt-2 bg-[#00000044] w-[40vw] rounded-lg animate-pulse"> </p>  :   user.displayName.split(" ")[0]  } </p>  
            

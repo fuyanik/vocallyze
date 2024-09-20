@@ -579,6 +579,13 @@ useEffect(() => {
           placeholder='Type your phone number here.'
         />
       </div>
+
+      <div className='flex flex-col gap-1 items-center justify-center py-3 px-3 w-full lg:w-[60%] shadow-xl bg-black  rounded-[30px] border border-teal-200 iphone7:mt-3 mt-10'>
+      <img className='' width="55" height="55" src="https://img.icons8.com/clouds/100/checkmark--v1.png" alt="checkmark--v1"/>
+      <p className='font-bold text-white'>Your data is securely stored and protected</p>
+      <p className='text-sm text-white opacity-70 text-center'>We do not send spam or share your information with third parties.</p>
+      <p></p>
+      </div>
     </section>
   );
 
@@ -1070,7 +1077,7 @@ useEffect(() => {
               onClick={() => {
                 setGlobalState('activeStep', activeStep - 1);
               }}
-              className={` ${isDropdownSet && "flex"}  w-11 h-11  z-20 l  animate-leftToRight rounded-full bg-second flex items-center justify-center  text-white`}>
+              className={` ${isDropdownSet && "flex"}  w-11 h-11  z-20 l  animate-leftToRight rounded-full bg-black flex items-center justify-center  text-white`}>
               {' '}
               <img
                 width='20'
@@ -1142,7 +1149,7 @@ useEffect(() => {
               // console.log('activeStep', activeStep, 'name', name, 'mail', mail, 'phone', phone);
               // user && console.log('user', user.email);
             }}
-            className={`bg-second ${
+            className={`bg-black ${
               activeStep == 0 ? 'lg:w-[44%] w-[90%]  ' : 'lg:w-[46%] w-[70%] '
             } 
             

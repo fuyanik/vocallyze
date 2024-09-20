@@ -131,11 +131,11 @@ const ChatScreen = () => {
       <div class="relative flex items-center space-x-4">
          <div class="relative">
            
-         <img src="https://vitamu.imgix.net/radiologyRe/Pamela%20J.%20DiPiro.png?auto=undefined%2Ccompress" alt="" class="w-10 sm:w-16 h-10 sm:h-16 rounded-full"/>
+         <img src="" alt="" class="w-10 sm:w-16 h-10 sm:h-16 rounded-full"/>
          </div>
          <div class="flex flex-col leading-tight">
             <div class="text-lg mt-1 flex items-center">
-               <span class="text-gray-700 mr-3">Pamela J. DiPiro</span>
+               <span class="text-gray-700 mr-3">Dr. Samuel Reed</span>
             </div>
             <span class="text-md text-gray-600">
             Diagnostic Radiology</span>

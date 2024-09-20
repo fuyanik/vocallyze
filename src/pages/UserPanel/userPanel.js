@@ -582,7 +582,7 @@ return (
                     }}
                     className={`${
                       isSlect5 && "text-[#000000]"
-                    } cursor-pointer  hover:text-[#000000] duration-200`}
+                    } cursor-pointer hidden  hover:text-[#000000] duration-200`}
                   >
                     Upgrade
                   </p>

@@ -122,7 +122,7 @@ const Login = ({isMailErr = false }) => {
   
     {!isUserFound ?  
     
-    <div className={`login-page ${isMailErr ? "lg:mt-0" : "lg:mt-0"}  mt-10`} >
+    <div className={`login-page ${isMailErr ? "lg:mt-0" : "lg:mt-0"}  mt-5`} >
         <div
           className={`${isMailErr ? "login-page__err" : "login-page__main"}`}
         >
@@ -173,7 +173,7 @@ const Login = ({isMailErr = false }) => {
               </div>
 
              
-                <p onClick={handleResetPassword}className="login-page__main__form-area__inputs__forgot-password ">
+                <p onClick={handleResetPassword}className="login-page__main__form-area__inputs__forgot-password hidden ">
                   Reset your password
                 </p>
              
@@ -213,7 +213,7 @@ const Login = ({isMailErr = false }) => {
             </p>
           )}
           {!isMailErr && (
-            <Link className="style-none" to="/form-new">
+            <Link className="style-none" to="/">
               <p className="border-b border-black">Get Started</p>
             </Link>
           )}
