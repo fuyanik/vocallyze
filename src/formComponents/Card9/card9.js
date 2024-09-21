@@ -112,7 +112,7 @@ const handleImageChange = (e) => {
     //..
    
       setDoc(
-        doc(db, "Medifyre", `${user.email}`),
+        doc(db, "Medifyre", localStorage.getItem("mailAddress")),
         {
           FirstRecheck: { imagesName: arrayUnion(item.name) },
         },
@@ -149,7 +149,7 @@ const handleImageChange = (e) => {
         
 
             setDoc(
-              doc(db, "Medifyre", `${user.email}`),
+              doc(db, "Medifyre", localStorage.getItem("mailAddress")),
               {
                 FirstRecheck: {
                   
@@ -184,7 +184,7 @@ const handleImageChange = (e) => {
       );
 
       setDoc(
-        doc(db, "Medifyre", `${user.email}`),
+        doc(db, "Medifyre", localStorage.getItem("mailAddress")  ) ,
         {
           FirstRecheck: { zipNames: arrayUnion(`first_recheck_medical${Date.now()}.zip`) },
         },
@@ -210,7 +210,7 @@ const handleImageChange = (e) => {
               //update doc push content url to firebase database array
   
               setDoc(
-                doc(db, "Medifyre", `${user.email}`),
+                doc(db, "Medifyre", localStorage.getItem("mailAddress")    ),
                 {
                   FirstRecheck: { zipUrls: arrayUnion(url) },
                 },
