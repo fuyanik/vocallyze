@@ -117,7 +117,7 @@ const UserPanel = () => {
 
     const [count, setCount] = useState(0);
  
-     useEffect(() => {
+   useEffect(() => {
     
     const interval = setInterval(() => {
      
@@ -248,7 +248,7 @@ const UserPanel = () => {
        gV.currentDate2 = ` ${returnAccordionMonth2()} ${userCreateDay2} , ${userCreateYear2}`
    
    
-        useEffect(() => {
+     useEffect(() => {
 
       const auth = getAuth();
       const user = auth.currentUser;
@@ -260,6 +260,8 @@ const UserPanel = () => {
       //Get All User Info and set to hooks
       //..
        user &&  getInfo();
+
+       
 
 
 
@@ -289,6 +291,8 @@ const UserPanel = () => {
     }, [user]);
 
 
+
+  
     //Change email
     //..
     const onChangeEmail = (e) => {
@@ -484,14 +488,8 @@ return (
                 <p className=" flex gap-2 ">
                   {" "}
                   <p>Hi,</p>
-                  {false ? (
-                    <p className=" h-14 mt-6 bg-[#00000044] w-[20vw] rounded-lg animate-pulse">
-                      {" "}
-                    </p>
-                  ) : (
-                    user.displayName.split(' ')[0]
-                  )}{" "}
-                </p>
+                   { user.displayName ? user.displayName.split(' ')[0] : user.displayName }
+                 </p>
 
                  
               

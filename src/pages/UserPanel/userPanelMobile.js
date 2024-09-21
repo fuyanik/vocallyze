@@ -340,7 +340,9 @@ const UserPanelMobile = () => {
 
           </div>
        
-          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> {false ? <p className=" h-12 mt-2 bg-[#00000044] w-[40vw] rounded-lg animate-pulse"> </p>  :   user.displayName.split(' ')[0]  } </p>  
+          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> 
+          { user.displayName ? user.displayName.split(' ')[0] : user.displayName }
+          </p>  
            
            
           <TabsMenu />
