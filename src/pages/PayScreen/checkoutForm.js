@@ -105,8 +105,9 @@ export default function CheckoutForm() {
 
 
 
+
         const url = `http://www.medifyre.com/pay-succes?email=${email}&pass=${pass}`;
-        // Make sure to change this to your payment completion page
+        // Make sure to change this to your payment completion page.
        
 
         const result = await stripe.confirmPayment({
