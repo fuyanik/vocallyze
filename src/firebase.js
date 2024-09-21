@@ -10,14 +10,14 @@ import { initializeAnalytics } from 'firebase/analytics';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCKG2B6JBmAEyRMglBv4bL6dsjaRdQveEw",
-    authDomain: "vitamureal.firebaseapp.com",
-    projectId: "vitamureal",
-    storageBucket: "vitamureal.appspot.com",
-    messagingSenderId: "457271630348",
-    appId: "1:457271630348:web:6f68307cd81b29370bac29",
-    measurementId: "G-VLCS9Y7XF5"
-  };
+  apiKey: "AIzaSyBr-WyxIuoEsX_e5LEa1r8AvJ1cskRdFI0",
+  authDomain: "medifyre-1b1bc.firebaseapp.com",
+  projectId: "medifyre-1b1bc",
+  storageBucket: "medifyre-1b1bc.appspot.com",
+  messagingSenderId: "1055498225865",
+  appId: "1:1055498225865:web:884d61aaa60e3bd677a518",
+  measurementId: "G-ZGF1X3RF7N"
+};
 
 
  

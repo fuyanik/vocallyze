@@ -30,7 +30,7 @@ const [storageRef, setstorageRef] = useState(null)
 const auth = getAuth();
 const user = auth.currentUser;
    
-const userRef = user ?  doc(db, "Mitrua", `${user.email}`) : null;
+const userRef = user ?  doc(db, "Medifyre", `${user.email}`) : null;
 
 
 
@@ -112,7 +112,7 @@ const handleImageChange = (e) => {
     //..
    
       setDoc(
-        doc(db, "Mitrua", `${user.email}`),
+        doc(db, "Medifyre", `${user.email}`),
         {
           FirstRecheck: { imagesName: arrayUnion(item.name) },
         },
@@ -149,7 +149,7 @@ const handleImageChange = (e) => {
         
 
             setDoc(
-              doc(db, "Mitrua", `${user.email}`),
+              doc(db, "Medifyre", `${user.email}`),
               {
                 FirstRecheck: {
                   
@@ -184,7 +184,7 @@ const handleImageChange = (e) => {
       );
 
       setDoc(
-        doc(db, "Mitrua", `${user.email}`),
+        doc(db, "Medifyre", `${user.email}`),
         {
           FirstRecheck: { zipNames: arrayUnion(`first_recheck_medical${Date.now()}.zip`) },
         },
@@ -210,7 +210,7 @@ const handleImageChange = (e) => {
               //update doc push content url to firebase database array
   
               setDoc(
-                doc(db, "Mitrua", `${user.email}`),
+                doc(db, "Medifyre", `${user.email}`),
                 {
                   FirstRecheck: { zipUrls: arrayUnion(url) },
                 },

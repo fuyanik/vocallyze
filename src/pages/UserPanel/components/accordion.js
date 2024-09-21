@@ -91,7 +91,7 @@ export default function CustomizedAccordions({userActiveStep, userCreateDay, use
  const getUserInfo = async () => {
    //Control PAİD users
    //.....
-   const docRef = doc(db, "Mitrua", `${user.email}`);
+   const docRef = doc(db, "Medifyre", `${user.email}`);
    const docSnap = await getDoc(docRef);
 
    if (docSnap.exists()) {

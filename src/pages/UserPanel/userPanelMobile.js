@@ -92,7 +92,7 @@ const UserPanelMobile = () => {
 
 
   const getInfo = async  () => {
-    const docRef = doc(db, "Mitrua", `${user.email}`);
+    const docRef = doc(db, "Medifyre", `${user.email}`);
 
     //Paying users
     await  getDoc(docRef).then((doc) => {
@@ -192,7 +192,7 @@ const UserPanelMobile = () => {
   };
   //update email when user clicks update email button
   const ChangeEmail = async () => {
-    const cityRef = doc(db, "Mitrua", `${user.email}`);
+    const cityRef = doc(db, "Medifyre", `${user.email}`);
 
     setDoc(cityRef, { MailAddress: changedEmail }, { merge: true });
 
@@ -229,7 +229,7 @@ const UserPanelMobile = () => {
   //update password when user clicks update password button
   const updateUserPassword = async () => {
     await setDoc(
-      doc(db, "Mitrua", `${user.email}`),
+      doc(db, "Medifyre", `${user.email}`),
       {
         FirstRecheck: { Password: changedPassword },
       },
@@ -267,7 +267,7 @@ const UserPanelMobile = () => {
 
   const updatePhoneNumber = async () => {
     await setDoc(
-      doc(db, "Mitrua", `${user.email}`),
+      doc(db, "Medifyre", `${user.email}`),
       {
         FirstRecheck: { phoneNumber: changedPhone },
       },
@@ -299,7 +299,7 @@ const UserPanelMobile = () => {
 
   const SelfExamEnrollButton = async () => {
     await setDoc(
-      doc(db, "Mitrua", `${user.email}`),
+      doc(db, "Medifyre", `${user.email}`),
       {
         FirstRecheck: {
           remindMe: true,
@@ -340,7 +340,7 @@ const UserPanelMobile = () => {
 
           </div>
        
-          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> {false ? <p className=" h-12 mt-2 bg-[#00000044] w-[40vw] rounded-lg animate-pulse"> </p>  :   user.displayName.split(" ")[0]  } </p>  
+          <p className="userPanel-mobile__header__title flex gap-2 "> <p>Hi,</p> {false ? <p className=" h-12 mt-2 bg-[#00000044] w-[40vw] rounded-lg animate-pulse"> </p>  :   user.displayName.split(' ')[0]  } </p>  
            
            
           <TabsMenu />

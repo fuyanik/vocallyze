@@ -14,8 +14,32 @@ const Register = ({isMailErr = false }) => {
 
     
   const auth = getAuth();
-  const user = auth.currentUser;
-  const [count, setCount] = useState(8);
+
+  const updatePassword = async ()  => {
+      
+    //fetch firebase data firestore
+    const userRef = doc(db, "Medifyre", `${localStorage.getItem("mailAddress")}`);
+    const docSnap = await getDoc(userRef);
+    const data = docSnap.data();
+
+    const rechecks = data.Rechecks;
+
+    const returnRecheckNumber = async () => {
+
+       rechecks[0].password = password;
+       rechecks[0].isPay = true
+       rechecks[0].activeStep = 2;
+     
+       await updateDoc(userRef, { Rechecks: rechecks})
+
+   }
+
+
+    //Control user is have images or not for detect active step
+    //...
+    returnRecheckNumber();
+
+}
 
 
 
@@ -45,6 +69,7 @@ const Register = ({isMailErr = false }) => {
        
         });
         updateProfile(auth.currentUser, { displayName: localStorage.getItem("name") });
+        updatePassword()
       } catch (error) {
         if (error.code === 'auth/email-already-in-use') {
             toast(error.code, { type: "error" });

@@ -496,7 +496,8 @@ useEffect(() => {
   
   }, []);
 
-
+  /*
+ //Create random password
   useEffect(() => {
     //Create random password
     //...
@@ -506,11 +507,10 @@ useEffect(() => {
       setIsCameForm(true);
     }
   }, []);
-
+*/
   {
     /* Start Step Contents */
   }
-
   const contactInputStyle =
     'w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-priTrans  bg-slate-100 ';
 
@@ -814,7 +814,6 @@ useEffect(() => {
   
   };
 
-
   const [isLoginPopup] = useGlobalState('isLoginPopup');
 
   useEffect(() => {
@@ -829,9 +828,9 @@ useEffect(() => {
 
 
   useEffect(() => {
-   /*
+   
     setDoc(
-      doc(db, 'MitruaPartial', `${user ? user.email : gV.MailAddres }`),
+      doc(db, 'MedifyrePartial', `${user ? user.email : gV.MailAddres }`),
       {
         Rechecks: {
           formStep: activeStep,
@@ -857,7 +856,7 @@ useEffect(() => {
       },
       { merge: true },
     );
-    */
+    
   }, [activeStep]);
   
   
@@ -1112,7 +1111,7 @@ useEffect(() => {
                 AmountCalculator(mainPayAmount);
 
                 setDoc(
-                  doc(db, 'Mitrua', `${localStorage.getItem("mailAddress") }`),
+                  doc(db, 'Medifyre', `${localStorage.getItem("mailAddress") }`),
                   {
                     Rechecks: [
                       {

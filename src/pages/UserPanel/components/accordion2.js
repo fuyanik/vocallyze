@@ -98,7 +98,7 @@ export default function CustomizedAccordions({totalRecheck}) {
  
  // 
 
- const docRef = doc(db, "Mitrua", `${user.email}`);
+ const docRef = doc(db, "Medifyre", `${user.email}`);
 
  //get data firestore database 
 
@@ -106,7 +106,7 @@ export default function CustomizedAccordions({totalRecheck}) {
 
  const getInfo = async () => {
 
-  const docRef = doc(db, "Mitrua", `${user.email}`);
+  const docRef = doc(db, "Medifyre", `${user.email}`);
   await getDoc(docRef).then((doc) => {
     if (doc.exists()) { 
       console.log("Current data: ", doc.data());

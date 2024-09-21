@@ -135,7 +135,7 @@ const UserPanel = () => {
    const getInfo = async  () => {
     
 
-    const docRef = doc(db, "Mitrua", `${user.email}`);
+    const docRef = doc(db, "Medifyre", `${user.email}`);
 
     //Paying users
     await getDoc(docRef).then((doc) => {
@@ -489,7 +489,7 @@ return (
                       {" "}
                     </p>
                   ) : (
-                    user.displayName
+                    user.displayName.split(' ')[0]
                   )}{" "}
                 </p>
 

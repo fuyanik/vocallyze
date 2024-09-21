@@ -52,7 +52,6 @@ export default function App() {
             <Route path="/form-new-payments" element={<FormNewPayment/>} />
           
             <Route path="/pay-screen" element={<PayScreen/>} />
-
             <Route path="/pay-succes" element={<Payingo/>} />
 
             <Route path="/user-panel" element={<UserPanel/>} />

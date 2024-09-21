@@ -48,7 +48,7 @@ const Insurance = () => {
   </div>
 
    { !isDropdownSet &&
-    <div className='w-full h-full lg:mt-2 flex items-center justify-start'> 
+    <div className='w-full h-full lg:mt-2 flex items-center lg:justify-start justify-center'> 
 
     <img className='w-[90%] lg:w-[55%] lg:mt-4 mt-0 ' src='https://vitamu.imgix.net/22HRS-5.png?w=2450&h=1873&rect=0%2C221%2C2450%2C1873' alt='monthly numbers'/>
     

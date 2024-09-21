@@ -76,7 +76,7 @@ const Payingo = () => {
     const updatePay = async ()  => {
       
          //fetch firebase data firestore
-         const userRef = doc(db, "Mitrua", `${localStorage.getItem("mailAddress")}`);
+         const userRef = doc(db, "Medifyre", `${localStorage.getItem("mailAddress")}`);
          const docSnap = await getDoc(userRef);
          const data = docSnap.data();
   
