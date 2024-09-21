@@ -553,7 +553,7 @@ useEffect(() => {
   <p className='text-lg text-pri font-bold mt-4'>E-Mail Address</p>
   <input
     
-    value={mail || localStorage.getItem("mailAddress")}
+    value={mail || localStorage.getItem("mailAddress") }
     onChange={(e) => {
       const lowerCaseEmail = e.target.value.toLowerCase(); // Küçük harfe çevir
       setMail(lowerCaseEmail);

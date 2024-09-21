@@ -30,7 +30,7 @@ const [storageRef, setstorageRef] = useState(null)
 const auth = getAuth();
 const user = auth.currentUser;
    
-const userRef = user ?  doc(db, "Medifyre", `${user.email}`) : null;
+const userRef = user ?  doc(db, "Medifyre", `${user.email}`) : localStorage.getItem("mailAddress");
 
 
 
@@ -97,7 +97,7 @@ const handleImageChange = (e) => {
   arrays.map((item, idx) => {
     const storageRef = ref(
       storage,
-      `/${user ? user.email : gV.MailAddres}/${idx}`
+      `/${user ? user.email : localStorage.getItem("mailAddress") }/${idx}`
     );
     const uploadImage = uploadBytesResumable(storageRef, item);
     
@@ -180,7 +180,7 @@ const handleImageChange = (e) => {
 
       const FirstRecheckStorageRef = ref(
         storage,
-        `/${user ? user.email : gV.MailAddres}/first_recheck_medical${Date.now()}.zip`
+        `/${user ? user.email : localStorage.getItem("mailAddress")}/first_recheck_medical${Date.now()}.zip`
       );
 
       setDoc(
