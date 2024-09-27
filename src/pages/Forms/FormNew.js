@@ -659,7 +659,7 @@ useEffect(() => {
           {dropdownText == 'I will share an access code.' && (
             <p className='text-priTrans'>
               {' '}
-              Once you share your access code with access@medifyre.com, image status will be updated.{' '}
+              Once you share your access code with hello@medifyre.com, image status will be updated.{' '}
             </p>
           )}
           {dropdownText == 'I prefer to ship the CD or USB stick.' && (
@@ -724,13 +724,13 @@ useEffect(() => {
         {dropdownText == 'I prefer to ship the CD or USB stick.' && (
           <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
             <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
-              You may ship your images in a CD or USB stick to the address below:
+            
             </p>
 
             <div className='flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg '>
               <p className='mt-2'>Medifyre, Inc.</p>
-              <p>169 Madison Ave #2305 New York, NY 10016</p>
-              <p>+1 646 820 1932</p>
+              <p></p>
+              <p></p>
             </div>
           </div>
         )}
@@ -743,7 +743,7 @@ useEffect(() => {
             </p>
 
             <div className='flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg '>
-              <p className=''>access@medifyre.com</p>
+              <p className=''>hello@medifyre.com</p>
             </div>
           </div>
         )}
@@ -826,11 +826,10 @@ useEffect(() => {
     setGlobalState('isLoginPopup', false);
   }, [user?.accessToken]);
 
-
   useEffect(() => {
    
     setDoc(
-      doc(db, 'MedifyrePartial', `${user ? user.email : gV.MailAddres }`),
+      doc(db, 'MedifyrePartial', `${localStorage.getItem("mailAddress") ? localStorage.getItem("mailAddress") : "none"}`),
       {
         Rechecks: {
           formStep: activeStep,
@@ -858,7 +857,6 @@ useEffect(() => {
     );
     
   }, [activeStep]);
-  
   
 
   return (
@@ -892,7 +890,6 @@ useEffect(() => {
         onDismiss={onDismiss2}
         contents={
          
-         
             <SampleReports isOutside={true} isPopup={true} />
          
         }
@@ -901,29 +898,19 @@ useEffect(() => {
      
       <div className={`w-screen h-screen overflow-hidden   ${isDropdownSet && "lg:bg-black/20 bg-normal" } ${isPopupOpen && "lg:blur-lg blur-none"} duration-700 lg:flex lg:flex-row flex flex-col items-center  font-product `}>
 
-        {/*  Stepper */}
-        {false && (
-          <Stack sx={gV.mq.matches ? { width: '100%' } : { width: '55%' }} spacing={5}>
-            <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
-              {steps.map((label, idx) => (
-                <Step key={idx}>
-                  <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-          </Stack>
-        )}
+      
         
         <div className='lg:w-1/2  lg:px-10   relative w-screen h-full  flex flex-col items-center lg:justify-center justify-start  '>
          
          {/* Web Logo */}
          <Link to={"/"}>  <img className='absolute lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
        
-          {/* Mobile Logo & Sample Reports */}
+          {/* Mobile Logo & Steooer */}
          <div className='flex lg:hidden w-full px-5 justify-between items-center  '>
            <Link to={"/"}>  <img className='  iphone7:w-32 w-40 ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
       
-           <div  onClick={() => {   setIsPopupOpen2(!isPopupOpen2); }}   className='w-fit  duration-500 bg-black text-white  flex items-center gap-5  relative border border-black px-4 py-1 rounded-full text-sm'>
+            {/*  Sample Reports */}
+           <div  onClick={() => {   setIsPopupOpen2(!isPopupOpen2); }}   className='w-fit hidden  duration-500 bg-black text-white   items-center gap-5  relative border border-black px-4 py-1 rounded-full text-sm'>
           
             <p className='duration-500'>   {isPopupOpen2 ? 'Close' : 'Sample Report'}   </p>
           
@@ -934,7 +921,20 @@ useEffect(() => {
               src='https://img.icons8.com/ios/50/ffffff/expand-arrow--v1.png'
               alt='expand-arrow--v1'
             />
-          </div>
+           </div>
+
+        {/*  Stepper */}
+        {true && (
+          <Stack sx={gV.mq.matches ? { width: '65%' } : { width: '85%' }} spacing={4}>
+            <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+              {steps.map((label, idx) => (
+                <Step key={idx}>
+                  <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+          </Stack>
+        )}
 
          </div>
         
@@ -1099,12 +1099,41 @@ useEffect(() => {
               //activeStep == 1 && handleSignup();
 
               /* Payment Step States */
-              activeStep != 3 && setGlobalState('activeStep', activeStep + 1);
+              
+
+              if(activeStep != 3 ) {
+                  if( activeStep == 0) {
+                    console.log( localStorage.getItem("name") )
+                    localStorage.getItem("name") !== null && localStorage.getItem("name") !== "" && setGlobalState('activeStep', activeStep + 1);
+                  }
+
+                  if( activeStep == 1) {
+                    const email = localStorage.getItem("mailAddress");
+                    const isValidEmail = email !== null && email !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                    isValidEmail && setGlobalState('activeStep', activeStep + 1);
+                  }
+
+                  if( activeStep == 2) {
+                    setGlobalState('activeStep', activeStep + 1);
+                  }
+
+                
+               
+
+              }
+
+
+
+
+
+
+
+
              // activeStep == 3 && setIsPopupOpen(true);
               !gV.mq.matches && activeStep == 3 && setGlobalState("isDropdownSet", true);
 
               (activeStep == 3 && isDropdownSet) && setIsPopupOpen(true);
-              
+
 
               /* Payment Step */
               if (activeStep == 3) {
@@ -1154,8 +1183,8 @@ useEffect(() => {
             
             z-20   duration-500 font-bold self-end float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
           
-            Continue to {activeStep == 0 && 'History'} {activeStep == 1 && 'Medical Images '}{' '}
-            {activeStep == 2 && 'Insurance'} {activeStep == 3 && 'Payment'} {activeStep == 4 && ''}
+             {activeStep == 0 && 'Continue'} {activeStep == 1 && 'Continue to Medical Images '}{' '}
+            {activeStep == 2 && 'Continue to Insurance'} {activeStep == 3 && 'Get Your Second Opinion'} {activeStep == 4 && ''}
           </button>
         </div>
      

@@ -329,7 +329,6 @@ const UserPanelMobile = () => {
 
   return (
     <>
-     
 
       <div className="userPanel-mobile">
         <div className="userPanel-mobile__header ">

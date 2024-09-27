@@ -30,36 +30,37 @@ const [storageRef, setstorageRef] = useState(null)
 const auth = getAuth();
 const user = auth.currentUser;
    
-const userRef = user ?  doc(db, "Medifyre", `${user.email}`) : localStorage.getItem("mailAddress");
+const userRef = user ?  doc(db, "Medifyre", `${user.email}`) : doc(db, "Medifyre", `${localStorage.getItem("mailAddress")}`)  
 
 
 
 
 const getImagesName = async () => {
-  
-  var imagesData = [];
+  try {
+    // Kullanıcının referansından dökümanı al
+    const docSnap = await getDoc(userRef);
 
- await getDoc(userRef).then((docSnap) => {
+    // Eğer döküman mevcutsa, veriyi al
     if (docSnap.exists()) {
-       
-        imagesData = docSnap.data().FirstRecheck.imagesName;
+      const imagesData = docSnap.data()?.FirstRecheck?.imagesName;
 
-   
+      // imagesData kontrolü yap
+      if (imagesData && Array.isArray(imagesData)) {
+        imagesData.forEach((item) => {
+          // Durumu güncelle
+          setImagesName((prevState) => [...prevState, item]);
+        });
+      } else {
+        console.log("imagesData verisi boş veya geçersiz.");
+      }
+    } else {
+      console.log("Döküman bulunamadı.");
     }
-
-  });
-
-
-
-  if(imagesData !== null && imagesData !== undefined ){
-
-    imagesData.map((item, idx) => {
-     setImagesName((prevState) => [...prevState, item]);
-    });
-
+  } catch (error) {
+    console.error("Veri alınırken bir hata oluştu:", error);
   }
-
 };
+
 
 
 
@@ -247,7 +248,7 @@ return (
             <div className="  "> 
               
 
-             <div className="flex relative items-center  border-blue-700 text-pri" >
+             <div className="flex relative items-center   text-pri" >
              
                 <div htmlFor="file" className="  flex self-center absolute items-center gap-3  bg-white w-fit pl-3 pr-4 py-2 rounded-3xl shadow-2xl">
                    
