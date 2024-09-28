@@ -212,7 +212,7 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
               src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
             />
         
-        { !isOutside && <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png'/>}
+        { !isOutside && <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png' alt='sample reports'/>}
           <h1 data-aos-duration="600" data-aos="fade-up"  className={`lg:text-[42px]  text-[32px]  self-center tracking-wide leading-[38px] text-center  text-black font-bold`}>  Second Opinion Report Samples </h1>
             <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
             Medifyre users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
@@ -229,24 +229,24 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
 
       {  tabsNum == 0 && 
       <div data-aos="fade-up"   data-aos-duration="800"  className='relative'>
-          <img   className='border-b   lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
+          <img   className='border-b   lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
           
        </div> }
 
 
        {tabsNum == 1 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
-          <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
+          <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
        </div> }
       
        {tabsNum == 2 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
+           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
         </div> }
       
        {tabsNum == 3 &&  
         <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
-           <img className='border-b lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png'/>
+           <img className='border-b lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
          </div> }
        
        
