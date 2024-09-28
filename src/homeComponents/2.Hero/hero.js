@@ -14,6 +14,7 @@ import AllOneService from "../5.AllOneService/allOneService";
 import Informational from "../Informational/Informational";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Helmet } from "react-helmet";
 
 
 const Hero = ({isOutside = false}) => {
@@ -65,6 +66,15 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
   return (
     <>
+
+       <Helmet>
+        {/* Preload the image */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress"
+        />
+      </Helmet>
      
 
      

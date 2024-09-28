@@ -37,8 +37,8 @@ import lottie from 'lottie-web';
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 10,
-    left: 'calc(-50% + 16px)',
-    right: 'calc(50% + 16px)',
+    left: 'calc(-50% + 12px)',
+    right: 'calc(50% + 12px)',
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
@@ -53,9 +53,11 @@ const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`& .${stepConnectorClasses.line}`]: {
     borderColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
     borderTopWidth: 3,
-    borderRadius: 1,
+    borderRadius: 3,
   },
 }));
+
+
 
 const QontoStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#eaeaf0',
@@ -156,7 +158,9 @@ ColorlibStepIcon.propTypes = {
 };
 
 
-const steps = ['', '', '', '', ''];
+const steps = ['', '', '', '', ];
+
+
 
 const medicalSendType = [
   'I can upload the images now or later.',
@@ -459,7 +463,7 @@ useEffect(() => {
   const addToLocalStorage = (key, value) => {
     localStorage.setItem(key, value);
   };
-
+  window.scrollTo(0, 0);
   
   const auth = getAuth();
   const user = auth.currentUser;
@@ -903,7 +907,13 @@ useEffect(() => {
         <div className='lg:w-1/2  lg:px-10   relative w-screen h-full  flex flex-col items-center lg:justify-center justify-start  '>
          
          {/* Web Logo */}
-         <Link to={"/"}>  <img className='absolute lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+         <div className='absolute lg:flex hidden justify-between items-center w-full    top-2 pl-10 pr-2'  > 
+            <Link to={"/"}>  <img className=' lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+        
+          
+     
+          </div>
+       
        
           {/* Mobile Logo & Steooer */}
          <div className='flex lg:hidden w-full px-5 justify-between items-center  '>

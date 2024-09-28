@@ -50,7 +50,7 @@ const Insurance = () => {
    { !isDropdownSet &&
     <div className='w-full h-full lg:mt-2 flex items-center lg:justify-start justify-start'> 
 
-    <img className='w-[90%] lg:w-[85%] lg:mt-4 mt-0 rounded-lg ' src='https://vitamu.imgix.net/22HRS%20(1920%20x%201080%20piksel)-2-min.png?w=7680&h=4320&ar=7680%3A4320&auto=compress' alt='monthly numbers'/>
+    <img className='w-[90%] lg:w-[85%] lg:mt-4 mt-0 rounded-lg lg:flex hidden ' src='https://vitamu.imgix.net/22HRS%20(1920%20x%201080%20piksel)-2-min.png?w=7680&h=4320&ar=7680%3A4320&auto=compress' alt='monthly numbers'/>
     
     </div>}
    

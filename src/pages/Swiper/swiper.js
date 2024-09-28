@@ -304,7 +304,7 @@ const SwiperPage = ({  isOutside = false, }) => {
     
         <Swiper
           
-          initialSlide={1}
+          initialSlide={0}
           spaceBetween={0}
           effect={"coverflow"}
           grabCursor={true}

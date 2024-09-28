@@ -622,7 +622,7 @@ const PayPlans = ({ isOutside = false, }) => {
                
               </div>
 
-              <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` absolute bottom-3 w-[80%] flex  py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Get Started</p>
+              <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` absolute bottom-3 w-[80%] flex  py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Choose Plan</p>
            
             </div>
           
@@ -732,7 +732,7 @@ const PayPlans = ({ isOutside = false, }) => {
                  
                </div>
 
-               <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` absolute bottom-3 w-[80%] flex py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Get Started</p>
+               <p onClick={()=>{  AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className={` absolute bottom-3 w-[80%] flex py-3 rounded-full  items-center justify-center bg-[linear-gradient(0deg,_hsla(179,23%,48%,1)_0%,_hsla(166,39%,65%,1)_100%)]  text-white self-center`}>Choose Plan</p>
 
             
              </div>
@@ -793,7 +793,7 @@ const PayPlans = ({ isOutside = false, }) => {
               </div>
                   
                    
-              <p onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className=' absolute bottom-3 flex animate-fadeIn w-[80%] cursor-pointer py-3 rounded-full  items-center justify-center bg-white text-second  self-center'>Get Started</p>
+              <p onClick={()=>{ AmountCalculator(mainPayAmount); setIsPopupOpen(true) } } className=' absolute bottom-3 flex animate-fadeIn w-[80%] cursor-pointer py-3 rounded-full  items-center justify-center bg-white text-second  self-center'>Choose Plan</p>
               
            
             </div>
