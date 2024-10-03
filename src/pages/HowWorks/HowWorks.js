@@ -62,7 +62,8 @@ const HowWorks = ({isOutside = false}) => {
           <div class={` relative py-8 mb-8  md:mb-12 w-screen ${isOutside ? "lg:py-14" : "lg:py-28"}   flex flex-col items-center justify-center `}>
             <img
               className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "
-              src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
+              src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress '
+              alt="groupPng"
             />
 
             <h1 data-aos-duration="400" data-aos="fade-up"  class="text-[42px] font-bold mb-2 lg:mb-4 text-black">

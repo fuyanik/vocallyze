@@ -226,27 +226,38 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
      {/*  Vertical Reports*/}
      <div className='flex h-[80vh]  overflow-scroll relative bottom-0 lg:bottom-12  flex-col px-2 gap-10 lg:mt-10'>
 
-
+       
+       {/* missed diagnosis */}
       {  tabsNum == 0 && 
       <div data-aos="fade-up"   data-aos-duration="800"  className='relative'>
-          <img   className='border-b   lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
+          <img   className='border-b   lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/missed1.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+          <img   className='border-b   lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/missed2.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+
           
        </div> }
 
-
+        {/* under diagnosis */}
        {tabsNum == 1 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
-          <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
+          <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/underdiagnosis1.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+          <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/underdiagnosis2.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+          <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/underdiagnosis3.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
        </div> }
       
+      {/* incomplte imaging */}
        {tabsNum == 2 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
-           <img className='border-b  lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
+                    <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/incomple1.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+                    <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/incomple2.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
         </div> }
       
+
+        {/* urgent action imaging */}
        {tabsNum == 3 &&  
         <div data-aos="fade-up"  data-aos-duration="800" className='relative'>
-           <img className='border-b lg:w-[60vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/Second%20Opinion%20Report.png' alt='sample reports'/>
+                    <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/urgent1.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+                    <img className='border-b  lg:w-[50vw] h-auto rounded-lg bg-cover object-cover   ' src='https://vitamu.imgix.net/urgent2.jpg?w=1448&h=2048&ar=1448%3A2048&auto=compress' alt='sample reports'/>
+
          </div> }
        
        

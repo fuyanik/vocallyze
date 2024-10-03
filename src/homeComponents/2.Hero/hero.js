@@ -73,6 +73,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
           rel="preload"
           as="image"
           href="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress"
+          alt="bg image"
         />
       </Helmet>
      
