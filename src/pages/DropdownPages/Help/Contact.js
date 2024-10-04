@@ -70,7 +70,7 @@ const Contact = () => {
          <h1 data-aos-duration="600" data-aos="fade-up" className="lg:flex hidden text-3xl w-full border-b border-second pb-1">We’d Love to Connect</h1>
       
       <div className="flex flex-col gap-6"> 
-        <div data-aos-duration="600" data-aos="fade-up"  className="flex flex-col gap-4 "> 
+        <div data-aos-duration="600" data-aos="fade-up"  className=" flex-col gap-4  hidden"> 
          <h2 className="text-lg border-b w-fit border-second font-bold">Connect with Us via Live Chat</h2>
          <p className="text-base opacity-80">You can reach out to us anytime through the chat window located at the bottom right of the page. We're here to assist you and typically respond in less than 2 minutes.</p>
         </div>
