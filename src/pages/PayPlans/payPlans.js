@@ -601,7 +601,7 @@ const PayPlans = ({ isOutside = false, }) => {
               </div>
                
                {/*  Plan detail */ }
-              <p className=' text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+              <p className=' text-sm'>Get a detailed second opinion report with expert consultation and personalized notes.</p>
               
               {/*  All prices and İnsurance Company Name */ }
               <div class="flex items-center gap-1 ">
@@ -709,7 +709,8 @@ const PayPlans = ({ isOutside = false, }) => {
                </div>
                 
                 {/*  Plan detail */ }
-               <p className=' text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+               <p className=' text-sm'>Access unlimited second opinions and expert consultations for a full year.
+</p>
                
                {/*  All prices and İnsurance Company Name */ }
                <div class="flex items-center gap-1 ">
@@ -769,7 +770,7 @@ const PayPlans = ({ isOutside = false, }) => {
               </div>
                
                {/*  Plan detail */ }
-              <p className=' text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+              <p className=' text-sm'>Enjoy five years of unlimited second opinions, expert consultations, and personalized reports, ensuring ongoing health insights.</p>
               
               {/*  All prices and İnsurance Company Name */ }
               <div class="flex items-center gap-1 ">

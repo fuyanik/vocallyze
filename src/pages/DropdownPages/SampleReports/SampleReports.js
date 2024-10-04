@@ -215,7 +215,7 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
         { !isOutside && <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center ' src='https://vitamu.imgix.net/Screenshot%202024-09-01%20at%2002.41.09.png' alt='sample reports'/>}
           <h1 data-aos-duration="600" data-aos="fade-up"  className={`lg:text-[42px]  text-[32px]  self-center tracking-wide leading-[38px] text-center  text-black font-bold`}>  Second Opinion Report Samples </h1>
             <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
-            Medifyre users love our second opinion reports. If your report does not answer all your questions, you will get answers from your dedicated radiologist until the last question.
+            Medifyre users love our second opinion reports. If your report doesn't answer all your questions, your dedicated radiologist will continue providing answers until every question is addressed.
             </p>
             
      </div>

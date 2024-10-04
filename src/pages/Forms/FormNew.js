@@ -532,7 +532,7 @@ useEffect(() => {
 
         <p className='text-[16px] leading-[22px] mt-2  text-priTrans'>
           {' '}
-          We have saved all the information you provided, and our doctors will review it as soon as possible. To keep you informed about your case, we will need your email address. 
+          We have saved all the information you provided, and our doctors will review it as soon as possible. To keep you updated on your case, we'll need your email address.
         </p>
       </header>
 
