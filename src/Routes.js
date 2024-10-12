@@ -62,17 +62,17 @@ export default function App() {
             <Route path="/swiper-page" element={<SwiperPage/>} />
 
             <Route path="/get-started" element={<Hero isOutside={true}/>} />
+         
+          {/* 
             <Route path="/health-hub" element={<HealthHub/>} />
-
             <Route path="/services" element={<Services/>} />
-
             <Route path="/mri" element={<MRI/>} />
             <Route path="/ultrasound" element={<Ultrasound/>} />
             <Route path="/ct" element={<CTScan/>} />
             <Route path="/mammogram" element={<Mammogram/>} />
             <Route path="/x-ray" element={<Xray/>} />
             <Route path="/pregnancy" element={<Pregnancy/>} />
-            <Route path="/full-body" element={<FullBody/>} />
+            <Route path="/full-body" element={<FullBody/>} />*/}
 
 
 
@@ -84,7 +84,6 @@ export default function App() {
 
 
             <Route path="/how-works" element={<HowWorks/>} />
-            <Route path="/radiology-team" element={<RadiologyTeam/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/why-second-opinion" element={<WhySecondOpinion/>} />
             <Route path="/sample-reports" element={<SampleReports/>} />
@@ -93,7 +92,7 @@ export default function App() {
 
 
 
-            <Route path="/health-hub-iframe" element={<HealthHubFrame/>} />
+          
           
 
 

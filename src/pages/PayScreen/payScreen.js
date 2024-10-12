@@ -99,14 +99,12 @@ const options = {
 }; 
 
 
+
     return (
     
        <>
   
           <div  className="pay-screen">
-         
-           
-  
             
                  
                 { <div className="pay-screen-button" onClick={ClosehandleClick}>Cancel</div> }
