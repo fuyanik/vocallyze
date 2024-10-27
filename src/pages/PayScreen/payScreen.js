@@ -17,8 +17,8 @@ import { getAuth } from "firebase/auth";
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
 
-const stripePromise = loadStripe("pk_live_51PtVvzP6lnbAQ8Er2oR1FnZTJrJQFfTnE0eGHjIEDHvK8ws2Qs59Yeuq4XgWEHifGRm0UV75N128BxZhzf0bAy8Y00leZ6PlBh");
 //const stripePromise = loadStripe("pk_live_51PtVvzP6lnbAQ8Er2oR1FnZTJrJQFfTnE0eGHjIEDHvK8ws2Qs59Yeuq4XgWEHifGRm0UV75N128BxZhzf0bAy8Y00leZ6PlBh");
+const stripePromise = loadStripe("pk_test_51PtVvzP6lnbAQ8ErmoRdTj5dRVzAZUFwnljKeWlo0GrnKkNkVVPBaGyARSuyDUxDU9U3qZmtR43kpJTj0d5mo2nz00kZiDhzjU");
 
 
 // const stripePromise = loadStripe(keys.stripePublishableKey);
