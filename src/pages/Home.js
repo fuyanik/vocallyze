@@ -85,30 +85,7 @@ const Home = () => {
   var mq = window.matchMedia( "(max-width: 1080px)" );
 
 
-  const vpnScreen =() => 
-    {
 
-      return (
-        <div className='bg-red-300 w-screen h-screen flex flex-col '> 
-
-         <div className='self center justify-center w-1/2'>  </div>
-         <div className='self center justify-center w-1/2'>  </div>
-
-        <button onClick={ ( ) => { gV.navigation = "vpn-screen"} }/> 
-        <button onClick={ ( ) => { gV.navigationHome = "vpn-screen"} }/> 
-        <button onClick={ ( ) => { gV.navigationForm = "vpn-screen"} }/> 
-
-          { /* Set Form Validate for user RPM rate */}
-          { /* İf module build failed beacuse of " no such file or directory form validate must be false" */}
-          <div onClick={ () => { setGlobalState("isFormValidate" , false)}}> </div>
-
-
-        </div>
-      )
-    }
-
-   { /* Function run when formValidate stete if -true- */}
-   isFormValidate && window.scrollTo(0, 0);
  
 
   return (
