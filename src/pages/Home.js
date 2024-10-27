@@ -84,10 +84,6 @@ const Home = () => {
 
   var mq = window.matchMedia( "(max-width: 1080px)" );
 
-
-
- 
-
   return (
 
     
