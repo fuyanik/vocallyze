@@ -117,19 +117,19 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
       /*  Mobile */
       gV.mq.matches ? 
         <div  className="flex flex-col items-center  gap-3 rounded-full ">
-          <div data-aos-delay="300" data-aos-duration="300" data-aos="fade-up" >
+          <div  >
             <SelectBodyParts/>
           </div>
-          <div data-aos-delay="400" data-aos-duration="300" data-aos="fade-up" >
+          <div  >
             <ScanType/>
           </div>
-         <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-second hover:bg-prim duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl">Get Started</div>
+         <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-second hover:bg-prim duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl ">Get Started</div>
         </div>
       
       
       :
       /* Desktop */
-        <div  data-aos-delay="300" data-aos-duration="400" data-aos="fade-up"  className="  flex w-[65vw] cursor-pointer  h-[58px]  ">
+        <div    className="  flex w-[65vw] cursor-pointer  h-[58px]  ">
           <SelectBodyParts/>
           <ScanType/>
           
