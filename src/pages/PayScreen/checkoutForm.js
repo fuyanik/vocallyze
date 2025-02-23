@@ -16,8 +16,6 @@ import "./style/payScreen.css";
 
 import stripeImg from "./stripe.png";
 import { useNavigate } from "react-router-dom";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
-import { db } from "../../firebase.js";
 
 
 export default function CheckoutForm() {

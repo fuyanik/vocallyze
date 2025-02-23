@@ -1109,8 +1109,7 @@ useEffect(() => {
               //activeStep == 1 && handleSignup();
 
               /* Payment Step States */
-              
-
+            
               if(activeStep != 3 ) {
                   if( activeStep == 0) {
                     console.log( localStorage.getItem("name") )
@@ -1127,22 +1126,13 @@ useEffect(() => {
                     setGlobalState('activeStep', activeStep + 1);
                   }
 
-                
-               
-
               }
-
-
-
-
-
-
-
 
              // activeStep == 3 && setIsPopupOpen(true);
               !gV.mq.matches && activeStep == 3 && setGlobalState("isDropdownSet", true);
 
               (activeStep == 3 && isDropdownSet) && setIsPopupOpen(true);
+              //{activeStep == 3 &&  window.open("https://buy.stripe.com/8wMbJUaKt49Ydi06ot", "_blank");}
 
 
               /* Payment Step */

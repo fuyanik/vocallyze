@@ -32,8 +32,7 @@ import WhySecondOpinion from './pages/WhySecondOpinion/WhySecondOpinion';
 import SampleReports from './pages/DropdownPages/SampleReports/SampleReports';
 import Faq from './pages/DropdownPages/Faq/faq';
 import Payingo from './pages/PayScreen/Payingo';
-import Pregnancy from './pages/Services/Pregnancy';
-import FullBody from './pages/Services/FullBody';
+
 import Register from './pages/Auth/register';
 
  

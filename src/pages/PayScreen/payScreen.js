@@ -17,7 +17,7 @@ import CheckoutForm from "./checkoutForm";
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
 
-const stripePromise = loadStripe("pk_live_51PtVvzP6lnbAQ8Er2oR1FnZTJrJQFfTnE0eGHjIEDHvK8ws2Qs59Yeuq4XgWEHifGRm0UV75N128BxZhzf0bAy8Y00leZ6PlBh");
+const stripePromise = loadStripe("live_51Ptpk_VvzP6lnbAQ8Er2oR1FnZTJrJQFfTnE0eGHjIEDHvK8ws2Qs59Yeuq4XgWEHifGRm0UV75N128BxZhzf0bAy8Y00leZ6PlBh");
 //const stripePromise = loadStripe("pk_test_51PtVvzP6lnbAQ8ErmoRdTj5dRVzAZUFwnljKeWlo0GrnKkNkVVPBaGyARSuyDUxDU9U3qZmtR43kpJTj0d5mo2nz00kZiDhzjU");
 
 
@@ -33,8 +33,8 @@ const ClosehandleClick = () => {
 
 
 const fetchData = async (totalValue) => {
-  
- await fetch("https://mitrua-affa3c9dd3be.herokuapp.com/create-payment-intent", {
+
+ await fetch("https://medifyrebackend-5efb165400bd.herokuapp.com/create-payment-intent", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
    
