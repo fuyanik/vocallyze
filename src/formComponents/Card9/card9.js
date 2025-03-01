@@ -258,8 +258,6 @@ return (
                  </div> 
                
                <input
-                   directory=""
-                   webkitdirectory=""
                    multiple="multiple"
                    type="file"
                    name="image"
