@@ -183,7 +183,8 @@ const handleImageChange = (e) => {
         storage,
         `/${user ? user.email : localStorage.getItem("mailAddress")}/first_recheck_medical${Date.now()}.zip`
       );
-
+ // test
+ 
       setDoc(
         doc(db, "Medifyre", localStorage.getItem("mailAddress")  ) ,
         {
@@ -258,6 +259,7 @@ return (
                  </div> 
                
                <input
+               
                    multiple="multiple"
                    type="file"
                    name="image"
