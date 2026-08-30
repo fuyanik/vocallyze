@@ -11,12 +11,13 @@ import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../../homeComponents/1.Navbar/navbar';
-import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveInsurance.js';
-import Card9 from '../../formComponents/Card9/card9';
-import SwiperPage from '../Swiper/swiper';
+import vocallyzeLogo from '../../assets/images/logos.png';
 import { setGlobalState, useGlobalState } from '../../hookState';
-import PayScreen from '../PayScreen/payScreen';
 import Popup from '../Popup/popup';
+import { Card, CardHeader, StatCard, Icon, ProgressBar } from '../../admino/panel/primitives';
+import { Donut, BarChart } from '../../admino/panel/charts';
+import { C } from '../../admino/panel/tokens';
+import StepHeader from './components/StepHeader';
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
 import gV from '../../gV';
 import { arrayUnion, doc, setDoc } from 'firebase/firestore';
@@ -42,12 +43,12 @@ const QontoConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      borderColor: '#000000',
+      borderColor: '#01678c',
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      borderColor: '#000000',
+      borderColor: '#01678c',
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
@@ -65,10 +66,10 @@ const QontoStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   height: 22,
   alignItems: 'center',
   ...(ownerState.active && {
-    color: '#000000',
+    color: '#01678c',
   }),
   '& .QontoStepIcon-completedIcon': {
-    color: '#000000',
+    color: '#01678c',
     zIndex: 1,
     fontSize: 18,
   },
@@ -162,11 +163,11 @@ const steps = ['', '', '', '', ];
 
 
 
-const medicalSendType = [
-  'I can upload the images now or later.',
-  'I prefer to ship the CD or USB stick.',
-  'I will share an access code.',
-  'I authorize you to acquire my images.',
+const qaProcessOptions = [
+  "We don't — no formal QA yet",
+  'Manual spot-checks',
+  'Another QA/monitoring tool',
+  'Not sure yet',
 ];
 
 
@@ -227,238 +228,6 @@ useEffect(() => {
 
 
 
-  //All amount variables and *Global* variables are set here
-  //...
-  const AmountCalculator = (mainPay) => {
-    if (gV.insuranceCompany === 'United Healthcare') {
-      gV.discountPercent = 20;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Oscar') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Aetna') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Molina Healthcare') {
-      gV.discountPercent = 20;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Humana') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Cigna') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Magellan') {
-      gV.discountPercent = 20;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Anthem') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Blue California') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Blue Shield') {
-      gV.discountPercent = 20;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Care Plus') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Freedom Health') {
-      gV.discountPercent = 20;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'WellCare') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'United American') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (gV.insuranceCompany === 'Caresource') {
-      gV.discountPercent = 25;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-
-    if (
-      gV.insuranceCompany === 'I do not have an active insurance plan.' ||
-      gV.insuranceCompany === 'My insurance is not listed.' ||
-      gV.insuranceCompany === 'none'
-    ) {
-      gV.discountPercent = 0;
-
-      //Insurance discount
-      //...
-      gV.discountAmount = mainPay * (gV.discountPercent / 100);
-
-      //Total amount user see pay plans page
-      //...
-      gV.payTotal = mainPay - gV.discountAmount;
-
-      return gV.payTotal;
-    }
-  };
-
   // Local storage'a veri eklemek için bir fonksiyon
   const addToLocalStorage = (key, value) => {
     localStorage.setItem(key, value);
@@ -471,23 +240,21 @@ useEffect(() => {
   const [isOpenPaymentPopup, setIsOpenPaymentPopup] = useState(false);
 
   const [activeStep] = useGlobalState('activeStep');
-  const [mainPayAmount] = useGlobalState('mainPayAmount');
-  const [doctors] = useGlobalState('doctors');
-  const [paymentPlan] = useGlobalState('paymentPlan');
    const [isDropdownSet] = useGlobalState("isDropdownSet")
+   const [callVolume] = useGlobalState('callVolume');
 
   const [name, setName] = useState('');
+  const [companyName, setCompanyName] = useState('');
   const [mail, setMail] = useState('');
   const [phone, setPhone] = useState('');
   const [question, setQuestion] = useState('');
-  const [medicalCenter, setMedicalCenter] = useState('');
+  const [agentCount, setAgentCount] = useState('');
+  const [qaProcess, setQaProcess] = useState('');
 
   const [isCameForm, setIsCameForm] = useState(false);
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isPopupOpen2, setIsPopupOpen2] = useState(false);
-  const [isDropdown, setDropdown] = useState(false);
-  const [dropdownText, setDropdownText] = useState('Choose your answer.');
 
  
 
@@ -495,8 +262,11 @@ useEffect(() => {
     
     
     setName(localStorage.getItem("name"))
+    setCompanyName(localStorage.getItem("companyName"))
     setQuestion(localStorage.getItem("question"))
     setMail(localStorage.getItem("mailAddress"))
+    setAgentCount(localStorage.getItem("agentCount") || '')
+    setQaProcess(localStorage.getItem("qaProcess") || '')
   
   }, []);
 
@@ -516,7 +286,7 @@ useEffect(() => {
     /* Start Step Contents */
   }
   const contactInputStyle =
-    'w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-white rounded-2xl duration-1000 outline-none  focus:border-priTrans  bg-slate-100 ';
+    'w-[96%] lg:w-[70%] h-[6vh] lg:pt-2 px-4 py-2 flex items-center justify-center border border-border rounded-2xl duration-300 outline-none  focus:border-primary focus:ring-2 focus:ring-primary/15  bg-white ';
 
   {
     /* Contact Detail */
@@ -524,15 +294,11 @@ useEffect(() => {
   const ContactDetail = (
     <section className='w-[92vw] lg:w-full  animate-fadeIn flex flex-col h-[58%] pt-0 px-2 text-pri'>
       <header className='flex flex-col gap-2'>
-        <header className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='lg:text-[32px] text-[22px] font-bold text-pri'>Contact Details</p>
+        <StepHeader title='Contact Details' step={activeStep + 1} />
 
-          <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
-        </header>
-
-        <p className='text-[16px] leading-[22px] mt-2  text-priTrans'>
+        <p className='text-[16px] leading-[22px] mt-0  text-priTrans'>
           {' '}
-          We have saved all the information you provided, and our doctors will review it as soon as possible. To keep you updated on your case, we'll need your email address.
+          We have saved everything you shared so far, and our team will review it as soon as possible. To keep you posted and set up your rollout, we'll need your e-mail address.
         </p>
       </header>
 
@@ -584,11 +350,16 @@ useEffect(() => {
         />
       </div>
 
-      <div className='flex flex-col gap-1 items-center justify-center py-3 px-3 w-full lg:w-[60%] shadow-xl bg-black  rounded-[30px] border border-teal-200 iphone7:mt-3 mt-10'>
-      <img className='' width="55" height="55" src="https://img.icons8.com/clouds/100/checkmark--v1.png" alt="checkmark--v1"/>
-      <p className='font-bold text-white'>Your data is securely stored and protected</p>
-      <p className='text-sm text-white opacity-70 text-center'>We do not send spam or share your information with third parties.</p>
-      <p></p>
+      <div className='flex items-center gap-3 py-3 px-4 w-full lg:w-[70%] rounded-2xl border border-primary/20 bg-primary/5 iphone7:mt-3 mt-10'>
+        <span className='flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary'>
+          <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.8' strokeLinecap='round' strokeLinejoin='round'>
+            <path d='M7 11V8a5 5 0 0110 0v3M6 11h12v9H6v-9z' />
+          </svg>
+        </span>
+        <div className='flex flex-col'>
+          <p className='font-bold text-sm text-black'>Your data is encrypted and securely stored</p>
+          <p className='text-xs text-priTrans'>We don't send spam or share your information with third parties.</p>
+        </div>
       </div>
     </section>
   );
@@ -599,25 +370,39 @@ useEffect(() => {
   const HistorySymptoms = (
     <section className='w-[92vw] lg:w-full animate-fadeIn flex flex-col h-[58%]  pt-0 px-2 text-pri'>
       <div className='flex flex-col gap-2'>
-        <header className=' flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707]  '>
-          <p className='lg:text-[32px] text-[22px] font-bold text-black'>History and Symptoms</p>
+        <StepHeader title='About Your Business' step={activeStep + 1} />
 
-          <i className='text-[16px] mt-1 font-bold text-black'> Step {activeStep + 1} of 4</i>
-        </header>
-      
-        <p className='text-lg text-black font-bold mt-1'>Full name</p>
-        <input
-          value={name || localStorage.getItem("name")}
-          onChange={(e) => {
-            setName(e.target.value);
-            addToLocalStorage('name', e.target.value); 
-          }}
-          type='text'
-          className={contactInputStyle}
-          placeholder='First and last'
-        />
+        <div className='flex lg:flex-row flex-col gap-2 lg:gap-3'>
+          <div className='flex flex-col gap-1 lg:w-1/2'>
+            <p className='text-lg text-black font-bold mt-1'>Full name</p>
+            <input
+              value={name || localStorage.getItem("name")}
+              onChange={(e) => {
+                setName(e.target.value);
+                addToLocalStorage('name', e.target.value); 
+              }}
+              type='text'
+              className={contactInputStyle + ' lg:!w-full'}
+              placeholder='First and last'
+            />
+          </div>
+
+          <div className='flex flex-col gap-1 lg:w-1/2'>
+            <p className='text-lg text-black font-bold mt-1'>Company name</p>
+            <input
+              value={companyName || localStorage.getItem("companyName")}
+              onChange={(e) => {
+                setCompanyName(e.target.value);
+                addToLocalStorage('companyName', e.target.value); 
+              }}
+              type='text'
+              className={contactInputStyle + ' lg:!w-full'}
+              placeholder='Your company'
+            />
+          </div>
+        </div>
          
-         <p className='text-lg text-black font-bold lg:mt-4 mt-2'> Your personal health story, complaints, concerns, and questions.</p>
+         <p className='text-lg text-black font-bold lg:mt-4 mt-2'> Tell us about your call center — call volume, current QA process, and what you'd like Vocallyze to help with.</p>
        
 
         <textarea
@@ -628,7 +413,7 @@ useEffect(() => {
           }}
           type='text'
           className='w-[96%] lg:w-full   bg-slate-100 mt-1 lg:h-[35vh] shadow-md iphone7:h-[30vh] h-[34vh] p-4  rounded-2xl duration-300 outline-none   focus:ring-1 focus:ring-secondTrans '
-          placeholder='Every detail matters to us.'
+          placeholder='Every detail helps us prepare your rollout.'
         />
       </div>
     </section>
@@ -640,11 +425,7 @@ useEffect(() => {
   const MedicalImages = (
     <section className='w-[92vw] lg:w-full animate-fadeIn   flex flex-col h-[58%] pt-0 px-2'>
       <header className='flex flex-col gap-2'>
-        <div className='gap-2 flex pb-1 items-center justify-between border-b border-dashed border-[#1a0707] '>
-          <p className='lg:text-[32px] text-[22px] font-bold text-pri'>Medical Images</p>
-
-          <p className='text-[16px] mt-1 font-bold text-pri'> Step {activeStep + 1} of 4</p>
-        </div>
+        <StepHeader title='Call Center Setup' step={activeStep + 1} />
 
         <p className='text-[16px] hidden leading-[22px] mt-2  text-priTrans'>
           {' '}
@@ -652,134 +433,65 @@ useEffect(() => {
         </p>
       </header>
 
-      {/* Do You Have Medical Images */}
+      {/* Do You Have Call Recordings */}
       <div className='flex flex-col gap-5 '>
-        {/* Medical Images Question with Dropdown */}
-        <div className='flex flex-col gap-2'>
-          <p className='text-[17px] text-pri font-bold mt-4 lg:w-[55%] w-[96%]'>
-            How do you want to share your medical images?
-          </p>
 
-          {dropdownText == 'I will share an access code.' && (
-            <p className='text-priTrans'>
-              {' '}
-              Once you share your access code with hello@medifyre.com, image status will be updated.{' '}
-            </p>
-          )}
-          {dropdownText == 'I prefer to ship the CD or USB stick.' && (
-            <p className='text-priTrans'>
-              {' '}
-              It may take up to 7 days to obtain physical copies of your images. If you can upload the images by
-              yourself, your recheck report will be ready tomorrow.{' '}
-            </p>
-          )}
-
-          {/* Dropdown Select Area */}
-          <div className='  lg:w-[22vw] w-[84vw] h-[7vh] bg-slate-100 lg:h-[6vh] rounded-2xl flex items-center relative cursor-pointer'>
-            <div
-              onClick={() => {
-                setDropdown(!isDropdown);
-              }}
-              className='h-[96%] w-[120%] text-pri justify-between  flex items-center px-4 rounded-full z-10 duration-200 ease-in-out '>
-              <p> {dropdownText}</p>
-              <img
-                className={`absolute   right-6 lg:right-5 text-[13px] ${
-                  !isDropdown ? 'rotate-180' : 'rotate-270 '
-                } duration-500`}
-                width='18'
-                height='18'
-                src='https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png'
-                alt='collapse-arrow'
-              />
-            </div>
-
-            {/* Dropdown White Area */}
-            {isDropdown && (
-              <div className='absolute z-40 flex flex-col gap-3 items-start py-2  text-pri w-full h-auto overflow-y-auto bg-white top-[9vh] animate-fadeIn rounded-2xl shadow-xl'>
-                {medicalSendType.map((name, idx) => (
-                  <p
-                    className={` py-[3px] px-3   w-full text-left `}
-                    onClick={() => {
-                      setDropdown(false);
-                      setDropdownText(name);
-                    }}>
-                    {name}
-                  </p>
-                ))}
-              </div>
-            )}
-          </div>
+        {/* How many agents */}
+        <div className='flex flex-col gap-1'>
+          <p className='text-lg text-pri font-bold mt-4'>How many agents does your call center have?</p>
+          <input
+            value={agentCount}
+            onChange={(e) => {
+              const value = e.target.value.replace(/[^0-9]/g, '');
+              setAgentCount(value);
+              addToLocalStorage('agentCount', value);
+              gV.agentCount = value;
+            }}
+            type='text'
+            inputMode='numeric'
+            className={contactInputStyle}
+            placeholder='e.g. 25'
+          />
         </div>
 
-        {/* All Medical Images Options Start Here */}
+        {/* Current QA process */}
+        <div className='flex flex-col gap-2'>
+          <p className='text-[17px] text-pri font-bold mt-4 lg:w-[70%] w-[96%]'>
+            How do you currently review call quality?
+          </p>
 
-        {/* Image Upload */}
-        {dropdownText == 'I can upload the images now or later.' && (
-          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
-            <p className=' text-[#000000b7]  border-t-2  border-[#000000be]'></p>
-
-            <div className='relative bottom-1'>
-              <Card9 totalRecheck={1} displayText={'none'} buttonText={'Upload Image'} itemsScrollType={''} />
-            </div>
+          <div className='flex flex-wrap gap-2'>
+            {qaProcessOptions.map((option) => {
+              const isSelected = qaProcess === option;
+              return (
+                <div
+                  key={option}
+                  onClick={() => {
+                    setQaProcess(option);
+                    addToLocalStorage('qaProcess', option);
+                    gV.qaProcess = option;
+                    setGlobalState('qaProcess', option);
+                  }}
+                  style={
+                    isSelected
+                      ? { background: 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%)' }
+                      : undefined
+                  }
+                  className={`cursor-pointer px-4 py-2 rounded-full border text-sm duration-200 ${
+                    isSelected ? 'text-white border-transparent font-semibold' : 'bg-white border-border text-pri hover:border-primary/50'
+                  }`}>
+                  {option}
+                </div>
+              );
+            })}
           </div>
-        )}
-
-        {/* Shipping CD or USB */}
-        {dropdownText == 'I prefer to ship the CD or USB stick.' && (
-          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
-            <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
-            
-            </p>
-
-            <div className='flex flex-col border bg-slate-50 px-2 py-1 gap-1 rounded-lg '>
-              <p className='mt-2'>Medifyre, Inc.</p>
-              <p></p>
-              <p></p>
-            </div>
-          </div>
-        )}
-
-        {/* Share Acces Code */}
-        {dropdownText == 'I will share an access code.' && (
-          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
-            <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
-              If you have an access code from your provider, you may share it with the e-mail address below:
-            </p>
-
-            <div className='flex flex-col bg-slate-50 px-3 py-2 gap-1 border rounded-lg '>
-              <p className=''>hello@medifyre.com</p>
-            </div>
-          </div>
-        )}
-
-        {/* Authorize */}
-        {dropdownText == 'I authorize you to acquire my images.' && (
-          <div className='flex flex-col gap-3 text-pri animate-fadeIn '>
-            <p className=' text-[#000000b7] border-t-2  border-pri pt-2'>
-              No problem, we will acquire your medical files on your behalf. Please type the name of the medical center
-              where you got your screening.
-            </p>
-
-            <input
-              value={medicalCenter}
-              onChange={(e) => {
-                setMedicalCenter(e.target.value);
-              }}
-              type='text'
-              className={contactInputStyle}
-              placeholder='Type the name of your medical center'
-            />
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );
 
   //Close popup page
   //...
-  function onDismiss() {
-    setIsPopupOpen(false);
-  }
   function onDismiss2() {
     setIsPopupOpen2(false);
   }
@@ -833,59 +545,40 @@ useEffect(() => {
   useEffect(() => {
    
     setDoc(
-      doc(db, 'MedifyrePartial', `${localStorage.getItem("mailAddress") ? localStorage.getItem("mailAddress") : "none"}`),
+      doc(db, 'VocallyzeLeadsPartial', `${localStorage.getItem("mailAddress") ? localStorage.getItem("mailAddress") : "none"}`),
       {
-        Rechecks: {
-          formStep: activeStep,
-          activeStep: 0,
-          createDay: new Date().getDate(),
-          createMonth: new Date().getMonth(),
-          createYear: new Date().getFullYear(),
-          bodyParts: gV.bodyParts,
-          scanType: gV.scanType,
-          name: name,
-          mail: mail,
-          phone: phone,
-          question: question,
-          medicalSendType: dropdownText,
-          medicalCenter: medicalCenter,
-          insurance: gV.insuranceCompany,
-          isPay: false,
-          createdAt: Timestamp.now().toDate(),
-          doctors: doctors,
-          paymentPlan: paymentPlan,
-          password: gV.password,
-        },
+        formStep: activeStep,
+        createDay: new Date().getDate(),
+        createMonth: new Date().getMonth(),
+        createYear: new Date().getFullYear(),
+        companyName: companyName,
+        name: name,
+        mail: mail,
+        question: question,
+        qaProcess: qaProcess,
+        agentCount: agentCount,
+        callVolume: gV.callVolume,
+        createdAt: Timestamp.now().toDate(),
       },
       { merge: true },
     );
     
   }, [activeStep]);
-  
+
+  // Estimated monthly call volume from team size, and the capacity band
+  // implied by the chosen call-volume tier — purely illustrative numbers
+  // used to make the step 2/3 dashboard preview feel tied to real inputs.
+  const estCalls = agentCount ? Number(agentCount) * 120 : 0;
+  const volumeCapacity = {
+    'Up to 1,000 calls / month': 1000,
+    '1,000 - 5,000 calls / month': 5000,
+    '5,000 - 20,000 calls / month': 20000,
+    '20,000+ calls / month': 25000,
+  }[callVolume] || Math.max(estCalls * 1.4, 1000);
 
   return (
     <> 
  
-
-      {/* Pay Popup */}
-      <Popup
-        open={isPopupOpen}
-        onDismiss={onDismiss}
-        contents={
-          <div>
-            <h1
-              onClick={() => {
-                setIsPopupOpen(false);
-              }}
-              className='absolute z-50 cursor-pointer right-6 top-0 bg-black text-white px-3 py-1 rounded-full'>
-              {' '}
-              Close
-            </h1>
-            <PayScreen />
-          </div>
-        }
-        close={false}
-      />
 
       {/* Sample Repors Popup */}
       <Popup
@@ -908,7 +601,7 @@ useEffect(() => {
          
          {/* Web Logo */}
          <div className='absolute lg:flex hidden justify-between items-center w-full    top-2 pl-10 pr-2'  > 
-            <Link to={"/"}>  <img className=' lg:flex hidden   w-52 top-2 left-10' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+            <Link to={"/"}>  <img className=' lg:flex hidden   w-52 top-2 left-10' src={vocallyzeLogo} alt='vocallyze logo'/> </Link> 
         
           
      
@@ -917,7 +610,7 @@ useEffect(() => {
        
           {/* Mobile Logo & Steooer */}
          <div className='flex lg:hidden w-full px-5 justify-between items-center  '>
-           <Link to={"/"}>  <img className='  iphone7:w-32 w-40 ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/> </Link> 
+           <Link to={"/"}>  <img className='  iphone7:w-32 w-40 ' src={vocallyzeLogo} alt='vocallyze logo'/> </Link> 
       
             {/*  Sample Reports */}
            <div  onClick={() => {   setIsPopupOpen2(!isPopupOpen2); }}   className='w-fit hidden  duration-500 bg-black text-white   items-center gap-5  relative border border-black px-4 py-1 rounded-full text-sm'>
@@ -968,25 +661,58 @@ useEffect(() => {
           
           <div className='flex w-[100%]  h-[94%] shadow-lg ml-16 border rounded-xl overflow-hidden'>
 
-             <div className='w-[25%] relative h-full bg-slate-100 flex flex-col justify-between'> 
-               
-               <div className='flex flex-col w-full ml-3 gap-5'> 
-                <img className=' w-40 b-4   ' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/>
-              
-                <div className='h-3 w-[55%] rounded-full bg-gray-300'> </div>
-                <div className='h-3 w-[80%] rounded-full bg-gray-300'> </div>
-                <div className='h-3 w-[65%] rounded-full bg-gray-300'> </div>
-              
+             <div className='w-[25%] relative h-full bg-white border-r border-border flex flex-col justify-between'> 
+
+               <div className='flex flex-col w-full'>
+
+                 <div className='flex items-center gap-2.5 px-4 py-4 border-b border-border'>
+                   <span
+                     className='flex h-8 w-8 shrink-0 items-center justify-center rounded-lg'
+                     style={{ background: 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%)' }}>
+                     <Icon name='headphones' size={15} color='#fff' strokeWidth={2} />
+                   </span>
+                   <span className='min-w-0'>
+                     <span className='block truncate text-[11px] font-bold leading-tight text-black'>{companyName || 'Your Company'}</span>
+                     <span className='block text-[9px] leading-tight text-gray-400'>Vocallyze workspace</span>
+                   </span>
+                 </div>
+
+                 <nav className='px-2.5 py-3'>
+                   <p className='mb-1 px-2 text-[8.5px] font-bold uppercase tracking-[0.14em] text-gray-400'>Audit</p>
+                   <div
+                     className='mb-[2px] flex items-center gap-2 rounded-[10px] px-2 py-[6px] text-white'
+                     style={{ background: 'var(--color-primary)' }}>
+                     <Icon name='shield' size={13} strokeWidth={2} />
+                     <span className='text-[11px] font-semibold'>Compliance</span>
+                   </div>
+                   <div className='mb-[2px] flex items-center gap-2 rounded-[10px] px-2 py-[6px] text-gray-400'>
+                     <Icon name='phone' size={13} strokeWidth={1.6} />
+                     <span className='text-[11px] font-medium'>Calls</span>
+                   </div>
+                   <div className='mb-[2px] flex items-center gap-2 rounded-[10px] px-2 py-[6px] text-gray-400'>
+                     <Icon name='users' size={13} strokeWidth={1.6} />
+                     <span className='text-[11px] font-medium'>Agents</span>
+                   </div>
+                   <div className='mb-[2px] flex items-center gap-2 rounded-[10px] px-2 py-[6px] text-gray-400'>
+                     <Icon name='bot' size={13} strokeWidth={1.6} />
+                     <span className='text-[11px] font-medium'>Voice AI</span>
+                   </div>
+                 </nav>
+
                </div>
                 
-               <div className='w-full h-[11%] border-t flex items-center justify-between px-3'>
-                
-                 <div className='w-8 h-8 bg-second rounded-full items-center justify-center text-white flex'> 
-                 {name ? name.charAt(0).toUpperCase() : ''} 
-                  
+               <div className='w-full border-t border-border flex items-center gap-2 px-3 py-3'>
+
+                 <div className='w-7 h-7 shrink-0 bg-primary/10 text-primary rounded-full items-center justify-center flex text-[11px] font-bold'>
+                 {name ? name.charAt(0).toUpperCase() : <Icon name='user' size={12} />} 
                 </div> 
 
-                <img width="16" height="16" src="https://img.icons8.com/ios/50/appointment-reminders--v1.png" alt="appointment-reminders--v1"/>
+                <span className='min-w-0 flex-1'>
+                  <span className='block truncate text-[9.5px] font-semibold text-black'>{name || 'Your name'}</span>
+                  <span className='block truncate text-[8.5px] text-gray-400'>{companyName || 'Preparing workspace'}</span>
+                </span>
+
+                <Icon name='logOut' size={12} color='#9CA3AF' />
             
                </div>
            
@@ -995,23 +721,23 @@ useEffect(() => {
 
              <div className='w-[75%] h-full  flex flex-col'> 
 
-               <div className='h-[14%] w-full border-b bg-second text-white flex flex-col gap-1  justify-end px-2 py-2'>
-                 <p className='text-lg'>Second Opinion Report</p>
-                 
-                 <div className='flex gap-3'> 
-                   <p className='bg-white rounded-full px-4 py-[2px] text-second text-sm items-center justify-center flex'>{gV.bodyParts[0]}</p> 
-                   <p className='bg-white rounded-full px-4 py-[2px] text-second text-sm items-center justify-center flex'>{gV.scanType[0]}</p> 
+               <div className='h-[10%] w-full border-b border-border flex items-center justify-between px-5 shrink-0'>
+                 <p className='text-[12px] font-semibold text-gray-400'>Audit <span className='text-black'>/ Compliance</span></p>
+
+                 <div className='flex gap-2'> 
+                   <p className='bg-primary/10 rounded-full px-3 py-[3px] text-primary text-[11px] items-center justify-center flex font-semibold'>Call Audit</p> 
+                   <p className='bg-primary/10 rounded-full px-3 py-[3px] text-primary text-[11px] items-center justify-center flex font-semibold'>{agentCount ? `${agentCount} agents` : 'Voice AI'}</p> 
                   </div> 
                 
                </div>
 
-               <div className='w-full h-full bg-white flex flex-col gap-8 p-8'> 
+               <div className='w-full h-full bg-white flex flex-col gap-5 p-8 overflow-y-auto'> 
 
                  <div className={` w-full flex gap-3 items-center   `}> 
                       
                     {/* rounded profile */}
-                    <div className='flex w-10 h-10 bg-gray-300 rounded-full items-center justify-center'> 
-                     <img width="28" height="28" src="https://img.icons8.com/pastel-glyph/64/ffffff/gender-neutral-user.png" alt="gender-neutral-user"/>
+                    <div className='flex w-10 h-10 bg-primary/10 text-primary rounded-full items-center justify-center'> 
+                     <Icon name='user' size={18} />
                     </div>
                    
                    {/* name */}
@@ -1020,43 +746,95 @@ useEffect(() => {
                     <p className=' text-[20px] font-bold]'> {name}</p>
                     
                   }
+                       { companyName ? <p className=' text-[12px] text-gray-500'> {companyName}</p> : null }
                        <p className=' text-[12px] text-black'> {mail}</p>
                     </div>
 
                  </div>
-                
-                 <div className={` ${activeStep !== 0 && "hidden"} w-full flex gap-36`}> 
-                    <div className='h-3 w-[50%] rounded-full bg-gray-200'> </div>
-                    <div className='h-3 w-[20%] rounded-full bg-gray-200'> </div> 
-                 </div>
-                
-                 <div className={` ${activeStep !== 0 && "hidden"} w-full flex gap-16`}> 
-                    <div className='h-3 w-[70%] rounded-full bg-gray-200'> </div>
-                    <div className='h-3 w-[15%] rounded-full bg-gray-200'> </div> 
+
+                 {/* Setup progress — always visible, fills in as the form is completed */}
+                 <div className='w-full'>
+                    <div className='flex items-center justify-between mb-1.5'>
+                       <p className='text-[10px] font-semibold uppercase tracking-[0.08em] text-gray-400'>Rollout setup progress</p>
+                       <p className='text-[11px] font-semibold text-primary'>{Math.round(((activeStep + 1) / 4) * 100)}%</p>
+                    </div>
+                    <ProgressBar value={((activeStep + 1) / 4) * 100} color={C.blue} height={6} />
                  </div>
 
-                 <div className={` ${activeStep == 0 ? "hidden" : "flex"} w-[90%] flex flex-col gap-2 opacity-40 text-black max-h-40 overflow-y-scroll text-sm animate-fadeInSlow font-product`}> 
-                  <p className='text-lg font-bold animate-fadeIn'>History and Symptoms</p>
-                  <p className='animate-fadeInSlow text-black text-sm'> {question}</p>
-                 </div>
-               
-                 <div className={` ${activeStep !== 0 && "hidden"} w-full flex gap-28`}> 
-                    <div className='h-3 w-[60%] rounded-full bg-gray-200'> </div>
-                    <div className='h-3 w-[30%] rounded-full bg-gray-200'> </div> 
-                 </div>
-               
-                 <div className={` ${false && "hidden"} w-full flex gap-8`}> 
-                    <div className='h-3 w-[80%] rounded-full bg-gray-200'> </div>
-                    <div className='h-3 w-[25%] rounded-full bg-gray-200'> </div> 
-                 </div>
+                 {/* Step 0-1 — business summary card */}
+                 { activeStep < 2 && (
+                   <Card className='animate-fadeIn'>
+                     <CardHeader title='About your business' subtitle={question ? undefined : 'Fill in step 1 to preview'} />
+                     { question ? (
+                       <p className='text-[12.5px] leading-relaxed text-gray-600'>{question}</p>
+                     ) : (
+                       <div className='flex flex-col gap-2'>
+                         <div className='h-3 w-[85%] rounded-full bg-gray-100'> </div>
+                         <div className='h-3 w-[60%] rounded-full bg-gray-100'> </div>
+                       </div>
+                     )}
+                   </Card>
+                 )}
 
-                 <div className={` ${false && "hidden"} w-full flex gap-40`}> 
-                    <div className='h-3 w-[50%] rounded-full bg-gray-200'> </div>
-                    <div className='h-3 w-[15%] rounded-full bg-gray-200'> </div> 
-                 </div>
+                 {/* Step 2 — call center snapshot, appears once agent count is entered */}
+                 { activeStep >= 2 && (
+                   <div className='grid grid-cols-2 gap-2.5 animate-fadeIn'>
+                      <StatCard
+                        label='Team size'
+                        value={agentCount || '—'}
+                        unit={agentCount ? 'agents' : undefined}
+                        icon='users'
+                        tone='blue'
+                      />
+                      <StatCard
+                        label='Est. monthly calls'
+                        value={agentCount ? (Number(agentCount) * 120).toLocaleString('en-US') : '—'}
+                        icon='phone'
+                        tone='teal'
+                        hint={agentCount ? '100% audited' : undefined}
+                      />
+                   </div>
+                 )}
 
-               
-            
+                 {/* Step 3 — audit coverage donut + volume vs. capacity, once call volume is chosen */}
+                 { activeStep >= 3 && callVolume && callVolume !== 'none' && (
+                   <>
+                     <Card className='animate-fadeIn'>
+                       <CardHeader title='Coverage estimate' subtitle={callVolume} />
+                       <div className='flex items-center gap-5'>
+                         <Donut
+                           size={96}
+                           thickness={13}
+                           segments={[{ label: 'Audited', value: 100, color: C.blue }]}
+                           center={
+                             <>
+                               <p className='text-[17px] font-semibold leading-none text-black'>100%</p>
+                               <span className='mt-0.5 text-[9px] text-gray-400'>audited</span>
+                             </>
+                           }
+                         />
+                         <div className='flex flex-col gap-1.5 text-[12px] text-gray-500'>
+                           <p><span className='font-semibold text-black'>Every</span> recorded call reviewed</p>
+                           <p>No sampling gaps, no blind spots</p>
+                           <p>First report ready within days</p>
+                         </div>
+                       </div>
+                     </Card>
+
+                     <Card className='animate-fadeIn'>
+                       <CardHeader title='Your volume vs. tier capacity' subtitle={agentCount ? `${agentCount} agents · est. ${estCalls.toLocaleString('en-US')} calls / mo` : undefined} />
+                       <BarChart
+                         w={280}
+                         h={120}
+                         bars={[
+                           { label: 'Your estimate', value: estCalls, color: C.blue },
+                           { label: 'Tier capacity', value: volumeCapacity, color: C.teal, opacity: 0.55 },
+                         ]}
+                       />
+                     </Card>
+                   </>
+                 )}
+
                </div>
                
 
@@ -1078,7 +856,7 @@ useEffect(() => {
         <div
           className={`absolute ${
             isPopupOpen && 'hidden'
-          } w-screen  lg:w-1/2 lg:px-10 px-0  ${isDropdownSet && "lg:hidden flex"} lg:bottom-10 bottom-3   gap-3 lg:justify-end justify-center  flex items-center font-product animate-fadeIn`}>
+          } w-screen  lg:w-1/2 lg:px-10 px-0  ${isDropdownSet ? "hidden" : "flex"} lg:bottom-10 bottom-3   gap-3 lg:justify-end justify-center  items-center font-product animate-fadeIn`}>
           {/* Back Button */}
           {activeStep != 0 && (
       
@@ -1086,14 +864,12 @@ useEffect(() => {
               onClick={() => {
                 setGlobalState('activeStep', activeStep - 1);
               }}
-              className={` ${isDropdownSet && "flex"}  w-11 h-11  z-20 l  animate-leftToRight rounded-full bg-black flex items-center justify-center  text-white`}>
+              className={`w-11 h-11  z-20 l  animate-leftToRight rounded-full bg-white border border-border hover:border-primary/50 duration-300 flex items-center justify-center  text-primary`}
+              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.6)' }}>
               {' '}
-              <img
-                width='20'
-                height='20'
-                src='https://img.icons8.com/metro/26/FFFFFF/chevron-left.png'
-                alt='chevron-left'
-              />
+              <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.2' strokeLinecap='round' strokeLinejoin='round'>
+                <path d='M15 18l-6-6 6-6' />
+              </svg>
             </button>
           )}
 
@@ -1104,15 +880,9 @@ useEffect(() => {
           {/* Next Button */}
           <button
             onClick={() => {
-              /* Sıgn Up Step*/
 
-              //activeStep == 1 && handleSignup();
-
-              /* Payment Step States */
-            
               if(activeStep != 3 ) {
                   if( activeStep == 0) {
-                    console.log( localStorage.getItem("name") )
                     localStorage.getItem("name") !== null && localStorage.getItem("name") !== "" && setGlobalState('activeStep', activeStep + 1);
                   }
 
@@ -1128,63 +898,31 @@ useEffect(() => {
 
               }
 
-             // activeStep == 3 && setIsPopupOpen(true);
+              /* Step 3 just reveals the pricing plans, no payment is collected here */
               !gV.mq.matches && activeStep == 3 && setGlobalState("isDropdownSet", true);
-
-              (activeStep == 3 && isDropdownSet) && setIsPopupOpen(true);
-              //{activeStep == 3 &&  window.open("https://buy.stripe.com/8wMbJUaKt49Ydi06ot", "_blank");}
-
-
-              /* Payment Step */
-              if (activeStep == 3) {
-                AmountCalculator(mainPayAmount);
-
-                setDoc(
-                  doc(db, 'Medifyre', `${localStorage.getItem("mailAddress") }`),
-                  {
-                    Rechecks: [
-                      {
-                        formStep: activeStep,
-                        activeStep: 1,
-                        createDay: new Date().getDate(),
-                        createMonth: new Date().getMonth(),
-                        createYear: new Date().getFullYear(),
-                        bodyParts: gV.bodyParts,
-                        scanType: gV.scanType,
-                        name: name,
-                        mail: mail,
-                        phone: phone,
-                        question: question,
-                        medicalSendType: dropdownText,
-                        medicalCenter: medicalCenter,
-                        insurance: gV.insuranceCompany,
-                        isPay: false,
-                        createdAt: Timestamp.now().toDate(),
-                        doctors: doctors,
-                        paymentPlan: paymentPlan,
-                        payTotalWithoutTax: gV.payTotal,
-                        password: gV.password,
-                      },
-                    ],
-                  },
-                  { merge: true },
-                );
-              }
-
-              /* User and Info Logs */
-              // console.log('BodyParts', gV.bodyParts);
-              // console.log('ScanType', gV.scanType);
-              // console.log('activeStep', activeStep, 'name', name, 'mail', mail, 'phone', phone);
-              // user && console.log('user', user.email);
             }}
-            className={`bg-black ${
+            style={{
+              background: 'linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%)',
+              boxShadow: '0 4px 14px rgba(1,103,140,0.35), inset 0 1px 0 rgba(255,255,255,0.15)',
+            }}
+            className={` ${
               activeStep == 0 ? 'lg:w-[44%] w-[90%]  ' : 'lg:w-[46%] w-[70%] '
             } 
             
-            z-20   duration-500 font-bold self-end float-right flex items-center justify-center  py-[9px] rounded-3xl text-white`}>
+            z-20 hover:brightness-110 active:scale-[0.98]  duration-300 font-bold self-end float-right flex items-center gap-2 justify-between  pl-5 pr-1.5 py-[6px] rounded-3xl text-white`}>
           
-             {activeStep == 0 && 'Continue'} {activeStep == 1 && 'Continue to Medical Images '}{' '}
-            {activeStep == 2 && 'Continue to Insurance'} {activeStep == 3 && 'Get Your Second Opinion'} {activeStep == 4 && ''}
+             <span className='flex-1 text-center'>
+             {activeStep == 0 && 'Continue'} {activeStep == 1 && 'Continue to Call Setup '}{' '}
+            {activeStep == 2 && 'Continue to Call Volume'} {activeStep == 3 && 'See My Plan'} {activeStep == 4 && ''}
+             </span>
+
+             <span
+               className='shrink-0 rounded-full bg-white/20 h-9 w-9 flex items-center justify-center'
+               style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3)' }}>
+               <svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.4' strokeLinecap='round' strokeLinejoin='round'>
+                 <path d='M9 6l6 6-6 6' />
+               </svg>
+             </span>
           </button>
         </div>
      

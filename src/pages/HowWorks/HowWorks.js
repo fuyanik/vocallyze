@@ -9,6 +9,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Helmet } from 'react-helmet'
 import FooterGen from '../../homeComponents/FooterGen/FooterGen'
+import vocallyzeBg from '../../assets/images/vocallyze-bg.png'
+import logo from '../../assets/images/logos.png'
 
 const HowWorks = ({isOutside = false}) => {
 
@@ -20,28 +22,28 @@ const HowWorks = ({isOutside = false}) => {
     <>
   {!isOutside &&   <NavbarGen  /> }
     { !isOutside &&  <Helmet>
-        <title>Medifyre - How It Works </title>
+        <title>Vocallyze - How It Works </title>
         <meta
           name="description"
-          content="Learn how Medifyre's process works to provide expert radiology second opinions online. Start by completing a simple form, check your insurance, and receive your detailed report."
+          content="Learn how Vocallyze audits your call center's recordings. Connect your calls, set your rulebook, and receive your first evidence-backed audit report."
         />
         <meta
           name="keywords"
-          content="how it works, radiology second opinion, medical reports, Medifyre process, medical second opinion"
+          content="how it works, call audit, call center compliance, Vocallyze process, conversation intelligence"
         />
-        <meta property="og:title" content="How It Works - Medifyre" />
+        <meta property="og:title" content="How It Works - Vocallyze" />
         <meta
           property="og:description"
-          content="Understand the steps involved in getting a second opinion from Medifyre's expert radiologists. Complete the form, check insurance, and get a detailed medical report."
+          content="Understand the steps involved in auditing every call with Vocallyze. Connect your recordings, configure your rules, and get a detailed audit report."
         />
         <meta property="og:image" content="%PUBLIC_URL%/path/to/your-image.png" />
-        <meta property="og:url" content="https://medifyre.com/how-it-works" />
+        <meta property="og:url" content="https://vocallyze.com/how-it-works" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How It Works - Medifyre" />
+        <meta name="twitter:title" content="How It Works - Vocallyze" />
         <meta
           name="twitter:description"
-          content="Follow these steps to get a second opinion from top radiologists at Medifyre. Quick, easy, and reliable medical advice."
+          content="Follow these steps to get every call in your center audited by Vocallyze. Quick to connect, evidence-backed, fully covered."
         />
         <meta name="twitter:image" content="%PUBLIC_URL%/path/to/your-image.png" />
       </Helmet>
@@ -62,15 +64,15 @@ const HowWorks = ({isOutside = false}) => {
           <div class={` relative py-8 mb-8  md:mb-12 w-screen ${isOutside ? "lg:py-14" : "lg:py-28"}   flex flex-col items-center justify-center `}>
             <img
               className=" absolute w-[98%] rounded-sm h-full object-cover -z-10 "
-              src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress '
-              alt="groupPng"
+              src={vocallyzeBg}
+              alt=""
             />
 
             <h1 data-aos-duration="400" data-aos="fade-up"  class="text-[42px] font-bold mb-2 lg:mb-4 text-black">
               How It Works
             </h1>
             <p data-aos-duration="400" data-aos="fade-up"  class="opacity-75 text-sm lg:text-base text-black w-[90vw] lg:w-[70vw] text-center ">
-            Experience a simple, hassle-free process designed for your convenience. Receive your detailed medical second opinion within just 24 hours, ensuring you get the expert insights you need quickly and easily.
+            Experience a simple, hassle-free setup designed for your call center. Get every recorded call audited against your own rulebook, ensuring you catch every violation with evidence you can trust.
             </p>
           </div>
 
@@ -106,17 +108,17 @@ const HowWorks = ({isOutside = false}) => {
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
                       {" "}
-                      Get started and complete the form
+                      Connect your call recordings
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p>
-                        We will need your contact details, health history and
-                        complaints, and medical images.
+                        We will need access to your call recording archive,
+                        telephony system, or call center platform.
                       </p>
                       <p>
-                        You may upload your medical images, mail us a CD or USB
-                        stick, share an access code, or authorize Medifyre to
-                        obtain your images.
+                        You may connect a live integration, share a secure
+                        bulk export, or authorize Vocallyze to pull recordings
+                        directly from your existing setup.
                       </p>
                     </div>
                   </div>
@@ -132,18 +134,18 @@ const HowWorks = ({isOutside = false}) => {
                     <img
                       width="40"
                       height="40"
-                      src="https://img.icons8.com/ios/50/83C9B9/medical-insurance--v1.png"
-                      alt="medical-insurance--v1"
+                      src="https://img.icons8.com/ios/50/93CEF9/medical-insurance--v1.png"
+                      alt="audit-plan-setup"
                     />
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
-                      Check your insurance coverage and make the payment
+                      Choose your audit plan and configure your rulebook
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p>
-                        We accept major insurance plans. The prices shown at the
-                        end of the form is the total price for your second
-                        opinion, with no hidden fees.
+                        Pricing is based on call volume, not seat licenses.
+                        We configure your institution's compliance rules
+                        before a single call is scored, with no hidden fees.
                       </p>
                     </div>
                   </div>
@@ -170,7 +172,7 @@ const HowWorks = ({isOutside = false}) => {
                     </div>
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
-                      Receive your second opinion
+                      Receive your first audit report
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p class="pb-4"></p>
@@ -179,18 +181,18 @@ const HowWorks = ({isOutside = false}) => {
                         <div class="p-4 space-y-4 rounded shadow-xs lg:p-6">
                           <div class="">
                             <p class="mb-1 text-sm font-medium lg:text-base">
-                              You will get your second opinion report{" "}
+                              You will get your first audit report{" "}
                             </p>
-                            <p class="mb-4 text-xl font-semibold">Tomorrow</p>
+                            <p class="mb-4 text-xl font-semibold">Within days</p>
                             <p class="mb-3 text-sm lg:text-base text-neutral-700">
-                              Your second opinion report will be more than a
-                              cold and vague radiology report it will contain a
-                              detailed analysis of your the case, radiologist
-                              notes, and marked images.{" "}
+                              Your audit report will be more than a cold
+                              compliance score, it will contain the flagged
+                              transcript excerpt, the exact timestamp, and the
+                              original audio clip behind every finding.{" "}
                             </p>
-                            <Link to={"/sample-reports"}>
+                            <Link to={"/form-new"}>
                               <div class=" px-5 py-3 bg-second hover:bg-prim duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">
-                                See Sample Report
+                                Get Early Access
                               </div>
                             </Link>
                           </div>
@@ -220,13 +222,14 @@ const HowWorks = ({isOutside = false}) => {
                     </div>
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
-                      Ask questions if you have any
+                      Review flagged calls with our team
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p>
-                        Medifyre reports usually answer all the questions our
-                        users have. If you still have unanswered questions, the
-                        answers from one of our radiologists.
+                        Vocallyze reports usually answer every question your
+                        compliance and quality team has. If anything is
+                        unclear, our team walks through the evidence with you
+                        call by call.
                       </p>
                     </div>
                   </div>
@@ -239,42 +242,42 @@ const HowWorks = ({isOutside = false}) => {
           <div className={`w-[93vw] lg:w-[60vw] ${isOutside && ""} `}>
             <div class="  flex-col items-center self-center justify-center lg:mt-12  mt-5">
               <div class="space-y-1 md:text-center max-w-2xl mx-auto mb-12">
-                <h2 data-aos-duration="600" data-aos="fade-up"  class="text-[32px] font-bold">Why choose Medifyre?</h2>
+                <h2 data-aos-duration="600" data-aos="fade-up"  class="text-[32px] font-bold">Why choose Vocallyze?</h2>
                 <p data-aos-duration="600" data-aos="fade-up" class="text-base lg:text-lg text-neutral-600 ">
-                  We're taking the stress out of scanning. With no waiting
-                  lists, we'll provide clinical guidance, simple referrals, and
-                  speedy results all in one place, at one affordable price.
+                  We're taking the guesswork out of call quality. With no
+                  sampling gaps, we surface every violation with a transcript,
+                  a timestamp, and the audio, all in one place, at one
+                  predictable price.
                 </p>
               </div>
 
-              <div class="rounded-2xl border border-grey-300 shadow-sm justify-center flex ">
+              <div class="rounded-2xl border border-grey-300 shadow-sm justify-center flex overflow-x-auto">
                 <table class="  w-full border-collapse">
                   <thead>
                     <tr>
-                      <td class="border-b rounded-tl-2xl bg-neutral-50 pl-4 pr-5 md:px-6 md:py-6 py-4 font-semibold leading-snug text-sm lg:text-base">
+                      <td class="border-b rounded-tl-2xl bg-neutral-50 pl-3 pr-1 md:px-6 md:py-6 py-3 font-semibold leading-snug text-xs sm:text-sm lg:text-base">
                         What's included{" "}
                         <span class="hidden sm:inline">in the cost?</span>
                       </td>
-                      <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
-                        <span class="md:hidden">Medifyre.com</span>
+                      <td class="border-b bg-neutral-50 px-1 md:px-6 md:py-6 py-3 font-semibold text-center text-xs md:text-base lg:text-lg">
                         <img
-                          alt="Medify Logo"
-                          class="shrink-0 w-28 mx-auto hidden md:block"
-                          src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
+                          alt="Vocallyze Logo"
+                          class="shrink-0 h-5 md:h-7 w-auto mx-auto object-contain"
+                          src={logo}
                         />
                       </td>
-                      <td class="border-b bg-neutral-50 px-2 md:px-6 md:py-6 py-4 font-semibold whitespace-nowrap text-center text-sm md:text-base lg:text-lg">
-                        Hospital
+                      <td class="border-b bg-neutral-50 px-1 md:px-6 md:py-6 py-3 font-semibold whitespace-normal md:whitespace-nowrap text-center leading-tight text-[10px] sm:text-sm md:text-base lg:text-lg">
+                        Manual Control
                       </td>
-                      <td class="border-b bg-neutral-50 pl-2 pr-4 md:px-6 md:py-6 py-4 font-semibold  text-center text-sm md:text-base lg:text-lg rounded-tr-2xl">
-                        Private Clinic{" "}
+                      <td class="border-b bg-neutral-50 pl-1 pr-2 md:px-6 md:py-6 py-3 font-semibold whitespace-normal md:whitespace-nowrap text-center leading-tight text-[10px] sm:text-sm md:text-base lg:text-lg rounded-tr-2xl">
+                        Other Services{" "}
                       </td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Second Opinion
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Reviews call recordings
                       </td>
 
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
@@ -319,8 +322,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        A report of your results
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Produces a quality score
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -363,8 +366,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Online access to your images
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Online access to findings
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -407,8 +410,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Second opinion from two radiologists
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Audits 100% of call volume
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -465,8 +468,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr >
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Ask a radiologist
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Quote, timestamp & audio per finding
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -523,8 +526,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Result in 24 hours
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        First findings within days
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -581,8 +584,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Patient-friendly report
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Türkiye-based, on-premise infrastructure
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -639,8 +642,8 @@ const HowWorks = ({isOutside = false}) => {
                       </td>
                     </tr>
                     <tr  data-aos-duration="600" data-aos="fade-up">
-                      <td class="border-y pl-4 pr-5 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Fully online process
+                      <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
+                        Autonomous assistant for repeat calls
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">

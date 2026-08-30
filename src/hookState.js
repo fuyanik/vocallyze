@@ -31,6 +31,8 @@ const { setGlobalState, useGlobalState } = createGlobalState({
  userPanelNavIndex: 1,
  isLoginPopup: false,
  insuranceCompany: "none",
+ callVolume: "none",
+ qaProcess: "none",
 
  mainPayAmount: 299,
   

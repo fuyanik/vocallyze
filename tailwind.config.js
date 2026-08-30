@@ -11,18 +11,43 @@ module.exports = {
       },
 
       colors: {
-        prim:"#83C9B9",
-        second: "#5D9695",
-        primTrans: "#83C9B990",
-        secondTrans: "#5D969590",
+        prim:"#93CEF9",
+        second: "#00688F",
+        primTrans: "#93CEF990",
+        secondTrans: "#00688F90",
 
         pri: '#000000',
         priTrans: '#666666',
 
-        sec: '#ff4949',
-        secTrans: '#ff494990',
+        sec: '#00688F',
+        secTrans: '#00688F90',
 
         black: "#20272C",
+
+        // ── Ported admino design tokens (Navbar / Hero / PlatformDemo only) ──
+        background: "var(--color-background)",
+        foreground: "var(--color-foreground)",
+        primary: {
+          DEFAULT: "var(--color-primary)",
+          light: "var(--color-primary-light)",
+          dark: "var(--color-primary-dark)",
+        },
+        accent: {
+          DEFAULT: "var(--color-accent)",
+          light: "var(--color-accent-light)",
+        },
+        surface: {
+          DEFAULT: "var(--color-surface)",
+          light: "var(--color-surface-light)",
+          lighter: "var(--color-surface-lighter)",
+        },
+        muted: "var(--color-muted)",
+        border: "var(--color-border)",
+        danger: "var(--color-danger)",
+        card: {
+          DEFAULT: "var(--color-card)",
+          hover: "var(--color-card-hover)",
+        },
       },
 
       animation: {

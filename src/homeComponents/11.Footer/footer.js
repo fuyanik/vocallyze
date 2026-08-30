@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { useState } from "react";
 import PrimaryButton from "../microComponents/primaryButton/primaryButton";
 import payment_logo from "./images/payment.jpeg";
+import logo from "../../assets/images/logos.png";
 
 import { RiFacebookFill } from "react-icons/ri";
 import {AiOutlineInstagram} from "react-icons/ai";
@@ -20,7 +21,7 @@ const Footer = ({marginTop}) => {
       
       <div className="footer-main">
         <div className="footer-main-left relative">
-          <img src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' className="w-40" alt="medifyre logo" />
+          <img src={logo} className="w-40" alt="vocallyze logo" />
           <p className="footer-main-left__title">
             Terms of Service · Privacy Policy
           </p>
@@ -74,37 +75,6 @@ const Footer = ({marginTop}) => {
 
         <div className="footer-main-right">
           <ul>
-            <p className="footer-main-right-header">Services</p>
-            <Link className="style-none" to="/mri">
-              <li>MRI</li>
-            </Link>
-            <Link to="/mammogram">
-              {" "}
-              <li>Mammogram</li>{" "}
-            </Link>
-            <Link to="/ultrasound">
-              {" "}
-              <li>Ultrasound</li>{" "}
-            </Link>
-            <Link to="/ct">
-              {" "}
-              <li>CT Scan</li>{" "}
-            </Link>
-            <Link to="/x-ray">
-              {" "}
-              <li>X-Ray</li>{" "}
-            </Link>
-            <Link to="/full-body">
-              {" "}
-              <li>Full Body Scan</li>{" "}
-            </Link>
-            <Link to="/pregnancy">
-              {" "}
-              <li>Pregnancy</li>{" "}
-            </Link>
-          </ul>
-
-          <ul>
             <p className="footer-main-rgiht-header">About </p>
             <Link to="/how-works">
               {" "}
@@ -114,11 +84,7 @@ const Footer = ({marginTop}) => {
               {" "}
               <li>Why Second Opinion</li>{" "}
             </Link>
-            <Link className="hidden" to="/radiology-team">
-              {" "}
-              <li>Radiology Team</li>{" "}
-            </Link>
-            <Link to="/journey-mammogram">
+            <Link to="/sample-reports">
               {" "}
               <li>Sample Reports</li>{" "}
             </Link>
@@ -126,7 +92,7 @@ const Footer = ({marginTop}) => {
               {" "}
               <li>Help</li>{" "}
             </Link>
-            <Link to="/what-next">
+            <Link to="/faq">
               {" "}
               <li>FAQ</li>{" "}
             </Link>

@@ -67,6 +67,11 @@ const gV =
 
     insuranceText: "none",
 
+    //CALL CENTER SETUP (form-new)
+    callVolume: "none",
+    agentCount: 0,
+    qaProcess: "none",
+
 
     //PAYMENT
     payAmount: 0,

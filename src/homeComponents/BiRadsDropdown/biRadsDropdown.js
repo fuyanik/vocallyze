@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import SelectBodyParts from '../../pages/Forms/components/selectBodyParts';
 import ScanType from '../../pages/Forms/components/selectScan';
+import logo from '../../assets/images/logos.png';
 
 const BiRadsDropdown = ({ onMouseLeave, top, left, onClick }) => {
  
@@ -20,7 +21,7 @@ const BiRadsDropdown = ({ onMouseLeave, top, left, onClick }) => {
       onMouseLeave={onMouseLeave}
       className='bi-rads-dropdown  z-50'>
        <div className='flex w-full   -mb-5  text-black items-center justify-between '> 
-        <img alt='logo' className={`w-32 duration-500  `} src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600'/>  
+        <img alt='logo' className={`w-32 duration-500  `} src={logo}/>  
         <p onClick={onClick}  className='rounded-lg px-3 py-1 border border-second hover:bg-second hover:text-white duration-700 text-black text-sm  w-fit'>Close</p>
        </div>
      

@@ -9,6 +9,7 @@ import { setGlobalState } from "../../hookState";
 import { Helmet } from "react-helmet";
 import { doc, setDoc, getDoc, arrayUnion, updateDoc   } from "firebase/firestore"; 
 import { db } from "../../firebase";
+import logo from "../../assets/images/logos.png";
 
 const Register = ({isMailErr = false }) => {
 
@@ -121,8 +122,8 @@ const Register = ({isMailErr = false }) => {
           <Link style={{ textDecoration: "none", display: "flex" }} to="/">
             {" "}
             <img
-              alt="medifyre logo"
-              src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
+              alt="vocallyze logo"
+              src={logo}
               className=" w-52"
             />
           </Link>

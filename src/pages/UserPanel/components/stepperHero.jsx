@@ -234,7 +234,7 @@ export default function VerticalLinearStepperHero({ activeStep1, totalRecheck })
                
                  
                     <p className="ml-1">Your recheck has been completed thoroughly. Please download your comprehensive results from the link below.</p>
-                     <div onClick={downloadResultFake }>  <PrimaryButton  bg={"#5D9695"} text="Download Result"/> </div>
+                     <div onClick={downloadResultFake }>  <PrimaryButton  bg={"#00688F"} text="Download Result"/> </div>
                      
                  
                     

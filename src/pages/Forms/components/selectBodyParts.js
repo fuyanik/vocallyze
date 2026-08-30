@@ -80,7 +80,7 @@ export default function SelectBodyParts({isOutside = false}) {
               >
                  {/* Default Place Holder */}
                  <div className="flex gap-2 h-8 items-center justify-center">
-                <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/5D9695/search--v1.png" alt="search--v1"/>
+                <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/00688F/search--v1.png" alt="search--v1"/>
             
                    { bodyParts.length == 0 && <p className="font-bold lg:font-normal">Body Part(s)</p>}
                  </div>
@@ -131,7 +131,7 @@ export default function SelectBodyParts({isOutside = false}) {
            >
               {/* Default Place Holder */}
               <div className="flex gap-2 h-8 items-center justify-center">
-             <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/5D9695/search--v1.png" alt="search--v1"/>
+             <img width="20" height="20" src="https://img.icons8.com/ios-filled/70/00688F/search--v1.png" alt="search--v1"/>
          
                 { bodyParts.length == 0 && <p className="font-normal lg:font-normal">Body Part(s)</p>}
               </div>

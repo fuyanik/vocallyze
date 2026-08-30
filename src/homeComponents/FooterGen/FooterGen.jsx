@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Link, useNavigate} from 'react-router-dom';
-import { useState } from "react";
+import { motion } from 'framer-motion';
 import PrimaryButton from "../microComponents/primaryButton/primaryButton";
 
 
@@ -10,49 +10,72 @@ import {AiOutlineInstagram} from "react-icons/ai";
 import {BsTwitter} from "react-icons/bs";
 import {RiLinkedinFill} from "react-icons/ri";
 import gV from "../../gV";
-import BiRadsDropdown from "../BiRadsDropdown/biRadsDropdown";
+import { getNavbarContent } from "../../admino/content";
+import footerWaveDesktop from "../../assets/images/footer-wave-desktop.png";
+import footerWaveMobile from "../../assets/images/footer-wave-mobile.png";
+import logoWhite from "../../assets/images/logos-white.png";
+
+// same wave PNGs, used purely as an alpha mask so the flat single-color
+// fill can become a subtle brand-blue gradient instead — dark end sits
+// under the logo/text column (bottom-left) for contrast, and only a
+// faint lighter-blue tint (no real white) shows near the empty arch peak.
+const waveGradient = "linear-gradient(50deg, #01526f 0%, #00688F 60%, #0180ad 90%, #bfe0f5 100%)";
+const waveMaskStyle = (src) => ({
+    background: waveGradient,
+    WebkitMaskImage: `url(${src})`,
+    maskImage: `url(${src})`,
+    WebkitMaskSize: "100% 100%",
+    maskSize: "100% 100%",
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+});
 
 const FooterGen = () => {
 
-    const [isHover , setIsHover] = useState(false);
     const navigate = useNavigate();
+    const nav = getNavbarContent();
   
   
     return (
     <div className='w-screen flex items-end h-[570px] relative  -mt-20  font-product   '>
        
-         <img className='w-full lg:flex hidden absolute  h-full ' src='https://vitamu.imgix.net/svg-4.png?w=1316&h=1380&rect=902%2C0%2C1316%' alt='vawe'/>
-         <img className='w-full lg:hidden flex absolute  h-full ' src='https://vitamu.imgix.net/svg-12.png?w=1316&h=1380&rect=902%2C0%2C1316%2C1380' alt='vawe'/>
+         <div className='w-full lg:flex hidden absolute  h-full ' style={waveMaskStyle(footerWaveDesktop)}/>
+         <div className='w-full lg:hidden flex absolute  h-full ' style={waveMaskStyle(footerWaveMobile)}/>
           
           <div className='w-full flex lg:h-[80%]  z-30 lg:pl-40 lg:pr-20 pl-0 pr-0 lg:pb-0 pb-16  '>  
           
              <div className='lg:w-[50%] w-full flex flex-col lg:gap-6 gap-4 h-full lg:pt-16 pt-0 px-8   '>
-              <img className='w-40'  src='https://vitamu.imgix.net/MEDIFYRE%20Kopyas%C4%B1-4.png?w=2048&h=601&auto=compress&rect=0%2C254%2C2048%2C601' alt='medifyre logo'/>
+              <img className='w-40'  src={logoWhite} alt='vocallyze logo'/>
               <p className='text-white  cursor-pointer'>Terms of Service · Privacy Policy</p>
 
-                 <div  className=" flex relative text-sm font-product "> 
+                 <div className="flex relative text-sm font-product">
+                   <motion.button
+                     onClick={() => navigate("/form-new")}
+                     whileHover={{ scale: 1.03, boxShadow: "0 6px 20px rgba(255,255,255,0.45)" }}
+                     whileTap={{ scale: 0.97 }}
+                     style={{
+                       width: 154,
+                       height: 36,
+                       flexShrink: 0,
+                       background: "linear-gradient(135deg, #ffffff 0%, #eaf4fb 100%)",
+                       boxShadow: "0 4px 14px rgba(255,255,255,0.3), inset 0 1px 0 rgba(255,255,255,0.6)",
+                     }}
+                     className="relative flex min-w-0 cursor-pointer items-center overflow-hidden rounded-full select-none px-1.5"
+                   >
+                     <div className="relative z-10 flex-1 overflow-hidden whitespace-nowrap text-center text-[9.5px] font-bold uppercase tracking-wide text-second" style={{ minWidth: 0 }}>
+                       {nav.waitlistCta}
+                     </div>
+                     <div className="relative z-10 ml-auto h-7 w-7 shrink-0 rounded-full bg-second/10 flex items-center justify-center">
+                       <svg className="h-3.5 w-3.5 text-second" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                         <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                       </svg>
+                     </div>
+                   </motion.button>
+                 </div>
 
-        {isHover && (
-          <BiRadsDropdown
-             top={gV.mq.matches ? "-310%" : "-340%"}
-             left={gV.mq.matches ? "-1%" : "-0%"}
-             onMouseLeave={() => setIsHover(false)}
-             onClick={() => setIsHover(false)}
-          />
-        )}
-
-       <Link onMouseMove={()=>{setIsHover(true)}} to={"/"}> <p className='bg-white px-12 py-2 rounded-xl text-second w-fit'>Get Started</p></Link> 
-    
-     </div>
-        
-         
-              
-       
-       
-       
-              <p className='text-white opacity-75 text-sm lg:w-[70%] w-full'>These statements have not been evaluated by the FDA or NHS. This service is not intended to treat or cure any disease</p>
-              <img className='w-40 '  src='https://vitamu.imgix.net/77a9a243-69ff-47d8-9e26-0b340f0a25f4.png?w=389&h=121&rect=0%2C0%2C389%2C121' alt='visa mastercard logo'/>
-              <p className='text-white'>Medifyre© 2024 All Rights Reserved</p>
+              <p className='text-white opacity-75 text-sm lg:w-[70%] w-full'>Sample reports shown on this site are illustrative and do not reflect an actual customer's calls or data. Every live audit runs entirely on your own institution's infrastructure.</p>
+              <p className='text-white'>Vocallyze© 2026 All Rights Reserved</p>
              </div>
 
 
@@ -67,26 +90,11 @@ const FooterGen = () => {
              <div className='flex flex-col gap-10 w-full  '> 
              
                <div className='flex flex-col'>
-                <h1 className=' w-full text-lg font-bold'>Services</h1>
-                <div className='flex flex-wrap gap-5 mt-2'>
-                 
-                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>MRI</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Mammogram</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>CT Scan</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>X-Ray</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Full Body Scan</p> </div> 
-                  <div onClick={()=>{ window.scrollTo(0, 0); navigate("/")  } } className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Pregnancy</p> </div> 
-              
-                </div>
-
-               </div>
-             
-               <div className='flex flex-col'>
                 <h1 className=' w-full text-lg font-bold  ' >About</h1>
                 <div className='flex flex-wrap gap-5 mt-2'>
                 
-                 <Link to="/sample-reports">  <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p> Sample Reports</p> </div> </Link> 
-                 <Link to="/why-second-opinion"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Why Second Opinion</p> </div> </Link> 
+                 <Link to="/sample-reports">  <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p> Sample Audit Reports</p> </div> </Link> 
+                 <Link to="/why-second-opinion"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Why Audit Calls</p> </div> </Link> 
                  <Link to="/how-works"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>How It Works</p> </div>  </Link> 
                  <Link to="/contact"><div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p><p>Contact</p> </div>  </Link> 
                  <Link to="/faq"><div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p><p>FAQ</p> </div> </Link> 

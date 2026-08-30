@@ -21,12 +21,10 @@ import Icons from '../homeComponents/Icons/Icons';
 import IconsMobile from '../homeComponents/Icons/Icons_mobile';
 
 import { Helmet } from 'react-helmet';
-import PayScreen from './PayScreen/payScreen';
-import HealthHub from './HealthHub/HealthHub';
 import Informational from '../homeComponents/Informational/Informational';
 import HowWorks from './HowWorks/HowWorks';
-import NavbarGen from '../homeComponents/NavbarGen/NavbarGen';
 import PanelHero from '../homeComponents/PanelHero/PanelHero';
+import AdminoSection from '../admino/AdminoSection';
 import SampleReports from './DropdownPages/SampleReports/SampleReports';
 import WhySecondOpinion from './WhySecondOpinion/WhySecondOpinion';
 import FooterGen from '../homeComponents/FooterGen/FooterGen';
@@ -90,18 +88,18 @@ const Home = () => {
   <div className='flex flex-col overflow-hidden ' >  
 
  <Helmet>
-    <title>Medifyre - Expert Medical Second Opinions Online | Trusted Healthcare Services</title>
-    <meta name="description" content="Medifyre provides expert medical second opinions online, connecting you with top radiologists to answer all your healthcare questions." />
-    <meta name="keywords" content="Medifyre, medical second opinions, online healthcare, expert radiologists, medical reports, second opinion services" />
-    <meta property="og:title" content="Medifyre - Expert Medical Second Opinions Online" />
-    <meta property="og:description" content="Get trusted medical second opinions from top radiologists. Medifyre helps you make informed healthcare decisions with ease." />
+    <title>Vocallyze - Audit Every Call | Trusted Conversation Intelligence</title>
+    <meta name="description" content="Vocallyze audits every recorded call in your center — transcription, rules, and evidence with no sampling. Full coverage, KVKK-compliant conversation intelligence." />
+    <meta name="keywords" content="Vocallyze, call audit, call center compliance, conversation intelligence, KVKK, quality monitoring" />
+    <meta property="og:title" content="Vocallyze - Audit Every Call | Trusted Conversation Intelligence" />
+    <meta property="og:description" content="Audit every recorded call with Vocallyze. Full coverage, evidence-backed findings, and live compliance monitoring — no sampling required." />
     <meta property="og:image" content="https://yourwebsite.com/path/to/homepage-image.png" />
-    <meta property="og:url" content="https://medifyre.com" />
+    <meta property="og:url" content="https://vocallyze.com" />
     <meta property="og:type" content="website" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </Helmet>
     
-       <NavbarGen/>
+       <AdminoSection/>
        <Hero/>
        <PanelHero/>
        <WhySecondOpinion isOutside={true} />
@@ -110,11 +108,6 @@ const Home = () => {
        
     
       {/* <Radiologists isOutside={true}/>  */} 
-
-    
-      
-      {/* <HealthHub   isOutside={true} />  */} 
-      
 
        { /* <Informational/> */ }
         

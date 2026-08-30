@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import gV from "../../gV";
 import { setGlobalState } from "../../hookState";
 import { Helmet } from "react-helmet";
+import logo from "../../assets/images/logos.png";
 
 
 const Login = ({isMailErr = false }) => {
@@ -129,8 +130,8 @@ const Login = ({isMailErr = false }) => {
           <Link style={{ textDecoration: "none", display: "flex" }} to="/">
             {" "}
             <img
-              alt="medifyre logo"
-              src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
+              alt="vocallyze logo"
+              src={logo}
               className=" w-52"
             />
           </Link>

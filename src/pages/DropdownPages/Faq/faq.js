@@ -16,6 +16,7 @@ import { SideInformation } from '../../BiRads/biRads3';
 import { Helmet } from 'react-helmet';
 import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
 import FooterGen from '../../../homeComponents/FooterGen/FooterGen';
+import vocallyzeBg from '../../../assets/images/vocallyze-bg.png';
 
 const Faq = ({isOutside = false}) => {
   useEffect(() => {  window.scrollTo(0, 0); }, []);
@@ -28,8 +29,8 @@ const Faq = ({isOutside = false}) => {
 
 
   <Helmet>
-  <title>Medifyre - Faq</title>
-   <meta name="description" content="Faq" />
+  <title>Vocallyze - FAQ</title>
+   <meta name="description" content="Answers to common questions about call auditing, pricing, data residency, and KVKK compliance with Vocallyze." />
 </Helmet>
 
  <NavbarGen/>
@@ -41,15 +42,15 @@ const Faq = ({isOutside = false}) => {
        
       {/*  Header */}   
        <div className={`flex flex-col gap-4 relative py-32   lg:w-[100vw]  w-[100vw] px-7 items-center justify-center  z-10 `}>
-        <img      
-                alt='why second opinion bg'
+        <img
+                alt=""
                 className=" absolute w-[100%] rounded-sm h-full object-cover -z-10 "
-                src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
+                src={vocallyzeBg}
               />
           
             <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'> Have questions? We have answers.</h1>
               <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
-              Find answers to common questions and get the information you need to make the most of our services.
+              Find answers to common questions about connecting your calls, pricing, and how Vocallyze keeps your data under your own control.
               </p>
               
        </div>

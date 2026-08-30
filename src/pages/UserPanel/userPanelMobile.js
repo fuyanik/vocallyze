@@ -1,4 +1,5 @@
 import Navbar from "../../homeComponents/1.Navbar/navbar";
+import logo from "../../assets/images/logos.png";
 
 import "./style/userPanelMobile.css";
 import { useState,useEffect } from "react";
@@ -334,7 +335,7 @@ const UserPanelMobile = () => {
         <div className="userPanel-mobile__header ">
           <div className="flex items-center justify-center w-full h-10 ">
           <Link to={"/"}>  
-             <img className='w-40' src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"' alt='medifyre logo'/>
+             <img className='w-40' src={logo} alt='vocallyze logo'/>
            </Link> 
 
           </div>

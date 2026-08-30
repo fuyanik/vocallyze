@@ -87,7 +87,7 @@
 }
 .login-page__main__form-area__inputs__input:focus {
   outline: none;
-  border: 1px solid #5D9695;
+  border: 1px solid #00688F;
   animation-duration: 500ms;
 }
 .login-page__main__form-area__inputs__login-button {
@@ -102,10 +102,10 @@
   color: white;
   font-size: 20px;
   letter-spacing: 0px;
-  background-color: #5D9695;
+  background-color: #00688F;
 }
 .login-page__main__form-area__inputs__login-button:hover {
-  background-color: #83C9B9;
+  background-color: #93CEF9;
 }
 .login-page__main__form-area__inputs__forgot-password {
   font-size: 16px;
@@ -270,10 +270,10 @@
     color: white;
     font-size: 20px;
     letter-spacing: 0px;
-    background-color: #5D9695;
+    background-color: #00688F;
   }
   .login-page__main__form-area__inputs__login-button:hover {
-    background-color: #83C9B9;
+    background-color: #93CEF9;
   }
   .login-page__main__form-area__inputs__forgot-password {
     font-size: 16px;

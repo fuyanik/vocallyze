@@ -3,6 +3,7 @@ import './mobileFooter.css'
 import vitamuLogo from './images/vitamuLogo.png'
 import mobileFooterIcons from './images/mobileFooterIcons.png'
 import mobileFooterPay from './images/mobileFooterPay.jpg'
+import logo from '../../assets/images/logos.png'
 import {Link} from 'react-router-dom';
 import PrimaryButton from '../microComponents/primaryButton/primaryButton';
 import gV from '../../gV';
@@ -21,7 +22,7 @@ return (
 <div className="mobile-footer"> 
    <div className='mobile-footer-main'> 
         {/* <div className='dividero-footer'></div> */}
-         <img alt='medifyre logo' className="w-48 " src='https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600' />
+         <img alt='vocallyze logo' className="w-48 " src={logo} />
          <MobileFooterCustomizedAccordions/>
          <p className='mobile-footer-text'>Terms of Service · Privacy Policy</p>
          <img alt='medifyre icons'  className='mobile-footer-icons' src= {mobileFooterIcons}/>

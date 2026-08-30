@@ -1,5 +1,6 @@
 import "./style/userPanel.css";
 import vitamuLogo from "./images/vitamuLogo.png";
+import logo from "../../assets/images/logos.png";
 import {useEffect, useState} from 'react';
 import CustomizedAccordions from "./components/accordion";
 import CustomizedAccordions2 from "./components/accordion2";
@@ -470,9 +471,9 @@ return (
           <div className="userPanel-main-header">
             <Link to="/">
               <img
-                alt="medifyre logo"
+                alt="vocallyze logo"
                 className="w-52"
-                src="https://vitamu.imgix.net/MEDIFYRE-6.png?w=6400&h=3600&ar=6400%3A3600"
+                src={logo}
               />
             </Link>
 

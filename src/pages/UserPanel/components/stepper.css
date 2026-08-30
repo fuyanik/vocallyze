@@ -15,17 +15,17 @@
 
 /* completed tick icon*/
 .Mui-completed {
-    color: #5D9695 !important;
+    color: #00688F !important;
 }
 
 /*  number icon*/
 .Mui-active {
-  color: #5D96958f !important;
+  color: #00688F8f !important;
 
 }
 
 .Mui-disabled {
-  color: #5d9695ac  !important
+  color: #00688Fac  !important
 }
 
 

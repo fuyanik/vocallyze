@@ -5,12 +5,11 @@ import gV from "../../gV"
 import { useState } from "react";
 import BiRadsDropdown from "../BiRadsDropdown/biRadsDropdown";
 import { Link, useNavigate } from "react-router-dom";
-import SelectBodyParts from "../../pages/Forms/components/selectBodyParts";
-import ScanType from "../../pages/Forms/components/selectScan";
 import IconsMobile from "../Icons/Icons_mobile";
 import Navbar from "../1.Navbar/navbar";
-import groupPng from "../../assets/images/group.png"
+import vocallyzeBg from "../../assets/images/vocallyze-bg.png"
 import AllOneService from "../5.AllOneService/allOneService";
+import WaitlistButton from "../../admino/WaitlistButton";
 import Informational from "../Informational/Informational";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -49,15 +48,15 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
     {
         id:2,
 
-        text:"60+ radiologists"
+        text:"100% call coverage"
     },
     {
         id:3,
-        text:"Starting at $20"
+        text:"Starting at 0.75 TL/call"
     },
     {
         id:4,
-        text:"Insurance accepted"
+        text:"Works with your telephony"
     },
    
    ]
@@ -72,7 +71,7 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
         <link
           rel="preload"
           as="image"
-          href="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress"
+          href={vocallyzeBg}
           alt="bg image"
         />
       </Helmet>
@@ -80,82 +79,46 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
      
       
-      <div className="w-screen h-auto   lg:pb-96 pb-60 lg:pt-12   relative text-black font-product tracking-wide  flex  sm:items-start  justify-center sm:justify-center   ">
+      <div className="w-screen h-auto lg:pb-96 pb-60 lg:pt-20 pt-12 relative text-black font-product tracking-wide flex sm:items-start justify-center sm:justify-center">
         
         {/* get background image all div */}
          
-        {/* mobil bg */}
-        <img className="absolute sm:hidden flex sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/background916.png?w=864&h=1536&ar=864%3A1536&auto=compress" alt="groupPng"/>
+        {/* mobil bg — same web background image, just cropped for the narrow viewport */}
+        <img className="absolute sm:hidden flex sm:top-[2%] top-[1%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src={vocallyzeBg} alt=""/>
        
         {/* web bg */}
-        <img className="absolute sm:flex hidden sm:top-[6px] top-[0%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src="https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng"/>
+        <img className="absolute sm:flex hidden sm:top-[6px] top-[0%] sm:h-[97%] h-[98%]   sm:left-[1%] left-[2%] sm:w-[98%] w-[96%]  object-cover -z-10" src={vocallyzeBg} alt=""/>
        
-        <div className="flex lg:mt-12  mt-28-iphone7 mt-36 flex-col lg:gap-10 gap-6 lg:items-center items-center  text-center">
+        <div className="flex lg:mt-4 mt-6 flex-col lg:gap-10 gap-6 lg:items-center items-center text-center">
          
-         <div data-aos-delay="150" data-aos-duration="400" data-aos="fade-up"    className="    lg:text-[60px] text-[36px] lg:w-[40vw] lg:leading-[78px]  leading-[42px]   lg:text-center text-center items-center justify-left font-bold ">
-           <p  >Get your online</p>
-         
-           <div  className="hero__main__header__fade-in  flex  justify-center lg:justify-center relative">
-              <p className="">ultrasound</p>
-              <p>MRI</p>
-              <p>mammogram</p>
-              <p>CT scan</p>
-              <p>PET scan</p>
-              <p>X-ray</p>
-             
-            </div>
-         
-           <p data-aos="fade-up" className="mt-10 lg:mt-[72px]">second opinion </p>
-        </div>
-        
-   
-      {  
+         <div data-aos-duration="600" data-aos="fade-up" className="flex flex-col items-center gap-4">
+          <h1 data-aos-duration="600" data-aos="fade-up" className="lg:text-[52px] text-[34px] self-center tracking-wide lg:leading-[58px] leading-[42px] text-center text-black font-bold">Track the Entire Process</h1>
+          <p data-aos-duration="600" data-aos="fade-up" className="lg:block hidden w-[90vw] lg:w-[60vw] font-product text-center text-black">
+            Keep track of every call flowing through your center from your personal dashboard. It provides real-time updates—no sampling required—from the moment a call ends to the delivery of its full audit report, ensuring you're always informed and in control.
+          </p>
+          <p data-aos-duration="600" data-aos="fade-up" className="text-sm lg:hidden w-[90vw] font-product text-center text-black">Keep an eye on every call <i className="text-second">—no need to sample anything—</i> across your center through your personal dashboard.</p>
 
-
-      /* Hero Dropdowns Buttons */
-
-      /*  Mobile */
-      gV.mq.matches ? 
-        <div  className="flex flex-col items-center  gap-3 rounded-full ">
-          <div  >
-            <SelectBodyParts/>
+          {/* desktop: two-button row, unchanged */}
+          <div className="lg:flex hidden items-center justify-center gap-4">
+            <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-right" onClick={()=>{navigate("/form-new")}} className="px-10 py-2 rounded-full bg-second hover:bg-prim duration-300 self-center text-white w-fit shadow-lg cursor-pointer"> Get Early Access </div>
+            <Link to={"/why-second-opinion"}> <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-left" className="px-10 py-2 rounded-full text-second border border-second self-center w-fit shadow-lg cursor-pointer"> Why Audit Calls? </div> </Link>
           </div>
-          <div  >
-            <ScanType/>
-          </div>
-         <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  onClick={()=>{navigate("/form-new")}} className=" flex items-center justify-center  bg-second hover:bg-prim duration-300 cursor-pointer text-white  w-[290px] h-[48px]  rounded-3xl ">Get Started</div>
-        </div>
-      
-      
-      :
-      /* Desktop */
-        <div    className="  flex w-[65vw] cursor-pointer  h-[58px]  ">
-          <SelectBodyParts/>
-          <ScanType/>
-          
-          <div onClick={()=>{ navigate("/form-new") }} className=" flex items-center justify-center gap-3 w-[22%] h-full   bg-second hover:bg-prim duration-500 text-white rounded-[44px] relative right-6 z-10  "> 
-            <p>Get Started</p>
-            <p>➔</p>
-           </div>
-          
-         </div>
 
-} 
+          {/* mobile: single centered CTA, same pill/gradient/icon UI as the navbar's button */}
+          <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up" className="lg:hidden flex items-center justify-center">
+            <WaitlistButton size="md" />
+          </div>
+        </div>
 
         <div   className="lg:flex lg:flex-row  flex flex-col items-center justify-center lg:gap-10 gap-2 text-black px-2"> 
            
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>60+ Radiologists</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>100% Call Coverage</p> </div> 
            
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
-           <div  data-aos-delay="500" data-aos-duration="300" data-aos="fade-left"  className="lg:hidden flex gap-2"> {costIcon} <p>Full Refund Guarantee</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up"  className="lg:flex hidden gap-2"> {costIcon} <p>KVKK-Compliant By Design</p> </div> 
          
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Follow-up Consultations</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Live Compliance Monitoring</p> </div> 
         
-           <div data-aos-delay="600" data-aos-duration="300" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>Insurance Accepted</p> </div> 
-           <div data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"   className="lg:hidden  flex gap-2"> {customerIcon} <p>Insurance Accepted</p> </div> 
-         
-         
-           <div data-aos-delay="700" data-aos-duration="300" data-aos="fade-left"  className="flex lg:hidden gap-2 items-center justify-center  "> {searchIcon} <p>Personal Dashboard</p> </div> 
+           <div data-aos-delay="600" data-aos-duration="800" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>Works With Your Telephony</p> </div> 
            
          
         </div>
@@ -174,9 +137,9 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 export default Hero;
 
 /* 
-*Full Refund Guarantee
-*Personalized Dashboard
-*Largest Specialist Network in the USA
-*Follow-up Consultations Available
+*KVKK-Compliant By Design
+*Personal Audit Dashboard
+*100% Call Coverage
+*Live Compliance Monitoring
 
 */

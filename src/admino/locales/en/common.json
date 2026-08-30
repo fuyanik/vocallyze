@@ -1,0 +1,88 @@
+{
+  "navbar": {
+    "logoAlt": "Admino",
+    "links": [
+      "Sample Audit Reports",
+      "Why Audit Calls",
+      "Contact"
+    ],
+    "waitlistCta": "GET EARLY ACCESS",
+    "menuToggleAria": "Toggle menu",
+    "languageSectionLabel": "Language",
+    "mailUsCta": "Mail us"
+  },
+  "language": {
+    "switcherAria": "Choose language"
+  },
+  "waitlist": {
+    "closeAria": "Close",
+    "heading": " Your platform is waiting for you",
+    "description": "Reserve your spot today. No spam, ever. We'll only email you when it's time.    ",
+    "modules": {
+      "question": "Which features interest you most",
+      "optional": "Optional",
+      "hint": "This will helps us prioritize",
+      "selectAll": "Select all",
+      "deselectAll": "Clear selection",
+      "names": [
+        "Business Advisor",
+        "Multilingual ",
+        "Community",
+        "E-Learning",
+        "Subscription Billing",
+        "E-Commerce",
+        "AI Chatbot",
+        "Email Marketing"
+      ]
+    },
+    "email": {
+      "label": "Your email address",
+      "requiredLabel": "Required",
+      "placeholder": "you@company.com",
+      "privacy": "",
+      "submit": "Join"
+    },
+    "success": {
+      "heading": "You're on the list!",
+      "descriptionPrefix": "We'll send you an early access invite as soon as Admino is ready. Keep an eye on",
+      "badge": "Founding member benefits reserved for you"
+    }
+  },
+  "footer": {
+    "logoAlt": "Admino",
+    "brandDescription": "",
+    "email": "info@vocallyze.com",
+    "sections": {
+      "navigation": {
+        "title": "Navigation",
+        "items": [
+          "Home",
+          "Product",
+          "How It Works",
+          "Contact"
+        ]
+      },
+      "quickAccess": {
+        "title": "Quick Access",
+        "items": [
+          "Customize It Yourself",
+          "Features",
+          "Frequently Asked Questions"
+        ]
+      },
+      "cta": {
+        "title": "Get started",
+        "description": "Be first in line when we launch. No spam, just one email.",
+        "button": "GET EARLY ACCESS"
+      }
+    },
+    "copyright": "© 2026 Admino All rights reserved."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "themeToggle": {
+    "light": "Light",
+    "dark": "Dark"
+  }
+}

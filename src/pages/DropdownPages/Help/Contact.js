@@ -1,18 +1,19 @@
 import React from 'react'
-import Navbar from "../../../homeComponents/1.Navbar/navbar";
 
 import { useEffect, useRef } from 'react';
-import Footer from "../../../homeComponents/11.Footer/footer";
-import MobileFooter from '../../../homeComponents/22.MobileFooter/mobileFooter';
-import gV from '../../../gV';
 
 import { Helmet } from 'react-helmet';
 import "../humanError.css"
-import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
+import Navbar from '../../../admino/Navbar';
 import lottie from 'lottie-web';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import FooterGen from '../../../homeComponents/FooterGen/FooterGen';
+import vocallyzeBg from '../../../assets/images/vocallyze-bg.png';
 
 const Contact = () => {
+  AOS.init();
+
   useEffect(() => {  window.scrollTo(0, 0); }, []);
 
   
@@ -37,12 +38,12 @@ const Contact = () => {
 
 
   <Helmet>
-    <title>Medifyre - Contact</title>
-     <meta name="description" content="Contact" />
+    <title>Vocallyze - Contact</title>
+     <meta name="description" content="Contact the Vocallyze team for questions about call auditing and compliance." />
   </Helmet>
 
 
-   <NavbarGen/>
+   <Navbar/>
 
    <section className={` text-black  pb-10  h-auto   lg:w-screen w-[100vw] self-center  rounded-md overflow-hidden   relative flex flex-col items-center gap-3 lg:gap-10 justify-center font-product`}>
       
@@ -50,9 +51,9 @@ const Contact = () => {
       {/*  Header */}   
        <div className={`flex flex-col gap-4 relative py-32   lg:w-[100vw]  w-[100vw] px-7 items-center justify-center  z-10 `}>
         <img      
-                alt='why second opinion bg'
+                alt=''
                 className=" absolute w-[100%] rounded-sm h-full object-cover -z-10 "
-                src='https://vitamu.imgix.net/Ads%C4%B1z%20tasar%C4%B1m-10.png?w=6400&h=3371&rect=0%2C0%2C6400%2C3371&auto=compress" alt="groupPng'
+                src={vocallyzeBg}
               />
           
             <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'> Have questions? We have answers.</h1>
@@ -77,8 +78,8 @@ const Contact = () => {
        
         <div data-aos-duration="600" data-aos="fade-up" className="flex flex-col gap-4 "> 
          <h2 className="text-lg border-b w-fit border-second font-bold">Connect with Us via Email</h2>
-         <p className="text-base opacity-80">You can also reach us by email for any inquiries or support. Simply send a message to hello@medifyre.com, and we'll respond to you promptly.</p>
-         <p className="px-12 py-2 bg-second text-white rounded-full w-fit cursor-pointer"> <a className="style-none"  href="mailto:hello@medifyre.com"> <span>E-Mail Us</span> </a></p>
+         <p className="text-base opacity-80">You can also reach us by email for any inquiries or support. Simply send a message to info@vocallyze.com, and we'll respond to you promptly.</p>
+         <p className="px-12 py-2 bg-second text-white rounded-full w-fit cursor-pointer"> <a className="style-none"  href="mailto:info@vocallyze.com"> <span>E-Mail Us</span> </a></p>
         </div>
        
         <div data-aos-duration="600" data-aos="fade-up" className="flex flex-col gap-4 "> 

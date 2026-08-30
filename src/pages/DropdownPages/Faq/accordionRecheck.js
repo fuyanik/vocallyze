@@ -103,16 +103,16 @@ export default function AccordionRecheck({isOutside = false}) {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
-          }} > I had a screening, but I do not have a copy of my images. What should I do?</Typography>
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#00688F"
+          }} > I don't have my call recordings centralized in one place. What should I do?</Typography>
         </AccordionSummary>
 
 
         <AccordionDetails>
        
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-            <p>It is always good to keep a copy of your images with you for both a recheck and further screening comparisons. However, for a second opinion, we are able to acquire your images from your medical center if you authorize us. </p>
-            <p>Please choose “I authorize you to acquire my images” when filling out the form. Please keep that in mind, your imaging center will call you for confirmation.</p>
+            <p>You don't need a clean, centralized archive to get started. We connect directly to your call recording system, telephony platform, or CRM export — whatever you already use today. </p>
+            <p>During setup you can choose a live integration, a secure bulk export of historical calls, or authorize Vocallyze to pull recordings directly from your call center platform.</p>
          </div>
         
         
@@ -128,8 +128,8 @@ export default function AccordionRecheck({isOutside = false}) {
         onChange={handleChange("panel3")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
-          }} >When will I get my second opinion report?</Typography>
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#00688F"
+          }} >When will I get my first audit report?</Typography>
         </AccordionSummary>
 
 
@@ -137,7 +137,7 @@ export default function AccordionRecheck({isOutside = false}) {
 
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
          
-          <p>If you upload a digital copy of your images, we will deliver your final report within 24 hours. If you choose to ship a CD/USB stick containing your images to us or give us permission to acquire the images from your medical center, the final report will be completed within 24 hours of us receiving your images.
+          <p>Once your call recordings are connected and your institution's rulebook is configured, you'll receive your first audit report within days, not weeks. From then on every new call is scored continuously, so reports keep arriving as calls come in.
           </p>
         
         </div>
@@ -154,8 +154,8 @@ export default function AccordionRecheck({isOutside = false}) {
         onChange={handleChange("panel4")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
-          }}>What will my second opinion report include?</Typography>
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#00688F"
+          }}>What will my audit report include?</Typography>
         </AccordionSummary>
 
       
@@ -166,12 +166,12 @@ export default function AccordionRecheck({isOutside = false}) {
          
           <p>It will include four sections.	</p>
           <p>
-A summary card: An overview of your personal history and our findings.	
-Detailed case analysis: A list of normal and abnormal findings in your images.	
-Radiologist notes: Explanatory notes from your dedicated radiologist to make you understand the case in detail.	
-Marked images: Markings in the suspicious areas in your images.</p>
+Call record & compliance score: an overview of the call, the agent, and the overall score.	
+Rule-by-rule findings: which of your institution's rules passed or failed, and why.	
+Evidence: the verbatim transcript excerpt, the exact timestamp, and the original audio clip behind every finding.	
+Suggested action: what your team should do next, from a written correction to escalation.</p>
 
-<p>What to see sample reports?</p>
+<p>Want to see sample reports?</p>
 <Link to={"/sample-reports"}>
                <div class= " px-5 py-3 bg-second hover:bg-prim duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">See Sample Report</div>
              </Link>
@@ -191,8 +191,8 @@ Marked images: Markings in the suspicious areas in your images.</p>
         onChange={handleChange("panel5")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
-          }} >How much will I pay for a second opinion report?</Typography>
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#00688F"
+          }} >How much will I pay for call auditing?</Typography>
         </AccordionSummary>
 
       
@@ -200,7 +200,7 @@ Marked images: Markings in the suspicious areas in your images.</p>
 
 
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-          <p>A recheck will only cost you $199. No additional payments, no extra charges. We accept major insurance plans, and most of our users pay less than $60 for a second opinion report.</p>
+          <p>Pricing is based on call volume, not seat licenses. Full-call auditing costs 0.75-1.25 TL per call depending on volume, with no setup fee and no hidden charges. If you also use the autonomous voice assistant for repetitive calls, that's billed separately at 1-2 TL per minute, only for the minutes it actually handles.</p>
         
          </div>
         
@@ -215,8 +215,8 @@ Marked images: Markings in the suspicious areas in your images.</p>
         onChange={handleChange("panel6")}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#5D9695"
-          }} >Can I get a written copy of my second opinion report?</Typography>
+        <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px",  letterSpacing:"-0px", color:"#00688F"
+          }} >Can I export or share an audit report?</Typography>
         </AccordionSummary>
 
       
@@ -224,9 +224,8 @@ Marked images: Markings in the suspicious areas in your images.</p>
 
 
         <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-            <p>Your report will be digitally signed by our radiologists, meaning you will not need a physical copy. However, if you want one, just drop us an e-mail at <a className="style-none"  href="mailto:hello@medifyre.com"> <span>hello@medifyre.com</span> </a> , and we can send you a physical copy for free.</p>
-            Can I talk to a radiologist?
-If you have any special requests before, during, or after the recheck process, you can talk to your assigned radiologists. Drop us an e-mail at <a className="style-none"  href="mailto:ask@medifyre.com"> <span>ask@medifyre.com</span> </a>  and we can arrange this for you
+            <p>Yes. Every report can be exported as a PDF and shared with your compliance, legal, or operations team. Reports are time-stamped automatically, so you never need a separate paper trail.</p>
+            <p><b>Can I talk to your team about a finding?</b><br/>If anything in a report is unclear, or you'd like a second look at a specific call, drop us an e-mail at <a className="style-none"  href="mailto:ask@vocallyze.com"> <span>ask@vocallyze.com</span> </a> and we'll walk through the evidence with you.</p>
           
          </div>
         
@@ -245,8 +244,8 @@ If you have any special requests before, during, or after the recheck process, y
           onChange={handleChange("panel7")}
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#5D9695"
-            }} >Do you store my medical data?</Typography>
+          <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#00688F"
+            }} >Do you store our call data?</Typography>
           </AccordionSummary>
       
         
@@ -254,7 +253,7 @@ If you have any special requests before, during, or after the recheck process, y
       
       
           <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-            <p>We never store the files you upload or your recheck reports without your consent. If you do not give us permission to keep your records, the images, and reports are kept on Amazon Web Services servers for 24 hours and then deleted permanently.</p>
+            <p>Your call recordings and audit results are processed under a data processing agreement with your institution — your institution remains the data controller, Vocallyze acts strictly as the data processor. Recordings are hosted on Türkiye-based infrastructure, or fully on-premise for institutions with stricter requirements, and are retained only as long as your own retention policy requires.</p>
           </div>
           
        
@@ -268,8 +267,8 @@ If you have any special requests before, during, or after the recheck process, y
           onChange={handleChange("panel8")}
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#5D9695"
-            }} >Is medifyre.com HIPAA compliant?</Typography>
+          <Typography data-aos-duration="600" data-aos="fade-up" style={{  fontFamily : "ProductSans-Light", fontSize: "18px", letterSpacing:"-0px", color:"#00688F"
+            }} >Is Vocallyze KVKK compliant?</Typography>
           </AccordionSummary>
       
         
@@ -277,8 +276,8 @@ If you have any special requests before, during, or after the recheck process, y
       
       
           <div className="accordions-text" style={{display: "flex", flexDirection: "column", gap:"16px" }}>
-             <p>The Health Insurance Portability and Accountability Act (HIPAA) sets the standard for sensitive patient data protection. Companies that deal with protected health information (PHI) must have physical, network, and process security measures in place and follow them to ensure HIPAA Compliance.</p>
-             <p>Here at Medifyre, everything you do on our website is HIPAA compliant and the systems/services we use are also HIPAA compliant. While processing your images for a second opinion report, we use HIPAA compliant Amazon Web Services servers. During the journey of your images recheck, the first step we take is to anonymize your images, so that neither our radiologists nor any other team member will know your name.</p>
+             <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) sets the standard for how personal data, including call recordings, must be processed in Türkiye. Institutions handling personal data must have a valid legal basis, technical safeguards, and processing agreements in place to stay compliant.</p>
+             <p>Vocallyze processes every call under a KVKK-compliant data processing agreement. Personal identifiers are masked in the transcript before it ever reaches the language model, and no recording, transcript, or identifier leaves your institution's network without your explicit authorization.</p>
           </div>
           
        

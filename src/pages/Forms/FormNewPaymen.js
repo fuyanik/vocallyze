@@ -17,7 +17,6 @@ import CardHaveInsurance from '../../formComponents/CardHaveInsurance/cardHaveIn
 import Card9 from "../../formComponents/Card9/card9";
 import SwiperPage from "../Swiper/swiper";
 import { setGlobalState, useGlobalState } from "../../hookState";
-import PayScreen from "../PayScreen/payScreen";
 import Popup from "../Popup/popup";
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import gV from "../../gV";
@@ -534,7 +533,7 @@ export default function FormNewPayment() {
       contents={ 
         <div>
           <h1 onClick={()=>{setIsPopupOpen(false)}} className="absolute z-50 right-6 top-0 bg-black text-white px-3 py-1 rounded-full"> Close</h1>
-          <PayScreen/> 
+          <p className="p-6">Payment is currently unavailable. Please contact us at hello@medifyre.com.</p>
         </div>}
       close={false}
       />
