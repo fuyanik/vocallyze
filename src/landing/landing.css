@@ -1,0 +1,207 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Ported design tokens for the landing Navbar + Hero + PanelDemo.
+   Scoped deliberately: only the two CSS vars declarations are global
+   (":root" / "[data-theme]"), and those don't paint anything by
+   themselves. Every rule that actually uses them (.landing-root,
+   .demo-root, .bg-grid, .demo-liquid-pill*) is scoped to this section so
+   the rest of the Vocallyze site (its own colors/classes) is untouched.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ARCTIC (light) — default */
+:root {
+  --color-background: #f8faff;
+  --color-foreground: #0f172a;
+  --color-primary: #01678c;
+  --color-primary-light: #0180ad;
+  --color-primary-dark: #01526f;
+  --color-accent: #06d6a0;
+  --color-accent-light: #34d399;
+  --color-surface: #eef2f9;
+  --color-surface-light: #e4eaf4;
+  --color-surface-lighter: #d8e0ee;
+  --color-muted: #64748b;
+  --color-border: #c7d2e0;
+  --color-danger: #ef4444;
+  --color-card: #ffffff;
+  --color-card-hover: #f5f8fc;
+  --nav-bg: rgba(248, 250, 255, 0.55);
+  --nav-bg-scroll: rgba(248, 250, 255, 0.66);
+  --demo-surface-bg: #e8edf7;
+  --demo-topbar-bg: rgba(232, 237, 247, 0.97);
+  --demo-liquid-bg: rgba(255, 255, 255, 0.88);
+  --demo-liquid-border: rgba(1, 103, 140, 0.28);
+  --demo-liquid-shadow: rgba(15, 23, 42, 0.1);
+  --demo-liquid-text: rgba(15, 23, 42, 0.65);
+  --demo-liquid-text-active: #ffffff;
+  --demo-liquid-text-hover: var(--color-primary);
+  --demo-liquid-pill-hover-bg: rgba(1, 103, 140, 0.1);
+  --demo-liquid-pill-active-bg: linear-gradient(135deg, #0180ad 0%, #01678c 100%);
+  --demo-liquid-active-shadow: rgba(1, 103, 140, 0.28);
+}
+
+/* MIDNIGHT (dark) */
+[data-theme="midnight"] {
+  --color-background: #050a18;
+  --color-foreground: #ffffff;
+  --color-primary: #01678c;
+  --color-primary-light: #0180ad;
+  --color-primary-dark: #01526f;
+  --color-accent: #06d6a0;
+  --color-accent-light: #34d399;
+  --color-surface: #0c1629;
+  --color-surface-light: #111d35;
+  --color-surface-lighter: #162544;
+  --color-muted: #94a3b8;
+  --color-border: #1e3a5f;
+  --color-danger: #ef4444;
+  --color-card: #0f1d32;
+  --color-card-hover: #132440;
+  --nav-bg: rgba(12, 22, 41, 0.44);
+  --nav-bg-scroll: rgba(12, 22, 41, 0.42);
+  --demo-surface-bg: #1d3a66;
+  --demo-topbar-bg: rgba(18, 34, 60, 0.72);
+  --demo-liquid-bg: rgba(112, 163, 248, 0.18);
+  --demo-liquid-border: rgba(142, 189, 255, 0.4);
+  --demo-liquid-shadow: rgba(8, 16, 36, 0.52);
+  --demo-liquid-text: rgba(222, 235, 255, 0.82);
+  --demo-liquid-text-active: #ffffff;
+  --demo-liquid-pill-hover-bg: rgba(1, 128, 173, 0.2);
+  --demo-liquid-pill-active-bg: linear-gradient(135deg, #0180ad 0%, #01678c 100%);
+  --demo-liquid-active-shadow: rgba(1, 103, 140, 0.48);
+}
+
+/* ── Section wrapper: paints the landing background/text colors only
+   inside this section, never touching the rest of the page ── */
+.landing-root {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* ── Grid background (Hero) ── */
+.landing-root .bg-grid {
+  background-image:
+    linear-gradient(rgba(1, 103, 140, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 103, 140, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+[data-theme="midnight"] .landing-root .bg-grid {
+  background-image:
+    linear-gradient(rgba(1, 103, 140, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 103, 140, 0.03) 1px, transparent 1px);
+}
+
+/* ── PanelDemo: liquid pill nav + arctic contrast overrides for
+   dark-canvas utility classes (bg-white/5, border-white/10, etc.) ── */
+[data-theme="arctic"] .demo-root .bg-white\/2  { background-color: rgba(255,255,255,0.70) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/3  { background-color: rgba(255,255,255,0.88) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/4  { background-color: rgba(255,255,255,0.90) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/5  { background-color: rgba(255,255,255,0.92) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/6  { background-color: rgba(255,255,255,0.94) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/7  { background-color: rgba(255,255,255,0.75) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/8  { background-color: rgba(255,255,255,0.78) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/10 { background-color: rgba(255,255,255,0.82) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/12 { background-color: rgba(255,255,255,0.85) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/13 { background-color: rgba(255,255,255,0.86) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/15 { background-color: rgba(255,255,255,0.88) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/20 { background-color: rgba(255,255,255,0.90) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/25 { background-color: rgba(255,255,255,0.92) !important; }
+[data-theme="arctic"] .demo-root .bg-white\/30 { background-color: rgba(255,255,255,0.94) !important; }
+[data-theme="arctic"] .demo-root .bg-\[\#0a1220\] { background-color: #f2f6ff !important; }
+[data-theme="arctic"] .demo-root .bg-\[\#0c1628\] { background-color: #e6edfa !important; }
+[data-theme="arctic"] .demo-root .bg-\[\#080f1c\] { background-color: #f8faff !important; }
+[data-theme="arctic"] .demo-root .bg-surface\/55 { background-color: rgba(255,255,255,0.72) !important; }
+[data-theme="arctic"] .demo-root .bg-surface\/60 { background-color: rgba(255,255,255,0.75) !important; }
+[data-theme="arctic"] .demo-root .bg-surface\/62 { background-color: rgba(255,255,255,0.80) !important; }
+[data-theme="arctic"] .demo-root .bg-surface\/80 { background-color: rgba(255,255,255,0.87) !important; }
+[data-theme="arctic"] .demo-root .bg-surface\/95 { background-color: rgba(255,255,255,0.96) !important; }
+[data-theme="arctic"] .demo-root .border-white\/6  { border-color: rgba(15,23,42,0.07) !important; }
+[data-theme="arctic"] .demo-root .border-white\/7  { border-color: rgba(15,23,42,0.08) !important; }
+[data-theme="arctic"] .demo-root .border-white\/8  { border-color: rgba(15,23,42,0.09) !important; }
+[data-theme="arctic"] .demo-root .border-white\/10 { border-color: rgba(15,23,42,0.10) !important; }
+[data-theme="arctic"] .demo-root .border-white\/12 { border-color: rgba(15,23,42,0.11) !important; }
+[data-theme="arctic"] .demo-root .border-white\/13 { border-color: rgba(15,23,42,0.12) !important; }
+[data-theme="arctic"] .demo-root .border-white\/14 { border-color: rgba(15,23,42,0.12) !important; }
+[data-theme="arctic"] .demo-root .border-white\/15 { border-color: rgba(15,23,42,0.13) !important; }
+[data-theme="arctic"] .demo-root .border-white\/20 { border-color: rgba(15,23,42,0.16) !important; }
+[data-theme="arctic"] .demo-root .border-white\/25 { border-color: rgba(15,23,42,0.18) !important; }
+[data-theme="arctic"] .demo-root .border-white\/30 { border-color: rgba(15,23,42,0.22) !important; }
+[data-theme="arctic"] .demo-root .text-white\/20 { color: rgba(15,23,42,0.20) !important; }
+[data-theme="arctic"] .demo-root .text-white\/25 { color: rgba(15,23,42,0.25) !important; }
+[data-theme="arctic"] .demo-root .text-white\/30 { color: rgba(15,23,42,0.30) !important; }
+[data-theme="arctic"] .demo-root .text-white\/35 { color: rgba(15,23,42,0.35) !important; }
+[data-theme="arctic"] .demo-root .text-white\/40 { color: rgba(15,23,42,0.40) !important; }
+[data-theme="arctic"] .demo-root .text-white\/45 { color: rgba(15,23,42,0.45) !important; }
+[data-theme="arctic"] .demo-root .text-white\/50 { color: rgba(15,23,42,0.55) !important; }
+[data-theme="arctic"] .demo-root .text-white\/55 { color: rgba(15,23,42,0.58) !important; }
+[data-theme="arctic"] .demo-root .text-white\/60 { color: rgba(15,23,42,0.62) !important; }
+[data-theme="arctic"] .demo-root .text-white\/65 { color: rgba(15,23,42,0.65) !important; }
+[data-theme="arctic"] .demo-root .text-white\/70 { color: rgba(15,23,42,0.70) !important; }
+[data-theme="arctic"] .demo-root .text-white\/75 { color: rgba(15,23,42,0.75) !important; }
+[data-theme="arctic"] .demo-root .text-white\/80 { color: rgba(15,23,42,0.80) !important; }
+[data-theme="arctic"] .demo-root .text-white\/85 { color: rgba(15,23,42,0.84) !important; }
+[data-theme="arctic"] .demo-root .bg-black\/30 { background-color: rgba(15,23,42,0.06) !important; }
+[data-theme="arctic"] .demo-root .bg-black\/20 { background-color: rgba(15,23,42,0.04) !important; }
+[data-theme="arctic"] .demo-root .text-emerald-300 { color: #047857 !important; }
+[data-theme="arctic"] .demo-root .text-emerald-400 { color: #059669 !important; }
+[data-theme="arctic"] .demo-root .demo-preserve-dark .text-white\/45,
+[data-theme="arctic"] .demo-root .demo-preserve-dark.text-white\/45 { color: rgba(255,255,255,0.45) !important; }
+[data-theme="arctic"] .demo-root .demo-preserve-dark .text-white\/50,
+[data-theme="arctic"] .demo-root .demo-preserve-dark.text-white\/50 { color: rgba(255,255,255,0.50) !important; }
+[data-theme="arctic"] .demo-root .demo-preserve-dark .text-white\/60,
+[data-theme="arctic"] .demo-root .demo-preserve-dark.text-white\/60 { color: rgba(255,255,255,0.60) !important; }
+[data-theme="arctic"] .demo-root .demo-preserve-dark .text-white\/75,
+[data-theme="arctic"] .demo-root .demo-preserve-dark.text-white\/75 { color: rgba(255,255,255,0.75) !important; }
+[data-theme="arctic"] .demo-root .demo-preserve-dark .border-white\/12,
+[data-theme="arctic"] .demo-root .demo-preserve-dark.border-white\/12 { border-color: rgba(255,255,255,0.12) !important; }
+[data-theme="arctic"] .demo-root .demo-preserve-dark .border-white\/30,
+[data-theme="arctic"] .demo-root .demo-preserve-dark.border-white\/30 { border-color: rgba(255,255,255,0.30) !important; }
+
+.demo-liquid-pill {
+  color: var(--demo-liquid-text);
+  cursor: pointer;
+}
+.demo-liquid-pill:not(.demo-liquid-pill-active):hover {
+  background: var(--demo-liquid-pill-hover-bg);
+  color: var(--demo-liquid-text-hover, var(--demo-liquid-text-active));
+}
+.demo-liquid-pill-active {
+  background: var(--demo-liquid-pill-active-bg);
+  color: var(--demo-liquid-text-active);
+  box-shadow: 0 8px 22px var(--demo-liquid-active-shadow);
+}
+.demo-liquid-pill-nav .demo-liquid-pill[data-demo-pill-selected="true"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--demo-liquid-text-active);
+}
+.demo-liquid-pill-nav .demo-liquid-pill[data-demo-pill-selected="true"]:hover {
+  background: transparent !important;
+  color: var(--demo-liquid-text-active);
+}
+.demo-liquid-pill-nav .demo-liquid-pill:not([data-demo-pill-selected="true"]):hover {
+  background: var(--demo-liquid-pill-hover-bg);
+  color: var(--demo-liquid-text-hover, var(--demo-liquid-text-active));
+}
+
+/* ── Misc utilities used by the ported components ── */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth theme transitions while switching light/dark, scoped to the
+   landing section only. */
+.theme-transitioning .landing-root,
+.theme-transitioning .landing-root *,
+.theme-transitioning .landing-root *::before,
+.theme-transitioning .landing-root *::after {
+  transition:
+    background-color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.3s ease,
+    box-shadow 0.35s ease !important;
+}

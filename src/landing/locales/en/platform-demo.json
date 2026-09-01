@@ -1,0 +1,26 @@
+{
+  "shared": {
+    "panelSteps": [
+      {
+        "label": "Listen",
+        "caption": "Every call transcribed, scored and backed by evidence"
+      },
+      {
+        "label": "Audit",
+        "caption": "All conversations checked against your rulebook"
+      },
+      {
+        "label": "Understand",
+        "caption": "What customers talk about — and what causes it"
+      },
+      {
+        "label": "Coach",
+        "caption": "Agent-level quality, risk and coaching signals"
+      },
+      {
+        "label": "Automate",
+        "caption": "Repetitive calls handed to the assistant, audited the same way"
+      }
+    ]
+  }
+}

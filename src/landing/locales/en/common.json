@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "logoAlt": "Vocallyze",
+    "links": [
+      "Sample Audit Reports",
+      "Why Audit Calls",
+      "Contact"
+    ],
+    "waitlistCta": "GET EARLY ACCESS",
+    "menuToggleAria": "Toggle menu",
+    "mailUsCta": "Mail us"
+  },
+  "footer": {
+    "email": "info@vocallyze.com"
+  }
+}

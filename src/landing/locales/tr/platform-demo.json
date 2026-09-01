@@ -1,0 +1,26 @@
+{
+  "shared": {
+    "panelSteps": [
+      {
+        "label": "Dinle",
+        "caption": "Her çağrı kanıtlarla birlikte transkribe edilir ve puanlanır"
+      },
+      {
+        "label": "Denetle",
+        "caption": "Tüm görüşmeler kural kitabınıza göre kontrol edilir"
+      },
+      {
+        "label": "Anla",
+        "caption": "Müşteriler ne konuşuyor — ve bunun nedeni ne"
+      },
+      {
+        "label": "Koçluk",
+        "caption": "Temsilci bazında kalite, risk ve koçluk sinyalleri"
+      },
+      {
+        "label": "Otomasyon",
+        "caption": "Tekrarlayan çağrılar asistana devredilir, aynı şekilde denetlenir"
+      }
+    ]
+  }
+}

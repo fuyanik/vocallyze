@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": {
+      "lines": [
+        "Every call is analyzed",
+        "at an"
+      ],
+      "highlight": "affordable cost"
+    },
+    "description": {
+      "desktop": "Vocallyze evaluates every call against your rules and delivers each finding with its exact quote, timestamp, and audio evidence.",
+      "mobile": "Vocallyze evaluates every call against your rules and delivers each finding with its exact quote, timestamp, and audio evidence."
+    },
+    "ctas": {
+      "primary": "Get Your Early Access",
+      "secondary": "See How It Works"
+    },
+    "sceneLabels": [
+      "Listen",
+      "Audit",
+      "Understand",
+      "Coach",
+      "Automate"
+    ],
+    "controls": {
+      "replayAria": "Replay demo",
+      "pauseAria": "Pause animation",
+      "resumeAria": "Resume animation"
+    }
+  }
+}

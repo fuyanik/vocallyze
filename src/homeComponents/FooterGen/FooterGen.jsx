@@ -10,10 +10,42 @@ import {AiOutlineInstagram} from "react-icons/ai";
 import {BsTwitter} from "react-icons/bs";
 import {RiLinkedinFill} from "react-icons/ri";
 import gV from "../../gV";
-import { getNavbarContent } from "../../admino/content";
+import { getNavbarContent } from "../../landing/content";
+import { useLocale } from "../../landing/LocaleProvider";
 import footerWaveDesktop from "../../assets/images/footer-wave-desktop.png";
 import footerWaveMobile from "../../assets/images/footer-wave-mobile.png";
 import logoWhite from "../../assets/images/logos-white.png";
+
+const COPY = {
+  en: {
+    legalLinks: "Terms of Service · Privacy Policy",
+    disclaimer:
+      "Sample reports shown on this site are illustrative and do not reflect an actual customer's calls or data. Every live audit runs entirely on your own institution's infrastructure.",
+    copyright: "Vocallyze© 2026 All Rights Reserved",
+    aboutTitle: "About",
+    links: [
+      { to: "/sample-reports", label: "Sample Audit Reports" },
+      { to: "/why-second-opinion", label: "Why Audit Calls" },
+      { to: "/how-works", label: "How It Works" },
+      { to: "/contact", label: "Contact" },
+      { to: "/faq", label: "FAQ" },
+    ],
+  },
+  tr: {
+    legalLinks: "Kullanım Koşulları · Gizlilik Politikası",
+    disclaimer:
+      "Bu sitede gösterilen örnek raporlar temsilidir ve gerçek bir müşterinin çağrılarını veya verilerini yansıtmaz. Her canlı denetim tamamen kendi kurumunuzun altyapısında çalışır.",
+    copyright: "Vocallyze© 2026 Tüm Hakları Saklıdır",
+    aboutTitle: "Hakkımızda",
+    links: [
+      { to: "/sample-reports", label: "Örnek Denetim Raporları" },
+      { to: "/why-second-opinion", label: "Neden Çağrı Denetimi" },
+      { to: "/how-works", label: "Nasıl Çalışır" },
+      { to: "/contact", label: "İletişim" },
+      { to: "/faq", label: "SSS" },
+    ],
+  },
+};
 
 // same wave PNGs, used purely as an alpha mask so the flat single-color
 // fill can become a subtle brand-blue gradient instead — dark end sits
@@ -33,7 +65,9 @@ const waveMaskStyle = (src) => ({
 const FooterGen = () => {
 
     const navigate = useNavigate();
-    const nav = getNavbarContent();
+    const { locale } = useLocale();
+    const nav = getNavbarContent(locale);
+    const t = COPY[locale] ?? COPY.en;
   
   
     return (
@@ -46,7 +80,7 @@ const FooterGen = () => {
           
              <div className='lg:w-[50%] w-full flex flex-col lg:gap-6 gap-4 h-full lg:pt-16 pt-0 px-8   '>
               <img className='w-40'  src={logoWhite} alt='vocallyze logo'/>
-              <p className='text-white  cursor-pointer'>Terms of Service · Privacy Policy</p>
+              <p className='text-white  cursor-pointer'>{t.legalLinks}</p>
 
                  <div className="flex relative text-sm font-product">
                    <motion.button
@@ -74,8 +108,8 @@ const FooterGen = () => {
                    </motion.button>
                  </div>
 
-              <p className='text-white opacity-75 text-sm lg:w-[70%] w-full'>Sample reports shown on this site are illustrative and do not reflect an actual customer's calls or data. Every live audit runs entirely on your own institution's infrastructure.</p>
-              <p className='text-white'>Vocallyze© 2026 All Rights Reserved</p>
+              <p className='text-white opacity-75 text-sm lg:w-[70%] w-full'>{t.disclaimer}</p>
+              <p className='text-white'>{t.copyright}</p>
              </div>
 
 
@@ -90,15 +124,15 @@ const FooterGen = () => {
              <div className='flex flex-col gap-10 w-full  '> 
              
                <div className='flex flex-col'>
-                <h1 className=' w-full text-lg font-bold  ' >About</h1>
+                <h1 className=' w-full text-lg font-bold  ' >{t.aboutTitle}</h1>
                 <div className='flex flex-wrap gap-5 mt-2'>
-                
-                 <Link to="/sample-reports">  <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p> Sample Audit Reports</p> </div> </Link> 
-                 <Link to="/why-second-opinion"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>Why Audit Calls</p> </div> </Link> 
-                 <Link to="/how-works"> <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>How It Works</p> </div>  </Link> 
-                 <Link to="/contact"><div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p><p>Contact</p> </div>  </Link> 
-                 <Link to="/faq"><div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p><p>FAQ</p> </div> </Link> 
-              
+
+                 {t.links.map((link) => (
+                   <Link key={link.to} to={link.to}>
+                     <div className='flex gap-1 items-center justify-center hover:opacity-60 duration-500 cursor-pointer'> <p>•</p> <p>{link.label}</p> </div>
+                   </Link>
+                 ))}
+
                 </div>
 
                </div>

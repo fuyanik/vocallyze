@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gV from '../../gV'
-import Navbar from '../../admino/Navbar'
+import Navbar from '../../landing/Navbar'
 import { Helmet } from 'react-helmet'
 import { useSpring, animated } from 'react-spring';
 import lottie from 'lottie-web';
@@ -8,9 +8,55 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import FooterGen from '../../homeComponents/FooterGen/FooterGen'
 import vocallyzeBg from '../../assets/images/vocallyze-bg.png'
+import { useLocale } from '../../landing/LocaleProvider'
+
+const COPY = {
+  en: {
+    metaTitle: "Vocallyze - Why Audit Calls | Full Call Center Audit Coverage",
+    metaDescription: "Discover why auditing every call with Vocallyze's compliance engine is essential for your call center's risk and quality.",
+    metaOgDescription: "Learn why auditing every recorded call is critical and how Vocallyze's engine surfaces every violation with proof.",
+    title: "Why Audit Calls",
+    intro: "Auditing every recorded call helps you catch violations and protect your customers before complaints happen.",
+    stat1Prefix: "3.4 billion",
+    stat1Suffix: " calls go unaudited every year.",
+    stat2Prefix: "Of those calls, ",
+    stat2Accent: "4-5%",
+    stat2Suffix: " get manual quality review today.",
+    stat3Accent: "40%",
+    stat3Suffix: " of total call volume qualifies for full autonomous resolution today.",
+    donuts: { minor: "MINOR VIOLATIONS", major: "MAJOR VIOLATIONS", critical: "CRITICAL VIOLATIONS" },
+    bars: {
+      legal: "OF LEGAL COLLECTION CALLS REVEAL AT LEAST ONE COMPLIANCE GAP",
+      ecommerce: "OF E-COMMERCE SUPPORT CALLS RESULT IN A MISHANDLED REFUND OR RETURN REQUEST",
+      enforcement: "OF COLLECTIONS & LEGAL ENFORCEMENT CALLS RESULT IN A MORE ACCURATE RISK SCORE",
+    },
+  },
+  tr: {
+    metaTitle: "Vocallyze - Neden Çağrı Denetimi | Tam Çağrı Merkezi Denetim Kapsamı",
+    metaDescription: "Vocallyze'ın uyumluluk motoruyla her çağrıyı denetlemenin çağrı merkezinizin risk ve kalitesi için neden kritik olduğunu keşfedin.",
+    metaOgDescription: "Kaydedilen her çağrıyı denetlemenin neden kritik olduğunu ve Vocallyze'ın motorunun her ihlali kanıtla nasıl ortaya çıkardığını öğrenin.",
+    title: "Neden Çağrı Denetimi",
+    intro: "Kaydedilen her çağrıyı denetlemek, şikayetler oluşmadan önce ihlalleri yakalamanıza ve müşterilerinizi korumanıza yardımcı olur.",
+    stat1Prefix: "3,4 milyar",
+    stat1Suffix: " çağrı her yıl denetlenmeden kalıyor.",
+    stat2Prefix: "Bu çağrıların ",
+    stat2Accent: "%4-5'i",
+    stat2Suffix: " bugün manuel kalite incelemesinden geçiyor.",
+    stat3Accent: "Bugün toplam çağrı hacminin %40'ı",
+    stat3Suffix: " insan müdahalesi olmadan çözülebilir.",
+    donuts: { minor: "KÜÇÜK İHLALLER", major: "BÜYÜK İHLALLER", critical: "KRİTİK İHLALLER" },
+    bars: {
+      legal: "HUKUKİ TAHSİLAT ÇAĞRILARININ EN AZ BİR UYUMLULUK AÇIĞI TAŞIDIĞI ORAN",
+      ecommerce: "E-TİCARET DESTEK ÇAĞRILARININ HATALI İADE VEYA GERİ ÖDEME İLE SONUÇLANDIĞI ORAN",
+      enforcement: "TAHSİLAT & HUKUKİ İCRA ÇAĞRILARININ DAHA DOĞRU BİR RİSK PUANIYLA SONUÇLANDIĞI ORAN",
+    },
+  },
+};
 
 const WhySecondOpinion = ({isOutside = false}) => {
 
+  const { locale } = useLocale();
+  const t = COPY[locale] ?? COPY.en;
   AOS.init();
 
   const logo = useRef(null)
@@ -186,13 +232,14 @@ const WhySecondOpinion = ({isOutside = false}) => {
        {!isOutside &&  <Navbar/> }
      
      { !isOutside && <Helmet>
-   <title>Vocallyze - Why Audit Calls | Full Call Center Audit Coverage</title>
-   <meta name="description" content="Discover why auditing every call with Vocallyze's compliance engine is essential for your call center's risk and quality." />
+   <html lang={locale} />
+   <title>{t.metaTitle}</title>
+   <meta name="description" content={t.metaDescription} />
    <meta name="keywords" content="Vocallyze, call audit, call center compliance, call quality analytics, conversation intelligence, call center automation" />
-   <meta property="og:title" content="Vocallyze - Why Audit Calls?" />
-   <meta property="og:description" content="Learn why auditing every recorded call is critical and how Vocallyze's engine surfaces every violation with proof." />
+   <meta property="og:title" content={t.metaTitle} />
+   <meta property="og:description" content={t.metaOgDescription} />
    <meta property="og:image" content="https://vitamu.imgix.net/Why%20Second%20Opinion.png" />
-   <meta property="og:url" content="https://medifyre.com/why-second-opinion" />
+   <meta property="og:url" content="https://vocallyze.com/why-second-opinion" />
    <meta property="og:type" content="website" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </Helmet>}
@@ -214,9 +261,9 @@ const WhySecondOpinion = ({isOutside = false}) => {
                  src={vocallyzeBg}
                />
            
-             <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'>  Why Audit Calls</h1>
+             <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'>  {t.title}</h1>
                <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
-               Auditing every recorded call helps you catch violations and protect your customers before complaints happen.
+               {t.intro}
                </p>
                
         </div>
@@ -226,29 +273,29 @@ const WhySecondOpinion = ({isOutside = false}) => {
 
           {/* Left Side */}
           <div className='flex flex-col items-center justify-center lg:w-[50%] w-[100%] gap-5 '>
-             <p data-aos-duration="600" data-aos="fade-up" className='lg:text-[40px] lg:leading-[51px] text-[25px] leading-10 '> <span className='text-second'> 3.4 billion </span> calls go unaudited every year.</p>
-             <p data-aos-duration="600" data-aos="fade-up" className='lg:text-[40px] lg:leading-[51px] text-[25px] leading-10'> Of those calls,  <span className='text-second'> 4-5% </span> get manual quality review today.</p>
-             <p data-aos-duration="600" data-aos="fade-up" className='lg:inline hidden text-[40px] leading-[51px] mt-20'> <span className='text-second'> 40% </span>  of total call volume qualifies for full autonomous resolution today.</p>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:text-[40px] lg:leading-[51px] text-[25px] leading-10 '> <span className='text-second'> {t.stat1Prefix} </span>{t.stat1Suffix}</p>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:text-[40px] lg:leading-[51px] text-[25px] leading-10'> {t.stat2Prefix} <span className='text-second'> {t.stat2Accent} </span>{t.stat2Suffix}</p>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:inline hidden text-[40px] leading-[51px] mt-20'> <span className='text-second'> {t.stat3Accent} </span> {t.stat3Suffix}</p>
           
           </div>
            
            {/* Right Side */}
           <div className='flex flex-col lg:w-[50%] w-[100%]  lg:gap-16 gap-0 '>
              <div data-aos-duration="600" data-aos="fade-up" className='w-full lg:mt-0 mt-6' ref={logo} ></div>
-             <p data-aos-duration="600" data-aos="fade-up" className='lg:hidden inline text-[25px] leading-10 mt-10'> <span className='text-second'> 40% </span>  of total call volume qualifies for full autonomous resolution today.</p>
+             <p data-aos-duration="600" data-aos="fade-up" className='lg:hidden inline text-[25px] leading-10 mt-10'> <span className='text-second'> {t.stat3Accent} </span> {t.stat3Suffix}</p>
 
              <div className='flex gap-1 w-full'>
                 <div data-aos-duration="600" data-aos="fade-right" className='flex flex-col w-1/3  items-center justify-center lg:gap-4 gap-0 '>
                     <DonutChart perc={61} bg={"text-teal-600"} bgTrans={"text-teal-100"} />
-                   <p className='font-bold text-sm '>MINOR VIOLATIONS</p>
+                   <p className='font-bold text-sm '>{t.donuts.minor}</p>
                 </div>
                 <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col w-1/3  items-center justify-center lg:gap-4 gap-0'>
                     <DonutChart perc={27} bg={"text-sky-800"} bgTrans={"text-sky-100"}/>
-                   <p className='font-bold text-sm '>MAJOR VIOLATIONS</p>
+                   <p className='font-bold text-sm '>{t.donuts.major}</p>
                 </div>
                 <div data-aos-duration="600" data-aos="fade-left" className='flex flex-col w-1/3  items-center justify-center lg:gap-4 gap-0 '>
                     <DonutChart perc={12} bg={"text-violet-800"} bgTrans={"text-violet-100"}/>
-                   <p className='font-bold text-sm '>CRITICAL VIOLATIONS</p>
+                   <p className='font-bold text-sm '>{t.donuts.critical}</p>
                 </div>
 
 
@@ -265,17 +312,17 @@ const WhySecondOpinion = ({isOutside = false}) => {
 
             <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col lg:w-1/4 w-full items-center justify-center  gap-4  '>
                 <HorizontalBarChart perc={71} bg={"bg-teal-600"} bgTrans={"bg-teal-100"}/>
-                <p className='font-bold text-sm text-center '>OF LEGAL COLLECTION CALLS REVEAL AT LEAST ONE COMPLIANCE GAP</p>
+                <p className='font-bold text-sm text-center '>{t.bars.legal}</p>
             </div>
        
             <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col lg:w-1/4 w-full items-center justify-center gap-4  '>
                 <HorizontalBarChart perc={54} bg={"bg-sky-800"} bgTrans={"bg-sky-100"}/>
-                <p className='font-bold text-sm text-center '>OF E-COMMERCE SUPPORT CALLS RESULT IN A MISHANDLED REFUND OR RETURN REQUEST</p>
+                <p className='font-bold text-sm text-center '>{t.bars.ecommerce}</p>
             </div>
        
             <div data-aos-duration="600" data-aos="fade-up" className='flex flex-col lg:w-1/4 w-full items-center justify-center gap-4  '>
                 <HorizontalBarChart perc={87} bg={"bg-violet-800"} bgTrans={"bg-violet-100"} />
-                <p className='font-bold text-sm text-center '>OF COLLECTIONS & LEGAL ENFORCEMENT CALLS RESULT IN A MORE ACCURATE RISK SCORE </p>
+                <p className='font-bold text-sm text-center '>{t.bars.enforcement}</p>
             </div>
        
 

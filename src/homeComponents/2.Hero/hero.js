@@ -9,17 +9,53 @@ import IconsMobile from "../Icons/Icons_mobile";
 import Navbar from "../1.Navbar/navbar";
 import vocallyzeBg from "../../assets/images/vocallyze-bg.png"
 import AllOneService from "../5.AllOneService/allOneService";
-import WaitlistButton from "../../admino/WaitlistButton";
+import WaitlistButton from "../../landing/WaitlistButton";
 import Informational from "../Informational/Informational";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Helmet } from "react-helmet";
+import { useLocale } from "../../landing/LocaleProvider";
 
+const COPY = {
+  en: {
+    title: "Track the Entire Process",
+    bodyDesktop:
+      "Keep track of every call flowing through your center from your personal dashboard. It provides real-time updates—no sampling required—from the moment a call ends to the delivery of its full audit report, ensuring you're always informed and in control.",
+    bodyMobile: "Keep an eye on every call ",
+    bodyMobileEmphasis: "—no need to sample anything—",
+    bodyMobileEnd: " across your center through your personal dashboard.",
+    ctaPrimary: "Get Early Access",
+    ctaSecondary: "Why Audit Calls?",
+    features: {
+      coverage: "100% Call Coverage",
+      kvkk: "KVKK-Compliant By Design",
+      liveMonitoring: "Live Compliance Monitoring",
+      telephony: "Works With Your Telephony",
+    },
+  },
+  tr: {
+    title: "Tüm Süreci Takip Edin",
+    bodyDesktop:
+      "Merkezinizden geçen her çağrıyı kişisel panelinizden takip edin. Bir çağrı bittiği andan tam denetim raporunun teslimine kadar örnekleme yapmadan gerçek zamanlı güncellemeler sunarak her zaman bilgi sahibi ve kontrolde olmanızı sağlar.",
+    bodyMobile: "Merkezinizdeki her çağrıyı ",
+    bodyMobileEmphasis: "—örnekleme yapmadan—",
+    bodyMobileEnd: " kişisel panelinizden takip edin.",
+    ctaPrimary: "Erken Erişim",
+    ctaSecondary: "Neden Çağrı Denetimi?",
+    features: {
+      coverage: "%100 Çağrı Kapsamı",
+      kvkk: "Tasarım Gereği KVKK Uyumlu",
+      liveMonitoring: "Canlı Uyumluluk İzleme",
+      telephony: "Telefon Altyapınızla Uyumlu",
+    },
+  },
+};
 
 const Hero = ({isOutside = false}) => {
 
-
   const navigate = useNavigate();
+  const { locale } = useLocale();
+  const t = COPY[locale] ?? COPY.en;
 
 
   const searchIcon =  <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current w-6 h-6 stroke-2" fill="none" viewBox="0 0 24 24">
@@ -92,16 +128,16 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
         <div className="flex lg:mt-4 mt-6 flex-col lg:gap-10 gap-6 lg:items-center items-center text-center">
          
          <div data-aos-duration="600" data-aos="fade-up" className="flex flex-col items-center gap-4">
-          <h1 data-aos-duration="600" data-aos="fade-up" className="lg:text-[52px] text-[34px] self-center tracking-wide lg:leading-[58px] leading-[42px] text-center text-black font-bold">Track the Entire Process</h1>
+          <h1 data-aos-duration="600" data-aos="fade-up" className="lg:text-[52px] text-[34px] self-center tracking-wide lg:leading-[58px] leading-[42px] text-center text-black font-bold">{t.title}</h1>
           <p data-aos-duration="600" data-aos="fade-up" className="lg:block hidden w-[90vw] lg:w-[60vw] font-product text-center text-black">
-            Keep track of every call flowing through your center from your personal dashboard. It provides real-time updates—no sampling required—from the moment a call ends to the delivery of its full audit report, ensuring you're always informed and in control.
+            {t.bodyDesktop}
           </p>
-          <p data-aos-duration="600" data-aos="fade-up" className="text-sm lg:hidden w-[90vw] font-product text-center text-black">Keep an eye on every call <i className="text-second">—no need to sample anything—</i> across your center through your personal dashboard.</p>
+          <p data-aos-duration="600" data-aos="fade-up" className="text-sm lg:hidden w-[90vw] font-product text-center text-black">{t.bodyMobile}<i className="text-second">{t.bodyMobileEmphasis}</i>{t.bodyMobileEnd}</p>
 
           {/* desktop: two-button row, unchanged */}
           <div className="lg:flex hidden items-center justify-center gap-4">
-            <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-right" onClick={()=>{navigate("/form-new")}} className="px-10 py-2 rounded-full bg-second hover:bg-prim duration-300 self-center text-white w-fit shadow-lg cursor-pointer"> Get Early Access </div>
-            <Link to={"/why-second-opinion"}> <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-left" className="px-10 py-2 rounded-full text-second border border-second self-center w-fit shadow-lg cursor-pointer"> Why Audit Calls? </div> </Link>
+            <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-right" onClick={()=>{navigate("/form-new")}} className="px-10 py-2 rounded-full bg-second hover:bg-prim duration-300 self-center text-white w-fit shadow-lg cursor-pointer"> {t.ctaPrimary} </div>
+            <Link to={"/why-second-opinion"}> <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-left" className="px-10 py-2 rounded-full text-second border border-second self-center w-fit shadow-lg cursor-pointer"> {t.ctaSecondary} </div> </Link>
           </div>
 
           {/* mobile: single centered CTA, same pill/gradient/icon UI as the navbar's button */}
@@ -112,13 +148,13 @@ const starIcon = <img className="w-6 h-6" src="https://scan.com/assets/review-st
 
         <div   className="lg:flex lg:flex-row  flex flex-col items-center justify-center lg:gap-10 gap-2 text-black px-2"> 
            
-           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>100% Call Coverage</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-right" className="lg:flex hidden gap-2"> {searchIcon} <p>{t.features.coverage}</p> </div> 
            
-           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up"  className="lg:flex hidden gap-2"> {costIcon} <p>KVKK-Compliant By Design</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up"  className="lg:flex hidden gap-2"> {costIcon} <p>{t.features.kvkk}</p> </div> 
          
-           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>Live Compliance Monitoring</p> </div> 
+           <div data-aos-delay="500" data-aos-duration="800" data-aos="fade-up"  className="lg:flex hidden gap-2 items-center justify-center"> <div className="w-2 h-2 rounded-full bg-teal-700 animate-ping"></div> <p>{t.features.liveMonitoring}</p> </div> 
         
-           <div data-aos-delay="600" data-aos-duration="800" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>Works With Your Telephony</p> </div> 
+           <div data-aos-delay="600" data-aos-duration="800" data-aos="fade-left"  className="lg:flex hidden gap-2"> {customerIcon} <p>{t.features.telephony}</p> </div> 
            
          
         </div>

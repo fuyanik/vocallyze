@@ -5,9 +5,33 @@ import BiRadsDropdown from '../BiRadsDropdown/biRadsDropdown';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import logo from '../../assets/images/logos.png';
+import { useLocale } from '../../landing/LocaleProvider';
+
+const COPY = {
+  en: {
+    sampleReports: "Sample Audit Reports",
+    whyAudit: "Why Audit Calls",
+    howWorks: "How It Works",
+    contact: "Contact",
+    faq: "Faq",
+    dashboard: "Dashboard",
+    getStarted: "Get Started",
+  },
+  tr: {
+    sampleReports: "Örnek Denetim Raporları",
+    whyAudit: "Neden Çağrı Denetimi",
+    howWorks: "Nasıl Çalışır",
+    contact: "İletişim",
+    faq: "SSS",
+    dashboard: "Panel",
+    getStarted: "Hemen Başla",
+  },
+};
 
 const NavbarGen = () => {
 
+    const { locale } = useLocale();
+    const t = COPY[locale] ?? COPY.en;
     const [isScroll, setIsScroll] = useState(false);
 
     window.addEventListener('scroll', function() {
@@ -37,11 +61,11 @@ const NavbarGen = () => {
 
       {/*  Links */}  
        <div className='flex flex-col gap-5 text-second font-bold font-product text-2xl'>
-          <Link  to={"/sample-reports"}> <p data-aos-delay="200" data-aos-duration="300" data-aos="fade-right" className='cursor-pointer hover:opacity-60 duration-300'> Sample Audit Reports</p> </Link>
-          <Link to={"/why-second-opinion"}> <p data-aos-delay="300" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Why Audit Calls</p> </Link>
-          <Link to={"/how-works"}> <p data-aos-delay="400" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>How It Works</p> </Link>
-          <Link to={"/contact"}> <p data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Contact</p> </Link>
-          <Link to={"/faq"}> <p data-aos-delay="600" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>Faq</p> </Link>
+          <Link  to={"/sample-reports"}> <p data-aos-delay="200" data-aos-duration="300" data-aos="fade-right" className='cursor-pointer hover:opacity-60 duration-300'> {t.sampleReports}</p> </Link>
+          <Link to={"/why-second-opinion"}> <p data-aos-delay="300" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>{t.whyAudit}</p> </Link>
+          <Link to={"/how-works"}> <p data-aos-delay="400" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>{t.howWorks}</p> </Link>
+          <Link to={"/contact"}> <p data-aos-delay="500" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>{t.contact}</p> </Link>
+          <Link to={"/faq"}> <p data-aos-delay="600" data-aos-duration="300" data-aos="fade-right"  className='cursor-pointer hover:opacity-60 duration-300'>{t.faq}</p> </Link>
        </div>
 
     
@@ -56,7 +80,7 @@ const NavbarGen = () => {
           />
         )}
 
-       <Link onMouseMove={()=>{setIsHover(true)}} to={"/"}> <div className='items-center  justify-center animate-fadeIn   bg-second hover:bg-prim text-white hover:text-white duration-500 rounded-lg px-12 py-[9px] cursor-pointer border border-primTrans'>Get Started</div> </Link> 
+       <Link onMouseMove={()=>{setIsHover(true)}} to={"/"}> <div className='items-center  justify-center animate-fadeIn   bg-second hover:bg-prim text-white hover:text-white duration-500 rounded-lg px-12 py-[9px] cursor-pointer border border-primTrans'>{t.getStarted}</div> </Link> 
     
      </div>
  
@@ -86,17 +110,17 @@ const NavbarGen = () => {
         <div className="sm:flex hidden gap-6 justify-center items-center text-black">
           <Link to={"/sample-reports"}>
             <p className="cursor-pointer hover:text-second duration-300">
-              Sample Audit Reports
+              {t.sampleReports}
             </p>
           </Link>
           <Link to={"/why-second-opinion"}>
             <p className="cursor-pointer hover:text-second duration-300">
-              Why Audit Calls
+              {t.whyAudit}
             </p>
           </Link>
           <Link to={"/contact"}>
             <p className="cursor-pointer hover:text-second duration-300">
-              Contact
+              {t.contact}
             </p>
           </Link>
         </div>
@@ -108,14 +132,14 @@ const NavbarGen = () => {
         {!isScroll && (
           <Link to={"/login"}>
             <div className="items-center justify-center animate-leftToRight bg-white hover:bg-second hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans">
-              Dashboard
+              {t.dashboard}
             </div>
           </Link>
         )}
         {isScroll && (
           <Link to={"/login"}>
             <div className="hidden lg:flex hover:text-second items-center justify-center cursor-pointer animate-rightToLeft  duration-300 border-b">
-            Dashboard
+            {t.dashboard}
             </div>
           </Link>
         )}
@@ -133,7 +157,7 @@ const NavbarGen = () => {
 
             <Link onMouseMove={() => setIsHover(true)} >
               <div  data-aos-duration="500" data-aos="fade-up"  className="items-center justify-center  bg-second hover:bg-prim text-white hover:text-white duration-500 rounded-lg px-4 py-[6px] cursor-pointer border border-primTrans">
-                Get Started
+                {t.getStarted}
               </div>
             </Link>
           </div>

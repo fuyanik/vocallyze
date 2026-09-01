@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": {
+      "lines": [
+        "Her çağrı",
+        "uygun bir maliyetle"
+      ],
+      "highlight": "eksiksiz analiz edilir"
+    },
+    "description": {
+      "desktop": "Vocallyze her çağrıyı kurallarınıza göre değerlendirir ve her bulguyu tam alıntısı, zaman damgası ve ses kanıtıyla birlikte sunar.",
+      "mobile": "Vocallyze her çağrıyı kurallarınıza göre değerlendirir ve her bulguyu tam alıntısı, zaman damgası ve ses kanıtıyla birlikte sunar."
+    },
+    "ctas": {
+      "primary": "Erken Erişim",
+      "secondary": "Nasıl Çalıştığını Gör"
+    },
+    "sceneLabels": [
+      "Dinle",
+      "Denetle",
+      "Anla",
+      "Koçluk",
+      "Otomasyon"
+    ],
+    "controls": {
+      "replayAria": "Demoyu tekrar oynat",
+      "pauseAria": "Animasyonu duraklat",
+      "resumeAria": "Animasyonu devam ettir"
+    }
+  }
+}

@@ -11,9 +11,123 @@ import { Helmet } from 'react-helmet'
 import FooterGen from '../../homeComponents/FooterGen/FooterGen'
 import vocallyzeBg from '../../assets/images/vocallyze-bg.png'
 import logo from '../../assets/images/logos.png'
+import { useLocale } from '../../landing/LocaleProvider'
+
+const COPY = {
+  en: {
+    metaTitle: "Vocallyze - How It Works",
+    metaDescription: "Learn how Vocallyze audits your call center's recordings. Connect your calls, set your rulebook, and receive your first evidence-backed audit report.",
+    metaOgDescription: "Understand the steps involved in auditing every call with Vocallyze. Connect your recordings, configure your rules, and get a detailed audit report.",
+    metaTwitterDescription: "Follow these steps to get every call in your center audited by Vocallyze. Quick to connect, evidence-backed, fully covered.",
+    title: "How It Works",
+    intro: "Experience a simple, hassle-free setup designed for your call center. Get every recorded call audited against your own rulebook, ensuring you catch every violation with evidence you can trust.",
+    steps: [
+      {
+        title: "Connect your call recordings",
+        body: [
+          "We will need access to your call recording archive, telephony system, or call center platform.",
+          "You may connect a live integration, share a secure bulk export, or authorize Vocallyze to pull recordings directly from your existing setup.",
+        ],
+      },
+      {
+        title: "Choose your audit plan and configure your rulebook",
+        body: [
+          "Pricing is based on call volume, not seat licenses. We configure your institution's compliance rules before a single call is scored, with no hidden fees.",
+        ],
+      },
+      {
+        title: "Receive your first audit report",
+        reportLine1: "You will get your first audit report",
+        reportHighlight: "Within days",
+        reportBody: "Your audit report will be more than a cold compliance score, it will contain the flagged transcript excerpt, the exact timestamp, and the original audio clip behind every finding.",
+        cta: "Get Early Access",
+      },
+      {
+        title: "Review flagged calls with our team",
+        body: [
+          "Vocallyze reports usually answer every question your compliance and quality team has. If anything is unclear, our team walks through the evidence with you call by call.",
+        ],
+      },
+    ],
+    whyTitle: "Why choose Vocallyze?",
+    whyBody: "We're taking the guesswork out of call quality. With no sampling gaps, we surface every violation with a transcript, a timestamp, and the audio, all in one place, at one predictable price.",
+    table: {
+      includedPrefix: "What's included",
+      includedSuffix: "in the cost?",
+      manualControl: "Manual Control",
+      otherServices: "Other Services",
+      rows: [
+        "Reviews call recordings",
+        "Produces a quality score",
+        "Online access to findings",
+        "Audits 100% of call volume",
+        "Quote, timestamp & audio per finding",
+        "First findings within days",
+        "Türkiye-based, on-premise infrastructure",
+        "Autonomous assistant for repeat calls",
+      ],
+    },
+  },
+  tr: {
+    metaTitle: "Vocallyze - Nasıl Çalışır",
+    metaDescription: "Vocallyze'ın çağrı merkezinizin kayıtlarını nasıl denetlediğini öğrenin. Çağrılarınızı bağlayın, kural kitabınızı ayarlayın ve ilk kanıta dayalı denetim raporunuzu alın.",
+    metaOgDescription: "Vocallyze ile her çağrıyı denetleme sürecindeki adımları öğrenin. Kayıtlarınızı bağlayın, kurallarınızı yapılandırın ve detaylı bir denetim raporu alın.",
+    metaTwitterDescription: "Merkezinizdeki her çağrının Vocallyze tarafından denetlenmesi için bu adımları izleyin. Hızlı bağlantı, kanıta dayalı, tam kapsama.",
+    title: "Nasıl Çalışır",
+    intro: "Çağrı merkeziniz için tasarlanmış basit, sorunsuz bir kurulum yaşayın. Kaydedilen her çağrının kendi kural kitabınıza göre denetlenmesini sağlayın ve güvenebileceğiniz kanıtlarla her ihlali yakalayın.",
+    steps: [
+      {
+        title: "Çağrı kayıtlarınızı bağlayın",
+        body: [
+          "Çağrı kayıt arşivinize, telefon sisteminize veya çağrı merkezi platformunuza erişime ihtiyacımız olacak.",
+          "Canlı bir entegrasyon bağlayabilir, güvenli bir toplu dışa aktarım paylaşabilir veya Vocallyze'a mevcut kurulumunuzdan doğrudan kayıt çekme yetkisi verebilirsiniz.",
+        ],
+      },
+      {
+        title: "Denetim planınızı seçin ve kural kitabınızı yapılandırın",
+        body: [
+          "Fiyatlandırma koltuk lisansına değil çağrı hacmine dayanır. Tek bir çağrı bile puanlanmadan önce kurumunuzun uyumluluk kurallarını gizli ücret olmadan yapılandırırız.",
+        ],
+      },
+      {
+        title: "İlk denetim raporunuzu alın",
+        reportLine1: "İlk denetim raporunuzu alacaksınız",
+        reportHighlight: "Günler içinde",
+        reportBody: "Denetim raporunuz soğuk bir uyumluluk puanından çok daha fazlası olacak; her bulgunun arkasındaki işaretli transkript alıntısını, tam zaman damgasını ve orijinal ses klibini içerecek.",
+        cta: "Erken Erişim",
+      },
+      {
+        title: "İşaretlenen çağrıları ekibimizle inceleyin",
+        body: [
+          "Vocallyze raporları genellikle uyumluluk ve kalite ekibinizin tüm sorularını yanıtlar. Herhangi bir şey belirsizse ekibimiz kanıtları sizinle çağrı çağrı inceler.",
+        ],
+      },
+    ],
+    whyTitle: "Neden Vocallyze?",
+    whyBody: "Çağrı kalitesindeki belirsizliği ortadan kaldırıyoruz. Örnekleme boşluğu olmadan her ihlali bir transkript, bir zaman damgası ve ses kaydıyla tek bir yerde, öngörülebilir tek bir fiyata sunuyoruz.",
+    table: {
+      includedPrefix: "Fiyata neler",
+      includedSuffix: "dahil?",
+      manualControl: "Manuel Kontrol",
+      otherServices: "Diğer Hizmetler",
+      rows: [
+        "Çağrı kayıtlarını inceler",
+        "Bir kalite puanı üretir",
+        "Bulgulara çevrimiçi erişim",
+        "Çağrı hacminin %100'ünü denetler",
+        "Her bulgu için alıntı, zaman damgası ve ses",
+        "Günler içinde ilk bulgular",
+        "Türkiye merkezli, kurum içi altyapı",
+        "Tekrarlayan çağrılar için otonom asistan",
+      ],
+    },
+  },
+};
 
 const HowWorks = ({isOutside = false}) => {
 
+  const { locale } = useLocale();
+  const t = COPY[locale] ?? COPY.en;
 
   {!isOutside &&  window.scrollTo(0, 0);}
   AOS.init();
@@ -22,28 +136,29 @@ const HowWorks = ({isOutside = false}) => {
     <>
   {!isOutside &&   <NavbarGen  /> }
     { !isOutside &&  <Helmet>
-        <title>Vocallyze - How It Works </title>
+        <html lang={locale} />
+        <title>{t.metaTitle}</title>
         <meta
           name="description"
-          content="Learn how Vocallyze audits your call center's recordings. Connect your calls, set your rulebook, and receive your first evidence-backed audit report."
+          content={t.metaDescription}
         />
         <meta
           name="keywords"
           content="how it works, call audit, call center compliance, Vocallyze process, conversation intelligence"
         />
-        <meta property="og:title" content="How It Works - Vocallyze" />
+        <meta property="og:title" content={t.metaTitle} />
         <meta
           property="og:description"
-          content="Understand the steps involved in auditing every call with Vocallyze. Connect your recordings, configure your rules, and get a detailed audit report."
+          content={t.metaOgDescription}
         />
         <meta property="og:image" content="%PUBLIC_URL%/path/to/your-image.png" />
-        <meta property="og:url" content="https://vocallyze.com/how-it-works" />
+        <meta property="og:url" content="https://vocallyze.com/how-works" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How It Works - Vocallyze" />
+        <meta name="twitter:title" content={t.metaTitle} />
         <meta
           name="twitter:description"
-          content="Follow these steps to get every call in your center audited by Vocallyze. Quick to connect, evidence-backed, fully covered."
+          content={t.metaTwitterDescription}
         />
         <meta name="twitter:image" content="%PUBLIC_URL%/path/to/your-image.png" />
       </Helmet>
@@ -69,10 +184,10 @@ const HowWorks = ({isOutside = false}) => {
             />
 
             <h1 data-aos-duration="400" data-aos="fade-up"  class="text-[42px] font-bold mb-2 lg:mb-4 text-black">
-              How It Works
+              {t.title}
             </h1>
             <p data-aos-duration="400" data-aos="fade-up"  class="opacity-75 text-sm lg:text-base text-black w-[90vw] lg:w-[70vw] text-center ">
-            Experience a simple, hassle-free setup designed for your call center. Get every recorded call audited against your own rulebook, ensuring you catch every violation with evidence you can trust.
+            {t.intro}
             </p>
           </div>
 
@@ -108,17 +223,14 @@ const HowWorks = ({isOutside = false}) => {
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
                       {" "}
-                      Connect your call recordings
+                      {t.steps[0].title}
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p>
-                        We will need access to your call recording archive,
-                        telephony system, or call center platform.
+                        {t.steps[0].body[0]}
                       </p>
                       <p>
-                        You may connect a live integration, share a secure
-                        bulk export, or authorize Vocallyze to pull recordings
-                        directly from your existing setup.
+                        {t.steps[0].body[1]}
                       </p>
                     </div>
                   </div>
@@ -139,13 +251,11 @@ const HowWorks = ({isOutside = false}) => {
                     />
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
-                      Choose your audit plan and configure your rulebook
+                      {t.steps[1].title}
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p>
-                        Pricing is based on call volume, not seat licenses.
-                        We configure your institution's compliance rules
-                        before a single call is scored, with no hidden fees.
+                        {t.steps[1].body[0]}
                       </p>
                     </div>
                   </div>
@@ -172,7 +282,7 @@ const HowWorks = ({isOutside = false}) => {
                     </div>
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
-                      Receive your first audit report
+                      {t.steps[2].title}
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p class="pb-4"></p>
@@ -181,18 +291,15 @@ const HowWorks = ({isOutside = false}) => {
                         <div class="p-4 space-y-4 rounded shadow-xs lg:p-6">
                           <div class="">
                             <p class="mb-1 text-sm font-medium lg:text-base">
-                              You will get your first audit report{" "}
+                              {t.steps[2].reportLine1}{" "}
                             </p>
-                            <p class="mb-4 text-xl font-semibold">Within days</p>
+                            <p class="mb-4 text-xl font-semibold">{t.steps[2].reportHighlight}</p>
                             <p class="mb-3 text-sm lg:text-base text-neutral-700">
-                              Your audit report will be more than a cold
-                              compliance score, it will contain the flagged
-                              transcript excerpt, the exact timestamp, and the
-                              original audio clip behind every finding.{" "}
+                              {t.steps[2].reportBody}{" "}
                             </p>
                             <Link to={"/form-new"}>
                               <div class=" px-5 py-3 bg-second hover:bg-prim duration-500 rounded-full   w-fit text-white tracking-wider text-sm cursor-pointer">
-                                Get Early Access
+                                {t.steps[2].cta}
                               </div>
                             </Link>
                           </div>
@@ -222,14 +329,11 @@ const HowWorks = ({isOutside = false}) => {
                     </div>
 
                     <h2 class="mt-4 mb-2 text-[20px] font-bold">
-                      Review flagged calls with our team
+                      {t.steps[3].title}
                     </h2>
                     <div class="space-y-4 text-sm text-neutral-700 md:text-base">
                       <p>
-                        Vocallyze reports usually answer every question your
-                        compliance and quality team has. If anything is
-                        unclear, our team walks through the evidence with you
-                        call by call.
+                        {t.steps[3].body[0]}
                       </p>
                     </div>
                   </div>
@@ -242,12 +346,9 @@ const HowWorks = ({isOutside = false}) => {
           <div className={`w-[93vw] lg:w-[60vw] ${isOutside && ""} `}>
             <div class="  flex-col items-center self-center justify-center lg:mt-12  mt-5">
               <div class="space-y-1 md:text-center max-w-2xl mx-auto mb-12">
-                <h2 data-aos-duration="600" data-aos="fade-up"  class="text-[32px] font-bold">Why choose Vocallyze?</h2>
+                <h2 data-aos-duration="600" data-aos="fade-up"  class="text-[32px] font-bold">{t.whyTitle}</h2>
                 <p data-aos-duration="600" data-aos="fade-up" class="text-base lg:text-lg text-neutral-600 ">
-                  We're taking the guesswork out of call quality. With no
-                  sampling gaps, we surface every violation with a transcript,
-                  a timestamp, and the audio, all in one place, at one
-                  predictable price.
+                  {t.whyBody}
                 </p>
               </div>
 
@@ -256,8 +357,8 @@ const HowWorks = ({isOutside = false}) => {
                   <thead>
                     <tr>
                       <td class="border-b rounded-tl-2xl bg-neutral-50 pl-3 pr-1 md:px-6 md:py-6 py-3 font-semibold leading-snug text-xs sm:text-sm lg:text-base">
-                        What's included{" "}
-                        <span class="hidden sm:inline">in the cost?</span>
+                        {t.table.includedPrefix}{" "}
+                        <span class="hidden sm:inline">{t.table.includedSuffix}</span>
                       </td>
                       <td class="border-b bg-neutral-50 px-1 md:px-6 md:py-6 py-3 font-semibold text-center text-xs md:text-base lg:text-lg">
                         <img
@@ -267,17 +368,17 @@ const HowWorks = ({isOutside = false}) => {
                         />
                       </td>
                       <td class="border-b bg-neutral-50 px-1 md:px-6 md:py-6 py-3 font-semibold whitespace-normal md:whitespace-nowrap text-center leading-tight text-[10px] sm:text-sm md:text-base lg:text-lg">
-                        Manual Control
+                        {t.table.manualControl}
                       </td>
                       <td class="border-b bg-neutral-50 pl-1 pr-2 md:px-6 md:py-6 py-3 font-semibold whitespace-normal md:whitespace-nowrap text-center leading-tight text-[10px] sm:text-sm md:text-base lg:text-lg rounded-tr-2xl">
-                        Other Services{" "}
+                        {t.table.otherServices}{" "}
                       </td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Reviews call recordings
+                        {t.table.rows[0]}
                       </td>
 
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
@@ -323,7 +424,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Produces a quality score
+                        {t.table.rows[1]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -367,7 +468,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Online access to findings
+                        {t.table.rows[2]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -411,7 +512,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Audits 100% of call volume
+                        {t.table.rows[3]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -469,7 +570,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr >
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Quote, timestamp & audio per finding
+                        {t.table.rows[4]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -527,7 +628,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        First findings within days
+                        {t.table.rows[5]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -585,7 +686,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr>
                     <tr  data-aos-duration="400" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Türkiye-based, on-premise infrastructure
+                        {t.table.rows[6]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">
@@ -643,7 +744,7 @@ const HowWorks = ({isOutside = false}) => {
                     </tr>
                     <tr  data-aos-duration="600" data-aos="fade-up">
                       <td class="border-y pl-3 pr-1 py-4 md:px-6 font-medium leading-snug text-xs md:text-sm lg:text-base">
-                        Autonomous assistant for repeat calls
+                        {t.table.rows[7]}
                       </td>
                       <td class="border-y px-2 md:px-6 py-4 md:py-6">
                         <div class="shrink-0 w-7 lg:w-8 mx-auto stroke-2 text-prim">

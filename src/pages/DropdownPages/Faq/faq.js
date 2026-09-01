@@ -17,8 +17,26 @@ import { Helmet } from 'react-helmet';
 import NavbarGen from '../../../homeComponents/NavbarGen/NavbarGen';
 import FooterGen from '../../../homeComponents/FooterGen/FooterGen';
 import vocallyzeBg from '../../../assets/images/vocallyze-bg.png';
+import { useLocale } from '../../../landing/LocaleProvider';
+
+const COPY = {
+  en: {
+    metaTitle: "Vocallyze - FAQ",
+    metaDescription: "Answers to common questions about call auditing, pricing, data residency, and KVKK compliance with Vocallyze.",
+    title: "Have questions? We have answers.",
+    intro: "Find answers to common questions about connecting your calls, pricing, and how Vocallyze keeps your data under your own control.",
+  },
+  tr: {
+    metaTitle: "Vocallyze - Sıkça Sorulan Sorular",
+    metaDescription: "Vocallyze ile çağrı denetimi, fiyatlandırma, veri barındırma ve KVKK uyumluluğu hakkında sık sorulan sorulara cevaplar.",
+    title: "Sorularınız mı var? Cevaplarımız var.",
+    intro: "Çağrılarınızı bağlama, fiyatlandırma ve Vocallyze'ın verilerinizi kendi kontrolünüzde nasıl tuttuğu hakkında sık sorulan sorulara cevap bulun.",
+  },
+};
 
 const Faq = ({isOutside = false}) => {
+  const { locale } = useLocale();
+  const t = COPY[locale] ?? COPY.en;
   useEffect(() => {  window.scrollTo(0, 0); }, []);
 
 
@@ -29,8 +47,9 @@ const Faq = ({isOutside = false}) => {
 
 
   <Helmet>
-  <title>Vocallyze - FAQ</title>
-   <meta name="description" content="Answers to common questions about call auditing, pricing, data residency, and KVKK compliance with Vocallyze." />
+  <html lang={locale} />
+  <title>{t.metaTitle}</title>
+   <meta name="description" content={t.metaDescription} />
 </Helmet>
 
  <NavbarGen/>
@@ -48,9 +67,9 @@ const Faq = ({isOutside = false}) => {
                 src={vocallyzeBg}
               />
           
-            <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'> Have questions? We have answers.</h1>
+            <h1 data-aos-duration="600" data-aos="fade-up"  className='lg:text-[42px] text-[32px] self-center tracking-wide leading-[38px] text-center  text-black font-bold'> {t.title}</h1>
               <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
-              Find answers to common questions about connecting your calls, pricing, and how Vocallyze keeps your data under your own control.
+              {t.intro}
               </p>
               
        </div>

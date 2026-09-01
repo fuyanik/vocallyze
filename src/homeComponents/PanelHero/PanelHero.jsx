@@ -5,10 +5,28 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import trackWeb from '../../assets/images/track-web.png'
 import trackMobile from '../../assets/images/track-mobile.png'
+import { useLocale } from '../../landing/LocaleProvider'
+
+const PING_COPY = {
+  en: [
+    { title: "Weekly Trend", text: "See how each team's quality score moves week over week, so coaching decisions are backed by data, not guesswork." },
+    { title: "Quality Scores", text: "Every team gets a live quality score — updated automatically as their calls are transcribed and audited." },
+    { title: "Violation Tracking", text: "Calls are checked against your rulebook automatically, flagging violations the moment they happen — no manual sampling required." },
+    { title: "Call Volume", text: "Track daily call volume and see at a glance how much has been reviewed vs. escalated." },
+  ],
+  tr: [
+    { title: "Haftalık Trend", text: "Her takımın kalite puanının hafta hafta nasıl değiştiğini görün; böylece koçluk kararları tahmine değil veriye dayanır." },
+    { title: "Kalite Puanları", text: "Her takım, çağrıları transkribe edilip denetlendikçe otomatik olarak güncellenen canlı bir kalite puanı alır." },
+    { title: "İhlal Takibi", text: "Çağrılar kural kitabınıza göre otomatik olarak kontrol edilir, ihlaller gerçekleştiği anda işaretlenir — manuel örnekleme gerekmez." },
+    { title: "Çağrı Hacmi", text: "Günlük çağrı hacmini takip edin ve ne kadarının incelendiğini, ne kadarının yükseltildiğini tek bakışta görün." },
+  ],
+};
 
 const PanelHero = () => {
 
   const [showNum, setShowNum] = useState(0)
+  const { locale } = useLocale();
+  const pings = PING_COPY[locale] ?? PING_COPY.en;
 
   const Ping = ({title,left,top,num,text}) => {
     return (
@@ -64,10 +82,10 @@ const PanelHero = () => {
               <img className='w-full self-center lg:flex hidden object-contain' data-aos-duration="1200" data-aos="fade-up" src={trackWeb} alt='tracking your process' />
               <img className='w-[106%] max-w-none self-center lg:hidden flex object-contain' data-aos-duration="1200" data-aos="fade-up" src={trackMobile} alt='tracking your process' />
           
-              <Ping title={"Weekly Trend"} left={"left-[25%]"} top={"top-[41.9%]"} text={"See how each team's quality score moves week over week, so coaching decisions are backed by data, not guesswork."}  num={1}  />
-              <Ping title={"Quality Scores"} left={"left-[45%]"} top={"top-[24.3%]"}  text={"Every team gets a live quality score — updated automatically as their calls are transcribed and audited."}  num={2} />
-              <Ping title={"Violation Tracking"} left={"left-[68%]" } top={"top-[15.9%]"} text={"Calls are checked against your rulebook automatically, flagging violations the moment they happen — no manual sampling required."} num={3} />
-              <Ping title={"Call Volume"} left={"left-[83.5%]"} top={"top-[43.9%]"} text={"Track daily call volume and see at a glance how much has been reviewed vs. escalated."} num={4} />
+              <Ping title={pings[0].title} left={"left-[25%]"} top={"top-[41.9%]"} text={pings[0].text}  num={1}  />
+              <Ping title={pings[1].title} left={"left-[45%]"} top={"top-[24.3%]"}  text={pings[1].text}  num={2} />
+              <Ping title={pings[2].title} left={"left-[68%]" } top={"top-[15.9%]"} text={pings[2].text} num={3} />
+              <Ping title={pings[3].title} left={"left-[83.5%]"} top={"top-[43.9%]"} text={pings[3].text} num={4} />
        
          </div>
         </div>

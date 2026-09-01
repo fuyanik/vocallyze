@@ -24,7 +24,7 @@ module.exports = {
 
         black: "#20272C",
 
-        // ── Ported admino design tokens (Navbar / Hero / PlatformDemo only) ──
+        // ── Ported landing design tokens (Navbar / Hero / PanelDemo only) ──
         background: "var(--color-background)",
         foreground: "var(--color-foreground)",
         primary: {

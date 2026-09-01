@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "logoAlt": "Vocallyze",
+    "links": [
+      "Örnek Denetim Raporları",
+      "Neden Çağrı Denetimi",
+      "İletişim"
+    ],
+    "waitlistCta": "ERKEN ERİŞİM",
+    "menuToggleAria": "Menüyü aç/kapat",
+    "mailUsCta": "Bize e-posta gönderin"
+  },
+  "footer": {
+    "email": "info@vocallyze.com"
+  }
+}

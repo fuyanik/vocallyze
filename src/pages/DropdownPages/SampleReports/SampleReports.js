@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { DemoLiquidPillNav } from '../../../admino/DemoLiquidPillNav'
+import { DemoLiquidPillNav } from '../../../landing/DemoLiquidPillNav'
 import gV from '../../../gV'
-import Navbar from '../../../admino/Navbar'
+import Navbar from '../../../landing/Navbar'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Helmet } from 'react-helmet'
@@ -10,11 +10,15 @@ import FooterGen from '../../../homeComponents/FooterGen/FooterGen'
 import vocallyzeBg from '../../../assets/images/vocallyze-bg.png'
 import logo from '../../../assets/images/logos.png'
 import logoWhite from '../../../assets/images/logos-white.png'
+import { useLocale } from '../../../landing/LocaleProvider'
 
 // Short labels for the mobile liquid pill nav (same component/shell as the
 // Listen/Audit/Understand/Coach/Automate row in the platform demo), so all
 // four fit comfortably on narrow phones without wrapping.
-const REPORT_TABS_MOBILE = ["Privacy", "Notice", "Pressure", "Legal"]
+const REPORT_TABS_MOBILE = {
+  en: ["Privacy", "Notice", "Pressure", "Legal"],
+  tr: ["Gizlilik", "Bildirim", "Baskı", "Hukuki"],
+}
 
 const pillShellClassName = "relative z-10 flex w-full min-w-0 items-center justify-between gap-0.5 rounded-full border border-border bg-surface/90 p-[clamp(4px,1.6vw,7px)] shadow-sm backdrop-blur-xl"
 const pillButtonClassName = (_, active) => `relative z-10 flex-1 rounded-full px-[clamp(6px,2.4vw,14px)] py-[7px] text-[clamp(10px,3vw,12px)] font-medium text-center transition-colors cursor-pointer ${active ? "text-white" : "text-foreground/60"}`
@@ -28,7 +32,19 @@ const SEVERITY = {
   medium:   { chip: "bg-amber-50 text-amber-700 border-amber-200", bar: "bg-amber-500", score: "text-amber-600" },
 }
 
-const REPORTS = [
+// `severity` and `who` stay identical, lowercase machine keys across both
+// catalogs (used for color/tone lookups and comparisons); only their
+// on-screen labels are translated, via SEVERITY_LABEL / WHO_LABEL below.
+const SEVERITY_LABEL = {
+  en: { critical: "critical", high: "high", medium: "medium" },
+  tr: { critical: "kritik", high: "yüksek", medium: "orta" },
+}
+const WHO_LABEL = {
+  en: { Agent: "Agent", Customer: "Customer" },
+  tr: { Agent: "Temsilci", Customer: "Müşteri" },
+}
+
+const REPORTS_EN = [
   {
     id: "VOC-2841",
     date: "Aug 14, 2026",
@@ -215,7 +231,247 @@ const REPORTS = [
   },
 ]
 
-const ReportShell = ({ title, meta, page, children, wide = true }) => (
+const REPORTS_TR = [
+  {
+    id: "VOC-2841",
+    date: "14 Ağu 2026",
+    callId: "20260814-1042-AGT031",
+    agent: "Kaan Özkan",
+    team: "Hukuk Danışmanlığı",
+    datetime: "14 Ağu 2026 · 10:42",
+    duration: "3:48",
+    topic: "Borç sorgusu",
+    outcome: "Uyumluluğa yükseltildi",
+    score: 34,
+    rulesChecked: 32,
+    failed: "1 kritik bulgu",
+    severity: "critical",
+    category: "Veri gizliliği",
+    status: "Açık · atandı",
+    rule: "KR-02 · Kimlik doğrulanmadan önce kişisel veri paylaşıldı",
+    source: "KVKK Uyumluluk Politikası · madde 5 — alıntı kayıtla doğrulandı",
+    at: "01:12",
+    quote: "Toplam borcunuz 47.850₺ görünüyor — kimlik numaranız olmadan da söyleyebilirim.",
+    scorecard: [
+      { k: "İçerik & Ton", v: 71 }, { k: "Prosedür", v: 38 }, { k: "Doğruluk", v: 64 },
+      { k: "Empati", v: 70 }, { k: "Kapanış", v: 66 },
+    ],
+    actions: [
+      "Veri koruma görevlisini 24 saat içinde bilgilendirin.",
+      "Bu ay bu temsilcinin aynı kuralda üçüncü ihlali — KR-02 tazeleme eğitimi atayın.",
+      "Temsilcinin sonraki 20 çağrısını öncelikli inceleme kuyruğuna otomatik ekleyin.",
+    ],
+    transcript: [
+      { t: "00:03", who: "Agent", text: "Acar Legal, ben Kaan. Bu görüşme kalite amacıyla kaydedilmektedir.", flag: "Kayıt bildirimi yapıldı" },
+      { t: "00:58", who: "Customer", text: "Sadece dosyada ne kadar kaldığını öğrenmek istiyorum, kimliğim şu an yanımda değil." },
+      { t: "01:12", who: "Agent", text: "Toplam borcunuz 47.850₺ görünüyor — kimlik numaranız olmadan da söyleyebilirim.", violation: "KR-02 · Açıklamadan önce kimlik doğrulanmadı" },
+      { t: "01:26", who: "Customer", text: "Peki. Üzerine faiz ne kadar?" },
+      { t: "01:31", who: "Agent", text: "Faizle birlikte bugün 51.200₺ oluyor. Dökümü aradığınız numaraya SMS ile gönderebilirim.", violation: "KR-02 · Ek kişisel veri açıklandı" },
+      { t: "03:40", who: "Agent", text: "Başka yardımcı olabileceğim bir şey var mı? İyi günler.", flag: "Kapanış onayı alındı" },
+    ],
+    rules: [
+      { id: "KR-01", label: "Görüşme başında kayıt bildirimi", ok: true, at: "00:03" },
+      { id: "KR-02", label: "Veri paylaşımından önce kimlik doğrulama", ok: false, at: "01:12" },
+      { id: "KR-03", label: "Üçüncü taraflara açıklama yapılmadı", ok: true, at: "—" },
+      { id: "KR-04", label: "Müşterinin sözü kesilmedi", ok: true, at: "—" },
+      { id: "KR-08", label: "Kapanış onayı alındı", ok: true, at: "03:40" },
+    ],
+    cluster: { id: "RC-021", title: "Gelen bakiye çağrılarında kimlik kontrolü atlanıyor", meta: "bu ay 38 benzer çağrı · 4 temsilci" },
+  },
+  {
+    id: "VOC-2836",
+    date: "13 Ağu 2026",
+    callId: "20260813-1618-AGT009",
+    agent: "Onur Çelik",
+    team: "İcra",
+    datetime: "13 Ağu 2026 · 16:18",
+    duration: "2:16",
+    topic: "Dosya durumu",
+    outcome: "İlk temasta çözüldü",
+    score: 62,
+    rulesChecked: 32,
+    failed: "1 yüksek · 1 orta bulgu",
+    severity: "high",
+    category: "Prosedür",
+    status: "İncelemede",
+    rule: "KR-01 · Görüşme başında kayıt bildirimi eksik",
+    source: "Kalite Kılavuzu v4 · madde 2.1 — alıntı kayıtla doğrulandı",
+    at: "00:04",
+    quote: "Buyurun, bu ne hakkında?",
+    scorecard: [
+      { k: "İçerik & Ton", v: 78 }, { k: "Prosedür", v: 41 }, { k: "Doğruluk", v: 84 },
+      { k: "Empati", v: 72 }, { k: "Kapanış", v: 80 },
+    ],
+    actions: [
+      "Bu çağrı için kayıt onayı kanıtlanamıyor.",
+      "Bu temsilcinin denetlenen 31 çağrısının 9'unda açılış senaryosu eksik.",
+      "Temsilci ekranında zorunlu açılış istemini etkinleştirin.",
+    ],
+    transcript: [
+      { t: "00:04", who: "Agent", text: "Buyurun, bu ne hakkında?", violation: "KR-01 · Kayıt bildirimi hiç yapılmadı" },
+      { t: "00:09", who: "Customer", text: "Bu sabah bir bildirim aldım, dosyamın hangi aşamada olduğunu anlamak istiyorum." },
+      { t: "00:21", who: "Agent", text: "Kimlik numaranızın ilk üç ve son iki hanesini alabilir miyim?", flag: "Kimlik doğrulama uygulandı" },
+      { t: "00:44", who: "Agent", text: "Doğrulandı. Dosyanız 11 Ağustos'ta ödeme planı aşamasına geçti.", flag: "Doğru dosya bilgisi" },
+      { t: "01:52", who: "Customer", text: "Yani başka bir şey yapmam gerekiyor mu, yoksa —", violation: "KR-04 · Müşterinin sözü cümle ortasında kesildi" },
+      { t: "02:11", who: "Agent", text: "Hepsi bu, hoşça kalın.", violation: "KR-08 · Kapanış onayı alınmadı" },
+    ],
+    rules: [
+      { id: "KR-01", label: "Görüşme başında kayıt bildirimi", ok: false, at: "00:04" },
+      { id: "KR-02", label: "Veri paylaşımından önce kimlik doğrulama", ok: true, at: "00:21" },
+      { id: "KR-04", label: "Müşterinin sözü kesilmedi", ok: false, at: "01:52" },
+      { id: "KR-07", label: "Net ve uygulanabilir çözüm", ok: true, at: "00:44" },
+      { id: "KR-08", label: "Kapanış onayı alındı", ok: false, at: "02:11" },
+    ],
+    cluster: { id: "RC-009", title: "İcra kuyruğunda açılış senaryosu atlanıyor", meta: "bu ay 124 benzer çağrı · 6 temsilci" },
+  },
+  {
+    id: "VOC-2824",
+    date: "12 Ağu 2026",
+    callId: "20260812-1509-AGT025",
+    agent: "Ayşe Demir",
+    team: "Tahsilat",
+    datetime: "12 Ağu 2026 · 15:09",
+    duration: "5:34",
+    topic: "Ödeme planı",
+    outcome: "Şikayet riski · müşteri telefonu kapattı",
+    score: 41,
+    rulesChecked: 32,
+    failed: "1 kritik · 1 orta bulgu",
+    severity: "critical",
+    category: "Ton & tavır",
+    status: "Açık · yükseltildi",
+    rule: "KR-05 · Baskı ve tehdit içeren dil kullanıldı",
+    source: "İcra ve İflas Kanunu · madde 337 — alıntı kayıtla doğrulandı",
+    at: "02:14",
+    quote: "Bugün ödemezseniz yarın eviniz mühürlenir — bunu bilmenizi isterim.",
+    scorecard: [
+      { k: "İçerik & Ton", v: 44 }, { k: "Prosedür", v: 76 }, { k: "Doğruluk", v: 81 },
+      { k: "Empati", v: 29 }, { k: "Kapanış", v: 58 },
+    ],
+    actions: [
+      "İfade hukuken yanlış ve zorlayıcı — hukuki risk doğrulandı.",
+      "Koçluk tamamlanana kadar bu temsilcinin giden tahsilat çağrılarını durdurun.",
+      "Beş dakikadan uzun her çağrıda empati puanı 40'ın altına düşüyor.",
+    ],
+    transcript: [
+      { t: "00:06", who: "Agent", text: "Acar Legal, ben Ayşe. Bu görüşme kalite amacıyla kaydedilmektedir.", flag: "Kayıt bildirimi yapıldı" },
+      { t: "01:48", who: "Customer", text: "Geçen ay işimi kaybettim, gelecek ayın başında bir kısmını ödeyebilirim." },
+      { t: "02:14", who: "Agent", text: "Bugün ödemezseniz yarın eviniz mühürlenir — bunu bilmenizi isterim.", violation: "KR-05 · Tehdit içeren ve hukuken yanlış ifade" },
+      { t: "02:39", who: "Customer", text: "Bu doğru olamaz, kimse bana haciz hakkında bir şey söylemedi —" },
+      { t: "03:21", who: "Agent", text: "Bir saniye, bir saniye — şimdi beni dinleyin.", violation: "KR-04 · Müşterinin sözü üç veya daha fazla kez kesildi" },
+      { t: "05:30", who: "Customer", text: "Böyle konuşmaya devam etmeyeceğim. Şikayette bulunacağım." },
+    ],
+    rules: [
+      { id: "KR-01", label: "Görüşme başında kayıt bildirimi", ok: true, at: "00:06" },
+      { id: "KR-02", label: "Veri paylaşımından önce kimlik doğrulama", ok: true, at: "00:33" },
+      { id: "KR-04", label: "Müşterinin sözü kesilmedi", ok: false, at: "03:21" },
+      { id: "KR-05", label: "Baskı veya tehdit içeren dil kullanılmadı", ok: false, at: "02:14" },
+      { id: "KR-07", label: "Net ve uygulanabilir çözüm", ok: true, at: "04:12" },
+    ],
+    cluster: { id: "RC-017", title: "Zorluk beyan edilen dosyalarda baskı dili", meta: "bu ay 26 benzer çağrı · 3 temsilci" },
+  },
+  {
+    id: "VOC-2830",
+    date: "13 Ağu 2026",
+    callId: "20260813-1122-AGT031",
+    agent: "Kaan Özkan",
+    team: "Hukuk Danışmanlığı",
+    datetime: "13 Ağu 2026 · 11:22",
+    duration: "6:02",
+    topic: "İtiraz süreci",
+    outcome: "Hatalı bilgi verildi",
+    score: 55,
+    rulesChecked: 32,
+    failed: "1 yüksek bulgu",
+    severity: "high",
+    category: "Mevzuat",
+    status: "İncelemede",
+    rule: "KR-06 · Yasal itiraz süresi hatalı belirtildi",
+    source: "İcra ve İflas Kanunu · madde 62 — alıntı kayıtla doğrulandı",
+    at: "04:56",
+    quote: "Artık itiraz edemezsiniz — sanırım o süre geçti.",
+    scorecard: [
+      { k: "İçerik & Ton", v: 74 }, { k: "Prosedür", v: 68 }, { k: "Doğruluk", v: 39 },
+      { k: "Empati", v: 76 }, { k: "Kapanış", v: 71 },
+    ],
+    actions: [
+      "Bildirim 11 Ağustos'ta tebliğ edildi — yedi günlük itiraz süresi hâlâ açıktı.",
+      "Müşteriye yazılı bir düzeltme gönderin ve dosyaya kaydedin.",
+      "İtiraz süresi ifadesini zorunlu cevap kütüphanesine ekleyin.",
+    ],
+    transcript: [
+      { t: "00:05", who: "Agent", text: "Acar Legal, ben Kaan. Bu görüşme kalite amacıyla kaydedilmektedir.", flag: "Kayıt bildirimi yapıldı" },
+      { t: "04:31", who: "Customer", text: "Bildirim bana pazartesi ulaştı. Bu borca hâlâ itiraz edebilir miyim?" },
+      { t: "04:56", who: "Agent", text: "Artık itiraz edemezsiniz — sanırım o süre geçti.", violation: "KR-06 · İtiraz süresi hatalı belirtildi, belirsiz ifade" },
+      { t: "05:14", who: "Customer", text: "Peki şimdi ne yapmam gerekiyor?" },
+      { t: "05:22", who: "Agent", text: "Bu noktada en sağlıklısı ödemeyi yapmak.", violation: "KR-06 · Müşteri yasal bir haktan uzaklaştırıldı" },
+      { t: "05:51", who: "Agent", text: "Bitirmeden önce sormak istediğiniz başka bir şey var mı?", flag: "Kapanış onayı alındı" },
+    ],
+    rules: [
+      { id: "KR-01", label: "Görüşme başında kayıt bildirimi", ok: true, at: "00:05" },
+      { id: "KR-02", label: "Veri paylaşımından önce kimlik doğrulama", ok: true, at: "00:26" },
+      { id: "KR-05", label: "Baskı veya tehdit içeren dil kullanılmadı", ok: true, at: "—" },
+      { id: "KR-06", label: "İtiraz süresi doğru belirtildi", ok: false, at: "04:56" },
+      { id: "KR-08", label: "Kapanış onayı alındı", ok: true, at: "05:51" },
+    ],
+    cluster: { id: "RC-006", title: "İtiraz süresi tutarsız açıklanıyor", meta: "bu ay 61 benzer çağrı · 5 temsilci" },
+  },
+]
+
+const REPORTS_BY_LOCALE = { en: REPORTS_EN, tr: REPORTS_TR }
+
+const UI_COPY = {
+  en: {
+    metaTitle: "Vocallyze - Sample Call Audit Reports | See Every Finding With Proof",
+    metaDescription: "Explore Vocallyze's sample call audit reports to see how every violation is evidenced with a verbatim quote, a timestamp and the original audio.",
+    metaOgDescription: "Explore our sample reports to see how every finding is backed by a quote, a timestamp and the recording it came from.",
+    logoAlt: "sample reports",
+    title: "Call Audit Report Samples",
+    intro: "Every finding in a Vocallyze report is proven with a verbatim quote, its timestamp and the audio it came from. Below are four real violation types caught in calls that manual sampling never reached.",
+    tabs: ["Data Privacy Gap", "Missing Notice", "Pressure & Threats", "Legal Misinfo"],
+    explore: "Explore:",
+    exploreRest: "Read the full report",
+    fullReport: "Full Audit Report",
+    close: "Close",
+    reportShell: { auditReport: "CALL AUDIT REPORT", transcriptRules: "TRANSCRIPT & RULE MATCHES", page1: "Page 1 / 2", page2: "Page 2 / 2", footerNote: "Processed on-premise · no recording, transcript or identifier left the institution's network" },
+    meta: { callRecord: "CALL RECORD", callId: "Call ID", agent: "Agent", team: "Team", date: "Date", duration: "Duration", topic: "Topic", outcome: "Outcome" },
+    score: { title: "COMPLIANCE SCORE", rulesEvaluated: (n) => `${n} rules evaluated · ` },
+    scorecardTitle: "SCORECARD",
+    evidence: { label: (at) => `EVIDENCE · ${at}`, listen: "Listen to clip" },
+    requiredAction: "REQUIRED ACTION",
+    transcriptExcerpt: "TRANSCRIPT EXCERPT",
+    diarization: "Speaker separation 98% confidence",
+    ruleMatches: (n) => `RULE MATCHES · ${n} EVALUATED`,
+    rootCauseCluster: "ROOT CAUSE CLUSTER",
+    evidenceLinked: "Every finding above is linked to a verbatim quote, its timestamp and the original audio segment.",
+  },
+  tr: {
+    metaTitle: "Vocallyze - Örnek Çağrı Denetim Raporları | Her Bulguyu Kanıtla Görün",
+    metaDescription: "Her ihlalin birebir bir alıntı, bir zaman damgası ve orijinal ses ile nasıl kanıtlandığını görmek için Vocallyze'ın örnek çağrı denetim raporlarını inceleyin.",
+    metaOgDescription: "Her bulgunun bir alıntı, bir zaman damgası ve geldiği kayıtla nasıl desteklendiğini görmek için örnek raporlarımızı inceleyin.",
+    logoAlt: "örnek raporlar",
+    title: "Çağrı Denetim Raporu Örnekleri",
+    intro: "Bir Vocallyze raporundaki her bulgu, birebir bir alıntı, zaman damgası ve geldiği ses kaydıyla kanıtlanır. Aşağıda manuel örneklemenin asla ulaşamadığı çağrılarda yakalanan dört gerçek ihlal türü yer alıyor.",
+    tabs: ["Veri Gizliliği Açığı", "Eksik Bildirim", "Baskı & Tehditler", "Hukuki Yanlış Bilgi"],
+    explore: "Keşfet:",
+    exploreRest: "Tam raporu okuyun",
+    fullReport: "Tam Denetim Raporu",
+    close: "Kapat",
+    reportShell: { auditReport: "ÇAĞRI DENETİM RAPORU", transcriptRules: "TRANSKRİPT & KURAL EŞLEŞMELERİ", page1: "Sayfa 1 / 2", page2: "Sayfa 2 / 2", footerNote: "Kurum içinde işlendi · hiçbir kayıt, transkript veya kimlik bilgisi kurumun ağından çıkmadı" },
+    meta: { callRecord: "ÇAĞRI KAYDI", callId: "Çağrı No", agent: "Temsilci", team: "Takım", date: "Tarih", duration: "Süre", topic: "Konu", outcome: "Sonuç" },
+    score: { title: "UYUMLULUK PUANI", rulesEvaluated: (n) => `${n} kural değerlendirildi · ` },
+    scorecardTitle: "PUAN KARTI",
+    evidence: { label: (at) => `KANIT · ${at}`, listen: "Klibi dinle" },
+    requiredAction: "GEREKLİ AKSİYON",
+    transcriptExcerpt: "TRANSKRİPT ALINTISI",
+    diarization: "Konuşmacı ayrımı %98 güven",
+    ruleMatches: (n) => `KURAL EŞLEŞMELERİ · ${n} DEĞERLENDİRİLDİ`,
+    rootCauseCluster: "KÖK NEDEN KÜMESİ",
+    evidenceLinked: "Yukarıdaki her bulgu, birebir bir alıntıya, zaman damgasına ve orijinal ses segmentine bağlıdır.",
+  },
+}
+
+const ReportShell = ({ title, meta, page, children, wide = true, footerNote }) => (
   <div className={`${wide ? "w-[94vw] lg:w-[72vw]" : "w-full"} shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-white text-left shadow-xl`}>
     <div className="flex items-center justify-between bg-second px-3 py-2.5 lg:px-6 lg:py-3">
       <div className="flex items-center gap-2 lg:gap-3">
@@ -227,7 +483,7 @@ const ReportShell = ({ title, meta, page, children, wide = true }) => (
     </div>
     {children}
     <div className="flex items-center justify-between border-t border-neutral-200 bg-neutral-50 px-3 py-2 lg:px-6">
-      <p className="text-[8px] text-neutral-500 lg:text-[9px]">Processed on-premise · no recording, transcript or identifier left the institution's network</p>
+      <p className="text-[8px] text-neutral-500 lg:text-[9px]">{footerNote}</p>
       <p className="text-[8px] text-neutral-400 lg:text-[9px]">{page}</p>
     </div>
   </div>
@@ -240,27 +496,27 @@ const MetaRow = ({ label, value }) => (
   </div>
 )
 
-const ReportSummary = ({ r, wide = true }) => {
+const ReportSummary = ({ r, wide = true, ui, sevLabel }) => {
   const tone = SEVERITY[r.severity]
   return (
-    <ReportShell title="CALL AUDIT REPORT" meta={`${r.id} · ${r.date}`} page="Page 1 / 2" wide={wide}>
+    <ReportShell title={ui.reportShell.auditReport} meta={`${r.id} · ${r.date}`} page={ui.reportShell.page1} footerNote={ui.reportShell.footerNote} wide={wide}>
       <div className="grid grid-cols-1 divide-y divide-neutral-200 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,0.8fr)_minmax(0,1.45fr)] lg:divide-x lg:divide-y-0">
 
         {/* call record */}
         <div className="px-4 py-4 lg:px-5 lg:py-5">
-          <p className="mb-2 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">CALL RECORD</p>
-          <MetaRow label="Call ID" value={r.callId} />
-          <MetaRow label="Agent" value={r.agent} />
-          <MetaRow label="Team" value={r.team} />
-          <MetaRow label="Date" value={r.datetime} />
-          <MetaRow label="Duration" value={r.duration} />
-          <MetaRow label="Topic" value={r.topic} />
-          <MetaRow label="Outcome" value={r.outcome} />
+          <p className="mb-2 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.meta.callRecord}</p>
+          <MetaRow label={ui.meta.callId} value={r.callId} />
+          <MetaRow label={ui.meta.agent} value={r.agent} />
+          <MetaRow label={ui.meta.team} value={r.team} />
+          <MetaRow label={ui.meta.date} value={r.datetime} />
+          <MetaRow label={ui.meta.duration} value={r.duration} />
+          <MetaRow label={ui.meta.topic} value={r.topic} />
+          <MetaRow label={ui.meta.outcome} value={r.outcome} />
         </div>
 
         {/* score + scorecard */}
         <div className="px-4 py-4 lg:px-5 lg:py-5">
-          <p className="mb-2 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">COMPLIANCE SCORE</p>
+          <p className="mb-2 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.score.title}</p>
           <div className="flex items-end gap-1.5">
             <span className={`text-[34px] font-bold leading-none lg:text-[40px] ${tone.score}`}>{r.score}</span>
             <span className="mb-1 text-xs text-neutral-400">/ 100</span>
@@ -268,9 +524,9 @@ const ReportSummary = ({ r, wide = true }) => {
           <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-neutral-100">
             <div className={`h-full rounded-full ${tone.bar}`} style={{ width: `${r.score}%` }} />
           </div>
-          <p className="mt-2 text-[9.5px] text-neutral-500 lg:text-[10.5px]">{r.rulesChecked} rules evaluated · {r.failed}</p>
+          <p className="mt-2 text-[9.5px] text-neutral-500 lg:text-[10.5px]">{ui.score.rulesEvaluated(r.rulesChecked)}{r.failed}</p>
 
-          <p className="mb-2 mt-5 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">SCORECARD</p>
+          <p className="mb-2 mt-5 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.scorecardTitle}</p>
           {r.scorecard.map((s) => (
             <div key={s.k} className="mb-2">
               <div className="mb-1 flex items-baseline justify-between">
@@ -287,7 +543,7 @@ const ReportSummary = ({ r, wide = true }) => {
         {/* finding + evidence + action */}
         <div className="px-4 py-4 lg:px-5 lg:py-5">
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className={`rounded-full border px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-wide ${tone.chip}`}>{r.severity}</span>
+            <span className={`rounded-full border px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-wide ${tone.chip}`}>{sevLabel[r.severity] ?? r.severity}</span>
             <span className="rounded-full border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-[8.5px] font-semibold uppercase tracking-wide text-neutral-600">{r.category}</span>
             <span className="ml-auto text-[9px] text-neutral-400">{r.status}</span>
           </div>
@@ -297,10 +553,10 @@ const ReportSummary = ({ r, wide = true }) => {
 
           <div className="mt-3 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2.5">
             <div className="flex items-center justify-between">
-              <p className="text-[8.5px] font-semibold tracking-[0.16em] text-neutral-400">EVIDENCE · {r.at}</p>
+              <p className="text-[8.5px] font-semibold tracking-[0.16em] text-neutral-400">{ui.evidence.label(r.at)}</p>
               <span className="flex items-center gap-1 text-[9px] font-semibold text-second">
                 <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-second text-[6px] text-white">▶</span>
-                Listen to clip
+                {ui.evidence.listen}
               </span>
             </div>
             <p className="mt-1.5 text-[11.5px] italic leading-relaxed text-neutral-700 lg:text-[13px]">“{r.quote}”</p>
@@ -311,7 +567,7 @@ const ReportSummary = ({ r, wide = true }) => {
             </div>
           </div>
 
-          <p className="mb-1.5 mt-3.5 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">REQUIRED ACTION</p>
+          <p className="mb-1.5 mt-3.5 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.requiredAction}</p>
           {r.actions.map((a) => (
             <div key={a} className="flex gap-2 py-[3px]">
               <span className={`mt-[6px] h-1 w-1 shrink-0 rounded-full ${tone.bar}`} />
@@ -325,24 +581,24 @@ const ReportSummary = ({ r, wide = true }) => {
   )
 }
 
-const ReportEvidence = ({ r, wide = true }) => {
+const ReportEvidence = ({ r, wide = true, ui, whoLabel }) => {
   const tone = SEVERITY[r.severity]
   return (
-    <ReportShell title="TRANSCRIPT & RULE MATCHES" meta={`${r.id} · ${r.callId}`} page="Page 2 / 2" wide={wide}>
+    <ReportShell title={ui.reportShell.transcriptRules} meta={`${r.id} · ${r.callId}`} page={ui.reportShell.page2} footerNote={ui.reportShell.footerNote} wide={wide}>
       <div className="grid grid-cols-1 divide-y divide-neutral-200 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:divide-x lg:divide-y-0">
 
         {/* transcript */}
         <div className="px-4 py-4 lg:px-5 lg:py-5">
           <div className="mb-2.5 flex items-center justify-between">
-            <p className="text-[9px] font-semibold tracking-[0.16em] text-neutral-400">TRANSCRIPT EXCERPT</p>
-            <p className="text-[9px] text-neutral-400">Speaker separation 98% confidence</p>
+            <p className="text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.transcriptExcerpt}</p>
+            <p className="text-[9px] text-neutral-400">{ui.diarization}</p>
           </div>
 
           {r.transcript.map((l, i) => (
             <div key={i} className={`mb-1 flex gap-2.5 rounded-lg px-2 py-1.5 ${l.violation ? "border border-red-200 bg-red-50/60" : ""}`}>
               <span className="w-8 shrink-0 pt-[3px] text-[9px] tabular-nums text-neutral-400">{l.t}</span>
               <div className="min-w-0">
-                <p className={`text-[9.5px] font-semibold ${l.who === "Agent" ? "text-second" : "text-neutral-500"}`}>{l.who}</p>
+                <p className={`text-[9.5px] font-semibold ${l.who === "Agent" ? "text-second" : "text-neutral-500"}`}>{whoLabel[l.who] ?? l.who}</p>
                 <p className="mt-[1px] text-[11px] leading-relaxed text-neutral-700 lg:text-[12px]">{l.text}</p>
                 {l.flag && (
                   <span className="mt-1 inline-block rounded-md bg-teal-50 px-1.5 py-[2px] text-[8.5px] font-semibold text-teal-700">✓ {l.flag}</span>
@@ -357,7 +613,7 @@ const ReportEvidence = ({ r, wide = true }) => {
 
         {/* rule matches + cluster */}
         <div className="px-4 py-4 lg:px-5 lg:py-5">
-          <p className="mb-2.5 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">RULE MATCHES · {r.rulesChecked} EVALUATED</p>
+          <p className="mb-2.5 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.ruleMatches(r.rulesChecked)}</p>
 
           {r.rules.map((rule) => (
             <div key={rule.id} className="mb-1.5 flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50 px-2.5 py-2">
@@ -370,7 +626,7 @@ const ReportEvidence = ({ r, wide = true }) => {
             </div>
           ))}
 
-          <p className="mb-1.5 mt-4 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">ROOT CAUSE CLUSTER</p>
+          <p className="mb-1.5 mt-4 text-[9px] font-semibold tracking-[0.16em] text-neutral-400">{ui.rootCauseCluster}</p>
           <div className={`rounded-lg border border-neutral-200 bg-white px-3 py-2.5 shadow-sm`}>
             <div className="flex items-center gap-1.5">
               <span className={`h-1.5 w-1.5 rounded-full ${tone.bar}`} />
@@ -381,7 +637,7 @@ const ReportEvidence = ({ r, wide = true }) => {
           </div>
 
           <div className="mt-3 rounded-lg bg-teal-50 px-3 py-2">
-            <p className="text-[9.5px] leading-relaxed text-teal-800">Every finding above is linked to a verbatim quote, its timestamp and the original audio segment.</p>
+            <p className="text-[9.5px] leading-relaxed text-teal-800">{ui.evidenceLinked}</p>
           </div>
         </div>
 
@@ -392,6 +648,12 @@ const ReportEvidence = ({ r, wide = true }) => {
 
 const SampleReports = ({isOutside = false , isPopup = false} ) => {
 
+    const { locale } = useLocale();
+    const REPORTS = REPORTS_BY_LOCALE[locale] ?? REPORTS_EN;
+    const ui = UI_COPY[locale] ?? UI_COPY.en;
+    const sevLabel = SEVERITY_LABEL[locale] ?? SEVERITY_LABEL.en;
+    const whoLabel = WHO_LABEL[locale] ?? WHO_LABEL.en;
+    const reportTabsMobile = REPORT_TABS_MOBILE[locale] ?? REPORT_TABS_MOBILE.en;
 
      AOS.init();
     const [showNum, setShowNum] = useState(1)
@@ -458,7 +720,6 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
 
   { !isOutside &&  window.scrollTo(0, 0);}
     
- 
 
     const Ping = ({title,left,top,num,text}) => {
       return (
@@ -503,10 +764,10 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
           
                <div className=" w-full  relative flex items-center justify-center lg:gap-9 gap-5">
           
-                  <p  className={`h-[96%]  ${tabsNum == 0 ? "text-[#ffffff]" : "text-second" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(0);  }  } >  Data Privacy Gap </p>
-                  <p  className={`h-[96%]  ${tabsNum == 1 ? "text-[#ffffff]" : "text-second" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(1);  } } >  Missing Notice </p>
-                  <p  className={`h-[96%]  ${tabsNum == 2 ? "text-[#ffffff]" : "text-second" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);   }} >   Pressure & Threats</p>
-                  <p  className={`h-[96%]   ${tabsNum == 3 ? "text-[#ffffff]" : "text-second" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);   } } >  Legal Misinfo  </p>
+                  <p  className={`h-[96%]  ${tabsNum == 0 ? "text-[#ffffff]" : "text-second" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(0);  }  } >  {ui.tabs[0]} </p>
+                  <p  className={`h-[96%]  ${tabsNum == 1 ? "text-[#ffffff]" : "text-second" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{ setTabsNum(1);  } } >  {ui.tabs[1]} </p>
+                  <p  className={`h-[96%]  ${tabsNum == 2 ? "text-[#ffffff]" : "text-second" }  text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(2);   }} >   {ui.tabs[2]}</p>
+                  <p  className={`h-[96%]   ${tabsNum == 3 ? "text-[#ffffff]" : "text-second" } text-[0.9rem]  flex items-center justify-center rounded-2xl z-30 duration-300 ease-in-out`} onClick={()=>{setTabsNum(3);   } } >  {ui.tabs[3]}  </p>
           
                </div>
           
@@ -522,7 +783,7 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
       return (
         <div data-aos-duration="600" data-aos="fade-up" className="relative z-10 w-[92vw]">
           <DemoLiquidPillNav
-            labels={REPORT_TABS_MOBILE}
+            labels={reportTabsMobile}
             activeIndex={tabsNum}
             onSelect={(i) => { setTabsNum(i) }}
             shellClassName={pillShellClassName}
@@ -541,11 +802,12 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
     {!isOutside &&  <Navbar/> }
   
    { !isOutside && <Helmet>
-    <title>Vocallyze - Sample Call Audit Reports | See Every Finding With Proof</title>
-    <meta name="description" content="Explore Vocallyze's sample call audit reports to see how every violation is evidenced with a verbatim quote, a timestamp and the original audio." />
+    <html lang={locale} />
+    <title>{ui.metaTitle}</title>
+    <meta name="description" content={ui.metaDescription} />
     <meta name="keywords" content="Vocallyze, call audit report, KVKK compliance, call center quality, violation evidence, conversation intelligence" />
-    <meta property="og:title" content="Vocallyze - Sample Call Audit Reports" />
-    <meta property="og:description" content="Explore our sample reports to see how every finding is backed by a quote, a timestamp and the recording it came from." />
+    <meta property="og:title" content={ui.metaTitle} />
+    <meta property="og:description" content={ui.metaOgDescription} />
     <meta property="og:image" content="https://vitamu.imgix.net/Second%20Opinion%20Report.png" />
     <meta property="og:url" content="https://vocallyze.com/sample-reports" />
     <meta property="og:type" content="website" />
@@ -568,16 +830,15 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
               src={vocallyzeBg}
             />
         
-        { !isOutside && <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center object-contain' src={logo} alt='sample reports'/>}
-          <h1 data-aos-duration="600" data-aos="fade-up"  className={`lg:text-[42px]  text-[32px]  self-center tracking-wide leading-[38px] text-center  text-black font-bold`}>  Call Audit Report Samples </h1>
+        { !isOutside && <img data-aos-duration="600" data-aos="fade-up"   className='w-48 self-center object-contain' src={logo} alt={ui.logoAlt}/>}
+          <h1 data-aos-duration="600" data-aos="fade-up"  className={`lg:text-[42px]  text-[32px]  self-center tracking-wide leading-[38px] text-center  text-black font-bold`}>  {ui.title} </h1>
             <p data-aos-duration="600" data-aos="fade-up"  className="w-[90vw] lg:w-[70vw] text-center lg:text-base text-sm  text-black">
-            Every finding in a Vocallyze report is proven with a verbatim quote, its timestamp and the audio it came from. Below are four real violation types caught in calls that manual sampling never reached.
+            {ui.intro}
             </p>
             
      </div>
 
      {gV.mq.matches ? TabsMenuMob() : TabsMenuWeb() }
-
 
      {/*  Landscape Reports · two pages per case ·
          clipped to a short preview on mobile so its own scroll never fights
@@ -589,30 +850,30 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
        {/* data privacy gap */}
       {  tabsNum == 0 && 
       <div data-aos="fade-up"   data-aos-duration="800"  className='relative flex flex-col items-center gap-6 pb-6'>
-          <ReportSummary r={REPORTS[0]} />
-          <ReportEvidence r={REPORTS[0]} />
+          <ReportSummary r={REPORTS[0]} ui={ui} sevLabel={sevLabel} />
+          <ReportEvidence r={REPORTS[0]} ui={ui} whoLabel={whoLabel} />
        </div> }
 
         {/* missing notice */}
        {tabsNum == 1 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative flex flex-col items-center gap-6 pb-6'>
-          <ReportSummary r={REPORTS[1]} />
-          <ReportEvidence r={REPORTS[1]} />
+          <ReportSummary r={REPORTS[1]} ui={ui} sevLabel={sevLabel} />
+          <ReportEvidence r={REPORTS[1]} ui={ui} whoLabel={whoLabel} />
        </div> }
       
       {/* pressure & threats */}
        {tabsNum == 2 &&  
        <div data-aos="fade-up"  data-aos-duration="800" className='relative flex flex-col items-center gap-6 pb-6'>
-          <ReportSummary r={REPORTS[2]} />
-          <ReportEvidence r={REPORTS[2]} />
+          <ReportSummary r={REPORTS[2]} ui={ui} sevLabel={sevLabel} />
+          <ReportEvidence r={REPORTS[2]} ui={ui} whoLabel={whoLabel} />
         </div> }
       
 
         {/* legal misinfo */}
        {tabsNum == 3 &&  
         <div data-aos="fade-up"  data-aos-duration="800" className='relative flex flex-col items-center gap-6 pb-6'>
-          <ReportSummary r={REPORTS[3]} />
-          <ReportEvidence r={REPORTS[3]} />
+          <ReportSummary r={REPORTS[3]} ui={ui} sevLabel={sevLabel} />
+          <ReportEvidence r={REPORTS[3]} ui={ui} whoLabel={whoLabel} />
          </div> }
 
        {/* fade-out mask so the clipped preview reads as "more below", mobile only */}
@@ -640,7 +901,7 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
          </svg>
        </div>
        <span className='truncate text-left text-[13px] font-semibold text-white'>
-         Explore: <span className='font-normal text-white/85'>Read the full report</span>
+         {ui.explore} <span className='font-normal text-white/85'>{ui.exploreRest}</span>
        </span>
      </motion.button>
 
@@ -672,8 +933,8 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
              {/* header */}
              <div className='flex shrink-0 flex-col gap-3 px-4 pb-3 pt-1.5'>
                <div className='flex items-center justify-between'>
-                 <p className='text-[13px] font-semibold text-black'>Full Audit Report</p>
-                 <button onClick={() => setSheetOpen(false)} aria-label="Close" className='flex h-8 w-8 items-center justify-center rounded-full bg-white text-neutral-500 shadow-sm'>
+                 <p className='text-[13px] font-semibold text-black'>{ui.fullReport}</p>
+                 <button onClick={() => setSheetOpen(false)} aria-label={ui.close} className='flex h-8 w-8 items-center justify-center rounded-full bg-white text-neutral-500 shadow-sm'>
                    <svg className='h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                    </svg>
@@ -682,7 +943,7 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
 
                {/* same nav pattern, so you can switch reports without leaving the sheet */}
                <DemoLiquidPillNav
-                 labels={REPORT_TABS_MOBILE}
+                 labels={reportTabsMobile}
                  activeIndex={tabsNum}
                  onSelect={(i) => { setTabsNum(i) }}
                  shellClassName={pillShellClassName}
@@ -693,8 +954,8 @@ const SampleReports = ({isOutside = false , isPopup = false} ) => {
              {/* scrollable content, independent from the page scroll */}
              <div ref={sheetScrollRef} className='flex-1 overflow-y-auto px-3 pb-8'>
                <div className='flex flex-col items-center gap-5'>
-                 <ReportSummary r={REPORTS[tabsNum]} wide={false} />
-                 <ReportEvidence r={REPORTS[tabsNum]} wide={false} />
+                 <ReportSummary r={REPORTS[tabsNum]} wide={false} ui={ui} sevLabel={sevLabel} />
+                 <ReportEvidence r={REPORTS[tabsNum]} wide={false} ui={ui} whoLabel={whoLabel} />
                </div>
              </div>
            </motion.div>

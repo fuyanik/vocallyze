@@ -24,16 +24,29 @@ import { Helmet } from 'react-helmet';
 import Informational from '../homeComponents/Informational/Informational';
 import HowWorks from './HowWorks/HowWorks';
 import PanelHero from '../homeComponents/PanelHero/PanelHero';
-import AdminoSection from '../admino/AdminoSection';
+import LandingHeroSection from '../landing/LandingHeroSection';
 import SampleReports from './DropdownPages/SampleReports/SampleReports';
 import WhySecondOpinion from './WhySecondOpinion/WhySecondOpinion';
 import FooterGen from '../homeComponents/FooterGen/FooterGen';
+import { useLocale } from '../landing/LocaleProvider';
 
-
+const HOME_META = {
+  en: {
+    title: "Vocallyze - Audit Every Call | Trusted Conversation Intelligence",
+    description: "Vocallyze audits every recorded call in your center — transcription, rules, and evidence with no sampling. Full coverage, KVKK-compliant conversation intelligence.",
+    ogDescription: "Audit every recorded call with Vocallyze. Full coverage, evidence-backed findings, and live compliance monitoring — no sampling required.",
+  },
+  tr: {
+    title: "Vocallyze - Her Çağrıyı Denetleyin | Güvenilir Konuşma Zekası",
+    description: "Vocallyze, merkezinizdeki her kaydedilen çağrıyı denetler — örnekleme yapmadan transkripsiyon, kurallar ve kanıt. Tam kapsama, KVKK uyumlu konuşma zekası.",
+    ogDescription: "Vocallyze ile kaydedilen her çağrıyı denetleyin. Örnekleme gerektirmeden tam kapsama, kanıta dayalı bulgular ve canlı uyumluluk izleme.",
+  },
+};
 
 
 const Home = () => { 
-  
+  const { locale } = useLocale();
+  const meta = HOME_META[locale] ?? HOME_META.en;
   const [countryName, setCountryName] = useState("");
   const [cityName, setCityName] = useState("");
 
@@ -88,18 +101,19 @@ const Home = () => {
   <div className='flex flex-col overflow-hidden ' >  
 
  <Helmet>
-    <title>Vocallyze - Audit Every Call | Trusted Conversation Intelligence</title>
-    <meta name="description" content="Vocallyze audits every recorded call in your center — transcription, rules, and evidence with no sampling. Full coverage, KVKK-compliant conversation intelligence." />
+    <html lang={locale} />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
     <meta name="keywords" content="Vocallyze, call audit, call center compliance, conversation intelligence, KVKK, quality monitoring" />
-    <meta property="og:title" content="Vocallyze - Audit Every Call | Trusted Conversation Intelligence" />
-    <meta property="og:description" content="Audit every recorded call with Vocallyze. Full coverage, evidence-backed findings, and live compliance monitoring — no sampling required." />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.ogDescription} />
     <meta property="og:image" content="https://yourwebsite.com/path/to/homepage-image.png" />
     <meta property="og:url" content="https://vocallyze.com" />
     <meta property="og:type" content="website" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </Helmet>
     
-       <AdminoSection/>
+       <LandingHeroSection/>
        <Hero/>
        <PanelHero/>
        <WhySecondOpinion isOutside={true} />
